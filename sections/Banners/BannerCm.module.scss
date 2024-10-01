@@ -24,7 +24,6 @@
 		// right: 16px;
 		.p1 {
 			margin: 0;
-			// font-family: "Manrope";
 			font-family: $titleFont;
 			color: #252525;
 			// text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -43,7 +42,6 @@
 		.p2 {
 			color: #252525;
 			font-size: 12px;
-			// font-family: "Montserrat";
 			font-family: $primaryFont;
 			font-weight: 500;
 			margin-bottom: 11px;
@@ -51,7 +49,7 @@
 			span {
 				color: #252525;
 				font-size: 12px;
-				font-family: "Montserrat";
+				font-family: $primaryFont;
 				font-weight: 600;
 				margin-bottom: 10px;
 			}
@@ -59,7 +57,7 @@
 		.p3 {
 			color: #252525;
 			font-size: 12px;
-			font-family: "Montserrat";
+			font-family: $primaryFont;
 			font-weight: 500;
 			margin-bottom: 0;
 			span {
@@ -77,7 +75,7 @@
 		// position: fixed;
 		color: #fff;
 		font-size: 16px;
-		font-family: "Manrope";
+		font-family: $titleFont;
 		font-weight: 600;
 		height: 36px;
 		width: 151px;
@@ -144,14 +142,14 @@
 			.p2 {
 				color: #252525;
 				font-size: 20px;
-				font-family: "Montserrat";
+				font-family: $primaryFont;
 				font-weight: 500;
 				line-height: 1.2;
 				margin-bottom: 12px;
 				span {
 					color: #252525;
 					font-size: 20px;
-					font-family: "Montserrat";
+					font-family: $primaryFont;
 					font-weight: 600;
 					// margin-bottom: 10px;
 				}
@@ -159,7 +157,7 @@
 			.p3 {
 				color: #252525;
 				font-size: 25px;
-				font-family: "Montserrat";
+				font-family: $primaryFont;
 				font-weight: 500;
 				margin-bottom: 30px;
 
