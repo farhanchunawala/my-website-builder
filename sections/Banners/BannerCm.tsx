@@ -14,7 +14,6 @@ export default function Banner() {
 					height={705}
 					layout="responsive"
 				/>
-				{/* <!-- <Image src="/images/service-banner/web_hero.jpg" alt="Test Page Web Banner" className="img1"> --> */}
 				<svg
 					className={styles.vector}
 					xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +33,6 @@ export default function Banner() {
 				<div className={styles.txt_container}>
 					<p className={styles.p1}>From</p>
 					<h4>Discovery to Recovery</h4>
-					{/* <!-- <p className="p2">Anything you need in your cancer <br>journey.</p> --> */}
 					<p className={styles.p2}>
 						<span>CancerMitr</span> is here for you
 					</p>
