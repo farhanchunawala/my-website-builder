@@ -1,96 +1,63 @@
 @import "/app/configs/mixins/mixins";
 
-.banner_home {
-	.banner_content {
-		position: relative;
-	}
-	.image {
-		display: block;
-		width: 100%;
-	}
-	.vector {
+.youtube_home {
+	padding: 38px 24px 20px;
+	.text_container {
 		display: none;
 	}
-	.txt_container {
-		position: absolute;
-		left: 5%;
-		top: 20%;
-		.p1 {
-			@include banner-accent-text;
-		}
-		h4 {
-			@include banner-headline-text;
-			bottom: 8px;
-			top: 1px;
-			max-width: 150px;
-		}
-		.p2 {
-			@include banner-caption-text;
-			margin-bottom: 11px;
-			span {
-				font-weight: 600;
-				margin-bottom: 10px;
-			}
-		}
-	}
-	.button {
-		@include base-button;
-		position: absolute;
-		bottom: -18px;
-		right: 16px;
-		&.desktop {
-			display: none;
-		}
+	iframe {
+		display: block;
+		border-radius: 8px;
+		margin-bottom: 20px;
+		margin-top: 20px;
+		width: 100%;
+		height: 180px;
 	}
 }
 
 @media #{$desktop} {
-	.banner_home {
-		height: 370px;
-		width: 100%;
-		.banner_content {
-			max-width: 1280px;
-			margin: auto;
-		}
-		.image {
-			display: none;
-		}
-		.vector {
+	.youtube_home {
+		position: relative;
+		height: 375px;
+		max-width: 1280px;
+		margin: auto;
+		.text_container {
 			display: block;
-			width: 680.886px;
-			height: 716.594px;
-			position: absolute;
-			// opacity: 0.4;
-			top: -203px;
-			right: -261px;
-		}
-		.txt_container {
-			position: absolute;
-			left: 90px;
-			top: 81px;
-			bottom: 79px;
-			// margin: auto;
-			height: fit-content;
+			left: 80px;
+			width: 250px;
 			h4 {
-				margin-bottom: 6px;
-				max-width: none;
-			}
-			.p2 {
-				margin-bottom: 12px;
+				@include title-text;
+				margin-top: 32px;
+				width: 328%;
+				padding-left: 80px;
+				margin-bottom: 0;
 				span {
-					font-weight: 600;
+					color: #ea5a1a;
 				}
 			}
-		}
-		.button {
-			&.mobile {
-				display: none;
-			}
-			&.desktop {
+			.para1 {
+				@include body-text;
 				display: block;
-				left: 0;
-				position: static;
+				margin-left: -14px;
+				padding-left: 98px;
+				width: 228%;
+				margin-bottom: 12px;
 			}
+			.para2 {
+				@include secondary-text;
+				display: block;
+				width: 181%;
+				padding-left: 83px;
+			}
+		}
+		iframe {
+			border-radius: 8px;
+			width: 50%;
+			max-width: 50%;
+			position: absolute;
+			right: 60px;
+			top: -45px;
+			height: 100%;
 		}
 	}
 }

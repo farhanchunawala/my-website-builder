@@ -1,2 +1,96 @@
 @import "/app/configs/mixins/mixins";
 
+.banner_home {
+	.banner_content {
+		position: relative;
+	}
+	.image {
+		display: block;
+		width: 100%;
+	}
+	.vector {
+		display: none;
+	}
+	.txt_container {
+		position: absolute;
+		left: 5%;
+		top: 20%;
+		.p1 {
+			@include banner-accent-text;
+		}
+		h4 {
+			@include banner-headline-text;
+			bottom: 8px;
+			top: 1px;
+			max-width: 150px;
+		}
+		.p2 {
+			@include banner-caption-text;
+			margin-bottom: 11px;
+			span {
+				font-weight: 600;
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.button {
+		@include base-button;
+		position: absolute;
+		bottom: -18px;
+		right: 16px;
+		&.desktop {
+			display: none;
+		}
+	}
+}
+
+@media #{$desktop} {
+	.banner_home {
+		height: 370px;
+		width: 100%;
+		.banner_content {
+			max-width: 1280px;
+			margin: auto;
+		}
+		.image {
+			display: none;
+		}
+		.vector {
+			display: block;
+			width: 680.886px;
+			height: 716.594px;
+			position: absolute;
+			// opacity: 0.4;
+			top: -203px;
+			right: -261px;
+		}
+		.txt_container {
+			position: absolute;
+			left: 90px;
+			top: 81px;
+			bottom: 79px;
+			// margin: auto;
+			height: fit-content;
+			h4 {
+				margin-bottom: 6px;
+				max-width: none;
+			}
+			.p2 {
+				margin-bottom: 12px;
+				span {
+					font-weight: 600;
+				}
+			}
+		}
+		.button {
+			&.mobile {
+				display: none;
+			}
+			&.desktop {
+				display: block;
+				left: 0;
+				position: static;
+			}
+		}
+	}
+}
