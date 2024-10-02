@@ -1,8 +1,8 @@
-import styles from "./BannerCm.module.scss";
+import styles from "./styles.module.scss";
 import Image from "next/image";
 import Button from "@/elements/Buttons/BaseButton";
 
-export default function Banner() {
+export default function Template002() {
 	return (
 		<div className={styles.banner_home}>
 			<div className={styles.banner_content}>

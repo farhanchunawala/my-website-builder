@@ -1,6 +1,6 @@
-import styles from "./VideoDisplayCm.module.scss";
+import styles from "./styles.module.scss";
 
-export default function VideoDisplay() {
+export default function Template003() {
 	return (
 		<div className={styles.youtube_home}>
 			<div className={styles.text_container}>
