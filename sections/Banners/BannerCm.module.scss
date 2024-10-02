@@ -16,16 +16,16 @@
 		left: 5%;
 		top: 20%;
 		.p1 {
-			@include display-text2;
+			@include banner-accent-text;
 		}
 		h4 {
-			@include display-text1;
+			@include banner-headline-text;
 			bottom: 8px;
 			top: 1px;
 			max-width: 150px;
 		}
 		.p2 {
-			@include display-text3;
+			@include banner-caption-text;
 			margin-bottom: 11px;
 			span {
 				font-weight: 600;

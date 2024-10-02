@@ -1,4 +1,52 @@
-@mixin display-text1 {
+// ===================================
+// Mixins for Headings
+// ===================================
+
+@mixin title-text {
+	font-family: $titleFont;
+	font-size: 30px;
+	font-weight: 600;
+	color: $blackSecondary;
+	line-height: normal;
+}
+
+// ===================================
+// Mixins for Body Texts
+// ===================================
+
+@mixin body-text {
+	font-size: 16px;
+	font-weight: 500;
+	color: $blackSecondary;
+	line-height: normal;
+}
+
+@mixin secondary-text {
+	font-size: 16px;
+	font-weight: 500;
+	color: #656565;
+	line-height: 1.4;
+}
+
+// ===================================
+// Mixins for CTA Texts
+// ===================================
+
+@mixin cta-text1 {
+	font-family: $titleFont;
+	font-size: 16px;
+	font-weight: 600;
+
+	@media #{$desktop} {
+		font-size: 20px;
+	}
+}
+
+// ===================================
+// Mixins for Banner Texts
+// ===================================
+
+@mixin banner-headline-text {
 	font-family: $titleFont;
 	font-size: 20px;
 	font-weight: 700;
@@ -13,7 +61,7 @@
 	}
 }
 
-@mixin display-text2 {
+@mixin banner-accent-text {
 	font-family: $titleFont;
 	font-size: 14px;
 	color: $blackPrimary;
@@ -24,22 +72,11 @@
 	}
 }
 
-@mixin display-text3 {
-	font-family: $primaryFont;
+@mixin banner-caption-text {
 	font-size: 12px;
 	font-weight: 500;
 	color: $blackPrimary;
 	line-height: 1.2;
-
-	@media #{$desktop} {
-		font-size: 20px;
-	}
-}
-
-@mixin cta-text1 {
-	font-family: $titleFont;
-	font-size: 16px;
-	font-weight: 600;
 
 	@media #{$desktop} {
 		font-size: 20px;
