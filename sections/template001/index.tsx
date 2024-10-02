@@ -8,7 +8,7 @@ export default function Template001() {
 			<div className={styles.banner_content}>
 				<Image
 					className={styles.image}
-					src="/images/hero_mobile.jpg"
+					src="/images/cm/hero_mobile.jpg"
 					alt="Test Page Banner"
 					width={1080}
 					height={705}
