@@ -1,6 +1,6 @@
 import styles from "./BannerCm.module.scss";
 import Image from "next/image";
-// import { montserrat, manrope } from "./configs/fonts";
+import Button from "@/elements/Buttons/BaseButton";
 
 export default function Banner() {
 	return (
@@ -36,21 +36,15 @@ export default function Banner() {
 					<p className={styles.p2}>
 						<span>CancerMitr</span> is here for you
 					</p>
-					<button
-						className={styles.desktop}
-						data-toggle="modal"
-						data-target="#modalConsultation"
-					>
-						Talk with us
-					</button>
+					<Button
+						text="Talk With Us"
+						className={`${styles.button} ${styles.desktop}`}
+					/>
 				</div>
-				<button
-					className={styles.mobile}
-					data-toggle="modal"
-					data-target="#modalConsultation"
-				>
-					Talk with us
-				</button>
+				<Button
+					text="Talk With Us"
+					className={`${styles.button} ${styles.mobile}`}
+				/>
 			</div>
 		</div>
 	);

@@ -2,7 +2,7 @@ import "./Button.module.scss";
 
 interface ButtonProps {
 	text: string;
-	onClick: () => void;
+	onClick?: () => void;
 	type?: "button" | "submit" | "reset";
 	className: string;
 	disabled?: boolean;

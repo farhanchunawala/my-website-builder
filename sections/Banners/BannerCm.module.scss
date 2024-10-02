@@ -1,98 +1,51 @@
-@import "/app/configs/variables";
+@import "/app/configs/mixins/mixins";
 
 .banner_home {
-	background-color: #fff;
 	.banner_content {
 		position: relative;
 	}
 	.image {
-		// position: absolute;
 		display: block;
 		width: 100%;
 	}
-	// .img1 {
-	// 	display: none;
-	// }
 	.vector {
 		display: none;
 	}
 	.txt_container {
 		position: absolute;
-		// bottom: 0;
 		left: 5%;
 		top: 20%;
-		// right: 16px;
 		.p1 {
-			margin: 0;
-			font-family: $titleFont;
-			color: #252525;
-			// text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-			font-size: 14px;
+			@include display-text2;
 		}
 		h4 {
+			@include display-text1;
 			bottom: 8px;
 			top: 1px;
-			color: #252525;
-			font-family: $titleFont;
-			font-size: 20px;
-			font-weight: 700;
-			line-height: 1.2;
 			max-width: 150px;
 		}
 		.p2 {
-			color: #252525;
-			font-size: 12px;
-			font-family: $primaryFont;
-			font-weight: 500;
+			@include display-text3;
 			margin-bottom: 11px;
-			line-height: 1.2;
 			span {
-				color: #252525;
-				font-size: 12px;
-				font-family: $primaryFont;
 				font-weight: 600;
 				margin-bottom: 10px;
 			}
 		}
-		.p3 {
-			color: #252525;
-			font-size: 12px;
-			font-family: $primaryFont;
-			font-weight: 500;
-			margin-bottom: 0;
-			span {
-				border-bottom: 1.5px solid #ea5a1a;
-				margin-bottom: 7px;
-			}
-		}
 	}
-	button {
+	.button {
+		@include base-button;
 		position: absolute;
 		bottom: -18px;
 		right: 16px;
-		display: block;
-		text-transform: capitalize;
-		// position: fixed;
-		color: #fff;
-		font-size: 16px;
-		font-family: $titleFont;
-		font-weight: 600;
-		height: 36px;
-		width: 151px;
-		border: 1px solid #fff;
-		border-radius: 16px;
-		float: right;
-		// margin-top: 7px;
-		background-color: #ea5a1a;
-		box-shadow: 0px 4px 20px 0px rgba(234, 91, 26, 0.14);
 		&.desktop {
 			display: none;
 		}
 	}
 }
-@media (min-width: 576px) {
+
+@media #{$desktop} {
 	.banner_home {
-		background-color: white;
 		height: 370px;
 		width: 100%;
 		.banner_content {
@@ -102,10 +55,6 @@
 		.image {
 			display: none;
 		}
-		// .img1 {
-		// 	display: block;
-		// 	width: 100%;
-		// }
 		.vector {
 			display: block;
 			width: 680.886px;
@@ -115,66 +64,25 @@
 			top: -203px;
 			right: -261px;
 		}
-		.txt-container {
+		.txt_container {
 			position: absolute;
 			left: 90px;
 			top: 81px;
 			bottom: 79px;
 			// margin: auto;
 			height: fit-content;
-			.p1 {
-				color: #252525;
-				font-family: Manrope;
-				font-size: 35px;
-				font-weight: 400;
-				line-height: 1.2;
-			}
 			h4 {
-				color: #0d0c22;
-				font-family: Manrope;
-				font-size: 46px;
-				font-weight: 600;
-				line-height: 1.2;
-				letter-spacing: 6.9px;
 				margin-bottom: 6px;
 				max-width: none;
 			}
 			.p2 {
-				color: #252525;
-				font-size: 20px;
-				font-family: $primaryFont;
-				font-weight: 500;
-				line-height: 1.2;
 				margin-bottom: 12px;
 				span {
-					color: #252525;
-					font-size: 20px;
-					font-family: $primaryFont;
 					font-weight: 600;
-					// margin-bottom: 10px;
-				}
-			}
-			.p3 {
-				color: #252525;
-				font-size: 25px;
-				font-family: $primaryFont;
-				font-weight: 500;
-				margin-bottom: 30px;
-
-				span {
-					border-bottom: 1.5px solid #ea5a1a;
 				}
 			}
 		}
-		button {
-			margin-top: 0px;
-			font-size: 20px;
-			font-weight: 600;
-			width: 196px;
-			height: 46.953px;
-			border-radius: 28px;
-			float: left;
-			// position: initial;
+		.button {
 			&.mobile {
 				display: none;
 			}

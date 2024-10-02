@@ -1,0 +1,16 @@
+@mixin base-button {
+	@include cta-text1;
+	height: 36px;
+	padding: 0 28px;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 16px;
+	background-color: #ea5a1a;
+	box-shadow: 0px 4px 20px 0px rgba(234, 91, 26, 0.14);
+
+	@media #{$desktop} {
+		height: 46px;
+		padding: 0 40px;
+		border-radius: 28px;
+	}
+}
