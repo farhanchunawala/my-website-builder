@@ -2,37 +2,29 @@
 // Mixins for Headings
 // ===================================
 
-@mixin title-text {
+@mixin section-heading-text($color: $blackPrimary) {
 	font-family: $titleFont;
-	font-size: 30px;
+	font-size: 18px;
 	font-weight: 600;
+	// color: $color;
 	color: $blackSecondary;
-	line-height: normal;
+
+	@media #{$desktop} {
+		font-size: 30px;
+	}
 }
 
 // ===================================
 // Mixins for Body Texts
 // ===================================
 
-@mixin body-text {
-	font-size: 16px;
-	font-weight: 500;
-	color: $blackSecondary;
-	line-height: normal;
-}
 
-@mixin secondary-text {
-	font-size: 16px;
-	font-weight: 500;
-	color: #656565;
-	line-height: 1.4;
-}
 
 // ===================================
 // Mixins for CTA Texts
 // ===================================
 
-@mixin cta-text1 {
+@mixin button-text1 {
 	font-family: $titleFont;
 	font-size: 16px;
 	font-weight: 600;

@@ -4,6 +4,19 @@
 // Mixins for Typography
 // ===================================
 
+@mixin heading-text-s003 {
+	font-family: $titleFont;
+	font-size: 40px;
+	font-weight: 600;
+	color: $blackSecondary;
+	letter-spacing: 2.6px;
+	span {
+		color: #ea5a1a;
+		font-size: 42px;
+		letter-spacing: 2.1px;
+	}
+}
+
 @mixin display-text-s003 {
 	font-family: $titleFont;
 	font-size: 22px;
@@ -18,21 +31,6 @@
 	@media #{$desktop} {
 		font-size: 30px;
 		text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
-		line-height: 1.2;
-	}
-}
-
-@mixin heading-text-s003 {
-	font-family: $titleFont;
-	font-size: 40px;
-	font-weight: 600;
-	color: $blackSecondary;
-	letter-spacing: 2.6px;
-	line-height: 50px; /* 96.154% */
-	span {
-		color: #ea5a1a;
-		font-size: 42px;
-		letter-spacing: 2.1px;
 	}
 }
 
@@ -42,7 +40,6 @@
 	font-weight: 600;
 	color: $blackPrimary;
 	letter-spacing: 1.12px;
-	line-height: 1.2;
 
 	@media #{$desktop} {
 		font-size: 20px;
@@ -55,21 +52,18 @@
 	font-size: 12px;
 	font-weight: 500;
 	color: #797979;
-	line-height: 1.2;
+	line-height: $lineHeight;
 
 	@media #{$desktop} {
 		font-size: 16px;
 		color: $blackSecondary;
-		line-height: normal;
 	}
 }
 
 @mixin cta-text-s003 {
 	font-size: 14px;
 	font-weight: 500;
-	display: block;
 	color: $blackSecondary;
-	line-height: 1.2;
 }
 
 @mixin cta-text2-s003 {
@@ -77,5 +71,4 @@
 	font-size: 16px;
 	font-weight: 500;
 	color: $blackSecondary;
-	line-height: 25px;
 }

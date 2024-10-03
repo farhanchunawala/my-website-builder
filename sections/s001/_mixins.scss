@@ -9,7 +9,7 @@
 	font-size: 20px;
 	font-weight: 700;
 	color: $blackPrimary;
-	line-height: 1.2;
+	line-height: $lineHeight;
 
 	@media #{$desktop} {
 		font-size: 46px;
@@ -26,7 +26,6 @@
 
 	@media #{$desktop} {
 		font-size: 35px;
-		line-height: 1.2;
 	}
 }
 
@@ -34,7 +33,6 @@
 	font-size: 12px;
 	font-weight: 500;
 	color: $blackPrimary;
-	line-height: 1.2;
 
 	@media #{$desktop} {
 		font-size: 20px;

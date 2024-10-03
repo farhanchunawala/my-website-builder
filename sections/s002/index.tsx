@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 
-export default function Template002() {
+export default function Section002() {
 	return (
 		<div className={styles.youtube_home}>
 			<div className={styles.text_container}>

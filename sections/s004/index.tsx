@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 
-export default function Template0() {
+export default function Section004() {
 	return (
 		<></>
 	);

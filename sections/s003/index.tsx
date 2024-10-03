@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 
-export default function Template003() {
+export default function Section003() {
 	const [isActive, setIsActive] = useState(true);
 	const baseUrl = "https://www.example.com";
 	const [fadeId, setFadeId] = useState(0);
