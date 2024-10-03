@@ -55,12 +55,8 @@ export default function Template003() {
 							layout="responsive"
 						/>
 						<div className={styles["txt-cont"]}>
-							<h4 className={styles["mobile-txt"]}>
-								Activate your <span>Smart Card</span>
-							</h4>
-							<h3>
-								Activate your&nbsp;
-								<span> Smart Card&nbsp;</span>today
+							<h3 className={styles["mobile-txt"]}>
+								Activate your&nbsp;<span> Smart Card</span>
 							</h3>
 						</div>
 					</div>
@@ -134,7 +130,7 @@ export default function Template003() {
 					</a>
 					<a
 						href="https://www.example.com"
-						className={`${styles["become-one"]} ${styles.desktop}`}
+						className={`${styles["become-one"]}`}
 						onMouseEnter={() => setIsActive(false)}
 						onMouseLeave={() => setIsActive(true)}
 					>

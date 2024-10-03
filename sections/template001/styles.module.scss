@@ -1,4 +1,4 @@
-@import "/app/configs/mixins/mixins";
+@import "./mixins";
 
 .banner_home {
 	.banner_content {
@@ -16,16 +16,16 @@
 		left: 5%;
 		top: 20%;
 		.p1 {
-			@include banner-accent-text;
+			@include accent-text-s001;
 		}
 		h4 {
-			@include banner-headline-text;
+			@include headline-text-s001;
 			bottom: 8px;
 			top: 1px;
 			max-width: 150px;
 		}
 		.p2 {
-			@include banner-caption-text;
+			@include caption-text-s001;
 			margin-bottom: 11px;
 			span {
 				font-weight: 600;

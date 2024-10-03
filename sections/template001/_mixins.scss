@@ -1,0 +1,42 @@
+@import "/app/configs/mixins/mixins";
+
+// ===================================
+// Mixins for Typography
+// ===================================
+
+@mixin headline-text-s001 {
+	font-family: $titleFont;
+	font-size: 20px;
+	font-weight: 700;
+	color: $blackPrimary;
+	line-height: 1.2;
+
+	@media #{$desktop} {
+		font-size: 46px;
+		font-weight: 600;
+		color: #0d0c22;
+		letter-spacing: 7px;
+	}
+}
+
+@mixin accent-text-s001 {
+	font-family: $titleFont;
+	font-size: 14px;
+	color: $blackPrimary;
+
+	@media #{$desktop} {
+		font-size: 35px;
+		line-height: 1.2;
+	}
+}
+
+@mixin caption-text-s001 {
+	font-size: 12px;
+	font-weight: 500;
+	color: $blackPrimary;
+	line-height: 1.2;
+
+	@media #{$desktop} {
+		font-size: 20px;
+	}
+}
