@@ -1,6 +1,10 @@
 @import "/app/configs/mixins/mixins";
 
 // ===================================
+// Variables
+// ===================================
+
+// ===================================
 // Mixins
 // ===================================
 
@@ -48,7 +52,7 @@
 	}
 }
 
-@mixin card-body-text-s003 {
+@mixin card-content-text-s003 {
 	font-size: 12px;
 	font-weight: 500;
 	color: #797979;
@@ -79,12 +83,11 @@
 
 .walk-with-us-home {
 	.walk-with-us {
-		background-color: #fff;
 		margin: 10px;
-		padding: 11px 10px 11px 10px;
+		padding: 11px 10px;
 		.walk_us_img {
-			margin-bottom: 7px;
 			position: relative;
+			margin-bottom: 7px;
 			.mobile_img {
 				display: block;
 			}
@@ -113,8 +116,6 @@
 		}
 		.plan-journey {
 			position: relative;
-			background-color: #e5edee;
-			height: 75px;
 			.step {
 				position: absolute;
 			}
@@ -126,24 +127,19 @@
 				opacity: 0;
 				transition: opacity 0.5s cubic-bezier(1, 0.1, 0.1, 1);
 			}
-			ul {
-				li {
-					@include card-title-text-s003;
-					list-style-type: none;
-					padding-left: 10px;
-					padding-top: 12px;
-					margin: 0;
-				}
+			.card-title {
+				@include card-title-text-s003;
+				list-style-type: none;
+				padding-left: 10px;
+				padding-top: 12px;
 			}
-			p {
-				@include card-body-text-s003;
+			.card-content {
+				@include card-content-text-s003;
 				display: block;
-				margin: 0;
 				padding-top: 6px;
 				padding-bottom: 16px;
 				padding-left: 42px;
 				padding-right: 9px;
-				width: 102%;
 			}
 		}
 		.know-more {
@@ -160,7 +156,8 @@
 		}
 	}
 }
-@media (min-width: 576px) {
+
+@media #{$desktop} {
 	.walk-with-us-home {
 		padding: 0 60px;
 		max-width: 1280px;
@@ -231,15 +228,12 @@
 				right: 50px;
 				top: 0;
 				bottom: 0;
-				height: 141px;
 				margin: auto;
 				width: 54%;
-				ul {
-					li {
-						padding: 0;
-					}
+				.card-title {
+					padding: 0;
 				}
-				p {
+				.card-content {
 					display: block;
 					width: 100%;
 					padding: 5px 0 0 47px;
@@ -258,9 +252,6 @@
 				padding: 10px 18px;
 				border-radius: 12px;
 				border: 1px solid #ffffff;
-				span {
-					
-				}
 				&:hover {
 					border: 1px solid #454545;
 				}

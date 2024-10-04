@@ -1,8 +1,10 @@
+import styles from "./styles.module.scss";
+import { getCustomStyles } from "./customStyles";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import styles from "./styles.module.scss";
 
 export default function Section003() {
+	const customStyles = getCustomStyles();
 	const [isActive, setIsActive] = useState(true);
 	const baseUrl = "https://www.example.com";
 	const [fadeId, setFadeId] = useState(0);
@@ -12,10 +14,27 @@ export default function Section003() {
 		2: "fade-out",
 	});
 
+	const steps = [
+		{
+			title: "01. Save Time To Treatment",
+			content:
+				"Enable your cancer journeys with personalised care and support",
+		},
+		{
+			title: "02. Save Money",
+			content: "Enhance your well-being with unlimited discounts",
+		},
+		{
+			title: "03. Holistic Healing",
+			content:
+				"Elevate your cancer journeys with exclusive care, and holistic coverage",
+		},
+	];
+
 	useEffect(() => {
 		const timer = setInterval(() => {
 			updateFade();
-		}, 3000); // Change the interval timing as needed
+		}, 3000);
 
 		return () => clearInterval(timer);
 	}, [fadeId]);
@@ -36,7 +55,10 @@ export default function Section003() {
 	return (
 		<>
 			<div className={styles["walk-with-us-home"]}>
-				<div className={styles["walk-with-us"]}>
+				<div
+					className={styles["walk-with-us"]}
+					style={customStyles.container}
+				>
 					<div className={styles["walk_us_img"]}>
 						<Image
 							src="/images/cm/walk_with_us.jpg"
@@ -63,44 +85,25 @@ export default function Section003() {
 					<h2>
 						Step into <span>Recovery</span>
 					</h2>
-					<div className={styles["plan-journey"]}>
-						<div
-							className={`${styles.step} ${styles[stepFade[0]]}`}
-						>
-							<ul>
-								<li>01. &nbsp;Save Time To Treatment</li>
-							</ul>
-							<p className={styles.para}>
-								Enable your cancer journeys with personalised
-								care and support
-							</p>
-						</div>
-						<div
-							className={`${styles.step} ${styles[stepFade[1]]}`}
-						>
-							<ul>
-								<li>02. &nbsp;Save Money</li>
-							</ul>
-							<p className={styles.para}>
-								Enhance your well-being with unlimited discounts
-							</p>
-						</div>
-						<div
-							className={`${styles.step} ${styles[stepFade[2]]}`}
-						>
-							<ul>
-								<li>03. &nbsp;Holistic Healing</li>
-							</ul>
-							<p className={styles.para}>
-								Elevate your cancer journeys with exclusive
-								care, and holistic coverage
-							</p>
-						</div>
-					</div>
-					<a
-						href={`${baseUrl}/info`}
-						className={styles["know-more"]}
+					<div
+						className={styles["plan-journey"]}
+						style={customStyles.planJourney}
 					>
+						{steps.map((step, index) => (
+							<div
+								key={index}
+								className={`${styles.step} ${styles[stepFade[index]]}`}
+							>
+								<p className={styles["card-title"]}>
+									{step.title}
+								</p>
+								<p className={styles["card-content"]}>
+									{step.content}
+								</p>
+							</div>
+						))}
+					</div>
+					<a href={`${baseUrl}/info`} className={styles["know-more"]}>
 						<span>Know More</span>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -194,5 +197,3 @@ export default function Section003() {
 		</>
 	);
 }
-
-//saved 1
