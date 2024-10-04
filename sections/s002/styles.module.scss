@@ -1,4 +1,36 @@
-@import "./mixins";
+@import "/app/configs/mixins/mixins";
+
+// ===================================
+// Mixins
+// ===================================
+
+@mixin title-text-s002 {
+	font-family: $titleFont;
+	font-size: 30px;
+	font-weight: 600;
+	color: $blackSecondary;
+	line-height: $lineHeight;
+}
+
+@mixin body-text-s002 {
+	@media #{$desktop} {
+		font-size: 16px;
+		font-weight: 500;
+		color: $blackSecondary;
+		line-height: $lineHeight;
+	}
+}
+
+@mixin secondary-text-s002 {
+	font-size: 16px;
+	font-weight: 500;
+	color: #656565;
+	line-height: 1.4;
+}
+
+// ===================================
+// Styles
+// ===================================
 
 .youtube_home {
 	padding: 38px 24px 20px;
