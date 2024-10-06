@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { StoreProvider } from "./StoreProvider";
 import "./configs/globalStyles.scss";
 import { montserrat, manrope } from "./configs/fonts";
 
@@ -13,10 +14,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${montserrat.variable} ${manrope.variable}`}>
-				{children}
-			</body>
-		</html>
+		<StoreProvider>
+			<html lang="en">
+				<body className={`${montserrat.variable} ${manrope.variable}`}>
+					{children}
+				</body>
+			</html>
+		</StoreProvider>
 	);
 }
