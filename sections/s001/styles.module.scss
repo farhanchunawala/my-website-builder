@@ -5,7 +5,7 @@
 // ===================================
 
 @mixin headline-text-s001 {
-	font-family: $titleFont;
+	font-family: $fontTitle;
 	font-size: 20px;
 	font-weight: 700;
 	color: $blackPrimary;
@@ -20,7 +20,7 @@
 }
 
 @mixin accent-text-s001 {
-	font-family: $titleFont;
+	font-family: $fontTitle;
 	font-size: 14px;
 	color: $blackPrimary;
 

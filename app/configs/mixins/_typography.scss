@@ -2,15 +2,30 @@
 // Mixins for Headings
 // ===================================
 
-@mixin section-heading-text($color: $blackPrimary) {
-	font-family: $titleFont;
+@mixin section-heading-text($color: $blackPrimary, $spanColor: $brandColor1) {
+	font-family: $fontTitle;
 	font-size: 18px;
 	font-weight: 600;
-	// color: $color;
-	color: $blackSecondary;
+	letter-spacing: 0.02em;
+	color: $color;
+	span {
+		color: $spanColor;
+	}
 
 	@media #{$desktop} {
 		font-size: 30px;
+	}
+}
+
+@mixin section-subheading-text($color: $blackSecondary) {
+	font-family: $fontPrimary;
+	font-size: 12px;
+	font-weight: 500;
+	color: $color;
+	line-height: $lineHeight;
+
+	@media #{$desktop} {
+		font-size: 18px;
 	}
 }
 
@@ -25,7 +40,7 @@
 // ===================================
 
 @mixin button-text1 {
-	font-family: $titleFont;
+	font-family: $fontTitle;
 	font-size: 16px;
 	font-weight: 600;
 

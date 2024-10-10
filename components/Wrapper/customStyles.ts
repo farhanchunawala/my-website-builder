@@ -7,11 +7,6 @@ export const getCustomStyles = () => {
 	const { isTablet, isDesktop } = useSelector((state: RootState) => state.responsive);
 
 	return {
-		title: {},
-		subtitle: {
-			marginTop: isTablet || isDesktop ? "8px" : "2px",
-		},
-		cards: {},
-		card: {},
+		
 	};
 };

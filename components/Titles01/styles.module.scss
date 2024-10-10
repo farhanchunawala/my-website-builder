@@ -12,6 +12,13 @@
 // Styles
 // ===================================
 
-.s004 {
-	
+.titles {
+	.title {
+		@include section-heading-text;
+		text-align: center;
+	}
+	.subtitle {
+		@include section-subheading-text;
+		text-align: center;
+	}
 }

@@ -12,6 +12,12 @@
 // Styles
 // ===================================
 
-.s004 {
-	
+.cardGrid {
+	padding: 14px 0 12px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	.card {
+		
+	}
 }

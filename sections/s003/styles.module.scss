@@ -9,7 +9,7 @@
 // ===================================
 
 @mixin heading-text-s003 {
-	font-family: $titleFont;
+	font-family: $fontTitle;
 	font-size: 40px;
 	font-weight: 600;
 	color: $blackSecondary;
@@ -22,7 +22,7 @@
 }
 
 @mixin display-text-s003 {
-	font-family: $titleFont;
+	font-family: $fontTitle;
 	font-size: 22px;
 	font-weight: 500;
 	color: #fff;
@@ -39,7 +39,7 @@
 }
 
 @mixin card-title-text-s003 {
-	font-family: $titleFont;
+	font-family: $fontTitle;
 	font-size: 14px;
 	font-weight: 600;
 	color: $blackPrimary;
@@ -71,7 +71,7 @@
 }
 
 @mixin cta-text2-s003 {
-	font-family: $titleFont;
+	font-family: $fontTitle;
 	font-size: 16px;
 	font-weight: 500;
 	color: $blackSecondary;
