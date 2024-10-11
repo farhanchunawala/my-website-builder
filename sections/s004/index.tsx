@@ -1,22 +1,44 @@
-import styles from "./styles.module.scss";
-import Titles from "@/components/Titles01";
+import "./styles.scss";
+import { getCustomStyles } from "./customStyles";
+import TitleAndText from "@/components/TitleAndText01";
 import CardGrid from "@/components/CardGrid01";
 
 const obj = {
-	titles: {
-		title: `Our <span>Services</span>`,
-		subtitle: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-	},
-	cards: {
-		
+    titleAndText: {
+        title: `Our <span>Services</span>`,
+        subtitle: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+    },
+	CardGrid: {
+		cards: [
+			{
+				icon: "svg1.svg",
+			},
+			{
+				icon: "svg2.svg",
+			},
+			{
+				icon: "svg3.svg",
+			},
+			{
+				icon: "svg4.svg",
+			},
+			{
+				icon: "svg5.svg",
+			},
+			{
+				icon: "svg6.svg",
+			},
+		],
 	}
 };
 
 export default function Section004() {
+    const styles = getCustomStyles();
+
     return (
-        <div className={styles.s004}>
-			<Titles content={obj.titles} />
-			<CardGrid content={obj.cards} />
+        <div className="s004" style={styles.container}>
+            <TitleAndText content={obj.titleAndText} style={styles.titles} />
+            <CardGrid content={obj.CardGrid} style={styles.cardGrid} />
         </div>
     );
 }

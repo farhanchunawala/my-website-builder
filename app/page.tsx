@@ -8,9 +8,9 @@ import Section004 from "../sections/s004";
 export default function Home() {
 	return (
 		<div className={styles.page}>
-			<Section001 />
-			<Section002 />
-			<Section003 />
+			{/* <Section001 /> */}
+			{/* <Section002 /> */}
+			{/* <Section003 /> */}
 			<Section004 />
 		</div>
 	);

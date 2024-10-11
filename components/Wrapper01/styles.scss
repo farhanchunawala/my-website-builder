@@ -12,3 +12,15 @@
 // Styles
 // ===================================
 
+.wrapper01 {
+	&.flexCenter {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	&.noFlex {
+		flex-shrink: 0;
+		flex-grow: 0;
+	}
+}

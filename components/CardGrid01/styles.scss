@@ -12,12 +12,15 @@
 // Styles
 // ===================================
 
-.cardGrid {
-	padding: 14px 0 12px;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
-	.card {
-		
-	}
+.cardGrid01 {
+    display: flex;
+    flex-wrap: wrap;
+
+    .text {
+        font-family: $fontPrimary;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 14.63px;
+        text-align: center;
+    }
 }
