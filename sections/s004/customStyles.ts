@@ -10,13 +10,16 @@ export const getCustomStyles = () => {
 
     return {
         container: {
+			maxWidth: "900px",
             margin: isTablet || isDesktop ? "0 auto" : "0 16px",
         },
-        titles: {
+        textBlock: {
 			container: {},
             title: {},
             subtitle: {
                 marginTop: isTablet || isDesktop ? "8px" : "2px",
+				maxWidth: "650px",
+				margin: "0 auto",
             },
         },
         cardGrid: {
@@ -31,7 +34,20 @@ export const getCustomStyles = () => {
                 height: isTablet || isDesktop ? "186px" : "96px",
                 flexBasis: `calc((100% - ${gap} * 2) / 3)`,
             },
-			heading: {},
+			textBlock: {},
         },
     };
 };
+
+export const className = {
+	textBlock: {
+		title: "sectionHeadingText",
+		subtitle: "sectionSubheadingText",
+	},
+	cardGrid: {
+		textBlock: {
+			title: "sectionHeadingText",
+			subtitle: "sectionSubheadingText",
+		}
+	}
+}

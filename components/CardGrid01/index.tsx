@@ -1,10 +1,11 @@
 import Image from "next/image";
 import "./styles.scss";
-import Wrapper from "../Wrapper01";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
+import Wrapper from "../Wrapper01";
+import TextBlock from "@/components/TextBlock01";
 
-export default function CardGrid({ content, style }) {
+export default function CardGrid({ content, className, style }) {
     const { isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -26,7 +27,11 @@ export default function CardGrid({ content, style }) {
                         width={iconWidth}
                         height={iconHeight}
                     />
-					<div className="text" style={style.text}>Medical Stay</div>
+                    <TextBlock
+                        content={card.textBlock}
+						className={className.textBlock}
+                        style={style.textBlock}
+                    />
                 </Wrapper>
             ))}
         </div>

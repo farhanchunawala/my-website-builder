@@ -2,12 +2,15 @@
 // Mixins for Headings
 // ===================================
 
-@mixin section-heading-text($color: $blackPrimary, $spanColor: $brandColor1) {
+$headingColor: $blackPrimary;
+$spanColor: $brandColor1;
+
+.sectionHeadingText {
 	font-family: $fontTitle;
 	font-size: 18px;
 	font-weight: 600;
 	letter-spacing: 0.02em;
-	color: $color;
+	color: $headingColor;
 	span {
 		color: $spanColor;
 	}
@@ -17,11 +20,13 @@
 	}
 }
 
-@mixin section-subheading-text($color: $blackSecondary) {
+$subheadingColor: $blackSecondary;
+
+.sectionSubheadingText {
 	font-family: $fontPrimary;
 	font-size: 12px;
 	font-weight: 500;
-	color: $color;
+	color: $subheadingColor;
 	line-height: $lineHeight;
 
 	@media #{$desktop} {
