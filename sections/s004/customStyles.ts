@@ -1,25 +1,27 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
+import tokens from "@/app/configs/tokens";
+import { CustomStyles, Styles, TextStyles } from "./styles.types";
 
-export const getCustomStyles = () => {
+export const getCustomStyles = (): CustomStyles => {
     const { isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
 
-	const gap = isTablet || isDesktop ? "24px" : "8px";
+    const gap = isTablet || isDesktop ? "24px" : "8px";
 
-    return {
+    const styles: Styles = {
         container: {
-			maxWidth: "900px",
+            maxWidth: "900px",
             margin: isTablet || isDesktop ? "0 auto" : "0 16px",
         },
         textBlock: {
-			container: {},
+            container: {},
             title: {},
             subtitle: {
                 marginTop: isTablet || isDesktop ? "8px" : "2px",
-				maxWidth: "650px",
-				margin: "0 auto",
+                maxWidth: "650px",
+                margin: "0 auto",
             },
         },
         cardGrid: {
@@ -30,24 +32,29 @@ export const getCustomStyles = () => {
             },
             card: {
                 backgroundColor: "#E5EDEE",
-                // width: isTablet || isDesktop ? "280px" : "104px",
                 height: isTablet || isDesktop ? "186px" : "96px",
                 flexBasis: `calc((100% - ${gap} * 2) / 3)`,
             },
-			textBlock: {},
+            textBlock: {},
         },
     };
-};
 
-export const className = {
-	textBlock: {
-		title: "sectionHeadingText",
-		subtitle: "sectionSubheadingText",
-	},
-	cardGrid: {
-		textBlock: {
-			title: "sectionHeadingText",
-			subtitle: "sectionSubheadingText",
-		}
-	}
-}
+    const textStyles: TextStyles = {
+        titleText: {
+            fontFamily: tokens.fonts.title,
+            fontSize: isTablet || isDesktop ? "30px" : "18px",
+            fontWeight: 600,
+            letterSpacing: "0.02em",
+            color: tokens.colors.blackPrimary,
+        },
+        subtitleText: {
+            fontFamily: tokens.fonts.primary,
+            fontSize: isTablet || isDesktop ? "18px" : "12px",
+            fontWeight: 500,
+            color: tokens.colors.blackSecondary,
+            lineHeight: tokens.lineHeight,
+        },
+    };
+
+    return { styles, textStyles };
+};

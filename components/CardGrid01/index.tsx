@@ -5,7 +5,12 @@ import { RootState } from "@/lib/store";
 import Wrapper from "../Wrapper01";
 import TextBlock from "@/components/TextBlock01";
 
-export default function CardGrid({ content, className, style }) {
+export default function CardGrid({
+    content,
+    className = {},
+    style,
+    textStyles,
+}) {
     const { isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -29,8 +34,8 @@ export default function CardGrid({ content, className, style }) {
                     />
                     <TextBlock
                         content={card.textBlock}
-						className={className.textBlock}
                         style={style.textBlock}
+                        textStyles={textStyles}
                     />
                 </Wrapper>
             ))}
