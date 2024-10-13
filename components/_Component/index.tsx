@@ -1,9 +1,23 @@
-import styles from "./styles.module.scss";
+import "./styles.module.scss";
 
-export default function Component({ content, customStyle }) {
+interface ComponentProps {
+	content?: {};
+	style?: {
+        container?: React.CSSProperties;
+	};
+	textStyles?: {};
+}
+
+const ComponentName: React.FC<ComponentProps> = ({
+    content = {},
+    style = {},
+    textStyles = {},
+}) => {
 	return (
-		<div style={customStyle}>
+		<div className="componentName" style={style.container}>
 			
 		</div>
 	);
 }
+
+export default ComponentName;
