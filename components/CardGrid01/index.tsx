@@ -5,12 +5,35 @@ import { RootState } from "@/lib/store";
 import Wrapper from "../Wrapper01";
 import TextBlock from "@/components/TextBlock01";
 
-export default function CardGrid({
+interface ComponentProps {
+	content: {
+		cards: {
+			icon: string;
+			textBlock: {
+				title: string;
+				subtitle: string;
+				content: string;
+			};
+		}[];
+	};
+	style: {
+        container: React.CSSProperties;
+		card: React.CSSProperties;
+		icon: React.CSSProperties;
+		textBlock: {
+			title: React.CSSProperties;
+			subtitle: React.CSSProperties;
+			content: React.CSSProperties;
+		};
+	};
+	textStyles: object;
+}
+
+const CardGrid: React.FC<ComponentProps> = ({
     content,
-    className = {},
     style,
     textStyles,
-}) {
+}) => {
     const { isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -44,3 +67,5 @@ export default function CardGrid({
         </div>
     );
 }
+
+export default CardGrid;

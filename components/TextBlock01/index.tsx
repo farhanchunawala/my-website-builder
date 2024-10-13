@@ -1,15 +1,11 @@
 import "./styles.scss";
 import DOMPurify from "dompurify";
 
-interface TextBlockProps {
-    content?: {
-        title?: string;
+interface ComponentProps {
+    content: {
+        title: string;
         subtitle?: string;
 		content?: string;
-    };
-    className?: {
-        title?: string;
-        subtitle?: string;
     };
     style?: {
         container?: React.CSSProperties;
@@ -24,9 +20,8 @@ interface TextBlockProps {
     };
 }
 
-const TextBlock: React.FC<TextBlockProps> = ({
-    content = {},
-    className = {},
+const TextBlock: React.FC<ComponentProps> = ({
+    content,
     style = {},
     textStyles = {},
 }) => {
