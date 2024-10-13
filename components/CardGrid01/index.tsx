@@ -27,6 +27,8 @@ export default function CardGrid({
                     key={index}
                 >
                     <Image
+						className="icon"
+						style={style.icon}
                         src={`/images/cm/${card.icon}`}
                         alt="icon"
                         width={iconWidth}

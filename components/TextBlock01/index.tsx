@@ -16,8 +16,8 @@ interface TextBlockProps {
         subtitle?: React.CSSProperties;
     };
     textStyles?: {
-        titleText?: React.CSSProperties;
-        subtitleText?: React.CSSProperties;
+        title?: React.CSSProperties;
+        subtitle?: React.CSSProperties;
     };
 }
 
@@ -29,18 +29,24 @@ const TextBlock: React.FC<TextBlockProps> = ({
 }) => {
     return (
         <div className="textBlock01" style={style.container}>
-            <h1
-                className={`title ${className.title}`}
-                style={{ ...style.title, ...textStyles.titleText }}
+            <h2
+                className="title"
+                style={{ ...style.title, ...textStyles.title }}
                 dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(content.title),
                 }}
             />
             <p
-                className={`subtitle ${className.subtitle}`}
-                style={{ ...style.subtitle, ...textStyles.subtitleText }}
+                className="subtitle"
+                style={{ ...style.subtitle, ...textStyles.subtitle }}
             >
                 {content.subtitle}
+            </p>
+			<p
+                className="content"
+                style={{ ...style.content, ...textStyles.content }}
+            >
+                {content.content}
             </p>
         </div>
     );

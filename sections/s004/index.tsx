@@ -18,7 +18,7 @@ const Section004: React.FC = () => {
             <CardGrid
                 content={content.CardGrid}
                 style={styles.cardGrid}
-				textStyles={textStyles}
+				textStyles={textStyles.cardGrid}
             />
         </div>
     );

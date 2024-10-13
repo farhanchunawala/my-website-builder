@@ -9,6 +9,7 @@ const tokens = {
 		tertiary: "#2d255e",
 		blackPrimary: "#252525",
 		blackSecondary: "#454545",
+		blackTertiary: "#656565",
 	},
 	lineHeight: "normal",
 }

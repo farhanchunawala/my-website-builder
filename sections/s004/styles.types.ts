@@ -1,50 +1,16 @@
 export interface Styles {
-    container: {
-        maxWidth: string;
-        margin: string;
-    };
-    textBlock: {
-        container: Record<string, unknown>;
-        title: Record<string, unknown>;
-        subtitle: {
-            marginTop: string;
-            maxWidth: string;
-            margin: string;
-        };
-    };
-    cardGrid: {
-        container: {
-            marginTop: string;
-            marginBottom: string;
-            gap: string;
-        };
-        card: {
-            backgroundColor: string;
-            height: string;
-            flexBasis: string;
-        };
-        textBlock: Record<string, unknown>;
-    };
+    container?: React.CSSProperties;
+    textBlock?: object;
+    cardGrid?: object;
 }
 
 export interface TextStyles {
-    titleText: {
-        fontFamily: string;
-        fontSize: string;
-        fontWeight: number;
-        letterSpacing: string;
-        color: string;
-    };
-    subtitleText: {
-        fontFamily: string;
-        fontSize: string;
-        fontWeight: number;
-        color: string;
-        lineHeight: string;
-    };
+    title?: React.CSSProperties;
+    subtitle?: React.CSSProperties;
+	content?: React.CSSProperties;
+	cardGrid?: object;
 }
 
-// Return type for the function
 export interface CustomStyles {
     styles: Styles;
     textStyles: TextStyles;

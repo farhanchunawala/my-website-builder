@@ -23,6 +23,9 @@ export const getCustomStyles = (): CustomStyles => {
                 maxWidth: "650px",
                 margin: "0 auto",
             },
+            content: {
+                display: "none",
+            },
         },
         cardGrid: {
             container: {
@@ -34,25 +37,68 @@ export const getCustomStyles = (): CustomStyles => {
                 backgroundColor: "#E5EDEE",
                 height: isTablet || isDesktop ? "186px" : "96px",
                 flexBasis: `calc((100% - ${gap} * 2) / 3)`,
+                padding: isTablet || isDesktop ? "0 18px" : "0",
             },
-            textBlock: {},
+            icon: {
+                alignSelf: isTablet || isDesktop ? "start" : "center",
+            },
+            textBlock: {
+                container: {},
+                title: {
+                    marginTop: isTablet || isDesktop ? "14px" : "6px",
+                    textAlign: "left",
+                },
+                subtitle: {
+                    display: isTablet || isDesktop ? "" : "none",
+                    textAlign: "left",
+                    marginTop: "4px",
+                },
+                content: {
+                    display: isTablet || isDesktop ? "" : "none",
+                    textAlign: "left",
+                    marginTop: "8px",
+                },
+            },
         },
     };
 
     const textStyles: TextStyles = {
-        titleText: {
+        title: {
             fontFamily: tokens.fonts.title,
             fontSize: isTablet || isDesktop ? "30px" : "18px",
             fontWeight: 600,
             letterSpacing: "0.02em",
             color: tokens.colors.blackPrimary,
         },
-        subtitleText: {
+        subtitle: {
             fontFamily: tokens.fonts.primary,
             fontSize: isTablet || isDesktop ? "18px" : "12px",
             fontWeight: 500,
             color: tokens.colors.blackSecondary,
             lineHeight: tokens.lineHeight,
+        },
+        cardGrid: {
+            title: {
+                fontFamily: tokens.fonts.primary,
+                fontSize: isTablet || isDesktop ? "18px" : "12px",
+                fontWeight: 600,
+                lineHeight: tokens.lineHeight,
+                color: tokens.colors.blackPrimary,
+            },
+            subtitle: {
+                fontFamily: tokens.fonts.primary,
+                fontSize: "12px",
+                fontWeight: 500,
+                lineHeight: tokens.lineHeight,
+                color: tokens.colors.blackSecondary,
+            },
+            content: {
+                fontFamily: tokens.fonts.primary,
+                fontSize: "11px",
+                fontWeight: 500,
+                lineHeight: tokens.lineHeight,
+                color: tokens.colors.blackTertiary,
+            },
         },
     };
 
