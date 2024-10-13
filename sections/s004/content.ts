@@ -1,21 +1,4 @@
-interface Content {
-    textBlock: {
-        title: string;
-        subtitle: string;
-    };
-    CardGrid: {
-        cards: {
-            icon: string;
-            textBlock: {
-                title: string;
-                subtitle: string;
-                content: string;
-            };
-        }[];
-    };
-}
-
-const content: Content = {
+const content = {
     textBlock: {
         title: `Our <span>Services</span>`,
         subtitle: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,

@@ -5,6 +5,7 @@ interface TextBlockProps {
     content?: {
         title?: string;
         subtitle?: string;
+		content?: string;
     };
     className?: {
         title?: string;
@@ -14,10 +15,12 @@ interface TextBlockProps {
         container?: React.CSSProperties;
         title?: React.CSSProperties;
         subtitle?: React.CSSProperties;
+		content?: React.CSSProperties;
     };
     textStyles?: {
         title?: React.CSSProperties;
         subtitle?: React.CSSProperties;
+		content?: React.CSSProperties;
     };
 }
 

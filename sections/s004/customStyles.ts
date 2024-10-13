@@ -1,16 +1,15 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import tokens from "@/app/configs/tokens";
-import { CustomStyles, Styles, TextStyles } from "./styles.types";
 
-export const getCustomStyles = (): CustomStyles => {
+export const getCustomStyles = () => {
     const { isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
 
     const gap = isTablet || isDesktop ? "24px" : "8px";
 
-    const styles: Styles = {
+    const styles = {
         container: {
             maxWidth: "900px",
             margin: isTablet || isDesktop ? "0 auto" : "0 16px",
@@ -62,7 +61,7 @@ export const getCustomStyles = (): CustomStyles => {
         },
     };
 
-    const textStyles: TextStyles = {
+    const textStyles = {
         title: {
             fontFamily: tokens.fonts.title,
             fontSize: isTablet || isDesktop ? "30px" : "18px",

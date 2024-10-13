@@ -1,9 +1,10 @@
 import "./styles.module.scss";
 import { getCustomStyles } from "./customStyles";
 import content from "./content";
-import { CustomStyles } from "./styles.types";
 
-const Section0: React.FC = () => {
+const Section0 = () => {
+    const { styles, textStyles } = getCustomStyles();
+	
 	return (
 		<div className="s0" style={styles.container}>
 			

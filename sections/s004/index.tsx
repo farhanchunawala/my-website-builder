@@ -1,12 +1,11 @@
 import "./styles.scss";
 import { getCustomStyles } from "./customStyles";
 import content from "./content";
-import { CustomStyles } from "./styles.types";
 import TextBlock from "@/components/TextBlock01";
 import CardGrid from "@/components/CardGrid01";
 
-const Section004: React.FC = () => {
-    const { styles, textStyles }: CustomStyles = getCustomStyles();
+const Section004 = () => {
+    const { styles, textStyles } = getCustomStyles();
 
     return (
         <div className="s004" style={styles.container}>
