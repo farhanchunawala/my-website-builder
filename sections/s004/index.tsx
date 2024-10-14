@@ -11,6 +11,7 @@ const Section004 = () => {
     return (
         <div className="s004" style={styles.container}>
             <TextBlock
+				headingLevel="h2"
                 content={content.textBlock}
                 style={styles.textBlock}
                 textStyles={textStyles}

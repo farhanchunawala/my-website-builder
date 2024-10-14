@@ -6,26 +6,22 @@ import Wrapper from "../Wrapper01";
 import TextBlock from "@/components/TextBlock01";
 
 interface ComponentProps {
-	content: {
-		cards: {
-			icon: string;
-			textBlock: object;
-		}[];
-	};
-	style: {
+    content: {
+        cards: {
+            icon: string;
+            textBlock: object;
+        }[];
+    };
+    style: {
         container: React.CSSProperties;
-		card: React.CSSProperties;
-		icon: React.CSSProperties;
-		textBlock: object;
-	};
-	textStyles: object;
+        card: React.CSSProperties;
+        icon: React.CSSProperties;
+        textBlock: object;
+    };
+    textStyles: object;
 }
 
-const CardGrid: React.FC<ComponentProps> = ({
-    content,
-    style,
-    textStyles,
-}) => {
+const CardGrid: React.FC<ComponentProps> = ({ content, style, textStyles }) => {
     const { isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -42,14 +38,15 @@ const CardGrid: React.FC<ComponentProps> = ({
                     key={index}
                 >
                     <Image
-						className="icon"
-						style={style.icon}
+                        className="icon"
+                        style={style.icon}
                         src={`/images/cm/${card.icon}`}
                         alt="icon"
                         width={iconWidth}
                         height={iconHeight}
                     />
                     <TextBlock
+                        headingLevel="h3"
                         content={card.textBlock}
                         style={style.textBlock}
                         textStyles={textStyles}
@@ -58,6 +55,6 @@ const CardGrid: React.FC<ComponentProps> = ({
             ))}
         </div>
     );
-}
+};
 
 export default CardGrid;
