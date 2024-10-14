@@ -1,7 +1,8 @@
-import "./styles.module.scss";
+import "./styles.scss";
 
 interface ComponentProps {
 	content?: {};
+	className?: string;
 	style?: {
         container?: React.CSSProperties;
 	};
@@ -10,6 +11,7 @@ interface ComponentProps {
 
 const ComponentName: React.FC<ComponentProps> = ({
     content = {},
+	className = "",
     style = {},
     textStyles = {},
 }) => {

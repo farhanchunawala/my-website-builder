@@ -3,7 +3,7 @@ const content = {
         title: `Our <span>Services</span>`,
         subtitle: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
     },
-    CardGrid: {
+    cardGrid: {
         cards: [
             {
                 icon: "svg1.svg",
@@ -55,6 +55,9 @@ const content = {
             },
         ],
     },
+	button: {
+		text: `Explore More`,
+	},
 };
 
 export default content;

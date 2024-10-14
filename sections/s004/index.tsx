@@ -3,6 +3,7 @@ import { getCustomStyles } from "./customStyles";
 import content from "./content";
 import TextBlock from "@/components/TextBlock01";
 import CardGrid from "@/components/CardGrid01";
+import Button from "@/elements/Button01";
 
 const Section004 = () => {
     const { styles, textStyles } = getCustomStyles();
@@ -15,10 +16,15 @@ const Section004 = () => {
                 textStyles={textStyles}
             />
             <CardGrid
-                content={content.CardGrid}
+                content={content.cardGrid}
                 style={styles.cardGrid}
 				textStyles={textStyles.cardGrid}
             />
+			<Button
+				content={content.button}
+				style={styles.button}
+				textStyles={textStyles.button}
+			/>
         </div>
     );
 }

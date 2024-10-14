@@ -3,9 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const getDeviceType = () => {
 	const isTablet = window.matchMedia(
-		"(min-width: 576px) and (max-width: 1023px)"
+		"(min-width: 576px) and (max-width: 991px)"
 	).matches;
-	const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+	const isDesktop = window.matchMedia("(min-width: 992px)").matches;
 
 	return { isMobile: !isTablet && !isDesktop, isTablet, isDesktop };
 };

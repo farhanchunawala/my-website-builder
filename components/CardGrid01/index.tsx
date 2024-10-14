@@ -9,22 +9,14 @@ interface ComponentProps {
 	content: {
 		cards: {
 			icon: string;
-			textBlock: {
-				title: string;
-				subtitle: string;
-				content: string;
-			};
+			textBlock: object;
 		}[];
 	};
 	style: {
         container: React.CSSProperties;
 		card: React.CSSProperties;
 		icon: React.CSSProperties;
-		textBlock: {
-			title: React.CSSProperties;
-			subtitle: React.CSSProperties;
-			content: React.CSSProperties;
-		};
+		textBlock: object;
 	};
 	textStyles: object;
 }

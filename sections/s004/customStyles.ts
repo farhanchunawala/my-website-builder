@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import tokens from "@/app/configs/tokens";
 
+type TextAlign = 'left' | 'right' | 'center' | 'justify';
+
 export const getCustomStyles = () => {
     const { isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
@@ -34,7 +36,7 @@ export const getCustomStyles = () => {
             },
             card: {
                 backgroundColor: "#E5EDEE",
-                height: isTablet || isDesktop ? "186px" : "96px",
+				aspectRatio: isTablet || isDesktop ? "4 / 3" : "1 / 1",
                 flexBasis: `calc((100% - ${gap} * 2) / 3)`,
                 padding: isTablet || isDesktop ? "0 18px" : "0",
             },
@@ -45,20 +47,28 @@ export const getCustomStyles = () => {
                 container: {},
                 title: {
                     marginTop: isTablet || isDesktop ? "14px" : "6px",
-                    textAlign: "left",
+                    textAlign: isTablet || isDesktop ? "left" : "center" as TextAlign,
                 },
                 subtitle: {
                     display: isTablet || isDesktop ? "" : "none",
-                    textAlign: "left",
+                    textAlign:  isTablet || isDesktop ? "left" : "center" as TextAlign,
                     marginTop: "4px",
                 },
                 content: {
                     display: isTablet || isDesktop ? "" : "none",
-                    textAlign: "left",
+                    textAlign:  isTablet || isDesktop ? "left" : "center" as TextAlign,
                     marginTop: "8px",
                 },
             },
         },
+		button: {
+			container: {
+				display: isTablet || isDesktop ? "none" : "",
+				marginTop: "12px",
+				height: "40px",
+				borderRadius: "6px"
+			},
+		},
     };
 
     const textStyles = {
@@ -76,6 +86,7 @@ export const getCustomStyles = () => {
             color: tokens.colors.blackSecondary,
             lineHeight: tokens.lineHeight,
         },
+		content: {},
         cardGrid: {
             title: {
                 fontFamily: tokens.fonts.primary,
@@ -99,6 +110,11 @@ export const getCustomStyles = () => {
                 color: tokens.colors.blackTertiary,
             },
         },
+		button: {
+			fontFamily: tokens.fonts.title,
+			fontSize: "14px",
+			fontWeight: 600,
+		}
     };
 
     return { styles, textStyles };

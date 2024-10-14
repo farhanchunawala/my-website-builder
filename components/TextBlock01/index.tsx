@@ -7,13 +7,13 @@ interface ComponentProps {
         subtitle?: string;
 		content?: string;
     };
-    style?: {
+    style: {
         container?: React.CSSProperties;
         title?: React.CSSProperties;
         subtitle?: React.CSSProperties;
 		content?: React.CSSProperties;
     };
-    textStyles?: {
+    textStyles: {
         title?: React.CSSProperties;
         subtitle?: React.CSSProperties;
 		content?: React.CSSProperties;
