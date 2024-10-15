@@ -12,3 +12,13 @@
 // Styles
 // ===================================
 
+.textBlock02 {
+	.title {
+		// @extend .sectionHeadingText;
+		text-align: center;
+	}
+	.subtitle {
+		// @extend .sectionSubheadingText;
+		text-align: center;
+	}
+}

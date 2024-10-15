@@ -2,8 +2,8 @@ import "./styles.scss";
 
 interface ComponentProps {
 	content?: {};
-	className?: string;
-	style?: {
+	classNames?: string;
+	styles?: {
         container?: React.CSSProperties;
 	};
 	textStyles?: {};
@@ -11,12 +11,12 @@ interface ComponentProps {
 
 const ComponentName: React.FC<ComponentProps> = ({
     content = {},
-	className = "",
-    style = {},
+	classNames = "",
+    styles = {},
     textStyles = {},
 }) => {
 	return (
-		<div className="componentName" style={style.container}>
+		<div className="componentName" style={container}>
 			
 		</div>
 	);

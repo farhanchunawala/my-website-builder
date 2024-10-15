@@ -1,6 +1,5 @@
 import "./styles.scss";
 import DOMPurify from "dompurify";
-import Text from "@/elements/Text01";
 
 interface ComponentProps {
     headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
@@ -33,22 +32,10 @@ const TextBlock: React.FC<ComponentProps> = ({
     const HeadingTag = headingLevel;
 
     return (
-        <div className="textBlock01" style={container}>
-			<Text
-				content={content.title}
-				styles={styles.title}
-				textStyles={textStyles.title}
-				isHtml
-			/>
-			<Text
-				content={content.subtitle}
-				styles={styles.subtitle}
-				textStyles={textStyles.subtitle}
-			/>
-			
-            {/* <HeadingTag
+        <div className="textBlock02" style={styles.container}>
+            <HeadingTag
                 className="title"
-                style={{ ...title, ...textStyles.title }}
+                styles={{ ...styles.title, ...textStyles.title }}
                 {...(!isHtml
                     ? { children: content.title }
                     : {
@@ -59,16 +46,16 @@ const TextBlock: React.FC<ComponentProps> = ({
             />
             <p
                 className="subtitle"
-                styles={{ ...subtitle, ...textStyles.subtitle }}
+                styles={{ ...styles.subtitle, ...textStyles.subtitle }}
             >
                 {content.subtitle}
             </p>
             <p
                 className="content"
-                styles={{ ...content, ...textStyles.content }}
+                styles={{ ...styles.content, ...textStyles.content }}
             >
                 {content.content}
-            </p> */}
+            </p>
         </div>
     );
 };

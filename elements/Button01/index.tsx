@@ -4,8 +4,8 @@ interface ComponentProps {
     content?: {
         text?: string;
     };
-    className?: string;
-    style?: {
+    classNames?: string;
+    styles?: {
         container?: React.CSSProperties;
     };
     textStyles?: React.CSSProperties;
@@ -13,12 +13,12 @@ interface ComponentProps {
 
 const Button: React.FC<ComponentProps> = ({
     content = {},
-    className = "",
-    style = {},
+    classNames = "",
+    styles = {},
     textStyles = {},
 }) => {
     return (
-        <div className="button01" style={{ ...style.container, ...textStyles }}>
+        <div className="button01" style={{ ...styles.container, ...textStyles }}>
             {content.text}
         </div>
     );

@@ -3,17 +3,17 @@ import "./styles.scss";
 
 interface ComponentProps {
     children?: ReactNode;
-    className?: string;
-    style?: React.CSSProperties;
+    classNames?: string;
+    styles?: React.CSSProperties;
 }
 
 const Wrapper: React.FC<ComponentProps> = ({
     children,
-    className = "",
-    style = {},
+    classNames = "",
+    styles = {},
 }) => {
     return (
-        <div className={`wrapper01 ${className}`} style={style}>
+        <div className={`wrapper01 ${classNames}`} style={style}>
             {children}
         </div>
     );
