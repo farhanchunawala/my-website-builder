@@ -4,27 +4,11 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import Wrapper from "../Wrapper01";
 import TextBlock from "@/components/TextBlock01";
-
-interface ComponentProps {
-    content: {
-        cards: {
-            icon: string;
-            textBlock: object;
-        }[];
-    };
-    styles: {
-        container: React.CSSProperties;
-        card: React.CSSProperties;
-        icon: React.CSSProperties;
-        textBlock: object;
-    };
-    textStyles: object;
-}
+import { ComponentProps } from "./types";
 
 const CardGrid: React.FC<ComponentProps> = ({
     content,
     styles,
-    textStyles,
 }) => {
     const { isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
@@ -51,8 +35,7 @@ const CardGrid: React.FC<ComponentProps> = ({
                     />
                     <TextBlock
                         content={card.textBlock}
-                        styles={styles.textBlock}
-                        textStyles={textStyles}
+                        styles={styles.textBlock.texts}
                     />
                 </Wrapper>
             ))}

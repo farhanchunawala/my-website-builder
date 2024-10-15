@@ -2,7 +2,7 @@ import "./styles.scss";
 import DOMPurify from "dompurify";
 
 interface ComponentProps {
-	as: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+	tag: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	content?: string;
 	classNames?: string;
 	styles?: React.CSSProperties;
@@ -11,17 +11,17 @@ interface ComponentProps {
 }
 
 const Text: React.FC<ComponentProps> = ({
-	as: as = "p",
+	tag: tag = "p",
     content = "",
 	classNames = "",
     styles = {},
     textStyles = {},
 	isHtml = false,
 }) => {
-    const Tag = as;
+    const Element = tag;
 	
 	return (
-		<Tag
+		<Element
 			className={`text01 ${classNames}`}
 			style={{ ...styles, ...textStyles }}
 			{...(isHtml

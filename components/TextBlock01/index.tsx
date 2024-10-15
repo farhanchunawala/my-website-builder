@@ -1,42 +1,23 @@
 import "./styles.scss";
 import Text from "@/elements/Text01";
+import { TextBlockProps } from "./types";
 
-interface ComponentProps {
-    content: {
-        title?: string;
-        subtitle?: string;
-        content?: string;
-    };
-	classNames?: string;
-    styles: {
-        container?: React.CSSProperties;
-        title?: React.CSSProperties;
-        subtitle?: React.CSSProperties;
-        content?: React.CSSProperties;
-    };
-    textStyles: {
-        title?: React.CSSProperties;
-        subtitle?: React.CSSProperties;
-        content?: React.CSSProperties;
-    };
-}
-
-const TextBlock: React.FC<ComponentProps> = ({
-    content,
-	classNames = "",
+const TextBlock: React.FC<TextBlockProps> = ({
+    content = [],
+    classNames = "",
     styles = {},
-    textStyles = {},
+    config = {},
 }) => {
     return (
         <div className="textBlock01" style={styles.container}>
-            {Object.entries(content).map(([key, value]) => (
+            {content.map((item, index) => (
                 <Text
-                    key={key}
-                    as="p"
-                    content={value}
-					classNames={classNames}
-                    styles={styles[key]}
-                    textStyles={textStyles[key]}
+                    key={index}
+                    tag={config[index]?.tag}
+                    content={item}
+                    classNames={classNames}
+                    styles={styles[index]}
+                    isHtml={config[index]?.isHtml}
                 />
             ))}
         </div>

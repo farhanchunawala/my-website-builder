@@ -1,0 +1,19 @@
+export interface Styles {
+	container: React.CSSProperties;
+	// title?: React.CSSProperties;
+	// subtitle?: React.CSSProperties;
+	// content?: React.CSSProperties;
+}
+
+// export interface TextStyles {
+// 	title?: React.CSSProperties;
+// 	subtitle?: React.CSSProperties;
+// 	content?: React.CSSProperties;
+// }
+
+export interface TextBlockProps {
+    content: string[];
+	classNames?: string;
+    styles: Styles;
+	config?: object;
+}

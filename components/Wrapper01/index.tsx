@@ -2,9 +2,9 @@ import { ReactNode } from "react";
 import "./styles.scss";
 
 interface ComponentProps {
-    children?: ReactNode;
+    children: ReactNode;
     classNames?: string;
-    styles?: React.CSSProperties;
+    styles: React.CSSProperties;
 }
 
 const Wrapper: React.FC<ComponentProps> = ({

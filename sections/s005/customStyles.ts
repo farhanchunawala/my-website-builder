@@ -1,18 +1,22 @@
-import { useSelector } from "react-redux";
-import { RootState } from "@/lib/store";
 import tokens from "@/app/configs/tokens";
-import { Styles } from "../s004/styles.types";
+import { useResponsive } from "@/app/hooks/useResponsive";
+
+type TextAlign = "left" | "right" | "center" | "justify";
 
 export const getCustomStyles = () => {
-    const { isTablet, isDesktop } = useSelector(
-        (state: RootState) => state.responsive
-    );
+	const { responsive } = useResponsive();
 
-	const styles: Styles = {
-		
+	const styles = {
+		container: {
+			margin: responsive("0 16px", "0 auto", "0 auto"),
+			backgroundColor: "#E5EDEE",
+		},
+		textBlock: {
+			
+		}
 	}
 	
-	const textStyles: Styles = {
+	const textStyles = {
 		
 	}
 	

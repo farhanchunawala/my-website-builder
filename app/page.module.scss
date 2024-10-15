@@ -17,6 +17,9 @@
 // 	font-family: var(--font-manrope);
 
 width: 100%;
+display: flex;
+flex-direction: column;
+gap: 20px;
 }
 
 /* @media (prefers-color-scheme: dark) {
