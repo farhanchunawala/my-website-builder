@@ -1,29 +1,30 @@
-import { useSelector } from "react-redux";
-import { RootState } from "@/lib/store";
+// import { useSelector } from "react-redux";
+// import { RootState } from "@/lib/store";
 import tokens from "@/app/configs/tokens";
-import { text } from "stream/consumers";
+import { useResponsive } from "@/app/hooks/useResponsive";
 
-type TextAlign = 'left' | 'right' | 'center' | 'justify';
+type TextAlign = "left" | "right" | "center" | "justify";
 
 export const getCustomStyles = () => {
-    const { isTablet, isDesktop } = useSelector(
-        (state: RootState) => state.responsive
-    );
+    // const { isTablet, isDesktop } = useSelector(
+    //     (state: RootState) => state.responsive
+    // );
+	const { responsive } = useResponsive();
 
-    const gap = isTablet || isDesktop ? "24px" : "8px";
+    const gap = responsive("8px", "24px", "24px");
 
     const styles = {
         container: {
             maxWidth: "900px",
-            margin: isTablet || isDesktop ? "0 auto" : "0 16px",
+            margin: responsive("0 16px", "0 auto", "0 auto"),
         },
         textBlock: {
             container: {},
             title: {
-				textAlign: "center" as TextAlign,
-			},
+                textAlign: "center" as TextAlign,
+            },
             subtitle: {
-                marginTop: isTablet || isDesktop ? "8px" : "2px",
+                marginTop: responsive("2px", "8px", "8px"),
                 maxWidth: "650px",
                 margin: "0 auto",
             },
@@ -39,61 +40,72 @@ export const getCustomStyles = () => {
             },
             card: {
                 backgroundColor: "#E5EDEE",
-				aspectRatio: isTablet || isDesktop ? "4 / 3" : "1 / 1",
+                aspectRatio: responsive("1 / 1", "4 / 3", "4 / 3"),
                 flexBasis: `calc((100% - ${gap} * 2) / 3)`,
-                padding: isTablet || isDesktop ? "0 18px" : "0",
+                padding: responsive("0", "0 18px", "0 18px"),
             },
             icon: {
-                alignSelf: isTablet || isDesktop ? "start" : "center",
+                alignSelf: responsive("center", "start", "start"),
             },
             textBlock: {
                 container: {},
                 title: {
-                    marginTop: isTablet || isDesktop ? "14px" : "6px",
-                    textAlign: isTablet || isDesktop ? "left" : "center" as TextAlign,
+                    marginTop: responsive("6px", "14px", "14px"),
+                    textAlign: responsive(
+                        "center",
+                        "left",
+                        "left"
+                    ) as TextAlign,
                 },
                 subtitle: {
-                    display: isTablet || isDesktop ? "" : "none",
-                    textAlign:  isTablet || isDesktop ? "left" : "center" as TextAlign,
+                    display: responsive("none", "", ""),
+                    textAlign: responsive(
+                        "center",
+                        "left",
+                        "left"
+                    ) as TextAlign,
                     marginTop: "4px",
                 },
                 content: {
-                    display: isTablet || isDesktop ? "" : "none",
-                    textAlign:  isTablet || isDesktop ? "left" : "center" as TextAlign,
+                    display: responsive("none", "", ""),
+                    textAlign: responsive(
+                        "center",
+                        "left",
+                        "left"
+                    ) as TextAlign,
                     marginTop: "8px",
                 },
             },
         },
-		button: {
-			container: {
-				display: isTablet || isDesktop ? "none" : "",
-				marginTop: "12px",
-				height: "40px",
-				borderRadius: "6px"
-			},
-		},
+        button: {
+            container: {
+                display: responsive("", "none", "none"),
+                marginTop: "12px",
+                height: "40px",
+                borderRadius: "6px",
+            },
+        },
     };
 
     const textStyles = {
         title: {
             fontFamily: tokens.fonts.title,
-            fontSize: isTablet || isDesktop ? "30px" : "18px",
+            fontSize: responsive("18px", "30px", "30px"),
             fontWeight: 600,
             letterSpacing: "0.02em",
             color: tokens.colors.blackPrimary,
         },
         subtitle: {
             fontFamily: tokens.fonts.primary,
-            fontSize: isTablet || isDesktop ? "18px" : "12px",
+            fontSize: responsive("12px", "18px", "18px"),
             fontWeight: 500,
             color: tokens.colors.blackSecondary,
             lineHeight: tokens.lineHeight,
         },
-		content: {},
         cardGrid: {
             title: {
                 fontFamily: tokens.fonts.primary,
-                fontSize: isTablet || isDesktop ? "18px" : "12px",
+                fontSize: responsive("12px", "18px", "18px"),
                 fontWeight: 600,
                 lineHeight: tokens.lineHeight,
                 color: tokens.colors.blackPrimary,
@@ -113,11 +125,11 @@ export const getCustomStyles = () => {
                 color: tokens.colors.blackTertiary,
             },
         },
-		button: {
-			fontFamily: tokens.fonts.title,
-			fontSize: "14px",
-			fontWeight: 600,
-		}
+        button: {
+            fontFamily: tokens.fonts.title,
+            fontSize: "14px",
+            fontWeight: 600,
+        },
     };
 
     return { styles, textStyles };

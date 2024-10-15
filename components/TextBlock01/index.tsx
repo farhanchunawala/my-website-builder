@@ -1,5 +1,4 @@
 import "./styles.scss";
-import DOMPurify from "dompurify";
 import Text from "@/elements/Text01";
 
 interface ComponentProps {
@@ -8,6 +7,7 @@ interface ComponentProps {
         subtitle?: string;
         content?: string;
     };
+	classNames?: string;
     styles: {
         container?: React.CSSProperties;
         title?: React.CSSProperties;
@@ -23,30 +23,22 @@ interface ComponentProps {
 
 const TextBlock: React.FC<ComponentProps> = ({
     content,
+	classNames = "",
     styles = {},
     textStyles = {},
 }) => {
     return (
         <div className="textBlock01" style={styles.container}>
-            <Text
-                as="h2"
-                content={content.title}
-                styles={styles.title}
-                textStyles={textStyles.title}
-                isHtml
-            />
-            <Text
-                as="p"
-                content={content.subtitle}
-                styles={styles.subtitle}
-                textStyles={textStyles.subtitle}
-            />
-            <Text
-                as="p"
-                content={content.content}
-                styles={styles.content}
-                textStyles={textStyles.content}
-            />
+            {Object.entries(content).map(([key, value]) => (
+                <Text
+                    key={key}
+                    as="p"
+                    content={value}
+					classNames={classNames}
+                    styles={styles[key]}
+                    textStyles={textStyles[key]}
+                />
+            ))}
         </div>
     );
 };

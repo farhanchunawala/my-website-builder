@@ -1,11 +1,10 @@
-// responsiveSlice.ts
 import { createSlice } from "@reduxjs/toolkit";
 
 const getDeviceType = () => {
+	const isDesktop = window.matchMedia("(min-width: 992px)").matches;
 	const isTablet = window.matchMedia(
 		"(min-width: 576px) and (max-width: 991px)"
 	).matches;
-	const isDesktop = window.matchMedia("(min-width: 992px)").matches;
 
 	return { isMobile: !isTablet && !isDesktop, isTablet, isDesktop };
 };

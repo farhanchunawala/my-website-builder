@@ -2,7 +2,6 @@ import "./styles.scss";
 import { getCustomStyles } from "./customStyles";
 import content from "./content";
 import Button from "@/elements/Button01";
-import Text from "@/elements/Text01";
 import TextBlock from "@/components/TextBlock01";
 import CardGrid from "@/components/CardGrid01";
 
