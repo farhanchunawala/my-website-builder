@@ -12,22 +12,10 @@ const Section004 = () => {
     return (
         <div className="s004" style={styles.container}>
             <TextBlock
-				headingLevel="h2"
                 content={content.textBlock}
                 styles={styles.textBlock}
                 textStyles={textStyles}
             />
-			{/* <Text
-				content={content.title}
-				styles={styles.title}
-				textStyles={textStyles.title}
-				isHtml
-			/> */}
-			{/* <Text
-				content={content.subtitle}
-				styles={styles.subtitle}
-				textStyles={textStyles.subtitle}
-			/> */}
             <CardGrid
                 content={content.cardGrid}
                 styles={styles.cardGrid}

@@ -3,8 +3,6 @@ import DOMPurify from "dompurify";
 import Text from "@/elements/Text01";
 
 interface ComponentProps {
-    headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-	isHtml?: boolean;
     content: {
         title?: string;
         subtitle?: string;
@@ -24,51 +22,31 @@ interface ComponentProps {
 }
 
 const TextBlock: React.FC<ComponentProps> = ({
-    headingLevel = "h3",
-	isHtml = false,
     content,
     styles = {},
     textStyles = {},
 }) => {
-    const HeadingTag = headingLevel;
-
     return (
-        <div className="textBlock01" style={container}>
-			<Text
-				content={content.title}
-				styles={styles.title}
-				textStyles={textStyles.title}
-				isHtml
-			/>
-			<Text
-				content={content.subtitle}
-				styles={styles.subtitle}
-				textStyles={textStyles.subtitle}
-			/>
-			
-            {/* <HeadingTag
-                className="title"
-                style={{ ...title, ...textStyles.title }}
-                {...(!isHtml
-                    ? { children: content.title }
-                    : {
-						dangerouslySetInnerHTML: {
-							__html: DOMPurify.sanitize(content.title),
-						},
-					})}
+        <div className="textBlock01" style={styles.container}>
+            <Text
+                as="h2"
+                content={content.title}
+                styles={styles.title}
+                textStyles={textStyles.title}
+                isHtml
             />
-            <p
-                className="subtitle"
-                styles={{ ...subtitle, ...textStyles.subtitle }}
-            >
-                {content.subtitle}
-            </p>
-            <p
-                className="content"
-                styles={{ ...content, ...textStyles.content }}
-            >
-                {content.content}
-            </p> */}
+            <Text
+                as="p"
+                content={content.subtitle}
+                styles={styles.subtitle}
+                textStyles={textStyles.subtitle}
+            />
+            <Text
+                as="p"
+                content={content.content}
+                styles={styles.content}
+                textStyles={textStyles.content}
+            />
         </div>
     );
 };

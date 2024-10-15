@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import tokens from "@/app/configs/tokens";
+import { text } from "stream/consumers";
 
 type TextAlign = 'left' | 'right' | 'center' | 'justify';
 
@@ -16,18 +17,11 @@ export const getCustomStyles = () => {
             maxWidth: "900px",
             margin: isTablet || isDesktop ? "0 auto" : "0 16px",
         },
-		// title: {
-		// 	textAlign: "center" as TextAlign,
-		// },
-		// subtitle: {
-		// 	marginTop: isTablet || isDesktop ? "8px" : "2px",
-		// 	maxWidth: "650px",
-		// 	margin: "0 auto",
-		// 	textAlign: "center" as TextAlign,
-		// },
         textBlock: {
             container: {},
-            title: {},
+            title: {
+				textAlign: "center" as TextAlign,
+			},
             subtitle: {
                 marginTop: isTablet || isDesktop ? "8px" : "2px",
                 maxWidth: "650px",

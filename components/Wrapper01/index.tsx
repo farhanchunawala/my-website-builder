@@ -13,7 +13,7 @@ const Wrapper: React.FC<ComponentProps> = ({
     styles = {},
 }) => {
     return (
-        <div className={`wrapper01 ${classNames}`} style={style}>
+        <div className={`wrapper01 ${classNames}`} style={styles}>
             {children}
         </div>
     );

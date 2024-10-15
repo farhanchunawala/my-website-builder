@@ -22,7 +22,7 @@ const Text: React.FC<ComponentProps> = ({
 	
 	return (
 		<Tag
-			className={`text01 ${className}`}
+			className={`text01 ${classNames}`}
 			style={{ ...styles, ...textStyles }}
 			{...(isHtml
 				? {

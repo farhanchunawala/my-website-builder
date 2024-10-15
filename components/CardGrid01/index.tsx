@@ -3,7 +3,7 @@ import "./styles.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import Wrapper from "../Wrapper01";
-import TextBlock from "@/components/TextBlock02";
+import TextBlock from "@/components/TextBlock01";
 
 interface ComponentProps {
     content: {
@@ -21,7 +21,11 @@ interface ComponentProps {
     textStyles: object;
 }
 
-const CardGrid: React.FC<ComponentProps> = ({ content, style, textStyles }) => {
+const CardGrid: React.FC<ComponentProps> = ({
+    content,
+    styles,
+    textStyles,
+}) => {
     const { isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -30,7 +34,7 @@ const CardGrid: React.FC<ComponentProps> = ({ content, style, textStyles }) => {
     const iconHeight = isTablet || isDesktop ? 43 : 36;
 
     return (
-        <div className="cardGrid01" style={container}>
+        <div className="cardGrid01" style={styles.container}>
             {content.cards.map((card, index) => (
                 <Wrapper
                     classNames="flexCenter noFlex"
@@ -38,15 +42,14 @@ const CardGrid: React.FC<ComponentProps> = ({ content, style, textStyles }) => {
                     key={index}
                 >
                     <Image
-                        classNames="icon"
-                        styles={styles.icon}
+                        className="icon"
+                        style={styles.icon}
                         src={`/images/cm/${card.icon}`}
                         alt="icon"
                         width={iconWidth}
                         height={iconHeight}
                     />
                     <TextBlock
-                        headingLevel="h3"
                         content={card.textBlock}
                         styles={styles.textBlock}
                         textStyles={textStyles}
