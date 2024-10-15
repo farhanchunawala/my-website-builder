@@ -1,7 +1,5 @@
 import tokens from "@/app/configs/tokens";
 import { useResponsive } from "@/app/hooks/useResponsive";
-import TextBlock from "@/components/TextBlock01";
-import { text } from "stream/consumers";
 
 type TextAlign = "left" | "right" | "center" | "justify";
 

@@ -3,21 +3,20 @@ import Text from "@/elements/Text01";
 import { TextBlockProps } from "./types";
 
 const TextBlock: React.FC<TextBlockProps> = ({
-    content = [],
+    data = [],
     classNames = "",
     styles = {},
-    config = {},
 }) => {
     return (
         <div className="textBlock01" style={styles.container}>
-            {content.map((item, index) => (
+            {data.map((item, index) => (
                 <Text
                     key={index}
-                    tag={config[index]?.tag}
-                    content={item}
+                    tag={data[index]?.tag}
+                    content={item.content}
                     classNames={classNames}
                     styles={styles[index]}
-                    isHtml={config[index]?.isHtml}
+                    isHtml={data[index]?.isHtml}
                 />
             ))}
         </div>

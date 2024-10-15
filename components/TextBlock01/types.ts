@@ -12,8 +12,7 @@ export interface Styles {
 // }
 
 export interface TextBlockProps {
-    content: string[];
+    data: object[];
 	classNames?: string;
     styles: Styles;
-	config?: object;
 }

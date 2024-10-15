@@ -6,7 +6,6 @@ interface ComponentProps {
 	content?: string;
 	classNames?: string;
 	styles?: React.CSSProperties;
-	textStyles?: React.CSSProperties;
 	isHtml?: boolean;
 }
 
@@ -15,7 +14,6 @@ const Text: React.FC<ComponentProps> = ({
     content = "",
 	classNames = "",
     styles = {},
-    textStyles = {},
 	isHtml = false,
 }) => {
     const Element = tag;
@@ -23,7 +21,7 @@ const Text: React.FC<ComponentProps> = ({
 	return (
 		<Element
 			className={`text01 ${classNames}`}
-			style={{ ...styles, ...textStyles }}
+			style={styles}
 			{...(isHtml
 				? {
 					dangerouslySetInnerHTML: {

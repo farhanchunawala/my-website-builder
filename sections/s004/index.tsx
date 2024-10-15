@@ -1,7 +1,6 @@
 import "./styles.scss";
 import { getCustomStyles } from "./customStyles";
-import content from "./content";
-import config from "./config";
+import data from "./data";
 import Button from "@/elements/Button01";
 import TextBlock from "@/components/TextBlock01";
 import CardGrid from "@/components/CardGrid01";
@@ -12,16 +11,15 @@ const Section004 = () => {
     return (
         <div className="s004" style={styles.container}>
             <TextBlock
-                content={content.textBlock}
+                data={data.textBlock}
                 styles={styles.textBlock.texts}
-				config={config.textBlock}
             />
             <CardGrid
-                content={content.cardGrid}
+                data={data.cardGrid}
                 styles={styles.cardGrid}
             />
 			<Button
-				content={content.button}
+				content={data.button}
 				styles={styles.button}
 			/>
         </div>

@@ -1,25 +1,23 @@
 import Image from "next/image";
 import "./styles.scss";
-import { useSelector } from "react-redux";
-import { RootState } from "@/lib/store";
 import Wrapper from "../Wrapper01";
 import TextBlock from "@/components/TextBlock01";
 import { ComponentProps } from "./types";
+import { useResponsive } from "@/app/hooks/useResponsive";
+
 
 const CardGrid: React.FC<ComponentProps> = ({
-    content,
+    data,
     styles,
 }) => {
-    const { isTablet, isDesktop } = useSelector(
-        (state: RootState) => state.responsive
-    );
+	const { responsive } = useResponsive();
 
-    const iconWidth = isTablet || isDesktop ? 43 : 36;
-    const iconHeight = isTablet || isDesktop ? 43 : 36;
+	const iconWidth = responsive("36", "43", "43");
+	const iconHeight = responsive("36", "43", "43");
 
     return (
         <div className="cardGrid01" style={styles.container}>
-            {content.cards.map((card, index) => (
+            {data.cards.map((card, index) => (
                 <Wrapper
                     classNames="flexCenter noFlex"
                     styles={styles.card}
@@ -34,7 +32,7 @@ const CardGrid: React.FC<ComponentProps> = ({
                         height={iconHeight}
                     />
                     <TextBlock
-                        content={card.textBlock}
+                        data={card.textBlock}
                         styles={styles.textBlock.texts}
                     />
                 </Wrapper>

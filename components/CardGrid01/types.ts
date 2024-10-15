@@ -1,4 +1,4 @@
-export interface Content {
+export interface Data {
 	cards: {
 		icon: string;
 		textBlock: string[];
@@ -13,7 +13,7 @@ export interface Styles {
 }
 
 export interface ComponentProps {
-    content: Content;
+    data: Data;
 	classNames?: string;
     styles: Styles;
 	config?: object;
