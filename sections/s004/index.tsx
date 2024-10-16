@@ -19,7 +19,7 @@ const Section004 = () => {
                 styles={styles.cardGrid}
             />
 			<Button
-				content={data.button}
+				data={data.button}
 				styles={styles.button}
 			/>
         </div>

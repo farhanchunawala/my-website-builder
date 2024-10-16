@@ -1,7 +1,7 @@
 import "./styles.scss";
 
 interface ComponentProps {
-    content?: {
+    data?: {
         text?: string;
     };
     classNames?: string;
@@ -12,14 +12,13 @@ interface ComponentProps {
 }
 
 const Button: React.FC<ComponentProps> = ({
-    content = {},
+    data = {},
     classNames = "",
     styles = {},
-    textStyles = {},
 }) => {
     return (
-        <div className="button01" style={{ ...styles.container, ...textStyles }}>
-            {content.text}
+        <div className="button01" style={styles.container}>
+            {data.text}
         </div>
     );
 };

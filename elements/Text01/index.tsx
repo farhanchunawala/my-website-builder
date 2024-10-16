@@ -2,20 +2,21 @@ import "./styles.scss";
 import DOMPurify from "dompurify";
 
 interface ComponentProps {
-	tag: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-	content?: string;
+	data?: {
+		tag?: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+		isHtml?: boolean;
+		content?: string;
+	};
 	classNames?: string;
 	styles?: React.CSSProperties;
-	isHtml?: boolean;
 }
 
 const Text: React.FC<ComponentProps> = ({
-	tag: tag = "p",
-    content = "",
+    data = {},
 	classNames = "",
     styles = {},
-	isHtml = false,
 }) => {
+	const { tag = 'p', isHtml, content = "" } = data;
     const Element = tag;
 	
 	return (
