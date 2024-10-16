@@ -13,7 +13,7 @@ export default function Home() {
 			{/* <Section002 /> */}
 			{/* <Section003 /> */}
 			<Section004 />
-			{/* <Section005 /> */}
+			<Section005 />
 		</div>
 	);
 }

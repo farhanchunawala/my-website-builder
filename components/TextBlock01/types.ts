@@ -5,12 +5,6 @@ export interface Styles {
 	// content?: React.CSSProperties;
 }
 
-// export interface TextStyles {
-// 	title?: React.CSSProperties;
-// 	subtitle?: React.CSSProperties;
-// 	content?: React.CSSProperties;
-// }
-
 export interface TextBlockProps {
     data: object;
 	classNames?: string;
