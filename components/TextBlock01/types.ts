@@ -1,12 +1,16 @@
-export interface Styles {
+import { TextData, TextStyles } from '@/elements/Text01/types';
+
+type TextBlockData = TextData[];
+
+interface TextBlockStyles {
 	container: React.CSSProperties;
-	// title?: React.CSSProperties;
-	// subtitle?: React.CSSProperties;
-	// content?: React.CSSProperties;
+	texts: TextStyles[];
 }
 
-export interface TextBlockProps {
-    data: object;
+interface TextBlockProps {
+    data: TextBlockData;
 	classNames?: string;
-    styles: Styles;
+    styles: TextBlockStyles;
 }
+
+export type { TextBlockData, TextBlockStyles, TextBlockProps }

@@ -1,7 +1,7 @@
 export interface Data {
 	cards: {
 		icon: string;
-		textBlock: string[];
+		textBlock: object[];
 	}[];
 }
 
@@ -16,5 +16,4 @@ export interface ComponentProps {
     data: Data;
 	classNames?: string;
     styles: Styles;
-	config?: object;
 }

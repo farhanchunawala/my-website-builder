@@ -1,22 +1,13 @@
 import "./styles.scss";
 import DOMPurify from "dompurify";
+import { TextProps } from "./types";
 
-interface ComponentProps {
-	data?: {
-		tag?: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-		isHtml?: boolean;
-		content?: string;
-	};
-	classNames?: string;
-	styles?: React.CSSProperties;
-}
-
-const Text: React.FC<ComponentProps> = ({
-    data = {},
+const Text: React.FC<TextProps> = ({
+    data,
 	classNames = "",
     styles = {},
 }) => {
-	const { tag = 'p', isHtml, content = "" } = data;
+	const { tag = 'p', isHtml = false, content = "" } = data || {};
     const Element = tag;
 	
 	return (

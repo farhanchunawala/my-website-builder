@@ -3,9 +3,12 @@ import Text from "@/elements/Text01";
 import { TextBlockProps } from "./types";
 
 const TextBlock: React.FC<TextBlockProps> = ({
-    data = {},
+    data = [],
     classNames = "",
-    styles = {},
+    styles = {
+        container: {},
+        texts: [],
+    },
 }) => {
     return (
         <div className="textBlock01" style={styles.container}>
@@ -14,7 +17,7 @@ const TextBlock: React.FC<TextBlockProps> = ({
                     key={index}
                     data={item}
                     classNames={classNames}
-                    styles={styles[index]}
+                    styles={styles.texts[index]}
                 />
             ))}
         </div>

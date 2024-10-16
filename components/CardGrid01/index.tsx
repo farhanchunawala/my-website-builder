@@ -33,7 +33,7 @@ const CardGrid: React.FC<ComponentProps> = ({
                     />
                     <TextBlock
                         data={card.textBlock}
-                        styles={styles.textBlock.texts}
+                        styles={styles.textBlock}
                     />
                 </Wrapper>
             ))}

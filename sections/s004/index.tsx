@@ -12,7 +12,7 @@ const Section004 = () => {
         <div className="s004" style={styles.container}>
             <TextBlock
                 data={data.textBlock}
-                styles={styles.textBlock.texts}
+                styles={styles.textBlock}
             />
             <CardGrid
                 data={data.cardGrid}
