@@ -1,12 +1,12 @@
 import tokens from "@/app/configs/tokens";
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { TextBlockStyles } from "@/components/TextBlock01/v1/types";
-import { CardGridStyles } from "@/components/CardGrid01/v1/types";
+import { FlexGridStyles } from "@/components/FlexGrid01/v1/types";
 
 interface Styles {
 	container: React.CSSProperties;
     textBlock: TextBlockStyles;
-    cardGrid: CardGridStyles;
+    flexGrid: FlexGridStyles;
 }
 
 interface TextStyles {
@@ -47,7 +47,7 @@ export const getCustomStyles = () => {
                 },
             ],
         },
-		cardGrid: {
+		flexGrid: {
 			container: {},
 			card: {},
 			icon: {},

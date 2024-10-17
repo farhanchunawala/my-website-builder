@@ -1,2 +1,6 @@
 @import "/app/configs/mixins/mixins";
 
+.flexGrid {
+	display: flex;
+    flex-wrap: wrap;
+}

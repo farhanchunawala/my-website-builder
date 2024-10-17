@@ -1,9 +1,11 @@
 import { TextBlockData } from "@/components/TextBlock01/v1/types";
-import { CardGridData } from "@/components/CardGrid01/v1/types";
+import { CardData } from "@/components/Card01/v1/types";
 
 type Content = {
     textBlock: TextBlockData;
-    cardGrid: CardGridData;
+    flexGrid: {
+		cards: CardData[]
+	};
     button: object;
 }
 
@@ -20,7 +22,7 @@ const content: Content = {
 			isHtml: false
 		},
     ],
-    cardGrid: {
+    flexGrid: {
         cards: [
             {
                 icon: "svg1.svg",

@@ -1,13 +1,16 @@
 import tokens from "@/app/configs/tokens";
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { TextBlockStyles } from "@/components/TextBlock01/v1/types";
-import { CardGridStyles } from "@/components/CardGrid01/v1/types";
+import { CardStyles } from "@/components/Card01/v1/types";
 import { Typography } from "@/app/configs/global.types";
 
 type Styles = {
     container: React.CSSProperties;
     textBlock: TextBlockStyles;
-    cardGrid: CardGridStyles;
+    flexGrid: {
+		container: React.CSSProperties;
+		card: CardStyles;
+	};
     button: object;
 };
 
@@ -85,57 +88,59 @@ export const getCustomStyles = () => {
                 },
             ],
         },
-        cardGrid: {
+        flexGrid: {
             container: {
                 marginTop: "14px",
                 marginBottom: "12px",
                 gap: gap,
             },
             card: {
-                backgroundColor: "#E5EDEE",
-                aspectRatio: responsive("1 / 1", "4 / 3", "4 / 3"),
-                flexBasis: `calc((100% - ${gap} * 2) / 3)`,
-                padding: responsive("0", "0 18px", "0 18px"),
-            },
-            icon: {
-                alignSelf: responsive("center", "start", "start"),
-            },
-            textBlock: {
-                container: {},
-                texts: [
-                    {
-                        ...textStyles.cardTitle,
-                        color: tokens.colors.blackPrimary,
-                        marginTop: responsive("6px", "14px", "14px"),
-                        textAlign: responsive(
-                            "center",
-                            "left",
-                            "left"
-                        ) as React.CSSProperties["textAlign"],
-                    },
-                    {
-                        ...textStyles.cardSubtitle,
-                        color: tokens.colors.blackSecondary,
-                        display: responsive("none", "", ""),
-                        textAlign: responsive(
-                            "center",
-                            "left",
-                            "left"
-                        ) as React.CSSProperties["textAlign"],
-                        marginTop: "4px",
-                    },
-                    {
-                        ...textStyles.cardText,
-                        color: tokens.colors.blackTertiary,
-                        display: responsive("none", "", ""),
-                        textAlign: responsive(
-                            "center",
-                            "left",
-                            "left"
-                        ) as React.CSSProperties["textAlign"],
-                        marginTop: "8px",
-                    },
-                ],
+				container: {
+					backgroundColor: "#E5EDEE",
+					aspectRatio: responsive("1 / 1", "4 / 3", "4 / 3"),
+					flexBasis: `calc((100% - ${gap} * 2) / 3)`,
+					padding: responsive("0", "0 18px", "0 18px"),
+				},
+				icon: {
+					alignSelf: responsive("center", "start", "start"),
+				},
+				textBlock: {
+					container: {},
+					texts: [
+						{
+							...textStyles.cardTitle,
+							color: tokens.colors.blackPrimary,
+							marginTop: responsive("6px", "14px", "14px"),
+							textAlign: responsive(
+								"center",
+								"left",
+								"left"
+							) as React.CSSProperties["textAlign"],
+						},
+						{
+							...textStyles.cardSubtitle,
+							color: tokens.colors.blackSecondary,
+							display: responsive("none", "", ""),
+							textAlign: responsive(
+								"center",
+								"left",
+								"left"
+							) as React.CSSProperties["textAlign"],
+							marginTop: "4px",
+						},
+						{
+							...textStyles.cardText,
+							color: tokens.colors.blackTertiary,
+							display: responsive("none", "", ""),
+							textAlign: responsive(
+								"center",
+								"left",
+								"left"
+							) as React.CSSProperties["textAlign"],
+							marginTop: "8px",
+						},
+					],
+				},
             },
         },
         button: {

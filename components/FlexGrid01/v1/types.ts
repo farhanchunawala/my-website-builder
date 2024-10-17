@@ -1,13 +1,13 @@
 import { TextBlockData, TextBlockStyles } from "../../TextBlock01/v1/types";
 
-type CardGridData = {
+type FlexGridData = {
 	cards: {
 		icon: string;
 		textBlock: TextBlockData;
 	}[];
 }
 
-type CardGridStyles = {
+type FlexGridStyles = {
 	container: {
 		marginTop: string;
 		marginBottom: string;
@@ -27,12 +27,13 @@ type CardGridStyles = {
 	container: React.CSSProperties;
 	card: React.CSSProperties;
 	icon: React.CSSProperties;
+	textBlock: TextBlockStyles;
 }
 
-type CardGridProps = {
-    data: CardGridData;
+type FlexGridProps = {
+    data: FlexGridData;
 	classNames?: string;
-    styles: CardGridStyles;
+    styles: FlexGridStyles;
 }
 
-export type { CardGridData, CardGridStyles, CardGridProps }
+export type { FlexGridData, FlexGridStyles, FlexGridProps }
