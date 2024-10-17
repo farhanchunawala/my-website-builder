@@ -1,12 +1,22 @@
 import tokens from "@/app/configs/tokens";
 import { useResponsive } from "@/app/hooks/useResponsive";
+import { TextBlockStyles } from "@/components/TextBlock01/v1/types";
+import { CardGridStyles } from "@/components/CardGrid01/v1/types";
 
-type TextAlign = "left" | "right" | "center" | "justify";
+interface Styles {
+	container: React.CSSProperties;
+    textBlock: TextBlockStyles;
+    cardGrid: CardGridStyles;
+}
+
+interface TextStyles {
+	titleText: React.CSSProperties;
+}
 
 export const getCustomStyles = () => {
     const { responsive } = useResponsive();
 
-    const textStyles = {
+    const textStyles: TextStyles = {
         titleText: {
             fontFamily: tokens.fonts.title,
             fontSize: responsive("18px", "36px", "36px"),
@@ -20,7 +30,7 @@ export const getCustomStyles = () => {
         },
     };
 
-    const styles = {
+    const styles: Styles = {
         container: {
             backgroundColor: "#E5EDEE",
             margin: responsive("0 16px", "0 auto", "0 auto"),
@@ -37,6 +47,15 @@ export const getCustomStyles = () => {
                 },
             ],
         },
+		cardGrid: {
+			container: {},
+			card: {},
+			icon: {},
+			textBlock: {
+				container: {},
+				texts: []
+			},
+		}
     };
 
     return { styles };

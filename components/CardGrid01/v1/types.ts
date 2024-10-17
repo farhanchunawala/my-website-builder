@@ -1,20 +1,35 @@
 import { TextBlockData, TextBlockStyles } from "../../TextBlock01/v1/types";
 
-interface CardGridData {
+type CardGridData = {
 	cards: {
 		icon: string;
 		textBlock: TextBlockData;
 	}[];
 }
 
-interface CardGridStyles {
+type CardGridStyles = {
+	container: {
+		marginTop: string;
+		marginBottom: string;
+		gap: string;
+	};
+	card: {
+		backgroundColor: string;
+		aspectRatio: string;
+		flexBasis: string;
+		padding: string;
+	};
+	icon: {
+		alignSelf: string;
+	};
+	textBlock: TextBlockStyles;
+} | {
 	container: React.CSSProperties;
 	card: React.CSSProperties;
 	icon: React.CSSProperties;
-	textBlock: TextBlockStyles;
 }
 
-interface CardGridProps {
+type CardGridProps = {
     data: CardGridData;
 	classNames?: string;
     styles: CardGridStyles;

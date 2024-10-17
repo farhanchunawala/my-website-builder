@@ -1,7 +1,7 @@
 import { TextBlockData } from "@/components/TextBlock01/v1/types";
 import { CardGridData } from "@/components/CardGrid01/v1/types";
 
-interface Content {
+type Content = {
     textBlock: TextBlockData;
     cardGrid: CardGridData;
     button: object;
@@ -10,12 +10,14 @@ interface Content {
 const content: Content = {
     textBlock: [
 		{
+			content: `Our <span>Services</span>`,
 			tag: "h2",
             isHtml: true,
-			content: `Our <span>Services</span>`,
 		},
 		{
 			content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+			tag: "p",
+			isHtml: false
 		},
     ],
     cardGrid: {
@@ -25,12 +27,18 @@ const content: Content = {
                 textBlock: [
 					{
 						content: `Medical Stay`,
+						tag: "p",
+						isHtml: false
 					},
 					{
 						content: `Get customised plan to reduce cancer risks`,
+						tag: "p",
+						isHtml: false
 					},
 					{
 						content: `Oncologists, Physicians, Specialities, Therapists all for you`,
+						tag: "p",
+						isHtml: false
 					},
                 ],
             },
@@ -39,12 +47,18 @@ const content: Content = {
                 textBlock: [
 					{
 						content: `Emergency Care`,
+						tag: "p",
+						isHtml: false
 					},
 					{
 						content: `Get customised plan to reduce cancer risks`,
+						tag: "p",
+						isHtml: false
 					},
 					{
 						content: `Oncologists, Physicians, Specialities, Therapists all for you`,
+						tag: "p",
+						isHtml: false
 					},
                 ],
             },
@@ -53,12 +67,18 @@ const content: Content = {
                 textBlock: [
 					{
 						content: `Vaccination`,
+						tag: "p",
+						isHtml: false
 					},
 					{
 						content: `Get customised plan to reduce cancer risks`,
+						tag: "p",
+						isHtml: false
 					},
 					{
 						content: `Oncologists, Physicians, Specialities, Therapists all for you`,
+						tag: "p",
+						isHtml: false
 					},
                 ],
             },
@@ -67,12 +87,18 @@ const content: Content = {
                 textBlock: [
 					{
 						content: `Medicines`,
+						tag: "p",
+						isHtml: false
 					},
 					{
 						content: `Get customised plan to reduce cancer risks`,
+						tag: "p",
+						isHtml: false
 					},
 					{
 						content: `Oncologists, Physicians, Specialities, Therapists all for you`,
+						tag: "p",
+						isHtml: false
 					},
                 ],
             },
@@ -81,12 +107,18 @@ const content: Content = {
                 textBlock: [
 					{
 						content: `Surgery`,
+						tag: "p",
+						isHtml: false
 					},
 					{
 						content: `Get customised plan to reduce cancer risks`,
+						tag: "p",
+						isHtml: false
 					},
 					{
 						content: `Oncologists, Physicians, Specialities, Therapists all for you`,
+						tag: "p",
+						isHtml: false
 					},
                 ],
             },
@@ -95,12 +127,18 @@ const content: Content = {
                 textBlock: [
 					{
 						content: `Diagnostics`,
+						tag: "p",
+						isHtml: false
 					},
 					{
 						content: `Get customised plan to reduce cancer risks`,
+						tag: "p",
+						isHtml: false
 					},
 					{
 						content: `Oncologists, Physicians, Specialities, Therapists all for you`,
+						tag: "p",
+						isHtml: false
 					},
                 ],
             },
