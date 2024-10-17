@@ -1,7 +1,7 @@
 import Image from "next/image";
 import "./styles.scss";
-import Wrapper from "../Wrapper01";
-import TextBlock from "@/components/TextBlock01";
+import Wrapper from "../../Wrapper01/v1";
+import TextBlock from "@/components/TextBlock01/v1";
 import { CardGridProps } from "./types";
 import { useResponsive } from "@/app/hooks/useResponsive";
 

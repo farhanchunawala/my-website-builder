@@ -1,5 +1,5 @@
-import { TextBlockData } from "@/components/TextBlock01/types";
-import { CardGridData } from "@/components/CardGrid01/types";
+import { TextBlockData } from "@/components/TextBlock01/v1/types";
+import { CardGridData } from "@/components/CardGrid01/v1/types";
 
 interface Content {
     textBlock: TextBlockData;

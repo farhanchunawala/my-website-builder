@@ -1,9 +1,9 @@
 import "./styles.scss";
 import { getCustomStyles } from "./customStyles";
 import data from "./data";
-import Button from "@/elements/Button01";
-import TextBlock from "@/components/TextBlock01";
-import CardGrid from "@/components/CardGrid01";
+import Button from "@/elements/Button01/v1";
+import TextBlock from "@/components/TextBlock01/v1";
+import CardGrid from "@/components/CardGrid01/v1";
 
 const Section004 = () => {
     const { styles } = getCustomStyles();

@@ -1,4 +1,4 @@
-import { TextBlockData, TextBlockStyles } from "../TextBlock01/types";
+import { TextBlockData, TextBlockStyles } from "../../TextBlock01/v1/types";
 
 interface CardGridData {
 	cards: {

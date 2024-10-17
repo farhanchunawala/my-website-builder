@@ -1,7 +1,7 @@
 import tokens from "@/app/configs/tokens";
 import { useResponsive } from "@/app/hooks/useResponsive";
-import { TextBlockStyles } from "@/components/TextBlock01/types";
-import { CardGridStyles } from "@/components/CardGrid01/types";
+import { TextBlockStyles } from "@/components/TextBlock01/v1/types";
+import { CardGridStyles } from "@/components/CardGrid01/v1/types";
 
 interface Styles {
 	container: React.CSSProperties;

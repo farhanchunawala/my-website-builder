@@ -1,4 +1,4 @@
-import { TextData, TextStyles } from '@/elements/Text01/types';
+import { TextData, TextStyles } from '@/elements/Text01/v1/types';
 
 type TextBlockData = TextData[];
 
