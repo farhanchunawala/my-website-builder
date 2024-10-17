@@ -2,18 +2,17 @@ import Image from "next/image";
 import "./styles.scss";
 import Wrapper from "../Wrapper01";
 import TextBlock from "@/components/TextBlock01";
-import { ComponentProps } from "./types";
+import { CardGridProps } from "./types";
 import { useResponsive } from "@/app/hooks/useResponsive";
 
-
-const CardGrid: React.FC<ComponentProps> = ({
+const CardGrid: React.FC<CardGridProps> = ({
     data,
-    styles,
+    styles
 }) => {
-	const { responsive } = useResponsive();
+    const { responsive } = useResponsive();
 
-	const iconWidth = responsive("36", "43", "43");
-	const iconHeight = responsive("36", "43", "43");
+    const iconWidth = responsive("36", "43", "43");
+    const iconHeight = responsive("36", "43", "43");
 
     return (
         <div className="cardGrid01" style={styles.container}>
@@ -28,8 +27,8 @@ const CardGrid: React.FC<ComponentProps> = ({
                         style={styles.icon}
                         src={`/images/cm/${card.icon}`}
                         alt="icon"
-                        width={iconWidth}
-                        height={iconHeight}
+                        width={parseInt(iconWidth)}
+                        height={parseInt(iconHeight)}
                     />
                     <TextBlock
                         data={card.textBlock}

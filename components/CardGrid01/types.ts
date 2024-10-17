@@ -1,19 +1,23 @@
-export interface Data {
+import { TextBlockData, TextBlockStyles } from "../TextBlock01/types";
+
+interface CardGridData {
 	cards: {
 		icon: string;
-		textBlock: object[];
+		textBlock: TextBlockData;
 	}[];
 }
 
-export interface Styles {
+interface CardGridStyles {
 	container: React.CSSProperties;
 	card: React.CSSProperties;
 	icon: React.CSSProperties;
-	textBlock: string[];
+	textBlock: TextBlockStyles;
 }
 
-export interface ComponentProps {
-    data: Data;
+interface CardGridProps {
+    data: CardGridData;
 	classNames?: string;
-    styles: Styles;
+    styles: CardGridStyles;
 }
+
+export type { CardGridData, CardGridStyles, CardGridProps }

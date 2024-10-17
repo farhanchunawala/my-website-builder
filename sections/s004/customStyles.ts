@@ -1,14 +1,30 @@
 import tokens from "@/app/configs/tokens";
 import { useResponsive } from "@/app/hooks/useResponsive";
+import { TextBlockStyles } from "@/components/TextBlock01/types";
+import { CardGridStyles } from "@/components/CardGrid01/types";
 
-type TextAlign = "left" | "right" | "center" | "justify";
+interface Styles {
+	container: React.CSSProperties;
+    textBlock: TextBlockStyles;
+    cardGrid: CardGridStyles;
+    button: object;
+}
+
+interface TextStyles {
+	titleText: React.CSSProperties;
+	subtitleText: React.CSSProperties;
+	cardTitle: React.CSSProperties;
+	cardSubtitle: React.CSSProperties;
+	cardText: React.CSSProperties;
+	buttonText: React.CSSProperties;
+}
 
 export const getCustomStyles = () => {
 	const { responsive } = useResponsive();
 
     const gap = responsive("8px", "24px", "24px");
 
-	const textStyles = {
+	const textStyles: TextStyles = {
 		titleText: {
 			fontFamily: tokens.fonts.title,
 			fontSize: responsive("18px", "30px", "30px"),
@@ -51,7 +67,7 @@ export const getCustomStyles = () => {
         }
     };
 
-    const styles = {
+    const styles: Styles = {
         container: {
             maxWidth: "900px",
             margin: responsive("0 16px", "0 auto", "0 auto"),
@@ -61,7 +77,7 @@ export const getCustomStyles = () => {
 			texts: [
 				{
 					...textStyles.titleText,
-					textAlign: "center" as TextAlign,
+					textAlign: "center",
 				},
 				{
 					...textStyles.subtitleText,
@@ -96,7 +112,7 @@ export const getCustomStyles = () => {
 							"center",
 							"left",
 							"left"
-						) as TextAlign,
+						) as React.CSSProperties['textAlign'],
 					},
 					{
 						...textStyles.cardSubtitle,
@@ -105,7 +121,7 @@ export const getCustomStyles = () => {
 							"center",
 							"left",
 							"left"
-						) as TextAlign,
+						) as React.CSSProperties['textAlign'],
 						marginTop: "4px",
 					},
 					{
@@ -115,7 +131,7 @@ export const getCustomStyles = () => {
 							"center",
 							"left",
 							"left"
-						) as TextAlign,
+						) as React.CSSProperties['textAlign'],
 						marginTop: "8px",
 					}
 				],

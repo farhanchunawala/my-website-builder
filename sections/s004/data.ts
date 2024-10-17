@@ -1,4 +1,13 @@
-const content = {
+import { TextBlockData } from "@/components/TextBlock01/types";
+import { CardGridData } from "@/components/CardGrid01/types";
+
+interface Content {
+    textBlock: TextBlockData;
+    cardGrid: CardGridData;
+    button: object;
+}
+
+const content: Content = {
     textBlock: [
 		{
 			tag: "h2",
