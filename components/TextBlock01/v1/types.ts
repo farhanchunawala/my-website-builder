@@ -2,12 +2,12 @@ import { TextData, TextStyles } from '@/elements/Text01/v1/types';
 
 type TextBlockData = TextData[];
 
-type TextBlockStyles = {
+interface TextBlockStyles {
 	container: React.CSSProperties;
 	texts: TextStyles[];
 }
 
-type TextBlockProps = {
+interface TextBlockProps {
     data: TextBlockData;
 	classNames?: string;
     styles: TextBlockStyles;

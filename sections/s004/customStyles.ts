@@ -25,9 +25,9 @@ type TextStyles = {
 
 export const getCustomStyles = () => {
     const { responsive } = useResponsive();
-
-    const gap = responsive("8px", "24px", "24px");
-
+	
+	const gap = responsive("8px", "24px", "24px");
+	
     const textStyles: TextStyles = {
         titleText: {
             fontFamily: tokens.fonts.title,
@@ -92,6 +92,7 @@ export const getCustomStyles = () => {
             container: {
                 marginTop: "14px",
                 marginBottom: "12px",
+                // gap: "var(--card-gap)",
                 gap: gap,
             },
             card: {
@@ -99,6 +100,7 @@ export const getCustomStyles = () => {
 					backgroundColor: "#E5EDEE",
 					aspectRatio: responsive("1 / 1", "4 / 3", "4 / 3"),
 					flexBasis: `calc((100% - ${gap} * 2) / 3)`,
+					// flexBasis: `calc((100% - var(--card-gap) * 2) / 3)`,
 					padding: responsive("0", "0 18px", "0 18px"),
 				},
 				icon: {

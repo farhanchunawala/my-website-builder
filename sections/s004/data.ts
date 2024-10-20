@@ -1,7 +1,7 @@
 import { TextBlockData } from "@/components/TextBlock01/v1/types";
 import { CardData } from "@/components/Card01/v1/types";
 
-type Content = {
+type Data = {
     textBlock: TextBlockData;
     flexGrid: {
 		cards: CardData[]
@@ -9,7 +9,7 @@ type Content = {
     button: object;
 }
 
-const content: Content = {
+const data: Data = {
     textBlock: [
 		{
 			content: `Our <span>Services</span>`,
@@ -151,4 +151,4 @@ const content: Content = {
     },
 };
 
-export default content;
+export default data;

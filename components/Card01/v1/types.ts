@@ -1,17 +1,17 @@
 import { TextBlockData, TextBlockStyles } from "../../TextBlock01/v1/types";
 
-type CardData = {
+interface CardData {
 	icon: string;
 	textBlock: TextBlockData;
 };
 
-type CardStyles = {
+interface CardStyles {
 	container: React.CSSProperties;
 	icon: React.CSSProperties;
 	textBlock: TextBlockStyles;
 }
 
-type CardProps = {
+interface CardProps {
     data: CardData;
 	classNames?: string;
     styles: CardStyles;

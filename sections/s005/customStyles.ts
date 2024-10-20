@@ -1,16 +1,22 @@
 import tokens from "@/app/configs/tokens";
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { TextBlockStyles } from "@/components/TextBlock01/v1/types";
-import { FlexGridStyles } from "@/components/FlexGrid01/v1/types";
+import { CardStyles } from "@/components/Card01/v1/types";
+import { Typography } from "@/app/configs/global.types";
 
 interface Styles {
 	container: React.CSSProperties;
     textBlock: TextBlockStyles;
-    flexGrid: FlexGridStyles;
+    flexGrid: {
+		container: React.CSSProperties;
+		card: CardStyles;
+	};
 }
 
 interface TextStyles {
-	titleText: React.CSSProperties;
+	titleText: Typography;
+	cardTitle: Typography;
+	cardText: Typography;
 }
 
 export const getCustomStyles = () => {
@@ -22,12 +28,18 @@ export const getCustomStyles = () => {
             fontSize: responsive("18px", "36px", "36px"),
             fontWeight: 600,
             letterSpacing: "0.05em",
-            color: responsive(
-                tokens.colors.blackSecondary,
-                tokens.colors.tertiary,
-                tokens.colors.tertiary
-            ),
         },
+		cardTitle: {
+			fontFamily: tokens.fonts.title,
+			fontSize: responsive("16px", "26px", "26px"),
+			fontWeight: 700,
+			letterSpacing: "0.64px",
+		},
+		cardText: {
+			fontFamily: tokens.fonts.title,
+			fontSize: responsive("11px", "16px", "16px"),
+			fontWeight: 700,
+		},
     };
 
     const styles: Styles = {
@@ -41,19 +53,45 @@ export const getCustomStyles = () => {
             texts: [
                 {
                     ...textStyles.titleText,
-                },
+					color: responsive(
+						tokens.colors.blackSecondary,
+						tokens.colors.tertiary,
+						tokens.colors.tertiary
+					),
+				},
                 {
                     ...textStyles.titleText,
+					color: responsive(
+						tokens.colors.blackSecondary,
+						tokens.colors.tertiary,
+						tokens.colors.tertiary
+					),
                 },
             ],
         },
 		flexGrid: {
-			container: {},
-			card: {},
-			icon: {},
-			textBlock: {
-				container: {},
-				texts: []
+			container: {
+			},
+			card: {
+				container: {
+					flexBasis: `calc(100% / 3)`,
+				},
+				icon: {},
+				textBlock: {
+					container: {},
+					texts: [
+						{
+							...textStyles.cardTitle,
+							color: "#454545",
+							textAlign: "center",
+						},
+						{
+							...textStyles.cardText,
+							color: "#454545",
+							textAlign: "center",
+						}
+					]
+				},
 			},
 		}
     };

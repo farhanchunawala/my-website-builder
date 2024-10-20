@@ -1,17 +1,5 @@
 @import "/app/configs/mixins/mixins";
 
-// ===================================
-// Variables
-// ===================================
-
-// ===================================
-// Mixins
-// ===================================
-
-// ===================================
-// Styles
-// ===================================
-
 .card01 {
 	&.flexCenter {
 		display: flex;
@@ -22,5 +10,11 @@
 	&.noFlex {
 		flex-shrink: 0;
 		flex-grow: 0;
+	}
+	&.threeCards {
+		flex-basis: calc(100% - var(--card-gap) * 2 / 3);
+	}
+	&.square {
+		aspect-ratio: 1 / 1;
 	}
 }
