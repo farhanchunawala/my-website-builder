@@ -1,9 +1,9 @@
 import "./styles.scss";
 import { getCustomStyles } from "./customStyles";
-import content from "./content";
+import data from "./data";
 
 const Section0 = () => {
-    const { styles, textStyles } = getCustomStyles();
+    const { styles } = getCustomStyles();
 	
 	return (
 		<div className="s0" style={styles.container}>

@@ -1,6 +1,12 @@
 // import localFont from "next/font/local";
 import { Montserrat, Manrope } from "next/font/google";
 
+// const geistSans = localFont({
+// 	src: "./fonts/GeistVF.woff",
+// 	variable: "--font-geist-sans",
+// 	weight: "100 900",
+// });
+
 const montserrat = Montserrat({
 	subsets: ["latin"],
 	display: "swap",
@@ -12,11 +18,5 @@ const manrope = Manrope({
 	display: "swap",
 	variable: "--font-manrope",
 });
-
-// const geistSans = localFont({
-// 	src: "./fonts/GeistVF.woff",
-// 	variable: "--font-geist-sans",
-// 	weight: "100 900",
-// });
 
 export { montserrat, manrope };

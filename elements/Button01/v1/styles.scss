@@ -1,20 +1,24 @@
 @import "/app/configs/mixins/mixins";
 
-// ===================================
-// Variables
-// ===================================
-
-// ===================================
-// Mixins
-// ===================================
-
-// ===================================
-// Styles
-// ===================================
-
 .button01 {
-	border: 1px solid #000;
+	height: 44px;
+	padding: 25px;
+	background-color: #1a1b1f;
+	transition-property: all;
+	transition-duration: 200ms;
+	transition-timing-function: ease;
+	color: #fff;
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+
+    &:hover {
+        background-color: #32343a;
+    }
+
+    &:active {
+        background-color: #43464d;
+    }
 }

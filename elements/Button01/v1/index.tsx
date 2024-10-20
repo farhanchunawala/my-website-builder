@@ -1,24 +1,15 @@
 import "./styles.scss";
+import DOMPurify from "dompurify";
+import { ButtonProps } from "./types";
 
-interface ComponentProps {
-    data?: {
-        text?: string;
-    };
-    classNames?: string;
-    styles?: {
-        container?: React.CSSProperties;
-    };
-    textStyles?: React.CSSProperties;
-}
-
-const Button: React.FC<ComponentProps> = ({
-    data = {},
+const Button: React.FC<ButtonProps> = ({
+    data,
     classNames = "",
     styles = {},
 }) => {
     return (
-        <div className="button01" style={styles.container}>
-            {data.text}
+        <div className={`button01 ${classNames}`} style={styles}>
+            {data.content}
         </div>
     );
 };

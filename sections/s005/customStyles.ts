@@ -1,8 +1,8 @@
 import tokens from "@/app/configs/tokens";
 import { useResponsive } from "@/app/hooks/useResponsive";
+import { Typography } from "@/app/configs/global.types";
 import { TextBlockStyles } from "@/components/TextBlock01/v1/types";
 import { CardStyles } from "@/components/Card01/v1/types";
-import { Typography } from "@/app/configs/global.types";
 
 interface Styles {
 	container: React.CSSProperties;

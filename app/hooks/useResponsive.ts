@@ -16,7 +16,7 @@ export const useResponsive = () => {
 
 		const desktopQuery = window.matchMedia("(min-width: 992px)");
         const tabletQuery = window.matchMedia(
-            "(min-width: 576px) and (max-width: 991px)"
+            "(min-width: 480px) and (max-width: 991px)"
         );
 
 		// Add event listeners

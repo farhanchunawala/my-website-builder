@@ -4,6 +4,7 @@ import { Typography } from "@/app/configs/global.types";
 
 interface Styles {
 	container: React.CSSProperties;
+	button: React.CSSProperties;
 }
 
 interface TextStyles {}
@@ -16,7 +17,12 @@ export const getCustomStyles = () => {
 	}
 	
 	const styles: Styles = {
-		container: {}
+		container: {
+			
+		},
+		button: {
+			
+		}
 	}
 	
     return { styles };

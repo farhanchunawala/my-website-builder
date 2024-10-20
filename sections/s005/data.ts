@@ -1,7 +1,7 @@
 import { TextBlockData } from "@/components/TextBlock01/v1/types";
 import { CardData } from "@/components/Card01/v1/types";
 
-export type Data = {
+type Data = {
 	textBlock: TextBlockData;
 	flexGrid: {
 		cards: CardData[];
