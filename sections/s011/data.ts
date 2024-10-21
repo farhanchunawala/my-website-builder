@@ -6,7 +6,7 @@ interface Data {
 
 const data: Data = {
 	button: {
-		content: "Get Started",
+		content: "GET STARTED",
 	},
 }
 

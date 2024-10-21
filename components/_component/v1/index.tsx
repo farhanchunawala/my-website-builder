@@ -1,19 +1,10 @@
 import "./styles.scss";
-
-interface ComponentProps {
-	content?: {};
-	classNames?: string;
-	styles?: {
-        container?: React.CSSProperties;
-	};
-	textStyles?: {};
-}
+import { ComponentProps } from "./types";
 
 const ComponentName: React.FC<ComponentProps> = ({
-    content = {},
+    data = {},
 	classNames = "",
     styles = {},
-    textStyles = {},
 }) => {
 	return (
 		<div className="componentName" style={container}>

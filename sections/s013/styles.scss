@@ -1,0 +1,72 @@
+@import "/app/configs/mixins/mixins";
+
+.s013 {
+    &.container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 5;
+        background-color: transparent;
+        width: 100%;
+        padding: 20px;
+        margin: 0 auto;
+
+        @media #{$tablet} {
+            padding: 25px 30px;
+        }
+
+        @media #{$desktop} {
+            padding: 30px 50px;
+            max-width: 1140px;
+        }
+    }
+
+    .navLinks {
+        display: none;
+
+        @media #{$desktop} {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .hyperlink {
+        // text-transform: uppercase;
+        cursor: pointer;
+        padding: 10px 20px;
+        color: #1a1b1f;
+        opacity: 0.6;
+		
+		transition-property: background-color, opacity, color;
+        transition-duration: 400ms, 400ms, 400ms;
+        transition-timing-function: ease, ease, ease;
+
+        &:hover {
+            background-color: #f7f8f9;
+            color: rgba(26, 27, 31, 0.75);
+        }
+		&:active {
+			background-color: #eef0f3;
+		}
+		&:current {
+			opacity: 0.7;
+			color: #32343a;
+		}
+    }
+
+    button {
+        display: none;
+
+        @media #{$desktop} {
+            display: flex;
+        }
+    }
+
+    .barsIcon {
+        // margin-right: 12px;
+
+        @media #{$desktop} {
+            display: none;
+        }
+    }
+}

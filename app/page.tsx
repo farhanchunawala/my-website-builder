@@ -6,6 +6,7 @@ import styles from "./page.module.scss";
 // import Section004 from "../sections/s004";
 // import Section005 from "../sections/s005";
 import Section011 from "../sections/s011";
+import Section013 from "../sections/s013";
 
 export default function Home() {
 	return (
@@ -16,6 +17,7 @@ export default function Home() {
 			{/* <Section004 /> */}
 			{/* <Section005 /> */}
 			<Section011 />
+			<Section013 />
 		</div>
 	);
 }

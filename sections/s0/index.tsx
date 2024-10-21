@@ -6,7 +6,7 @@ const Section0 = () => {
     const { styles } = getCustomStyles();
 	
 	return (
-		<div className="s0" style={styles.container}>
+		<div className="s0 container" style={styles.container}>
 			
 		</div>
 	);

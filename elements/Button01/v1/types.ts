@@ -5,8 +5,11 @@ interface ButtonData {
     // isHtml?: boolean;
 }
 
-type ButtonStyles = Typography & React.CSSProperties & {
-	color: string;
+interface ButtonStyles {
+	container: Typography & React.CSSProperties & {
+		color: string;
+	};
+	hover: React.CSSProperties;
 }
 
 interface ButtonProps {
