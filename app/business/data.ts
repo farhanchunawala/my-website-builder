@@ -1,6 +1,6 @@
 import { ButtonData } from "@/elements/Button01/v1/types";
 import { NavLinksData } from "@/components/NavLinks01/v1/types";
-import { S013Data } from "@/sections/s013/types";
+import { S013Data } from "@/sections/s013/v1/types";
 
 interface Data {
 	s013: S013Data
