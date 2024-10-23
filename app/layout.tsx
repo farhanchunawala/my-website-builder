@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import "./global.css";
 import { StoreProvider } from "./StoreProvider";
-import "./configs/globalStyles.scss";
 import { montserrat, manrope } from "./configs/fonts";
 
 export const metadata: Metadata = {

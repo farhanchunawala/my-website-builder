@@ -1,4 +1,4 @@
-import tokens from "@/app/configs/tokens";
+import tokens from "@/app/cm/tokens";
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { TextBlockStyles } from "@/components/TextBlock01/v1/types";
 import { CardStyles } from "@/components/Card01/v1/types";

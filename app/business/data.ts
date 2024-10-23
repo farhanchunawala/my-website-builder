@@ -1,12 +1,12 @@
 import { ButtonData } from "@/elements/Button01/v1/types";
 import { NavLinksData } from "@/components/NavLinks01/v1/types";
+import { S013Data } from "@/sections/s013/types";
 
 interface Data {
-	navlinks: NavLinksData;
-	button: ButtonData;
+	s013: S013Data
 };
 
-const data: Data = {
+const s013 = {
 	navlinks: [
 		{
 			content: "ABOUT",
@@ -27,6 +27,10 @@ const data: Data = {
 	button: {
 		content: "CONTACT US",
 	},
+}
+
+const data: Data = {
+	s013: s013
 }
 
 export default data;

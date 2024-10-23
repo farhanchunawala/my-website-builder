@@ -4,7 +4,7 @@ import styles from "./page.module.scss";
 // import Section002 from "../sections/s002";
 // import Section003 from "../sections/s003";
 // import Section004 from "../sections/s004";
-// import Section005 from "../sections/s005";
+import Section005 from "../sections/s005";
 import Section011 from "../sections/s011";
 import Section013 from "../sections/s013";
 
@@ -15,7 +15,7 @@ export default function Home() {
 			{/* <Section002 /> */}
 			{/* <Section003 /> */}
 			{/* <Section004 /> */}
-			{/* <Section005 /> */}
+			<Section005 />
 			<Section011 />
 			<Section013 />
 		</div>
