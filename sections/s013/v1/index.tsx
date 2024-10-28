@@ -12,7 +12,7 @@ const Section013: React.FC<Section013Props> = ({
 	styles,
 	data
 }) => {
-    const { isTablet, isDesktop } = useSelector(
+    const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
     const [mounted, setMounted] = useState(false);

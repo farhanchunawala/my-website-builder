@@ -4,7 +4,7 @@ import data from "./data";
 // import "./page.scss";
 // import Section011 from "@/sections/s011/v1";
 import Section013 from "@/sections/s013/v1";
-import Section014 from "@/sections/s014";
+import Section014 from "@/sections/s014/v1";
 
 export default function Home() {
     const { styles } = getCustomStyles();
