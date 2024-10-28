@@ -1,0 +1,10 @@
+@import "/app/configs/mixins/mixins";
+
+.s014 {
+	.backGround {
+		background-color: gray;
+		height: 620px;
+		width: calc(100% - 60px);
+		margin: 30px;
+	}
+}

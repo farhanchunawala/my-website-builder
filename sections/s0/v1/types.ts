@@ -5,7 +5,7 @@ interface S0Data {
 };
 
 interface S0Styles {
-	
+	container: React.CSSProperties
 }
 
 interface Section0Props {

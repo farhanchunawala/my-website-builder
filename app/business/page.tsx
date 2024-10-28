@@ -16,7 +16,10 @@ export default function Home() {
                 styles={styles.s013}
                 data={data.s013}
             />
-            <Section014 />
+            <Section014
+				styles={styles.s014}
+				data={data.s014}
+			/>
         </div>
     );
 }
