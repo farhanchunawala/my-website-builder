@@ -13,9 +13,7 @@ export const getCustomStyles = () => {
         container: {},
         navlinks: {
             container: {},
-            hyperlink: {
-                ...texts.hyperlink,
-            },
+            hyperlink: { ...texts.hyperlink },
         },
         button: { ...buttons.primary },
     };
