@@ -10,7 +10,8 @@ interface Tokens {
 }
 
 interface Texts {
-	headingDisplay: Typography;
+	headingJumbo: Typography;
+	paragraphBigger: Typography;
     hyperlink: Typography;
     buttonText: Typography;
 }
@@ -27,11 +28,16 @@ const useTheme = () => {
     };
 
     const texts: Texts = {
-        headingDisplay: {
+        headingJumbo: {
             fontFamily: tokens.fonts.primary,
             fontSize: responsive("36px", "50px", "64px"),
             fontWeight: 400,
         },
+		paragraphBigger: {
+			fontFamily: tokens.fonts.primary,
+			fontSize: responsive("16px", "20px", "20px"),
+			fontWeight: 400
+		},
         hyperlink: {
             fontFamily: tokens.fonts.primary,
             fontSize: "12px",
