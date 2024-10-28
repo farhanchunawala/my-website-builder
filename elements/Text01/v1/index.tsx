@@ -12,7 +12,7 @@ const Text: React.FC<TextProps> = ({
 	
 	return (
 		<Element
-			className={`text01 ${classNames}`}
+			className={classNames}
 			style={styles}
 			{...(isHtml
 				? {

@@ -32,18 +32,16 @@ const s013: S013Data = {
 }
 
 const s014: S014Data = {
-	textBlock: [
-		{
-			tag: "h1",
-			isHtml: false,
-			content: "Grow your business."
-		},
-		{
-			tag: "h6",
-			isHtml: false,
-			content: "Give your business a boost with a beautifully crafted homepage."
-		}
-	]
+	heading: {
+		tag: "h1",
+		isHtml: false,
+		content: ""
+	},
+	subheading: {
+		tag: "h1",
+		isHtml: false,
+		content: ""
+	}
 }
 
 const data: Data = {

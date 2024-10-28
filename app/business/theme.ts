@@ -1,4 +1,7 @@
 import { Typography } from "@/app/configs/global.types";
+import { useResponsive } from "@/app/hooks/useResponsive";
+
+const { responsive } = useResponsive();
 
 interface Tokens {
     fonts: {
@@ -9,6 +12,7 @@ interface Tokens {
 }
 
 interface Texts {
+	headingDisplay: Typography;
     hyperlink: Typography;
     buttonText: Typography;
 }
@@ -22,6 +26,11 @@ const tokens: Tokens = {
 };
 
 const texts: Texts = {
+	headingDisplay: {
+		fontFamily: tokens.fonts.primary,
+		fontSize: responsive("36px", "50px", "64px"),
+		fontWeight: 400,
+	},
     hyperlink: {
         fontFamily: tokens.fonts.primary,
         fontSize: "12px",

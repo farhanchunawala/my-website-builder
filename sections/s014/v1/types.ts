@@ -1,12 +1,14 @@
-import { TextBlockData, TextBlockStyles } from "@/components/TextBlock01/v1/types";
+import { TextData, TextStyles } from "@/elements/Text01/v1/types";
 
 interface S014Data {
-	textBlock: TextBlockData
+	heading: TextData
+	subheading: TextData
 };
 
 interface S014Styles {
 	container: React.CSSProperties;
-	textBlock: TextBlockStyles
+	heading: TextStyles
+	subheading: TextStyles
 }
 
 interface Section014Props {

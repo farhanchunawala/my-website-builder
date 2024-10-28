@@ -22,12 +22,8 @@ export const getCustomStyles = () => {
 	
 	const s014: S014Styles = {
 		container: {},
-		textBlock: {
-			container: {},
-			texts: [
-				{},
-			]
-		}
+		heading: {},
+		subheading: {}
 	}
 
     const styles: Styles = {
