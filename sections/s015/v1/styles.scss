@@ -1,2 +1,20 @@
 @import "/app/configs/mixins/mixins";
 
+.s015 {
+	.textContainer {
+		margin-top: 85px;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.accentText {
+		color: #1a1b1f;
+		font-size: 12px;
+		font-weight: 500;
+		margin-bottom: 10px;
+		line-height: 20px;
+		letter-spacing: 1px;
+		text-align: center;
+		opacity: 0.6;
+	}
+}

@@ -20,8 +20,19 @@ const Section015: React.FC<Section015Props> = ({ styles, data }) => {
 	}
 
 	return (
-		<div className="s015 container" style={styles.container}>
-			<Text data={data.accentText} styles={styles.accentText} />
+		<div className="s015 container" style={styles?.container}>
+			<div className="textContainer">
+				<Text
+					classNames="accentText"
+					data={data?.accentText}
+					styles={styles?.accentText}
+				/>
+				<Text
+					classNames="heading"
+					data={data?.heading}
+					styles={data?.styles}
+				/>
+			</div>
 		</div>
 	);
 };

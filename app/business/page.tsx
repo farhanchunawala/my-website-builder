@@ -22,8 +22,8 @@ export default function Home() {
 				data={data.s014}
 			/>
             <Section015
-				styles={styles.s014}
-				data={data.s014}
+				styles={styles.s015}
+				data={data.s015}
 			/>
         </div>
     );

@@ -2,11 +2,13 @@ import { TextData, TextStyles } from "@/elements/Text01/v1/types";
 
 interface S015Data {
 	accentText: TextData
+	heading: TextData
 };
 
 interface S015Styles {
 	container: React.CSSProperties
 	accentText: TextStyles
+	heading: TextStyles
 }
 
 interface Section015Props {
