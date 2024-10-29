@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            {data.content}
+            {data?.content}
         </button>
     );
 };

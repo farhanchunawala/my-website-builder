@@ -36,7 +36,8 @@ const useTheme = () => {
 		paragraphBigger: {
 			fontFamily: tokens.fonts.primary,
 			fontSize: responsive("16px", "20px", "20px"),
-			fontWeight: 400
+			fontWeight: 400,
+            lineHeight: "1.7",
 		},
         hyperlink: {
             fontFamily: tokens.fonts.primary,

@@ -35,12 +35,15 @@ const s014: S014Data = {
 	heading: {
 		tag: "h1",
 		isHtml: false,
-		content: ""
+		content: "Grow your business."
 	},
 	subheading: {
-		tag: "h1",
+		tag: "h6",
 		isHtml: false,
-		content: ""
+		content: "Give your business a boost with a beautifully crafted homepage."
+	},
+	button: {
+		content: "LEARN MORE"
 	}
 }
 
