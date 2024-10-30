@@ -54,7 +54,12 @@ const s015: S015Data = {
 		tag: "h5",
 		isHtml: false,
 		content: "WHAT WE BELIEVE IN"
-	}
+	},
+	heading: {
+		tag: "h1",
+		isHtml: false,
+		content: "Grow your business, establish your brand, and put your customers first."
+	},
 }
 
 const data: Data = {
