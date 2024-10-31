@@ -32,6 +32,7 @@ const Section015: React.FC<Section015Props> = ({ styles, data }) => {
 					data={data?.heading}
 					styles={data?.styles}
 				/>
+				<div className="vector"></div>
 			</div>
 		</div>
 	);

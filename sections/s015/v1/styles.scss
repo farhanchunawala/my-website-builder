@@ -23,7 +23,7 @@
 		margin-top: 10px;
 		font-size: 30px;
 		line-height: 52px;
-		margin-bottom: 15px;
+		margin-bottom: 86px;
 		font-weight: 400;
 		max-width: 72%;
 		text-align: center;
@@ -38,5 +38,12 @@
 			line-height: 50px;
 			max-width: 80%;
 		}
+	}
+	.vector {
+		height: 1px;
+		width: calc(100% - 30px);
+		margin: 15px;
+		background-color: #eeeeee;
+		// background-color: #000;
 	}
 }

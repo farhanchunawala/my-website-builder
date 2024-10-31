@@ -1,0 +1,85 @@
+@import "/app/configs/mixins/mixins";
+.s016 {
+	.image {
+		// width: 100%;
+		width: calc(100% - 30px);
+		margin: 15px;
+		background-color: #000;
+		height: 185px;
+		max-width: 1280px;
+		margin-top: 45px;
+	}
+	.accentText {
+		margin-top: 50px;
+		text-shadow: 0px 1px 1px #0003;
+		color: #1a1b1f;
+		font-size: 12px;
+		font-weight: 500;
+		margin-bottom: 10px;
+		line-height: 20px;
+		letter-spacing: 1px;
+		text-align: center;
+		opacity: 0.6;
+	}
+	.heading {
+		color: #1a1b1f;
+		margin-top: 10px;
+		margin-bottom: 20px;
+		font-size: 36px;
+		line-height: 50px;
+		font-weight: 400;
+		// max-width: 72%;
+		text-align: center;
+		justify-self: center;
+		text-shadow: 0px 1px 1px #0003;
+		@media #{$tablet} {
+			font-size: 36px;
+			line-height: 50px;
+		}
+		@media #{$desktop} {
+			font-size: 36px;
+			line-height: 50px;
+			max-width: 80%;
+		}
+	}
+	.subheading {
+		justify-self: center;
+		font-size: 16px;
+		color: #1a1b1f;
+		opacity: 0.6;
+		// text-shadow: 0 1px 1px #0003;
+		font-weight: 450;
+		max-width: 90%;
+		text-align: center;
+		line-height: 28px;
+		margin-bottom: 17px;
+		@media #{$tablet} {
+			max-width: 65%;
+			font-size: 20px;
+			line-height: 34px;
+			font-weight: 400;
+		}
+		@media #{$desktop} {
+			font-size: 20px;
+			line-height: 34px;
+			font-weight: 500;
+		}
+	}
+	.button {
+		color: #fff;
+		flex-direction: row;
+		height: 44px;
+		width: 153px;
+		background-color: #1a1b1f;
+		display: flex;
+		text-align: center;
+		justify-content: center;
+		margin-top: 30px;
+		font-weight: 400;
+		font-size: 12px;
+		font-family: sans-serif;
+		border: solid #1a1b1f;
+		justify-self: center;
+	}
+	
+}
