@@ -1,13 +1,37 @@
 @import "/app/configs/mixins/mixins";
 .s016 {
+	@media #{$desktop} {
+		display: flex;
+	}
 	.image {
-		// width: 100%;
+		justify-self: center;
 		width: calc(100% - 30px);
 		margin: 15px;
 		background-color: #000;
 		height: 185px;
 		max-width: 1280px;
 		margin-top: 45px;
+
+		@media #{$tablet} {
+			width: calc(100% - 60px);
+			margin: 30px;
+			height: 451px;
+		}
+
+		@media #{$desktop} {
+			// width: calc(63.5% - 30px);
+			max-width: 63 .5%;
+			display: flex;
+			height: 376px;
+			justify-self: right;
+			margin-bottom: 15px;
+		}
+	}
+	.textContainer {
+		@media #{$desktop} {
+			max-width: 30.5%;
+			margin-left: 30px;
+		}
 	}
 	.accentText {
 		margin-top: 50px;
@@ -20,6 +44,10 @@
 		letter-spacing: 1px;
 		text-align: center;
 		opacity: 0.6;
+		
+		@media #{$desktop} {
+			text-align: left;
+		}
 	}
 	.heading {
 		color: #1a1b1f;
@@ -28,18 +56,21 @@
 		font-size: 36px;
 		line-height: 50px;
 		font-weight: 400;
-		// max-width: 72%;
 		text-align: center;
 		justify-self: center;
 		text-shadow: 0px 1px 1px #0003;
+
 		@media #{$tablet} {
 			font-size: 36px;
 			line-height: 50px;
 		}
+
 		@media #{$desktop} {
 			font-size: 36px;
 			line-height: 50px;
 			max-width: 80%;
+			text-align: left;
+			justify-self: left;
 		}
 	}
 	.subheading {
@@ -47,22 +78,26 @@
 		font-size: 16px;
 		color: #1a1b1f;
 		opacity: 0.6;
-		// text-shadow: 0 1px 1px #0003;
 		font-weight: 450;
 		max-width: 90%;
 		text-align: center;
 		line-height: 28px;
 		margin-bottom: 17px;
+
 		@media #{$tablet} {
-			max-width: 65%;
-			font-size: 20px;
-			line-height: 34px;
+			max-width: 90%;
+			font-size: 16px;
+			line-height: 28px;
 			font-weight: 400;
 		}
+
 		@media #{$desktop} {
-			font-size: 20px;
-			line-height: 34px;
-			font-weight: 500;
+			font-size: 16px;
+			line-height: 28px;
+			font-weight: 400;
+			text-align: left;
+			justify-self: left;
+			max-width: 95%;
 		}
 	}
 	.button {
@@ -80,6 +115,8 @@
 		font-family: sans-serif;
 		border: solid #1a1b1f;
 		justify-self: center;
+		@media #{$desktop} {
+			justify-self: left;
+		}
 	}
-	
 }
