@@ -1,14 +1,14 @@
 
 
-interface S0Data {
+type S0Data = {
 	
 };
 
-interface S0Styles {
+type S0Styles = {
 	container: React.CSSProperties
 }
 
-interface S0Props {
+type S0Props = {
     data: S0Data;
 	classNames?: string;
     styles: S0Styles;

@@ -2,12 +2,12 @@ import { HyperlinkData, HyperlinkStyles } from "@/elements/Hyperlink01/v1/types"
 
 type NavLinksData = HyperlinkData[];
 
-interface NavLinksStyles {
+type NavLinksStyles = {
 	container: React.CSSProperties;
 	hyperlink: HyperlinkStyles;
 }
 
-interface NavLinksProps {
+type NavLinksProps = {
     data: NavLinksData;
 	classNames?: string;
     styles: NavLinksStyles;

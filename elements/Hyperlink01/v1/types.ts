@@ -1,12 +1,12 @@
 import { Typography } from '@/app/configs/global.types';
 
-interface HyperlinkData {
+type HyperlinkData = {
 	content: string;
 };
 
 type HyperlinkStyles = Typography & React.CSSProperties
 
-interface HyperlinkProps {
+type HyperlinkProps = {
     data: HyperlinkData;
 	classNames?: string;
     styles: HyperlinkStyles;

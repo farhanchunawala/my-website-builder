@@ -1,18 +1,18 @@
 import { Typography } from '@/app/configs/global.types';
 
-interface ButtonData {
+type ButtonData = {
 	content: string;
     // isHtml?: boolean;
 }
 
-interface ButtonStyles {
+type ButtonStyles = {
 	container: Typography & React.CSSProperties & {
 		color: string;
 	};
 	hover: React.CSSProperties;
 }
 
-interface ButtonProps {
+type ButtonProps = {
     data: ButtonData;
     classNames?: string;
     styles: ButtonStyles;

@@ -1,16 +1,26 @@
-import { TextData, TextStyles } from '@/elements/Text01/v1/types';
+import { TextData, TextStyles } from "@/elements/Text01/v1/types";
 
 type TextBlockData = TextData[];
 
-interface TextBlockStyles {
-	container: React.CSSProperties;
-	texts: TextStyles[];
-}
+// type OptionalProperties<T> = {
+//     [K in keyof T as {} extends Pick<T, K>
+//         ? K
+//         : never]: T[K] extends object
+//         ? OptionalProperties<T[K]>
+//         : T[K];
+// };
 
-interface TextBlockProps {
+type TextBlockStyles = {
+    container: React.CSSProperties;
+    texts: TextStyles[];
+};
+
+// type MyTypeOptionalProperties = OptionalProperties<TextBlockStyles>;
+
+type TextBlockProps = {
     data: TextBlockData;
-	classNames?: string;
+    classNames?: string;
     styles: TextBlockStyles;
-}
+};
 
-export type { TextBlockData, TextBlockStyles, TextBlockProps }
+export type { TextBlockData, TextBlockStyles, TextBlockProps };

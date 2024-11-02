@@ -1,11 +1,11 @@
 import { TextBlockData, TextBlockStyles } from "@/components/TextBlock01/v1/types";
 
-interface S017Data {
+type S017Data = {
 	textBlock: TextBlockData,
 	columns: TextBlockData[],
 };
 
-interface S017Styles {
+type S017Styles = {
 	container: React.CSSProperties,
 	textBlock: TextBlockStyles,
 	columns: {
@@ -14,7 +14,7 @@ interface S017Styles {
 	}
 }
 
-interface Section017Props {
+type Section017Props = {
     data: S017Data;
 	classNames?: string;
     styles: S017Styles;
