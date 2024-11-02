@@ -6,15 +6,6 @@ import { S015Data } from "@/sections/s015/v1/types";
 import { S016Data } from "@/sections/s016/v1/types";
 import { S017Data } from "@/sections/s017/v1/types";
 
-
-interface Data {
-	s013: S013Data,
-	s014: S014Data,
-	s015: S015Data
-	s016: S016Data
-	s017: S017Data
-};
-
 const s013: S013Data = {
 	navlinks: [
 		{
@@ -88,7 +79,7 @@ const s016: S016Data = {
 	},
 }
 
-const data: Data = {
+const data = {
 	s013: s013,
 	s014: s014,
 	s015: s015,

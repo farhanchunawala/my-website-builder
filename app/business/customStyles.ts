@@ -3,11 +3,6 @@ import { useTheme } from "./theme";
 import { S013Styles } from "@/sections/s013/v1/types";
 import { S014Styles } from "@/sections/s014/v1/types";
 
-interface Styles {
-    s013: S013Styles;
-    s014: S014Styles;
-}
-
 const useCustomStyles = () => {
     const { tokens, fonts, colors, texts, buttons } = useTheme();
     const { responsive } = useResponsive();
@@ -27,7 +22,7 @@ const useCustomStyles = () => {
         subheading: {},
     };
 
-    const styles: Styles = {
+    const styles = {
         s013: s013,
         s014: s014,
     };

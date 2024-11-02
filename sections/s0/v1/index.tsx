@@ -1,31 +1,26 @@
-import "./styles.scss";
+// import "./styles.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
-import type { Section0Props } from "./types";
+import type { S0Props } from "./types";
 
-const Section0: React.FC<Section0Props> = ({
-	styles,
-	data
-}) => {
+const Section0: React.FC<S0Props> = ({ styles, data }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
-	const [mounted, setMounted] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-        setMounted(true);
+        setIsMounted(true);
     }, []);
 
-    if (!mounted) {
-        return null;
-    }
-	
-	return (
-		<div className="s0 container" style={styles.container}>
+    if (!isMounted) return null;
+
+    return (
+		<div style={styles?.container}>
 			
 		</div>
 	);
-}
+};
 
 export default Section0;
