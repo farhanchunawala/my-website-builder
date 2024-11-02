@@ -1,11 +1,11 @@
 
 type ComponentData = {};
 
-interface ComponentStyles {
+type ComponentStyles = {
 	container: React.CSSProperties;
 }
 
-interface ComponentProps {
+type ComponentProps = {
     data: ComponentData;
 	classNames?: string;
     styles: ComponentStyles;
