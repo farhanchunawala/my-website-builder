@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
 import type { Section017Props } from "./types";
+import Text from "@/elements/Text01/v1";
 
 const Section017: React.FC<Section017Props> = ({
 	styles,
@@ -22,7 +23,7 @@ const Section017: React.FC<Section017Props> = ({
     }
 	
 	return (
-		<div className="s017 container" style={styles.container}>
+		<div className="s017 container" style={styles?.container}>
 			
 		</div>
 	);

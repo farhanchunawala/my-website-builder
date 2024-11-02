@@ -79,6 +79,27 @@ const s016: S016Data = {
 	},
 }
 
+const s017: S017Data = {
+	accentText: {
+		tag: "h5",
+		isHtml: false,
+		content: "ABOUT US"
+	},
+	heading: {
+		tag: "h1",
+		isHtml: false,
+		content: "Who we are"
+	},
+	subheading: {
+		tag: "h6",
+		isHtml: false,
+		content: "Nulla vel sodales tellus, quis condimentum enim. Nunc porttitor venenatis feugiat. Etiam quis faucibus erat, non accumsan leo. Aliquam erat volutpat. Vestibulum ac faucibus eros. Cras ullamcorper gravida tellus ut consequat."
+	},
+	button: {
+		content: "LEARN MORE"
+	},
+}
+
 const data = {
 	s013: s013,
 	s014: s014,
