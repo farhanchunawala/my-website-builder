@@ -1,8 +1,4 @@
-@import "/app/configs/mixins/mixins";
-
-// ===================================
-// Mixins
-// ===================================
+// @import "/app/configs/mixins/mixins";
 
 @mixin title-text-s002 {
 	font-family: $fontTitle;
@@ -13,7 +9,7 @@
 }
 
 @mixin body-text-s002 {
-	@media #{$desktop} {
+	@media (min-width: 992px) {
 		font-size: 16px;
 		font-weight: 500;
 		color: $blackSecondary;
@@ -47,7 +43,7 @@
 	}
 }
 
-@media #{$desktop} {
+@media (min-width: 992px) {
 	.youtube_home {
 		position: relative;
 		height: 375px;

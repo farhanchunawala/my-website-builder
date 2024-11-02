@@ -1,8 +1,4 @@
-@import "/app/configs/mixins/mixins";
-
-// ===================================
-// Mixins
-// ===================================
+// @import "/app/configs/mixins/mixins";
 
 @mixin headline-text-s001 {
 	font-family: $fontTitle;
@@ -11,7 +7,7 @@
 	color: $blackPrimary;
 	line-height: $lineHeight;
 
-	@media #{$desktop} {
+	@media (min-width: 992px) {
 		font-size: 46px;
 		font-weight: 600;
 		color: #0d0c22;
@@ -24,7 +20,7 @@
 	font-size: 14px;
 	color: $blackPrimary;
 
-	@media #{$desktop} {
+	@media (min-width: 992px) {
 		font-size: 35px;
 	}
 }
@@ -34,7 +30,7 @@
 	font-weight: 500;
 	color: $blackPrimary;
 
-	@media #{$desktop} {
+	@media (min-width: 992px) {
 		font-size: 20px;
 	}
 }
@@ -87,7 +83,7 @@
 	}
 }
 
-@media #{$desktop} {
+@media (min-width: 992px) {
 	.banner_home {
 		height: 370px;
 		width: 100%;

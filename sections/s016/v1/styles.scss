@@ -1,6 +1,6 @@
-@import "/app/configs/mixins/mixins";
+// @import "/app/configs/mixins/mixins";
 .s016 {
-	@media #{$desktop} {
+	@media (min-width: 992px) {
 		display: flex;
 	}
 	.image {
@@ -12,13 +12,13 @@
 		max-width: 1280px;
 		margin-top: 45px;
 
-		@media #{$tablet} {
+		@media (min-width: 480px) {
 			width: calc(100% - 60px);
 			margin: 30px;
 			height: 451px;
 		}
 
-		@media #{$desktop} {
+		@media (min-width: 992px) {
 			// width: calc(63.5% - 30px);
 			max-width: 63 .5%;
 			display: flex;
@@ -28,7 +28,7 @@
 		}
 	}
 	.textContainer {
-		@media #{$desktop} {
+		@media (min-width: 992px) {
 			max-width: 30.5%;
 			margin-left: 30px;
 		}
@@ -45,7 +45,7 @@
 		text-align: center;
 		opacity: 0.6;
 		
-		@media #{$desktop} {
+		@media (min-width: 992px) {
 			text-align: left;
 		}
 	}
@@ -60,12 +60,12 @@
 		justify-self: center;
 		text-shadow: 0px 1px 1px #0003;
 
-		@media #{$tablet} {
+		@media (min-width: 480px) {
 			font-size: 36px;
 			line-height: 50px;
 		}
 
-		@media #{$desktop} {
+		@media (min-width: 992px) {
 			font-size: 36px;
 			line-height: 50px;
 			max-width: 80%;
@@ -84,14 +84,14 @@
 		line-height: 28px;
 		margin-bottom: 17px;
 
-		@media #{$tablet} {
+		@media (min-width: 480px) {
 			max-width: 90%;
 			font-size: 16px;
 			line-height: 28px;
 			font-weight: 400;
 		}
 
-		@media #{$desktop} {
+		@media (min-width: 992px) {
 			font-size: 16px;
 			line-height: 28px;
 			font-weight: 400;
@@ -115,7 +115,7 @@
 		font-family: sans-serif;
 		border: solid #1a1b1f;
 		justify-self: center;
-		@media #{$desktop} {
+		@media (min-width: 992px) {
 			justify-self: left;
 		}
 	}

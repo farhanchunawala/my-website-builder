@@ -1,4 +1,4 @@
-import "./styles.scss";
+// import "./styles.scss";
 import { NavLinksProps } from "./types";
 import Hyperlink from "@/elements/Hyperlink01/v1";
 

@@ -1,12 +1,4 @@
-@import "/app/configs/mixins/mixins";
-
-// ===================================
-// Variables
-// ===================================
-
-// ===================================
-// Mixins
-// ===================================
+// @import "/app/configs/mixins/mixins";
 
 @mixin heading-text-s003 {
 	font-family: $fontTitle;
@@ -32,7 +24,7 @@
 		letter-spacing: 1.1px;
 	}
 
-	@media #{$desktop} {
+	@media (min-width: 992px) {
 		font-size: 30px;
 		text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
 	}
@@ -45,7 +37,7 @@
 	color: $blackPrimary;
 	letter-spacing: 1.12px;
 
-	@media #{$desktop} {
+	@media (min-width: 992px) {
 		font-size: 20px;
 		color: #2d255e;
 		letter-spacing: 1.6px;
@@ -58,7 +50,7 @@
 	color: #797979;
 	line-height: $lineHeight;
 
-	@media #{$desktop} {
+	@media (min-width: 992px) {
 		font-size: 16px;
 		color: $blackSecondary;
 	}
@@ -154,7 +146,7 @@
 	}
 }
 
-@media #{$desktop} {
+@media (min-width: 992px) {
 	.walk-with-us-home {
 		padding: 0 60px;
 		max-width: 1280px;

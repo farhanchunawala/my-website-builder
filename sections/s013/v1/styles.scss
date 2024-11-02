@@ -1,4 +1,4 @@
-@import "/app/configs/mixins/mixins";
+// @import "/app/configs/mixins/mixins";
 
 .s013 {
     &.container {
@@ -11,11 +11,11 @@
         padding: 20px;
         margin: 0 auto;
 
-        @media #{$tablet} {
+        @media (min-width: 480px) {
             padding: 25px 30px;
         }
 
-        @media #{$desktop} {
+        @media (min-width: 992px) {
             padding: 30px 50px;
             max-width: 1140px;
         }
@@ -24,7 +24,7 @@
     .navLinks {
         display: none;
 
-        @media #{$desktop} {
+        @media (min-width: 992px) {
             display: flex;
             align-items: center;
         }
@@ -57,7 +57,7 @@
     button {
         display: none;
 
-        @media #{$desktop} {
+        @media (min-width: 992px) {
             display: flex;
         }
     }
@@ -65,7 +65,7 @@
     .barsIcon {
         // margin-right: 12px;
 
-        @media #{$desktop} {
+        @media (min-width: 992px) {
             display: none;
         }
     }

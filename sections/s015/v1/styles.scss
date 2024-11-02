@@ -1,4 +1,4 @@
-@import "/app/configs/mixins/mixins";
+// @import "/app/configs/mixins/mixins";
 
 .s015 {
 	.textContainer {
@@ -29,11 +29,11 @@
 		text-align: center;
 		justify-self: center;
 		text-shadow: 0px 1px 1px #0003;
-		@media #{$tablet} {
+		@media (min-width: 480px) {
 			font-size: 36px;
 			line-height: 50px;
 		}
-		@media #{$desktop} {
+		@media (min-width: 992px) {
 			font-size: 36px;
 			line-height: 50px;
 			max-width: 80%;
