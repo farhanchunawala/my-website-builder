@@ -14,12 +14,16 @@ export const useResponsive = () => {
             dispatch(updateDeviceType());
         };
 
-		const desktopQuery = window.matchMedia("(min-width: 992px)");
-        const tabletQuery = window.matchMedia(
-            "(min-width: 480px) and (max-width: 991px)"
+        const mobileQuery = window.matchMedia(
+			"(max-width: 479px)"
         );
+        const tabletQuery = window.matchMedia(
+			"(min-width: 480px) and (max-width: 991px)"
+        );
+		const desktopQuery = window.matchMedia("(min-width: 992px)");
 
-		// Add event listeners
+        // Add event listeners
+        mobileQuery.addEventListener("change", handleResize);
         tabletQuery.addEventListener("change", handleResize);
         desktopQuery.addEventListener("change", handleResize);
 
@@ -27,30 +31,22 @@ export const useResponsive = () => {
         handleResize();
 
         return () => {
-			// Cleanup event listeners
+            // Cleanup event listeners
+            mobileQuery.removeEventListener("change", handleResize);
             tabletQuery.removeEventListener("change", handleResize);
             desktopQuery.removeEventListener("change", handleResize);
         };
     }, [dispatch]);
 
-    // Responsive function that returns the value based on the device type
     const responsive = (
         mobileValue: string,
-        tabletValue?: string,
-        desktopValue?: string
+        tabletValue: string,
+        desktopValue: string
     ) => {
-        if (isDesktop && desktopValue !== undefined) {
-            return desktopValue;
-        }
-        if (isTablet && tabletValue !== undefined) {
-            return tabletValue;
-        }
-        return mobileValue;
+        return isMobile ? mobileValue
+            : isTablet ? tabletValue
+			: desktopValue;
     };
-
-    // const responsive = (mobileValue: string, tabletValue?: string, desktopValue?: string) => {
-    // 	return isDesktop ? desktopValue : isTablet ? tabletValue : mobileValue;
-    // };
 
     return { responsive, isMobile, isTablet, isDesktop };
 };

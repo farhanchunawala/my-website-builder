@@ -9,7 +9,7 @@ interface Styles {
 }
 
 const useCustomStyles = () => {
-    const { tokens, texts, buttons } = useTheme();
+    const { tokens, fonts, colors, texts, buttons } = useTheme();
     const { responsive } = useResponsive();
 
     const s013: S013Styles = {

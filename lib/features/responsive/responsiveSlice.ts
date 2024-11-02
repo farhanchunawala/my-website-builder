@@ -1,28 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// const getDeviceType = () => {
-// 	if (typeof window !== 'undefined') {
-// 	const isDesktop = window.matchMedia("(min-width: 992px)").matches;
-// 	const isTablet = window.matchMedia(
-// 		"(min-width: 480px) and (max-width: 991px)"
-// 	).matches;
-
-// 	return { isMobile: !isTablet && !isDesktop, isTablet, isDesktop };
-// };
 const getDeviceType = () => {
     if (typeof window !== "undefined") {
-        const isDesktop = window.matchMedia(
-            "(min-width: 992px)"
+        const isMobile = window.matchMedia(
+            "(max-width: 479px)"
         ).matches;
         const isTablet = window.matchMedia(
             "(min-width: 480px) and (max-width: 991px)"
         ).matches;
-        const isMobile = !isDesktop && !isTablet;
+        const isDesktop = window.matchMedia(
+            "(min-width: 992px)"
+        ).matches;
 
-        return { isDesktop, isTablet, isMobile };
+        return { isMobile, isTablet, isDesktop };
     }
 
-    return { isDesktop: false, isTablet: false, isMobile: true };
+    return { isMobile: true, isTablet: false, isDesktop: false };
 };
 
 const initialState = getDeviceType();
