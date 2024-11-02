@@ -2,10 +2,11 @@ import "./styles.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
-import type { Section015Props } from "./types";
+import type { Section016Props } from "./types";
 import Text from "@/elements/Text01/v1";
+import Button from "@/elements/Button01/v1";
 
-const Section015: React.FC<Section015Props> = ({ styles, data }) => {
+const Section016: React.FC<Section016Props> = ({ styles, data }) => {
 	const { isMobile, isTablet, isDesktop } = useSelector(
 		(state: RootState) => state.responsive
 	);
@@ -20,7 +21,7 @@ const Section015: React.FC<Section015Props> = ({ styles, data }) => {
 	}
 
 	return (
-		<div className="s015 container" style={styles?.container}>
+		<div className="s016 container" style={styles?.container}>
 			<div className="textContainer">
 				<Text
 					classNames="accentText"
@@ -30,12 +31,22 @@ const Section015: React.FC<Section015Props> = ({ styles, data }) => {
 				<Text
 					classNames="heading"
 					data={data?.heading}
-					styles={data?.styles}
+					styles={styles?.heading}
 				/>
-				<div className="vector"></div>
+				<Text
+					classNames="subheading"
+					data={data?.subheading}
+					styles={styles?.subheading}
+				/>
+				<Button
+					classNames="button"
+					data={data?.button}
+					styles={styles?.button}
+				/>
 			</div>
+			<div className="image"></div>
 		</div>
 	);
 };
 
-export default Section015;
+export default Section016;
