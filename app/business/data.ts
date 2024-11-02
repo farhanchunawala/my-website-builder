@@ -4,6 +4,7 @@ import { S013Data } from "@/sections/s013/v1/types";
 import { S014Data } from "@/sections/s014/v1/types";
 import { S015Data } from "@/sections/s015/v1/types";
 import { S016Data } from "@/sections/s016/v1/types";
+import { S017Data } from "@/sections/s017/v1/types";
 
 
 interface Data {
@@ -11,6 +12,7 @@ interface Data {
 	s014: S014Data,
 	s015: S015Data
 	s016: S016Data
+	s017: S017Data
 };
 
 const s013: S013Data = {
@@ -91,6 +93,7 @@ const data: Data = {
 	s014: s014,
 	s015: s015,
 	s016: s016,
+	s017: s017,
 }
 
 export default data;
