@@ -26,6 +26,20 @@ const Section017: React.FC<Section017Props> = ({ styles, data }) => {
 				data={data?.textBlock}
 				styles={styles?.textBlock}
 			/>
+			<div style={styles?.columns?.container}>
+				<TextBlock
+					data={data?.columns[0]}
+					styles={styles?.columns?.textBlock}
+				/>
+				<TextBlock
+					data={data?.columns[1]}
+					styles={styles?.columns?.textBlock}
+				/>
+				<TextBlock
+					data={data?.columns[2]}
+					styles={styles?.columns?.textBlock}
+				/>
+			</div>
 		</div>
 	);
 };

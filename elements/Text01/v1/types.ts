@@ -8,6 +8,7 @@ type TextData = {
 
 interface TextStyles extends Typography {
 	color: React.CSSProperties['color'];
+	opacity?: React.CSSProperties['opacity'];
 	textAlign?: React.CSSProperties['textAlign'];
 }
 
