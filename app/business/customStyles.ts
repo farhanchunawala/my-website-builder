@@ -3,6 +3,8 @@ import { useTheme } from "./theme";
 import { S013Styles } from "@/sections/s013/v1/types";
 import { S014Styles } from "@/sections/s014/v1/types";
 import { S017Styles } from "@/sections/s017/v1/types";
+import { S018Styles } from "@/sections/s018/v1/types";
+import { Montserrat } from "next/font/google";
 
 const useCustomStyles = () => {
     const { tokens, fonts, colors, texts, buttons } = useTheme();
@@ -104,11 +106,59 @@ const useCustomStyles = () => {
 			}
 		}
 	};
+	
+	const s018: S018Styles = {
+		container: {
+			backgroundColor: "#f4f4f4",
+			padding: "95px 30px 105px",
+			margin: "0 15px",
+		},
+		text1: {
+			color: "#1a1b1f",
+			fontFamily: undefined,
+			fontSize: "30px",
+			fontWeight: 400,
+			lineHeight: "52px",
+			marginTop: "10px",
+			marginBottom: "15px",
+			textAlign: "center",
+		},
+		text2: {
+			color: "#1a1b1f",
+			fontFamily: undefined,
+			fontSize: "16px",
+			fontWeight: 400,
+			lineHeight: "28px",
+			marginTop: "10px",
+			opacity: 0.6,
+			textAlign: "center",
+			marginBottom: "15px",
+		},
+		button: {
+			container: {
+				height: "58px",
+				width: "174px",
+				textAlign: "center",
+				justifyContent: "center",
+				justifySelf: "center",
+				marginTop: "35px",
+				backgroundColor: "#1a1b1f",
+				color: "#fff",
+				border: "1px solid #1a1b1f",
+				// borderRadius: "0",
+				fontFamily: "Montserrat",
+				letterSpacing: "2px",
+				fontSize: "14px",
+			},
+			hover: undefined
+		}
+	}
 
     const styles = {
         s013: s013,
         s014: s014,
 		s017: s017,
+		s018: s018,
     };
 
     return { styles };

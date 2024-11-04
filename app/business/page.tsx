@@ -8,6 +8,7 @@ import Section014 from "@/sections/s014/v1";
 import Section015 from "@/sections/s015/v1";
 import Section016 from "@/sections/s016/v1";
 import Section017 from "@/sections/s017/v1";
+import Section018 from "@/sections/s018/v1";
 
 export default function Home() {
     const { styles } = useCustomStyles();
@@ -34,6 +35,10 @@ export default function Home() {
             <Section017
 				styles={styles.s017}
 				data={data.s017}
+			/>
+            <Section018
+				styles={styles.s018}
+				data={data.s018}
 			/>
         </div>
     );

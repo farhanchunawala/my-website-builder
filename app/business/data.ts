@@ -5,6 +5,7 @@ import { S014Data } from "@/sections/s014/v1/types";
 import { S015Data } from "@/sections/s015/v1/types";
 import { S016Data } from "@/sections/s016/v1/types";
 import { S017Data } from "@/sections/s017/v1/types";
+import { S018Data } from "@/sections/s018/v1/types";
 
 const s013: S013Data = {
 	navlinks: [
@@ -147,12 +148,29 @@ const s017: S017Data = {
 	]
 }
 
+const s018: S018Data = {
+	text1: {
+		tag: "p",
+		isHtml: false,
+		content: "Grow your business."
+	},
+	text2: {
+		tag: "p",
+		isHtml: false,
+		content: "Today is the day to build the business of your dreams. Share your mission with the world — and blow your customers away."
+	},
+	button: {
+		content: "START NOW"
+	}
+}
+
 const data = {
 	s013: s013,
 	s014: s014,
 	s015: s015,
 	s016: s016,
 	s017: s017,
+	s018: s018
 }
 
 export default data;
