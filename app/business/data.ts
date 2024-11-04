@@ -114,7 +114,7 @@ const s017: S017Data = {
 			{
 				tag: "h3",
 				isHtml: false,
-				content: "10 Quick Tips About Blogging"
+				content: "15 Best Blogs To Follow About Web Design"
 			},
 			{
 				tag: "p",
@@ -131,7 +131,7 @@ const s017: S017Data = {
 			{
 				tag: "h3",
 				isHtml: false,
-				content: "10 Quick Tips About Blogging"
+				content: "7 of the Best Examples of Beautiful Blog Design"
 			},
 			{
 				tag: "p",

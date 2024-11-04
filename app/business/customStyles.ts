@@ -31,6 +31,7 @@ const useCustomStyles = () => {
 			},
 			texts: [
 				{
+					marginTop: responsive("85px", "70px", "85px"),
 					color: "#1a1b1f",
 					fontFamily: "montserrat",
 					fontSize: "12px",
@@ -53,13 +54,12 @@ const useCustomStyles = () => {
 			]
 		},
 		columns: {
-			container: {},
+			container: {
+				display: responsive("block", "block", "flex"),
+			},
 			textBlock: {
 				container: {
-					// justifyContent: "center",
-					// justifySelf: "center",
-					// alignItems: "center",
-					
+				marginLeft: responsive("none","none","30px"),
 				},
 				texts: [
 					{
@@ -70,15 +70,35 @@ const useCustomStyles = () => {
 						lineHeight: "38px",
 						marginTop: "70px",
 						marginBottom: "10px",
-						textAlign: "center",
-						maxWidth: "70%",
-						justifySelf: "center"
+						textAlign: responsive("center","center","left"),
+						maxWidth: responsive("70%","70%","87%"),
+						justifySelf: responsive("center","center","left"),
+						// marginLeft: responsive("none","none","30px")
 					},
 					{
-						color: undefined,
+						color: "#1a1b1f",
 						fontFamily: undefined,
-						fontSize: undefined,
-						fontWeight: undefined
+						fontSize: "12px",
+						fontWeight: "500",
+						lineHeight: "20px",
+						marginTop: "20px",
+						opacity: 0.6,
+						textTransform: "uppercase",
+						textAlign: responsive("center","center","left"),
+						justifySelf: responsive("center","center","left"),
+						letterSpacing: "1px",
+					},
+					{
+						color: "#1a1b1f",
+						fontFamily: undefined,
+						fontSize: "16px",
+						fontWeight: "400",
+						lineHeight: "28px",
+						marginTop: "10px",
+						opacity: 0.6,
+						textAlign: responsive("center", "center", "left"),
+						justifySelf: responsive("center","center","left"),
+						maxWidth: responsive("65%", "70%", "87%"),
 					}
 				]
 			}
