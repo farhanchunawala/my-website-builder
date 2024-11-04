@@ -22,29 +22,25 @@ const Section016: React.FC<Section016Props> = ({ styles, data }) => {
 
 	return (
 		<div className="s016 container" style={styles?.container}>
-			<div className="textContainer">
+			<div style={styles?.textContainer}>
 				<Text
-					classNames="accentText"
 					data={data?.accentText}
 					styles={styles?.accentText}
 				/>
 				<Text
-					classNames="heading"
 					data={data?.heading}
 					styles={styles?.heading}
 				/>
 				<Text
-					classNames="subheading"
 					data={data?.subheading}
 					styles={styles?.subheading}
 				/>
 				<Button
-					classNames="button"
 					data={data?.button}
 					styles={styles?.button}
 				/>
 			</div>
-			<div className="image"></div>
+			<div style={styles?.image}></div>
 		</div>
 	);
 };

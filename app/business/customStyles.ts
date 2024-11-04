@@ -5,6 +5,7 @@ import { S014Styles } from "@/sections/s014/v1/types";
 import { S017Styles } from "@/sections/s017/v1/types";
 import { S018Styles } from "@/sections/s018/v1/types";
 import { Montserrat } from "next/font/google";
+import { S016Styles } from "@/sections/s016/v1/types";
 
 const useCustomStyles = () => {
     const { tokens, fonts, colors, texts, buttons } = useTheme();
@@ -24,6 +25,82 @@ const useCustomStyles = () => {
         heading: {},
         subheading: {},
     };
+	
+	const s016: S016Styles = {
+		container: {
+			display: responsive("block", "block", "flex"),
+		},
+		image: {
+			justifySelf: responsive("center", "center", "right"),
+			width: responsive("100%", "100%", "50%"),
+			backgroundColor: "#000",
+			height: responsive("185px", "451px", "376px"),
+			maxWidth: responsive("1280px", "1280px", "63.5%"),
+			marginTop: responsive("45px", "30px", "30px"),
+			marginBottom: "15px",
+			margin: responsive("15px", "30px", "30px"),
+			marginLeft: responsive("none", "none", "30px"),
+			display: responsive("none", "none", "flex"),
+		},
+		textContainer: {
+			maxWidth: responsive("none", "none", "30.5%"),
+			marginLeft: responsive("none", "none", "30px"),
+		},
+		accentText: {
+			color: "#1a1b1f",
+			textShadow: "0 0 0 1px #003",
+			marginTop: "50px",
+			fontSize: "12px",
+			fontWeight: 500,
+			letterSpacing: "1px",
+			textAlign: responsive("center", "center", "left"),
+			lineHeight: "20px",
+			marginBottom: "10px",
+			opacity: 0.6,
+		},
+		heading: {color: "#1a1b1f",
+		marginBottom: "20px",
+		marginTop: "10px",
+		fontSize: "36px",
+		fontWeight: 400,
+		lineHeight: "50px",
+		textAlign: responsive("center", "center", "left"),
+		justifySelf: responsive("center", "center", "left"),
+		maxWidth: responsive("none", "none", "80%"),
+		textShadow: "0 0 0 1px #003",
+		},
+		subheading: {
+			justifySelf: responsive("center", "center", "left"),
+			color: "#1a1b1f",
+			fontSize: "16px",
+			fontWeight: responsive("450", "400", "400"),
+			lineHeight: "28px",
+			textAlign: responsive("center", "center", "left"),
+			maxWidth: responsive("90%", "90%", "95%"),
+			opacity: 0.6,
+			marginBottom: "17px",
+		},
+		button: {
+			container: {
+				color: "#fff",
+			flexDirection: "row",
+			height: "44px",
+			width: "153px",
+			backgroundColor: "#1a1b1f",
+			display: "flex",
+			justifyContent: "center",
+			textAlign: "center",
+			marginTop: "30px",
+			fontWeight: 400,
+			fontSize: "12px",
+			fontFamily: "montserrat",
+			border: "solid #1a1b1f",
+			borderWidth: "1px",
+			justifySelf: responsive("center", "center", "left"),
+			},
+			hover: {}
+		}
+	}
 	
 	const s017: S017Styles = {
 		container: {},
@@ -110,13 +187,13 @@ const useCustomStyles = () => {
 	const s018: S018Styles = {
 		container: {
 			backgroundColor: "#f4f4f4",
-			padding: "95px 30px 105px",
-			margin: "0 15px",
+			padding: responsive("95px 30px 105px", "80px 50px 90px", "110px 80px 120px"),
+			margin: responsive("15px", "30px", "30px"),
 		},
 		text1: {
 			color: "#1a1b1f",
 			fontFamily: undefined,
-			fontSize: "30px",
+			fontSize: responsive("30px", "36px", "36px"),
 			fontWeight: 400,
 			lineHeight: "52px",
 			marginTop: "10px",
@@ -126,13 +203,15 @@ const useCustomStyles = () => {
 		text2: {
 			color: "#1a1b1f",
 			fontFamily: undefined,
-			fontSize: "16px",
+			fontSize: responsive("16px", "20px", "20px"),
 			fontWeight: 400,
-			lineHeight: "28px",
+			lineHeight: responsive("28px", "34px", "34px"),
 			marginTop: "10px",
 			opacity: 0.6,
 			textAlign: "center",
 			marginBottom: "15px",
+			justifySelf: "center",
+			maxWidth: responsive("100%", "100%", "70%"),
 		},
 		button: {
 			container: {
@@ -157,6 +236,7 @@ const useCustomStyles = () => {
     const styles = {
         s013: s013,
         s014: s014,
+		s016: s016,
 		s017: s017,
 		s018: s018,
     };

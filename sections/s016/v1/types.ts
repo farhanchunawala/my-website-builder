@@ -1,5 +1,5 @@
-import { TextData } from "@/elements/Text01/v1/types";
-import { ButtonData } from "@/elements/Button01/v1/types";
+import { TextData, TextStyles } from "@/elements/Text01/v1/types";
+import { ButtonData, ButtonStyles } from "@/elements/Button01/v1/types";
 
 interface S016Data {
 	accentText: TextData
@@ -10,6 +10,12 @@ interface S016Data {
 
 interface S016Styles {
 	container: React.CSSProperties
+	image: React.CSSProperties
+	textContainer: React.CSSProperties
+	accentText: TextStyles
+	heading: TextStyles
+	subheading: TextStyles
+	button: ButtonStyles
 }
 
 interface Section016Props {
