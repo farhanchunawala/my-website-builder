@@ -12,10 +12,45 @@ const useCustomStyles = () => {
     const { responsive } = useResponsive();
 
     const s013: S013Styles = {
-        container: {},
+        container: {
+			position: "relative",
+			display: "flex",
+			alignItems: "center",
+			justifyContent: "space-between",
+			zIndex: 5,
+			backgroundColor: "transparent",
+			width: "100%",
+			height: responsive("66px", "66px", "104px"),
+			margin: "0 auto",
+			padding: responsive("0 20px", "0 30px", "0 50px"),
+			maxWidth: "1140px"
+		},
         navlinks: {
-            container: {},
-            hyperlink: { ...texts.hyperlink },
+            container: {
+				display: responsive("block", "block", "flex"),
+				alignItems: "center",
+				position: responsive("absolute", "absolute", "static"),
+				top: "66px",
+				left: 0,
+				right: 0,
+				zIndex: 10,
+				backgroundColor: "#fff",
+			},
+            hyperlink: {
+				...texts.hyperlink,
+				cursor: "pointer",
+				padding: responsive("15px 30px", "15px 30px", "10px 20px"),
+				color: "#1a1b1f",
+				opacity: "0.6",
+				
+				display: responsive("block", "block", "flex"),
+				width: "fit-content",
+				margin: "0 auto",
+				
+				transitionProperty: "background-color, opacity, color",
+				transitionDuration: "400ms, 400ms, 400ms",
+				transitionTimingFunction: "ease, ease, ease",
+			},
         },
         button: { ...buttons.primary },
     };

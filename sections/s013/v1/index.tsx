@@ -8,14 +8,12 @@ import { useEffect, useState } from "react";
 import Button from "@/elements/Button01/v1";
 import NavLinks from "@/components/NavLinks01/v1";
 
-const Section013: React.FC<Section013Props> = ({
-	styles,
-	data
-}) => {
+const Section013: React.FC<Section013Props> = ({ styles, data }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
     const [mounted, setMounted] = useState(false);
+    const [showNav, setShowNav] = useState(isDesktop ? true : false);
 
     useEffect(() => {
         setMounted(true);
@@ -33,15 +31,25 @@ const Section013: React.FC<Section013Props> = ({
                 width={141}
                 height={36}
             />
-			<NavLinks data={data.navlinks} styles={styles.navlinks} />
-            {isDesktop && (
-                <Button data={data.button} styles={styles.button} />
-            )}
-            <Bars3Icon
-                className="barsIcon"
-                strokeWidth={2}
-                width={"24px"}
-            />
+			{showNav && (
+				<NavLinks
+					data={data.navlinks}
+					styles={styles.navlinks}
+				/>
+			)}
+            {isDesktop ? (
+                <Button
+					data={data.button}
+					styles={styles.button}
+				/>
+            ) : (
+				<Bars3Icon
+					className="barsIcon"
+					strokeWidth={2}
+					width={"24px"}
+					onClick={() => setShowNav(!showNav)}
+				/>
+			)}
         </div>
     );
 };
