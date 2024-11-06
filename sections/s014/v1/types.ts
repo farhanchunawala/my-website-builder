@@ -9,6 +9,7 @@ interface S014Data {
 
 interface S014Styles {
 	container: React.CSSProperties;
+	backGround: React.CSSProperties
 	heading: TextStyles
 	subheading: TextStyles
 	button: ButtonStyles

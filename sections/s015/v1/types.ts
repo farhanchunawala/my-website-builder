@@ -7,8 +7,10 @@ interface S015Data {
 
 interface S015Styles {
 	container: React.CSSProperties
+	textContainer: React.CSSProperties
 	accentText: TextStyles
 	heading: TextStyles
+	vector: React.CSSProperties
 }
 
 interface Section015Props {
