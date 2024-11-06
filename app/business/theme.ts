@@ -66,7 +66,8 @@ const useTheme = () => {
             fontSize: "12px",
             fontWeight: 500,
             letterSpacing: "1px",
-            lineHeight: "1.5",
+            lineHeight: "20px",
+            // lineHeight: "1.5",
         },
         buttonText: {
             fontFamily: fonts.primary,
@@ -83,7 +84,7 @@ const useTheme = () => {
                 backgroundColor: "#1a1b1f",
                 color: "#fff",
                 height: "44px",
-                padding: "25px",
+                padding: "0 25px",
             },
             hover: {
                 backgroundColor: "#32343a",
