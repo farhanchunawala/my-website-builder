@@ -36,11 +36,30 @@ const useTheme = () => {
             fontSize: responsive("36px", "50px", "64px"),
             fontWeight: 400,
         },
+		headingJumboSmall: {
+			fontFamily: fonts.primary,
+			fontSize: responsive("", "30px", "36px"),
+			fontWeight: 400,
+		},
+		headingJumboTiny: {
+			fontFamily: fonts.primary,
+			fontSize: responsive("18", "", ""),
+			fontWeight: 400,
+		},
 		paragraphBigger: {
 			fontFamily: fonts.primary,
-			fontSize: responsive("16px", "20px", "20px"),
+			fontSize: responsive("", "16px", "20px"),
 			fontWeight: 400,
-            lineHeight: "1.7",
+            lineHeight: responsive("", "28px", "34px"),
+		},
+		paragraph: {
+			fontSize: "14px",
+			lineHeight: "26px",
+		},
+		accentText: {
+			fontFamily: fonts.primary,
+			fontWeight: 400,
+			opacity: 0.6,
 		},
         hyperlink: {
             fontFamily: fonts.primary,
