@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import type { S0Props } from "./types";
+import type Props from "./types";
 
-const Section0: React.FC<S0Props> = ({ styles, data }) => {
+const Section0: React.FC<Props> = ({ styles, data }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -16,9 +16,9 @@ const Section0: React.FC<S0Props> = ({ styles, data }) => {
     if (!isMounted) return null;
 
     return (
-		<div style={styles?.container}>
+		<section style={styles?.container}>
 			
-		</div>
+		</section>
 	);
 };
 

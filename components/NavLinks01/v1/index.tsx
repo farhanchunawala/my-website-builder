@@ -1,7 +1,7 @@
-import { NavLinksProps } from "./types";
+import type Props from "./types";
 import Hyperlink from "@/elements/Hyperlink01/v1";
 
-const NavLinksName: React.FC<NavLinksProps> = ({
+const NavLinksName: React.FC<Props> = ({
     data,
     styles,
 }) => {

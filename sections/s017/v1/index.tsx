@@ -2,11 +2,11 @@ import "./styles.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
-import type { Section017Props } from "./types";
+import type Props from "./types";
 // import Text from "@/elements/Text01/v1";
 import TextBlock from "@/components/TextBlock01/v1";
 
-const Section017: React.FC<Section017Props> = ({ styles, data }) => {
+const Section017: React.FC<Props> = ({ styles, data }) => {
 	const { isMobile, isTablet, isDesktop } = useSelector(
 		(state: RootState) => state.responsive
 	);
@@ -21,7 +21,7 @@ const Section017: React.FC<Section017Props> = ({ styles, data }) => {
 	}
 
 	return (
-		<div style={styles?.container}>
+		<section style={styles?.container}>
 			<TextBlock
 				data={data?.textBlock}
 				styles={styles?.textBlock}
@@ -40,7 +40,7 @@ const Section017: React.FC<Section017Props> = ({ styles, data }) => {
 					styles={styles?.columns?.textBlock}
 				/>
 			</div>
-		</div>
+		</section>
 	);
 };
 

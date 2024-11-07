@@ -1,6 +1,6 @@
-import { ComponentProps } from "./types";
+import type Props from "./types";
 
-const Component: React.FC<ComponentProps> = ({
+const Component: React.FC<Props> = ({
     data,
     styles,
 }) => {

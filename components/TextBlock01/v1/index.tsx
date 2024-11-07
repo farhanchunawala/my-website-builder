@@ -1,8 +1,8 @@
 import "./styles.scss";
 import Text from "@/elements/Text01/v1";
-import { TextBlockProps } from "./types";
+import type Props from "./types";
 
-const TextBlock: React.FC<TextBlockProps> = ({
+const TextBlock: React.FC<Props> = ({
     data = [],
     classNames = "",
     styles = {

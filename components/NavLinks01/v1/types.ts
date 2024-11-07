@@ -1,16 +1,17 @@
-import { HyperlinkData, HyperlinkStyles } from "@/elements/Hyperlink01/v1/types";
+import * as Hyperlink from "@/elements/Hyperlink01/v1/types";
 
-type NavLinksData = HyperlinkData[];
+type Data = Hyperlink.Data[];
 
-type NavLinksStyles = {
+type Styles = {
 	container: React.CSSProperties;
-	hyperlink: HyperlinkStyles;
+	hyperlink: Hyperlink.Styles;
 }
 
-type NavLinksProps = {
-    data: NavLinksData;
+type Props = {
+    data: Data;
 	classNames?: string;
-    styles: NavLinksStyles;
+    styles: Styles;
 }
 
-export type { NavLinksData, NavLinksStyles, NavLinksProps }
+export type { Data, Styles };
+export default Props;

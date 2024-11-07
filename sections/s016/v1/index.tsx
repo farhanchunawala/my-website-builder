@@ -2,12 +2,12 @@ import "./styles.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
-import type { Section016Props } from "./types";
+import type Props from "./types";
 import Text from "@/elements/Text01/v1";
 import Button from "@/elements/Button01/v1";
 import Image from "next/image";
 
-const Section016: React.FC<Section016Props> = ({ styles, data }) => {
+const Section016: React.FC<Props> = ({ styles, data }) => {
 	const { isMobile, isTablet, isDesktop } = useSelector(
 		(state: RootState) => state.responsive
 	);
@@ -22,7 +22,7 @@ const Section016: React.FC<Section016Props> = ({ styles, data }) => {
 	}
 
 	return (
-		<div style={styles?.container}>
+		<section style={styles?.container}>
 			<Image
 				style={styles?.image}
 				src="/images/starter/placeholder-1.svg"
@@ -49,7 +49,7 @@ const Section016: React.FC<Section016Props> = ({ styles, data }) => {
 					styles={styles?.button}
 				/>
 			</div>
-		</div>
+		</section>
 	);
 };
 

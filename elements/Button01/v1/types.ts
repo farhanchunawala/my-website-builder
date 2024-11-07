@@ -1,21 +1,22 @@
 import { Typography } from '@/app/configs/global.types';
 
-type ButtonData = {
+type Data = {
 	content: string;
     // isHtml?: boolean;
 }
 
-type ButtonStyles = {
+type Styles = {
 	container: Typography & React.CSSProperties & {
 		color: string;
 	};
 	hover: React.CSSProperties;
 }
 
-type ButtonProps = {
-    data: ButtonData;
+type Props = {
+    data: Data;
     classNames?: string;
-    styles: ButtonStyles;
+    styles: Styles;
 }
 
-export type { ButtonData, ButtonStyles, ButtonProps };
+export type { Data, Styles }
+export default Props

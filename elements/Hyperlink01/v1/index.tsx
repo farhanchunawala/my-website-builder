@@ -1,9 +1,8 @@
 import "./styles.scss";
-import { HyperlinkProps } from "./types";
+import type Props from "./types";
 
-const Hyperlink: React.FC<HyperlinkProps> = ({
+const Hyperlink: React.FC<Props> = ({
     data,
-    classNames = "",
     styles,
 }) => {
     return (

@@ -1,23 +1,24 @@
-import { TextBlockData, TextBlockStyles } from "@/components/TextBlock01/v1/types";
+import * as TextBlock from "@/components/TextBlock01/v1/types";
 
-type S017Data = {
-	textBlock: TextBlockData,
-	columns: TextBlockData[],
+type Data = {
+	textBlock: TextBlock.Data,
+	columns: TextBlock.Data[],
 };
 
-type S017Styles = {
+type Styles = {
 	container: React.CSSProperties,
-	textBlock: TextBlockStyles,
+	textBlock: TextBlock.Styles,
 	columns: {
 		container: React.CSSProperties,
-		textBlock: TextBlockStyles
+		textBlock: TextBlock.Styles
 	}
 }
 
-type Section017Props = {
-    data: S017Data;
+type Props = {
 	classNames?: string;
-    styles: S017Styles;
+    data: Data;
+    styles: Styles;
 }
 
-export type { S017Data, S017Styles, Section017Props }
+export type { Data, Styles }
+export default Props

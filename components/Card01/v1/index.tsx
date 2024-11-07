@@ -2,9 +2,9 @@ import "./styles.scss";
 import Image from "next/image";
 import TextBlock from "@/components/TextBlock01/v1";
 import { useResponsive } from "@/app/hooks/useResponsive";
-import { CardProps } from "./types";
+import type Props from "./types";
 
-const Card: React.FC<CardProps> = ({ classNames = "", styles, data }) => {
+const Card: React.FC<Props> = ({ classNames = "", styles, data }) => {
     const { responsive } = useResponsive();
 
     const iconWidth = responsive("36", "43", "43");

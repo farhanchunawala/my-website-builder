@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 
-interface ComponentProps {
+interface Props {
     children: ReactNode;
     styles: React.CSSProperties;
 }
 
-const Wrapper: React.FC<ComponentProps> = ({
+const Wrapper: React.FC<Props> = ({
     children,
     styles,
 }) => {

@@ -1,9 +1,9 @@
 import "./styles.scss";
 // import DOMPurify from "dompurify";
-import { ButtonProps } from "./types";
+import type Props from "./types";
 import { useState } from "react";
 
-const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<Props> = ({
     data,
     classNames = "",
     styles = {

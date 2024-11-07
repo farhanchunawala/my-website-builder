@@ -1,15 +1,16 @@
 import { Typography } from '@/app/configs/global.types';
 
-type HyperlinkData = {
+type Data = {
 	content: string;
 };
 
-type HyperlinkStyles = Typography & React.CSSProperties
+type Styles = Typography & React.CSSProperties
 
-type HyperlinkProps = {
-    data: HyperlinkData;
+type Props = {
 	classNames?: string;
-    styles: HyperlinkStyles;
+    data: Data;
+    styles: Styles;
 }
 
-export type { HyperlinkData, HyperlinkStyles, HyperlinkProps }
+export type { Data, Styles };
+export default Props;

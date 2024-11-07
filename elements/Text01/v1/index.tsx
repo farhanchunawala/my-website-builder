@@ -1,8 +1,8 @@
 import "./styles.scss";
 import DOMPurify from "dompurify";
-import { TextProps } from "./types";
+import type Props from "./types";
 
-const Text: React.FC<TextProps> = ({
+const Text: React.FC<Props> = ({
     data,
 	classNames = "",
     styles = {},

@@ -1,12 +1,12 @@
 import { Typography } from '@/app/configs/global.types';
 
-type TextData = {
+type Data = {
     tag: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     isHtml: boolean;
     content: string;
 }
 
-interface TextStyles extends Typography {
+interface Styles extends Typography {
 	color: React.CSSProperties['color'];
 	opacity?: React.CSSProperties['opacity'];
 	textAlign?: React.CSSProperties['textAlign'];
@@ -17,10 +17,11 @@ interface TextStyles extends Typography {
 // 	textAlign?: React.CSSProperties['textAlign'];
 // }
 
-type TextProps = {
-    data: TextData;
+type Props = {
     classNames?: string;
-    styles: TextStyles;
+    data: Data;
+    styles: Styles;
 }
 
-export type { TextData, TextStyles, TextProps };
+export type { Data, Styles };
+export default Props;

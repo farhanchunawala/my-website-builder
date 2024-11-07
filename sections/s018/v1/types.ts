@@ -1,23 +1,24 @@
-import { TextData, TextStyles } from "@/elements/Text01/v1/types";
-import { ButtonData, ButtonStyles } from "@/elements/Button01/v1/types";
+import * as Text from "@/elements/Text01/v1/types";
+import * as Button from "@/elements/Button01/v1/types";
 
-type S018Data = {
-	text1: TextData
-	text2: TextData
-	button: ButtonData
+type Data = {
+	text1: Text.Data
+	text2: Text.Data
+	button: Button.Data
 };
 
-type S018Styles = {
+type Styles = {
 	container: React.CSSProperties
-	text1: TextStyles
-	text2: TextStyles
-	button: ButtonStyles
+	text1: Text.Styles
+	text2: Text.Styles
+	button: Button.Styles
 }
 
-type S018Props = {
-    data: S018Data;
+type Props = {
 	classNames?: string;
-    styles: S018Styles;
+    data: Data;
+    styles: Styles;
 }
 
-export type { S018Data, S018Styles, S018Props }
+export type { Data, Styles }
+export default Props

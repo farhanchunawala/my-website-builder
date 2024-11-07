@@ -1,22 +1,23 @@
-import { TextData, TextStyles } from "@/elements/Text01/v1/types";
+import * as Text from "@/elements/Text01/v1/types";
 
-interface S015Data {
-	accentText: TextData
-	heading: TextData
+interface Data {
+	accentText: Text.Data
+	heading: Text.Data
 };
 
-interface S015Styles {
+interface Styles {
 	container: React.CSSProperties
 	textContainer: React.CSSProperties
-	accentText: TextStyles
-	heading: TextStyles
+	accentText: Text.Styles
+	heading: Text.Styles
 	vector: React.CSSProperties
 }
 
-interface Section015Props {
-    data: S015Data;
+interface Props {
+    data: Data;
 	classNames?: string;
-    styles: S015Styles;
+    styles: Styles;
 }
 
-export type { S015Data, S015Styles, Section015Props }
+export type { Data, Styles }
+export default Props

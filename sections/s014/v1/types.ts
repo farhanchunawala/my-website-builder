@@ -1,24 +1,25 @@
-import { TextData, TextStyles } from "@/elements/Text01/v1/types";
-import { ButtonData, ButtonStyles } from "@/elements/Button01/v1/types";
+import * as Text from "@/elements/Text01/v1/types";
+import * as Button from "@/elements/Button01/v1/types";
 
-interface S014Data {
-	heading: TextData
-	subheading: TextData
-	button: ButtonData
+interface Data {
+	heading: Text.Data
+	subheading: Text.Data
+	button: Button.Data
 };
 
-interface S014Styles {
+interface Styles {
 	container: React.CSSProperties;
 	backGround: React.CSSProperties
-	heading: TextStyles
-	subheading: TextStyles
-	button: ButtonStyles
+	heading: Text.Styles
+	subheading: Text.Styles
+	button: Button.Styles
 }
 
-interface Section014Props {
-    data: S014Data;
+interface Props {
 	classNames?: string;
-    styles: S014Styles;
+    data: Data;
+    styles: Styles;
 }
 
-export type { S014Data, S014Styles, Section014Props }
+export type { Data, Styles }
+export default Props

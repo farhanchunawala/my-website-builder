@@ -2,10 +2,10 @@ import "./styles.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
-import type { Section015Props } from "./types";
+import type Props from "./types";
 import Text from "@/elements/Text01/v1";
 
-const Section015: React.FC<Section015Props> = ({ styles, data }) => {
+const Section015: React.FC<Props> = ({ styles, data }) => {
 	const { isMobile, isTablet, isDesktop } = useSelector(
 		(state: RootState) => state.responsive
 	);
@@ -20,7 +20,7 @@ const Section015: React.FC<Section015Props> = ({ styles, data }) => {
 	}
 
 	return (
-		<div className="s015 container" style={styles?.container}>
+		<section className="s015 container" style={styles?.container}>
 			<div style={styles?.textContainer}>
 				<Text
 					data={data?.accentText}
@@ -32,7 +32,7 @@ const Section015: React.FC<Section015Props> = ({ styles, data }) => {
 				/>
 				<div style={styles?.vector}></div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

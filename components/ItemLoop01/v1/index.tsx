@@ -1,7 +1,7 @@
-import React from "react";
-import { ItemLoopProps } from "./types";
+import type React from "react";
+import Props from "./types";
 
-const ItemLoop: React.FC<ItemLoopProps> = ({
+const ItemLoop: React.FC<Props> = ({
 	children,
     data,
     styles,

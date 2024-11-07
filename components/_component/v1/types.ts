@@ -1,14 +1,16 @@
 
-type ComponentData = {};
 
-type ComponentStyles = {
+type Data = {};
+
+type Styles = {
 	container: React.CSSProperties;
 }
 
-type ComponentProps = {
-    data: ComponentData;
+type Props = {
 	classNames?: string;
-    styles: ComponentStyles;
+    data: Data;
+    styles: Styles;
 }
 
-export type { ComponentData, ComponentStyles, ComponentProps }
+export type { Data, Styles }
+export default Props

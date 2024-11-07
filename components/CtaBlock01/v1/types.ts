@@ -1,14 +1,15 @@
-import * as TextBlock from "../../TextBlock01/v1/types";
+import * as TextBlock from "@/components/TextBlock01/v1/types";
+import * as Button from "@/elements/Button01/v1/types";
 
 type Data = {
-	icon: string;
 	textBlock: TextBlock.Data;
+	button: Button.Data;
 };
 
 type Styles = {
 	container: React.CSSProperties;
-	icon: React.CSSProperties;
 	textBlock: TextBlock.Styles;
+	button: Button.Styles;
 }
 
 type Props = {
@@ -18,4 +19,4 @@ type Props = {
 }
 
 export type { Data, Styles }
-export default Props
+export default Props;

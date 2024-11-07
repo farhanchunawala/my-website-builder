@@ -1,12 +1,13 @@
+import { ReactNode } from "react";
 
-
-type Data = {};
+type Data = [];
 
 type Styles = {
-	container: React.CSSProperties
+	container: React.CSSProperties;
 }
 
 type Props = {
+	children: ReactNode
 	classNames?: string;
     data: Data;
     styles: Styles;

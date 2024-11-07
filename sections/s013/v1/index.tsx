@@ -1,5 +1,5 @@
 import "./styles.scss";
-import type { Section013Props } from "./types";
+import type Props from "./types";
 import Image from "next/image";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import Button from "@/elements/Button01/v1";
 import NavLinks from "@/components/NavLinks01/v1";
 
-const Section013: React.FC<Section013Props> = ({ styles, data }) => {
+const Section013: React.FC<Props> = ({ styles, data }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -24,7 +24,7 @@ const Section013: React.FC<Section013Props> = ({ styles, data }) => {
     }
 
     return (
-        <div className="s013 container" style={styles.container}>
+        <header className="s013 container" style={styles.container}>
             <Image
                 src="/images/webflow/company_logo.svg"
                 alt={""}
@@ -50,7 +50,7 @@ const Section013: React.FC<Section013Props> = ({ styles, data }) => {
 					onClick={() => setShowNav(!showNav)}
 				/>
 			)}
-        </div>
+        </header>
     );
 };
 

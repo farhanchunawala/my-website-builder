@@ -1,21 +1,22 @@
-import { NavLinksData, NavLinksStyles } from "@/components/NavLinks01/v1/types";
-import { ButtonData, ButtonStyles } from "@/elements/Button01/v1/types";
+import * as NavLinks from "@/components/NavLinks01/v1/types";
+import * as Button from "@/elements/Button01/v1/types";
 
-interface S013Data {
-	navlinks: NavLinksData;
-	button: ButtonData;
+interface Data {
+	navlinks: NavLinks.Data;
+	button: Button.Data;
 };
 
-interface S013Styles {
+interface Styles {
 	container: React.CSSProperties;
-	navlinks: NavLinksStyles;
-	button: ButtonStyles;
+	navlinks: NavLinks.Styles;
+	button: Button.Styles;
 }
 
-interface Section013Props {
-    data: S013Data;
+interface Props {
 	classNames?: string;
-    styles: S013Styles;
+    data: Data;
+    styles: Styles;
 }
 
-export type { S013Data, S013Styles, Section013Props }
+export type { Data, Styles }
+export default Props
