@@ -55,9 +55,9 @@ const useTheme = () => {
         },
         paragraphBigger: {
             fontFamily: fonts.primary,
-            fontSize: responsive("", "16px", "20px"),
+            fontSize: responsive("16px", "20px", "20px"),
             fontWeight: 400,
-            lineHeight: responsive("", "28px", "34px"),
+            lineHeight: responsive("28px", "34px", "34px"),
         },
         paragraph: {
             fontFamily: fonts.primary,
@@ -66,9 +66,14 @@ const useTheme = () => {
         },
         accentText: {
             fontFamily: fonts.primary,
+			fontSize: "12px",
+			lineHeight: "20px",
             fontWeight: 400,
             opacity: 0.6,
         },
+		accentText: {
+			
+		},
         linkText: {
             fontFamily: fonts.primary,
             fontSize: "12px",
@@ -147,6 +152,7 @@ const useTheme = () => {
                 lineHeight: "20px",
                 letterSpacing: "2px",
                 textTransform: "uppercase",
+				fontFamily: fonts.primary,
             },
         },
         secondaryJumbo: {
