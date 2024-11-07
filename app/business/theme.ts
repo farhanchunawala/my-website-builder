@@ -1,5 +1,6 @@
 import { Typography } from "@/app/configs/global.types";
 import { useResponsive } from "@/app/hooks/useResponsive";
+import { text } from "stream/consumers";
 
 interface Tokens {
     lineHeight: string;
@@ -53,8 +54,8 @@ const useTheme = () => {
             lineHeight: responsive("", "28px", "34px"),
 		},
 		paragraph: {
-			fontSize: "14px",
-			lineHeight: "26px",
+			fontSize: responsive("12px", "14px", ""),
+			lineHeight: responsive("20px", "26px", ""),
 		},
 		accentText: {
 			fontFamily: fonts.primary,
@@ -90,8 +91,66 @@ const useTheme = () => {
                 backgroundColor: "#32343a",
             },
         },
+		primary1: {
+			container: {
+				padding: "12px 25px",
+				backGroundColor: "#1a1b1f",
+				transitionProperty: "background-color", "opacity", "color";
+				transitionDuration: "400ms", "400ms", "400ms";
+				transitionTimingFunction: "ease", "ease", "ease";
+				color: "#fff",
+				fontSize: "12px",
+				lineHeight: "20px",
+				letterSpacing: "2px",
+				textTransform: "uppercase",
+				justifyContent: "center",
+			hover: {
+				backgroundColor: "#32343a",
+				color: "#fff",
+			},
+		}
     };
-
+		primaryJumbo: {
+			container: {
+				padding: "16px 35px",
+				backGroundColor: "#1a1b1f",
+				transitionProperty: "background-color", "opacity", "color";
+				transitionDuration: "400ms", "400ms", "400ms";
+				transitionTimingFunction: "ease", "ease", "ease";
+				color: "#fff",
+				fontSize: "14px",
+				lineHeight: "26px",
+				letterSpacing: "2px",
+				textTransform: "uppercase",
+				justifyContent: "center",
+			hover: {
+				backgroundColor: "#32343a",
+				color: "#fff",
+			},
+		}
+    };
+		secondary: {
+			container: {
+				padding: "12px 25px",
+				backGroundColor: "#fff",
+				color: "#1a1b1f",
+				fontSize: "12px",
+				lineHeight: "20px",
+				letterSpacing: "2px",
+				textTransform: "uppercase",
+			}
+		},
+		secondaryJumbo: {
+			container: {
+				padding: "16px 35px",
+				backGroundColor: "#fff",
+				color: "#1a1b1f",
+				fontSize: "14px",
+				lineHeight: "26px",
+				letterSpacing: "2px",
+				textTransform: "uppercase",
+			}
+		},
     return { tokens, fonts, colors, texts, buttons };
 };
 
