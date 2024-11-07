@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import type { Section016Props } from "./types";
 import Text from "@/elements/Text01/v1";
 import Button from "@/elements/Button01/v1";
+import Image from "next/image";
 
 const Section016: React.FC<Section016Props> = ({ styles, data }) => {
 	const { isMobile, isTablet, isDesktop } = useSelector(
@@ -21,7 +22,15 @@ const Section016: React.FC<Section016Props> = ({ styles, data }) => {
 	}
 
 	return (
-		<div className="s016 container" style={styles?.container}>
+		<div style={styles?.container}>
+			<Image
+				style={styles?.image}
+				src="/images/starter/placeholder-1.svg"
+				alt="company logo"
+				width={1305}
+				height={833}
+				layout="responsive"
+			/>
 			<div style={styles?.textContainer}>
 				<Text
 					data={data?.accentText}
@@ -40,7 +49,6 @@ const Section016: React.FC<Section016Props> = ({ styles, data }) => {
 					styles={styles?.button}
 				/>
 			</div>
-			<div style={styles?.image}></div>
 		</div>
 	);
 };

@@ -60,7 +60,6 @@ const useCustomStyles = () => {
 		container: {},
 		backGround: {
 			height: "620px",
-			backgroundColor: "black",
 			width: responsive(
 				"calc(100% - 30px)",
 				"calc(100% - 30px)",
@@ -72,6 +71,8 @@ const useCustomStyles = () => {
 			alignItems: "center",
 			justifyContent: "center",
 			flexDirection: "column",
+			backgroundImage: 'url("./images/starter/portfolio-2---wide.svg")',
+			backgroundSize: "cover",
 		},
 		heading: {
 			color: "white",
@@ -154,28 +155,20 @@ const useCustomStyles = () => {
 
 	const s016: S016Styles = {
 		container: {
+			margin: responsive("0 15px", "0 15px", "0 30px"),
 			display: responsive("block", "block", "flex"),
+			columnGap: "80px"
 		},
 		image: {
-			justifySelf: responsive("center", "center", "right"),
-			width: responsive("100%", "100%", "50%"),
-			backgroundColor: "#000",
-			height: responsive("185px", "451px", "376px"),
-			maxWidth: responsive("1280px", "1280px", "63.5%"),
-			marginTop: responsive("45px", "30px", "30px"),
-			marginBottom: "15px",
-			margin: responsive("15px", "30px", "30px"),
-			marginLeft: responsive("none", "none", "30px"),
-			display: responsive("none", "none", "flex"),
+			marginBottom: responsive("50px", "50px", "0"),
+			maxWidth: responsive("100%", "100%", "60%"),
 		},
 		textContainer: {
-			maxWidth: responsive("none", "none", "30.5%"),
-			marginLeft: responsive("none", "none", "30px"),
+			width: "100%",
 		},
 		accentText: {
 			color: "#1a1b1f",
 			textShadow: "0 0 0 1px #003",
-			marginTop: "50px",
 			fontSize: "12px",
 			fontWeight: 500,
 			letterSpacing: "1px",
@@ -203,7 +196,7 @@ const useCustomStyles = () => {
 			fontWeight: responsive("450", "400", "400"),
 			lineHeight: "28px",
 			textAlign: responsive("center", "center", "left"),
-			maxWidth: responsive("90%", "95%", "95%"),
+			// maxWidth: responsive("90%", "95%", "95%"),
 			opacity: 0.6,
 			marginBottom: "17px",
 		},

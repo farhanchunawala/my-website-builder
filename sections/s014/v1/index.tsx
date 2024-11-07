@@ -21,7 +21,7 @@ const Section014: React.FC<Section014Props> = ({ styles, data }) => {
 	}
 
 	return (
-		<div className="s014" style={styles.container}>
+		<div style={styles.container}>
 			<div style={styles.backGround}>
 				<Text
 					data={data.heading}
