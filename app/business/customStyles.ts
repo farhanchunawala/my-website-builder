@@ -1,18 +1,18 @@
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { useTheme } from "./theme";
-import { Styles as S013Styles } from "@/sections/s013/v1/types";
-import { Styles as S014Styles } from "@/sections/s014/v1/types";
-import { Styles as S015Styles } from "@/sections/s015/v1/types";
-import { Styles as S016Styles } from "@/sections/s016/v1/types";
-import { Styles as S017Styles } from "@/sections/s017/v1/types";
-import { Styles as S018Styles } from "@/sections/s018/v1/types";
+import { Styles as S013 } from "@/sections/s013/v1/types";
+import { Styles as S014 } from "@/sections/s014/v1/types";
+import { Styles as S015 } from "@/sections/s015/v1/types";
+import { Styles as S016 } from "@/sections/s016/v1/types";
+import { Styles as S017 } from "@/sections/s017/v1/types";
+import { Styles as S018 } from "@/sections/s018/v1/types";
 import { Montserrat } from "next/font/google";
 
 const useCustomStyles = () => {
 	const { tokens, fonts, colors, texts, buttons } = useTheme();
 	const { responsive } = useResponsive();
 
-    const s013: S013Styles = {
+    const s013: S013 = {
         container: {
 			position: "relative",
 			display: "flex",
@@ -56,7 +56,7 @@ const useCustomStyles = () => {
         button: { ...buttons.primary },
     };
 
-	const s014: S014Styles = {
+	const s014: S014 = {
 		container: {},
 		backGround: {
 			height: "620px",
@@ -114,7 +114,7 @@ const useCustomStyles = () => {
 		}
 	}
 
-	const s015: S015Styles = {
+	const s015: S015 = {
 		container: {},
 		textContainer: {
 			marginTop: "85px",
@@ -153,7 +153,7 @@ const useCustomStyles = () => {
 		},
 	}
 
-	const s016: S016Styles = {
+	const s016: S016 = {
 		container: {
 			margin: responsive("0 15px", "0 15px", "0 30px"),
 			display: responsive("block", "block", "flex"),
@@ -223,7 +223,7 @@ const useCustomStyles = () => {
 		},
 	}
 
-	const s017: S017Styles = {
+	const s017: S017 = {
 		container: {},
 		textBlock: {
 			container: {},
@@ -327,7 +327,7 @@ const useCustomStyles = () => {
 		},
 	}
 
-	const s018: S018Styles = {
+	const s018: S018 = {
 		container: {
 			backgroundColor: "#f4f4f4",
 			padding: responsive(

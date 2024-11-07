@@ -1,11 +1,11 @@
-import { Data as S013Data } from "@/sections/s013/v1/types";
-import { Data as S014Data } from "@/sections/s014/v1/types";
-import { Data as S015Data } from "@/sections/s015/v1/types";
-import { Data as S016Data } from "@/sections/s016/v1/types";
-import { Data as S017Data } from "@/sections/s017/v1/types";
-import { Data as S018Data } from "@/sections/s018/v1/types";
+import { Data as S013 } from "@/sections/s013/v1/types";
+import { Data as S014 } from "@/sections/s014/v1/types";
+import { Data as S015 } from "@/sections/s015/v1/types";
+import { Data as S016 } from "@/sections/s016/v1/types";
+import { Data as S017 } from "@/sections/s017/v1/types";
+import { Data as S018 } from "@/sections/s018/v1/types";
 
-const s013: S013Data = {
+const s013: S013 = {
 	navlinks: [
 		{
 			content: "ABOUT",
@@ -28,7 +28,7 @@ const s013: S013Data = {
 	},
 }
 
-const s014: S014Data = {
+const s014: S014 = {
 	heading: {
 		tag: "h1",
 		isHtml: false,
@@ -44,7 +44,7 @@ const s014: S014Data = {
 	}
 }
 
-const s015: S015Data = {
+const s015: S015 = {
 	accentText: {
 		tag: "h5",
 		isHtml: false,
@@ -57,7 +57,7 @@ const s015: S015Data = {
 	},
 }
 
-const s016: S016Data = {
+const s016: S016 = {
 	accentText: {
 		tag: "h5",
 		isHtml: false,
@@ -78,7 +78,7 @@ const s016: S016Data = {
 	},
 }
 
-const s017: S017Data = {
+const s017: S017 = {
 	textBlock: [
 		{
 			tag: "p",
@@ -146,7 +146,7 @@ const s017: S017Data = {
 	]
 }
 
-const s018: S018Data = {
+const s018: S018 = {
 	text1: {
 		tag: "p",
 		isHtml: false,
