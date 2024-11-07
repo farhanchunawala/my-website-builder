@@ -1,21 +1,21 @@
 import type Props from "./types";
-import Hyperlink from "@/elements/Hyperlink01/v1";
+import Link from "@/elements/Link01/v1";
 
-const NavLinksName: React.FC<Props> = ({
+const NavLinks: React.FC<Props> = ({
     data,
     styles,
 }) => {
     return (
         <div style={styles?.container}>
             {data?.map((item, index) => (
-                <Hyperlink
+                <Link
                     key={index}
                     data={item}
-                    styles={styles.hyperlink}
+                    styles={styles.link}
                 />
             ))}
         </div>
     );
 };
 
-export default NavLinksName;
+export default NavLinks;

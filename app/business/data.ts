@@ -1,11 +1,9 @@
-import { ButtonData } from "@/elements/Button01/v1/types";
-import { NavLinksData } from "@/components/NavLinks01/v1/types";
-import { S013Data } from "@/sections/s013/v1/types";
-import { S014Data } from "@/sections/s014/v1/types";
-import { S015Data } from "@/sections/s015/v1/types";
-import { S016Data } from "@/sections/s016/v1/types";
-import { S017Data } from "@/sections/s017/v1/types";
-import { S018Data } from "@/sections/s018/v1/types";
+import { Data as S013Data } from "@/sections/s013/v1/types";
+import { Data as S014Data } from "@/sections/s014/v1/types";
+import { Data as S015Data } from "@/sections/s015/v1/types";
+import { Data as S016Data } from "@/sections/s016/v1/types";
+import { Data as S017Data } from "@/sections/s017/v1/types";
+import { Data as S018Data } from "@/sections/s018/v1/types";
 
 const s013: S013Data = {
 	navlinks: [

@@ -1,11 +1,11 @@
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { useTheme } from "./theme";
-import { S013Styles } from "@/sections/s013/v1/types";
-import { S014Styles } from "@/sections/s014/v1/types";
-import { S015Styles } from "@/sections/s015/v1/types";
-import { S016Styles } from "@/sections/s016/v1/types";
-import { S017Styles } from "@/sections/s017/v1/types";
-import { S018Styles } from "@/sections/s018/v1/types";
+import { Styles as S013Styles } from "@/sections/s013/v1/types";
+import { Styles as S014Styles } from "@/sections/s014/v1/types";
+import { Styles as S015Styles } from "@/sections/s015/v1/types";
+import { Styles as S016Styles } from "@/sections/s016/v1/types";
+import { Styles as S017Styles } from "@/sections/s017/v1/types";
+import { Styles as S018Styles } from "@/sections/s018/v1/types";
 import { Montserrat } from "next/font/google";
 
 const useCustomStyles = () => {
@@ -37,8 +37,8 @@ const useCustomStyles = () => {
 				zIndex: 10,
 				backgroundColor: "#fff",
 			},
-            hyperlink: {
-				...texts.hyperlink,
+            link: {
+				...texts.linkText,
 				cursor: "pointer",
 				padding: responsive("15px 30px", "15px 30px", "10px 20px"),
 				color: "#1a1b1f",

@@ -17,7 +17,7 @@ interface Texts {
     paragraphBigger: Typography;
 	paragraph: Typography;
 	accentText: Typography;
-    hyperlink: Typography;
+    linkText: Typography;
     buttonText: Typography;
 }
 
@@ -69,7 +69,7 @@ const useTheme = () => {
             fontWeight: 400,
             opacity: 0.6,
         },
-        hyperlink: {
+        linkText: {
             fontFamily: fonts.primary,
             fontSize: "12px",
             fontWeight: 500,

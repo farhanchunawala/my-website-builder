@@ -1,10 +1,10 @@
-import * as Hyperlink from "@/elements/Hyperlink01/v1/types";
+import * as Link from "@/elements/Link01/v1/types";
 
-type Data = Hyperlink.Data[];
+type Data = Link.Data[];
 
 type Styles = {
 	container: React.CSSProperties;
-	hyperlink: Hyperlink.Styles;
+	link: Link.Styles;
 }
 
 type Props = {
