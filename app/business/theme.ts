@@ -12,7 +12,11 @@ interface Fonts {
 
 interface Texts {
     headingJumbo: Typography;
+	headingJumboSmall: Typography;
+	headingJumboTiny: Typography;
     paragraphBigger: Typography;
+	paragraph: Typography;
+	accentText: Typography;
     hyperlink: Typography;
     buttonText: Typography;
 }
@@ -28,7 +32,10 @@ const useTheme = () => {
         primary: "var(--font-montserrat)",
     };
 
-    const colors = {};
+    const colors = {
+		background: "#ffffff",
+		foreground: "#1a1b1f",
+	};
 
     const texts: Texts = {
         headingJumbo: {
@@ -53,6 +60,7 @@ const useTheme = () => {
             lineHeight: responsive("", "28px", "34px"),
         },
         paragraph: {
+            fontFamily: fonts.primary,
             fontSize: responsive("12px", "14px", ""),
             lineHeight: responsive("20px", "26px", ""),
         },
