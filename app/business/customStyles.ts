@@ -28,7 +28,8 @@ const useCustomStyles = () => {
 		},
         navlinks: {
             container: {
-				display: responsive("block", "block", "flex"),
+				// display: responsive("block", "block", "flex"),
+				flexDirection: responsive("column", "column", "row"),
 				alignItems: "center",
 				position: responsive("absolute", "absolute", "static"),
 				top: "66px",

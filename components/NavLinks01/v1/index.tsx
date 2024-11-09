@@ -1,20 +1,21 @@
 import type Props from "./types";
-import Link from "@/elements/Link01/v1";
+import Stack from '@mui/material/Stack';
+import Link from "@mui/material/Link";
 
-const NavLinks: React.FC<Props> = ({
-    data,
-    styles,
-}) => {
+const NavLinks: React.FC<Props> = ({ data, styles }) => {
     return (
-        <div style={styles?.container}>
+        <Stack sx={styles?.container}>
             {data?.map((item, index) => (
                 <Link
                     key={index}
-                    data={item}
-                    styles={styles.link}
-                />
+                    sx={styles?.link}
+                    underline="none"
+                    href="#"
+                >
+                    {item.content}
+                </Link>
             ))}
-        </div>
+        </Stack>
     );
 };
 
