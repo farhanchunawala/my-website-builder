@@ -27,7 +27,9 @@ interface Texts {
     headingJumbo: Typography;
 	headingJumboSmall: Typography;
 	headingJumboTiny: Typography;
+	articleHeading: Typography;
     paragraphBigger: Typography;
+    paragraphLight: Typography;
 	paragraph: Typography;
 	accentText: Typography;
     linkText: Typography;
@@ -66,6 +68,12 @@ const useTheme = () => {
             fontSize: responsive("18", "", ""),
             fontWeight: 400,
         },
+		articleHeading: {
+			fontFamily: fonts.primary,
+			fontSize: "24px",
+			fontWeight: 500,
+			lineHeight: "38px",
+		},
         paragraphBigger: {
             fontFamily: fonts.primary,
             fontSize: responsive("16px", "20px", "20px"),
@@ -73,10 +81,18 @@ const useTheme = () => {
             lineHeight: responsive("28px", "34px", "34px"),
         },
         paragraph: {
-            fontFamily: fonts.primary,
-            fontSize: responsive("12px", "14px", ""),
-            lineHeight: responsive("20px", "26px", ""),
-        },
+			fontFamily: fonts.primary,
+			fontSize: responsive("12px", "14px", "16px"),
+			lineHeight: responsive("20px", "26px", "28px"),
+			fontWeight: undefined
+		},
+		paragraphLight: {
+			fontFamily: fonts.primary,
+			fontSize: "16px",
+			fontWeight: 400,
+			lineHeight: "28px",
+			opacity: 0.6,
+		},
         accentText: {
             fontFamily: fonts.primary,
 			fontSize: "12px",
@@ -84,6 +100,14 @@ const useTheme = () => {
             fontWeight: 400,
             opacity: 0.6,
         },
+		label: {
+			fontFamily: fonts.primary,
+			fontSize: "12px",
+			lineHeight: "20px",
+			fontWeight: 500,
+			letterSpacing: "1px",
+			opacity: 0.6,
+		},
         linkText: {
             fontFamily: fonts.primary,
             fontSize: "12px",
@@ -135,6 +159,7 @@ const useTheme = () => {
         },
         primaryJumbo: {
             container: {
+				fontFamily: "Montserrat",
                 padding: "16px 35px",
                 backGroundColor: "#1a1b1f",
                 color: "#fff",
