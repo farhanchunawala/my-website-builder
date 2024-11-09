@@ -4,8 +4,8 @@ import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
 import type Props from "./types";
 import Text from "@/elements/Text01/v1";
-import Button from "@/elements/Button01/v1";
 import Image from "next/image";
+import Button from "@mui/material/Button";
 
 const Section016: React.FC<Props> = ({ styles, data }) => {
 	const { isMobile, isTablet, isDesktop } = useSelector(
@@ -45,9 +45,11 @@ const Section016: React.FC<Props> = ({ styles, data }) => {
 					styles={styles?.subheading}
 				/>
 				<Button
-					data={data?.button}
-					styles={styles?.button}
-				/>
+                    variant="contained"
+                    sx={styles.button.container}
+                >
+                    { data.button.content }
+                </Button>
 			</div>
 		</section>
 	);

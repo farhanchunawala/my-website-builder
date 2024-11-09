@@ -5,8 +5,8 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
-import Button from "@/elements/Button01/v1";
 import NavLinks from "@/components/NavLinks01/v1";
+import Button from "@mui/material/Button";
 
 const Section013: React.FC<Props> = ({ styles, data }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
@@ -31,25 +31,27 @@ const Section013: React.FC<Props> = ({ styles, data }) => {
                 width={141}
                 height={36}
             />
-			{showNav && (
-				<NavLinks
-					data={data.navlinks}
-					styles={styles.navlinks}
-				/>
-			)}
+            {showNav && (
+                <NavLinks
+                    data={data.navlinks}
+                    styles={styles.navlinks}
+                />
+            )}
             {isDesktop ? (
                 <Button
-					data={data.button}
-					styles={styles.button}
-				/>
+                    variant="contained"
+                    sx={styles.button.container}
+                >
+                    { data.button.content }
+                </Button>
             ) : (
-				<Bars3Icon
-					className="barsIcon"
-					strokeWidth={2}
-					width={"24px"}
-					onClick={() => setShowNav(!showNav)}
-				/>
-			)}
+                <Bars3Icon
+                    className="barsIcon"
+                    strokeWidth={2}
+                    width={"24px"}
+                    onClick={() => setShowNav(!showNav)}
+                />
+            )}
         </header>
     );
 };
