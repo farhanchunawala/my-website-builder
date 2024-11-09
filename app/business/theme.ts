@@ -45,7 +45,7 @@ const useTheme = () => {
         },
         headingJumboSmall: {
             fontFamily: fonts.primary,
-            fontSize: responsive("", "30px", "36px"),
+            fontSize: responsive("30", "30px", "36px"),
             fontWeight: 400,
         },
         headingJumboTiny: {
@@ -71,9 +71,6 @@ const useTheme = () => {
             fontWeight: 400,
             opacity: 0.6,
         },
-		accentText: {
-			
-		},
         linkText: {
             fontFamily: fonts.primary,
             fontSize: "12px",
@@ -96,8 +93,8 @@ const useTheme = () => {
                 ...texts.buttonText,
                 backgroundColor: "#1a1b1f",
                 color: "#fff",
-                height: "44px",
-                padding: "0 25px",
+                // height: "44px",
+                padding: "12px 25px",
             },
             hover: {
                 backgroundColor: "#32343a",
