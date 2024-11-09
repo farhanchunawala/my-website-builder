@@ -208,7 +208,9 @@ const useCustomStyles = () => {
 	const s017: S017 = {
 		container: {},
 		textBlock: {
-			container: {},
+			container: {
+				alignItems: "center"
+			},
 			texts: [
 				{
 					...texts.accentText,
@@ -327,6 +329,7 @@ const useCustomStyles = () => {
 				justifySelf: "center",
 				marginTop: "35px",
 				border: "1px solid #1a1b1f",
+				backgroundColor: "#000"
 				// borderRadius: "0",
 			},
 			hover: undefined,

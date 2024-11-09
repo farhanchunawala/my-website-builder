@@ -1,26 +1,27 @@
 import "./styles.scss";
-import Text from "@/elements/Text01/v1";
 import type Props from "./types";
+import Stack from '@mui/material/Stack';
+import Typography from "@mui/material/Typography";
 
 const TextBlock: React.FC<Props> = ({
     data = [],
-    classNames = "",
     styles = {
         container: {},
         texts: [],
     },
 }) => {
     return (
-        <div className="textBlock01" style={styles.container}>
+        <Stack className="textBlock01" sx={styles.container}>
             {data.map((item, index) => (
-                <Text
+                <Typography
                     key={index}
-                    data={item}
-                    classNames={classNames}
-                    styles={styles.texts[index]}
-                />
+					sx={styles.texts[index]}
+                    component={item.component}
+                >
+					{item.content}
+                </Typography>
             ))}
-        </div>
+        </Stack>
     );
 };
 

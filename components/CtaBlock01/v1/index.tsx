@@ -1,22 +1,25 @@
 import type Props from "./types";
+import Box from '@mui/material/Box';
 import TextBlock from "@/components/TextBlock01/v1";
-import Button from "@/elements/Button01/v1";
+import Button from "@mui/material/Button";
 
 const CtaBlock: React.FC<Props> = ({
     data,
     styles,
 }) => {
 	return (
-		<div style={styles?.container} >
+		<Box sx={styles?.container} >
 			<TextBlock
 				data={data?.textBlock}
 				styles={styles?.textBlock}
 			/>
 			<Button
-				data={data?.button}
-				styles={styles?.button}
-			/>
-		</div>
+				variant="contained"
+				sx={styles?.button?.container}
+			>
+				{ data?.button?.content }
+			</Button>
+		</Box>
 	);
 }
 

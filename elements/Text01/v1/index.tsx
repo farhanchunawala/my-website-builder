@@ -7,8 +7,8 @@ const Text: React.FC<Props> = ({
 	classNames = "",
     styles = {},
 }) => {
-	const { tag = 'p', isHtml = false, content = "" } = data || {};
-    const Element = tag;
+	const { component = 'p', isHtml = false, content = "" } = data || {};
+    const Element = component;
 	
 	return (
 		<Element
