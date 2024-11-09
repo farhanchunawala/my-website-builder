@@ -180,11 +180,9 @@ const useCustomStyles = () => {
 		},
 		//help!
 		subheading: {
+			...texts.paragraphLight,
 			justifySelf: responsive("center", "center", "left"),
 			color: "#1a1b1f",
-			fontSize: "16px",
-			fontWeight: responsive("450", "400", "400"),
-			lineHeight: "28px",
 			textAlign: responsive("center", "center", "left"),
 			// maxWidth: responsive("90%", "95%", "95%"),
 			opacity: 0.6,
@@ -213,19 +211,16 @@ const useCustomStyles = () => {
 			container: {},
 			texts: [
 				{
-					// ...texts.accentText,
+					...texts.accentText,
 					marginTop: responsive("85px", "70px", "85px"),
 					color: "#1a1b1f",
-					fontFamily: "montserrat",
 					letterSpacing: "1px",
 					textAlign: "center",
 					marginBottom: "10px",
 				},
 				{
+					...texts.headingJumbo,
 					color: "#1a1b1f",
-					fontFamily: undefined,
-					fontSize: "36px",
-					fontWeight: 400,
 					lineHeight: "50px",
 					marginBottom: "20px",
 					textAlign: "center",
@@ -242,11 +237,8 @@ const useCustomStyles = () => {
 				},
 				texts: [
 					{
+						...texts.articleHeading,
 						color: "#1a1b1f",
-						fontFamily: undefined,
-						fontSize: "24px",
-						fontWeight: "500",
-						lineHeight: "38px",
 						marginTop: "70px",
 						marginBottom: "10px",
 						textAlign: responsive(
@@ -263,13 +255,9 @@ const useCustomStyles = () => {
 						// marginLeft: responsive("none","none","30px")
 					},
 					{
+						...texts.label,
 						color: "#1a1b1f",
-						fontFamily: undefined,
-						fontSize: "12px",
-						fontWeight: "500",
-						lineHeight: "20px",
 						marginTop: "20px",
-						opacity: 0.6,
 						textTransform: "uppercase",
 						textAlign: responsive(
 							"center",
@@ -281,16 +269,11 @@ const useCustomStyles = () => {
 							"center",
 							"left"
 						),
-						letterSpacing: "1px",
 					},
 					{
+						...texts.paragraphLight,
 						color: "#1a1b1f",
-						fontFamily: undefined,
-						fontSize: "16px",
-						fontWeight: "400",
-						lineHeight: "28px",
 						marginTop: "10px",
-						opacity: 0.6,
 						textAlign: responsive(
 							"center",
 							"center",
@@ -319,23 +302,17 @@ const useCustomStyles = () => {
 			margin: responsive("15px", "15px", "30px"),
 		},
 		text1: {
+			...texts.headingJumboSmall,
 			color: "#1a1b1f",
-			fontFamily: undefined,
-			fontSize: responsive("30px", "30px", "36px"),
-			fontWeight: 400,
 			lineHeight: "52px",
 			marginTop: "10px",
 			marginBottom: "15px",
 			textAlign: "center",
 		},
 		text2: {
+			...texts.paragraphLight,
 			color: "#1a1b1f",
-			fontFamily: undefined,
-			fontSize: responsive("16px", "16px", "20px"),
-			fontWeight: 400,
-			lineHeight: responsive("28px", "28px", "34px"),
 			marginTop: "10px",
-			opacity: 0.6,
 			textAlign: "center",
 			marginBottom: "15px",
 			justifySelf: "center",
@@ -343,20 +320,14 @@ const useCustomStyles = () => {
 		},
 		button: {
 			container: {
+				...buttons.primaryJumbo.container,
 				display: "block",
-				height: "58px",
-				width: "174px",
 				textAlign: "center",
 				justifyContent: "center",
 				justifySelf: "center",
 				marginTop: "35px",
-				backgroundColor: "#1a1b1f",
-				color: "#fff",
 				border: "1px solid #1a1b1f",
 				// borderRadius: "0",
-				fontFamily: "Montserrat",
-				letterSpacing: "2px",
-				fontSize: "14px",
 			},
 			hover: undefined,
 		},
