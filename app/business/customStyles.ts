@@ -93,6 +93,7 @@ const useCustomStyles = () => {
 		button: {
 			container: {
 				...buttons.secondaryJumbo.container,
+				backgroundColor: "#fff",
 				flexDirection: "row",
 				// height: responsive("36px", "58px", "36px"),
 				// width: responsive("153px", "187px", "153px"),
@@ -102,7 +103,7 @@ const useCustomStyles = () => {
 				marginTop: "17px",
 				// fontWeight: "400",
 				// fontSize: responsive("12px", "14px", "12px"),
-				border: "solid white",
+				border: "solid #fff",
 			},
 		}
 	}
@@ -353,6 +354,7 @@ const useCustomStyles = () => {
 		},
 		button: {
 			container: {
+				display: "block",
 				height: "58px",
 				width: "174px",
 				textAlign: "center",

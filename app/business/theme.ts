@@ -1,6 +1,19 @@
+import { createTheme } from '@mui/material/styles';
 import { Typography } from "@/app/configs/global.types";
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { text } from "stream/consumers";
+
+const theme = createTheme({
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 0, // removes the default rounding
+                },
+            },
+        },
+    },
+});
 
 interface Tokens {
     lineHeight: string;
@@ -171,4 +184,4 @@ const useTheme = () => {
     return { tokens, fonts, colors, texts, buttons };
 };
 
-export { useTheme };
+export { theme, useTheme };
