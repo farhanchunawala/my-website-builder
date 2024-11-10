@@ -1,19 +1,6 @@
-import { Color, createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import { Typography } from "@/app/configs/global.types";
 import { useResponsive } from "@/app/hooks/useResponsive";
-import { text } from "stream/consumers";
-
-const theme = createTheme({
-    components: {
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    borderRadius: 0, // removes the default rounding
-                },
-            },
-        },
-    },
-});
 
 interface Tokens {
     lineHeight: string;
@@ -46,6 +33,19 @@ interface Texts {
     buttonText: Typography;
 }
 
+
+const theme = createTheme({
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 0, // removes the default rounding
+                },
+            },
+        },
+    },
+});
+
 const useTheme = () => {
     const { responsive } = useResponsive();
 
@@ -54,7 +54,7 @@ const useTheme = () => {
     };
 
 	const layout: Layout = {
-		sectionGap: "100px",
+		sectionGap: "80px",
 		sectionPadding: responsive("0 15px", "0 15px", "0 30px"),
 	}
 
