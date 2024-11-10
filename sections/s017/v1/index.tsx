@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
 import type Props from "./types";
+import Box from "@mui/material/Box";
 import TextBlock from "@/components/TextBlock01/v1";
 
 const Section017: React.FC<Props> = ({ styles, data }) => {
@@ -20,12 +21,16 @@ const Section017: React.FC<Props> = ({ styles, data }) => {
 	}
 
 	return (
-		<section style={styles?.container}>
+		<Box
+            component="section"
+            sx={styles?.container}
+            className="s017"
+        >
 			<TextBlock
 				data={data?.textBlock}
 				styles={styles?.textBlock}
 			/>
-			<div style={styles?.columns?.container}>
+			<Box sx={styles?.columns?.container}>
 				<TextBlock
 					data={data?.columns[0]}
 					styles={styles?.columns?.textBlock}
@@ -38,8 +43,8 @@ const Section017: React.FC<Props> = ({ styles, data }) => {
 					data={data?.columns[2]}
 					styles={styles?.columns?.textBlock}
 				/>
-			</div>
-		</section>
+			</Box>
+		</Box>
 	);
 };
 

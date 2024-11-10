@@ -68,8 +68,8 @@ const useCustomStyles = () => {
 
 	const s014: S014 = {
 		container: {
-			marginBottom: layout.sectionGap,
-			padding: layout.sectionPadding,
+			margin: layout.sectionPadding,
+			marginBottom: `calc(${layout.sectionGap} + 20px)`,
 		},
 		ctaBlock: {
 			container: {
@@ -129,8 +129,8 @@ const useCustomStyles = () => {
 
 	const s015: S015 = {
 		container: {
-			marginBottom: `calc(${layout.sectionGap} - 20px)`,
-			padding: layout.sectionPadding,
+			margin: layout.sectionPadding,
+			marginBottom: layout.sectionGap,
 		},
 		textBlock: {
 			container: {
@@ -169,7 +169,8 @@ const useCustomStyles = () => {
 
 	const s016: S016 = {
 		container: {
-			margin: responsive("0 15px", "0 15px", "0 30px"),
+			margin: layout.sectionPadding,
+			marginBottom: layout.sectionGap,
 			display: responsive("block", "block", "flex"),
 			columnGap: "80px",
 		},
@@ -182,6 +183,7 @@ const useCustomStyles = () => {
 			textBlock: {
 				container: {
 					width: "100%",
+					marginBottom: "30px",
 				},
 				texts: [
 					{
@@ -201,7 +203,6 @@ const useCustomStyles = () => {
 						...texts.headingJumbo,
 						color: "#1a1b1f",
 						marginBottom: "20px",
-						marginTop: "10px",
 						lineHeight: "50px",
 						textAlign: responsive(
 							"center",
@@ -231,7 +232,6 @@ const useCustomStyles = () => {
 						),
 						// maxWidth: responsive("90%", "95%", "95%"),
 						opacity: 0.6,
-						marginBottom: "17px",
 					},
 				],
 			},
@@ -258,15 +258,18 @@ const useCustomStyles = () => {
 	};
 
 	const s017: S017 = {
-		container: {},
+		container: {
+			margin: layout.sectionPadding,
+			marginBottom: `calc(${layout.sectionGap} + 90px)`,
+		},
 		textBlock: {
 			container: {
 				alignItems: "center",
+				marginBottom: "60px",
 			},
 			texts: [
 				{
 					...texts.accentText,
-					marginTop: responsive("85px", "70px", "85px"),
 					color: "#1a1b1f",
 					letterSpacing: "1px",
 					textAlign: "center",
@@ -276,14 +279,16 @@ const useCustomStyles = () => {
 					...texts.headingJumbo,
 					color: "#1a1b1f",
 					lineHeight: "50px",
-					marginBottom: "20px",
 					textAlign: "center",
 				},
 			],
 		},
 		columns: {
 			container: {
-				display: responsive("block", "block", "flex"),
+				// display: responsive("block", "block", "flex"),
+				display: "flex",
+				flexDirection: "column",
+				rowGap: "50px",
 				columnGap: "60px",
 				padding: responsive("0 15px", "0 15px", "0 30px"),
 			},
@@ -297,8 +302,7 @@ const useCustomStyles = () => {
 					{
 						...texts.articleHeading,
 						color: "#1a1b1f",
-						marginTop: "70px",
-						marginBottom: "10px",
+						marginBottom: "20px",
 						textAlign: responsive(
 							"center",
 							"center",
@@ -314,7 +318,7 @@ const useCustomStyles = () => {
 					{
 						...texts.label,
 						color: "#1a1b1f",
-						marginTop: "20px",
+						marginBottom: "10px",
 						textTransform: "uppercase",
 						textAlign: responsive(
 							"center",
@@ -330,7 +334,6 @@ const useCustomStyles = () => {
 					{
 						...texts.paragraphLight,
 						color: "#1a1b1f",
-						marginTop: "10px",
 						textAlign: responsive(
 							"center",
 							"center",
