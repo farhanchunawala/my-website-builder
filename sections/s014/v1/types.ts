@@ -1,18 +1,12 @@
-import * as Text from "@/elements/Text01/v1/types";
-import * as Button from "@/elements/Button01/v1/types";
+import * as CtaBlock from "@/components/CtaBlock01/v1/types";
 
 interface Data {
-	heading: Text.Data
-	subheading: Text.Data
-	button: Button.Data
+	ctaBlock: CtaBlock.Data
 };
 
 interface Styles {
 	container: React.CSSProperties;
-	backGround: React.CSSProperties
-	heading: Text.Styles
-	subheading: Text.Styles
-	button: Button.Styles
+	ctaBlock: CtaBlock.Styles
 }
 
 interface Props {

@@ -1,21 +1,18 @@
-import * as Text from "@/elements/Text01/v1/types";
+import * as TextBlock from "@/components/TextBlock01/v1/types";
 
 interface Data {
-	accentText: Text.Data
-	heading: Text.Data
+	textBlock: TextBlock.Data
 };
 
 interface Styles {
 	container: React.CSSProperties
-	textContainer: React.CSSProperties
-	accentText: Text.Styles
-	heading: Text.Styles
-	vector: React.CSSProperties
+	textBlock: TextBlock.Styles
+	divider: React.CSSProperties
 }
 
 interface Props {
-    data: Data;
 	classNames?: string;
+    data: Data;
     styles: Styles;
 }
 
