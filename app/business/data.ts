@@ -29,6 +29,21 @@ const s013: S013 = {
 }
 
 const s014: S014 = {
+	ctaBlock: {
+		textBlock: [
+			{
+				component: "h1",
+				content: "Grow your business."
+			},
+			{
+				component: "h6",
+				content: "Give your business a boost with a beautifully crafted homepage."
+			}
+		],
+		button: {
+			content: "LEARN MORE"
+		},
+	},
 	heading: {
 		component: "h1",
 		isHtml: false,
@@ -58,24 +73,40 @@ const s015: S015 = {
 }
 
 const s016: S016 = {
-	accentText: {
-		component: "h5",
-		isHtml: false,
-		content: "ABOUT"
+	ctaBlock: {
+		textBlock: [
+			{
+				component: "h5",
+				content: "ABOUT"
+			},
+			{
+				component: "h1",
+				content: "Who we are"
+			},
+			{
+				component: "h6",
+				content: "Nulla vel sodales tellus, quis condimentum enim. Nunc porttitor venenatis feugiat. Etiam quis faucibus erat, non accumsan leo. Aliquam erat volutpat. Vestibulum ac faucibus eros. Cras ullamcorper gravida tellus ut consequat."
+			},
+		],
+		button: {
+			content: "LEARN MORE",
+		},
 	},
-	heading: {
-		component: "h1",
-		isHtml: false,
-		content: "Who we are"
-	},
-	subheading: {
-		component: "h6",
-		isHtml: false,
-		content: "Nulla vel sodales tellus, quis condimentum enim. Nunc porttitor venenatis feugiat. Etiam quis faucibus erat, non accumsan leo. Aliquam erat volutpat. Vestibulum ac faucibus eros. Cras ullamcorper gravida tellus ut consequat."
-	},
-	button: {
-		content: "LEARN MORE"
-	},
+	// accentText: {
+	// 	component: "h5",
+	// 	isHtml: false,
+	// 	content: ""
+	// },
+	// heading: {
+	// 	component: "h1",
+	// 	isHtml: false,
+	// },
+	// subheading: {
+		
+	// },
+	// button: {
+	// 	content: ""
+	// },
 }
 
 const s017: S017 = {

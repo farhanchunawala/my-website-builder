@@ -1,6 +1,6 @@
 import * as Text from "@/elements/Text01/v1/types";
 
-type Data = Text.Data[];
+// type Data = Text.Data[];
 
 // type OptionalProperties<T> = {
 //     [K in keyof T as {} extends Pick<T, K>
@@ -12,7 +12,7 @@ type Data = Text.Data[];
 
 type Styles = {
     container: React.CSSProperties;
-    texts: Text.Styles[];
+    // texts: Text.Styles[];
 };
 
 // type MyTypeOptionalProperties = OptionalProperties<TextBlockStyles>;

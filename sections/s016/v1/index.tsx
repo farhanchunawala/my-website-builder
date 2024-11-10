@@ -6,6 +6,7 @@ import type Props from "./types";
 import Text from "@/elements/Text01/v1";
 import Image from "next/image";
 import Button from "@mui/material/Button";
+import CtaBlock from "@/components/CtaBlock01/v1";
 
 const Section016: React.FC<Props> = ({ styles, data }) => {
 	const { isMobile, isTablet, isDesktop } = useSelector(
@@ -31,7 +32,11 @@ const Section016: React.FC<Props> = ({ styles, data }) => {
 				height={833}
 				layout="responsive"
 			/>
-			<div style={styles?.textContainer}>
+			<CtaBlock
+				data={data?.ctaBlock}
+				styles={styles?.ctaBlock}
+			/>
+			{/* <div style={styles?.textContainer}>
 				<Text
 					data={data?.accentText}
 					styles={styles?.accentText}
@@ -50,7 +55,7 @@ const Section016: React.FC<Props> = ({ styles, data }) => {
                 >
                     { data.button.content }
                 </Button>
-			</div>
+			</div> */}
 		</section>
 	);
 };

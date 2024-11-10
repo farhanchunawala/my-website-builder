@@ -11,9 +11,12 @@ const data = {
 }
 
 const styles = {
+	container: {},
 	textBlock: {
 		container: {},
-		texts: {}
+		texts: [
+			{}
+		]
 	},
 	button: {
 		container: {},
