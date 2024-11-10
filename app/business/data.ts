@@ -43,33 +43,20 @@ const s014: S014 = {
 		button: {
 			content: "LEARN MORE"
 		},
-	},
-	heading: {
-		component: "h1",
-		isHtml: false,
-		content: "Grow your business."
-	},
-	subheading: {
-		component: "h6",
-		isHtml: false,
-		content: "Give your business a boost with a beautifully crafted homepage."
-	},
-	button: {
-		content: "LEARN MORE"
 	}
 }
 
 const s015: S015 = {
-	accentText: {
-		component: "h5",
-		isHtml: false,
-		content: "WHAT WE BELIEVE IN"
-	},
-	heading: {
-		component: "h1",
-		isHtml: false,
-		content: "Grow your business, establish your brand, and put your customers first."
-	},
+	textBlock: [
+		{
+			component: "h5",
+			content: "WHAT WE BELIEVE IN"
+		},
+		{
+			component: "h1",
+			content: "Grow your business, establish your brand, and put your customers first."
+		}
+	]
 }
 
 const s016: S016 = {

@@ -9,7 +9,7 @@ import { Styles as S018 } from "@/sections/s018/v1/types";
 import { Montserrat } from "next/font/google";
 
 const useCustomStyles = () => {
-	const { tokens, fonts, colors, texts, buttons } = useTheme();
+	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
 	const { responsive } = useResponsive();
 
 	const s013: S013 = {
@@ -67,17 +67,14 @@ const useCustomStyles = () => {
 	};
 
 	const s014: S014 = {
-		container: {},
+		container: {
+			marginBottom: layout.sectionGap,
+			padding: layout.sectionPadding,
+		},
 		ctaBlock: {
 			container: {
 				height: "620px",
-				width: responsive(
-					"calc(100% - 30px)",
-					"calc(100% - 30px)",
-					"calc(100% - 60px)"
-				),
-				margin: responsive("15px", "15px", "30px"),
-				marginBottom: "100px",
+				width: "100%",
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
@@ -89,7 +86,8 @@ const useCustomStyles = () => {
 			textBlock: {
 				container: {
 					alignItems: "center",
-					maxWidth: responsive("80%", "80%", "100%"),
+					maxWidth: responsive("80%", "70%", "56%"),
+					marginBottom: "35px",
 				},
 				texts: [
 					{
@@ -108,7 +106,6 @@ const useCustomStyles = () => {
 						color: "#fff",
 						opacity: "0.6",
 						textAlign: "center",
-						marginBottom: "17px",
 					},
 				],
 			},
@@ -122,97 +119,51 @@ const useCustomStyles = () => {
 					display: "flex",
 					textAlign: "center",
 					justifyContent: "center",
-					marginTop: "17px",
 					// fontWeight: "400",
 					// fontSize: responsive("12px", "14px", "12px"),
 					border: "solid #fff",
 				},
 			},
-		},
-		backGround: {
-			height: "620px",
-			width: responsive(
-				"calc(100% - 30px)",
-				"calc(100% - 30px)",
-				"calc(100% - 60px)"
-			),
-			margin: responsive("15px", "15px", "30px"),
-			marginBottom: "100px",
-			display: "flex",
-			alignItems: "center",
-			justifyContent: "center",
-			flexDirection: "column",
-			backgroundImage:
-				'url("./images/starter/portfolio-2---wide.svg")',
-			backgroundSize: "cover",
-		},
-		heading: {
-			...texts.headingJumbo,
-			color: "white",
-			maxWidth: responsive("80%", "80%", "50%"),
-			textAlign: "center",
-			marginBottom: "10px",
-			lineHeight: responsive("48px", "57px", "80px"),
-		},
-		subheading: {
-			...texts.paragraphBigger,
-			color: "#fff",
-			opacity: "0.6",
-			maxWidth: responsive("85%", "80%", "65%"),
-			textAlign: "center",
-			marginBottom: "17px",
-		},
-		button: {
-			container: {
-				...buttons.secondaryJumbo.container,
-				backgroundColor: "#fff",
-				flexDirection: "row",
-				// height: responsive("36px", "58px", "36px"),
-				// width: responsive("153px", "187px", "153px"),
-				display: "flex",
-				textAlign: "center",
-				justifyContent: "center",
-				marginTop: "17px",
-				// fontWeight: "400",
-				// fontSize: responsive("12px", "14px", "12px"),
-				border: "solid #fff",
-			},
-		},
+		}
 	};
 
 	const s015: S015 = {
-		container: {},
-		textContainer: {
-			marginTop: "85px",
-			justifyContent: "center",
-			alignItems: "center",
-			textAlign: "center",
+		container: {
+			marginBottom: `calc(${layout.sectionGap} - 20px)`,
+			padding: layout.sectionPadding,
 		},
-		accentText: {
-			...texts.accentText,
-			textShadow: "0px 1px 1px #0003",
-			color: "#1a1b1f",
-			marginBottom: "10px",
-			lineHeight: "20px",
-			letterSpacing: "1px",
-			textAlign: "center",
+		textBlock: {
+			container: {
+				justifyContent: "center",
+				alignItems: "center",
+				textAlign: "center",
+			},
+			texts: [
+				{
+					...texts.accentText,
+					textShadow: "0px 1px 1px #0003",
+					color: "#1a1b1f",
+					marginBottom: "10px",
+					lineHeight: "20px",
+					letterSpacing: "1px",
+					textAlign: "center",
+				},
+				{
+					...texts.headingJumboSmall,
+					color: "#1a1b1f",
+					lineHeight: responsive("52px", "50px", "50px"),
+					textAlign: "center",
+					justifySelf: "center",
+					textShadow: "0px 1px 1px #0003",
+					marginBottom: "86px",
+					maxWidth: responsive("72%", "72%", "80%"),
+				}
+			]
 		},
-		heading: {
-			...texts.headingJumboSmall,
-			color: "#1a1b1f",
-			marginTop: "10px",
-			lineHeight: responsive("52px", "50px", "50px"),
-			textAlign: "center",
-			justifySelf: "center",
-			textShadow: "0px 1px 1px #0003",
-			marginBottom: "86px",
-			maxWidth: responsive("72%", "72%", "80%"),
-		},
-		vector: {
+		divider: {
 			height: "1px",
-			width: "calc(100% - 30px)",
-			margin: "15px",
 			backgroundColor: "#eeeeee",
+			opacity: "0.5",
 		},
 	};
 

@@ -1,15 +1,18 @@
 import * as TextBlock from "@/components/TextBlock01/v1/types";
-import * as Button from "@/elements/Button01/v1/types";
 
 type Data = {
 	textBlock: TextBlock.Data;
-	button: Button.Data;
+	button: {
+		content: string;
+	};
 };
 
 type Styles = {
 	container: React.CSSProperties;
 	textBlock: TextBlock.Styles;
-	button: Button.Styles;
+	button: {
+		container: React.CSSProperties;
+	};
 }
 
 type Props = {

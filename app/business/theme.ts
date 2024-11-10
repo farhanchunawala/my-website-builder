@@ -21,6 +21,7 @@ interface Tokens {
 
 interface Layout {
     sectionGap: string;
+	sectionPadding: string;
 }
 
 interface Fonts {
@@ -54,6 +55,7 @@ const useTheme = () => {
 
 	const layout: Layout = {
 		sectionGap: "100px",
+		sectionPadding: responsive("0 15px", "0 15px", "0 30px"),
 	}
 
     const fonts: Fonts = {
@@ -212,12 +214,12 @@ const useTheme = () => {
                 fontSize: "14px",
                 lineHeight: "26px",
                 letterSpacing: "2px",
-                textTransform: "uppercase",
+                // textTransform: "uppercase",
             },
         },
     };
 
-    return { tokens, fonts, colors, texts, buttons };
+    return { tokens, layout, fonts, colors, texts, buttons };
 };
 
 export { theme, useTheme };
