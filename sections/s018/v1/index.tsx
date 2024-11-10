@@ -24,11 +24,6 @@ const Section018: React.FC<Props> = ({ styles, data }) => {
 				data={data?.ctaBlock}
 				styles={styles?.ctaBlock}
 			/>
-			{/* <Text data={data?.text1} styles={styles?.text1} />
-			<Text data={data?.text2} styles={styles?.text2} />
-			<Button variant="contained" sx={styles.button.container}>
-				{data.button.content}
-			</Button> */}
 		</section>
 	);
 };

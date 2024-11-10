@@ -79,21 +79,6 @@ const s016: S016 = {
 			content: "LEARN MORE",
 		},
 	},
-	// accentText: {
-	// 	component: "h5",
-	// 	isHtml: false,
-	// 	content: ""
-	// },
-	// heading: {
-	// 	component: "h1",
-	// 	isHtml: false,
-	// },
-	// subheading: {
-		
-	// },
-	// button: {
-	// 	content: ""
-	// },
 }
 
 const s017: S017 = {
@@ -179,12 +164,7 @@ const s018: S018 = {
 		button: {
 			content: "START NOW"
 		},
-	},
-	// text1: {
-		
-	// },
-	// text2: 
-	// button: 
+	}
 }
 
 const data = {

@@ -33,7 +33,6 @@ interface Texts {
     buttonText: Typography;
 }
 
-
 const theme = createTheme({
     components: {
         MuiButton: {

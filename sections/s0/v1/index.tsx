@@ -2,6 +2,7 @@ import { RootState } from "@/lib/store";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import type Props from "./types";
+import Box from "@mui/material/Box";
 
 const Section0: React.FC<Props> = ({ styles, data }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
@@ -16,9 +17,13 @@ const Section0: React.FC<Props> = ({ styles, data }) => {
     if (!isMounted) return null;
 
     return (
-		<section style={styles?.container}>
+		<Box
+            component="section"
+            sx={styles?.container}
+            className="section0"
+        >
 			
-		</section>
+		</Box>
 	);
 };
 

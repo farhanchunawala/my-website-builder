@@ -7,11 +7,16 @@ import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S017 } from "@/sections/s017/v1/types";
 import { Styles as S018 } from "@/sections/s018/v1/types";
 import { Montserrat } from "next/font/google";
+import { Margin, Padding } from "@mui/icons-material";
 
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
 	const { responsive } = useResponsive();
 
+	const pageStyles = {
+		padding: layout.sectionPadding,
+	}
+	
 	const s013: S013 = {
 		container: {
 			position: "relative",
@@ -23,7 +28,7 @@ const useCustomStyles = () => {
 			width: "100%",
 			height: responsive("66px", "66px", "104px"),
 			margin: "0 auto",
-			padding: responsive("0 20px", "0 30px", "0 50px"),
+			padding: responsive("0 5px", "0 15px", "0 20px"),
 			maxWidth: "1140px",
 		},
 		navlinks: {
@@ -68,7 +73,6 @@ const useCustomStyles = () => {
 
 	const s014: S014 = {
 		container: {
-			margin: layout.sectionPadding,
 			marginBottom: `calc(${layout.sectionGap} + 20px)`,
 		},
 		ctaBlock: {
@@ -129,7 +133,6 @@ const useCustomStyles = () => {
 
 	const s015: S015 = {
 		container: {
-			margin: layout.sectionPadding,
 			marginBottom: layout.sectionGap,
 		},
 		textBlock: {
@@ -169,7 +172,6 @@ const useCustomStyles = () => {
 
 	const s016: S016 = {
 		container: {
-			margin: layout.sectionPadding,
 			marginBottom: layout.sectionGap,
 			display: responsive("block", "block", "flex"),
 			columnGap: "80px",
@@ -259,7 +261,6 @@ const useCustomStyles = () => {
 
 	const s017: S017 = {
 		container: {
-			margin: layout.sectionPadding,
 			marginBottom: `calc(${layout.sectionGap} + 90px)`,
 		},
 		textBlock: {
@@ -285,9 +286,8 @@ const useCustomStyles = () => {
 		},
 		columns: {
 			container: {
-				// display: responsive("block", "block", "flex"),
 				display: "flex",
-				flexDirection: "column",
+				flexDirection: responsive("column", "column", "row"),
 				rowGap: "50px",
 				columnGap: "60px",
 				padding: responsive("0 15px", "0 15px", "0 30px"),
@@ -353,35 +353,32 @@ const useCustomStyles = () => {
 
 	const s018: S018 = {
 		container: {
+			marginBottom: layout.sectionGap,
 			backgroundColor: "#f4f4f4",
-			padding: responsive(
-				"95px 30px 105px",
-				"80px 50px 90px",
-				"110px 80px 120px"
-			),
-			margin: responsive("15px", "15px", "30px"),
 		},
 		ctaBlock: {
-			container: {},
+			container: {
+				padding: "100px 30px",
+				width: responsive("auto", "auto", "70%"),
+				margin: "0 auto",
+			},
 			textBlock: {
-				container: {},
+				container: {
+					marginBottom: "35px",
+				},
 				texts: [
 					{
 						...texts.headingJumboSmall,
 						color: "#1a1b1f",
 						lineHeight: "52px",
-						marginTop: "10px",
 						marginBottom: "15px",
 						textAlign: "center",
 					},
 					{
 						...texts.paragraphLight,
 						color: "#1a1b1f",
-						marginTop: "10px",
 						textAlign: "center",
-						marginBottom: "15px",
 						justifySelf: "center",
-						maxWidth: responsive("100%", "100%", "70%"),
 					},
 				],
 			},
@@ -392,23 +389,16 @@ const useCustomStyles = () => {
 					textAlign: "center",
 					justifyContent: "center",
 					justifySelf: "center",
-					marginTop: "35px",
 					border: "1px solid #1a1b1f",
 					backgroundColor: "#000",
-					// borderRadius: "0",
 				},
 				hover: {},
 			},
 		},
-		// text1: 
-		// text2: 
-		// button: {
-		// 	container: {},
-		// 	hover: undefined,
-		// },
 	};
 
 	const styles = {
+		page: pageStyles,
 		s013: s013,
 		s014: s014,
 		s015: s015,
