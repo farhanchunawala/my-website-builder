@@ -358,7 +358,7 @@ const useCustomStyles = () => {
 			),
 			margin: responsive("15px", "15px", "30px"),
 		},
-		CtaBlock: {
+		ctaBlock: {
 			container: {},
 			textBlock: {
 				container: {},
@@ -402,7 +402,7 @@ const useCustomStyles = () => {
 		// button: {
 		// 	container: {},
 		// 	hover: undefined,
-		},
+		// },
 	};
 
 	const styles = {

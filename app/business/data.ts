@@ -166,7 +166,7 @@ const s017: S017 = {
 
 const s018: S018 = {
 	ctaBlock: {
-		TextBlock: [
+		textBlock: [
 			{
 				component: "p",
 				content: "Grow your business."
@@ -175,16 +175,16 @@ const s018: S018 = {
 				component: "p",
 				content: "Today is the day to build the business of your dreams. Share your mission with the world — and blow your customers away."
 			},
-		]
+		],
 		button: {
 			content: "START NOW"
-		}
+		},
 	},
-	text1: {
+	// text1: {
 		
-	},
-	text2: 
-	button: 
+	// },
+	// text2: 
+	// button: 
 }
 
 const data = {
@@ -193,7 +193,7 @@ const data = {
 	s015: s015,
 	s016: s016,
 	s017: s017,
-	s018: s018
+	s018: s018,
 }
 
 export default data;
