@@ -55,12 +55,12 @@ const useTheme = () => {
     const texts: Texts = {
         headingJumbo: {
             fontFamily: fonts.primary,
-            fontSize: responsive("36px", "50px", "64px"),
+            fontSize: responsive("36px", "56px", "64px"),
             fontWeight: 400,
         },
         headingJumboSmall: {
             fontFamily: fonts.primary,
-            fontSize: responsive("30", "30px", "36px"),
+            fontSize: responsive("30px", "30px", "36px"),
             fontWeight: 400,
         },
         headingJumboTiny: {
@@ -192,6 +192,7 @@ const useTheme = () => {
         },
         secondaryJumbo: {
             container: {
+				fontFamily: fonts.primary,
                 padding: "16px 35px",
                 backGroundColor: "#fff",
                 color: "#1a1b1f",

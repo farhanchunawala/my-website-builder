@@ -12,8 +12,8 @@ const useCustomStyles = () => {
 	const { tokens, fonts, colors, texts, buttons } = useTheme();
 	const { responsive } = useResponsive();
 
-    const s013: S013 = {
-        container: {
+	const s013: S013 = {
+		container: {
 			position: "relative",
 			display: "flex",
 			alignItems: "center",
@@ -24,41 +24,111 @@ const useCustomStyles = () => {
 			height: responsive("66px", "66px", "104px"),
 			margin: "0 auto",
 			padding: responsive("0 20px", "0 30px", "0 50px"),
-			maxWidth: "1140px"
+			maxWidth: "1140px",
 		},
-        navlinks: {
-            container: {
+		navlinks: {
+			container: {
 				// display: responsive("block", "block", "flex"),
 				flexDirection: responsive("column", "column", "row"),
 				alignItems: "center",
-				position: responsive("absolute", "absolute", "static"),
+				position: responsive(
+					"absolute",
+					"absolute",
+					"static"
+				),
 				top: "66px",
 				left: 0,
 				right: 0,
 				zIndex: 10,
 				backgroundColor: "#fff",
 			},
-            link: {
+			link: {
 				...texts.linkText,
 				cursor: "pointer",
-				padding: responsive("15px 30px", "15px 30px", "10px 20px"),
+				padding: responsive(
+					"15px 30px",
+					"15px 30px",
+					"10px 20px"
+				),
 				color: "#1a1b1f",
 				opacity: "0.6",
-				
+
 				display: responsive("block", "block", "flex"),
 				width: "fit-content",
 				margin: "0 auto",
-				
-				transitionProperty: "background-color, opacity, color",
+
+				transitionProperty:
+					"background-color, opacity, color",
 				transitionDuration: "400ms, 400ms, 400ms",
 				transitionTimingFunction: "ease, ease, ease",
 			},
-        },
-        button: { ...buttons.primary },
-    };
+		},
+		button: { ...buttons.primary },
+	};
 
 	const s014: S014 = {
 		container: {},
+		ctaBlock: {
+			container: {
+				height: "620px",
+				width: responsive(
+					"calc(100% - 30px)",
+					"calc(100% - 30px)",
+					"calc(100% - 60px)"
+				),
+				margin: responsive("15px", "15px", "30px"),
+				marginBottom: "100px",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				flexDirection: "column",
+				backgroundImage:
+					'url("./images/starter/portfolio-2---wide.svg")',
+				backgroundSize: "cover",
+			},
+			textBlock: {
+				container: {
+					alignItems: "center",
+					maxWidth: responsive("80%", "80%", "100%"),
+				},
+				texts: [
+					{
+						...texts.headingJumbo,
+						color: "white",
+						textAlign: "center",
+						marginBottom: "10px",
+						lineHeight: responsive(
+							"48px",
+							"57px",
+							"80px"
+						),
+					},
+					{
+						...texts.paragraphBigger,
+						color: "#fff",
+						opacity: "0.6",
+						textAlign: "center",
+						marginBottom: "17px",
+					},
+				],
+			},
+			button: {
+				container: {
+					...buttons.secondaryJumbo.container,
+					backgroundColor: "#fff",
+					flexDirection: "row",
+					// height: responsive("36px", "58px", "36px"),
+					// width: responsive("153px", "187px", "153px"),
+					display: "flex",
+					textAlign: "center",
+					justifyContent: "center",
+					marginTop: "17px",
+					// fontWeight: "400",
+					// fontSize: responsive("12px", "14px", "12px"),
+					border: "solid #fff",
+				},
+			},
+		},
 		backGround: {
 			height: "620px",
 			width: responsive(
@@ -72,7 +142,8 @@ const useCustomStyles = () => {
 			alignItems: "center",
 			justifyContent: "center",
 			flexDirection: "column",
-			backgroundImage: 'url("./images/starter/portfolio-2---wide.svg")',
+			backgroundImage:
+				'url("./images/starter/portfolio-2---wide.svg")',
 			backgroundSize: "cover",
 		},
 		heading: {
@@ -106,8 +177,8 @@ const useCustomStyles = () => {
 				// fontSize: responsive("12px", "14px", "12px"),
 				border: "solid #fff",
 			},
-		}
-	}
+		},
+	};
 
 	const s015: S015 = {
 		container: {},
@@ -143,73 +214,103 @@ const useCustomStyles = () => {
 			margin: "15px",
 			backgroundColor: "#eeeeee",
 		},
-	}
+	};
 
 	const s016: S016 = {
 		container: {
 			margin: responsive("0 15px", "0 15px", "0 30px"),
 			display: responsive("block", "block", "flex"),
-			columnGap: "80px"
+			columnGap: "80px",
 		},
 		image: {
 			marginBottom: responsive("50px", "50px", "0"),
 			maxWidth: responsive("100%", "100%", "60%"),
 		},
-		textContainer: {
-			width: "100%",
-		},
-		accentText: {
-			...texts.accentText,
-			color: "#1a1b1f",
-			textShadow: "0 0 0 1px #003",
-			letterSpacing: "1px",
-			textAlign: responsive("center", "center", "left"),
-			marginBottom: "10px",
-			opacity: 0.6,
-		},
-		heading: {
-			...texts.headingJumbo,
-			color: "#1a1b1f",
-			marginBottom: "20px",
-			marginTop: "10px",
-			lineHeight: "50px",
-			textAlign: responsive("center", "center", "left"),
-			justifySelf: responsive("center", "center", "left"),
-			maxWidth: responsive("none", "none", "80%"),
-			textShadow: "0 0 0 1px #003",
-		},
-		//help!
-		subheading: {
-			...texts.paragraphLight,
-			justifySelf: responsive("center", "center", "left"),
-			color: "#1a1b1f",
-			textAlign: responsive("center", "center", "left"),
-			// maxWidth: responsive("90%", "95%", "95%"),
-			opacity: 0.6,
-			marginBottom: "17px",
-		},
-		button: {
-			container: {
-				// ...texts.buttonText,
-				...buttons.primary.container,
-				flexDirection: "row",
-				display: "flex",
-				justifyContent: "center",
-				textAlign: "center",
-				marginTop: "30px",
-				border: "solid #1a1b1f",
-				borderWidth: "1px",
-				justifySelf: responsive("center", "center", "left"),
+		ctaBlock: {
+			container: {},
+			textBlock: {
+				container: {
+					width: "100%",
+				},
+				texts: [
+					{
+						...texts.accentText,
+						color: "#1a1b1f",
+						textShadow: "0 0 0 1px #003",
+						letterSpacing: "1px",
+						textAlign: responsive(
+							"center",
+							"center",
+							"left"
+						),
+						marginBottom: "10px",
+						opacity: 0.6,
+					},
+					{
+						...texts.headingJumbo,
+						color: "#1a1b1f",
+						marginBottom: "20px",
+						marginTop: "10px",
+						lineHeight: "50px",
+						textAlign: responsive(
+							"center",
+							"center",
+							"left"
+						),
+						justifySelf: responsive(
+							"center",
+							"center",
+							"left"
+						),
+						maxWidth: responsive("none", "none", "80%"),
+						textShadow: "0 0 0 1px #003",
+					},
+					{
+						...texts.paragraphLight,
+						justifySelf: responsive(
+							"center",
+							"center",
+							"left"
+						),
+						color: "#1a1b1f",
+						textAlign: responsive(
+							"center",
+							"center",
+							"left"
+						),
+						// maxWidth: responsive("90%", "95%", "95%"),
+						opacity: 0.6,
+						marginBottom: "17px",
+					},
+				],
 			},
-			hover: {},
+			button: {
+				container: {
+					// ...texts.buttonText,
+					...buttons.primary.container,
+					flexDirection: "row",
+					display: "flex",
+					justifyContent: "center",
+					textAlign: "center",
+					marginTop: "30px",
+					border: "solid #1a1b1f",
+					borderWidth: "1px",
+					justifySelf: responsive(
+						"center",
+						"center",
+						"left"
+					),
+				},
+				hover: {},
+			},
 		},
-	}
+	};
 
 	const s017: S017 = {
 		container: {},
 		textBlock: {
 			container: {
-				alignItems: "center"
+				alignItems: "center",
 			},
 			texts: [
 				{
@@ -291,7 +392,7 @@ const useCustomStyles = () => {
 				],
 			},
 		},
-	}
+	};
 
 	const s018: S018 = {
 		container: {
@@ -329,7 +430,7 @@ const useCustomStyles = () => {
 				justifySelf: "center",
 				marginTop: "35px",
 				border: "1px solid #1a1b1f",
-				backgroundColor: "#000"
+				backgroundColor: "#000",
 				// borderRadius: "0",
 			},
 			hover: undefined,
@@ -343,7 +444,7 @@ const useCustomStyles = () => {
 		s016: s016,
 		s017: s017,
 		s018: s018,
-	}
+	};
 
 	return { styles };
 };
