@@ -407,36 +407,50 @@ const useCustomStyles = () => {
 			),
 			margin: responsive("15px", "15px", "30px"),
 		},
-		text1: {
-			...texts.headingJumboSmall,
-			color: "#1a1b1f",
-			lineHeight: "52px",
-			marginTop: "10px",
-			marginBottom: "15px",
-			textAlign: "center",
-		},
-		text2: {
-			...texts.paragraphLight,
-			color: "#1a1b1f",
-			marginTop: "10px",
-			textAlign: "center",
-			marginBottom: "15px",
-			justifySelf: "center",
-			maxWidth: responsive("100%", "100%", "70%"),
-		},
-		button: {
-			container: {
-				...buttons.primaryJumbo.container,
-				display: "block",
-				textAlign: "center",
-				justifyContent: "center",
-				justifySelf: "center",
-				marginTop: "35px",
-				border: "1px solid #1a1b1f",
-				backgroundColor: "#000",
-				// borderRadius: "0",
+		CtaBlock: {
+			container: {},
+			textBlock: {
+				container: {},
+				texts: [
+					{
+						...texts.headingJumboSmall,
+						color: "#1a1b1f",
+						lineHeight: "52px",
+						marginTop: "10px",
+						marginBottom: "15px",
+						textAlign: "center",
+					},
+					{
+						...texts.paragraphLight,
+						color: "#1a1b1f",
+						marginTop: "10px",
+						textAlign: "center",
+						marginBottom: "15px",
+						justifySelf: "center",
+						maxWidth: responsive("100%", "100%", "70%"),
+					},
+				],
 			},
-			hover: undefined,
+			button: {
+				container: {
+					...buttons.primaryJumbo.container,
+					display: "block",
+					textAlign: "center",
+					justifyContent: "center",
+					justifySelf: "center",
+					marginTop: "35px",
+					border: "1px solid #1a1b1f",
+					backgroundColor: "#000",
+					// borderRadius: "0",
+				},
+				hover: {},
+			},
+		},
+		// text1: 
+		// text2: 
+		// button: {
+		// 	container: {},
+		// 	hover: undefined,
 		},
 	};
 

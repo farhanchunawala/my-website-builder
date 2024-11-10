@@ -178,19 +178,26 @@ const s017: S017 = {
 }
 
 const s018: S018 = {
+	ctaBlock: {
+		TextBlock: [
+			{
+				component: "p",
+				content: "Grow your business."
+			},
+			{
+				component: "p",
+				content: "Today is the day to build the business of your dreams. Share your mission with the world — and blow your customers away."
+			},
+		]
+		button: {
+			content: "START NOW"
+		}
+	},
 	text1: {
-		component: "p",
-		isHtml: false,
-		content: "Grow your business."
+		
 	},
-	text2: {
-		component: "p",
-		isHtml: false,
-		content: "Today is the day to build the business of your dreams. Share your mission with the world — and blow your customers away."
-	},
-	button: {
-		content: "START NOW"
-	}
+	text2: 
+	button: 
 }
 
 const data = {
