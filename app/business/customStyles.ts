@@ -232,10 +232,14 @@ const useCustomStyles = () => {
 		columns: {
 			container: {
 				display: responsive("block", "block", "flex"),
+				columnGap: "60px",
+				padding: responsive("0 15px", "0 15px", "0 30px"),
 			},
 			textBlock: {
 				container: {
 					marginLeft: responsive("none", "none", "30px"),
+					maxWidth: `calc(80%)`,
+					margin: "0 auto",
 				},
 				texts: [
 					{
@@ -248,7 +252,6 @@ const useCustomStyles = () => {
 							"center",
 							"left"
 						),
-						maxWidth: responsive("70%", "70%", "87%"),
 						justifySelf: responsive(
 							"center",
 							"center",
@@ -286,7 +289,7 @@ const useCustomStyles = () => {
 							"center",
 							"left"
 						),
-						maxWidth: responsive("65%", "74%", "87%"),
+						// maxWidth: responsive("65%", "74%", "87%"),
 					},
 				],
 			},

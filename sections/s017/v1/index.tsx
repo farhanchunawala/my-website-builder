@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
 import type Props from "./types";
-// import Text from "@/elements/Text01/v1";
 import TextBlock from "@/components/TextBlock01/v1";
 
 const Section017: React.FC<Props> = ({ styles, data }) => {

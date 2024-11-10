@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { Color, createTheme } from '@mui/material/styles';
 import { Typography } from "@/app/configs/global.types";
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { text } from "stream/consumers";
@@ -19,8 +19,17 @@ interface Tokens {
     lineHeight: string;
 }
 
+interface Layout {
+    sectionGap: string;
+}
+
 interface Fonts {
     primary: string;
+}
+
+interface Colors {
+    background: string;
+	foreground: string;
 }
 
 interface Texts {
@@ -43,11 +52,15 @@ const useTheme = () => {
         lineHeight: "normal",
     };
 
+	const layout: Layout = {
+		sectionGap: "100px",
+	}
+
     const fonts: Fonts = {
         primary: "var(--font-montserrat)",
     };
 
-    const colors = {
+    const colors: Colors = {
 		background: "#ffffff",
 		foreground: "#1a1b1f",
 	};
