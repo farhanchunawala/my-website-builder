@@ -8,13 +8,13 @@ import { Data as S018 } from "@/sections/s018/v1/types";
 const s013: S013 = {
 	navlinks: [
 		{
-			content: "ABOUT",
+			content: "ABOUT US",
 		},
 		{
-			content: "WORK",
+			content: "PROGRAMS",
 		},
 		{
-			content: "TEAM",
+			content: "FACULTY",
 		},
 		{
 			content: "BLOG",
@@ -24,7 +24,7 @@ const s013: S013 = {
 		},
 	],
 	button: {
-		content: "CONTACT US",
+		content: "ENROLL NOW",
 	},
 }
 
@@ -33,28 +33,29 @@ const s014: S014 = {
 		textBlock: [
 			{
 				component: "h1",
-				content: "Grow your business."
+				content: "Eureka Kidz Preschool."
 			},
 			{
 				component: "h6",
-				content: "Give your business a boost with a beautifully crafted homepage."
+				content: "Discover The Genius In The Child"
 			}
 		],
 		button: {
-			content: "LEARN MORE"
+			content: "EXPLORE NOW"
 		},
 	}
 }
+
 
 const s015: S015 = {
 	textBlock: [
 		{
 			component: "h5",
-			content: "WHAT WE BELIEVE IN"
+			content: "OUR MISSION"
 		},
 		{
 			component: "h1",
-			content: "Grow your business, establish your brand, and put your customers first."
+			content: "Inspiring Young Minds to Learn and Play for Growing Every Day."
 		}
 	]
 }
@@ -64,19 +65,19 @@ const s016: S016 = {
 		textBlock: [
 			{
 				component: "h5",
-				content: "ABOUT"
+				content: "ABOUT EUREKA KIDZ"
 			},
 			{
 				component: "h1",
-				content: "Who we are"
+				content: "A Place to Learn, Play, and Grow"
 			},
 			{
 				component: "h6",
-				content: "Nulla vel sodales tellus, quis condimentum enim. Nunc porttitor venenatis feugiat. Etiam quis faucibus erat, non accumsan leo. Aliquam erat volutpat. Vestibulum ac faucibus eros. Cras ullamcorper gravida tellus ut consequat."
+				content: "Located in Bhendi Bazar, Mumbai (400003), Eureka Kidz is dedicated to creating a safe, nurturing, and playful environment for children to explore and grow. Our dedicated teachers and hands-on curriculum support each child's unique development journey."
 			},
 		],
 		button: {
-			content: "LEARN MORE",
+			content: "DISCOVER MORE",
 		},
 	},
 }
@@ -108,12 +109,12 @@ const s017: S017 = {
 		{
 			component: "p",
 			isHtml: false,
-			content: "ABOUT US"
+			content: "LATEST NEWS"
 		},
 		{
 			component: "h2",
 			isHtml: false,
-			content: "Company news"
+			content: "From Our Eureka Kidz Community"
 		},
 	],
 	columns: [
@@ -121,51 +122,51 @@ const s017: S017 = {
 			{
 				component: "h3",
 				isHtml: false,
-				content: "10 Quick Tips About Blogging"
+				content: "5 Fun Activities to Try at Home!"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Feb 21, 2019"
+				content: "March 12, 2023"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+				content: "Encourage creativity and curiosity with these simple, fun activities for preschoolers that you can try at home."
 			},
 		],
 		[
 			{
 				component: "h3",
 				isHtml: false,
-				content: "15 Best Blogs To Follow About Web Design"
+				content: "Our Spring Festival Highlights!"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Feb 21, 2019"
+				content: "April 20, 2023"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+				content: "Take a look at the amazing moments we shared at our Spring Festival, filled with games, songs, and laughter."
 			},
 		],
 		[
 			{
 				component: "h3",
 				isHtml: false,
-				content: "7 of the Best Examples of Beautiful Blog Design"
+				content: "Meet Our Teachers: Mrs. Jane’s Art Class"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Feb 21, 2019"
+				content: "May 15, 2023"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+				content: "Get to know our wonderful art teacher, Mrs. Jane, and learn how she inspires creativity in her students!"
 			},
 		],
 	]
@@ -176,15 +177,15 @@ const s018: S018 = {
 		textBlock: [
 			{
 				component: "p",
-				content: "Grow your business."
+				content: "Join Our Eureka Kidz Family!"
 			},
 			{
 				component: "p",
-				content: "Today is the day to build the business of your dreams. Share your mission with the world — and blow your customers away."
+				content: "Located in the heart of Bhendi Bazar, Mumbai, Eureka Kidz invites you to start your child’s learning journey with us. Let's create joyful memories together!"
 			},
 		],
 		button: {
-			content: "START NOW"
+			content: "SIGN UP NOW"
 		},
 	}
 }
