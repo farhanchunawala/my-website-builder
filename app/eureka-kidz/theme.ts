@@ -75,7 +75,7 @@ const useTheme = () => {
         },
         headingJumbo2: {
             fontFamily: fonts.primary,
-            fontSize: responsive("36px", "36px", "36px"),
+            fontSize: "36px",
             fontWeight: 400,
         },
         headingJumboSmall: {
