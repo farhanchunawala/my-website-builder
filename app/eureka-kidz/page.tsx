@@ -39,6 +39,7 @@ export default function Home() {
                 <Section014 styles={styles.s014} data={data.s014} />
                 <Section015 styles={styles.s015} data={data.s015} />
                 <Section016 styles={styles.s016} data={data.s016} />
+                <Section016 styles={styles.s016a} data={data.s016a} />
                 <Section017 styles={styles.s017} data={data.s017} />
                 <Section018 styles={styles.s018} data={data.s018} />
             </Box>

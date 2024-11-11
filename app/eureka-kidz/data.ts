@@ -82,6 +82,28 @@ const s016: S016 = {
 	},
 }
 
+const s016a: S016 = {
+	ctaBlock: {
+		textBlock: [
+			{
+				component: "h5",
+				content: "ABOUT"
+			},
+			{
+				component: "h1",
+				content: "Who we are"
+			},
+			{
+				component: "h6",
+				content: "Nulla vel sodales tellus, quis condimentum enim. Nunc porttitor venenatis feugiat. Etiam quis faucibus erat, non accumsan leo. Aliquam erat volutpat. Vestibulum ac faucibus eros. Cras ullamcorper gravida tellus ut consequat."
+			},
+		],
+		button: {
+			content: "LEARN MORE",
+		},
+	},
+}
+
 const s017: S017 = {
 	textBlock: [
 		{
@@ -173,6 +195,7 @@ const data = {
 	s014: s014,
 	s015: s015,
 	s016: s016,
+	s016a: s016a,
 	s017: s017,
 	s018: s018,
 }
