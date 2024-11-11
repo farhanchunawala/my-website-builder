@@ -7,7 +7,6 @@ import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S017 } from "@/sections/s017/v1/types";
 import { Styles as S018 } from "@/sections/s018/v1/types";
 import { Montserrat } from "next/font/google";
-import { Margin, Padding } from "@mui/icons-material";
 
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
