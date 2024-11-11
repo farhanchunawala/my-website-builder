@@ -203,7 +203,7 @@ const useCustomStyles = () => {
 						opacity: 0.6,
 					},
 					{
-						...texts.headingJumbo2,
+						...texts.headingSection,
 						color: "#1a1b1f",
 						marginBottom: "20px",
 						lineHeight: "50px",
@@ -292,7 +292,7 @@ const useCustomStyles = () => {
 						opacity: 0.6,
 					},
 					{
-						...texts.headingJumbo2,
+						...texts.headingSection,
 						color: "#1a1b1f",
 						marginBottom: "20px",
 						lineHeight: "50px",
@@ -367,7 +367,7 @@ const useCustomStyles = () => {
 					marginBottom: "10px",
 				},
 				{
-					...texts.headingJumbo,
+					...texts.headingSection,
 					color: "#1a1b1f",
 					lineHeight: "50px",
 					textAlign: "center",
