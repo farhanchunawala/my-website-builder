@@ -22,6 +22,7 @@ interface Colors {
 
 interface Texts {
     headingJumbo: Typography;
+    headingJumbo2: Typography;
 	headingJumboSmall: Typography;
 	headingJumboTiny: Typography;
 	articleHeading: Typography;
@@ -70,6 +71,11 @@ const useTheme = () => {
         headingJumbo: {
             fontFamily: fonts.primary,
             fontSize: responsive("36px", "56px", "64px"),
+            fontWeight: 400,
+        },
+        headingJumbo2: {
+            fontFamily: fonts.primary,
+            fontSize: responsive("36px", "36px", "36px"),
             fontWeight: 400,
         },
         headingJumboSmall: {
