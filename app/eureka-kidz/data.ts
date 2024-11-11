@@ -8,13 +8,13 @@ import { Data as S018 } from "@/sections/s018/v1/types";
 const s013: S013 = {
 	navlinks: [
 		{
-			content: "ABOUT",
+			content: "ABOUT US",
 		},
 		{
-			content: "WORK",
+			content: "PROGRAMS",
 		},
 		{
-			content: "TEAM",
+			content: "FACULTY",
 		},
 		{
 			content: "BLOG",
@@ -24,7 +24,7 @@ const s013: S013 = {
 		},
 	],
 	button: {
-		content: "CONTACT US",
+		content: "ENROLL NOW",
 	},
 }
 
@@ -33,11 +33,11 @@ const s014: S014 = {
 		textBlock: [
 			{
 				component: "h1",
-				content: "Grow your business."
+				content: "Eureka Kidz Preschool.",
 			},
 			{
 				component: "h6",
-				content: "Give your business a boost with a beautifully crafted homepage."
+				content: "Discover the Genius in Your Child!!!!"
 			}
 		],
 		button: {
@@ -50,33 +50,34 @@ const s015: S015 = {
 	textBlock: [
 		{
 			component: "h5",
-			content: "WHAT WE BELIEVE IN"
+			content: "OUR MISSION"
 		},
 		{
 			component: "h1",
-			content: "Grow your business, establish your brand, and put your customers first."
+			content: "Empowering Young Minds to Explore, Create, and Grow."
 		}
 	]
 }
+
 
 const s016: S016 = {
 	ctaBlock: {
 		textBlock: [
 			{
 				component: "h5",
-				content: "ABOUT"
+				content: "About"
 			},
 			{
 				component: "h1",
-				content: "Who we are"
+				content: "Growing Together"
 			},
 			{
 				component: "h6",
-				content: "Nulla vel sodales tellus, quis condimentum enim. Nunc porttitor venenatis feugiat. Etiam quis faucibus erat, non accumsan leo. Aliquam erat volutpat. Vestibulum ac faucibus eros. Cras ullamcorper gravida tellus ut consequat."
+				content: "Since 2018, we’ve been dedicated to nurturing young minds, providing a safe, creative, and engaging environment for children in their early years."
 			},
 		],
 		button: {
-			content: "LEARN MORE",
+			content: "EXPLORE MORE",
 		},
 	},
 }
@@ -86,34 +87,35 @@ const s016a: S016 = {
 		textBlock: [
 			{
 				component: "h5",
-				content: "ABOUT"
+				content: "Our Team"
 			},
 			{
 				component: "h1",
-				content: "Who we are"
+				content: "Our inspiring mentors"
 			},
 			{
 				component: "h6",
-				content: "Nulla vel sodales tellus, quis condimentum enim. Nunc porttitor venenatis feugiat. Etiam quis faucibus erat, non accumsan leo. Aliquam erat volutpat. Vestibulum ac faucibus eros. Cras ullamcorper gravida tellus ut consequat."
+				content: "Our dedicated visionary professors works tirelessly to manage our Divisions — Playgroup, Nursery, Jr. KG, and Sr. KG — ensuring each child’s journey is filled with growth and discovery."
 			},
 		],
 		button: {
-			content: "LEARN MORE",
+			content: "Enquire Now",
 		},
 	},
 }
+
 
 const s017: S017 = {
 	textBlock: [
 		{
 			component: "p",
 			isHtml: false,
-			content: "ABOUT US"
+			content: "OUR SCHOOL"
 		},
 		{
 			component: "h2",
 			isHtml: false,
-			content: "Company news"
+			content: "Latest News & Events"
 		},
 	],
 	columns: [
@@ -121,73 +123,75 @@ const s017: S017 = {
 			{
 				component: "h3",
 				isHtml: false,
-				content: "10 Quick Tips About Blogging"
+				content: "Independence Day Celebration"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Feb 21, 2019"
+				content: "Aug 15, 2023"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+				content: "Join us as we celebrate India's Independence Day with flag hoisting, cultural performances, and patriotic activities for the kids."
 			},
 		],
 		[
 			{
 				component: "h3",
 				isHtml: false,
-				content: "15 Best Blogs To Follow About Web Design"
+				content: "Navratri Festival"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Feb 21, 2019"
+				content: "Oct 15, 2023"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+				content: "Celebrate Navratri with us as we introduce children to the joy of Garba and cultural festivities, celebrating tradition and unity."
 			},
 		],
 		[
 			{
 				component: "h3",
 				isHtml: false,
-				content: "7 of the Best Examples of Beautiful Blog Design"
+				content: "Diwali Celebration"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Feb 21, 2019"
+				content: "Nov 5, 2023"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+				content: "Diwali festivities at Eureka Kidz include traditional decorations, diya painting, and stories about the significance of this festival of lights."
 			},
-		],
+		]
 	]
 }
+
 
 const s018: S018 = {
 	ctaBlock: {
 		textBlock: [
 			{
 				component: "p",
-				content: "Grow your business."
+				content: "Join Eureka Kidz Today!"
 			},
 			{
 				component: "p",
-				content: "Today is the day to build the business of your dreams. Share your mission with the world — and blow your customers away."
+				content: "Create a foundation for lifelong learning in a supportive and stimulating environment. Admission starts from December 1st, 2023."
 			},
 		],
 		button: {
-			content: "START NOW"
+			content: "APPLY NOW"
 		},
 	}
 }
+
 
 const data = {
 	s013: s013,
