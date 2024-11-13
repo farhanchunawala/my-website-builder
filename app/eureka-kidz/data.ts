@@ -4,10 +4,16 @@ import { Data as S015 } from "@/sections/s015/v1/types";
 import { Data as S016 } from "@/sections/s016/v1/types";
 import { Data as S017 } from "@/sections/s017/v1/types";
 import { Data as S018 } from "@/sections/s018/v1/types";
+import { Height } from "@mui/icons-material";
 
 const pageUrl = "eureka-kidz"
 
 const s013: S013 = {
+	image: {
+		url: `/images/${pageUrl}/ek_logo.png`,
+		width: 672,
+		height: 836
+	},
 	navlinks: [
 		{
 			content: "ABOUT US",
@@ -64,7 +70,7 @@ const s015: S015 = {
 }
 
 const s016: S016 = {
-	imageUrl: `./images/${pageUrl}/article1.svg`,
+	imageUrl: `/images/${pageUrl}/article1.png`,
 	ctaBlock: {
 		textBlock: [
 			{
@@ -87,7 +93,7 @@ const s016: S016 = {
 }
 
 const s016a: S016 = {
-	imageUrl: `./images/${pageUrl}/article2.svg`,
+	imageUrl: `/images/${pageUrl}/article2.png`,
 	ctaBlock: {
 		textBlock: [
 			{

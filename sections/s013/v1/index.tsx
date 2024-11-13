@@ -26,10 +26,17 @@ const Section013: React.FC<Props> = ({ styles, data }) => {
     return (
         <header className="s013 container" style={styles.container}>
             <Image
-                src="/images/webflow/company_logo.svg"
+                src={data.image.url}
                 alt={""}
-                width={141}
-                height={36}
+				width={data.image.width}
+				height={data.image.height}
+				style={{
+					height: "45px",
+					width: "auto"
+				}}
+                // width={141}
+                // height={36}
+				// layout="responsive"
             />
             {showNav && (
                 <NavLinks

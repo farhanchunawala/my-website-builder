@@ -8,6 +8,7 @@ interface Data {
 
 interface Styles {
 	container: React.CSSProperties;
+	image:  React.CSSProperties;
 	navlinks: NavLinks.Styles;
 	button: Button.Styles;
 }
