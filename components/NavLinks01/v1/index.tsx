@@ -10,7 +10,7 @@ const NavLinks: React.FC<Props> = ({ data, styles }) => {
                     key={index}
                     sx={styles?.link}
                     underline="none"
-                    href="#"
+                    href={item.link}
                 >
                     {item.content}
                 </Link>

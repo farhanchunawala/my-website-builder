@@ -16,6 +16,7 @@ const CtaBlock: React.FC<Props> = ({
 			<Button
 				variant="contained"
 				sx={styles?.button?.container}
+				href={data?.button?.link}
 			>
 				{ data?.button?.content }
 			</Button>

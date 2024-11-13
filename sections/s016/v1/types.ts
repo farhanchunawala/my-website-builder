@@ -17,9 +17,7 @@ interface Props {
 	classNames?: string;
     data: Data;
     styles: Styles;
-	configs?: {
-		pageUrl: string
-	}
+	id?: string
 }
 
 export type { Data, Styles }

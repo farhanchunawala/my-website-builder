@@ -6,7 +6,7 @@ import type Props from "./types";
 import Box from "@mui/material/Box";
 import TextBlock from "@/components/TextBlock01/v1";
 
-const Section017: React.FC<Props> = ({ styles, data }) => {
+const Section017: React.FC<Props> = ({ styles, data, id }) => {
 	const { isMobile, isTablet, isDesktop } = useSelector(
 		(state: RootState) => state.responsive
 	);
@@ -24,7 +24,7 @@ const Section017: React.FC<Props> = ({ styles, data }) => {
 		<Box
             component="section"
             sx={styles?.container}
-            className="s017"
+            id={id}
         >
 			<TextBlock
 				data={data?.textBlock}

@@ -11,18 +11,19 @@ const s013: S013 = {
 	navlinks: [
 		{
 			content: "ABOUT US",
+			link: "#s016"
 		},
 		{
 			content: "TEAM",
+			link: "#s016a"
 		},
 		{
 			content: "EVENT",
-		},
-		{
-			content: "BLOG",
+			link: "#s017"
 		},
 		{
 			content: "CONTACT",
+			link: "#s018"
 		},
 	],
 	button: {
@@ -43,7 +44,8 @@ const s014: S014 = {
 			}
 		],
 		button: {
-			content: "LEARN MORE"
+			content: "LEARN MORE",
+			link: `#s015`
 		},
 	}
 }

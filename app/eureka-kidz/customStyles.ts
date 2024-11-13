@@ -74,7 +74,9 @@ const useCustomStyles = () => {
 
 	const s014: S014 = {
 		container: {
-			marginBottom: `calc(${layout.sectionGap} + 20px)`,
+			padding: layout.sectionGap,
+			paddingTop: "0",
+			marginBottom: "20px",
 		},
 		ctaBlock: {
 			container: {
@@ -135,7 +137,7 @@ const useCustomStyles = () => {
 
 	const s015: S015 = {
 		container: {
-			marginBottom: layout.sectionGap,
+			padding: layout.sectionGap,
 		},
 		textBlock: {
 			container: {
@@ -174,7 +176,7 @@ const useCustomStyles = () => {
 
 	const s016: S016 = {
 		container: {
-			marginBottom: layout.sectionGap,
+			padding: layout.sectionGap,
 			display: responsive("block", "block", "flex"),
 			columnGap: "80px",
 			flexDirection: "row-reverse"
@@ -264,7 +266,7 @@ const useCustomStyles = () => {
 	
 	const s016a: S016 = {
 		container: {
-			marginBottom: layout.sectionGap,
+			padding: layout.sectionGap,
 			display: responsive("block", "block", "flex"),
 			columnGap: "80px",
 		},
@@ -353,7 +355,8 @@ const useCustomStyles = () => {
 
 	const s017: S017 = {
 		container: {
-			marginBottom: `calc(${layout.sectionGap} + 90px)`,
+			padding: layout.sectionGap,
+			marginBottom: "90px",
 		},
 		textBlock: {
 			container: {
@@ -445,7 +448,7 @@ const useCustomStyles = () => {
 
 	const s018: S018 = {
 		container: {
-			marginBottom: layout.sectionGap,
+			padding: layout.sectionGap,
 			backgroundColor: "#f4f4f4",
 		},
 		ctaBlock: {

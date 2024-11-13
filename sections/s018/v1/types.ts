@@ -18,6 +18,7 @@ type Props = {
 	classNames?: string;
     data: Data;
     styles: Styles;
+	id?: string
 }
 
 export type { Data, Styles }
