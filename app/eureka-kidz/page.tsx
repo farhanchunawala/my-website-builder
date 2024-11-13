@@ -36,12 +36,12 @@ export default function Home() {
             <Box className="page" sx={styles.page} >
                 {/* <Section011 /> */}
                 <Section013 styles={styles.s013} data={data.s013} />
-                <Section014 styles={styles.s014} data={data.s014} id="s014" />
-                <Section015 styles={styles.s015} data={data.s015} id="s015" />
-                <Section016 styles={styles.s016} data={data.s016} id="s016" />
-                <Section016 styles={styles.s016a} data={data.s016a} id="s016a" />
-                <Section017 styles={styles.s017} data={data.s017} id="s017" />
-                <Section018 styles={styles.s018} data={data.s018} id="s018" />
+                <Section014 styles={styles.s014} data={data.s014} id="banner" />
+                <Section015 styles={styles.s015} data={data.s015} id="our-mission" />
+                <Section016 styles={styles.s016} data={data.s016} id="about-us" />
+                <Section016 styles={styles.s016a} data={data.s016a} id="our-team" />
+                <Section017 styles={styles.s017} data={data.s017} id="events" />
+                <Section018 styles={styles.s018} data={data.s018} id="contact" />
             </Box>
         </ThemeProvider>
     );
