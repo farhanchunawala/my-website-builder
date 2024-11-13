@@ -11,10 +11,10 @@ const s013: S013 = {
 			content: "ABOUT US",
 		},
 		{
-			content: "TEAM",
+			content: "PROGRAMS",
 		},
 		{
-			content: "EVENT",
+			content: "FACULTY",
 		},
 		{
 			content: "BLOG",
@@ -33,11 +33,11 @@ const s014: S014 = {
 		textBlock: [
 			{
 				component: "h1",
-				content: "Eureka Kidz Preschool.",
+				content: "Taj Tutorials",
 			},
 			{
 				component: "h6",
-				content: "Discover the Genius in Your Child!!!!"
+				content: "A Fast Journey From Student To Schloar"
 			}
 		],
 		button: {
@@ -54,7 +54,7 @@ const s015: S015 = {
 		},
 		{
 			component: "h1",
-			content: "Empowering Young Minds to Explore, Create, and Grow."
+			content: "Guiding Students Towards Academic Excellence"
 		}
 	]
 }
@@ -65,15 +65,15 @@ const s016: S016 = {
 		textBlock: [
 			{
 				component: "h5",
-				content: "ABOUT US"
+				content: "About"
 			},
 			{
 				component: "h1",
-				content: "Growing Together"
+				content: "Empowering Students Since 2006"
 			},
 			{
 				component: "h6",
-				content: "Since 2018, we’ve been dedicated to nurturing young minds, providing a safe, creative, and engaging environment for children in their early years."
+				content: "Since 2006, Taj Tutorial has been committed to transforming students into scholars by providing top-quality education and mentorship. Contact us at 09324232129."
 			},
 		],
 		button: {
@@ -87,15 +87,15 @@ const s016a: S016 = {
 		textBlock: [
 			{
 				component: "h5",
-				content: "OUR TEAM"
+				content: "Our Team"
 			},
 			{
 				component: "h1",
-				content: "Our inspiring mentors"
+				content: "Experienced and Dedicated Faculty"
 			},
 			{
 				component: "h6",
-				content: "Our dedicated visionary professors works tirelessly to manage our Divisions — Playgroup, Nursery, Jr. KG, and Sr. KG — ensuring each child’s journey is filled with growth and discovery."
+				content: "Our team of dedicated educators and mentors works tirelessly to ensure each student's journey towards academic success is guided and supported."
 			},
 		],
 		button: {
@@ -110,12 +110,12 @@ const s017: S017 = {
 		{
 			component: "p",
 			isHtml: false,
-			content: "OUR SCHOOL"
+			content: "TAJ TUTORIAL"
 		},
 		{
 			component: "h2",
 			isHtml: false,
-			content: "Latest News & Events"
+			content: "Announcements & Updates"
 		},
 	],
 	columns: [
@@ -123,51 +123,51 @@ const s017: S017 = {
 			{
 				component: "h3",
 				isHtml: false,
-				content: "Independence Day Celebration"
+				content: "New Batch Starting Soon"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Aug 15, 2023"
+				content: "Dec 1, 2023"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Join us as we celebrate India's Independence Day with flag hoisting, cultural performances, and patriotic activities for the kids."
+				content: "Enroll now for our upcoming batch and take the first step towards academic excellence with Taj Tutorial."
 			},
 		],
 		[
 			{
 				component: "h3",
 				isHtml: false,
-				content: "Navratri Festival"
+				content: "Annual Scholarship Program"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Oct 15, 2023"
+				content: "Jan 5, 2024"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Celebrate Navratri with us as we introduce children to the joy of Garba and cultural festivities, celebrating tradition and unity."
+				content: "Applications are open for our annual scholarship program, designed to support deserving students."
 			},
 		],
 		[
 			{
 				component: "h3",
 				isHtml: false,
-				content: "Diwali Celebration"
+				content: "Parent-Teacher Meet"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Nov 5, 2023"
+				content: "Feb 15, 2024"
 			},
 			{
 				component: "p",
 				isHtml: false,
-				content: "Diwali festivities at Eureka Kidz include traditional decorations, diya painting, and stories about the significance of this festival of lights."
+				content: "Join us for a discussion on your child's academic progress and future goals."
 			},
 		]
 	]
@@ -179,11 +179,11 @@ const s018: S018 = {
 		textBlock: [
 			{
 				component: "p",
-				content: "Join Eureka Kidz Today!"
+				content: "Enroll with Taj Tutorial Today"
 			},
 			{
 				component: "p",
-				content: "Create a foundation for lifelong learning in a supportive and stimulating environment. Admission starts from December 1st, 2023."
+				content: "Join us to set a strong foundation for your academic journey. Enrollment is open for the upcoming session at Sardar Vallabhbhai Patel Rd, Umerkhadi, Mumbai, Maharashtra 400009."
 			},
 		],
 		button: {
@@ -191,6 +191,7 @@ const s018: S018 = {
 		},
 	}
 }
+
 
 
 const data = {
@@ -204,3 +205,4 @@ const data = {
 }
 
 export default data;
+
