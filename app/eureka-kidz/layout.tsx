@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 // import "@/app/configs/globalStyles.scss";
 import "./page.scss";
-import { montserrat, manrope } from "@/app/configs/fonts";
+import {
+    montserrat,
+    manrope,
+    cesarDressing,
+    gamjaFlower,
+    atma,
+} from "@/app/configs/fonts";
 
 export const metadata: Metadata = {
     title: "Business Basic",
@@ -14,7 +20,13 @@ export default function BusinessLayout({
     children: React.ReactNode;
 }) {
     return (
-        <section>
+        <section
+            className={`
+				${cesarDressing.variable}
+				${gamjaFlower.variable}
+				${atma.variable}
+			`}
+        >
             {children}
         </section>
     );

@@ -5,6 +5,8 @@ import { Data as S016 } from "@/sections/s016/v1/types";
 import { Data as S017 } from "@/sections/s017/v1/types";
 import { Data as S018 } from "@/sections/s018/v1/types";
 
+const imageDir = "starter";
+
 const s013: S013 = {
 	navlinks: [
 		{
@@ -60,6 +62,30 @@ const s015: S015 = {
 }
 
 const s016: S016 = {
+	imageUrl: `./images/${imageDir}/article2.svg`,
+	ctaBlock: {
+		textBlock: [
+			{
+				component: "h5",
+				content: "ABOUT"
+			},
+			{
+				component: "h1",
+				content: "Who we are"
+			},
+			{
+				component: "h6",
+				content: "Nulla vel sodales tellus, quis condimentum enim. Nunc porttitor venenatis feugiat. Etiam quis faucibus erat, non accumsan leo. Aliquam erat volutpat. Vestibulum ac faucibus eros. Cras ullamcorper gravida tellus ut consequat."
+			},
+		],
+		button: {
+			content: "LEARN MORE",
+		},
+	},
+}
+
+const s016a: S016 = {
+	imageUrl: `./images/${imageDir}/article1.svg`,
 	ctaBlock: {
 		textBlock: [
 			{
@@ -172,6 +198,7 @@ const data = {
 	s014: s014,
 	s015: s015,
 	s016: s016,
+	s016a: s016a,
 	s017: s017,
 	s018: s018,
 }

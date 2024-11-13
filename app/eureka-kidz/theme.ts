@@ -1,6 +1,7 @@
 import { createTheme } from '@mui/material/styles';
 import { Typography } from "@/app/configs/global.types";
 import { useResponsive } from "@/app/hooks/useResponsive";
+import { Opacity } from '@mui/icons-material';
 
 interface Tokens {
     lineHeight: string;
@@ -12,6 +13,7 @@ interface Layout {
 }
 
 interface Fonts {
+	title: string;
     primary: string;
 }
 
@@ -39,7 +41,7 @@ const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    borderRadius: 0, // removes the default rounding
+                    // borderRadius: 0, // removes the default rounding
                 },
             },
         },
@@ -58,18 +60,21 @@ const useTheme = () => {
 		sectionPadding: responsive("0 15px", "0 15px", "0 30px"),
 	}
 
-    const fonts: Fonts = {
-        primary: "var(--font-montserrat)",
-    };
-
-    const colors: Colors = {
+	const colors: Colors = {
 		background: "#ffffff",
 		foreground: "#1a1b1f",
 	};
 
+    const fonts: Fonts = {
+        title: "var(--font-cesar-dressing)",
+        primary: "var(--font-atma)",
+        // primary: "var(--font-gamja-flower)",
+        // primary: "var(--font-montserrat)",
+    };
+
     const texts: Texts = {
         headingJumbo: {
-            fontFamily: fonts.primary,
+            fontFamily: fonts.title,
             fontSize: responsive("36px", "56px", "64px"),
             fontWeight: 400,
         },
@@ -179,9 +184,9 @@ const useTheme = () => {
         },
         primaryJumbo: {
             container: {
-				fontFamily: "Montserrat",
+				fontFamily: fonts.primary,
                 padding: "16px 35px",
-                backGroundColor: "#1a1b1f",
+                backgroundColor: "#1a1b1f",
                 color: "#fff",
                 fontSize: "14px",
                 lineHeight: "26px",

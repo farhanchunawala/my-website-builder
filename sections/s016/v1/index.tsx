@@ -29,7 +29,7 @@ const Section016: React.FC<Props> = ({ styles, data }) => {
         >
             <Image
                 style={styles?.image}
-                src="/images/starter/placeholder-1.svg"
+                src={data.imageUrl}
                 alt="company logo"
                 width={1305}
                 height={833}

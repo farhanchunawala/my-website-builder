@@ -8,6 +8,8 @@ import { Styles as S017 } from "@/sections/s017/v1/types";
 import { Styles as S018 } from "@/sections/s018/v1/types";
 import { Montserrat } from "next/font/google";
 
+const imageDir = "starter";
+
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
 	const { responsive } = useResponsive();
@@ -83,7 +85,7 @@ const useCustomStyles = () => {
 				justifyContent: "center",
 				flexDirection: "column",
 				backgroundImage:
-					'url("./images/starter/portfolio-2---wide.svg")',
+					`url("./images/${imageDir}/hero_bg1.svg")`,
 				backgroundSize: "cover",
 			},
 			textBlock: {
@@ -170,6 +172,96 @@ const useCustomStyles = () => {
 	};
 
 	const s016: S016 = {
+		container: {
+			marginBottom: layout.sectionGap,
+			display: responsive("block", "block", "flex"),
+			columnGap: "80px",
+			flexDirection: "row-reverse"
+		},
+		image: {
+			marginBottom: responsive("50px", "50px", "0"),
+			maxWidth: responsive("100%", "100%", "60%"),
+		},
+		ctaBlock: {
+			container: {},
+			textBlock: {
+				container: {
+					width: "100%",
+					marginBottom: "30px",
+				},
+				texts: [
+					{
+						...texts.accentText,
+						color: "#1a1b1f",
+						textShadow: "0 0 0 1px #003",
+						letterSpacing: "1px",
+						textAlign: responsive(
+							"center",
+							"center",
+							"left"
+						),
+						marginBottom: "10px",
+						opacity: 0.6,
+					},
+					{
+						...texts.headingJumbo,
+						color: "#1a1b1f",
+						marginBottom: "20px",
+						lineHeight: "50px",
+						textAlign: responsive(
+							"center",
+							"center",
+							"left"
+						),
+						justifySelf: responsive(
+							"center",
+							"center",
+							"left"
+						),
+						maxWidth: responsive("none", "none", "80%"),
+						textShadow: "0 0 0 1px #003",
+					},
+					{
+						...texts.paragraphLight,
+						justifySelf: responsive(
+							"center",
+							"center",
+							"left"
+						),
+						color: "#1a1b1f",
+						textAlign: responsive(
+							"center",
+							"center",
+							"left"
+						),
+						// maxWidth: responsive("90%", "95%", "95%"),
+						opacity: 0.6,
+					},
+				],
+			},
+			button: {
+				container: {
+					// ...texts.buttonText,
+					...buttons.primary.container,
+					flexDirection: "row",
+					display: "flex",
+					justifyContent: "center",
+					textAlign: "center",
+					marginTop: "30px",
+					border: "solid #1a1b1f",
+					borderWidth: "1px",
+					justifySelf: responsive(
+						"center",
+						"center",
+						"left"
+					),
+				},
+				hover: {},
+			},
+		},
+	};
+
+	const s016a: S016 = {
 		container: {
 			marginBottom: layout.sectionGap,
 			display: responsive("block", "block", "flex"),
@@ -402,6 +494,7 @@ const useCustomStyles = () => {
 		s014: s014,
 		s015: s015,
 		s016: s016,
+		s016a: s016a,
 		s017: s017,
 		s018: s018,
 	};
