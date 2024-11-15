@@ -25,7 +25,7 @@ export default function Home() {
 
     return (
 		<ThemeProvider theme={theme}>
-			<Box className="page" sx={styles.page}>
+			<Box className="page">
 				
 			</Box>
 		</ThemeProvider>

@@ -1,4 +1,4 @@
-import "./styles.scss";
+// import "./styles.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";

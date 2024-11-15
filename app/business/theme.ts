@@ -31,6 +31,7 @@ interface Texts {
 	accentText: Typography;
     linkText: Typography;
     buttonText: Typography;
+	label: Typography;
 }
 
 const theme = createTheme({

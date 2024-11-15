@@ -17,7 +17,7 @@ type Styles = {
 type Props = {
 	classNames?: string;
     data: Data;
-    styles: Styles;
+    styles: Styles | any;
 	id?: string
 }
 

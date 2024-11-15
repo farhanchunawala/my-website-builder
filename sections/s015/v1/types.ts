@@ -13,7 +13,7 @@ interface Styles {
 interface Props {
 	classNames?: string;
     data: Data;
-    styles: Styles;
+    styles: Styles | any;
 	id?: string
 }
 

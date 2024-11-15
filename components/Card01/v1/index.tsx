@@ -1,4 +1,4 @@
-import "./styles.scss";
+// import "./styles.scss";
 import Image from "next/image";
 import TextBlock from "@/components/TextBlock01/v1";
 import { useResponsive } from "@/app/hooks/useResponsive";

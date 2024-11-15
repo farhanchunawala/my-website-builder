@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactElement } from "react";
 
 type Data = [];
 
@@ -6,8 +6,12 @@ type Styles = {
 	container: React.CSSProperties;
 }
 
+type ChildProps = {
+	item: Record<string, unknown>; // Adjust this based on the exact structure of your data
+};
+
 type Props = {
-	children: ReactNode
+	children: ReactElement<ChildProps>;
 	classNames?: string;
     data: Data;
     styles: Styles;

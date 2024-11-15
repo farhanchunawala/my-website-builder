@@ -1,4 +1,4 @@
-import type React from "react";
+import React from "react";
 import Props from "./types";
 
 const ItemLoop: React.FC<Props> = ({
@@ -8,13 +8,15 @@ const ItemLoop: React.FC<Props> = ({
 }) => {
 	return (
 		<div style={styles?.container} >
-            {data?.map((item, index) => (
-                React.isValidElement(children) ? (
-					<React.Fragment key={index}>
-						{React.cloneElement(children, { item })}
-					</React.Fragment>
-				) : null
-            ))}
+            {data?.map((item, index) => {
+				return (
+					React.isValidElement(children) ? (
+						<React.Fragment key={index}>
+							{React.cloneElement(children, { item })}
+						</React.Fragment>
+					) : null
+				);
+			})}
 		</div>
 	);
 }

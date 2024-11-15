@@ -20,7 +20,7 @@ interface Colors {
 	foreground: string;
 }
 
-interface Texts {}
+// interface Texts {}
 
 const theme = createTheme({
     components: {
@@ -41,7 +41,10 @@ const useTheme = () => {
         lineHeight: "normal",
     };
 
-	const layout: Layout = {}
+	const layout: Layout = {
+		sectionGap: '',
+		sectionPadding: ''
+	}
 
     const fonts: Fonts = {
         primary: "var(--font-montserrat)",
@@ -52,7 +55,7 @@ const useTheme = () => {
 		foreground: "#000",
 	};
 
-    const texts: Texts = {};
+    const texts = {};
 
     const buttons = {};
 

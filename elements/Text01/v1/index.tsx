@@ -1,4 +1,4 @@
-import "./styles.scss";
+// import "./styles.scss";
 import DOMPurify from "dompurify";
 import type Props from "./types";
 

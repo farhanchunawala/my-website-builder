@@ -1,4 +1,4 @@
-import "./styles.scss";
+// import "./styles.scss";
 import type Props from "./types";
 import Stack from '@mui/material/Stack';
 import Typography from "@mui/material/Typography";

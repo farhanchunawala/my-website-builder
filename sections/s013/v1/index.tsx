@@ -1,4 +1,4 @@
-import "./styles.scss";
+// import "./styles.scss";
 import type Props from "./types";
 import Image from "next/image";
 import { Bars3Icon } from "@heroicons/react/24/outline";

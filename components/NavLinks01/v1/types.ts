@@ -1,10 +1,12 @@
-import * as Link from "@/elements/Link01/v1/types";
 
-type Data = Link.Data[];
+type Data = {
+	content: string;
+	link: string;
+}[];
 
 type Styles = {
 	container: React.CSSProperties;
-	link: Link.Styles;
+	link: React.CSSProperties;
 }
 
 type Props = {

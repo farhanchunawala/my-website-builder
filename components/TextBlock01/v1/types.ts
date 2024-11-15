@@ -1,6 +1,9 @@
 import * as Text from "@/elements/Text01/v1/types";
 
-type Data = object[];
+type Data = {
+	component: React.ElementType;
+	content: string;
+}[];
 
 // type OptionalProperties<T> = {
 //     [K in keyof T as {} extends Pick<T, K>

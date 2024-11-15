@@ -4,6 +4,7 @@ type Data = {
 	textBlock: TextBlock.Data;
 	button: {
 		content: string;
+		link: string;
 	};
 };
 

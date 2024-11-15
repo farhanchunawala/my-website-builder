@@ -1,13 +1,13 @@
-import { ButtonData } from "@/elements/Button01/v1/types";
+// import { ButtonData } from "@/elements/Button01/v1/types";
 
-interface Data {
-	button: ButtonData;
-};
+// interface Data {
+// 	button: ButtonData;
+// };
 
-const data: Data = {
-	button: {
-		content: "GET STARTED",
-	},
-}
+// const data: Data = {
+// 	button: {
+// 		content: "GET STARTED",
+// 	},
+// }
 
-export default data;
+// export default data;

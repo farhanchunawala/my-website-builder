@@ -1,6 +1,8 @@
 
 
-type Data = {};
+type Data = {
+	x: string
+};
 
 type Styles = {
 	container: React.CSSProperties;

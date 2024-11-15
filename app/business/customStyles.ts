@@ -63,13 +63,13 @@ const useCustomStyles = () => {
 				width: "fit-content",
 				margin: "0 auto",
 
-				transitionProperty:
-					"background-color, opacity, color",
+				transitionProperty: "background-color, opacity, color",
 				transitionDuration: "400ms, 400ms, 400ms",
 				transitionTimingFunction: "ease, ease, ease",
 			},
 		},
 		button: { ...buttons.primary },
+		image: {}
 	};
 
 	const s014: S014 = {

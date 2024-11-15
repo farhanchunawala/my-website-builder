@@ -4,6 +4,7 @@ type Typography = {
 	fontWeight?: React.CSSProperties['fontWeight'];
 	letterSpacing?: React.CSSProperties['letterSpacing'];
 	lineHeight?: React.CSSProperties['lineHeight'];
+	opacity?: React.CSSProperties['opacity'];
 };
 
 export type { Typography };

@@ -20,7 +20,9 @@ interface Colors {
 	foreground: string;
 }
 
-interface Texts {}
+interface Texts {
+	heading: Typography;
+}
 
 const theme = createTheme({
     components: {

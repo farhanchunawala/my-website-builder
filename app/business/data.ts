@@ -11,23 +11,33 @@ const s013: S013 = {
 	navlinks: [
 		{
 			content: "ABOUT",
+			link: ""
 		},
 		{
 			content: "WORK",
+			link: ""
 		},
 		{
 			content: "TEAM",
+			link: ""
 		},
 		{
 			content: "BLOG",
+			link: ""
 		},
 		{
 			content: "CONTACT",
+			link: ""
 		},
 	],
 	button: {
 		content: "CONTACT US",
 	},
+	image: {
+		url: "",
+		width: 0,
+		height: 0
+	}
 }
 
 const s014: S014 = {
@@ -43,7 +53,8 @@ const s014: S014 = {
 			}
 		],
 		button: {
-			content: "LEARN MORE"
+			content: "LEARN MORE",
+			link: ""
 		},
 	}
 }
@@ -80,6 +91,7 @@ const s016: S016 = {
 		],
 		button: {
 			content: "LEARN MORE",
+			link: ""
 		},
 	},
 }
@@ -103,6 +115,7 @@ const s016a: S016 = {
 		],
 		button: {
 			content: "LEARN MORE",
+			link: ""
 		},
 	},
 }
@@ -111,12 +124,10 @@ const s017: S017 = {
 	textBlock: [
 		{
 			component: "p",
-			isHtml: false,
 			content: "ABOUT US"
 		},
 		{
 			component: "h2",
-			isHtml: false,
 			content: "Company news"
 		},
 	],
@@ -124,51 +135,42 @@ const s017: S017 = {
 		[
 			{
 				component: "h3",
-				isHtml: false,
 				content: "10 Quick Tips About Blogging"
 			},
 			{
 				component: "p",
-				isHtml: false,
 				content: "Feb 21, 2019"
 			},
 			{
 				component: "p",
-				isHtml: false,
 				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
 			},
 		],
 		[
 			{
 				component: "h3",
-				isHtml: false,
 				content: "15 Best Blogs To Follow About Web Design"
 			},
 			{
 				component: "p",
-				isHtml: false,
 				content: "Feb 21, 2019"
 			},
 			{
 				component: "p",
-				isHtml: false,
 				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
 			},
 		],
 		[
 			{
 				component: "h3",
-				isHtml: false,
 				content: "7 of the Best Examples of Beautiful Blog Design"
 			},
 			{
 				component: "p",
-				isHtml: false,
 				content: "Feb 21, 2019"
 			},
 			{
 				component: "p",
-				isHtml: false,
 				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
 			},
 		],
@@ -188,7 +190,8 @@ const s018: S018 = {
 			},
 		],
 		button: {
-			content: "START NOW"
+			content: "START NOW",
+			link: ""
 		},
 	}
 }

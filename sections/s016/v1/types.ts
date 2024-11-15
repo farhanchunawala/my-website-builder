@@ -1,5 +1,3 @@
-import * as Text from "@/elements/Text01/v1/types";
-import * as Button from "@/elements/Button01/v1/types";
 import * as CtaBlock from "@/components/CtaBlock01/v1/types";
 
 interface Data {
@@ -16,7 +14,7 @@ interface Styles {
 interface Props {
 	classNames?: string;
     data: Data;
-    styles: Styles;
+    styles: Styles | any;
 	id?: string
 }
 
