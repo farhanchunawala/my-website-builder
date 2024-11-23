@@ -53,7 +53,8 @@ const s014: S014 = {
 			}
 		],
 		button: {
-			content: "LEARN MORE"
+			content: "LEARN MORE",
+			link: "#s015"
 		},
 	}
 }
@@ -122,7 +123,7 @@ const s017: S017 = {
 		{
 			component: "p",
 			isHtml: false,
-			content: "TAJ TUTORIAL"
+			content: "OUR TUTORIAL"
 		},
 		{
 			component: "h2",
