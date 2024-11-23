@@ -16,23 +16,23 @@ const s013: S013 = {
 	navlinks: [
 		{
 			content: "ABOUT US",
-			link: "#about-us"
+			link: "#s016"
+		},
+		// {
+		// 	content: "PROGRAMS",
+		// 	link: "#s016"
+		// },
+		{
+			content: "TEAM",
+			link: "#s016a"
 		},
 		{
-			content: "PROGRAMS",
-			link: "#about-us"
-		},
-		{
-			content: "FACULTY",
-			link: "#about-us"
-		},
-		{
-			content: "BLOG",
-			link: "#about-us"
+			content: "EVENTS",
+			link: "#s017"
 		},
 		{
 			content: "CONTACT",
-			link: "#about-us"
+			link: "#s018"
 		},
 	],
 	button: {

@@ -54,7 +54,7 @@ const useTheme = () => {
     };
 
 	const layout: Layout = {
-		sectionGap: "80px",
+		sectionGap: "40px 0",
 		sectionPadding: responsive("0 15px", "0 15px", "0 30px"),
 	}
 

@@ -53,8 +53,8 @@ const s014: S014 = {
 			}
 		],
 		button: {
-			content: "LEARN MORE",
-			link: ""
+			content: "OUR MISSION",
+			link: "#s015"
 		},
 	}
 }
