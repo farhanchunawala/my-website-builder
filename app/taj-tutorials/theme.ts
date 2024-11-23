@@ -39,7 +39,7 @@ const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    borderRadius: 0, // removes the default rounding
+                    // borderRadius: 0, // removes the default rounding
                 },
             },
         },
@@ -179,9 +179,9 @@ const useTheme = () => {
         },
         primaryJumbo: {
             container: {
-				fontFamily: "Montserrat",
+				fontFamily: fonts.primary,
                 padding: "16px 35px",
-                backGroundColor: "#1a1b1f",
+                backgroundColor: "#1a1b1f",
                 color: "#fff",
                 fontSize: "14px",
                 lineHeight: "26px",
@@ -201,7 +201,7 @@ const useTheme = () => {
         secondary: {
             container: {
                 padding: "12px 25px",
-                backGroundColor: "#fff",
+                backgroundColor: "#fff",
                 color: "#1a1b1f",
                 fontSize: "12px",
                 lineHeight: "20px",

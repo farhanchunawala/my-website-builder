@@ -5,22 +5,34 @@ import { Data as S016 } from "@/sections/s016/v1/types";
 import { Data as S017 } from "@/sections/s017/v1/types";
 import { Data as S018 } from "@/sections/s018/v1/types";
 
+const pageUrl = "taj-tutorials"
+
 const s013: S013 = {
+	image: {
+		url: `/images/${pageUrl}/ek_logo.png`,
+		width: 672,
+		height: 836
+	},
 	navlinks: [
 		{
 			content: "ABOUT US",
+			link: "#about-us"
 		},
 		{
 			content: "PROGRAMS",
+			link: "#about-us"
 		},
 		{
 			content: "FACULTY",
+			link: "#about-us"
 		},
 		{
 			content: "BLOG",
+			link: "#about-us"
 		},
 		{
 			content: "CONTACT",
+			link: "#about-us"
 		},
 	],
 	button: {
@@ -33,7 +45,7 @@ const s014: S014 = {
 		textBlock: [
 			{
 				component: "h1",
-				content: "Taj Tutorials",
+				content: "TAJ TUTORIALS",
 			},
 			{
 				component: "h6",

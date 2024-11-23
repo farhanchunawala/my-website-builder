@@ -1,7 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 import { Typography } from "@/app/configs/global.types";
 import { useResponsive } from "@/app/hooks/useResponsive";
-import { Opacity } from '@mui/icons-material';
 
 interface Tokens {
     lineHeight: string;
@@ -206,7 +205,7 @@ const useTheme = () => {
         secondary: {
             container: {
                 padding: "12px 25px",
-                backGroundColor: "#fff",
+                backgroundColor: "#fff",
                 color: "#1a1b1f",
                 fontSize: "12px",
                 lineHeight: "20px",

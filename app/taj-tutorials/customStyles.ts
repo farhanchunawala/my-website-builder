@@ -6,8 +6,8 @@ import { Styles as S015 } from "@/sections/s015/v1/types";
 import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S017 } from "@/sections/s017/v1/types";
 import { Styles as S018 } from "@/sections/s018/v1/types";
-import { Montserrat } from "next/font/google";
-import { Margin, Padding } from "@mui/icons-material";
+
+const pageUrl = "taj-tutorials";
 
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
@@ -84,7 +84,7 @@ const useCustomStyles = () => {
 				justifyContent: "center",
 				flexDirection: "column",
 				backgroundImage:
-					'url("./images/starter/portfolio-2---wide.svg")',
+					`url("./images/${pageUrl}/hero_bg1.png")`,
 				backgroundSize: "cover",
 			},
 			textBlock: {
@@ -96,7 +96,7 @@ const useCustomStyles = () => {
 				texts: [
 					{
 						...texts.headingJumbo,
-						color: "white",
+						// color: "white",
 						textAlign: "center",
 						marginBottom: "10px",
 						lineHeight: responsive(
@@ -107,7 +107,7 @@ const useCustomStyles = () => {
 					},
 					{
 						...texts.paragraphBigger,
-						color: "#fff",
+						// color: "#fff",
 						opacity: "0.6",
 						textAlign: "center",
 					},
@@ -115,17 +115,18 @@ const useCustomStyles = () => {
 			},
 			button: {
 				container: {
-					...buttons.secondaryJumbo.container,
-					backgroundColor: "#fff",
-					flexDirection: "row",
-					// height: responsive("36px", "58px", "36px"),
-					// width: responsive("153px", "187px", "153px"),
-					display: "flex",
-					textAlign: "center",
-					justifyContent: "center",
-					// fontWeight: "400",
-					// fontSize: responsive("12px", "14px", "12px"),
-					border: "solid #fff",
+					...buttons.primaryJumbo.container,
+					// ...buttons.secondaryJumbo.container,
+					// backgroundColor: "#fff",
+					// flexDirection: "row",
+					// // height: responsive("36px", "58px", "36px"),
+					// // width: responsive("153px", "187px", "153px"),
+					// display: "flex",
+					// textAlign: "center",
+					// justifyContent: "center",
+					// // fontWeight: "400",
+					// // fontSize: responsive("12px", "14px", "12px"),
+					// border: "solid #fff",
 				},
 			},
 		}

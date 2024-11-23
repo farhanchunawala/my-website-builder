@@ -11,23 +11,23 @@ const s013: S013 = {
 	navlinks: [
 		{
 			content: "ABOUT",
-			link: ""
+			link: "#s016"
 		},
-		{
-			content: "WORK",
-			link: ""
-		},
+		// {
+		// 	content: "WORK",
+		// 	link: "#s016a"
+		// },
 		{
 			content: "TEAM",
-			link: ""
+			link: "#s016a"
 		},
 		{
-			content: "BLOG",
-			link: ""
+			content: "EVENTS",
+			link: "#s017"
 		},
 		{
 			content: "CONTACT",
-			link: ""
+			link: "#s018"
 		},
 	],
 	button: {
