@@ -9,7 +9,7 @@ const pageUrl = "taj-tutorials"
 
 const s013: S013 = {
 	image: {
-		url: `/images/${pageUrl}/ek_logo.png`,
+		url: `/images/${pageUrl}/tt_logo.png`,
 		width: 672,
 		height: 836
 	},
