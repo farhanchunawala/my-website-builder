@@ -67,11 +67,9 @@ const useCustomStyles = () => {
                 ),
                 color: "#1a1b1f",
                 opacity: "0.6",
-
                 display: responsive("block", "block", "flex"),
                 width: "fit-content",
                 margin: "0 auto",
-
                 transitionProperty:
                     "background-color, opacity, color",
                 transitionDuration: "400ms, 400ms, 400ms",
@@ -107,13 +105,21 @@ const useCustomStyles = () => {
                 },
                 texts: [
                     {
-                        ...texts.headingJumbo,
+						...responsive(
+							texts.headingJumboSmall,
+							texts.headingJumboMedium,
+							texts.headingJumbo
+						),
                         color: "white",
                         textAlign: "center",
                         marginBottom: theme.spacing(1.25),
                     },
                     {
-                        ...texts.paragraphBigger,
+						...responsive(
+							texts.paragraph,
+							texts.paragraphBigger,
+							texts.paragraphBigger,
+						),
                         color: "#fff",
                         opacity: "0.6",
                         textAlign: "center",
@@ -158,11 +164,15 @@ const useCustomStyles = () => {
                     marginBottom: theme.spacing(1.25),
                 },
                 {
-                    ...texts.headingJumboSmall,
+					...responsive(
+						texts.headingJumboXS,
+						texts.headingJumboSmall,
+						texts.headingJumboSmall,
+					),
                     color: "#1a1b1f",
                     textAlign: "center",
                     textShadow: "0px 1px 1px #0003",
-                    maxWidth: responsive("72%", "72%", "80%"),
+                    maxWidth: "80%",
                 },
             ],
         },
@@ -210,7 +220,7 @@ const useCustomStyles = () => {
                         opacity: 0.6,
                     },
                     {
-                        ...texts.headingSection,
+                        ...texts.headingJumboSmall,
                         color: "#1a1b1f",
                         marginBottom: theme.spacing(2.5),
                         textAlign: responsive(
@@ -227,7 +237,7 @@ const useCustomStyles = () => {
                         textShadow: "0 0 0 1px #003",
                     },
                     {
-                        ...texts.paragraphLight,
+                        ...texts.paragraph,
                         justifySelf: responsive(
                             "center",
                             "center",
@@ -239,7 +249,6 @@ const useCustomStyles = () => {
                             "center",
                             "left"
                         ),
-                        // maxWidth: responsive("90%", "95%", "95%"),
                         opacity: 0.6,
                     },
                 ],
@@ -299,7 +308,7 @@ const useCustomStyles = () => {
                         opacity: 0.6,
                     },
                     {
-                        ...texts.headingSection,
+                        ...texts.headingJumboSmall,
                         color: "#1a1b1f",
                         marginBottom: theme.spacing(2.5),
                         textAlign: responsive(
@@ -316,7 +325,7 @@ const useCustomStyles = () => {
                         textShadow: "0 0 0 1px #003",
                     },
                     {
-                        ...texts.paragraphLight,
+                        ...texts.paragraph,
                         justifySelf: responsive(
                             "center",
                             "center",
@@ -372,7 +381,7 @@ const useCustomStyles = () => {
                     marginBottom: theme.spacing(1.25),
                 },
                 {
-                    ...texts.headingSection,
+                    ...texts.headingJumboSmall,
                     color: "#1a1b1f",
                     textAlign: "center",
                 },
@@ -387,7 +396,7 @@ const useCustomStyles = () => {
                 padding: responsive(
                     theme.spacing(0, 2),
                     theme.spacing(0, 2),
-                    theme.spacing(0, 4),
+                    theme.spacing(0, 4)
                 ),
             },
             textBlock: {
@@ -427,8 +436,9 @@ const useCustomStyles = () => {
                         ),
                     },
                     {
-                        ...texts.paragraphLight,
+                        ...texts.paragraph,
                         color: "#1a1b1f",
+						opacity: 0.6,
                         textAlign: responsive(
                             "center",
                             "center",
@@ -450,13 +460,13 @@ const useCustomStyles = () => {
             padding: layout.sectionGap,
         },
         ctaBlock: {
-			container: {
+            container: {
                 padding: responsive(
-					theme.spacing(13, 4),
-					theme.spacing(13, 5),
-					theme.spacing(13, 6),
-				),
-				backgroundColor: "#f4f4f4",
+                    theme.spacing(13, 4),
+                    theme.spacing(13, 5),
+                    theme.spacing(13, 6)
+                ),
+                backgroundColor: "#f4f4f4",
             },
             textBlock: {
                 container: {
@@ -464,18 +474,27 @@ const useCustomStyles = () => {
                 },
                 texts: [
                     {
-                        ...texts.headingJumboSmall,
+                        ...responsive(
+							texts.headingJumboXS,
+							texts.headingJumboSmall,
+							texts.headingJumboSmall,
+						),
                         color: "#1a1b1f",
                         lineHeight: "52px",
                         marginBottom: theme.spacing(2),
                         textAlign: "center",
                     },
                     {
-                        ...texts.paragraphLight,
+						...responsive(
+							texts.paragraph,
+							texts.paragraphBigger,
+							texts.paragraphBigger,
+						),
                         color: "#1a1b1f",
+						opacity: 0.6,
                         textAlign: "center",
-						width: responsive("auto", "auto", "70%"),
-						margin: "0 auto",
+                        width: responsive("auto", "auto", "70%"),
+                        margin: "0 auto",
                     },
                 ],
             },

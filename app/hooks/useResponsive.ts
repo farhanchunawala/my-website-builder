@@ -38,11 +38,11 @@ export const useResponsive = () => {
         };
     }, [dispatch]);
 
-    const responsive = (
-        mobileValue: string,
-        tabletValue: string,
-        desktopValue: string
-    ) => {
+    const responsive = <T extends string | object>(
+        mobileValue: T,
+        tabletValue: T,
+        desktopValue: T
+    ): T => {
         return isMobile ? mobileValue
             : isTablet ? tabletValue
 			: desktopValue;

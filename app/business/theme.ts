@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 import { Typography } from "@/app/configs/global.types";
 import { useResponsive } from "@/app/hooks/useResponsive";
+import { title } from "process";
 
 interface Tokens {
     lineHeight: string;
@@ -22,8 +23,9 @@ interface Colors {
 
 interface Texts {
     headingJumbo: Typography;
-    headingSection: Typography;
+    headingJumboMedium: Typography;
     headingJumboSmall: Typography;
+    headingJumboXS: Typography;
     headingJumboTiny: Typography;
     articleHeading: Typography;
     paragraphBigger: Typography;
@@ -63,6 +65,24 @@ const useTheme = () => {
         ),
     };
 
+    const spacing = {
+        sp: theme.spacing(0.5),
+        textBottom: theme.spacing(1.25),
+        sp: theme.spacing(2),
+        titleBottom: theme.spacing(2.5),
+        sp: theme.spacing(3.75),
+        sp: theme.spacing(4),
+        sp: theme.spacing(4.5),
+        // sp: theme.spacing(5),
+        sp: theme.spacing(6),
+        sp: theme.spacing(6.25),
+        sp: theme.spacing(7.5),
+        sp: theme.spacing(8),
+        sp: theme.spacing(10),
+        sp: theme.spacing(11.25),
+        sp: theme.spacing(13),
+    };
+
     const fonts: Fonts = {
         primary: "var(--font-montserrat)",
     };
@@ -75,63 +95,74 @@ const useTheme = () => {
     const texts: Texts = {
         headingJumbo: {
             fontFamily: fonts.primary,
-            fontSize: responsive("36px", "56px", "64px"),
-            fontWeight: 400,
-			lineHeight: responsive(
-				"48px",
-				"57px",
-				"80px"
-			),
+            fontSize: "64px",
+            lineHeight: "80px",
+            // lineHeight: "1.25",
+            // fontSize: responsive("36px", "56px", "64px"),
+            // lineHeight: responsive("48px", "57px", "80px"),
         },
-        headingSection: {
+        headingJumboMedium: {
             fontFamily: fonts.primary,
-            fontSize: "36px",
-            fontWeight: 400,
-			lineHeight: "50px",
+            fontSize: "56px",
+            lineHeight: "70px",
+			// lineHeight: "1.25",
         },
+        // headingJumboSmall: {
+        //     fontFamily: fonts.primary,
+        //     fontSize: responsive("30px", "30px", "36px"),
+        // 	lineHeight: responsive("52px", "50px", "50px"),
+        //     fontWeight: 400,
+        // },
         headingJumboSmall: {
             fontFamily: fonts.primary,
-            fontSize: responsive("30px", "30px", "36px"),
-            fontWeight: 400,
-			lineHeight: responsive("52px", "50px", "50px"),
+            fontSize: "36px",
+            lineHeight: "48px",
+            // lineHeight: "1.33",
+        },
+        headingJumboXS: {
+            fontFamily: fonts.primary,
+            fontSize: "30px",
+            lineHeight: "1.73",
         },
         headingJumboTiny: {
             fontFamily: fonts.primary,
-            fontSize: responsive("18", "", ""),
-            fontWeight: 400,
+            fontSize: "18px",
         },
         articleHeading: {
             fontFamily: fonts.primary,
             fontSize: "24px",
-            fontWeight: 500,
             lineHeight: "38px",
+            fontWeight: 500,
         },
         paragraphBigger: {
             fontFamily: fonts.primary,
-            fontSize: responsive("16px", "20px", "20px"),
-            fontWeight: 400,
-            lineHeight: responsive("28px", "34px", "34px"),
+            // fontSize: responsive("16px", "20px", "20px"),
+            // lineHeight: responsive("28px", "34px", "34px"),
+            fontSize: "20px",
+            lineHeight: "34px",
+            // opacity: 0.6,
         },
         paragraph: {
             fontFamily: fonts.primary,
-            fontSize: responsive("12px", "14px", "16px"),
-            lineHeight: responsive("20px", "26px", "28px"),
+            // fontSize: responsive("12px", "14px", "16px"),
+            // lineHeight: responsive("20px", "26px", "28px"),
+            fontSize: "16px",
+            lineHeight: "28px",
             fontWeight: undefined,
         },
-        paragraphLight: {
-            fontFamily: fonts.primary,
-            fontSize: "16px",
-            fontWeight: 400,
-            lineHeight: "28px",
-            opacity: 0.6,
-        },
+        // paragraphLight: {
+        //     fontFamily: fonts.primary,
+        //     // fontSize: responsive("16px", "20px", "20px"),
+        //     fontSize: "20px",
+        //     lineHeight: "28px",
+        //     opacity: 0.6,
+        // },
         accentText: {
             fontFamily: fonts.primary,
             fontSize: "12px",
             lineHeight: "20px",
-            fontWeight: 400,
-			letterSpacing: "1px",
-			opacity: 0.6,
+            letterSpacing: "1px",
+            opacity: 0.6,
         },
         label: {
             fontFamily: fonts.primary,
@@ -139,21 +170,20 @@ const useTheme = () => {
             lineHeight: "20px",
             fontWeight: 500,
             letterSpacing: "1px",
-			textTransform: "uppercase",
+            textTransform: "uppercase",
             opacity: 0.6,
         },
         linkText: {
             fontFamily: fonts.primary,
             fontSize: "12px",
-            fontWeight: 500,
-            letterSpacing: "1px",
             lineHeight: "20px",
+            letterSpacing: "1px",
+            textTransform: "uppercase",
             // lineHeight: "1.5",
         },
         buttonText: {
             fontFamily: fonts.primary,
             fontSize: "12px",
-            fontWeight: 400,
             letterSpacing: "2px",
         },
     };
