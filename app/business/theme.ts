@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 import { Typography } from "@/app/configs/global.types";
 import { useResponsive } from "@/app/hooks/useResponsive";
 
@@ -8,7 +8,7 @@ interface Tokens {
 
 interface Layout {
     sectionGap: string;
-	sectionPadding: string;
+    sectionPadding: string;
 }
 
 interface Fonts {
@@ -17,22 +17,22 @@ interface Fonts {
 
 interface Colors {
     background: string;
-	foreground: string;
+    foreground: string;
 }
 
 interface Texts {
     headingJumbo: Typography;
-	headingSection: Typography;
-	headingJumboSmall: Typography;
-	headingJumboTiny: Typography;
-	articleHeading: Typography;
+    headingSection: Typography;
+    headingJumboSmall: Typography;
+    headingJumboTiny: Typography;
+    articleHeading: Typography;
     paragraphBigger: Typography;
     paragraphLight: Typography;
-	paragraph: Typography;
-	accentText: Typography;
+    paragraph: Typography;
+    accentText: Typography;
     linkText: Typography;
     buttonText: Typography;
-	label: Typography;
+    label: Typography;
 }
 
 const theme = createTheme({
@@ -54,47 +54,58 @@ const useTheme = () => {
         lineHeight: "normal",
     };
 
-	const layout: Layout = {
-		sectionGap: "40px 0",
-		sectionPadding: responsive("0 15px", "0 15px", "0 30px"),
-	}
+    const layout: Layout = {
+        sectionGap: theme.spacing(5, 0),
+        sectionPadding: responsive(
+            theme.spacing(0, 2),
+            theme.spacing(0, 2),
+            theme.spacing(0, 4)
+        ),
+    };
 
     const fonts: Fonts = {
         primary: "var(--font-montserrat)",
     };
 
     const colors: Colors = {
-		background: "#ffffff",
-		foreground: "#1a1b1f",
-	};
+        background: "#ffffff",
+        foreground: "#1a1b1f",
+    };
 
     const texts: Texts = {
         headingJumbo: {
             fontFamily: fonts.primary,
             fontSize: responsive("36px", "56px", "64px"),
             fontWeight: 400,
+			lineHeight: responsive(
+				"48px",
+				"57px",
+				"80px"
+			),
         },
-		headingSection: {
+        headingSection: {
             fontFamily: fonts.primary,
             fontSize: "36px",
             fontWeight: 400,
+			lineHeight: "50px",
         },
         headingJumboSmall: {
             fontFamily: fonts.primary,
             fontSize: responsive("30px", "30px", "36px"),
             fontWeight: 400,
+			lineHeight: responsive("52px", "50px", "50px"),
         },
         headingJumboTiny: {
             fontFamily: fonts.primary,
             fontSize: responsive("18", "", ""),
             fontWeight: 400,
         },
-		articleHeading: {
-			fontFamily: fonts.primary,
-			fontSize: "24px",
-			fontWeight: 500,
-			lineHeight: "38px",
-		},
+        articleHeading: {
+            fontFamily: fonts.primary,
+            fontSize: "24px",
+            fontWeight: 500,
+            lineHeight: "38px",
+        },
         paragraphBigger: {
             fontFamily: fonts.primary,
             fontSize: responsive("16px", "20px", "20px"),
@@ -102,33 +113,35 @@ const useTheme = () => {
             lineHeight: responsive("28px", "34px", "34px"),
         },
         paragraph: {
-			fontFamily: fonts.primary,
-			fontSize: responsive("12px", "14px", "16px"),
-			lineHeight: responsive("20px", "26px", "28px"),
-			fontWeight: undefined
-		},
-		paragraphLight: {
-			fontFamily: fonts.primary,
-			fontSize: "16px",
-			fontWeight: 400,
-			lineHeight: "28px",
-			opacity: 0.6,
-		},
-        accentText: {
             fontFamily: fonts.primary,
-			fontSize: "12px",
-			lineHeight: "20px",
+            fontSize: responsive("12px", "14px", "16px"),
+            lineHeight: responsive("20px", "26px", "28px"),
+            fontWeight: undefined,
+        },
+        paragraphLight: {
+            fontFamily: fonts.primary,
+            fontSize: "16px",
             fontWeight: 400,
+            lineHeight: "28px",
             opacity: 0.6,
         },
-		label: {
-			fontFamily: fonts.primary,
-			fontSize: "12px",
-			lineHeight: "20px",
-			fontWeight: 500,
+        accentText: {
+            fontFamily: fonts.primary,
+            fontSize: "12px",
+            lineHeight: "20px",
+            fontWeight: 400,
 			letterSpacing: "1px",
 			opacity: 0.6,
-		},
+        },
+        label: {
+            fontFamily: fonts.primary,
+            fontSize: "12px",
+            lineHeight: "20px",
+            fontWeight: 500,
+            letterSpacing: "1px",
+			textTransform: "uppercase",
+            opacity: 0.6,
+        },
         linkText: {
             fontFamily: fonts.primary,
             fontSize: "12px",
@@ -180,7 +193,7 @@ const useTheme = () => {
         },
         primaryJumbo: {
             container: {
-				fontFamily: "Montserrat",
+                fontFamily: "Montserrat",
                 padding: "16px 35px",
                 backGroundColor: "#1a1b1f",
                 color: "#fff",
@@ -208,12 +221,12 @@ const useTheme = () => {
                 lineHeight: "20px",
                 letterSpacing: "2px",
                 textTransform: "uppercase",
-				fontFamily: fonts.primary,
+                fontFamily: fonts.primary,
             },
         },
         secondaryJumbo: {
             container: {
-				fontFamily: fonts.primary,
+                fontFamily: fonts.primary,
                 padding: "16px 35px",
                 backGroundColor: "#fff",
                 color: "#1a1b1f",

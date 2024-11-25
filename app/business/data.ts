@@ -8,6 +8,11 @@ import { Data as S018 } from "@/sections/s018/v1/types";
 const imageDir = "starter";
 
 const s013: S013 = {
+	image: {
+		url: `/images/${imageDir}/company_logo.svg`,
+		width: 672,
+		height: 836
+	},
 	navlinks: [
 		{
 			content: "ABOUT",
@@ -33,11 +38,6 @@ const s013: S013 = {
 	button: {
 		content: "CONTACT US",
 	},
-	image: {
-		url: "",
-		width: 0,
-		height: 0
-	}
 }
 
 const s014: S014 = {
