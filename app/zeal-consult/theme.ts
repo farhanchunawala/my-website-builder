@@ -54,9 +54,64 @@ const useTheme = () => {
 		foreground: "#000",
 	};
 
-    const texts: Texts = {};
+    const texts: Texts = {
+		heading1: {
+			fontSize: "2rem",
+			lineHeight: "2.625rem",
+		},
+		heading2: {
+			fontSize: "1.5rem",
+			lineHeight: "2rem",
+		},
+		heading3: {
+			fontSize: "1.25rem",
+			lineHeight: "1.625rem",
+		},
+		heading4: {
+			fontWeight: "600",
+			fontSize: "1.125rem",
+			lineHeight: "1.5rem",
+		},
+		heading5: {
+			fontWeight: "600",
+			fontSize: "1rem",
+			lineHeight: "1.25rem",
+		},
+		// heading6: {
+		// 	// fontWeight: "600",
+		// 	fontSize: "0.75rem",
+		// 	lineHeight: "1.125rem",
+		// },
+		paragraph1: {
+			fontSize: "1.5rem",
+			lineHeight: "1.5",
+		},
+		paragraph2: {
+			fontSize: "1.25rem",
+			lineHeight: "1.5",
+		},
+		paragraph3: {
+			fontSize: "1rem",
+			lineHeight: "1.5",
+		},
+		paragraph4: {
+			fontSize: "0.875rem",
+			lineHeight: "1.5",
+		},
+		paragraph5: {
+			fontSize: "0.75rem",
+			lineHeight: "1.5",
+		},
+	};
 
-    const buttons = {};
+    const buttons = {
+		buttonPrimary: {
+			paddingTop: "0.625rem",
+			paddingBottom: "0.625rem",
+			paddingRight: "1.25rem",
+			paddingLeft: "1.25rem",
+		},
+	};
 
     return { tokens, layout, fonts, colors, texts, buttons };
 };
