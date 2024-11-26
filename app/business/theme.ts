@@ -3,10 +3,6 @@ import { Typography } from "@/app/configs/global.types";
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { title } from "process";
 
-interface Tokens {
-    lineHeight: string;
-}
-
 interface Layout {
     sectionGap: string;
     sectionPadding: string;
@@ -53,11 +49,17 @@ const theme = createTheme({
 const useTheme = () => {
     const { responsive } = useResponsive();
 
-    const tokens: Tokens = {
+    const tokens = {
+		textLight: "0.6",
         lineHeight: "normal",
     };
 
     const sp = {
+		textBottom: theme.spacing(2),
+		headingBottom: theme.spacing(4),
+		ctaBlockGap1: theme.spacing(7),
+		ctaBlockGap2: theme.spacing(6),
+		
 		x1: theme.spacing(1),    // 5
 		x2: theme.spacing(2),    // 10
 		x3: theme.spacing(3),    // 15
@@ -69,20 +71,6 @@ const useTheme = () => {
 		x12: theme.spacing(12),  // 60
 		x16: theme.spacing(16),  // 80
 		x20: theme.spacing(20),  // 100
-		
-        // sp: theme.spacing(0.5),
-        // textBottom: theme.spacing(1.25),
-        // sp: theme.spacing(2),
-        // titleBottom: theme.spacing(2.5),
-        // sp: theme.spacing(3.75),
-        // sp: theme.spacing(4),
-        // sp: theme.spacing(4.5),
-        // sp: theme.spacing(6.25),
-        // sp: theme.spacing(7.5),
-        // sp: theme.spacing(8),
-        // sp: theme.spacing(10),
-        // sp: theme.spacing(11.25),
-        // sp: theme.spacing(13),
     };
 
 	const layout: Layout = {

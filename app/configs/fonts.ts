@@ -5,6 +5,7 @@ import {
     Caesar_Dressing,
     Gamja_Flower,
     Atma,
+    Inter,
 } from "next/font/google";
 
 // const geistSans = localFont({
@@ -46,4 +47,11 @@ const atma = Atma({
     weight: "400",
 });
 
-export { montserrat, manrope, cesarDressing, gamjaFlower, atma };
+const inter = Inter({
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-inter",
+    weight: "400",
+});
+
+export { montserrat, manrope, cesarDressing, gamjaFlower, atma, inter };
