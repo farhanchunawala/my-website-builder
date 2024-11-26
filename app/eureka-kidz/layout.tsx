@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 // import "@/app/configs/globalStyles.scss";
 // import "./page.scss";
 import {
-    montserrat,
-    manrope,
     cesarDressing,
     gamjaFlower,
     atma,
