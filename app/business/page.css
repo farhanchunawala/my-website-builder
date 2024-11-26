@@ -1,0 +1,8 @@
+/* :root {
+	--foreground: #1976d2;
+} */
+
+.page {
+	width: 100%;
+	/* color: var(--foreground); */
+}

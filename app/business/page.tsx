@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import data from "./data";
 import { useCustomStyles } from "./customStyles";
-// import "./page.scss";
+// import "./page.css";
 // import Section011 from "@/sections/s011/v1";
 import Section013 from "@/sections/s013/v1";
 import Section014 from "@/sections/s014/v1";

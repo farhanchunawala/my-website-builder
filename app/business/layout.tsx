@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 // import "@/app/configs/globalStyles.scss";
-// import "./page.scss";
+// import "./page.css";
 import { montserrat, manrope } from "@/app/configs/fonts";
 
 export const metadata: Metadata = {
@@ -14,7 +14,12 @@ export default function BusinessLayout({
     children: React.ReactNode;
 }) {
     return (
-        <section>
+        <section
+			className={`
+				${montserrat.variable}
+				${manrope.variable}
+			`}
+		>
             {children}
         </section>
     );
