@@ -38,6 +38,7 @@ interface Texts {
 }
 
 const theme = createTheme({
+	spacing: 5,
     components: {
         MuiButton: {
             styleOverrides: {
@@ -56,31 +57,41 @@ const useTheme = () => {
         lineHeight: "normal",
     };
 
-    const layout: Layout = {
-        sectionGap: theme.spacing(5, 0),
-        sectionPadding: responsive(
-            theme.spacing(0, 2),
-            theme.spacing(0, 2),
-            theme.spacing(0, 4)
-        ),
+    const sp = {
+		x1: theme.spacing(1),    // 5
+		x2: theme.spacing(2),    // 10
+		x3: theme.spacing(3),    // 15
+		x4: theme.spacing(4),    // 20
+		x6: theme.spacing(6),    // 30
+		x7: theme.spacing(7),    // 35
+		x8: theme.spacing(8),    // 40
+		x10: theme.spacing(10),  // 50
+		x12: theme.spacing(12),  // 60
+		x16: theme.spacing(16),  // 80
+		x20: theme.spacing(20),  // 100
+		
+        // sp: theme.spacing(0.5),
+        // textBottom: theme.spacing(1.25),
+        // sp: theme.spacing(2),
+        // titleBottom: theme.spacing(2.5),
+        // sp: theme.spacing(3.75),
+        // sp: theme.spacing(4),
+        // sp: theme.spacing(4.5),
+        // sp: theme.spacing(6.25),
+        // sp: theme.spacing(7.5),
+        // sp: theme.spacing(8),
+        // sp: theme.spacing(10),
+        // sp: theme.spacing(11.25),
+        // sp: theme.spacing(13),
     };
 
-    const spacing = {
-        sp: theme.spacing(0.5),
-        textBottom: theme.spacing(1.25),
-        sp: theme.spacing(2),
-        titleBottom: theme.spacing(2.5),
-        sp: theme.spacing(3.75),
-        sp: theme.spacing(4),
-        sp: theme.spacing(4.5),
-        // sp: theme.spacing(5),
-        sp: theme.spacing(6),
-        sp: theme.spacing(6.25),
-        sp: theme.spacing(7.5),
-        sp: theme.spacing(8),
-        sp: theme.spacing(10),
-        sp: theme.spacing(11.25),
-        sp: theme.spacing(13),
+	const layout: Layout = {
+        sectionGap: theme.spacing(8, 0),
+        sectionPadding: responsive(
+            theme.spacing(0, 3),
+            theme.spacing(0, 3),
+            theme.spacing(0, 6)
+        ),
     };
 
     const fonts: Fonts = {
