@@ -105,7 +105,7 @@ const useTheme = () => {
 	};
 
     const buttons = {
-		buttonPrimary: {
+		primary: {
 			paddingTop: "0.625rem",
 			paddingBottom: "0.625rem",
 			paddingRight: "1.25rem",
