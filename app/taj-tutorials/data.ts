@@ -5,11 +5,11 @@ import { Data as S016 } from "@/sections/s016/v1/types";
 import { Data as S017 } from "@/sections/s017/v1/types";
 import { Data as S018 } from "@/sections/s018/v1/types";
 
-const pageUrl = "taj-tutorials"
+const imageDir = "starter/taj-tutorials"
 
 const s013: S013 = {
 	image: {
-		url: `/images/${pageUrl}/tt_logo.png`,
+		url: `/images/${imageDir}/tt_logo.png`,
 		width: 672,
 		height: 836
 	},

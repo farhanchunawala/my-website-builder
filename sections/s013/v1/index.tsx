@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import NavLinks from "@/components/NavLinks01/v1";
 import Button from "@mui/material/Button";
 
-const Section013: React.FC<Props> = ({ styles, data }) => {
+const Section013: React.FC<Props> = ({ styles, content, config }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -26,10 +26,10 @@ const Section013: React.FC<Props> = ({ styles, data }) => {
     return (
         <header className="s013 container" style={styles.container}>
             <Image
-                src={data.image.url}
+                src={content.imageUrl}
                 alt={""}
-				width={data.image.width}
-				height={data.image.height}
+				width={config.image.width}
+				height={config.image.height}
 				style={{
 					height: "45px",
 					width: "auto"
@@ -40,7 +40,8 @@ const Section013: React.FC<Props> = ({ styles, data }) => {
             />
             {showNav && (
                 <NavLinks
-                    data={data.navlinks}
+                    content={content.navlinks}
+                    config={config.navlinks}
                     styles={styles.navlinks}
                 />
             )}
@@ -49,7 +50,7 @@ const Section013: React.FC<Props> = ({ styles, data }) => {
                     variant="contained"
                     sx={styles.button.container}
                 >
-                    { data.button.content }
+                    { content.buttonText }
                 </Button>
             ) : (
                 <Bars3Icon

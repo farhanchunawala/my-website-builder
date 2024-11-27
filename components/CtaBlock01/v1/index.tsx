@@ -4,23 +4,25 @@ import TextBlock from "@/components/TextBlock01/v1";
 import Button from "@mui/material/Button";
 
 const CtaBlock: React.FC<Props> = ({
-    data,
+    content,
+	config,
     styles,
 }) => {
 	return (
 		<Box sx={styles?.container} >
 			<TextBlock
-				data={data?.textBlock}
+				content={content?.textBlock}
+				config={config?.textBlock}
 				styles={styles?.textBlock}
 			/>
 			<Button
 				variant="contained"
 				sx={styles?.button?.container}
-				href={data?.button?.link}
-				size={data?.button?.size}
-				color={data?.button?.color}
+				href={content?.button?.link}
+				size={config?.button?.size}
+				color={config?.button?.color}
 			>
-				{ data?.button?.content }
+				{ content?.buttonText }
 			</Button>
 		</Box>
 	);

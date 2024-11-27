@@ -6,7 +6,7 @@ import type Props from "./types";
 import Box from "@mui/material/Box";
 import TextBlock from "@/components/TextBlock01/v1";
 
-const Section017: React.FC<Props> = ({ styles, data, id }) => {
+const Section017: React.FC<Props> = ({ styles, content, config, id }) => {
 	const { isMobile, isTablet, isDesktop } = useSelector(
 		(state: RootState) => state.responsive
 	);
@@ -27,20 +27,24 @@ const Section017: React.FC<Props> = ({ styles, data, id }) => {
             id={id}
         >
 			<TextBlock
-				data={data?.textBlock}
+				content={content?.textBlock}
+				config={config?.textBlock}
 				styles={styles?.textBlock}
 			/>
 			<Box sx={styles?.columns?.container}>
 				<TextBlock
-					data={data?.columns[0]}
+					content={content?.columns[0]}
+					config={config?.columns[0]}
 					styles={styles?.columns?.textBlock}
 				/>
 				<TextBlock
-					data={data?.columns[1]}
+					content={content?.columns[1]}
+					config={config?.columns[1]}
 					styles={styles?.columns?.textBlock}
 				/>
 				<TextBlock
-					data={data?.columns[2]}
+					content={content?.columns[2]}
+					config={config?.columns[2]}
 					styles={styles?.columns?.textBlock}
 				/>
 			</Box>

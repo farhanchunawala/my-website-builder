@@ -1,7 +1,7 @@
 import * as Text from "@/elements/Text01/v1/types";
 
 type Data = {
-	component: React.ElementType;
+	element: React.ElementType;
 	content: string;
 }[];
 

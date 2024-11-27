@@ -40,7 +40,7 @@ const theme = createTheme({
     spacing: 5,
     palette: {
         primary: {
-            main: "#1a1c1f",
+            main: "#1a1b1f",
 			contrastText: "#fff",
         },
         secondary: {

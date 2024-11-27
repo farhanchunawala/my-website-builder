@@ -3,6 +3,8 @@ import { RootState } from "@/lib/store";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import data from "./data";
+import content from "./content";
+import config from "./config";
 import { useCustomStyles } from "./customStyles";
 // import "./page.css";
 // import Section011 from "@/sections/s011/v1";
@@ -17,11 +19,11 @@ import { theme } from "./theme";
 import Box from "@mui/material/Box";
 
 export default function Home() {
-	const { isMobile, isTablet, isDesktop } = useSelector(
-		(state: RootState) => state.responsive
+    const { isMobile, isTablet, isDesktop } = useSelector(
+        (state: RootState) => state.responsive
     );
     const [mounted, setMounted] = useState(false);
-	const { styles } = useCustomStyles();
+    const { styles } = useCustomStyles();
 
     useEffect(() => {
         setMounted(true);
@@ -33,15 +35,49 @@ export default function Home() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Box className="page" sx={styles.page} >
+            <Box className="page" sx={styles.page}>
                 {/* <Section011 /> */}
-                <Section013 styles={styles.s013} data={data.s013} />
-                <Section014 styles={styles.s014} data={data.s014} id="s014" />
-                <Section015 styles={styles.s015} data={data.s015} id="s015" />
-                <Section016 styles={styles.s016} data={data.s016} id="s016" />
-                <Section016 styles={styles.s016a} data={data.s016a} id="s016a" />
-                <Section017 styles={styles.s017} data={data.s017} id="s017" />
-                <Section018 styles={styles.s018} data={data.s018} id="s018" />
+                <Section013
+                    styles={styles.s013}
+                    content={content.s013}
+                    config={config.s013}
+                />
+                <Section014
+                    styles={styles.s014}
+                    content={content.s014}
+                    config={config.s014}
+                    id="s014"
+                />
+                <Section015
+                    styles={styles.s015}
+                    content={content.s015}
+                    config={config.s015}
+                    id={content.s014.buttonLink}
+                />
+                <Section016
+                    styles={styles.s016}
+                    content={content.s016}
+                    config={config.s016}
+                    id={content.s013.navlinks[0].link}
+                />
+                <Section016
+                    styles={styles.s016a}
+                    content={content.s016a}
+                    config={config.s016a}
+                    id={content.s013.navlinks[1].link}
+                />
+                <Section017
+                    styles={styles.s017}
+                    content={content.s017}
+                    config={config.s017}
+                    id={content.s013.navlinks[2].link}
+                />
+                <Section018
+                    styles={styles.s018}
+                    content={content.s018}
+                    config={config.s018}
+                    id={content.s013.navlinks[3].link}
+                />
             </Box>
         </ThemeProvider>
     );

@@ -9,31 +9,31 @@ const imageDir = "starter";
 
 const s013: S013 = {
 	image: {
-		url: `/images/${imageDir}/company_logo.svg`,
+		url: `/images/${imageDir}/logo.svg`,
 		width: 672,
 		height: 836
 	},
 	navlinks: [
 		{
 			content: "ABOUT",
-			link: "#s016"
+			link: "about-us"
 		},
-		// {
-		// 	content: "WORK",
-		// 	link: "#s016a"
-		// },
 		{
 			content: "TEAM",
-			link: "#s016a"
+			link: "our-team"
 		},
 		{
 			content: "EVENTS",
-			link: "#s017"
+			link: "events"
 		},
 		{
 			content: "CONTACT",
-			link: "#s018"
+			link: "contact-us"
 		},
+		// {
+		// 	content: "WORK",
+		// 	link: "s015"
+		// },
 	],
 	button: {
 		content: "CONTACT US",
@@ -44,17 +44,17 @@ const s014: S014 = {
 	ctaBlock: {
 		textBlock: [
 			{
-				component: "h1",
+				element: "h1",
 				content: "Grow your business."
 			},
 			{
-				component: "h6",
+				element: "h6",
 				content: "Give your business a boost with a beautifully crafted homepage."
 			}
 		],
 		button: {
 			content: "OUR MISSION",
-			link: "#s015",
+			link: "our-mission",
 			color: "secondary",
 			size: "large"
 		},
@@ -64,11 +64,11 @@ const s014: S014 = {
 const s015: S015 = {
 	textBlock: [
 		{
-			component: "h5",
+			element: "h5",
 			content: "WHAT WE BELIEVE IN"
 		},
 		{
-			component: "h1",
+			element: "h1",
 			content: "Grow your business, establish your brand, and put your customers first."
 		}
 	]
@@ -79,15 +79,15 @@ const s016: S016 = {
 	ctaBlock: {
 		textBlock: [
 			{
-				component: "h5",
+				element: "h5",
 				content: "ABOUT"
 			},
 			{
-				component: "h1",
+				element: "h1",
 				content: "Who we are"
 			},
 			{
-				component: "h6",
+				element: "h6",
 				content: "Nulla vel sodales tellus, quis condimentum enim. Nunc porttitor venenatis feugiat. Etiam quis faucibus erat, non accumsan leo. Aliquam erat volutpat. Vestibulum ac faucibus eros. Cras ullamcorper gravida tellus ut consequat."
 			},
 		],
@@ -103,15 +103,15 @@ const s016a: S016 = {
 	ctaBlock: {
 		textBlock: [
 			{
-				component: "h5",
+				element: "h5",
 				content: "ABOUT"
 			},
 			{
-				component: "h1",
+				element: "h1",
 				content: "Who we are"
 			},
 			{
-				component: "h6",
+				element: "h6",
 				content: "Nulla vel sodales tellus, quis condimentum enim. Nunc porttitor venenatis feugiat. Etiam quis faucibus erat, non accumsan leo. Aliquam erat volutpat. Vestibulum ac faucibus eros. Cras ullamcorper gravida tellus ut consequat."
 			},
 		],
@@ -125,54 +125,54 @@ const s016a: S016 = {
 const s017: S017 = {
 	textBlock: [
 		{
-			component: "p",
+			element: "p",
 			content: "ABOUT US"
 		},
 		{
-			component: "h2",
+			element: "h2",
 			content: "Company news"
 		},
 	],
 	columns: [
 		[
 			{
-				component: "h3",
+				element: "h3",
 				content: "10 Quick Tips About Blogging"
 			},
 			{
-				component: "p",
+				element: "p",
 				content: "Feb 21, 2019"
 			},
 			{
-				component: "p",
+				element: "p",
 				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
 			},
 		],
 		[
 			{
-				component: "h3",
+				element: "h3",
 				content: "15 Best Blogs To Follow About Web Design"
 			},
 			{
-				component: "p",
+				element: "p",
 				content: "Feb 21, 2019"
 			},
 			{
-				component: "p",
+				element: "p",
 				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
 			},
 		],
 		[
 			{
-				component: "h3",
+				element: "h3",
 				content: "7 of the Best Examples of Beautiful Blog Design"
 			},
 			{
-				component: "p",
+				element: "p",
 				content: "Feb 21, 2019"
 			},
 			{
-				component: "p",
+				element: "p",
 				content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
 			},
 		],
@@ -183,11 +183,11 @@ const s018: S018 = {
 	ctaBlock: {
 		textBlock: [
 			{
-				component: "p",
+				element: "p",
 				content: "Grow your business."
 			},
 			{
-				component: "p",
+				element: "p",
 				content: "Today is the day to build the business of your dreams. Share your mission with the world — and blow your customers away."
 			},
 		],
