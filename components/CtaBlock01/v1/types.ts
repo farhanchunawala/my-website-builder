@@ -5,6 +5,8 @@ type Data = {
 	button: {
 		content: string;
 		link: string;
+		size?: "small" | "medium" | "large",
+		color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
 	};
 };
 

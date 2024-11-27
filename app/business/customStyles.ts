@@ -56,7 +56,6 @@ const useCustomStyles = () => {
                     responsive(3, 3, 2),
                     responsive(6, 6, 4)
                 ),
-                color: "#1a1b1f",
                 opacity: tokens.textLight,
                 display: responsive("block", "block", "flex"),
                 width: "fit-content",
@@ -67,7 +66,7 @@ const useCustomStyles = () => {
                 transitionTimingFunction: "ease, ease, ease",
             },
         },
-        button: { ...buttons.primary },
+        button: {},
         image: {},
     };
 
@@ -117,20 +116,7 @@ const useCustomStyles = () => {
                     },
                 ],
             },
-            button: {
-                container: {
-                    ...buttons.secondaryJumbo.container,
-                    backgroundColor: "#fff",
-                    flexDirection: "row",
-                    // height: responsive("36px", "58px", "36px"),
-                    // width: responsive("153px", "187px", "153px"),
-                    display: "flex",
-                    textAlign: "center",
-                    justifyContent: "center",
-                    // fontSize: responsive("12px", "14px", "12px"),
-                    border: "solid #fff",
-                },
-            },
+            button: {},
         },
     };
 
@@ -150,7 +136,6 @@ const useCustomStyles = () => {
                     ...texts.accentText,
                     textAlign: "center",
                     textShadow: "0px 1px 1px #0003",
-                    color: "#1a1b1f",
                     marginBottom: sp.textBottom,
                     opacity: tokens.textLight,
                 },
@@ -160,7 +145,6 @@ const useCustomStyles = () => {
                         texts.headingJumboSmall,
                         texts.headingJumboSmall
                     ),
-                    color: "#1a1b1f",
                     textAlign: "center",
                     textShadow: "0px 1px 1px #0003",
                     maxWidth: "80%",
@@ -199,7 +183,6 @@ const useCustomStyles = () => {
                 texts: [
                     {
                         ...texts.accentText,
-                        color: "#1a1b1f",
                         textShadow: "0 0 0 1px #003",
                         textAlign: responsive(
                             "center",
@@ -211,7 +194,6 @@ const useCustomStyles = () => {
                     },
                     {
                         ...texts.headingJumboSmall,
-                        color: "#1a1b1f",
                         marginBottom: sp.headingBottom,
                         textAlign: responsive(
                             "center",
@@ -233,7 +215,6 @@ const useCustomStyles = () => {
                             "center",
                             "left"
                         ),
-                        color: "#1a1b1f",
                         textAlign: responsive(
                             "center",
                             "center",
@@ -245,13 +226,6 @@ const useCustomStyles = () => {
             },
             button: {
                 container: {
-                    // ...texts.buttonText,
-                    ...buttons.primary.container,
-                    flexDirection: "row",
-                    display: "flex",
-                    justifyContent: "center",
-                    textAlign: "center",
-                    border: "1px solid #1a1b1f",
                     justifySelf: responsive(
                         "center",
                         "center",
@@ -284,7 +258,6 @@ const useCustomStyles = () => {
                 texts: [
                     {
                         ...texts.accentText,
-                        color: "#1a1b1f",
                         textShadow: "0 0 0 1px #003",
                         textAlign: responsive(
                             "center",
@@ -296,7 +269,6 @@ const useCustomStyles = () => {
                     },
                     {
                         ...texts.headingJumboSmall,
-                        color: "#1a1b1f",
                         marginBottom: sp.headingBottom,
                         textAlign: responsive(
                             "center",
@@ -318,7 +290,6 @@ const useCustomStyles = () => {
                             "center",
                             "left"
                         ),
-                        color: "#1a1b1f",
                         textAlign: responsive(
                             "center",
                             "center",
@@ -331,14 +302,6 @@ const useCustomStyles = () => {
             },
             button: {
                 container: {
-                    // ...texts.buttonText,
-                    ...buttons.primary.container,
-                    flexDirection: "row",
-                    display: "flex",
-                    justifyContent: "center",
-                    textAlign: "center",
-                    marginTop: "30px",
-                    border: "1px solid #1a1b1f",
                     justifySelf: responsive(
                         "center",
                         "center",
@@ -363,14 +326,12 @@ const useCustomStyles = () => {
             texts: [
                 {
                     ...texts.accentText,
-                    color: "#1a1b1f",
                     textAlign: "center",
                     marginBottom: sp.textBottom,
                     opacity: tokens.textLight,
                 },
                 {
                     ...texts.headingJumboSmall,
-                    color: "#1a1b1f",
                     textAlign: "center",
                 },
             ],
@@ -391,7 +352,6 @@ const useCustomStyles = () => {
                 texts: [
                     {
                         ...texts.articleHeading,
-                        color: "#1a1b1f",
                         marginBottom: sp.headingBottom,
                         textAlign: responsive(
                             "center",
@@ -406,7 +366,6 @@ const useCustomStyles = () => {
                     },
                     {
                         ...texts.label,
-                        color: "#1a1b1f",
                         marginBottom: sp.textBottom,
                         opacity: tokens.textLight,
                         textAlign: responsive(
@@ -422,7 +381,6 @@ const useCustomStyles = () => {
                     },
                     {
                         ...texts.paragraph,
-                        // color: "#1a1b1f",
                         opacity: tokens.textLight,
                         textAlign: responsive(
                             "center",
@@ -460,7 +418,6 @@ const useCustomStyles = () => {
                             texts.headingJumboSmall,
                             texts.headingJumboSmall
                         ),
-                        color: "#1a1b1f",
                         lineHeight: "52px",
                         marginBottom: sp.textBottom,
                         textAlign: "center",
@@ -471,7 +428,6 @@ const useCustomStyles = () => {
                             texts.paragraphBigger,
                             texts.paragraphBigger
                         ),
-                        color: "#1a1b1f",
                         opacity: tokens.textLight,
                         textAlign: "center",
                         width: responsive("auto", "auto", "65%"),
@@ -481,13 +437,7 @@ const useCustomStyles = () => {
             },
             button: {
                 container: {
-                    ...buttons.primaryJumbo.container,
-                    display: "block",
-                    textAlign: "center",
-                    justifyContent: "center",
                     justifySelf: "center",
-                    border: "1px solid #1a1b1f",
-                    backgroundColor: "#000",
                 },
                 hover: {},
             },

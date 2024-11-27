@@ -54,7 +54,9 @@ const s014: S014 = {
 		],
 		button: {
 			content: "OUR MISSION",
-			link: "#s015"
+			link: "#s015",
+			color: "secondary",
+			size: "large"
 		},
 	}
 }
@@ -191,7 +193,8 @@ const s018: S018 = {
 		],
 		button: {
 			content: "START NOW",
-			link: ""
+			link: "",
+			size: "large"
 		},
 	}
 }

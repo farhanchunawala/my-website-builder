@@ -14,6 +14,7 @@ interface Fonts {
 interface Colors {
     background: string;
     foreground: string;
+	secondary: string;
 }
 
 interface Texts {
@@ -39,10 +40,12 @@ const theme = createTheme({
     spacing: 5,
     palette: {
         primary: {
-            main: "#1a1b1f",
+            main: "#1a1c1f",
+			contrastText: "#fff",
         },
         secondary: {
             main: "#fff",
+			contrastText: "#1a1b1f",
         },
     },
     typography: {
@@ -52,8 +55,23 @@ const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    borderRadius: 0, // removes the default rounding
+					display: "flex",
+                    borderRadius: 0,
                 },
+				sizeMedium: {
+					fontSize: "12px",
+					letterSpacing: "2px",
+					height: "45px",
+					padding: "0 25px",
+					// padding: "12px 25px",
+				},
+				sizeLarge: {
+					fontSize: '14px',
+					letterSpacing: "2px",
+					height: "60px",
+					padding: "0 35px",
+					// padding: "16px 35px",
+				},
             },
         },
     },
@@ -70,6 +88,7 @@ const useTheme = () => {
     const colors: Colors = {
         background: "#ffffff",
         foreground: "#1a1b1f",
+		secondary: "#fff"
     };
 
     const sp = {
@@ -179,33 +198,12 @@ const useTheme = () => {
         primary: {
             container: {
                 ...texts.buttonText,
-                backgroundColor: "#1a1b1f",
-                color: "#fff",
-                // height: "44px",
-                padding: "12px 25px",
+                height: "45px",
+                padding: "0 25px",
+                // padding: "12px 25px",
             },
             hover: {
                 backgroundColor: "#32343a",
-            },
-        },
-        primary1: {
-            container: {
-                padding: "12px 25px",
-                backGroundColor: "#1a1b1f",
-                color: "#fff",
-                fontSize: "12px",
-                lineHeight: "20px",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                justifyContent: "center",
-                transitionProperty:
-                    "background-color, opacity, color",
-                transitionDuration: "400ms, 400ms, 400ms",
-                transitionTimingFunction: "ease, ease, ease",
-            },
-            hover: {
-                backgroundColor: "#32343a",
-                color: "#fff",
             },
         },
         primaryJumbo: {
