@@ -49,7 +49,7 @@ const s015 = {
 }
 
 const s016 = {
-	imageUrl: `./images/${imageDir}/article2.svg`,
+	imageUrl: `./images/${imageDir}/article1.svg`,
 	ctaBlock: {
 		textBlock: [
 			"ABOUT",
@@ -61,7 +61,7 @@ const s016 = {
 }
 
 const s016a = {
-	imageUrl: `./images/${imageDir}/article1.svg`,
+	imageUrl: `./images/${imageDir}/article2.svg`,
 	ctaBlock: {
 		textBlock: [
 			"ABOUT",
