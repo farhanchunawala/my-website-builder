@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./global.css";
 import { StoreProvider } from "./StoreProvider";
-import { montserrat, manrope } from "./configs/fonts";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -16,7 +15,7 @@ export default function RootLayout({
 	return (
 		<StoreProvider>
 			<html lang="en">
-				<body className={`${montserrat.variable} ${manrope.variable}`}>
+				<body>
 					{children}
 				</body>
 			</html>

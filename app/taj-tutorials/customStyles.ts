@@ -7,7 +7,7 @@ import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S017 } from "@/sections/s017/v1/types";
 import { Styles as S018 } from "@/sections/s018/v1/types";
 
-const pageUrl = "taj-tutorials";
+const imageDir = "starter/taj-tutorials";
 
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
@@ -86,7 +86,7 @@ const useCustomStyles = () => {
 				justifyContent: "center",
 				flexDirection: "column",
 				backgroundImage:
-					`url("./images/${pageUrl}/hero_bg1.png")`,
+					`url("./images/${imageDir}/hero_bg1.png")`,
 				backgroundSize: "cover",
 			},
 			textBlock: {

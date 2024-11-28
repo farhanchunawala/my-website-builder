@@ -1,5 +1,6 @@
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { theme, useTheme } from "./theme";
+import content from "./content";
 import { Styles as S013 } from "@/sections/s013/v1/types";
 import { Styles as S014 } from "@/sections/s014/v1/types";
 import { Styles as S015 } from "@/sections/s015/v1/types";
@@ -7,15 +8,14 @@ import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S017 } from "@/sections/s017/v1/types";
 import { Styles as S018 } from "@/sections/s018/v1/types";
 
-const imageDir = "starter";
-
 const useCustomStyles = () => {
-    const { tokens, layout, fonts, colors, texts, buttons } =
+    const { tokens, sp, layout, fonts, colors, texts, buttons } =
         useTheme();
     const { responsive } = useResponsive();
 
     const pageStyles = {
         padding: layout.sectionPadding,
+        color: colors.foreground,
     };
 
     const s013: S013 = {
@@ -27,17 +27,9 @@ const useCustomStyles = () => {
             zIndex: 5,
             backgroundColor: "transparent",
             width: "100%",
-            height: responsive(
-                theme.spacing(16),
-                theme.spacing(16),
-                theme.spacing(20)
-            ),
+            height: theme.spacing(responsive(16, 16, 20)),
+            padding: theme.spacing(0, responsive(1, 2, 4)),
             margin: "0 auto",
-            padding: responsive(
-                theme.spacing(0, 1),
-                theme.spacing(0, 2),
-                theme.spacing(0, 4)
-            ),
             maxWidth: "1140px",
         },
         navlinks: {
@@ -59,13 +51,11 @@ const useCustomStyles = () => {
             link: {
                 ...texts.linkText,
                 cursor: "pointer",
-                padding: responsive(
-                    theme.spacing(3, 6),
-                    theme.spacing(3, 6),
-                    theme.spacing(2, 4)
+                padding: theme.spacing(
+                    responsive(3, 3, 2),
+                    responsive(6, 6, 4)
                 ),
-                color: "#1a1b1f",
-                opacity: "0.6",
+                opacity: tokens.textLight,
                 display: responsive("block", "block", "flex"),
                 width: "fit-content",
                 margin: "0 auto",
@@ -75,7 +65,7 @@ const useCustomStyles = () => {
                 transitionTimingFunction: "ease, ease, ease",
             },
         },
-        button: { ...buttons.primary },
+        button: {},
         image: {},
     };
 
@@ -93,14 +83,14 @@ const useCustomStyles = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 flexDirection: "column",
-                backgroundImage: `url("./images/${imageDir}/hero_bg1.svg")`,
+                backgroundImage: `url("${content.s014.backgroundImage}")`,
                 backgroundSize: "cover",
             },
             textBlock: {
                 container: {
                     alignItems: "center",
                     maxWidth: responsive("80%", "70%", "56%"),
-                    marginBottom: theme.spacing(7),
+                    marginBottom: sp.ctaBlockGap1,
                 },
                 texts: [
                     {
@@ -111,7 +101,7 @@ const useCustomStyles = () => {
                         ),
                         color: "white",
                         textAlign: "center",
-                        marginBottom: theme.spacing(2),
+                        marginBottom: sp.textBottom,
                     },
                     {
                         ...responsive(
@@ -120,26 +110,12 @@ const useCustomStyles = () => {
                             texts.paragraphBigger
                         ),
                         color: "#fff",
-                        opacity: "0.6",
+                        opacity: tokens.textLight,
                         textAlign: "center",
                     },
                 ],
             },
-            button: {
-                container: {
-                    ...buttons.secondaryJumbo.container,
-                    backgroundColor: "#fff",
-                    flexDirection: "row",
-                    // height: responsive("36px", "58px", "36px"),
-                    // width: responsive("153px", "187px", "153px"),
-                    display: "flex",
-                    textAlign: "center",
-                    justifyContent: "center",
-                    // fontWeight: "400",
-                    // fontSize: responsive("12px", "14px", "12px"),
-                    border: "solid #fff",
-                },
-            },
+            button: {},
         },
     };
 
@@ -159,8 +135,8 @@ const useCustomStyles = () => {
                     ...texts.accentText,
                     textAlign: "center",
                     textShadow: "0px 1px 1px #0003",
-                    color: "#1a1b1f",
-                    marginBottom: theme.spacing(2),
+                    marginBottom: sp.textBottom,
+                    opacity: tokens.textLight,
                 },
                 {
                     ...responsive(
@@ -168,7 +144,6 @@ const useCustomStyles = () => {
                         texts.headingJumboSmall,
                         texts.headingJumboSmall
                     ),
-                    color: "#1a1b1f",
                     textAlign: "center",
                     textShadow: "0px 1px 1px #0003",
                     maxWidth: "80%",
@@ -179,7 +154,6 @@ const useCustomStyles = () => {
             height: "1px",
             backgroundColor: "#eeeeee",
             opacity: "0.5",
-            marginBottom: "1px",
         },
     };
 
@@ -187,7 +161,7 @@ const useCustomStyles = () => {
         container: {
             padding: layout.sectionGap,
             display: "flex",
-			rowGap: theme.spacing(10),
+            rowGap: theme.spacing(10),
             columnGap: theme.spacing(16),
             flexDirection: responsive(
                 "column",
@@ -203,25 +177,23 @@ const useCustomStyles = () => {
             textBlock: {
                 container: {
                     width: "100%",
-                    marginBottom: theme.spacing(6),
+                    marginBottom: sp.ctaBlockGap2,
                 },
                 texts: [
                     {
                         ...texts.accentText,
-                        color: "#1a1b1f",
                         textShadow: "0 0 0 1px #003",
                         textAlign: responsive(
                             "center",
                             "center",
                             "left"
                         ),
-                        marginBottom: theme.spacing(2),
-                        opacity: 0.6,
+                        marginBottom: sp.textBottom,
+                        opacity: tokens.textLight,
                     },
                     {
                         ...texts.headingJumboSmall,
-                        color: "#1a1b1f",
-                        marginBottom: theme.spacing(4),
+                        marginBottom: sp.headingBottom,
                         textAlign: responsive(
                             "center",
                             "center",
@@ -242,25 +214,17 @@ const useCustomStyles = () => {
                             "center",
                             "left"
                         ),
-                        color: "#1a1b1f",
                         textAlign: responsive(
                             "center",
                             "center",
                             "left"
                         ),
-                        opacity: 0.6,
+                        opacity: tokens.textLight,
                     },
                 ],
             },
             button: {
                 container: {
-                    // ...texts.buttonText,
-                    ...buttons.primary.container,
-                    flexDirection: "row",
-                    display: "flex",
-                    justifyContent: "center",
-                    textAlign: "center",
-                    border: "1px solid #1a1b1f",
                     justifySelf: responsive(
                         "center",
                         "center",
@@ -276,13 +240,9 @@ const useCustomStyles = () => {
         container: {
             padding: layout.sectionGap,
             display: "flex",
-			rowGap: theme.spacing(10),
+            rowGap: theme.spacing(10),
             columnGap: theme.spacing(16),
-            flexDirection: responsive(
-                "column",
-                "column",
-                "row"
-            ),
+            flexDirection: responsive("column", "column", "row"),
         },
         image: {
             maxWidth: responsive("100%", "100%", "60%"),
@@ -292,25 +252,23 @@ const useCustomStyles = () => {
             textBlock: {
                 container: {
                     width: "100%",
-                    marginBottom: theme.spacing(6),
+                    marginBottom: sp.ctaBlockGap2,
                 },
                 texts: [
                     {
                         ...texts.accentText,
-                        color: "#1a1b1f",
                         textShadow: "0 0 0 1px #003",
                         textAlign: responsive(
                             "center",
                             "center",
                             "left"
                         ),
-                        marginBottom: theme.spacing(2),
-                        opacity: 0.6,
+                        marginBottom: sp.textBottom,
+                        opacity: tokens.textLight,
                     },
                     {
                         ...texts.headingJumboSmall,
-                        color: "#1a1b1f",
-                        marginBottom: theme.spacing(4),
+                        marginBottom: sp.headingBottom,
                         textAlign: responsive(
                             "center",
                             "center",
@@ -331,27 +289,18 @@ const useCustomStyles = () => {
                             "center",
                             "left"
                         ),
-                        color: "#1a1b1f",
                         textAlign: responsive(
                             "center",
                             "center",
                             "left"
                         ),
                         // maxWidth: responsive("90%", "95%", "95%"),
-                        opacity: 0.6,
+                        opacity: tokens.textLight,
                     },
                 ],
             },
             button: {
                 container: {
-                    // ...texts.buttonText,
-                    ...buttons.primary.container,
-                    flexDirection: "row",
-                    display: "flex",
-                    justifyContent: "center",
-                    textAlign: "center",
-                    marginTop: "30px",
-                    border: "1px solid #1a1b1f",
                     justifySelf: responsive(
                         "center",
                         "center",
@@ -376,13 +325,12 @@ const useCustomStyles = () => {
             texts: [
                 {
                     ...texts.accentText,
-                    color: "#1a1b1f",
                     textAlign: "center",
-                    marginBottom: theme.spacing(2),
+                    marginBottom: sp.textBottom,
+                    opacity: tokens.textLight,
                 },
                 {
                     ...texts.headingJumboSmall,
-                    color: "#1a1b1f",
                     textAlign: "center",
                 },
             ],
@@ -393,11 +341,7 @@ const useCustomStyles = () => {
                 flexDirection: responsive("column", "column", "row"),
                 rowGap: theme.spacing(10),
                 columnGap: theme.spacing(12),
-                padding: responsive(
-                    theme.spacing(0, 3),
-                    theme.spacing(0, 3),
-                    theme.spacing(0, 6)
-                ),
+                padding: theme.spacing(0, responsive(3, 3, 6)),
             },
             textBlock: {
                 container: {
@@ -407,8 +351,7 @@ const useCustomStyles = () => {
                 texts: [
                     {
                         ...texts.articleHeading,
-                        color: "#1a1b1f",
-                        marginBottom: theme.spacing(4),
+                        marginBottom: sp.headingBottom,
                         textAlign: responsive(
                             "center",
                             "center",
@@ -422,8 +365,8 @@ const useCustomStyles = () => {
                     },
                     {
                         ...texts.label,
-                        color: "#1a1b1f",
-                        marginBottom: theme.spacing(2),
+                        marginBottom: sp.textBottom,
+                        opacity: tokens.textLight,
                         textAlign: responsive(
                             "center",
                             "center",
@@ -437,8 +380,7 @@ const useCustomStyles = () => {
                     },
                     {
                         ...texts.paragraph,
-                        color: "#1a1b1f",
-                        opacity: 0.6,
+                        opacity: tokens.textLight,
                         textAlign: responsive(
                             "center",
                             "center",
@@ -466,7 +408,7 @@ const useCustomStyles = () => {
             },
             textBlock: {
                 container: {
-                    marginBottom: theme.spacing(7),
+                    marginBottom: sp.ctaBlockGap1,
                 },
                 texts: [
                     {
@@ -475,9 +417,8 @@ const useCustomStyles = () => {
                             texts.headingJumboSmall,
                             texts.headingJumboSmall
                         ),
-                        color: "#1a1b1f",
                         lineHeight: "52px",
-                        marginBottom: theme.spacing(2),
+                        marginBottom: sp.textBottom,
                         textAlign: "center",
                     },
                     {
@@ -486,8 +427,7 @@ const useCustomStyles = () => {
                             texts.paragraphBigger,
                             texts.paragraphBigger
                         ),
-                        color: "#1a1b1f",
-                        opacity: 0.6,
+                        opacity: tokens.textLight,
                         textAlign: "center",
                         width: responsive("auto", "auto", "65%"),
                         margin: "0 auto",
@@ -496,13 +436,7 @@ const useCustomStyles = () => {
             },
             button: {
                 container: {
-                    ...buttons.primaryJumbo.container,
-                    display: "block",
-                    textAlign: "center",
-                    justifyContent: "center",
                     justifySelf: "center",
-                    border: "1px solid #1a1b1f",
-                    backgroundColor: "#000",
                 },
                 hover: {},
             },

@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import Divider from '@mui/material/Divider';
 import TextBlock from "@/components/TextBlock01/v1";
 
-const Section015: React.FC<Props> = ({ styles, data, id }) => {
+const Section015: React.FC<Props> = ({ styles, content, config, id }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -28,7 +28,8 @@ const Section015: React.FC<Props> = ({ styles, data, id }) => {
             id={id}
         >
 			<TextBlock
-                data={data?.textBlock}
+                content={content?.textBlock}
+                config={config?.textBlock}
                 styles={styles?.textBlock}
             />
             <Divider sx={styles?.divider} />

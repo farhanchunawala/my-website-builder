@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import Image from "next/image";
 import CtaBlock from "@/components/CtaBlock01/v1";
 
-const Section016: React.FC<Props> = ({ styles, data, id }) => {
+const Section016: React.FC<Props> = ({ styles, content, config, id }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -29,14 +29,15 @@ const Section016: React.FC<Props> = ({ styles, data, id }) => {
         >
             <Image
                 style={styles?.image}
-                src={data.imageUrl}
+                src={content?.imageUrl}
                 alt="company logo"
                 width={1305}
                 height={833}
                 layout="responsive"
             />
             <CtaBlock
-                data={data?.ctaBlock}
+                content={content?.ctaBlock}
+                config={config?.ctaBlock}
                 styles={styles?.ctaBlock}
             />
         </Box>

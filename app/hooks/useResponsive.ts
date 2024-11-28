@@ -38,7 +38,7 @@ export const useResponsive = () => {
         };
     }, [dispatch]);
 
-    const responsive = <T extends string | object>(
+    const responsive = <T extends string | number | object>(
         mobileValue: T,
         tabletValue: T,
         desktopValue: T

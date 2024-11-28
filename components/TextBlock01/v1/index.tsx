@@ -4,7 +4,8 @@ import Stack from '@mui/material/Stack';
 import Typography from "@mui/material/Typography";
 
 const TextBlock: React.FC<Props> = ({
-    data = [],
+    content = [],
+    config = [],
     styles = {
         container: {},
         texts: [],
@@ -12,13 +13,13 @@ const TextBlock: React.FC<Props> = ({
 }) => {
     return (
         <Stack className="textBlock01" sx={styles.container}>
-            {data.map((item, index) => (
+            {content.map((item, index) => (
                 <Typography
                     key={index}
 					sx={styles.texts[index]}
-                    component={item.component}
+                    component={config[index]?.element}
                 >
-					{item.content}
+					{item}
                 </Typography>
             ))}
         </Stack>

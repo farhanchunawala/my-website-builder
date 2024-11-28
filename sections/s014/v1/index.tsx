@@ -6,7 +6,7 @@ import type Props from "./types";
 import Box from "@mui/material/Box";
 import CtaBlock from "@/components/CtaBlock01/v1";
 
-const Section014: React.FC<Props> = ({ styles, data, id }) => {
+const Section014: React.FC<Props> = ({ styles, content, config, id }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -27,7 +27,8 @@ const Section014: React.FC<Props> = ({ styles, data, id }) => {
             id={id}
         >
             <CtaBlock
-                data={data?.ctaBlock}
+                content={content?.ctaBlock}
+                config={config?.ctaBlock}
                 styles={styles?.ctaBlock}
             />
         </Box>
