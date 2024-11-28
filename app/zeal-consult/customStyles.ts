@@ -15,22 +15,34 @@ const useCustomStyles = () => {
         image: {},
         ctaBlock: {
             container: {
-				padding: "16px 16px",
+				padding: theme.spacing(2),
 				backgroundColor: "#182034",
 			},
             textBlock: {
                 container: {},
                 texts: [
                     {
-						...texts.heading1,
+						...responsive(
+							texts.heading
+						)
+						...texts.heading5,
+						letterSpacing: "2px",
 						textTransform: "uppercase",
 						color: "#BDE162",
+						// fontWeight: "550"
+						marginBottom: theme.spacing(1.5),
 					},
                     {
+						...texts.heading2,
 						color: "white",
+						letterSpacing: "-1px",
+						marginBottom: theme.spacing(1.5),
 					},
                     {
+						...texts.paragraph4,
 						color: "white",
+						marginBottom: theme.spacing(3),
+						opacity: 0.8,
 					},
                 ],
             },
@@ -42,6 +54,10 @@ const useCustomStyles = () => {
                     justifyContent: "center",
                     textAlign: "center",
 					justifySelf: "left",
+					backgroundColor: "#BDE162",
+					color: "#182034",
+					fontWeight: "600",
+					fontSize: "14px",
 				},
                 hover: {},
             },

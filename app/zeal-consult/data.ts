@@ -20,7 +20,7 @@ const s016: S016 = {
 			},
 		],
 		button: {
-			content: "KNOW MORE",
+			content: "Know More",
 			link: ""
 		},
 	},
