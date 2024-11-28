@@ -2,7 +2,8 @@
 import { RootState } from "@/lib/store";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import data from "./data";
+import content from "./content";
+import config from "./config";
 import { useCustomStyles } from "./customStyles";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";

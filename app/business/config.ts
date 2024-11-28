@@ -1,9 +1,4 @@
-import { Data as S013 } from "@/sections/s013/v1/types";
-import { Data as S014 } from "@/sections/s014/v1/types";
-import { Data as S015 } from "@/sections/s015/v1/types";
-import { Data as S016 } from "@/sections/s016/v1/types";
-import { Data as S017 } from "@/sections/s017/v1/types";
-import { Data as S018 } from "@/sections/s018/v1/types";
+
 
 const imageDir = "starter";
 
@@ -27,7 +22,6 @@ const s014 = {
 			}
 		],
 		button: {
-			link: "#s015",
 			color: "secondary",
 			size: "large"
 		},
@@ -46,7 +40,6 @@ const s015 = {
 }
 
 const s016 = {
-	imageUrl: `./images/${imageDir}/article2.svg`,
 	ctaBlock: {
 		textBlock: [
 			{
@@ -59,9 +52,7 @@ const s016 = {
 				element: "h6",
 			},
 		],
-		button: {
-			link: ""
-		},
+		button: {},
 	},
 }
 
@@ -78,9 +69,7 @@ const s016a = {
 				element: "h6",
 			},
 		],
-		button: {
-			link: ""
-		},
+		button: {},
 	},
 }
 

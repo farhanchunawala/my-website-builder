@@ -1,9 +1,4 @@
-import { Data as S013 } from "@/sections/s013/v1/types";
-import { Data as S014 } from "@/sections/s014/v1/types";
-import { Data as S015 } from "@/sections/s015/v1/types";
-import { Data as S016 } from "@/sections/s016/v1/types";
-import { Data as S017 } from "@/sections/s017/v1/types";
-import { Data as S018 } from "@/sections/s018/v1/types";
+
 
 const imageDir = "starter";
 
@@ -31,6 +26,7 @@ const s013 = {
 }
 
 const s014 = {
+	backgroundImage: `/images/${imageDir}/hero_bg1.svg`,
 	ctaBlock: {
 		textBlock: [
 			"Grow your business.",

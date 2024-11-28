@@ -1,13 +1,12 @@
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { theme, useTheme } from "./theme";
+import content from "./content";
 import { Styles as S013 } from "@/sections/s013/v1/types";
 import { Styles as S014 } from "@/sections/s014/v1/types";
 import { Styles as S015 } from "@/sections/s015/v1/types";
 import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S017 } from "@/sections/s017/v1/types";
 import { Styles as S018 } from "@/sections/s018/v1/types";
-
-const imageDir = "starter";
 
 const useCustomStyles = () => {
     const { tokens, sp, layout, fonts, colors, texts, buttons } =
@@ -84,7 +83,7 @@ const useCustomStyles = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 flexDirection: "column",
-                backgroundImage: `url("./images/${imageDir}/hero_bg1.svg")`,
+                backgroundImage: `url("${content.s014.backgroundImage}")`,
                 backgroundSize: "cover",
             },
             textBlock: {
