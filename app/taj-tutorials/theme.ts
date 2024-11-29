@@ -59,7 +59,7 @@ const useTheme = () => {
 	}
 
     const fonts: Fonts = {
-        primary: "var(--font-montserrat)",
+        primary: "Times",
     };
 
     const colors: Colors = {
