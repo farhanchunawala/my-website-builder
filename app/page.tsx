@@ -1,23 +1,39 @@
-"use client";
-// import styles from "./page.module.scss";
-// import Section001 from "../sections/s001";
-// import Section002 from "../sections/s002";
-// import Section003 from "../sections/s003";
-// import Section004 from "../sections/s004";
-// import Section005 from "../sections/s005";
-// import Section011 from "../sections/s011";
-// import Section013 from "../sections/s013/v1";
+// pages/under-construction.tsx
+import React from 'react';
 
-export default function Home() {
-	return (
-		<div>
-			{/* <Section001 /> */}
-			{/* <Section002 /> */}
-			{/* <Section003 /> */}
-			{/* <Section004 /> */}
-			{/* <Section005 /> */}
-			{/* <Section011 /> */}
-			{/* <Section013 /> */}
-		</div>
-	);
-}
+const UnderConstruction = () => {
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.heading}>This Website is Under Construction</h1>
+      <p style={styles.message}>We are working hard to bring you the best experience. Stay tuned!</p>
+      <p style={styles.note}>Thank you for your patience.</p>
+    </div>
+  );
+};
+
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: '100vh',
+    backgroundColor: '#f7f7f7',
+  },
+  heading: {
+    fontSize: '32px',
+    color: '#333',
+    marginBottom: '18px',
+  },
+  message: {
+    fontSize: '18px',
+    color: '#555',
+	marginBottom: '12px',
+  },
+  note: {
+    fontSize: '15px',
+    color: '#888',
+  },
+};
+
+export default UnderConstruction;
