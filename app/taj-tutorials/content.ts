@@ -66,7 +66,7 @@ const s016a = {
 		textBlock: [
 			"Our Team",
 			"Experienced and Dedicated Faculty",
-			"Our team of dedicated educators and mentors works tirelessly to ensure each student's journey towards academic success is guided and supported."
+			"Our team of dedicated educators and mentors works tirelessly to ensure each student's journey towards academic success is guided and supported.",
 		],
 		buttonText: "Enquire Now",
 	},
