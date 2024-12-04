@@ -126,7 +126,7 @@ const useTheme = () => {
 		},
 	};
 
-    return { tokens, layout, fonts, colors, texts, buttons };
+    return { tokens, layout, fonts, texts, colors, texts, buttons };
 	
 };
 

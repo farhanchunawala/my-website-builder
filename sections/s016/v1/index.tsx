@@ -31,8 +31,10 @@ const Section016: React.FC<Props> = ({ styles, content, config, id }) => {
                 style={styles?.image}
                 src={content?.imageUrl}
                 alt="company logo"
-                width={1305}
-                height={833}
+                // width={1305}
+                // height={833}
+                width={1275}
+                height={850}
                 layout="responsive"
             />
             <CtaBlock

@@ -49,7 +49,7 @@ const s015 = {
 }
 
 const s016 = {
-	imageUrl: `/images/${imageDir}/article2.png`,
+	imageUrl: `/images/${imageDir}/article2.webp`,
 	ctaBlock: {
 		textBlock: [
 			"ABOUT",
@@ -61,7 +61,7 @@ const s016 = {
 }
 
 const s016a = {
-	imageUrl: `/images/${imageDir}/article1.png`,
+	imageUrl: `/images/${imageDir}/article1.webp`,
 	ctaBlock: {
 		textBlock: [
 			"Our Team",

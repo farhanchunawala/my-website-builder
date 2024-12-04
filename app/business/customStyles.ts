@@ -85,6 +85,7 @@ const useCustomStyles = () => {
                 flexDirection: "column",
                 backgroundImage: `url("${content.s014.backgroundImage}")`,
                 backgroundSize: "cover",
+				backgroundPosition: "center",
             },
             textBlock: {
                 container: {

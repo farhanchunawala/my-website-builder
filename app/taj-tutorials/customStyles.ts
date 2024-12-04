@@ -88,6 +88,7 @@ const useCustomStyles = () => {
 				backgroundImage:
 					`url("./images/${imageDir}/hero_bg1.png")`,
 				backgroundSize: "cover",
+				backgroundPosition: "center",
 			},
 			textBlock: {
 				container: {

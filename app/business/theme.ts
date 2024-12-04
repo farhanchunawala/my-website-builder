@@ -56,7 +56,7 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
 					display: "flex",
-                    borderRadius: 0,
+                    // borderRadius: 0,
                 },
 				sizeMedium: {
 					fontSize: "12px",

@@ -22,9 +22,9 @@ const useCustomStyles = () => {
                 container: {},
                 texts: [
                     {
-						...responsive(
-							texts.heading
-						)
+						// ...responsive(
+						// 	texts.heading
+						// )
 						...texts.heading5,
 						letterSpacing: "2px",
 						textTransform: "uppercase",

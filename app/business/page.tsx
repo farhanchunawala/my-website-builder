@@ -51,7 +51,7 @@ export default function Home() {
                     styles={styles.s015}
                     content={content.s015}
                     config={config.s015}
-                    id={content.s014.buttonLink}
+                    id={content.s014.ctaBlock.buttonLink}
                 />
                 <Section016
                     styles={styles.s016}
