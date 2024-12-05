@@ -51,8 +51,12 @@ const useTheme = () => {
     };
 
     const colors: Colors = {
-		background: "#",
-		foreground: "#000",	
+		// background: "black",
+		background: "#fff",
+		// secondary: "BROWN",
+		secondary: "#bde162",
+		// foreground: "lightblue",	
+		foreground: "#182034",	
 	};
 
     const texts: Texts = {

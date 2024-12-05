@@ -13,7 +13,7 @@ const useCustomStyles = () => {
 	const s016: S016 = {
         container: {
 			marginTop: "80px", //temporary
-			backgroundColor: "#182034",
+			backgroundColor: colors.foreground,
 			padding: theme.spacing(responsive(0, 0, 3)),
 			display: responsive("", "", "flex"),
 			flexDirection: responsive("", "", "row-reverse"),
@@ -22,7 +22,7 @@ const useCustomStyles = () => {
         ctaBlock: {
             container: {
 				padding: theme.spacing(responsive(2, 2, 0)),
-				backgroundColor: "#182034",
+				backgroundColor: colors.foreground,
 			},
             textBlock: {
                 container: {
@@ -36,7 +36,7 @@ const useCustomStyles = () => {
 						...texts.heading5,
 						letterSpacing: "2px",
 						textTransform: "uppercase",
-						color: "#BDE162",
+						color: colors.secondary,
 						// fontWeight: "550"
 						marginBottom: theme.spacing(responsive(1.5, 1.5, 2.5)),
 					},
@@ -46,7 +46,7 @@ const useCustomStyles = () => {
 							texts.SectionHeading,
 							texts.SectionHeading
 						),
-						color: "white",
+						color: colors.background,
 						letterSpacing: "-1px",
 						marginBottom: theme.spacing(responsive(1.5, 2.5, 2.5)),
 					},
@@ -58,7 +58,7 @@ const useCustomStyles = () => {
 						),
 						lineHeight: responsive("1.5", "1.3", "1.2"),
 						letterSpacing: "0px",
-						color: "white",
+						color: colors.background,
 						marginBottom: theme.spacing(responsive(3, 5, 2.5)),
 						opacity: 0.8,
 					},
@@ -76,8 +76,8 @@ const useCustomStyles = () => {
                     justifyContent: "center",
                     textAlign: "center",
 					justifySelf: "left",
-					backgroundColor: "#BDE162",
-					color: "#182034",
+					backgroundColor: colors.secondary,
+					color: colors.foreground,
 					fontWeight: "600",
 					// fontSize: "14px",`
 				},
