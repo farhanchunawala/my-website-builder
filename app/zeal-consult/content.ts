@@ -14,8 +14,23 @@ const s016 = {
 	},
 }
 
+const s019 = {
+	textBlock: [
+		"Business consulting",
+		"What services do we offer for your business",
+	],
+	ctaBlock: {
+		textBlock: [
+			"See how our tailored solutions can boost your business. From planning to support, we provide the expertise to drive your success.",
+		],
+		buttonText: "All Services",
+	},
+}
+
+
 const content = {
 	s016: s016,
+	s019: s019
 }
 
 export default content;

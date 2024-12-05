@@ -86,9 +86,14 @@ const useCustomStyles = () => {
         },
     };
 	
+	const s019: S019 = {
+		
+	};
+	
 	const styles = {
 		page: pageStyles,
 		s016: s016,
+		s019: s019,
 	}
 
 	return { styles };
