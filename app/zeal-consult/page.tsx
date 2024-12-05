@@ -17,13 +17,13 @@ export default function Home() {
     const [mounted, setMounted] = useState(false);
     const { styles } = useCustomStyles();
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+    // useEffect(() => {
+    //     setMounted(true);
+    // }, []);
 
-    if (!mounted) {
-        return null;
-    }
+    // if (!mounted) {
+    //     return null;
+    // }
 
     return (
         <ThemeProvider theme={theme}>

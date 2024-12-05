@@ -51,11 +51,21 @@ const useTheme = () => {
     };
 
     const colors: Colors = {
+		// background: "black",
 		background: "#fff",
-		foreground: "#000",
+		// secondary: "BROWN",
+		secondary: "#bde162",
+		// foreground: "lightblue",	
+		foreground: "#182034",	
 	};
 
     const texts: Texts = {
+		SectionHeading: {
+			fontFamily: fonts.primary,
+			fontSize: "2.5rem",
+			lineHeight: "3rem",
+			fontWeight: "600",
+		},
 		heading1: {
 			fontFamily: fonts.primary,
 			fontSize: "2rem",
@@ -117,13 +127,20 @@ const useTheme = () => {
 	};
 
     const buttons = {
-		primary: {
+		primary1: {
 			fontFamily: fonts.primary,
-			paddingTop: "0.625rem",
-			paddingBottom: "0.625rem",
-			paddingRight: "1.25rem",
-			paddingLeft: "1.25rem",
+			padding: "0.625rem 1.25rem",
+			// paddingTop: "0.625rem",
+			// paddingBottom: "0.625rem",
+			// paddingRight: "1.25rem",
+			// paddingLeft: "1.25rem",
+			fontSize: "14px",
 		},
+		primary2: {
+			fontFamily: fonts.primary,
+			fontSize: "18px",
+			padding: "14px 30px",
+		}
 	};
 
     return { tokens, layout, fonts, texts, colors, texts, buttons };
