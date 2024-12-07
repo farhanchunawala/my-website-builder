@@ -9,6 +9,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import Box from "@mui/material/Box";
 import Section016 from "@/sections/s016/v1";
+import Section019 from "@/sections/s019/v1";
 
 export default function Home() {
     const { isMobile, isTablet, isDesktop } = useSelector(
@@ -32,6 +33,12 @@ export default function Home() {
                     styles={styles.s016}
                     config={config.s016}
                     content={content.s016}
+                    id="s016"
+                />
+                <Section019
+                    styles={styles.s019}
+                    config={config.s019}
+                    content={content.s019}
                     id="s016"
                 />
             </Box>

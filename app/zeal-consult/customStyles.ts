@@ -1,6 +1,7 @@
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { theme, useTheme } from "./theme";
 import { Styles as S016 } from "@/sections/s016/v1/types";
+import { Styles as S019 } from "@/sections/s019/v1/types";
 
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
