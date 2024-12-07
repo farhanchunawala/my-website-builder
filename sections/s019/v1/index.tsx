@@ -3,8 +3,10 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
+import TextBlock from "@/components/TextBlock01/v1";
+import CtaBlock from "@/components/CtaBlock01/v1";
 
-const Section0: React.FC<Props> = ({ styles, data }) => {
+const Section0: React.FC<Props> = ({ styles, content, config, id }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
