@@ -1,0 +1,12 @@
+// @import "/app/configs/mixins/mixins";
+
+.textBlock01 {
+	.title {
+		// @extend .sectionHeadingText;
+		text-align: center;
+	}
+	.subtitle {
+		// @extend .sectionSubheadingText;
+		text-align: center;
+	}
+}

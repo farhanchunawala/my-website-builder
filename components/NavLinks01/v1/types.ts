@@ -1,6 +1,9 @@
 
-type Data = {
-	content: string;
+
+type Config = object[];
+
+type Content = {
+	text: string;
 	link: string;
 }[];
 
@@ -10,10 +13,11 @@ type Styles = {
 }
 
 type Props = {
-    data: Data;
+	config: Config;
+    content: Content;
 	classNames?: string;
     styles: Styles;
 }
 
-export type { Data, Styles };
+export type { Config, Content, Styles };
 export default Props;

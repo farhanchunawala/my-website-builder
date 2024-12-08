@@ -1,6 +1,11 @@
+// import { createTheme } from "@mui/system";
 import { createTheme } from "@mui/material/styles";
 import { Typography } from "@/app/configs/global.types";
 import { useResponsive } from "@/app/hooks/useResponsive";
+
+interface Tokens {
+    lineHeight: string;
+}
 
 interface Layout {
     sectionGap: string;
@@ -11,18 +16,23 @@ interface Fonts {
     primary: string;
 }
 
-interface Colors {
-    background: string;
-    foreground: string;
-    secondary: string;
-}
+const tokens = {
+	textLight: "0.6",
+	lineHeight: "normal",
+	frameOutline: "1px solid #007BFF",
+};
 
 const fonts: Fonts = {
     primary: "var(--font-montserrat)",
 };
 
+const colors = {
+	background: "#ffffff",
+	foreground: "#1a1b1f",
+	secondary: "#fff",
+};
+
 const theme = createTheme({
-    spacing: 5,
     palette: {
         primary: {
             main: "#1a1b1f",
@@ -39,11 +49,21 @@ const theme = createTheme({
     components: {
         MuiButton: {
             styleOverrides: {
-                root: {
-                    display: "flex",
-                    // borderRadius: 0,
-                },
-                sizeMedium: {
+				root: {
+					"&:hover": {
+						outline: tokens.frameOutline,
+						opacity: 1,
+                    },
+                    "&:focus": {
+						outline: tokens.frameOutline,
+						opacity: 1,
+                    },
+					// "&.Mui-focusVisible": {
+					// 	border: tokens.frameOutline,
+					// 	opacity: 1,
+					// }
+				},
+				sizeMedium: {
                     fontSize: "12px",
                     letterSpacing: "2px",
                     height: "45px",
@@ -59,12 +79,19 @@ const theme = createTheme({
                 },
             },
         },
-        MuiLink: {
+        MuiInputBase: {
             styleOverrides: {
                 root: {
-                    "&:hover": {
-                        // color: "#1976d2",
-                    },
+                    width: "100%",
+					pointerEvents: "auto"
+                    // "&:hover": {
+					// 	outline: tokens.frameOutline,
+					// 	opacity: 1,
+                    // },
+                    // "&:focus": {
+					// 	outline: tokens.frameOutline,
+					// 	opacity: 1,
+                    // },
                 },
             },
         },
@@ -73,17 +100,6 @@ const theme = createTheme({
 
 const useTheme = () => {
     const { responsive } = useResponsive();
-
-    const tokens = {
-        textLight: "0.6",
-        lineHeight: "normal",
-    };
-
-    const colors: Colors = {
-        background: "#ffffff",
-        foreground: "#1a1b1f",
-        secondary: "#fff",
-    };
 
     const sp = {
         textBottom: theme.spacing(2),
@@ -111,6 +127,10 @@ const useTheme = () => {
             theme.spacing(0, 3),
             theme.spacing(0, 6)
         ),
+    };
+
+    const fonts: Fonts = {
+        primary: "var(--font-montserrat)",
     };
 
     const texts = {
@@ -188,64 +208,7 @@ const useTheme = () => {
         },
     };
 
-    const buttons = {
-        primary: {
-            container: {
-                ...texts.buttonText,
-                height: "45px",
-                padding: "0 25px",
-                // padding: "12px 25px",
-            },
-            hover: {
-                backgroundColor: "#32343a",
-            },
-        },
-        primaryJumbo: {
-            container: {
-                fontFamily: "Montserrat",
-                padding: "16px 35px",
-                backGroundColor: "#1a1b1f",
-                color: "#fff",
-                fontSize: "14px",
-                lineHeight: "26px",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                justifyContent: "center",
-                transitionProperty:
-                    "background-color, opacity, color",
-                transitionDuration: "400ms, 400ms, 400ms",
-                transitionTimingFunction: "ease, ease, ease",
-            },
-            hover: {
-                backgroundColor: "#32343a",
-                color: "#fff",
-            },
-        },
-        secondary: {
-            container: {
-                padding: "12px 25px",
-                backGroundColor: "#fff",
-                color: "#1a1b1f",
-                fontSize: "12px",
-                lineHeight: "20px",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                fontFamily: fonts.primary,
-            },
-        },
-        secondaryJumbo: {
-            container: {
-                fontFamily: fonts.primary,
-                padding: "16px 35px",
-                backGroundColor: "#fff",
-                color: "#1a1b1f",
-                fontSize: "14px",
-                lineHeight: "26px",
-                letterSpacing: "2px",
-                // textTransform: "uppercase",
-            },
-        },
-    };
+    const buttons = {};
 
     return { tokens, sp, layout, fonts, colors, texts, buttons };
 };

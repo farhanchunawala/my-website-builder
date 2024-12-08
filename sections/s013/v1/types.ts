@@ -1,14 +1,19 @@
 import * as NavLinks from "@/components/NavLinks01/v1/types";
 import * as Button from "@/elements/Button01/v1/types";
 
-interface Data {
-	navlinks: NavLinks.Data;
-	button: Button.Data;
+interface Config {
 	image: {
-		url: string;
 		width: number;
 		height: number;
 	};
+	navlinks: [];
+	button: object;
+};
+
+interface Content {
+	imageUrl: string;
+	navlinks: NavLinks.Data;
+	buttonText: string;
 };
 
 interface Styles {
@@ -20,9 +25,10 @@ interface Styles {
 
 interface Props {
 	classNames?: string;
-    data: Data;
+    config: Config;
+    content: Content;
     styles: Styles | any;
 }
 
-export type { Data, Styles }
+export type { Config, Content, Styles }
 export default Props

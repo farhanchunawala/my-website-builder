@@ -34,7 +34,6 @@ const useCustomStyles = () => {
         },
         navlinks: {
             container: {
-                // display: responsive("block", "block", "flex"),
                 flexDirection: responsive("column", "column", "row"),
                 alignItems: "center",
                 position: responsive(
@@ -46,23 +45,15 @@ const useCustomStyles = () => {
                 left: 0,
                 right: 0,
                 zIndex: 10,
-                backgroundColor: "#fff",
+                backgroundColor: colors.background,
             },
             link: {
                 ...texts.linkText,
-                cursor: "pointer",
                 padding: theme.spacing(
                     responsive(3, 3, 2),
                     responsive(6, 6, 4)
                 ),
                 opacity: tokens.textLight,
-                display: responsive("block", "block", "flex"),
-                width: "fit-content",
-                margin: "0 auto",
-                transitionProperty:
-                    "background-color, opacity, color",
-                transitionDuration: "400ms, 400ms, 400ms",
-                transitionTimingFunction: "ease, ease, ease",
             },
         },
         button: {},
