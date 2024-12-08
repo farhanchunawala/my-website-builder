@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import TextBlock from "@/components/TextBlock01/v1";
 import CtaBlock from "@/components/CtaBlock01/v1";
 
-const Section0: React.FC<Props> = ({ styles, content, config, id }) => {
+const Section019: React.FC<Props> = ({ styles, content, config, id }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -38,4 +38,4 @@ const Section0: React.FC<Props> = ({ styles, content, config, id }) => {
 	);
 };
 
-export default Section0;
+export default Section019;

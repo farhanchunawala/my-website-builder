@@ -13,8 +13,8 @@ const useCustomStyles = () => {
 	
 	const s016: S016 = {
         container: {
-			marginTop: "80px", //temporary
-			backgroundColor: colors.foreground,
+			marginTop: "80px", //temporary untill we fix or add the navbar
+			backgroundColor: colors.secondary,
 			padding: theme.spacing(responsive(0, 0, 3)),
 			display: responsive("", "", "flex"),
 			flexDirection: responsive("", "", "row-reverse"),
@@ -23,7 +23,7 @@ const useCustomStyles = () => {
         ctaBlock: {
             container: {
 				padding: theme.spacing(responsive(2, 2, 0)),
-				backgroundColor: colors.foreground,
+				backgroundColor: colors.secondary,
 			},
             textBlock: {
                 container: {
@@ -37,7 +37,7 @@ const useCustomStyles = () => {
 						...texts.heading5,
 						letterSpacing: "2px",
 						textTransform: "uppercase",
-						color: colors.secondary,
+						color: colors.primary,
 						// fontWeight: "550"
 						marginBottom: theme.spacing(responsive(1.5, 1.5, 2.5)),
 					},
@@ -77,7 +77,7 @@ const useCustomStyles = () => {
                     justifyContent: "center",
                     textAlign: "center",
 					justifySelf: "left",
-					backgroundColor: colors.secondary,
+					backgroundColor: colors.primary,
 					color: colors.foreground,
 					fontWeight: "600",
 					// fontSize: "14px",`
@@ -87,8 +87,63 @@ const useCustomStyles = () => {
         },
     };
 	
-	const s019: S019 = {
-		
+	const s019 = {
+		container: {
+			padding: theme.spacing(6, 2),
+			display: responsive("block", "block", "flex",),
+			
+		},
+		textBlock: {
+            container: {},
+            texts: [
+                {
+					...responsive(
+						texts.paragraph4,
+						texts.paragraph3,
+						texts.paragraph3,
+					),
+					// position: "absolute",
+					// maxWidth: responsive("100%", "100%", "100%"),
+					color: colors.foreground,
+					opacity: 0.6,
+					letterSpacing: "2px",
+					textTransform: "uppercase",
+					fontWeight: "600",
+					paddingBottom: theme.spacing(2.5),
+				},
+				{
+					...responsive(
+						texts.heading2,
+						texts.SectionHeading,
+						texts.SectionHeading,
+					),
+					color: colors.foreground,
+					fontWeight: "600",
+					letterSpacing: "-1px",
+					// textTransform: "uppercase",
+					paddingBottom: theme.spacing(1.25),
+				},
+            ],
+        },
+		ctaBlock: {
+			container: {},
+			textBlock: {
+				texts: [
+					{
+						...texts.paragraph3,
+						color: colors.foreground,
+						opacity: 0.6,
+						paddingBottom: theme.spacing(2),
+						
+					},
+				]
+			},
+			button: {
+				container: {
+					...buttons.link,
+				},
+			},
+		},
 	};
 	
 	const styles = {

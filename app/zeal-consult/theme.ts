@@ -51,12 +51,13 @@ const useTheme = () => {
     };
 
     const colors: Colors = {
-		// background: "black",
+		primary: "#bde162", //light green // #bde162
+		secondary: "#182034", // dark blue // #182034
 		background: "#fff",
-		// secondary: "BROWN",
-		secondary: "#bde162",
-		// foreground: "lightblue",	
-		foreground: "#182034",	
+		foreground: "#171d2f", // highly dark blue // #171d2f
+		background2: "#edf0f6",	// highly light gray // #edf0f6
+		black: "#000000",
+		white: "#ffffff",
 	};
 
     const texts: Texts = {
@@ -112,7 +113,7 @@ const useTheme = () => {
 		paragraph3: {
 			fontFamily: fonts.primary,
 			fontSize: "1rem",
-			lineHeight: "1.5",
+			lineHeight: "1.25",
 		},
 		paragraph4: {
 			fontFamily: fonts.primary,
@@ -140,7 +141,16 @@ const useTheme = () => {
 			fontFamily: fonts.primary,
 			fontSize: "18px",
 			padding: "14px 30px",
-		}
+		},
+		link: {
+			fontFamily: fonts.primary,
+			fontSize: "14px",
+			textDecoration: "underline",
+			padding: "0px",
+			color: colors.foreground,
+			background: "transparent",
+			shadow: "none",
+		},
 	};
 
     return { tokens, layout, fonts, texts, colors, texts, buttons };
