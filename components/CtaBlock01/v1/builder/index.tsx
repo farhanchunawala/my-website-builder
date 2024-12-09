@@ -4,29 +4,22 @@ import TextBlock from "@/components/TextBlock01/v1/builder";
 import Button from "@mui/material/Button";
 // import { Button } from "@mui/base/Button";
 // import { Box, styled } from "@mui/system";
-import useHover from "@/app/hooks/useHover";
+import useEvent from "@/app/hooks/useEvent";
 
 const CtaBlock: React.FC<Props> = ({ content, config, styles }) => {
-	// const {
-    //     hoveredElement: hoveredElement,
-    //     handleMouseEnter: handleMouseEnter,
-    //     handleMouseLeave: handleMouseLeave,
-    // } = useHover();
-	
+    const { hoveredElement, focusedElement, createHandlers } =
+        useEvent();
+
     return (
         <Box
+            {...createHandlers("13")}
             sx={{
                 ...styles?.container,
-                "&:hover": {
-                    outline: "1px solid #007BFF",
-					// outline:
-                    //     hoveredElement === 31
-                    //         ? "1px solid #007BFF"
-                    //         : "none",
-                },
+                outline:
+                    hoveredElement === "13" || focusedElement === "13"
+                        ? "1px solid #007BFF"
+                        : "none",
             }}
-			// onMouseEnter={() => handleMouseEnter(31)}
-            // onMouseLeave={handleMouseLeave}
         >
             <TextBlock
                 content={content?.textBlock}
@@ -35,7 +28,15 @@ const CtaBlock: React.FC<Props> = ({ content, config, styles }) => {
             />
             <Button
                 variant="contained"
-                sx={styles?.button?.container}
+                {...createHandlers("17")}
+                sx={{
+                    ...styles?.button?.container,
+                    outline:
+                        hoveredElement === "17" ||
+                        focusedElement === "17"
+                            ? "1px solid #007BFF"
+                            : "none",
+                }}
                 href={`#${content?.buttonLink}`}
                 size={config?.button?.size}
                 color={config?.button?.color}

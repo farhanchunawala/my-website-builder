@@ -7,36 +7,36 @@ import InputBase from "@mui/material/InputBase";
 // import { TextareaAutosize as BaseTextareaAutosize } from "@mui/base/TextareaAutosize";
 // import { styled } from "@mui/system";
 // import Typography from "@mui/material/Typography";
-import useHover from "@/app/hooks/useHover";
+import useEvent from "@/app/hooks/useEvent";
 
 const TextBlock: React.FC<Props> = ({ content, config, styles }) => {
-    const { hoveredElement, handleMouseEnter, handleMouseLeave } =
-        useHover();
-    // const {
-    //     hoveredElement: hoveredElement1,
-    //     handleMouseEnter: handleMouseEnter1,
-    //     handleMouseLeave: handleMouseLeave1,
-    // } = useHover();
-    // const {
-    //     hoveredElement: hoveredElement2,
-    //     handleMouseEnter: handleMouseEnter2,
-    //     handleMouseLeave: handleMouseLeave2,
-    // } = useHover();
+    const { hoveredElement, focusedElement, createHandlers } =
+        useEvent();
 
     return (
         <Stack
             className="textBlock01"
-            onMouseEnter={() => handleMouseEnter(23)}
-            onMouseLeave={handleMouseLeave}
+			{...createHandlers('23')}
             sx={{
                 ...styles.container,
-                "&:hover": {
-                    outline:
-                        hoveredElement === null ||
-                        hoveredElement === 23
-                            ? "1px solid #007BFF"
-                            : "none",
-                },
+                outline:
+                    hoveredElement === "23" || focusedElement === "23"
+                        ? "1px solid #007BFF"
+                        : "none",
+                // "&:hover": {
+                //     outline:
+                //         hoveredElement === null ||
+                //         hoveredElement === 23
+                //             ? "1px solid #007BFF"
+                //             : "none",
+                // },
+                // "&:focus": {
+                // 	outline:
+                // 		focusedElement === null ||
+                // 		focusedElement === 23
+                // 			? "1px solid #007BFF"
+                // 			: "none",
+                // },
             }}
         >
             {content.map((item, index) => (
@@ -44,13 +44,14 @@ const TextBlock: React.FC<Props> = ({ content, config, styles }) => {
                     key={index}
                     defaultValue={item}
                     multiline
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={handleMouseLeave}
+					{...createHandlers(index)}
                     sx={{
                         ...styles.texts[index],
                         outline:
-                            hoveredElement === index
-                                ? "1px solid #007BFF"
+                            hoveredElement === index ||
+                            focusedElement === index
+                                ? // hoveredElement !== 23
+                                  "1px solid #007BFF"
                                 : "none",
                         "&:hover": {
                             opacity: 1,
