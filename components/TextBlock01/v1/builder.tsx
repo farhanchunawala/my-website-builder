@@ -1,4 +1,3 @@
-// import "./styles.scss";
 import { useState } from "react";
 import type Props from "./types";
 import Stack from "@mui/material/Stack";
@@ -23,20 +22,6 @@ const TextBlock: React.FC<Props> = ({ content, config, styles }) => {
                     hoveredElement === "23" || focusedElement === "23"
                         ? "1px solid #007BFF"
                         : "none",
-                // "&:hover": {
-                //     outline:
-                //         hoveredElement === null ||
-                //         hoveredElement === 23
-                //             ? "1px solid #007BFF"
-                //             : "none",
-                // },
-                // "&:focus": {
-                // 	outline:
-                // 		focusedElement === null ||
-                // 		focusedElement === 23
-                // 			? "1px solid #007BFF"
-                // 			: "none",
-                // },
             }}
         >
             {content.map((item, index) => (

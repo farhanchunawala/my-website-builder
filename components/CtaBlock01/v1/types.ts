@@ -1,13 +1,17 @@
 import * as TextBlock from "@/components/TextBlock01/v1/types";
 
-type Data = {
-	textBlock: TextBlock.Data;
+type Config = {
+	textBlock: TextBlock.Config;
 	button: {
-		content: string;
-		link: string;
 		size?: "small" | "medium" | "large",
 		color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
 	};
+};
+
+type Content = {
+	textBlock: TextBlock.Content;
+	buttonText: string;
+	buttonLink?: string;
 };
 
 type Styles = {
@@ -19,10 +23,10 @@ type Styles = {
 }
 
 type Props = {
-	classNames?: string;
-    data: Data;
+	config: Config;
+    content: Content;
     styles: Styles;
 }
 
-export type { Data, Styles }
+export type { Config, Content, Styles }
 export default Props;
