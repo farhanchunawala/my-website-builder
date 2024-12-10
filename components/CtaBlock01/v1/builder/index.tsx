@@ -5,8 +5,12 @@ import Button from "@mui/material/Button";
 // import { Button } from "@mui/base/Button";
 // import { Box, styled } from "@mui/system";
 import useEvent from "@/app/hooks/useEvent";
+import InputBase from "@mui/material/InputBase";
+import AutosizeInput from "react-input-autosize";
+import { useState } from "react";
 
 const CtaBlock: React.FC<Props> = ({ content, config, styles }) => {
+    const [value, setValue] = useState(content?.buttonText);
     const { hoveredElement, focusedElement, createHandlers } =
         useEvent();
 
@@ -41,7 +45,20 @@ const CtaBlock: React.FC<Props> = ({ content, config, styles }) => {
                 size={config?.button?.size}
                 color={config?.button?.color}
             >
-                {content?.buttonText}
+                <AutosizeInput
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    placeholder=""
+					className="auto-size-input"
+					{...createHandlers("button-text")}
+                    inputStyle={{
+						outline:
+                        hoveredElement === "button-text" ||
+                        focusedElement === "button-text"
+                            ? "1px solid #007BFF"
+                            : "none",
+                    }}
+                />
             </Button>
         </Box>
     );

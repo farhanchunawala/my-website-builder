@@ -16,7 +16,7 @@ const TextBlock: React.FC<Props> = ({ content, config, styles }) => {
     return (
         <Stack
             className="textBlock01"
-			{...createHandlers('23')}
+            {...createHandlers("23")}
             sx={{
                 ...styles.container,
                 outline:
@@ -44,14 +44,13 @@ const TextBlock: React.FC<Props> = ({ content, config, styles }) => {
                     key={index}
                     defaultValue={item}
                     multiline
-					{...createHandlers(index)}
+                    {...createHandlers(index)}
                     sx={{
                         ...styles.texts[index],
                         outline:
                             hoveredElement === index ||
                             focusedElement === index
-                                ? // hoveredElement !== 23
-                                  "1px solid #007BFF"
+                                ? "1px solid #007BFF"
                                 : "none",
                         "&:hover": {
                             opacity: 1,
