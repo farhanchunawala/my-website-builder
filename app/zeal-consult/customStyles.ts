@@ -3,6 +3,7 @@ import { theme, useTheme } from "./theme";
 import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S019 } from "@/sections/s019/v1/types";
 import { Styles as S020 } from "@/sections/s020/v1/types";
+import { color } from "@mui/system";
 
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
@@ -148,10 +149,16 @@ const useCustomStyles = () => {
 	
 	const s020 = {
 		cardContainer: {
-			padding: theme.spacing(5, 4),
+			// padding: theme.spacing(5, 4),
+			margin: theme.spacing(0, 2),
 			display: responsive("block", "block", "flex"),
 		},
-		card: {},
+		card: {
+			backgroundColor: colors.background2,
+			marginBottom: theme.spacing(2.5),
+			padding: theme.spacing(5, 4),
+			// gap: theme.spacing(2)
+		},
 		ctaBlock: {
 			container: {},
 			textBlock: {
@@ -173,7 +180,10 @@ const useCustomStyles = () => {
 					},
 				],
 				button: {
-					
+					container: {
+						color: colors.foreground,
+						backgroundColor: colors.primary,
+					},
 				},
 			},
 		},
