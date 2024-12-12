@@ -99,7 +99,7 @@ const useCustomStyles = () => {
                             texts.headingJumboMedium,
                             texts.headingJumbo
                         ),
-                        color: "white",
+                        // color: "white",
                         textAlign: "center",
                         marginBottom: sp.textBottom,
                     },
@@ -109,7 +109,7 @@ const useCustomStyles = () => {
                             texts.paragraphBigger,
                             texts.paragraphBigger
                         ),
-                        color: "#fff",
+                        // color: "#fff",
                         opacity: tokens.textLight,
                         textAlign: "center",
                     },

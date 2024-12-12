@@ -22,7 +22,7 @@ const s014 = {
 			}
 		],
 		button: {
-			color: "secondary",
+			color: "primary",
 			size: "large"
 		},
 	}
