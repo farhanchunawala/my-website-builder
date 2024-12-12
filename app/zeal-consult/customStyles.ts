@@ -151,12 +151,18 @@ const useCustomStyles = () => {
 		cardContainer: {
 			// padding: theme.spacing(5, 4),
 			margin: theme.spacing(0, 2),
-			display: responsive("block", "block", "flex"),
+			display: responsive("block", "flex", "flex"),
+			justifyContent: responsive("center", "space-between", "space-between"),
+			flex: "1 1 calc(33.33% - 20px)",
+			flexWrap: "wrap",
+			columnGap: theme.spacing(responsive(0, 2, 5)),
+			rowGap: theme.spacing(responsive(0, 2, 5)),
 		},
 		card: {
 			backgroundColor: colors.background2,
-			marginBottom: theme.spacing(2.5),
+			marginBottom: theme.spacing(responsive(2.5, 0, 0)),
 			padding: theme.spacing(5, 4),
+			flex: "1 1 calc(33.33% - 40px)",
 			// gap: theme.spacing(2)
 		},
 		ctaBlock: {
@@ -165,7 +171,11 @@ const useCustomStyles = () => {
 				container: {},
 				texts: [
 					{
-						...texts.heading3,
+						...responsive(
+						texts.heading3,
+						texts.heading2,
+						texts.heading2,
+						),
 						fontWeight: "600",
 						letterSpacing: "-1px",
 						color: colors.foreground,
