@@ -29,7 +29,7 @@ const s014 = {
 	backgroundImage: `/images/${imageDir}/hero_bg1.png`,
 	ctaBlock: {
 		textBlock: [
-			"CENTRAL CLASSES.",
+			"CENTRAL CLASSES",
 			"A Tradition Of Education Since 1985"
 		],
 		buttonText: "OUR MISSION",
