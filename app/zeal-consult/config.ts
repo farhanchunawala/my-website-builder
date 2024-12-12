@@ -39,9 +39,24 @@ const s019 = {
 	},
 }
 
+const s020 = {
+	ctaBlock: {
+		textBlock: [
+			{
+				component: "h3",
+			},
+			{
+				component: "p",
+			},
+		],
+		button: {},
+	},
+}
+
 const config = {
 	s016: s016,
 	s019: s019,
+	s020: s020,
 }
 
 export default config;

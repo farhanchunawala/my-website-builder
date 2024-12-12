@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
+import CtaBlock from "@/components/CtaBlock01/v1";
 
 const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
@@ -18,10 +19,75 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 
     return (
 		<Box
-            component="section"
-            sx={styles?.container}
-        >
-			
+			sx={styles?.cardContainer}
+			id={id}
+		>
+			<Box
+				component="section"
+				sx={styles?.card}
+				id={id}
+			>
+				<CtaBlock
+					content={content?.ctaBlock}
+					config={config?.ctaBlock}
+					styles={styles?.ctaBlock}
+				/>
+			</Box>
+			<Box
+				component="section"
+				sx={styles?.card}
+				id={id}
+			>
+				<CtaBlock
+					content={content?.ctaBlock}
+					config={config?.ctaBlock}
+					styles={styles?.ctaBlock}
+				/>
+			</Box>
+			<Box
+				component="section"
+				sx={styles?.card}
+				id={id}
+			>
+				<CtaBlock
+					content={content?.ctaBlock}
+					config={config?.ctaBlock}
+					styles={styles?.ctaBlock}
+				/>
+			</Box>
+			<Box
+				component="section"
+				sx={styles?.card}
+				id={id}
+			>
+				<CtaBlock
+					content={content?.ctaBlock}
+					config={config?.ctaBlock}
+					styles={styles?.ctaBlock}
+				/>
+			</Box>
+			<Box
+				component="section"
+				sx={styles?.card}
+				id={id}
+			>
+				<CtaBlock
+					content={content?.ctaBlock}
+					config={config?.ctaBlock}
+					styles={styles?.ctaBlock}
+				/>
+			</Box>
+			<Box
+				component="section"
+				sx={styles?.card}
+				id={id}
+			>
+				<CtaBlock
+					content={content?.ctaBlock}
+					config={config?.ctaBlock}
+					styles={styles?.ctaBlock}
+				/>
+			</Box>
 		</Box>
 	);
 };

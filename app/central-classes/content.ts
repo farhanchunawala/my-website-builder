@@ -1,9 +1,9 @@
 
 
-const imageDir = "starter";
+const imageDir = "starter/central-classes";
 
 const s013 = {
-	imageUrl: `/images/${imageDir}/logo.svg`,
+	imageUrl: `/images/${imageDir}/cc-logo.png`,
 	navlinks: [
 		{
 			text: "ABOUT",
@@ -26,7 +26,7 @@ const s013 = {
 }
 
 const s014 = {
-	backgroundImage: `/images/${imageDir}/hero_bg1.svg`,
+	backgroundImage: `/images/${imageDir}/hero_bg1.png`,
 	ctaBlock: {
 		textBlock: [
 			"CENTRAL CLASSES.",
@@ -45,7 +45,7 @@ const s015 = {
 }
 
 const s016 = {
-	imageUrl: `./images/${imageDir}/article1.svg`,
+	imageUrl: `/images/${imageDir}/cc-students.png`,
 	ctaBlock: {
 		textBlock: [
 			"ABOUT",
@@ -57,7 +57,7 @@ const s016 = {
 }
 
 const s016a = {
-	imageUrl: `./images/${imageDir}/article2.svg`,
+	imageUrl: `/images/${imageDir}/cc-staff.png`,
 	ctaBlock: {
 		textBlock: [
 			"Our Team",
