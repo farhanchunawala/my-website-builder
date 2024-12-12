@@ -3,6 +3,7 @@
 const imageDir = "starter";
 
 const s013 = {
+	// Any Dimension
 	imageUrl: `/images/${imageDir}/logo.svg`,
 	navlinks: [
 		{
@@ -26,6 +27,7 @@ const s013 = {
 }
 
 const s014 = {
+	// Any Dimension
 	backgroundImage: `/images/${imageDir}/hero_bg1.svg`,
 	ctaBlock: {
 		textBlock: [
@@ -45,6 +47,7 @@ const s015 = {
 }
 
 const s016 = {
+	// Aspect Ratio 4:3
 	imageUrl: `./images/${imageDir}/article1.svg`,
 	ctaBlock: {
 		textBlock: [
@@ -57,6 +60,7 @@ const s016 = {
 }
 
 const s016a = {
+	// Aspect Ratio 4:3
 	imageUrl: `./images/${imageDir}/article2.svg`,
 	ctaBlock: {
 		textBlock: [

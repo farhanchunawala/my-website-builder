@@ -17,16 +17,18 @@
 }
 
 .auto-size-input {
+	font: inherit;
     border: none !important;
     padding: 0 !important;
     transition: none !important;
     background: inherit;
     input {
         border: none;
-        font-family: inherit;
-        font-size: inherit;
+        // font-family: inherit;
+        // font-size: inherit;
+        // font-weight: inherit;
+		font: inherit;
         line-height: inherit;
-        font-weight: inherit;
         color: inherit;
         opacity: inherit;
         background: inherit;

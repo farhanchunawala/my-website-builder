@@ -3,8 +3,8 @@ import * as TextBlock from "@/components/TextBlock01/v1/types";
 type Config = {
 	textBlock: TextBlock.Config;
 	button: {
-		size?: "small" | "medium" | "large",
-		color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
+		size?: string,
+		color?: string;
 	};
 };
 
@@ -18,7 +18,7 @@ type Styles = {
 	container: React.CSSProperties;
 	textBlock: TextBlock.Styles;
 	button: {
-		container: React.CSSProperties;
+		container?: React.CSSProperties;
 	};
 }
 

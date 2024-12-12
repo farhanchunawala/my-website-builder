@@ -13,6 +13,7 @@ import Box from "@mui/material/Box";
 import "./page.scss";
 import TextField from "@mui/material/TextField";
 import Section014 from "@/sections/s014/v1/builder";
+// import Section015 from "@/sections/s015/v1/builder";
 
 export default function Home() {
     const { isMobile, isTablet, isDesktop } = useSelector(
@@ -39,6 +40,12 @@ export default function Home() {
                         config={config.s014}
                         id="s014"
                     />
+                    {/* <Section015
+                        styles={styles.s015}
+                        content={content.s015}
+                        config={config.s015}
+                        id="s015"
+                    /> */}
                 </Box>
                 {/* <Box className="side-bar">
                     <TextField
