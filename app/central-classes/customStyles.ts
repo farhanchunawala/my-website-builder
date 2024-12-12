@@ -100,6 +100,7 @@ const useCustomStyles = () => {
                             texts.headingJumbo
                         ),
                         // color: "white",
+						fontWeight: 600,
                         textAlign: "center",
                         marginBottom: sp.textBottom,
                     },
@@ -110,6 +111,7 @@ const useCustomStyles = () => {
                             texts.paragraphBigger
                         ),
                         // color: "#fff",
+						fontWeight: 500,
                         opacity: tokens.textLight,
                         textAlign: "center",
                     },
