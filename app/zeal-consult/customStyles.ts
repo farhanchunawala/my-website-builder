@@ -2,6 +2,7 @@ import { useResponsive } from "@/app/hooks/useResponsive";
 import { theme, useTheme } from "./theme";
 import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S019 } from "@/sections/s019/v1/types";
+import { Styles as S020 } from "@/sections/s020/v1/types";
 
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
@@ -91,7 +92,6 @@ const useCustomStyles = () => {
 		container: {
 			padding: theme.spacing(6, 2),
 			display: responsive("block", "block", "flex",),
-			
 		},
 		textBlock: {
             container: {},
@@ -146,10 +146,44 @@ const useCustomStyles = () => {
 		},
 	};
 	
+	const s020 = {
+		cardContainer: {
+			padding: theme.spacing(5, 4),
+			display: responsive("block", "block", "flex"),
+		},
+		card: {},
+		ctaBlock: {
+			container: {},
+			textBlock: {
+				container: {},
+				texts: [
+					{
+						...texts.heading3,
+						fontWeight: "600",
+						letterSpacing: "-1px",
+						color: colors.foreground,
+						paddingBottom: theme.spacing(2),
+						maxWidth: responsive("80%", "100%", "100%"),
+					},
+					{
+						...texts.paragraph3,
+						color: colors.foreground,
+						opacity: 0.6,
+						paddingBottom: theme.spacing(2),
+					},
+				],
+				button: {
+					
+				},
+			},
+		},
+	};
+	
 	const styles = {
 		page: pageStyles,
 		s016: s016,
 		s019: s019,
+		s020: s020,
 	}
 
 	return { styles };

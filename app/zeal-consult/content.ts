@@ -27,10 +27,20 @@ const s019 = {
 	},
 }
 
+const s020 = {
+	ctaBlock: {
+		textBlock:[
+			"Strategic Website Planning",
+			"Create a strategy to align your website with business goals and audience needs.",
+		],
+		buttonText: "Details",
+	}
+}
 
 const content = {
 	s016: s016,
-	s019: s019
+	s019: s019,
+	s020: s020,
 }
 
 export default content;
