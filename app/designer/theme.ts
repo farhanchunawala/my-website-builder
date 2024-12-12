@@ -50,14 +50,14 @@ const theme = createTheme({
         MuiButton: {
             styleOverrides: {
 				root: {
-					"&:hover": {
-						outline: tokens.frameOutline,
-						opacity: 1,
-                    },
-                    "&:focus": {
-						outline: tokens.frameOutline,
-						opacity: 1,
-                    },
+					// "&:hover": {
+					// 	outline: tokens.frameOutline,
+					// 	opacity: 1,
+                    // },
+                    // "&:focus": {
+					// 	outline: tokens.frameOutline,
+					// 	opacity: 1,
+                    // },
 					// "&.Mui-focusVisible": {
 					// 	border: tokens.frameOutline,
 					// 	opacity: 1,

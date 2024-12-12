@@ -1,7 +1,12 @@
 import * as CtaBlock from "@/components/CtaBlock01/v1/types";
 
-interface Data {
-	ctaBlock: CtaBlock.Data
+interface Config {
+	ctaBlock: CtaBlock.Config
+};
+
+interface Content {
+	backgroundImage: string
+	ctaBlock: CtaBlock.Content
 };
 
 interface Styles {
@@ -10,11 +15,11 @@ interface Styles {
 }
 
 interface Props {
-	classNames?: string;
-    data: Data;
+	config: Config;
+	content: Content;
     styles: Styles | any;
 	id?: string
 }
 
-export type { Data, Styles }
+export type { Config, Content, Styles }
 export default Props
