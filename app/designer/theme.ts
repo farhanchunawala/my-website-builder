@@ -50,6 +50,7 @@ const theme = createTheme({
         MuiButton: {
             styleOverrides: {
 				root: {
+                    display: "flex",
 					// "&:hover": {
 					// 	outline: tokens.frameOutline,
 					// 	opacity: 1,

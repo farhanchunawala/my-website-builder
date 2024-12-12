@@ -13,7 +13,10 @@ import Box from "@mui/material/Box";
 import "./page.scss";
 import TextField from "@mui/material/TextField";
 import Section014 from "@/sections/s014/v1/builder";
-// import Section015 from "@/sections/s015/v1/builder";
+import Section015 from "@/sections/s015/v1/builder";
+import Section016 from "@/sections/s016/v1/builder";
+import Section017 from "@/sections/s017/v1/builder";
+import Section018 from "@/sections/s018/v1/builder";
 
 export default function Home() {
     const { isMobile, isTablet, isDesktop } = useSelector(
@@ -40,12 +43,36 @@ export default function Home() {
                         config={config.s014}
                         id="s014"
                     />
-                    {/* <Section015
+                    <Section015
                         styles={styles.s015}
                         content={content.s015}
                         config={config.s015}
                         id="s015"
-                    /> */}
+                    />
+                    <Section016
+                        styles={styles.s016}
+                        content={content.s016}
+                        config={config.s016}
+                        id={content.s013.navlinks[0].link}
+                    />
+                    <Section016
+                        styles={styles.s016a}
+                        content={content.s016a}
+                        config={config.s016a}
+                        id={content.s013.navlinks[1].link}
+                    />
+                    <Section017
+                        styles={styles.s017}
+                        content={content.s017}
+                        config={config.s017}
+                        id={content.s013.navlinks[2].link}
+                    />
+                    <Section018
+                        styles={styles.s018}
+                        content={content.s018}
+                        config={config.s018}
+                        id={content.s013.navlinks[3].link}
+                    />
                 </Box>
                 {/* <Box className="side-bar">
                     <TextField
