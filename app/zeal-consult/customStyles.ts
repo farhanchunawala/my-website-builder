@@ -161,9 +161,16 @@ const useCustomStyles = () => {
 		card: {
 			backgroundColor: colors.background2,
 			marginBottom: theme.spacing(responsive(2.5, 0, 0)),
-			padding: theme.spacing(5, 4),
+			padding: theme.spacing(
+				responsive(4, 4, 5),
+				responsive(5, 5, 6),
+			),
 			flex: "1 1 calc(33.33% - 40px)",
 			// gap: theme.spacing(2)
+		},
+		image: {
+		// rowGap: theme.spacing(2),
+		marginBottom: theme.spacing(2.5),
 		},
 		ctaBlock: {
 			container: {},
