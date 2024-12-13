@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
 import CtaBlock from "@/components/CtaBlock01/v1";
+import Image from "next/image";
 
 const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
@@ -27,6 +28,14 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 				sx={styles?.card}
 				id={id}
 			>
+				<Image
+                style={styles?.image}
+                src={content?.imageUrl}
+                alt="firexio"
+                width={60}
+                height={60}
+                // layout="responsive"
+                />
 				<CtaBlock
 					content={content?.ctaBlock}
 					config={config?.ctaBlock}
@@ -38,6 +47,14 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 				sx={styles?.card}
 				id={id}
 			>
+				<Image
+                style={styles?.image}
+                src={content?.imageUrl}
+                alt="firexio"
+                width={60}
+                height={60}
+                // layout="responsive"
+                />
 				<CtaBlock
 					content={content?.ctaBlock}
 					config={config?.ctaBlock}
@@ -49,6 +66,14 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 				sx={styles?.card}
 				id={id}
 			>
+				<Image
+                style={styles?.image}
+                src={content?.imageUrl}
+                alt="firexio"
+                width={60}
+                height={60}
+                // layout="responsive"
+                />
 				<CtaBlock
 					content={content?.ctaBlock}
 					config={config?.ctaBlock}
@@ -60,6 +85,14 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 				sx={styles?.card}
 				id={id}
 			>
+				<Image
+                style={styles?.image}
+                src={content?.imageUrl}
+                alt="firexio"
+                width={60}
+                height={60}
+                // layout="responsive"
+                />
 				<CtaBlock
 					content={content?.ctaBlock}
 					config={config?.ctaBlock}
@@ -71,6 +104,14 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 				sx={styles?.card}
 				id={id}
 			>
+				<Image
+                style={styles?.image}
+                src={content?.imageUrl}
+                alt="firexio"
+                width={60}
+                height={60}
+                // layout="responsive"
+                />
 				<CtaBlock
 					content={content?.ctaBlock}
 					config={config?.ctaBlock}
@@ -82,6 +123,14 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 				sx={styles?.card}
 				id={id}
 			>
+				<Image
+                style={styles?.image}
+                src={content?.imageUrl}
+                alt="firexio"
+                width={60}
+                height={60}
+                // layout="responsive"
+                />
 				<CtaBlock
 					content={content?.ctaBlock}
 					config={config?.ctaBlock}

@@ -28,6 +28,7 @@ const s019 = {
 }
 
 const s020 = {
+	imageUrl: `/images/${imageDir}/profit.svg`,
 	ctaBlock: {
 		textBlock:[
 			"Strategic Website Planning",
