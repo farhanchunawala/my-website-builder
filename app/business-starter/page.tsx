@@ -16,6 +16,10 @@ import Section018 from "@/sections/s018/v1";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import Box from "@mui/material/Box";
+import axios from "axios";
+import { usePathname } from 'next/navigation';
+
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default function Home() {
     const { isMobile, isTablet, isDesktop } = useSelector(
@@ -23,6 +27,25 @@ export default function Home() {
     );
     const [mounted, setMounted] = useState(false);
     const { styles } = useCustomStyles();
+    const [data, setData] = useState(null);
+
+	const pathname = usePathname();
+    const route = pathname.split('/')[1];
+	
+    const fetchContent = async () => {
+        try {
+            const response = await axios.get(
+                `${baseUrl}/api/contents/${route}`
+            );
+            setData(response.data);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    useEffect(() => {
+        fetchContent();
+    }, []);
 
     useEffect(() => {
         setMounted(true);
