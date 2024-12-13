@@ -7,7 +7,7 @@ export async function GET(request: NextRequest, context: Context) {
 	try {
 		await dbConnect();
 
-		const { route } = context.params;
+		const { route } = await context.params;
 
 		const content = await Content.findOne({ route: route });
 		return NextResponse.json(content);

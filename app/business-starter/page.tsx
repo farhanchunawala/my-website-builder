@@ -2,7 +2,7 @@
 import { RootState } from "@/lib/store";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import content from "./content";
+// import content from "./content";
 import config from "./config";
 import { useCustomStyles } from "./customStyles";
 // import "./page.css";
@@ -27,7 +27,7 @@ export default function Home() {
     );
     const [mounted, setMounted] = useState(false);
     const { styles } = useCustomStyles();
-    const [data, setData] = useState(null);
+    const [content, setContent] = useState(null);
 
 	const pathname = usePathname();
     const route = pathname.split('/')[1];
@@ -37,7 +37,7 @@ export default function Home() {
             const response = await axios.get(
                 `${baseUrl}/api/contents/${route}`
             );
-            setData(response.data);
+            setContent(response.data.content);
         } catch (err) {
             console.error(err);
         }
@@ -51,14 +51,13 @@ export default function Home() {
         setMounted(true);
     }, []);
 
-    if (!mounted) {
+    if (!mounted || !content) {
         return null;
     }
 
     return (
         <ThemeProvider theme={theme}>
             <Box className="page" sx={styles.page}>
-                {/* <Section011 /> */}
                 <Section013
                     styles={styles.s013}
                     content={content.s013}
