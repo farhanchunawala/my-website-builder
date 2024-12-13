@@ -26,6 +26,7 @@ type Props = {
 	config: Config;
     content: Content;
     styles: Styles;
+	id: string | undefined;
 }
 
 export type { Config, Content, Styles }

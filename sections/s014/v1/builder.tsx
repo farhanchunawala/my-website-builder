@@ -31,6 +31,7 @@ const Section014: React.FC<Props> = ({ styles, content, config, id }) => {
                 content={content?.ctaBlock}
                 config={config?.ctaBlock}
                 styles={styles?.ctaBlock}
+				id={id}
             />
         </Box>
     );
