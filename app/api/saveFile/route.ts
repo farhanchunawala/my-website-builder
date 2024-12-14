@@ -1,21 +1,26 @@
-import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
 export async function POST(request: Request) {
     try {
         // Parse incoming JSON data
         const body = await request.json();
-        const { fileName, fileContent } = body;
+        const { fileName, fileDir, fileContent } = body;
 
         if (!fileName || !fileContent) {
             return NextResponse.json(
-                { error: 'fileName and fileContent are required' },
+                { error: "fileName and fileContent are required" },
                 { status: 400 }
             );
         }
 
-        const filePath = path.join(process.cwd(), 'data', `${fileName}.ts`);
+        const filePath = path.join(
+            process.cwd(),
+			'app/',
+			fileDir,
+            `${fileName}.ts`
+        );
         const directoryPath = path.dirname(filePath);
 
         // Ensure the directory exists
@@ -26,9 +31,15 @@ export async function POST(request: Request) {
         // Write the file with provided content
         fs.writeFileSync(filePath, fileContent);
 
-        return NextResponse.json({ message: 'File saved successfully' }, { status: 200 });
+        return NextResponse.json(
+            { message: "File saved successfully" },
+            { status: 200 }
+        );
     } catch (error) {
-        console.error('Error saving file:', error);
-        return NextResponse.json({ error: 'Failed to save the file' }, { status: 500 });
+        console.error("Error saving file:", error);
+        return NextResponse.json(
+            { error: "Failed to save the file" },
+            { status: 500 }
+        );
     }
 }

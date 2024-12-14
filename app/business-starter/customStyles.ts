@@ -1,6 +1,6 @@
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { theme, useTheme } from "./theme";
-import content from "./content";
+import { content } from "./content";
 import { Styles as S013 } from "@/sections/s013/v1/types";
 import { Styles as S014 } from "@/sections/s014/v1/types";
 import { Styles as S015 } from "@/sections/s015/v1/types";
@@ -76,7 +76,7 @@ const useCustomStyles = () => {
                 flexDirection: "column",
                 backgroundImage: `url("${content.s014.backgroundImage}")`,
                 backgroundSize: "cover",
-				backgroundPosition: "center",
+                backgroundPosition: "center",
             },
             textBlock: {
                 container: {
@@ -337,7 +337,7 @@ const useCustomStyles = () => {
             },
             textBlock: {
                 container: {
-					width: "100%",
+                    width: "100%",
                     maxWidth: `calc(80%)`,
                     margin: "0 auto",
                 },

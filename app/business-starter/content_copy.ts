@@ -106,7 +106,7 @@ const s018 = {
 	}
 }
 
-const content = {
+export const content = {
 	s013: s013,
 	s014: s014,
 	s015: s015,
@@ -116,4 +116,3 @@ const content = {
 	s018: s018,
 }
 
-export default content;
