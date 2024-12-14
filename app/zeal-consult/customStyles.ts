@@ -3,7 +3,7 @@ import { theme, useTheme } from "./theme";
 import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S019 } from "@/sections/s019/v1/types";
 import { Styles as S020 } from "@/sections/s020/v1/types";
-import { color } from "@mui/system";
+import { color, lineHeight } from "@mui/system";
 
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
@@ -194,6 +194,7 @@ const useCustomStyles = () => {
 						color: colors.foreground,
 						opacity: 0.6,
 						paddingBottom: theme.spacing(2),
+						lineHeight: 1.5,
 					},
 				],
 				button: {
