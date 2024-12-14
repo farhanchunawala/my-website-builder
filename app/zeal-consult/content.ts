@@ -31,7 +31,7 @@ const s013 = {
 }
 
 const s016 = {
-	imageUrl: `/images/${imageDir}/zeal_staff.avif`,
+	imageUrl: `zeal_staff.avif`,
 	ctaBlock: {
 		textBlock: [
 			"Empower Your Brand",

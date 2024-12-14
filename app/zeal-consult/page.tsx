@@ -2,6 +2,7 @@
 import { RootState } from "@/lib/store";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import variables from "./variables";
 import config from "./config";
 import content from "./content";
 import { useCustomStyles } from "./customStyles";
@@ -40,6 +41,7 @@ export default function Home() {
                     styles={styles.s016}
                     config={config.s016}
                     content={content.s016}
+					variables={variables}
                     id="s016"
                 />
                 <Section019
