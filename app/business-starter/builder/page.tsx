@@ -4,13 +4,14 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import "./page.scss";
 import variables from "../variables";
-import content from "../content";
+// import { content } from "../content";
 import config from "../config";
 import { useCustomStyles } from "../customStyles";
 import { ThemeProvider } from "@mui/material/styles";
 // import { ThemeProvider } from '@mui/system';
 import { theme } from "../theme";
 import { usePathname } from "next/navigation";
+import axios from "axios";
 import Box from "@mui/material/Box";
 // import { Box } from '@mui/system';
 import Fab from "@mui/material/Fab";
@@ -29,27 +30,45 @@ export default function Home() {
     );
     const [mounted, setMounted] = useState(false);
     const { styles } = useCustomStyles();
+	const [content, setContent] = useState(null);
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     const pathname = usePathname().slice(1);
 
-    if (pathname.includes("/builder")) {
-		pathname.replace("/builder", "");
-    }
+    const path2 = pathname.replace("/builder", "");
+    // if (pathname.includes("/builder")) {
+    // 	const path2 = pathname.replace("/builder", "");
+    // }
 
+	const fetchContent = async () => {
+        try {
+            const response = await axios.get(
+                `${baseUrl}/api/contents/${path2}`
+            );
+			// const s013 = evalObject(response.data.content);
+            setContent(response.data.content);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+	
+	useEffect(() => {
+        fetchContent();
+    }, []);
+	
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    if (!mounted) {
+    if (!mounted || !content) {
         return null;
     }
 
     const saveFile = async () => {
         try {
             const data = {
-                fileName: "s013",
-                fileDir: pathname,
+                fileName: "content",
+                fileDir: path2,
                 fileContent: `export const content = ${JSON.stringify(content, null, 4)};`,
             };
 

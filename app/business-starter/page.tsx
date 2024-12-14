@@ -4,14 +4,14 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 // import "./page.css";
 import variables from "./variables";
-import content from "./content";
+// import { content } from "./content";
 import config from "./config";
 import { useCustomStyles } from "./customStyles";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import Box from "@mui/material/Box";
 import axios from "axios";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 // import Section011 from "@/sections/s011/v1";
 import Section013 from "@/sections/s013/v1";
 import Section014 from "@/sections/s014/v1";
@@ -20,6 +20,7 @@ import Section016 from "@/sections/s016/v1";
 import Section017 from "@/sections/s017/v1";
 import Section018 from "@/sections/s018/v1";
 
+// const imageDir = "starter";
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default function Home() {
@@ -28,25 +29,44 @@ export default function Home() {
     );
     const [mounted, setMounted] = useState(false);
     const { styles } = useCustomStyles();
-    // const [content, setContent] = useState(null);
+    const [content, setContent] = useState(null);
 
-	const pathname = usePathname();
-    const route = pathname.split('/')[1];
-	
-    // const fetchContent = async () => {
-    //     try {
-    //         const response = await axios.get(
-    //             `${baseUrl}/api/contents/${route}`
-    //         );
-    //         setContent(response.data.content);
-    //     } catch (err) {
-    //         console.error(err);
+    const pathname = usePathname().slice(1);
+
+    // const evalObject = (obj) => {
+    //     if (typeof obj === "string") {
+    //         try {
+    //             return eval(obj); // Evaluates the string as JavaScript code
+    //         } catch (error) {
+    //             return obj; // Return as is if eval fails
+    //         }
+    //     } else if (Array.isArray(obj)) {
+    //         return obj.map(evalObject); // Recursively evaluate array elements
+    //     } else if (typeof obj === "object" && obj !== null) {
+    //         const result = {};
+    //         for (const key in obj) {
+    //             result[key] = evalObject(obj[key]); // Recursively evaluate object properties
+    //         }
+    //         return result;
     //     }
+    //     return obj; // Return primitive values as is
     // };
 
-    // useEffect(() => {
-    //     fetchContent();
-    // }, []);
+    const fetchContent = async () => {
+        try {
+            const response = await axios.get(
+                `${baseUrl}/api/contents/${pathname}`
+            );
+			// const s013 = evalObject(response.data.content);
+            setContent(response.data.content);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    useEffect(() => {
+        fetchContent();
+    }, []);
 
     useEffect(() => {
         setMounted(true);
@@ -80,12 +100,14 @@ export default function Home() {
                     styles={styles.s016}
                     content={content.s016}
                     config={config.s016}
+					variables={variables}
                     id={content.s013.navlinks[0].link}
                 />
                 <Section016
                     styles={styles.s016a}
                     content={content.s016a}
                     config={config.s016a}
+					variables={variables}
                     id={content.s013.navlinks[1].link}
                 />
                 <Section017
