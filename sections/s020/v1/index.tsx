@@ -30,14 +30,14 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 			>
 				<Image
                 style={styles?.image}
-                src={content?.imageUrl}
+                src={content?.imageUrl1}
                 alt="firexio"
                 width={60}
                 height={60}
                 // layout="responsive"
                 />
 				<CtaBlock
-					content={content?.ctaBlock}
+					content={content?.ctaBlock1}
 					config={config?.ctaBlock}
 					styles={styles?.ctaBlock}
 				/>
@@ -49,14 +49,14 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 			>
 				<Image
                 style={styles?.image}
-                src={content?.imageUrl}
+                src={content?.imageUrl2}
                 alt="firexio"
                 width={60}
                 height={60}
                 // layout="responsive"
                 />
 				<CtaBlock
-					content={content?.ctaBlock}
+					content={content?.ctaBlock2}
 					config={config?.ctaBlock}
 					styles={styles?.ctaBlock}
 				/>
@@ -68,14 +68,14 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 			>
 				<Image
                 style={styles?.image}
-                src={content?.imageUrl}
+                src={content?.imageUrl3}
                 alt="firexio"
                 width={60}
                 height={60}
                 // layout="responsive"
                 />
 				<CtaBlock
-					content={content?.ctaBlock}
+					content={content?.ctaBlock3}
 					config={config?.ctaBlock}
 					styles={styles?.ctaBlock}
 				/>
@@ -87,14 +87,14 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 			>
 				<Image
                 style={styles?.image}
-                src={content?.imageUrl}
+                src={content?.imageUrl4}
                 alt="firexio"
                 width={60}
                 height={60}
                 // layout="responsive"
                 />
 				<CtaBlock
-					content={content?.ctaBlock}
+					content={content?.ctaBlock4}
 					config={config?.ctaBlock}
 					styles={styles?.ctaBlock}
 				/>
@@ -106,14 +106,14 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 			>
 				<Image
                 style={styles?.image}
-                src={content?.imageUrl}
+                src={content?.imageUrl5}
                 alt="firexio"
                 width={60}
                 height={60}
                 // layout="responsive"
                 />
 				<CtaBlock
-					content={content?.ctaBlock}
+					content={content?.ctaBlock5}
 					config={config?.ctaBlock}
 					styles={styles?.ctaBlock}
 				/>
@@ -125,14 +125,14 @@ const Section020: React.FC<Props> = ({ styles, config, content, id }) => {
 			>
 				<Image
                 style={styles?.image}
-                src={content?.imageUrl}
+                src={content?.imageUrl6}
                 alt="firexio"
                 width={60}
                 height={60}
                 // layout="responsive"
                 />
 				<CtaBlock
-					content={content?.ctaBlock}
+					content={content?.ctaBlock6}
 					config={config?.ctaBlock}
 					styles={styles?.ctaBlock}
 				/>

@@ -28,14 +28,55 @@ const s019 = {
 }
 
 const s020 = {
-	imageUrl: `/images/${imageDir}/profit.svg`,
-	ctaBlock: {
+	imageUrl1: `/images/${imageDir}/secure.svg`,
+	imageUrl2: `/images/${imageDir}/profit.svg`,
+	imageUrl3: `/images/${imageDir}/analysis.svg`,
+	imageUrl4: `/images/${imageDir}/conversion.svg`,
+	imageUrl5: `/images/${imageDir}/brand.svg`,
+	imageUrl6: `/images/${imageDir}/profit.svg`,
+	ctaBlock1: {
+		textBlock:[
+			"Business Website Audit",
+			"Assess your website’s performance and provide improvement recommendations.",
+		],
+		buttonText: "Details",
+	},
+	ctaBlock2: {
 		textBlock:[
 			"Strategic Website Planning",
 			"Create a strategy to align your website with business goals and audience needs.",
 		],
 		buttonText: "Details",
-	}
+	},
+	ctaBlock3: {
+		textBlock:[
+			"Competitive Analysis",
+			"Review competitors’ sites to uncover opportunities for differentiation.",
+		],
+		buttonText: "Details",
+	},
+	ctaBlock4: {
+		textBlock:[
+			"Conversion Rate Optimization",
+			"Enhance design and functionality to boost user engagement and conversions.",
+		],
+		buttonText: "Details",
+	},
+	ctaBlock5: {
+		textBlock:[
+			"Brand Positioning and Messaging",
+			"Develop content and visuals to clearly communicate your brand’s value.",
+		],
+		buttonText: "Details",
+	},
+	ctaBlock6: {
+		textBlock:[
+			" Website Analytics and Reporting",
+			"Develop content and visuals to clearly communicate your brand’s value.",
+		],
+		buttonText: "Details",
+	},
+	
 }
 
 const content = {
