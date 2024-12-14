@@ -337,6 +337,7 @@ const useCustomStyles = () => {
             },
             textBlock: {
                 container: {
+					width: "100%",
                     maxWidth: `calc(80%)`,
                     margin: "0 auto",
                 },

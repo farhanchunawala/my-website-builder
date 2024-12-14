@@ -3,12 +3,12 @@ import { RootState } from "@/lib/store";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import "./page.scss";
-import content from "./content";
-import config from "./config";
-import { useCustomStyles } from "./customStyles";
+import content from "../content";
+import config from "../config";
+import { useCustomStyles } from "../customStyles";
 import { ThemeProvider } from "@mui/material/styles";
 // import { ThemeProvider } from '@mui/system';
-import { theme } from "./theme";
+import { theme } from "../theme";
 import Box from "@mui/material/Box";
 // import { Box } from '@mui/system';
 import Fab from "@mui/material/Fab";
@@ -118,8 +118,8 @@ export default function Home() {
                     sx={{ position: "fixed", bottom: 32, right: 32 }}
 					onClick={saveFile}
                 >
-                    {/* <SaveAltIcon /> */}
-                    <UploadIcon />
+                    <SaveAltIcon />
+                    {/* <UploadIcon /> */}
                 </Fab>
             </Box>
         </ThemeProvider>
