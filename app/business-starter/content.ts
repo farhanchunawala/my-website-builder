@@ -1,10 +1,7 @@
 
-
-const imageDir = "starter";
-
 const s013 = {
 	// Any Dimension
-	imageUrl: `/images/${imageDir}/logo.svg`,
+	imageUrl: `/images/starter/logo.svg`,
 	navlinks: [
 		{
 			text: "ABOUT",
@@ -28,7 +25,7 @@ const s013 = {
 
 const s014 = {
 	// Any Dimension
-	backgroundImage: `/images/${imageDir}/hero_bg1.svg`,
+	backgroundImage: `/images/starter/hero_bg1.svg`,
 	ctaBlock: {
 		textBlock: [
 			"Grow your business.",
@@ -48,7 +45,7 @@ const s015 = {
 
 const s016 = {
 	// Aspect Ratio 4:3
-	imageUrl: `./images/${imageDir}/article1.svg`,
+	imageUrl: `./images/starter/article1.svg`,
 	ctaBlock: {
 		textBlock: [
 			"ABOUT",
@@ -61,7 +58,7 @@ const s016 = {
 
 const s016a = {
 	// Aspect Ratio 4:3
-	imageUrl: `./images/${imageDir}/article2.svg`,
+	imageUrl: `./images/starter/article2.svg`,
 	ctaBlock: {
 		textBlock: [
 			"ABOUT",

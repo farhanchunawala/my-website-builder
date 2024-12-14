@@ -1,7 +1,4 @@
 
-
-const imageDir = "starter";
-
 const s013 = {
 	image: {
 		width: 672,

@@ -3,6 +3,7 @@ import { RootState } from "@/lib/store";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 // import "./page.css";
+import variables from "./variables";
 import content from "./content";
 import config from "./config";
 import { useCustomStyles } from "./customStyles";
@@ -29,8 +30,8 @@ export default function Home() {
     const { styles } = useCustomStyles();
     // const [content, setContent] = useState(null);
 
-	// const pathname = usePathname();
-    // const route = pathname.split('/')[1];
+	const pathname = usePathname();
+    const route = pathname.split('/')[1];
 	
     // const fetchContent = async () => {
     //     try {
