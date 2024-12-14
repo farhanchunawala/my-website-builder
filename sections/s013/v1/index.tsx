@@ -31,8 +31,8 @@ const Section013: React.FC<Props> = ({ styles, content, config }) => {
 				width={config.image.width}
 				height={config.image.height}
 				style={{
-					height: "45px",
-					width: "auto"
+					height: "80px",
+					width: "230px"
 				}}
                 // width={141}
                 // height={36}

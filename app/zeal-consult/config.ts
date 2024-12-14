@@ -3,6 +3,15 @@ import Component from "@/components/_component/v1";
 
 const imageDir = "zeal-consult";
 
+const s013 = {
+	image: {
+		width: 230,
+		height: 80,
+	},
+	navlinks: [],
+	button: {},
+}
+
 const s016 = {
 	ctaBlock: {
 		textBlock: [
@@ -54,6 +63,7 @@ const s020 = {
 }
 
 const config = {
+	s013: s013,
 	s016: s016,
 	s019: s019,
 	s020: s020,

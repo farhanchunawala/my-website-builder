@@ -8,6 +8,7 @@ import { useCustomStyles } from "./customStyles";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import Box from "@mui/material/Box";
+import Section013 from "@/sections/s013/v1";
 import Section016 from "@/sections/s016/v1";
 import Section019 from "@/sections/s019/v1";
 import Section020 from "@/sections/s020/v1";
@@ -19,17 +20,22 @@ export default function Home() {
     const [mounted, setMounted] = useState(false);
     const { styles } = useCustomStyles();
 
-    // useEffect(() => {
-    //     setMounted(true);
-    // }, []);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
-    // if (!mounted) {
-    //     return null;
-    // }
+    if (!mounted) {
+        return null;
+    }
 
     return (
         <ThemeProvider theme={theme}>
             <Box className="page" sx={styles.page}>
+				<Section013
+                    styles={styles.s013}
+                    content={content.s013}
+                    config={config.s013}
+                />
                 <Section016
                     styles={styles.s016}
                     config={config.s016}
