@@ -32,6 +32,7 @@ const TextBlock: React.FC<Props> = ({ content, config, styles }) => {
                     {...createHandlers(index)}
                     sx={{
                         ...styles.texts[index],
+						width: "100%",
                         outline:
                             hoveredElement === index ||
                             focusedElement === index

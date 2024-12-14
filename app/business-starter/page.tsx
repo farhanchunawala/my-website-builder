@@ -2,10 +2,15 @@
 import { RootState } from "@/lib/store";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-// import content from "./content";
+// import "./page.css";
+import content from "./content";
 import config from "./config";
 import { useCustomStyles } from "./customStyles";
-// import "./page.css";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./theme";
+import Box from "@mui/material/Box";
+import axios from "axios";
+import { usePathname } from 'next/navigation';
 // import Section011 from "@/sections/s011/v1";
 import Section013 from "@/sections/s013/v1";
 import Section014 from "@/sections/s014/v1";
@@ -13,11 +18,6 @@ import Section015 from "@/sections/s015/v1";
 import Section016 from "@/sections/s016/v1";
 import Section017 from "@/sections/s017/v1";
 import Section018 from "@/sections/s018/v1";
-import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "./theme";
-import Box from "@mui/material/Box";
-import axios from "axios";
-import { usePathname } from 'next/navigation';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -27,25 +27,25 @@ export default function Home() {
     );
     const [mounted, setMounted] = useState(false);
     const { styles } = useCustomStyles();
-    const [content, setContent] = useState(null);
+    // const [content, setContent] = useState(null);
 
-	const pathname = usePathname();
-    const route = pathname.split('/')[1];
+	// const pathname = usePathname();
+    // const route = pathname.split('/')[1];
 	
-    const fetchContent = async () => {
-        try {
-            const response = await axios.get(
-                `${baseUrl}/api/contents/${route}`
-            );
-            setContent(response.data.content);
-        } catch (err) {
-            console.error(err);
-        }
-    };
+    // const fetchContent = async () => {
+    //     try {
+    //         const response = await axios.get(
+    //             `${baseUrl}/api/contents/${route}`
+    //         );
+    //         setContent(response.data.content);
+    //     } catch (err) {
+    //         console.error(err);
+    //     }
+    // };
 
-    useEffect(() => {
-        fetchContent();
-    }, []);
+    // useEffect(() => {
+    //     fetchContent();
+    // }, []);
 
     useEffect(() => {
         setMounted(true);

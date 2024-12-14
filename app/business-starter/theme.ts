@@ -68,6 +68,22 @@ const theme = createTheme({
                 },
             },
         },
+		// MuiInputBase: {
+        //     styleOverrides: {
+        //         root: {
+        //             width: "100%",
+		// 			pointerEvents: "auto"
+        //             // "&:hover": {
+		// 			// 	outline: tokens.frameOutline,
+		// 			// 	opacity: 1,
+        //             // },
+        //             // "&:focus": {
+		// 			// 	outline: tokens.frameOutline,
+		// 			// 	opacity: 1,
+        //             // },
+        //         },
+        //     },
+        // },
     },
 });
 

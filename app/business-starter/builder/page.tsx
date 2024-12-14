@@ -2,15 +2,18 @@
 import { RootState } from "@/lib/store";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import content from "./content";
-import config from "./config";
-import { useCustomStyles } from "./customStyles";
+import "./page.scss";
+import content from "../content";
+import config from "../config";
+import { useCustomStyles } from "../customStyles";
 import { ThemeProvider } from "@mui/material/styles";
 // import { ThemeProvider } from '@mui/system';
-import { theme } from "./theme";
+import { theme } from "../theme";
 import Box from "@mui/material/Box";
 // import { Box } from '@mui/system';
-import "./page.scss";
+import Fab from "@mui/material/Fab";
+import SaveAltIcon from "@mui/icons-material/SaveAlt";
+import UploadIcon from '@mui/icons-material/Upload';
 import TextField from "@mui/material/TextField";
 import Section014 from "@/sections/s014/v1/builder";
 import Section015 from "@/sections/s015/v1/builder";
@@ -32,6 +35,34 @@ export default function Home() {
     if (!mounted) {
         return null;
     }
+
+    const saveFile = async () => {
+        try {
+            const data = {
+                fileName: "s013", // Name of the file to create
+                fileContent: `export const content = ${JSON.stringify(content, null, 4)};`,
+            };
+
+            const response = await fetch("/api/saveFile", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error("Error response:", errorData);
+                return;
+            }
+
+            const result = await response.json();
+			console.log(result.message);
+        } catch (error) {
+            console.error("Error saving file:", error);
+        }
+    };
 
     return (
         <ThemeProvider theme={theme}>
@@ -81,6 +112,15 @@ export default function Home() {
                         variant="outlined"
                     />
                 </Box> */}
+                <Fab
+                    color="primary"
+                    aria-label="add"
+                    sx={{ position: "fixed", bottom: 32, right: 32 }}
+					onClick={saveFile}
+                >
+                    <SaveAltIcon />
+                    {/* <UploadIcon /> */}
+                </Fab>
             </Box>
         </ThemeProvider>
     );
