@@ -4,7 +4,8 @@ import { Styles as S013 } from "@/sections/s013/v1/types";
 import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S019 } from "@/sections/s019/v1/types";
 import { Styles as S020 } from "@/sections/s020/v1/types";
-import { color, lineHeight } from "@mui/system";
+import { Styles as S021 } from "@/sections/s021/v1/types";
+import { color, lineHeight, padding } from "@mui/system";
 
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
@@ -32,6 +33,7 @@ const useCustomStyles = () => {
         },
         navlinks: {
             container: {
+				justifyContent: "space-between",
                 flexDirection: responsive("column", "column", "row"),
                 alignItems: "center",
                 position: responsive(
@@ -39,7 +41,8 @@ const useCustomStyles = () => {
                     "absolute",
                     "static"
                 ),
-                top: theme.spacing(16),
+                top: theme.spacing(10),
+				paddingLeft: theme.spacing(responsive(0, 0, 2)),
                 left: 0,
                 right: 0,
                 zIndex: 10,
@@ -47,14 +50,24 @@ const useCustomStyles = () => {
             },
             link: {
                 ...texts.linkText,
+				...buttons.primary3,
                 padding: theme.spacing(
                     responsive(3, 3, 2),
                     responsive(6, 6, 4)
                 ),
+				color: colors.white,
                 // opacity: tokens.textLight,
+				opacity: 0.8
             },
         },
-        button: {},
+        button: {
+			container: {
+				...buttons.primary3,
+				backgroundColor: colors.transparent,
+				border: "solid 2px #fff",
+				fontWeight: 600,
+			},
+		},
         image: {},
     };
 	
@@ -194,6 +207,7 @@ const useCustomStyles = () => {
 	
 	const s020 = {
 		cardContainer: {
+			// padding: theme.spacing(15, 0),
 			// padding: theme.spacing(5, 4),
 			margin: theme.spacing(0, 2),
 			display: responsive("block", "flex", "flex"),
@@ -252,12 +266,22 @@ const useCustomStyles = () => {
 		},
 	};
 	
+	const s021 = {
+		textBlock: {
+			texts: [
+				...texts.heading2,
+				
+			],
+		},
+	};
+	
 	const styles = {
 		page: pageStyles,
 		s013: s013,
 		s016: s016,
 		s019: s019,
 		s020: s020,
+		s021: s021,
 	}
 
 	return { styles };

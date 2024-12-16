@@ -51,6 +51,7 @@ const useTheme = () => {
     };
 
     const colors: Colors = {
+		transparent: "transparent",
 		primary: "#bde162", //light green // #bde162
 		secondary: "#182034", // dark blue // #182034
 		background: "#fff",
@@ -141,6 +142,11 @@ const useTheme = () => {
 			fontFamily: fonts.primary,
 			fontSize: "18px",
 			padding: "14px 30px",
+		},
+		primary3: {
+			fontFamily: fonts.primary,
+			fontSize: "16px",
+			padding: "12px 24px",
 		},
 		link: {
 			fontFamily: fonts.primary,
