@@ -15,9 +15,7 @@ const TextBlock: React.FC<Props> = ({
     return (
         <Stack
             className="textBlock01"
-            sx={{
-                ...useMappedStyles(styles?.container, styleKit),
-            }}
+            sx={useMappedStyles(styles?.container, styleKit)}
         >
             {content.map((item, index) => (
                 <Typography

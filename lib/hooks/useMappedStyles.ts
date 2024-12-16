@@ -2,20 +2,30 @@ import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 
-const useMappedStyles = (styles, styleKit) => {
+type Styles = {
+    [key: string]: string | null | undefined | Record<string, string>;
+};
+
+type StyleKit = Record<string, Record<string, string | undefined>>;
+
+const useMappedStyles = (styles: Styles, styleKit: StyleKit) => {
     const device = useSelector(
         (state: RootState) => state.responsive.device
     );
 
     return useMemo(() => {
-        const result = {};
+        const result: Record<string, string | undefined> = {};
 
         // Iterate through the general styles
         Object.entries(styles).forEach(([key, value]) => {
-            if (value !== null && typeof value !== "object") {
+            if (
+                value !== null &&
+                value !== undefined &&
+                typeof value !== "object"
+            ) {
                 const segments = value.split(".");
 
-                if (segments[0] === "sp") {
+                if (segments[0] === "scale") {
                     result[key] =
                         styleKit?.[segments[0]]?.[segments[1]];
                 } else {
@@ -25,8 +35,13 @@ const useMappedStyles = (styles, styleKit) => {
         });
 
         // Iterate through device-specific styles
-        if (styles[device]) {
-            Object.entries(styles[device]).forEach(([key, value]) => {
+        if (styles[device as keyof Styles]) {
+            Object.entries(
+                styles[device as keyof Styles] as Record<
+                    string,
+                    string
+                >
+            ).forEach(([key, value]) => {
                 result[key] = value;
             });
         }
