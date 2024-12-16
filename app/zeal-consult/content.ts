@@ -7,23 +7,23 @@ const s013 = {
 	imageUrl: `/images/${imageDir}/zc-logo.svg`,
 	navlinks: [
 		{
-			text: "home",
+			text: "Home",
 			link: "home"
 		},
 		{
-			text: "services",
+			text: "Services",
 			link: "services"
 		},
 		{
-			text: "ABOUT",
+			text: "About",
 			link: "about-us"
 		},
 		{
-			text: "blog",
+			text: "Blogs",
 			link: "blog"
 		},
 		{
-			text: "CONTACT",
+			text: "Contact",
 			link: "contact-us"
 		},
 	],
@@ -107,11 +107,31 @@ const s020 = {
 	
 }
 
+const s021 = {
+	textBlock1: [
+		"100+",
+		"Projects Completed"
+	],
+	textBlock2: [
+		"95%",
+		"Clients Satisfaction"
+	],
+	textBlock3: [
+		"$50M+",
+		"Revenue Generated"
+	],
+	textBlock4: [
+		"90%",
+		"Project Success Rate"
+	],
+}
+
 const content = {
 	s013: s013,
 	s016: s016,
 	s019: s019,
 	s020: s020,
+	s021: s021,
 }
 
 export default content;
