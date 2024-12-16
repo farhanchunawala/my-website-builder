@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import "./page.scss";
 import variables from "../variables";
 // import { content } from "../content";
-import config from "../config";
+// import config from "../config";
 import { useCustomStyles } from "../customStyles";
 import { ThemeProvider } from "@mui/material/styles";
 // import { ThemeProvider } from '@mui/system';
@@ -30,7 +30,8 @@ export default function Home() {
     );
     const [mounted, setMounted] = useState(false);
     const { styles } = useCustomStyles();
-	const [content, setContent] = useState(null);
+    const [config, setConfig] = useState(null);
+    const [content, setContent] = useState(null);
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     const pathname = usePathname().slice(1);
@@ -40,22 +41,23 @@ export default function Home() {
     // 	const path2 = pathname.replace("/builder", "");
     // }
 
-	const fetchContent = async () => {
+    const fetchContent = async () => {
         try {
             const response = await axios.get(
                 `${baseUrl}/api/contents/${path2}`
             );
-			// const s013 = evalObject(response.data.content);
+            setConfig(response.data.config);
             setContent(response.data.content);
+            // const s013 = evalObject(response.data.content);
         } catch (err) {
             console.error(err);
         }
     };
-	
-	useEffect(() => {
+
+    useEffect(() => {
         fetchContent();
     }, []);
-	
+
     useEffect(() => {
         setMounted(true);
     }, []);
@@ -133,6 +135,7 @@ export default function Home() {
                         styles={styles.s014}
                         content={content.s014}
                         config={config.s014}
+                        variables={variables}
                         id="s014"
                     />
                     <Section015

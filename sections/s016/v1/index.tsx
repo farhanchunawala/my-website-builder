@@ -28,14 +28,10 @@ const Section016: React.FC<Props> = ({
     }
 
     return (
-        <Box
-            component="section"
-            sx={styles?.container}
-            id={id}
-        >
+        <Box component="section" sx={styles?.container} id={id}>
             <Image
                 style={styles?.image}
-                src={variables.imageDir + "/" +content?.imageUrl}
+                src={`${variables.imageDir}/${content?.imageUrl}`}
                 alt="company logo"
                 // width={1305}
                 // height={833}

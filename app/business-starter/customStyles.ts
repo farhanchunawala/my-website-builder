@@ -7,6 +7,7 @@ import { Styles as S015 } from "@/sections/s015/v1/types";
 import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S017 } from "@/sections/s017/v1/types";
 import { Styles as S018 } from "@/sections/s018/v1/types";
+import { width } from "@mui/system";
 
 const useCustomStyles = () => {
     const { tokens, sp, layout, fonts, colors, texts, buttons } =
@@ -65,18 +66,24 @@ const useCustomStyles = () => {
             padding: layout.sectionGap,
             paddingTop: "0",
             marginBottom: theme.spacing(4),
+            position: "relative",
+        },
+        image: {
+            objectFit: "cover",
+            backgroundPosition: "center",
+			width: "100%",
         },
         ctaBlock: {
             container: {
-                height: "620px",
-                width: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-                backgroundImage: `url("${content.s014.backgroundImage}")`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                position: "absolute",
+                top: 0,
+                bottom: "40px",
+				left: 0,
+				right: 0,
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				flexDirection: "column",
             },
             textBlock: {
                 container: {

@@ -12,7 +12,15 @@ const getDeviceType = () => {
             "(min-width: 992px)"
         ).matches;
 
-        return { isMobile, isTablet, isDesktop };
+        const device = isMobile
+            ? "mobile"
+            : isTablet
+              ? "tablet"
+              : isDesktop
+                ? "desktop"
+                : "unknown";
+
+        return { isMobile, isTablet, isDesktop, device };
     }
 
     return { isMobile: true, isTablet: false, isDesktop: false };

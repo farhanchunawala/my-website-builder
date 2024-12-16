@@ -5,7 +5,9 @@ const ContentSchema = new mongoose.Schema(
 	{
 		contentId: { type: Number, unique: true },
 		route: String,
-		content: { type: mongoose.Schema.Types.Mixed, default: {} }
+		config: { type: mongoose.Schema.Types.Mixed, default: {} },
+		content: { type: mongoose.Schema.Types.Mixed, default: {} },
+		styles: { type: mongoose.Schema.Types.Mixed, default: {} }
 	},
 	{ timestamps: true }
 );

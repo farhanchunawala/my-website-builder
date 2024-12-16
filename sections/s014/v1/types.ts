@@ -11,6 +11,7 @@ interface Content {
 
 interface Styles {
 	container: React.CSSProperties;
+	image: React.CSSProperties;
 	ctaBlock: CtaBlock.Styles
 }
 

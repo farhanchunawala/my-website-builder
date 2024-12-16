@@ -6,11 +6,13 @@ import type Props from "./types";
 import Box from "@mui/material/Box";
 // import { Box } from '@mui/system';
 import CtaBlock from "@/components/CtaBlock01/v1/builder";
+import Image from "next/image";
 
 const Section014: React.FC<Props> = ({
     styles,
     content,
     config,
+    variables,
     id,
 }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
@@ -28,6 +30,15 @@ const Section014: React.FC<Props> = ({
 
     return (
         <Box component="section" sx={styles.container} id={id}>
+			<Image
+                style={{
+                    ...styles?.image,
+                }}
+                src={`${variables.imageDir}/${content?.imageUrl}`}
+                alt="Hero Banner"
+                width={1200}
+                height={620}
+            />
             <CtaBlock
                 content={content?.ctaBlock}
                 config={config?.ctaBlock}

@@ -26,6 +26,7 @@ type Props = {
 	config: Config;
     content: Content;
     styles: Styles;
+	styleKit: object;
 	id: string | undefined;
 }
 
