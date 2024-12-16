@@ -24,7 +24,7 @@ const Section013: React.FC<Props> = ({ styles, content, config }) => {
     }
 
     return (
-        <header className="s013 container" style={styles.container}>
+        <header className="s013 container" style={styles?.container}>
             <Image
                 src={content.imageUrl}
                 alt={""}
@@ -42,13 +42,13 @@ const Section013: React.FC<Props> = ({ styles, content, config }) => {
                 <NavLinks
                     content={content.navlinks}
                     config={config.navlinks}
-                    styles={styles.navlinks}
+                    styles={styles?.navlinks}
                 />
             )}
             {isDesktop ? (
                 <Button
                     variant="contained"
-                    sx={styles.button.container}
+                    sx={styles?.button?.container}
                 >
                     { content.buttonText }
                 </Button>

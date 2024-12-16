@@ -14,6 +14,7 @@ type Props = {
     config: Config;
     content: Content;
     styles: Styles;
+	styleKit: object;
 };
 
 export type { Config, Content, Styles };

@@ -7,13 +7,15 @@ const CtaBlock: React.FC<Props> = ({
     content,
 	config,
     styles,
+	styleKit
 }) => {
 	return (
-		<Box sx={styles?.container} >
+		<Box sx={{...styles?.container}} >
 			<TextBlock
 				content={content?.textBlock}
 				config={config?.textBlock}
 				styles={styles?.textBlock}
+				styleKit={styleKit}
 			/>
 			<Button
 				variant="contained"

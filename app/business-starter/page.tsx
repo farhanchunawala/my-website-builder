@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 // import "./page.css";
 import variables from "./variables";
 // import { content } from "./content";
-import config from "./config";
+// import config from "./config";
 import { useCustomStyles } from "./customStyles";
 import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "./theme";
+import { theme, useTheme } from "./theme";
 import Box from "@mui/material/Box";
 import axios from "axios";
 import { usePathname } from "next/navigation";
@@ -20,16 +20,19 @@ import Section016 from "@/sections/s016/v1";
 import Section017 from "@/sections/s017/v1";
 import Section018 from "@/sections/s018/v1";
 
-// const imageDir = "starter";
+const imageDir = "starter";
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default function Home() {
+	const styleKit = useTheme();
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
     const [mounted, setMounted] = useState(false);
-    const { styles } = useCustomStyles();
+    // const { styles } = useCustomStyles();
+    const [config, setConfig] = useState(null);
     const [content, setContent] = useState(null);
+    const [styles, setStyles] = useState(null);
 
     const pathname = usePathname().slice(1);
 
@@ -57,8 +60,12 @@ export default function Home() {
             const response = await axios.get(
                 `${baseUrl}/api/contents/${pathname}`
             );
-			// const s013 = evalObject(response.data.content);
+			setConfig(response.data.config);
             setContent(response.data.content);
+			setStyles(response.data.styles);
+			// setStyles(eval(response.data.styles));
+			// setStyles(eval(`(${response.data.styles})`));
+			// const s013 = evalObject(response.data.content);
         } catch (err) {
             console.error(err);
         }
@@ -76,6 +83,25 @@ export default function Home() {
         return null;
     }
 
+// 	const styleTemplate = `
+// {
+//     "height": "620px",
+//     "width": "100%",
+//     "display": "flex",
+//     "alignItems": "center",
+//     "justifyContent": "center",
+//     "flexDirection": "column",
+//     "backgroundImage": "url('${content.s014.backgroundImage}')",
+//     "backgroundSize": "cover",
+//     "backgroundPosition": "center"
+// }
+// `;
+
+// // Use eval to parse the template string into a JavaScript object
+// const sx = eval(`(${styleTemplate})`);
+
+// console.log(sx);
+	
     return (
         <ThemeProvider theme={theme}>
             <Box className="page" sx={styles.page}>
@@ -88,6 +114,8 @@ export default function Home() {
                     styles={styles.s014}
                     content={content.s014}
                     config={config.s014}
+					variables={variables}
+					styleKit={styleKit}
                     id="s014"
                 />
                 <Section015
