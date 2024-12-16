@@ -1,5 +1,6 @@
 import { useResponsive } from "@/app/hooks/useResponsive";
 import { theme, useTheme } from "./theme";
+import { Styles as S013 } from "@/sections/s013/v1/types";
 import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S019 } from "@/sections/s019/v1/types";
 import { Styles as S020 } from "@/sections/s020/v1/types";
@@ -13,11 +14,55 @@ const useCustomStyles = () => {
 		padding: layout.sectionPadding,
 	}
 	
+	const s013: S013 = {
+        container: {
+			backgroundColor: colors.foreground,
+            position: "fixed",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            zIndex: 5,
+			// paddingBottom: theme.spacing(responsive(2, 2, 2.5)),
+            // backgroundColor: "transparent",
+            width: "100%",
+            // height: theme.spacing(responsive(16, 16, 20)),
+            // padding: theme.spacing(0, responsive(1, 2, 4)),
+            margin: "0 auto",
+            maxWidth: "1140px",
+        },
+        navlinks: {
+            container: {
+                flexDirection: responsive("column", "column", "row"),
+                alignItems: "center",
+                position: responsive(
+                    "absolute",
+                    "absolute",
+                    "static"
+                ),
+                top: theme.spacing(16),
+                left: 0,
+                right: 0,
+                zIndex: 10,
+                backgroundColor: colors.foreground,
+            },
+            link: {
+                ...texts.linkText,
+                padding: theme.spacing(
+                    responsive(3, 3, 2),
+                    responsive(6, 6, 4)
+                ),
+                // opacity: tokens.textLight,
+            },
+        },
+        button: {},
+        image: {},
+    };
+	
 	const s016: S016 = {
         container: {
-			marginTop: "80px", //temporary untill we fix or add the navbar
 			backgroundColor: colors.secondary,
 			padding: theme.spacing(responsive(0, 0, 3)),
+			paddingTop: theme.spacing(responsive(10, 10, 20)),
 			display: responsive("", "", "flex"),
 			flexDirection: responsive("", "", "row-reverse"),
 		},
@@ -209,6 +254,7 @@ const useCustomStyles = () => {
 	
 	const styles = {
 		page: pageStyles,
+		s013: s013,
 		s016: s016,
 		s019: s019,
 		s020: s020,

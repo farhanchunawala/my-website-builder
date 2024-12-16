@@ -2,8 +2,36 @@
 
 const imageDir = "zeal-consult";
 
+const s013 = {
+	// Any Dimension
+	imageUrl: `/images/${imageDir}/zc-logo.svg`,
+	navlinks: [
+		{
+			text: "home",
+			link: "home"
+		},
+		{
+			text: "services",
+			link: "services"
+		},
+		{
+			text: "ABOUT",
+			link: "about-us"
+		},
+		{
+			text: "blog",
+			link: "blog"
+		},
+		{
+			text: "CONTACT",
+			link: "contact-us"
+		},
+	],
+	buttonText: "Get in Touch",
+}
+
 const s016 = {
-	imageUrl: `/images/${imageDir}/zeal_staff.avif`,
+	imageUrl: `zeal_staff.avif`,
 	ctaBlock: {
 		textBlock: [
 			"Empower Your Brand",
@@ -80,6 +108,7 @@ const s020 = {
 }
 
 const content = {
+	s013: s013,
 	s016: s016,
 	s019: s019,
 	s020: s020,
