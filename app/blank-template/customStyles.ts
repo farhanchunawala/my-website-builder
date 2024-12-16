@@ -1,4 +1,4 @@
-import { useResponsive } from "@/app/hooks/useResponsive";
+import { useResponsive } from "@/lib/hooks/useResponsive";
 import { useTheme } from "./theme";
 // import { Montserrat } from "next/font/google";
 

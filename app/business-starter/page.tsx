@@ -105,11 +105,11 @@ export default function Home() {
     return (
         <ThemeProvider theme={theme}>
             <Box className="page" sx={styles.page}>
-                <Section013
+                {/* <Section013
                     styles={styles.s013}
                     content={content.s013}
                     config={config.s013}
-                />
+                /> */}
                 <Section014
                     styles={styles.s014}
                     content={content.s014}
@@ -118,7 +118,7 @@ export default function Home() {
 					styleKit={styleKit}
                     id="s014"
                 />
-                <Section015
+                {/* <Section015
                     styles={styles.s015}
                     content={content.s015}
                     config={config.s015}
@@ -149,7 +149,7 @@ export default function Home() {
                     content={content.s018}
                     config={config.s018}
                     id={content.s013.navlinks[3].link}
-                />
+                /> */}
             </Box>
         </ThemeProvider>
     );

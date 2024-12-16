@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 import { Typography } from "@/app/configs/global.types";
-import { useResponsive } from "@/app/hooks/useResponsive";
+import { useResponsive } from "@/lib/hooks/useResponsive";
 
 interface Tokens {
     lineHeight: string;
