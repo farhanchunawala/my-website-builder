@@ -7,7 +7,6 @@ import { Styles as S015 } from "@/sections/s015/v1/types";
 import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S017 } from "@/sections/s017/v1/types";
 import { Styles as S018 } from "@/sections/s018/v1/types";
-import { width } from "@mui/system";
 
 const useCustomStyles = () => {
     const { tokens, scale, layout, fonts, colors, texts, buttons } =

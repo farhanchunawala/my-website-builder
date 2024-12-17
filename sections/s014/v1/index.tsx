@@ -34,7 +34,7 @@ const Section014: React.FC<Props> = ({
             sx={{
                 padding: styleKit.layout.sectionGap,
                 marginBottom:
-                    styleKit.sp[styles?.container?.marginBottom],
+                    styleKit.scale?.[styles?.container?.marginBottom],
                 ...styles.container.css,
             }}
             id={id}
