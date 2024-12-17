@@ -126,12 +126,44 @@ const s021 = {
 	],
 }
 
+const s022 = {
+	textBlock: [
+		"SECTORS",
+		"Our Expertise Across Various Economic Sectors"
+	],
+	image1: {
+		imageUrl: "technology.avif",
+	},
+	image2: {
+		imageUrl: "technology.avif",
+	},
+	image3: {
+		imageUrl: "technology.avif",
+	},
+	image4: {
+		imageUrl: "technology.avif",
+	},
+	image5: {
+		imageUrl: "technology.avif",
+	},
+	image6: {
+		imageUrl: "technology.avif",
+	},
+	image7: {
+		imageUrl: "technology.avif",
+	},
+	image8: {
+		imageUrl: "technology.avif",
+	},
+}
+
 const content = {
 	s013: s013,
 	s016: s016,
 	s019: s019,
 	s020: s020,
 	s021: s021,
+	s022: s022,
 }
 
 export default content;

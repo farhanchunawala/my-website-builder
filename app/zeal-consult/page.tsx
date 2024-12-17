@@ -14,6 +14,7 @@ import Section016 from "@/sections/s016/v1";
 import Section019 from "@/sections/s019/v1";
 import Section020 from "@/sections/s020/v1";
 import Section021 from "@/sections/s021/v1";
+import Section022 from "@/sections/s022/v1";
 
 export default function Home() {
     const { isMobile, isTablet, isDesktop } = useSelector(
@@ -62,6 +63,13 @@ export default function Home() {
                     config={config.s021}
                     content={content.s021}
                     id="s021"
+                />
+                <Section022
+                    styles={styles.s022}
+                    config={config.s022}
+                    content={content.s022}
+					variables={variables}
+                    id="s022"
                 />
             </Box>
         </ThemeProvider>
