@@ -3,7 +3,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 
 type Styles = {
-    [key: string]: string | null | undefined | Record<string, string>;
+    imports?: string[];
+    [key: string]: string | null | undefined | Record<string, string> | string[];
 };
 
 type StyleKit = Record<string, Record<string, string | undefined>>;
@@ -16,6 +17,18 @@ const useMappedStyles = (styles: Styles, styleKit: StyleKit) => {
     return useMemo(() => {
         const result: Record<string, string | undefined> = {};
 
+		// Iterate through the array of imports
+		if (styles.imports) {
+			styles.imports.forEach((importKey: string) => {
+                const importedStyles = styleKit[importKey];
+                if (importedStyles) {
+                    Object.entries(importedStyles).forEach(([key, value]) => {
+                        result[key] = value;
+                    });
+                }
+            });
+		}
+		
         // Iterate through the general styles
         Object.entries(styles).forEach(([key, value]) => {
             if (

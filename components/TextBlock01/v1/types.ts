@@ -7,7 +7,7 @@ type Content = string[];
 
 type Styles = {
     container: Record<string, any>;
-    texts: React.CSSProperties[];
+    texts: Record<string, any>[];
 };
 
 type Props = {
