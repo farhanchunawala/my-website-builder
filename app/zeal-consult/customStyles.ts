@@ -5,6 +5,7 @@ import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S019 } from "@/sections/s019/v1/types";
 import { Styles as S020 } from "@/sections/s020/v1/types";
 import { Styles as S021 } from "@/sections/s021/v1/types";
+import { Styles as S022 } from "@/sections/s022/v1/types";
 import { color, display, fontWeight, letterSpacing, lineHeight, padding, textAlign } from "@mui/system";
 
 const useCustomStyles = () => {
@@ -317,6 +318,15 @@ const useCustomStyles = () => {
 		},
 	};
 	
+	const s022 = {
+		container: {
+			
+		},
+		textBlock: {
+			
+		},
+	};
+	
 	const styles = {
 		page: pageStyles,
 		s013: s013,
@@ -324,6 +334,7 @@ const useCustomStyles = () => {
 		s019: s019,
 		s020: s020,
 		s021: s021,
+		s022: s022,
 	}
 
 	return { styles };

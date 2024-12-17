@@ -73,12 +73,24 @@ const s021 = {
 	],
 }
 
+const s022 = {
+	textBlock: [
+		{
+			component: "h3",
+		},
+		{
+			component: "h2",
+		},
+	],
+}
+
 const config = {
 	s013: s013,
 	s016: s016,
 	s019: s019,
 	s020: s020,
 	s021: s021,
+	s022: s022,
 }
 
 export default config;
