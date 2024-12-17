@@ -6,7 +6,7 @@ import InputBase from "@mui/material/InputBase";
 // import { TextareaAutosize as BaseTextareaAutosize } from "@mui/base/TextareaAutosize";
 // import { styled } from "@mui/system";
 // import Typography from "@mui/material/Typography";
-import useEvent from "@/app/hooks/useEvent";
+import useEvent from "@/lib/hooks/useEvent";
 
 const TextBlock: React.FC<Props> = ({ content, config, styles }) => {
     const { hoveredElement, focusedElement, createHandlers } =

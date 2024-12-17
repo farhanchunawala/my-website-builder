@@ -1,4 +1,4 @@
-import { useResponsive } from "@/app/hooks/useResponsive";
+import { useResponsive } from "@/lib/hooks/useResponsive";
 import { useTheme } from "./theme";
 import { Styles as S013 } from "@/sections/s013/v1/types";
 import { Styles as S014 } from "@/sections/s014/v1/types";

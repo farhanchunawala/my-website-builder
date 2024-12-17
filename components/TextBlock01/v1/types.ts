@@ -6,15 +6,15 @@ type Config = {
 type Content = string[];
 
 type Styles = {
-    container: React.CSSProperties;
-    texts: React.CSSProperties[];
+    container: Record<string, any>;
+    texts: Record<string, any>[];
 };
 
 type Props = {
     config: Config;
     content: Content;
     styles: Styles;
-	styleKit: object;
+	styleKit: Record<string, any>;
 };
 
 export type { Config, Content, Styles };

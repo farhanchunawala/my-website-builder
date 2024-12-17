@@ -33,10 +33,11 @@ const responsiveSlice = createSlice({
     initialState,
     reducers: {
         updateDeviceType: (state) => {
-            const { isMobile, isTablet, isDesktop } = getDeviceType();
+            const { isMobile, isTablet, isDesktop, device } = getDeviceType();
             state.isMobile = isMobile;
             state.isTablet = isTablet;
             state.isDesktop = isDesktop;
+			state.device = device;
         },
     },
 });

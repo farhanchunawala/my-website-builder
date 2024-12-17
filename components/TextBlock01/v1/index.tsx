@@ -1,8 +1,10 @@
-import { useSelector } from "react-redux";
-import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+// import useMappedStyles from "@/lib/hooks/useMappedStyles";
+import { mapStyles } from "@/lib/helpers/mapStyles";
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/store";
 
 const TextBlock: React.FC<Props> = ({
     content = [],
@@ -13,40 +15,20 @@ const TextBlock: React.FC<Props> = ({
     },
     styleKit,
 }) => {
-    const { isMobile, isTablet, isDesktop, device } = useSelector(
-        (state: RootState) => state.responsive
+    const device = useSelector(
+        (state: RootState) => state.responsive.device
     );
 
     return (
         <Stack
             className="textBlock01"
-            sx={{
-                marginBottom:
-                    styleKit?.sp?.[styles?.container?.marginBottom],
-                ...styles?.container?.css,
-                ...styles?.container?.[device]?.css,
-                // ...(isTablet && {
-                // 	...styles?.container?.tablet?.css,
-                // }),
-                // ...(isDesktop && {
-                // 	...styles?.container?.desktop?.css,
-                // }),
-                // ...(isTablet ? styles?.container?.tablet : {}),
-                // ...(isDesktop ? styles?.container?.desktop : {}),
-                // ...styles?.container?.[
-                //     isDesktop ? "desktop" : isTablet ? "tablet" : null
-                // ],
-                // ...(isDesktop
-                //     ? styles?.container?.desktop
-                //     : isTablet
-                //       ? styles?.container?.tablet
-                //       : {}),
-            }}
+            sx={mapStyles(styles?.container, styleKit, device)}
         >
             {content.map((item, index) => (
                 <Typography
                     key={index}
-                    sx={styles.texts[index]}
+                    // sx={styles.texts[index]}
+                    sx={mapStyles(styles.texts[index], styleKit, device)}
                     component={config[index]?.element}
                 >
                     {item}

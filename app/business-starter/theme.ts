@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 import { Typography } from "@/app/configs/global.types";
-import { useResponsive } from "@/app/hooks/useResponsive";
+import { useResponsive } from "@/lib/hooks/useResponsive";
 
 interface Layout {
     sectionGap: string;
@@ -101,7 +101,7 @@ const useTheme = () => {
         secondary: "#fff",
     };
 
-    const sp = {
+    const scale = {
         textBottom: theme.spacing(2),
         headingBottom: theme.spacing(4),
         ctaBlockGap1: theme.spacing(7),
@@ -263,7 +263,7 @@ const useTheme = () => {
         },
     };
 
-    return { tokens, sp, layout, fonts, colors, texts, buttons };
+    return { tokens, scale, layout, fonts, colors, texts, buttons };
 };
 
 export { theme, useTheme };

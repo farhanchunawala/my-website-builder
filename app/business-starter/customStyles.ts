@@ -1,4 +1,4 @@
-import { useResponsive } from "@/app/hooks/useResponsive";
+import { useResponsive } from "@/lib/hooks/useResponsive";
 import { theme, useTheme } from "./theme";
 import { content } from "./content";
 import { Styles as S013 } from "@/sections/s013/v1/types";
@@ -10,7 +10,7 @@ import { Styles as S018 } from "@/sections/s018/v1/types";
 import { width } from "@mui/system";
 
 const useCustomStyles = () => {
-    const { tokens, sp, layout, fonts, colors, texts, buttons } =
+    const { tokens, scale, layout, fonts, colors, texts, buttons } =
         useTheme();
     const { responsive } = useResponsive();
 
@@ -89,7 +89,7 @@ const useCustomStyles = () => {
                 container: {
                     alignItems: "center",
                     maxWidth: responsive("80%", "70%", "56%"),
-                    marginBottom: sp.ctaBlockGap1,
+                    marginBottom: scale.ctaBlockGap1,
                 },
                 texts: [
                     {
@@ -100,7 +100,7 @@ const useCustomStyles = () => {
                         ),
                         color: "white",
                         textAlign: "center",
-                        marginBottom: sp.textBottom,
+                        marginBottom: scale.textBottom,
                     },
                     {
                         ...responsive(
@@ -134,7 +134,7 @@ const useCustomStyles = () => {
                     ...texts.accentText,
                     textAlign: "center",
                     textShadow: "0px 1px 1px #0003",
-                    marginBottom: sp.textBottom,
+                    marginBottom: scale.textBottom,
                     opacity: tokens.textLight,
                 },
                 {
@@ -176,7 +176,7 @@ const useCustomStyles = () => {
             textBlock: {
                 container: {
                     width: "100%",
-                    marginBottom: sp.ctaBlockGap2,
+                    marginBottom: scale.ctaBlockGap2,
                 },
                 texts: [
                     {
@@ -187,12 +187,12 @@ const useCustomStyles = () => {
                             "center",
                             "left"
                         ),
-                        marginBottom: sp.textBottom,
+                        marginBottom: scale.textBottom,
                         opacity: tokens.textLight,
                     },
                     {
                         ...texts.headingJumboSmall,
-                        marginBottom: sp.headingBottom,
+                        marginBottom: scale.headingBottom,
                         textAlign: responsive(
                             "center",
                             "center",
@@ -251,7 +251,7 @@ const useCustomStyles = () => {
             textBlock: {
                 container: {
                     width: "100%",
-                    marginBottom: sp.ctaBlockGap2,
+                    marginBottom: scale.ctaBlockGap2,
                 },
                 texts: [
                     {
@@ -262,12 +262,12 @@ const useCustomStyles = () => {
                             "center",
                             "left"
                         ),
-                        marginBottom: sp.textBottom,
+                        marginBottom: scale.textBottom,
                         opacity: tokens.textLight,
                     },
                     {
                         ...texts.headingJumboSmall,
-                        marginBottom: sp.headingBottom,
+                        marginBottom: scale.headingBottom,
                         textAlign: responsive(
                             "center",
                             "center",
@@ -325,7 +325,7 @@ const useCustomStyles = () => {
                 {
                     ...texts.accentText,
                     textAlign: "center",
-                    marginBottom: sp.textBottom,
+                    marginBottom: scale.textBottom,
                     opacity: tokens.textLight,
                 },
                 {
@@ -351,7 +351,7 @@ const useCustomStyles = () => {
                 texts: [
                     {
                         ...texts.articleHeading,
-                        marginBottom: sp.headingBottom,
+                        marginBottom: scale.headingBottom,
                         textAlign: responsive(
                             "center",
                             "center",
@@ -365,7 +365,7 @@ const useCustomStyles = () => {
                     },
                     {
                         ...texts.label,
-                        marginBottom: sp.textBottom,
+                        marginBottom: scale.textBottom,
                         opacity: tokens.textLight,
                         textAlign: responsive(
                             "center",
@@ -408,7 +408,7 @@ const useCustomStyles = () => {
             },
             textBlock: {
                 container: {
-                    marginBottom: sp.ctaBlockGap1,
+                    marginBottom: scale.ctaBlockGap1,
                 },
                 texts: [
                     {
@@ -418,7 +418,7 @@ const useCustomStyles = () => {
                             texts.headingJumboSmall
                         ),
                         lineHeight: "52px",
-                        marginBottom: sp.textBottom,
+                        marginBottom: scale.textBottom,
                         textAlign: "center",
                     },
                     {

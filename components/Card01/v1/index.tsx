@@ -1,7 +1,7 @@
 // import "./styles.scss";
 import Image from "next/image";
 import TextBlock from "@/components/TextBlock01/v1";
-import { useResponsive } from "@/app/hooks/useResponsive";
+import { useResponsive } from "@/lib/hooks/useResponsive";
 import type Props from "./types";
 
 const Card: React.FC<Props> = ({ classNames = "", styles, data }) => {
