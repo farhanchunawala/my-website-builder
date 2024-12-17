@@ -1,10 +1,6 @@
 import type Props from "./types";
-import Stack from "@mui/material/Stack";
+import Stack from '@mui/material/Stack';
 import Typography from "@mui/material/Typography";
-// import useMappedStyles from "@/lib/hooks/useMappedStyles";
-import { mapStyles } from "@/lib/helpers/mapStyles";
-import { useSelector } from "react-redux";
-import { RootState } from "@/lib/store";
 
 const TextBlock: React.FC<Props> = ({
     content = [],
@@ -13,25 +9,16 @@ const TextBlock: React.FC<Props> = ({
         container: {},
         texts: [],
     },
-    styleKit,
 }) => {
-    const device = useSelector(
-        (state: RootState) => state.responsive.device
-    );
-
     return (
-        <Stack
-            className="textBlock01"
-            sx={mapStyles(styles?.container, styleKit, device)}
-        >
+        <Stack className="textBlock01" sx={styles.container}>
             {content.map((item, index) => (
                 <Typography
                     key={index}
-                    // sx={styles.texts[index]}
-                    sx={mapStyles(styles.texts[index], styleKit, device)}
+					sx={styles.texts[index]}
                     component={config[index]?.element}
                 >
-                    {item}
+					{item}
                 </Typography>
             ))}
         </Stack>

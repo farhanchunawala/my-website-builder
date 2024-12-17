@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
 
-const Section0: React.FC<Props> = ({ styles, data }) => {
+const Section0: React.FC<Props> = ({ styles, config, content, id }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -20,7 +20,7 @@ const Section0: React.FC<Props> = ({ styles, data }) => {
 		<Box
             component="section"
             sx={styles?.container}
-            className="section0"
+            id={id}
         >
 			
 		</Box>
