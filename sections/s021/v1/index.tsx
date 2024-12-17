@@ -22,6 +22,7 @@ const Section021: React.FC<Props> = ({ styles, config, content, id }) => {
             component="section"
             sx={styles?.container}
         >
+			
 			<TextBlock
 			content={content?.textBlock1}
 			config={config?.textBlock}

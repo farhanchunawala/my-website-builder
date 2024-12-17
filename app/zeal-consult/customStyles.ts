@@ -5,7 +5,7 @@ import { Styles as S016 } from "@/sections/s016/v1/types";
 import { Styles as S019 } from "@/sections/s019/v1/types";
 import { Styles as S020 } from "@/sections/s020/v1/types";
 import { Styles as S021 } from "@/sections/s021/v1/types";
-import { color, lineHeight, padding } from "@mui/system";
+import { color, display, fontWeight, letterSpacing, lineHeight, padding, textAlign } from "@mui/system";
 
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
@@ -267,10 +267,52 @@ const useCustomStyles = () => {
 	};
 	
 	const s021 = {
+		container: {
+			padding: responsive(
+				theme.spacing(6, 2), 
+				theme.spacing(6, 2), 
+				theme.spacing(7.5, 3)
+			),
+			display: "flex",
+			flexWrap: "wrap",
+			justifyContent: "space-between",
+			alignItem: "center",
+			textAlign: "center",
+			gridRowGap: theme.spacing(4),
+			// gridColumnGap: theme.spacing(4),
+		},
 		textBlock: {
+			container: {
+				// display: "flex",
+				// flexDirection: "row",
+				// flexDirection: "columnn",
+				// justifyContent: "space-between",
+				// alignItem: "center",
+			},
 			texts: [
-				...texts.heading2,
-				
+				{
+					...responsive(
+						texts.heading2,
+						texts.heading2,
+						texts.SectionHeading,
+					),
+					fontWeight: "700",  
+					letterSpacing: "-1px",
+					marginBottom: theme.spacing(1.25),
+					// textAlign: "center",
+				},
+				{
+					...responsive(
+						texts.paragraph4,
+						texts.paragraph4,
+						texts.heading4,
+					),
+					fontWeight: "600",
+					opacity: 0.5,
+					letterSpacing: "-1px"
+					// justifySelf: "space-between",
+					// textAlign: "center",
+				},
 			],
 		},
 	};
