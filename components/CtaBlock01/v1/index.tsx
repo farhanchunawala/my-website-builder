@@ -1,6 +1,6 @@
 import type Props from "./types";
 import Box from '@mui/material/Box';
-import TextBlock from "@/components/TextBlock01/v2";
+import TextBlock from "@/components/TextBlock01/v1";
 import Button from "@mui/material/Button";
 
 const CtaBlock: React.FC<Props> = ({

@@ -31,48 +31,64 @@ const Section022: React.FC<Props> = ({ styles, config, content, variables, id })
 			<Image
 				style={styles?.image1}
 				src={`${variables.imageDir}/${content?.imageUrl}`}
+				width={500}
+				height={500}
 				alt="firexio"
 				layout="responsive"
 			/>
 			<Image
 				style={styles?.image2}
 				src={`${variables.imageDir}/${content?.imageUrl}`}
+				width={500}
+				height={500}
 				alt="firexio"
 				layout="responsive"
 			/>
 			<Image
 				style={styles?.image3}
 				src={`${variables.imageDir}/${content?.imageUrl}`}
+				width={500}
+				height={500}
 				alt="firexio"
 				layout="responsive"
 			/>
 			<Image
 				style={styles?.image4}
 				src={`${variables.imageDir}/${content?.imageUrl}`}
+				width={500}
+				height={500}
 				alt="firexio"
 				layout="responsive"
 			/>
 			<Image
 				style={styles?.imag5}
 				src={`${variables.imageDir}/${content?.imageUrl}`}
+				width={500}
+				height={500}
 				alt="firexio"
 				layout="responsive"
 			/>
 			<Image
 				style={styles?.image6}
 				src={`${variables.imageDir}/${content?.imageUrl}`}
+				width={500}
+				height={500}
 				alt="firexio"
 				layout="responsive"
 			/>
 			<Image
 				style={styles?.image7}
 				src={`${variables.imageDir}/${content?.imageUrl}`}
+				width={500}
+				height={500}
 				alt="firexio"
 				layout="responsive"
 			/>
 			<Image
 				style={styles?.image8}
 				src={`${variables.imageDir}/${content?.imageUrl}`}
+				width={500}
+				height={500}
 				alt="firexio"
 				layout="responsive"
 			/>
