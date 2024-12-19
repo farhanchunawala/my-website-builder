@@ -8,7 +8,13 @@ import useEvent from "@/lib/hooks/useEvent";
 import AutosizeInput from "react-input-autosize";
 import { useState } from "react";
 
-const CtaBlock: React.FC<Props> = ({ content, config, styles, id }) => {
+const CtaBlock: React.FC<Props> = ({
+    content,
+    config,
+    styles,
+    styleKit,
+    id,
+}) => {
     const [value, setValue] = useState(content?.buttonText);
     const { hoveredElement, focusedElement, createHandlers } =
         useEvent();
@@ -28,6 +34,7 @@ const CtaBlock: React.FC<Props> = ({ content, config, styles, id }) => {
                 content={content?.textBlock}
                 config={config?.textBlock}
                 styles={styles?.textBlock}
+                styleKit={styleKit}
             />
             <Button
                 variant="contained"

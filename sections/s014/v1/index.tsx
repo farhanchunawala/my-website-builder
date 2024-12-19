@@ -52,7 +52,7 @@ const Section014: React.FC<Props> = ({
                 content={content?.ctaBlock}
                 config={config?.ctaBlock}
                 styles={styles?.ctaBlock}
-				styleKit={styleKit}
+                styleKit={styleKit}
             />
         </Box>
     );

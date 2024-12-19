@@ -9,7 +9,7 @@ import variables from "../variables";
 import { useCustomStyles } from "../customStyles";
 import { ThemeProvider } from "@mui/material/styles";
 // import { ThemeProvider } from '@mui/system';
-import { theme } from "../theme";
+import { theme, useTheme } from "../theme";
 import { usePathname } from "next/navigation";
 import axios from "axios";
 import Box from "@mui/material/Box";
@@ -25,6 +25,7 @@ import Section017 from "@/sections/s017/v1/builder";
 import Section018 from "@/sections/s018/v1/builder";
 
 export default function Home() {
+    const styleKit = useTheme();
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -136,6 +137,7 @@ export default function Home() {
                         content={content.s014}
                         config={config.s014}
                         variables={variables}
+						styleKit={styleKit}
                         id="s014"
                     />
                     <Section015

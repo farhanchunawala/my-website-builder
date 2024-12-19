@@ -24,7 +24,7 @@ const imageDir = "starter";
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default function Home() {
-	const styleKit = useTheme();
+    const styleKit = useTheme();
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -60,12 +60,12 @@ export default function Home() {
             const response = await axios.get(
                 `${baseUrl}/api/contents/${pathname}`
             );
-			setConfig(response.data.config);
+            setConfig(response.data.config);
             setContent(response.data.content);
-			setStyles(response.data.styles);
-			// setStyles(eval(response.data.styles));
-			// setStyles(eval(`(${response.data.styles})`));
-			// const s013 = evalObject(response.data.content);
+            setStyles(response.data.styles);
+            // setStyles(eval(response.data.styles));
+            // setStyles(eval(`(${response.data.styles})`));
+            // const s013 = evalObject(response.data.content);
         } catch (err) {
             console.error(err);
         }
@@ -83,28 +83,35 @@ export default function Home() {
         return null;
     }
 
-// 	const styleTemplate = `
-// {
-//     "height": "620px",
-//     "width": "100%",
-//     "display": "flex",
-//     "alignItems": "center",
-//     "justifyContent": "center",
-//     "flexDirection": "column",
-//     "backgroundImage": "url('${content.s014.backgroundImage}')",
-//     "backgroundSize": "cover",
-//     "backgroundPosition": "center"
-// }
-// `;
+    // 	const styleTemplate = `
+    // {
+    //     "height": "620px",
+    //     "width": "100%",
+    //     "display": "flex",
+    //     "alignItems": "center",
+    //     "justifyContent": "center",
+    //     "flexDirection": "column",
+    //     "backgroundImage": "url('${content.s014.backgroundImage}')",
+    //     "backgroundSize": "cover",
+    //     "backgroundPosition": "center"
+    // }
+    // `;
 
-// // Use eval to parse the template string into a JavaScript object
-// const sx = eval(`(${styleTemplate})`);
+    // // Use eval to parse the template string into a JavaScript object
+    // const sx = eval(`(${styleTemplate})`);
 
-// console.log(sx);
-	
+    // console.log(sx);
+
     return (
         <ThemeProvider theme={theme}>
-            <Box className="page" sx={styles.page}>
+            <Box
+                className="page"
+                sx={{
+                    ...styles.page,
+                    // transform: "scale(0.8)",
+                    // transformOrigin: "top left",
+                }}
+            >
                 {/* <Section013
                     styles={styles.s013}
                     content={content.s013}
@@ -114,8 +121,8 @@ export default function Home() {
                     styles={styles.s014}
                     content={content.s014}
                     config={config.s014}
-					variables={variables}
-					styleKit={styleKit}
+                    variables={variables}
+                    styleKit={styleKit}
                     id="s014"
                 />
                 {/* <Section015
