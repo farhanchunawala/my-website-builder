@@ -323,7 +323,12 @@ const useCustomStyles = () => {
 			
 		},
 		textBlock: {
-			
+			container: {},
+			texts: [
+				{
+					
+				}
+			]
 		},
 	};
 	

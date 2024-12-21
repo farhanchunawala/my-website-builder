@@ -13,6 +13,7 @@ const Section014: React.FC<Props> = ({
     content,
     config,
     variables,
+    styleKit,
     id,
 }) => {
     const { isMobile, isTablet, isDesktop } = useSelector(
@@ -29,8 +30,17 @@ const Section014: React.FC<Props> = ({
     }
 
     return (
-        <Box component="section" sx={styles.container} id={id}>
-			<Image
+        <Box
+            component="section"
+            sx={{
+                padding: styleKit.layout.sectionGap,
+                marginBottom:
+                    styleKit.scale?.[styles?.container?.marginBottom],
+                ...styles.container.css,
+            }}
+            id={id}
+        >
+            <Image
                 style={{
                     ...styles?.image,
                 }}
@@ -43,6 +53,7 @@ const Section014: React.FC<Props> = ({
                 content={content?.ctaBlock}
                 config={config?.ctaBlock}
                 styles={styles?.ctaBlock}
+                styleKit={styleKit}
                 id={id}
             />
         </Box>

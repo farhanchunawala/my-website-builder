@@ -34,7 +34,7 @@ const Section014: React.FC<Props> = ({
             sx={{
                 padding: styleKit.layout.sectionGap,
                 marginBottom:
-                    styleKit.sp[styles?.container?.marginBottom],
+                    styleKit.scale?.[styles?.container?.marginBottom],
                 ...styles.container.css,
             }}
             id={id}
@@ -52,7 +52,7 @@ const Section014: React.FC<Props> = ({
                 content={content?.ctaBlock}
                 config={config?.ctaBlock}
                 styles={styles?.ctaBlock}
-				styleKit={styleKit}
+                styleKit={styleKit}
             />
         </Box>
     );

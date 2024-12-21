@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Stack from "@mui/material/Stack";
 import InputBase from "@mui/material/InputBase";
@@ -7,8 +8,17 @@ import InputBase from "@mui/material/InputBase";
 // import { styled } from "@mui/system";
 // import Typography from "@mui/material/Typography";
 import useEvent from "@/lib/hooks/useEvent";
+import { mapStyles } from "@/lib/helpers/mapStyles";
 
-const TextBlock: React.FC<Props> = ({ content, config, styles }) => {
+const TextBlock: React.FC<Props> = ({
+    content,
+    config,
+    styles,
+    styleKit,
+}) => {
+    const device = useSelector(
+        (state: RootState) => state.responsive.device
+    );
     const { hoveredElement, focusedElement, createHandlers } =
         useEvent();
 
@@ -16,13 +26,7 @@ const TextBlock: React.FC<Props> = ({ content, config, styles }) => {
         <Stack
             className="textBlock01"
             {...createHandlers("23")}
-            sx={{
-                ...styles.container,
-                outline:
-                    hoveredElement === "23" || focusedElement === "23"
-                        ? "1px solid #007BFF"
-                        : "none",
-            }}
+            sx={mapStyles(styles?.container, styleKit, device)}
         >
             {content.map((item, index) => (
                 <InputBase
@@ -31,8 +35,13 @@ const TextBlock: React.FC<Props> = ({ content, config, styles }) => {
                     multiline
                     {...createHandlers(index)}
                     sx={{
-                        ...styles.texts[index],
-						width: "100%",
+                        // ...styles.texts[index],
+						...mapStyles(
+							styles?.texts?.[index],
+							styleKit,
+							device
+						),
+                        width: "100%",
                         outline:
                             hoveredElement === index ||
                             focusedElement === index

@@ -4,7 +4,7 @@ type Styles = {
         | string
         | null
         | undefined
-        | Record<string, string>
+        | Record<string, string | string[] | undefined>
         | string[];
 };
 
@@ -19,10 +19,37 @@ export const mapStyles = (
 ): Record<string, string | undefined> => {
     const result: Record<string, string | undefined> = {};
 
-    // Iterate through the array of imports
-    if (styles.imports) {
-        styles.imports.forEach((importKey: string) => {
-            const importedStyles = styleKit[importKey];
+    // Helper function: Process Style Entries
+    const processStyles = (
+        styleEntries: Record<string, string | undefined>
+    ) => {
+        Object.entries(styleEntries).forEach(([key, value]) => {
+            if (key !== "imports") {
+                if (typeof value === "string") {
+                    const segments = value.split(".");
+                    if (
+                        segments[0] === "tokens" ||
+                        segments[0] === "colors" ||
+                        segments[0] === "scale" ||
+                        segments[0] === "layout"
+                    ) {
+                        result[key] =
+                            styleKit?.[segments[0]]?.[segments[1]];
+                    } else {
+                        result[key] = value;
+                    }
+                }
+            }
+        });
+    };
+
+    // Helper function: Process Imports
+    const processImports = (imports: string[]) => {
+        imports.forEach((item: string) => {
+            const segments = item.split(".");
+            const importedStyles =
+                styleKit?.[segments[0]]?.[segments[1]];
+
             if (importedStyles) {
                 Object.entries(importedStyles).forEach(
                     ([key, value]) => {
@@ -31,32 +58,32 @@ export const mapStyles = (
                 );
             }
         });
+    };
+
+    // Step 1: Process General Imports
+    if (styles.imports) {
+        processImports(styles.imports);
     }
 
-    // Iterate through the general styles
-    Object.entries(styles).forEach(([key, value]) => {
-        if (
-            value !== null &&
-            value !== undefined &&
-            typeof value !== "object"
-        ) {
-            const segments = value.split(".");
+    // Step 2: Process General Styles
+    processStyles(styles as Record<string, string | undefined>);
 
-            if (segments[0] === "scale") {
-                result[key] = styleKit?.[segments[0]]?.[segments[1]];
-            } else {
-                result[key] = value;
-            }
+    // Step 3: Process Device-Specific Styles
+    const deviceStyles = styles[device as keyof Styles];
+    if (
+        deviceStyles &&
+        !Array.isArray(deviceStyles) &&
+        typeof deviceStyles === "object"
+    ) {
+        // Step 3.1: Process Device-Specific Imports
+        if (Array.isArray(deviceStyles.imports)) {
+            processImports(deviceStyles.imports as string[]);
         }
-    });
 
-    // Iterate through device-specific styles
-    if (styles[device as keyof Styles]) {
-        Object.entries(
-            styles[device as keyof Styles] as Record<string, string>
-        ).forEach(([key, value]) => {
-            result[key] = value;
-        });
+        // Step 3.2: Process Device-Specific Styles
+        processStyles(
+            deviceStyles as Record<string, string | undefined>
+        );
     }
 
     return result;

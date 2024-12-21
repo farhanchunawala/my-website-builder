@@ -1,6 +1,6 @@
 
 type Config = {
-	element: string;
+	element: React.ElementType;
 }[];
 
 type Content = string[];

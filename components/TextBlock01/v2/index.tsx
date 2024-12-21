@@ -1,10 +1,9 @@
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-// import useMappedStyles from "@/lib/hooks/useMappedStyles";
 import { mapStyles } from "@/lib/helpers/mapStyles";
-import { useSelector } from "react-redux";
-import { RootState } from "@/lib/store";
 
 const TextBlock: React.FC<Props> = ({
     content = [],
@@ -27,9 +26,12 @@ const TextBlock: React.FC<Props> = ({
             {content.map((item, index) => (
                 <Typography
                     key={index}
-                    // sx={styles.texts[index]}
-                    sx={mapStyles(styles.texts[index], styleKit, device)}
-                    component={config[index]?.element}
+                    sx={mapStyles(
+                        styles?.texts?.[index],
+                        styleKit,
+                        device
+                    )}
+                    component={config?.[index]?.element}
                 >
                     {item}
                 </Typography>
