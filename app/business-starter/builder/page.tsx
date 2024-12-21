@@ -2,6 +2,7 @@
 import { RootState } from "@/lib/store";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { produce } from "immer";
 import "./page.scss";
 import variables from "../variables";
 // import { content } from "../content";
@@ -33,6 +34,7 @@ export default function Home() {
     const { styles } = useCustomStyles();
     const [config, setConfig] = useState(null);
     const [content, setContent] = useState(null);
+    const [sidePanel, setSidePanel] = useState(false);
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     const pathname = usePathname().slice(1);
@@ -41,6 +43,17 @@ export default function Home() {
     // if (pathname.includes("/builder")) {
     // 	const path2 = pathname.replace("/builder", "");
     // }
+
+    const panelStyles = {
+        // transform: "scaleX(90vw)",
+        // scale: "0.9",
+        // transformOrigin: "top left",
+        // overflow: "hidden",
+    };
+
+    const toggleSidePanel = () => {
+        setSidePanel(!sidePanel);
+    };
 
     const fetchContent = async () => {
         try {
@@ -127,23 +140,56 @@ export default function Home() {
             alert("An unexpected error occurred.");
         }
     };
+	
+    const updateData = (path, newValue) => {
+        setContent((currentState) =>
+            produce(currentState, (draft) => {
+                const keys = path.split(".");
+                let obj = draft;
+                keys.slice(0, -1).forEach((key) => {
+                    obj = obj[key];
+                });
+                obj[keys[keys.length - 1]] = newValue;
+            })
+        );
+    };
 
     return (
         <ThemeProvider theme={theme}>
-            <Box className="page" sx={styles.page}>
-                <Box className="page-content">
+            <Box
+                className="page"
+                sx={
+                    {
+                        // transform: "scale(0.8)",
+                    }
+                }
+            >
+                <Box
+                    className="page-content"
+                    sx={{
+                        ...styles.page,
+                        ...(sidePanel ? panelStyles : {}),
+                    }}
+                >
+                    {/* <button onClick={toggleSidePanel}>
+                        {sidePanel ? "Close Panel" : "Open Panel"}
+                    </button> */}
                     <Section014
                         styles={styles.s014}
                         content={content.s014}
                         config={config.s014}
                         variables={variables}
-						styleKit={styleKit}
+                        styleKit={styleKit}
+						updateData={updateData}
+						parentPath="s014"
                         id="s014"
                     />
                     <Section015
                         styles={styles.s015}
                         content={content.s015}
                         config={config.s015}
+						// updateData={updateData}
+						// parentPath="s015"
                         id="s015"
                     />
                     <Section016
@@ -173,13 +219,18 @@ export default function Home() {
                         id={content.s013.navlinks[3].link}
                     />
                 </Box>
-                {/* <Box className="side-bar">
-                    <TextField
-                        id="outlined-basic"
-                        label="Outlined"
-                        variant="outlined"
-                    />
-                </Box> */}
+                {sidePanel && (
+                    <Box className="side-bar">
+                        <TextField
+                            id="outlined-basic"
+                            label="Outlined"
+                            variant="outlined"
+                        />
+                        <button onClick={toggleSidePanel}>
+                            {sidePanel ? "Close Panel" : "Open Panel"}
+                        </button>
+                    </Box>
+                )}
                 <Fab
                     color="primary"
                     aria-label="add"

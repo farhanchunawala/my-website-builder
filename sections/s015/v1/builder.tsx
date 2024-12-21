@@ -4,10 +4,19 @@ import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
-import Divider from '@mui/material/Divider';
-import TextBlock from "@/components/TextBlock01/v1/builder";
+import Divider from "@mui/material/Divider";
+import TextBlock from "@/components/TextBlock01/v2/builder";
 
-const Section015: React.FC<Props> = ({ styles, content, config, id }) => {
+const Section015: React.FC<Props> = ({
+    styles,
+    content,
+    config,
+    parentPath,
+    updateData,
+    id,
+}) => {
+	const childPath = `${parentPath}.childValue`;
+    const grandChildPath = `${parentPath}.textBlock`;
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -22,15 +31,13 @@ const Section015: React.FC<Props> = ({ styles, content, config, id }) => {
     }
 
     return (
-        <Box
-            component="section"
-            sx={styles?.container}
-            id={id}
-        >
-			<TextBlock
+        <Box component="section" sx={styles?.container} id={id}>
+            <TextBlock
                 content={content?.textBlock}
                 config={config?.textBlock}
                 styles={styles?.textBlock}
+                updateData={updateData}
+                parentPath={grandChildPath}
             />
             <Divider sx={styles?.divider} />
         </Box>

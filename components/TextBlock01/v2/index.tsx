@@ -32,6 +32,7 @@ const TextBlock: React.FC<Props> = ({
                         device
                     )}
                     component={config?.[index]?.element}
+					onChange={item}
                 >
                     {item}
                 </Typography>

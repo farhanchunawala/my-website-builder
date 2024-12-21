@@ -14,8 +14,12 @@ const Section014: React.FC<Props> = ({
     config,
     variables,
     styleKit,
+	parentPath,
+    updateData,
     id,
 }) => {
+	const childPath = `${parentPath}.childValue`;
+    const grandChildPath = `${parentPath}.ctaBlock`;
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
@@ -34,6 +38,7 @@ const Section014: React.FC<Props> = ({
             component="section"
             sx={{
                 padding: styleKit.layout.sectionGap,
+				position: "relative",
                 marginBottom:
                     styleKit.scale?.[styles?.container?.marginBottom],
                 ...styles.container.css,
@@ -54,6 +59,8 @@ const Section014: React.FC<Props> = ({
                 config={config?.ctaBlock}
                 styles={styles?.ctaBlock}
                 styleKit={styleKit}
+				updateData={updateData}
+                parentPath={grandChildPath}
                 id={id}
             />
         </Box>
