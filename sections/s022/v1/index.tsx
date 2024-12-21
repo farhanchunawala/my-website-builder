@@ -27,7 +27,9 @@ const Section022: React.FC<Props> = ({ styles, config, content, variables, id })
 			<TextBlock
 				content={content?.textBlock}
 				config={config?.textBlock}
-				styles={styles?.textBlock} styleKit={undefined}			/>
+				styles={styles?.textBlock} 
+				styleKit={undefined}
+			/>
 			<Image
 				style={styles?.image1}
 				src={`${variables.imageDir}/${content?.imageUrl}`}
