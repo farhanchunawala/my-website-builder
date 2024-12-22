@@ -68,7 +68,7 @@ export default function Home() {
                     styles={styles.s022}
                     config={config.s022}
                     content={content.s022}
-					variables={variables}
+                    variables={variables}
                     id="s022"
                 />
             </Box>
