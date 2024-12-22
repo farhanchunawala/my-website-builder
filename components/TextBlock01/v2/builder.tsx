@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Stack from "@mui/material/Stack";
 import InputBase from "@mui/material/InputBase";
@@ -7,37 +8,44 @@ import InputBase from "@mui/material/InputBase";
 // import { styled } from "@mui/system";
 // import Typography from "@mui/material/Typography";
 import useEvent from "@/lib/hooks/useEvent";
+import { mapStyles } from "@/lib/helpers/mapStyles";
 
-const TextBlock: React.FC<Props> = ({ content, config, styles }) => {
-    const { hoveredElement, focusedElement, createHandlers } =
-        useEvent();
+const TextBlock: React.FC<Props> = ({
+    content,
+    config,
+    styles,
+    styleKit,
+    id,
+}) => {
+    const { createHandlers, getOutline } = useEvent();
+    const device = useSelector(
+        (state: RootState) => state.responsive.device
+    );
 
     return (
         <Stack
-            className="textBlock01"
-            {...createHandlers("23")}
-            sx={{
-                ...styles.container,
-                outline:
-                    hoveredElement === "23" || focusedElement === "23"
-                        ? "1px solid #007BFF"
-                        : "none",
-            }}
+            className="textBlock"
+            {...createHandlers(`${id}.textBlock.container`)}
+            sx={mapStyles(styles?.container, styleKit, device)}
+            // sx={{
+            //     ...styles.container,
+            //     outline: getOutline(`${id}.textBlock.container`),
+            // }}
         >
             {content.map((item, index) => (
                 <InputBase
                     key={index}
                     defaultValue={item}
                     multiline
-                    {...createHandlers(index)}
+                    {...createHandlers(
+                        `${id}.textBlock.text.${index}`
+                    )}
                     sx={{
                         ...styles.texts[index],
-						width: "100%",
-                        outline:
-                            hoveredElement === index ||
-                            focusedElement === index
-                                ? "1px solid #007BFF"
-                                : "none",
+                        width: "100%",
+                        outline: getOutline(
+                            `${id}.textBlock.text.${index}`
+                        ),
                         "&:hover": {
                             opacity: 1,
                         },

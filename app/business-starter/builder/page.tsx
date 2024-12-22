@@ -7,7 +7,7 @@ import "./page.scss";
 import variables from "../variables";
 // import { content } from "../content";
 // import config from "../config";
-import { useCustomStyles } from "../customStyles";
+// import { useCustomStyles } from "../customStyles";
 import { ThemeProvider } from "@mui/material/styles";
 // import { ThemeProvider } from '@mui/system';
 import { theme, useTheme } from "../theme";
@@ -18,6 +18,7 @@ import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import UploadIcon from "@mui/icons-material/Upload";
+import useEvent from "@/lib/hooks/useEvent";
 import TextField from "@mui/material/TextField";
 import Section014 from "@/sections/s014/v1/builder";
 import Section015 from "@/sections/s015/v1/builder";
@@ -30,10 +31,13 @@ export default function Home() {
     const { isMobile, isTablet, isDesktop } = useSelector(
         (state: RootState) => state.responsive
     );
+    const { createHandlers, getOutline } =
+        useEvent();
     const [mounted, setMounted] = useState(false);
-    const { styles } = useCustomStyles();
+    // const { styles } = useCustomStyles();
     const [config, setConfig] = useState(null);
     const [content, setContent] = useState(null);
+    const [styles, setStyles] = useState(null);
     const [sidePanel, setSidePanel] = useState(false);
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
@@ -62,6 +66,7 @@ export default function Home() {
             );
             setConfig(response.data.config);
             setContent(response.data.content);
+            setStyles(response.data.styles);
             // const s013 = evalObject(response.data.content);
         } catch (err) {
             console.error(err);
@@ -140,7 +145,7 @@ export default function Home() {
             alert("An unexpected error occurred.");
         }
     };
-	
+
     const updateData = (path, newValue) => {
         setContent((currentState) =>
             produce(currentState, (draft) => {
@@ -158,18 +163,16 @@ export default function Home() {
         <ThemeProvider theme={theme}>
             <Box
                 className="page"
-                sx={
-                    {
-                        // transform: "scale(0.8)",
-                    }
-                }
             >
                 <Box
                     className="page-content"
-                    sx={{
-                        ...styles.page,
+					{...createHandlers(`page.container`)}
+					sx={{
+						outline: getOutline(`page.container`),
+						// transform: "scale(0.8)",
+						...styles.page,
                         ...(sidePanel ? panelStyles : {}),
-                    }}
+					}}
                 >
                     {/* <button onClick={toggleSidePanel}>
                         {sidePanel ? "Close Panel" : "Open Panel"}
@@ -180,16 +183,16 @@ export default function Home() {
                         config={config.s014}
                         variables={variables}
                         styleKit={styleKit}
-						updateData={updateData}
-						parentPath="s014"
+                        updateData={updateData}
+                        parentPath="s014"
                         id="s014"
                     />
-                    <Section015
+                    {/* <Section015
                         styles={styles.s015}
                         content={content.s015}
                         config={config.s015}
-						// updateData={updateData}
-						// parentPath="s015"
+                        // updateData={updateData}
+                        // parentPath="s015"
                         id="s015"
                     />
                     <Section016
@@ -217,7 +220,7 @@ export default function Home() {
                         content={content.s018}
                         config={config.s018}
                         id={content.s013.navlinks[3].link}
-                    />
+                    /> */}
                 </Box>
                 {sidePanel && (
                     <Box className="side-bar">
