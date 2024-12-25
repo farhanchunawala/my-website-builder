@@ -20,19 +20,22 @@ import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import UploadIcon from "@mui/icons-material/Upload";
 import useEvent from "@/lib/hooks/useEvent";
 import TextField from "@mui/material/TextField";
+import { mapStyles } from "@/lib/helpers/mapStyles";
+// import { updateData } from "@/lib/helpers/updateData";
+// import Section013 from "@/sections/s013/v1/builder";
 import Section014 from "@/sections/s014/v1/builder";
 import Section015 from "@/sections/s015/v1/builder";
 import Section016 from "@/sections/s016/v1/builder";
 import Section017 from "@/sections/s017/v1/builder";
 import Section018 from "@/sections/s018/v1/builder";
+import { log } from "console";
 
 export default function Home() {
     const styleKit = useTheme();
-    const { isMobile, isTablet, isDesktop } = useSelector(
+    const { isMobile, isTablet, isDesktop, device } = useSelector(
         (state: RootState) => state.responsive
     );
-    const { createHandlers, getOutline } =
-        useEvent();
+    const { createHandlers, getOutline } = useEvent();
     const [mounted, setMounted] = useState(false);
     // const { styles } = useCustomStyles();
     const [config, setConfig] = useState(null);
@@ -84,6 +87,32 @@ export default function Home() {
     if (!mounted || !content) {
         return null;
     }
+
+    const saveData = async () => {
+        try {
+            const res = await axios.post(
+                `${baseUrl}/api/contents/upsert/${path2}`,
+                { route: path2, config, content, styles }
+            );
+            console.log(res.data);
+        } catch (err) {
+            console.error("Error:", err);
+        }
+    };
+
+    const updateData = (path, newValue) => {
+        setContent((currentState) =>
+            produce(currentState, (draft) => {
+                const keys = path.split(".");
+                const lastKey = keys.pop();
+                const target = keys.reduce(
+                    (node, key) => node[key],
+                    draft
+                );
+                target[lastKey] = newValue;
+            })
+        );
+    };
 
     const saveFile = async () => {
         try {
@@ -146,33 +175,18 @@ export default function Home() {
         }
     };
 
-    const updateData = (path, newValue) => {
-        setContent((currentState) =>
-            produce(currentState, (draft) => {
-                const keys = path.split(".");
-                let obj = draft;
-                keys.slice(0, -1).forEach((key) => {
-                    obj = obj[key];
-                });
-                obj[keys[keys.length - 1]] = newValue;
-            })
-        );
-    };
-
     return (
         <ThemeProvider theme={theme}>
-            <Box
-                className="page"
-            >
+            <Box className="page">
                 <Box
                     className="page-content"
-					{...createHandlers(`page.container`)}
-					sx={{
-						outline: getOutline(`page.container`),
-						// transform: "scale(0.8)",
-						...styles.page,
+                    {...createHandlers(`page.container`)}
+                    sx={{
+                        ...mapStyles(styles?.page, styleKit, device),
                         ...(sidePanel ? panelStyles : {}),
-					}}
+                        // transform: "scale(0.8)",
+                        outline: getOutline(`page.container`),
+                    }}
                 >
                     {/* <button onClick={toggleSidePanel}>
                         {sidePanel ? "Close Panel" : "Open Panel"}
@@ -242,7 +256,7 @@ export default function Home() {
                         bottom: 32,
                         right: 32,
                     }}
-                    onClick={saveFile}
+                    onClick={saveData}
                 >
                     <SaveAltIcon />
                     {/* <UploadIcon /> */}

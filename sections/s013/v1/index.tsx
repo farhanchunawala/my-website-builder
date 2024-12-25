@@ -1,15 +1,21 @@
-// import "./styles.scss";
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Image from "next/image";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { useSelector } from "react-redux";
-import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
 import NavLinks from "@/components/NavLinks01/v1";
 import Button from "@mui/material/Button";
+import { mapStyles } from "@/lib/helpers/mapStyles";
 
-const Section013: React.FC<Props> = ({ styles, content, config }) => {
-    const { isMobile, isTablet, isDesktop } = useSelector(
+const Section013: React.FC<Props> = ({
+    styles,
+    content,
+    config,
+    styleKit,
+    variables,
+}) => {
+    const { isMobile, isTablet, isDesktop, device } = useSelector(
         (state: RootState) => state.responsive
     );
     const [mounted, setMounted] = useState(false);
@@ -24,33 +30,42 @@ const Section013: React.FC<Props> = ({ styles, content, config }) => {
     }
 
     return (
-        <header className="s013 container" style={styles?.container}>
+        <header
+            className="s013"
+            style={{
+                ...mapStyles(styles?.container, styleKit, device),
+            }}
+        >
             <Image
-                src={content.imageUrl}
+                src={`${variables.imageDir}/${content.imageUrl}`}
                 alt={""}
-				width={config.image.width}
-				height={config.image.height}
-				style={{
-					height: "80px",
-					width: "230px"
-				}}
-                // width={141}
-                // height={36}
-				// layout="responsive"
+                width={config.image.width}
+                height={config.image.height}
+                style={{
+                    height: "80px",
+                    width: "230px",
+                }}
             />
             {showNav && (
                 <NavLinks
                     content={content.navlinks}
                     config={config.navlinks}
                     styles={styles?.navlinks}
+					styleKit={styleKit}
                 />
             )}
             {isDesktop ? (
                 <Button
                     variant="contained"
-                    sx={styles?.button?.container}
+                    sx={{
+                        ...mapStyles(
+                            styles?.button?.container,
+                            styleKit,
+                            device
+                        ),
+                    }}
                 >
-                    { content.buttonText }
+                    {content.buttonText}
                 </Button>
             ) : (
                 <Bars3Icon

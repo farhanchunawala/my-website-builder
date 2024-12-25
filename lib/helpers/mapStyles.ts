@@ -23,6 +23,8 @@ export const mapStyles = (
     const processStyles = (
         styleEntries: Record<string, string | undefined>
     ) => {
+        if (!styleEntries || typeof styleEntries !== "object") return;
+
         Object.entries(styleEntries).forEach(([key, value]) => {
             if (key !== "imports") {
                 if (typeof value === "string") {
@@ -61,7 +63,7 @@ export const mapStyles = (
     };
 
     // Step 1: Process General Imports
-    if (styles.imports) {
+    if (styles?.imports) {
         processImports(styles.imports);
     }
 
@@ -69,7 +71,7 @@ export const mapStyles = (
     processStyles(styles as Record<string, string | undefined>);
 
     // Step 3: Process Device-Specific Styles
-    const deviceStyles = styles[device as keyof Styles];
+    const deviceStyles = styles?.[device as keyof Styles];
     if (
         deviceStyles &&
         !Array.isArray(deviceStyles) &&

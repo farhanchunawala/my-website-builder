@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Box from "@mui/material/Box";
 import TextBlock from "@/components/TextBlock01/v1/builder";
@@ -7,6 +9,7 @@ import Button from "@mui/material/Button";
 import useEvent from "@/lib/hooks/useEvent";
 import AutosizeInput from "react-input-autosize";
 import { useEffect, useState } from "react";
+import { mapStyles } from "@/lib/helpers/mapStyles";
 
 const CtaBlock: React.FC<Props> = ({
     content,
@@ -21,19 +24,22 @@ const CtaBlock: React.FC<Props> = ({
     const grandChildValuePath = `${parentPath}.buttonText`;
     const [value, setValue] = useState(content?.buttonText);
     const { createHandlers, getOutline } = useEvent();
+	const device = useSelector(
+        (state: RootState) => state.responsive.device
+    );
 
     useEffect(() => {
         if (content?.buttonText !== value) {
             setValue(content?.buttonText || ""); // Default to an empty string if undefined
         }
-    }, [content?.buttonText]);
+    }, [content?.buttonText, value]);
 
     return (
         <Box
             className="ctaBlock"
             {...createHandlers(`${id}.ctaBlock.container`)}
             sx={{
-                ...styles?.container,
+                ...mapStyles(styles?.container, styleKit, device),
 				...(content.backgroundImage && {
 					backgroundImage: `url(${variables.imageDir}/${content.backgroundImage})`,
 				}),
@@ -51,7 +57,11 @@ const CtaBlock: React.FC<Props> = ({
                 variant="contained"
                 {...createHandlers(`${id}.ctaBlock.button`)}
                 sx={{
-                    ...styles?.button?.container,
+                    ...mapStyles(
+                        styles?.button?.container,
+                        styleKit,
+                        device
+                    ),
                     outline: getOutline(`${id}.ctaBlock.button`),
                 }}
                 href={`#${content?.buttonLink}`}

@@ -6,12 +6,13 @@ import { useEffect, useState } from "react";
 import variables from "./variables";
 // import { content } from "./content";
 // import config from "./config";
-import { useCustomStyles } from "./customStyles";
+// import styles from "./customStyles";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme, useTheme } from "./theme";
 import Box from "@mui/material/Box";
 import axios from "axios";
 import { usePathname } from "next/navigation";
+import { mapStyles } from "@/lib/helpers/mapStyles";
 // import Section011 from "@/sections/s011/v1";
 import Section013 from "@/sections/s013/v1";
 import Section014 from "@/sections/s014/v1";
@@ -25,7 +26,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default function Home() {
     const styleKit = useTheme();
-    const { isMobile, isTablet, isDesktop } = useSelector(
+    const { isMobile, isTablet, isDesktop, device } = useSelector(
         (state: RootState) => state.responsive
     );
     const [mounted, setMounted] = useState(false);
@@ -36,25 +37,6 @@ export default function Home() {
 
     const pathname = usePathname().slice(1);
 
-    // const evalObject = (obj) => {
-    //     if (typeof obj === "string") {
-    //         try {
-    //             return eval(obj); // Evaluates the string as JavaScript code
-    //         } catch (error) {
-    //             return obj; // Return as is if eval fails
-    //         }
-    //     } else if (Array.isArray(obj)) {
-    //         return obj.map(evalObject); // Recursively evaluate array elements
-    //     } else if (typeof obj === "object" && obj !== null) {
-    //         const result = {};
-    //         for (const key in obj) {
-    //             result[key] = evalObject(obj[key]); // Recursively evaluate object properties
-    //         }
-    //         return result;
-    //     }
-    //     return obj; // Return primitive values as is
-    // };
-
     const fetchContent = async () => {
         try {
             const response = await axios.get(
@@ -63,9 +45,6 @@ export default function Home() {
             setConfig(response.data.config);
             setContent(response.data.content);
             setStyles(response.data.styles);
-            // setStyles(eval(response.data.styles));
-            // setStyles(eval(`(${response.data.styles})`));
-            // const s013 = evalObject(response.data.content);
         } catch (err) {
             console.error(err);
         }
@@ -83,40 +62,23 @@ export default function Home() {
         return null;
     }
 
-    // 	const styleTemplate = `
-    // {
-    //     "height": "620px",
-    //     "width": "100%",
-    //     "display": "flex",
-    //     "alignItems": "center",
-    //     "justifyContent": "center",
-    //     "flexDirection": "column",
-    //     "backgroundImage": "url('${content.s014.backgroundImage}')",
-    //     "backgroundSize": "cover",
-    //     "backgroundPosition": "center"
-    // }
-    // `;
-
-    // // Use eval to parse the template string into a JavaScript object
-    // const sx = eval(`(${styleTemplate})`);
-
-    // console.log(sx);
-
     return (
         <ThemeProvider theme={theme}>
             <Box
                 className="page"
                 sx={{
-                    ...styles.page,
+                    ...mapStyles(styles?.page, styleKit, device),
                     // transform: "scale(0.8)",
                     // transformOrigin: "top left",
                 }}
             >
-                {/* <Section013
+                <Section013
                     styles={styles.s013}
                     content={content.s013}
                     config={config.s013}
-                /> */}
+                    styleKit={styleKit}
+                    variables={variables}
+                />
                 <Section014
                     styles={styles.s014}
                     content={content.s014}
@@ -125,10 +87,11 @@ export default function Home() {
                     styleKit={styleKit}
                     id="s014"
                 />
-                {/* <Section015
+                <Section015
                     styles={styles.s015}
                     content={content.s015}
                     config={config.s015}
+                    styleKit={styleKit}
                     id={content.s014.ctaBlock.buttonLink}
                 />
                 <Section016
@@ -136,6 +99,7 @@ export default function Home() {
                     content={content.s016}
                     config={config.s016}
 					variables={variables}
+                    styleKit={styleKit}
                     id={content.s013.navlinks[0].link}
                 />
                 <Section016
@@ -143,20 +107,23 @@ export default function Home() {
                     content={content.s016a}
                     config={config.s016a}
 					variables={variables}
+                    styleKit={styleKit}
                     id={content.s013.navlinks[1].link}
                 />
                 <Section017
                     styles={styles.s017}
                     content={content.s017}
                     config={config.s017}
+                    styleKit={styleKit}
                     id={content.s013.navlinks[2].link}
                 />
                 <Section018
                     styles={styles.s018}
                     content={content.s018}
                     config={config.s018}
+                    styleKit={styleKit}
                     id={content.s013.navlinks[3].link}
-                /> */}
+                />
             </Box>
         </ThemeProvider>
     );
