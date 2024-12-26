@@ -1,24 +1,21 @@
-// import "./styles.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
-import TextBlock from "@/components/TextBlock01/v2/builder";
+import TextBlock from "@/components/TextBlock01/v1/builder";
+import { mapStyles } from "@/lib/helpers/mapStyles";
 
 const Section015: React.FC<Props> = ({
     styles,
     content,
     config,
-    parentPath,
-    updateData,
+    styleKit,
     id,
 }) => {
-	const childPath = `${parentPath}.childValue`;
-    const grandChildPath = `${parentPath}.textBlock`;
-    const { isMobile, isTablet, isDesktop } = useSelector(
-        (state: RootState) => state.responsive
+    const device = useSelector(
+        (state: RootState) => state.responsive.device
     );
     const [mounted, setMounted] = useState(false);
 
@@ -31,15 +28,25 @@ const Section015: React.FC<Props> = ({
     }
 
     return (
-        <Box component="section" sx={styles?.container} id={id}>
+        <Box
+            component="section"
+            sx={{
+                ...mapStyles(styles?.container, styleKit, device)
+            }}
+            className={id}
+            id={id}
+        >
             <TextBlock
                 content={content?.textBlock}
                 config={config?.textBlock}
                 styles={styles?.textBlock}
-                updateData={updateData}
-                parentPath={grandChildPath}
+                styleKit={styleKit}
             />
-            <Divider sx={styles?.divider} />
+            <Divider
+                sx={{
+                    ...mapStyles(styles?.divider, styleKit, device)
+                }}
+            />
         </Box>
     );
 };

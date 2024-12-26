@@ -23,6 +23,7 @@ import TextField from "@mui/material/TextField";
 import { mapStyles } from "@/lib/helpers/mapStyles";
 // import { updateData } from "@/lib/helpers/updateData";
 // import Section013 from "@/sections/s013/v1/builder";
+import Section013 from "@/sections/s013/v1/builder";
 import Section014 from "@/sections/s014/v1/builder";
 import Section015 from "@/sections/s015/v1/builder";
 import Section016 from "@/sections/s016/v1/builder";
@@ -191,6 +192,13 @@ export default function Home() {
                     {/* <button onClick={toggleSidePanel}>
                         {sidePanel ? "Close Panel" : "Open Panel"}
                     </button> */}
+                    <Section013
+                        styles={styles.s013}
+                        content={content.s013}
+                        config={config.s013}
+                        styleKit={styleKit}
+                        variables={variables}
+                    />
                     <Section014
                         styles={styles.s014}
                         content={content.s014}
@@ -201,19 +209,19 @@ export default function Home() {
                         parentPath="s014"
                         id="s014"
                     />
-                    {/* <Section015
+                    <Section015
                         styles={styles.s015}
                         content={content.s015}
                         config={config.s015}
-                        // updateData={updateData}
-                        // parentPath="s015"
-                        id="s015"
+                        styleKit={styleKit}
+                        id={content.s014.ctaBlock.buttonLink}
                     />
                     <Section016
                         styles={styles.s016}
                         content={content.s016}
                         config={config.s016}
                         variables={variables}
+                        styleKit={styleKit}
                         id={content.s013.navlinks[0].link}
                     />
                     <Section016
@@ -221,20 +229,23 @@ export default function Home() {
                         content={content.s016a}
                         config={config.s016a}
                         variables={variables}
+                        styleKit={styleKit}
                         id={content.s013.navlinks[1].link}
                     />
                     <Section017
                         styles={styles.s017}
                         content={content.s017}
                         config={config.s017}
+                        styleKit={styleKit}
                         id={content.s013.navlinks[2].link}
                     />
                     <Section018
                         styles={styles.s018}
                         content={content.s018}
                         config={config.s018}
+                        styleKit={styleKit}
                         id={content.s013.navlinks[3].link}
-                    /> */}
+                    />
                 </Box>
                 {sidePanel && (
                     <Box className="side-bar">

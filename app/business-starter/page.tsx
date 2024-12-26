@@ -1,6 +1,7 @@
 "use client";
 import { RootState } from "@/lib/store";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchData, setData } from "@/lib/features/data/dataSlice";
 import { useEffect, useState } from "react";
 // import "./page.css";
 import variables from "./variables";
@@ -29,11 +30,14 @@ export default function Home() {
     const { isMobile, isTablet, isDesktop, device } = useSelector(
         (state: RootState) => state.responsive
     );
+	const { data, status, error } = useSelector((state) => state.data);
+    const dispatch = useDispatch();
     const [mounted, setMounted] = useState(false);
     // const { styles } = useCustomStyles();
-    const [config, setConfig] = useState(null);
-    const [content, setContent] = useState(null);
-    const [styles, setStyles] = useState(null);
+    // const [config, setConfig] = useState(null);
+    // const [content, setContent] = useState(null);
+    // const [styles, setStyles] = useState(null);
+	const { route, config, content, styles } = data || {};
 
     const pathname = usePathname().slice(1);
 
@@ -50,9 +54,13 @@ export default function Home() {
         }
     };
 
-    useEffect(() => {
-        fetchContent();
-    }, []);
+	useEffect(() => {
+        dispatch(fetchData());
+    }, [dispatch]);
+
+    // useEffect(() => {
+    //     fetchContent();
+    // }, []);
 
     useEffect(() => {
         setMounted(true);
