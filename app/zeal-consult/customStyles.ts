@@ -6,7 +6,7 @@ import { Styles as S019 } from "@/sections/s019/v1/types";
 import { Styles as S020 } from "@/sections/s020/v1/types";
 import { Styles as S021 } from "@/sections/s021/v1/types";
 import { Styles as S022 } from "@/sections/s022/v1/types";
-import { color, display, fontWeight, letterSpacing, lineHeight, padding, textAlign } from "@mui/system";
+import { color, display, fontWeight, height, letterSpacing, lineHeight, maxWidth, padding, textAlign, width } from "@mui/system";
 
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
@@ -320,17 +320,134 @@ const useCustomStyles = () => {
 	
 	const s022 = {
 		container: {
-			
+			paddingLeft: theme.spacing(1),
+			paddingRight: theme.spacing(1),
 		},
 		textBlock: {
-			container: {},
+			container: {
+				paddingTop: theme.spacing(6),
+				paddingLeft: theme.spacing(2),
+				paddingRight: theme.spacing(2),
+			},
 			texts: [
 				{
-					
-				}
-			]
+					...texts.paragraph4,
+					fontWeight: "300",
+					color: colors.foreground,
+					opacity: 0.6,
+					letterSpacing: "3px",
+					paddingBottom: theme.spacing(2.5),
+				},
+				{
+					...texts.paragraph1,
+					fontWeight: "600",
+					color: colors.foreground,
+					paddingBottom: theme.spacing(2.5),
+					letterSpacing: "-1px",
+				},
+			],
+		},
+		imgContainer: {
+			display: "flex",
+			justifyContent: "center",
+			flexWrap: "wrap",
+			gap: theme.spacing(2),
+			// alignItems: "center",
+			// gridGapRow: theme.spacing(1),
+			// gridGapColumn: theme.spacing(1),
+		},
+		image: {
+			flex: responsive(
+				"0 0 calc(50% - 16px)",
+				"0 0 calc(25% - 16px)",
+				"0 0 calc(25% - 16px)",
+			),
+			height: "auto",
+			// height: responsive?("164", "200", "251"),
+			width: responsive("136", "172", "226"),
+			// width: "50%",
 		},
 	};
+	
+	const s016a: S016a = {
+        container: {
+			backgroundColor: colors.secondary,
+			padding: theme.spacing(responsive(0, 0, 3)),
+			paddingRight: theme.spacing(responsive(0, 2, 3)),
+			paddingTop: theme.spacing(responsive(10, 10, 20)),
+			display: responsive("", "flex", "flex"),
+			flexDirection: responsive("", "row-reverse", "row-reverse"),
+			// justifyContent: responsive("", "space-between", "space-between"),
+			columnGap: theme.spacing(responsive(0, 5, 8)),
+		},
+        image: {},
+        ctaBlock: {
+            container: {
+				padding: theme.spacing(responsive(2, 2, 0)),
+				backgroundColor: colors.secondary,
+				maxWidth: responsive("100%", "50%", "55%"),
+			},
+            textBlock: {
+                container: {
+					// maxWidth: responsive("100%", "100%", "75%"),
+				},
+                texts: [
+                    {
+						// ...responsive(
+						// 	texts.heading
+						// )
+						...texts.heading5,
+						letterSpacing: "2px",
+						textTransform: "uppercase",
+						color: colors.primary,
+						// fontWeight: "550"
+						marginBottom: theme.spacing(responsive(1.5, 1.5, 2.5)),
+					},
+                    {
+						...responsive(
+							texts.heading2,
+							texts.SectionHeading,
+							texts.SectionHeading
+						),
+						color: colors.background,
+						letterSpacing: "-1px",
+						marginBottom: theme.spacing(responsive(1.5, 2.5, 2.5)),
+					},
+                    {
+						...responsive(
+							texts.paragraph4,
+							texts.paragraph3,
+							texts.paragraph3,
+						),
+						lineHeight: responsive("1.5", "1.3", "1.2"),
+						letterSpacing: "0px",
+						color: colors.background,
+						marginBottom: theme.spacing(responsive(3, 5, 2.5)),
+						opacity: 0.8,
+					},
+                ],
+            },
+            button: {
+                container: {
+					...responsive(
+						buttons.primary1,
+						buttons.primary2,
+						buttons.primary2,
+					),
+					flexDirection: "row",
+                    display: "flex",
+                    justifyContent: "center",
+                    textAlign: "center",
+					justifySelf: "left",
+					backgroundColor: colors.primary,
+					color: colors.foreground,
+					fontWeight: "600",
+					// fontSize: "14px",`
+				},
+                hover: {},
+            },
+        },
+    };
 	
 	const styles = {
 		page: pageStyles,
@@ -340,6 +457,7 @@ const useCustomStyles = () => {
 		s020: s020,
 		s021: s021,
 		s022: s022,
+		s016a: s016a,
 	}
 
 	return { styles };

@@ -132,28 +132,41 @@ const s022 = {
 		"Our Expertise Across Various Economic Sectors"
 	],
 	image1: {
-		imageUrl: "technology.avif",
+		imageUrl: "technology.jpg",
 	},
 	image2: {
-		imageUrl: "technology.avif",
+		imageUrl: "technology.jpg",
 	},
 	image3: {
-		imageUrl: "technology.avif",
+		imageUrl: "technology.jpg",
 	},
 	image4: {
-		imageUrl: "technology.avif",
+		imageUrl: "technology.jpg",
 	},
 	image5: {
-		imageUrl: "technology.avif",
+		imageUrl: "technology.jpg",
 	},
 	image6: {
-		imageUrl: "technology.avif",
+		imageUrl: "technology.jpg",
 	},
 	image7: {
-		imageUrl: "technology.avif",
+		imageUrl: "technology.jpg",
 	},
 	image8: {
-		imageUrl: "technology.avif",
+		imageUrl: "technology.jpg",
+	},
+}
+
+const s016a = {
+	imageUrl: `consulter.jpg`,
+	// imageUrl: `zeal_staff.avif`,
+	ctaBlock: {
+		textBlock: [
+			"Solution",
+			"Cutting-Edge Solutions for Modern Enterprises",
+			"Delivering innovative strategies and advanced solutions to drive success in today’s evolving business landscape. Empowering modern enterprises with the tools to stay ahead of the curve."
+		],
+		buttonText: "Get In Touch",
 	},
 }
 
@@ -164,6 +177,7 @@ const content = {
 	s020: s020,
 	s021: s021,
 	s022: s022,
+	s016a: s016a,
 }
 
 export default content;

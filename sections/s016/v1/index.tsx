@@ -40,7 +40,7 @@ const Section016: React.FC<Props> = ({
                     ...mapStyles(styles?.image, styleKit, device),
                 }}
                 src={`${variables.imageDir}/${content?.imageUrl}`}
-                alt="company logo"
+                alt="Firexio"
                 // width={1305}
                 // height={833}
                 width={1275}
