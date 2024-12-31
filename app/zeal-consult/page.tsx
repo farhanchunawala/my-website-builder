@@ -71,6 +71,13 @@ export default function Home() {
                     variables={variables}
                     id="s022"
                 />
+				<Section016
+					styles={styles.s016a}
+					config={config.s016a}
+					content={content.s016a}
+					variables={variables}
+					id="s016"
+				/>
             </Box>
         </ThemeProvider>
     );

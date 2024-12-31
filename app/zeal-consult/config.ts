@@ -83,6 +83,22 @@ const s022 = {
 		},
 	],
 }
+const s016a = {
+	ctaBlock: {
+		textBlock: [
+			{
+				component: "h5",
+			},
+			{
+				component: "h1",
+			},
+			{
+				component: "h6",
+			},
+		],
+		button: {},
+	},
+}
 
 const config = {
 	s013: s013,
@@ -91,6 +107,7 @@ const config = {
 	s020: s020,
 	s021: s021,
 	s022: s022,
+	s016a: s016a,
 }
 
 export default config;

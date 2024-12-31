@@ -30,70 +30,75 @@ const Section022: React.FC<Props> = ({ styles, config, content, variables, id })
 				styles={styles?.textBlock} 
 				styleKit={undefined}
 			/>
-			<Image
-				style={styles?.image1}
-				src={`${variables.imageDir}/${content?.imageUrl}`}
-				width={500}
-				height={500}
-				alt="firexio"
-				layout="responsive"
-			/>
-			<Image
-				style={styles?.image2}
-				src={`${variables.imageDir}/${content?.imageUrl}`}
-				width={500}
-				height={500}
-				alt="firexio"
-				layout="responsive"
-			/>
-			<Image
-				style={styles?.image3}
-				src={`${variables.imageDir}/${content?.imageUrl}`}
-				width={500}
-				height={500}
-				alt="firexio"
-				layout="responsive"
-			/>
-			<Image
-				style={styles?.image4}
-				src={`${variables.imageDir}/${content?.imageUrl}`}
-				width={500}
-				height={500}
-				alt="firexio"
-				layout="responsive"
-			/>
-			<Image
-				style={styles?.imag5}
-				src={`${variables.imageDir}/${content?.imageUrl}`}
-				width={500}
-				height={500}
-				alt="firexio"
-				layout="responsive"
-			/>
-			<Image
-				style={styles?.image6}
-				src={`${variables.imageDir}/${content?.imageUrl}`}
-				width={500}
-				height={500}
-				alt="firexio"
-				layout="responsive"
-			/>
-			<Image
-				style={styles?.image7}
-				src={`${variables.imageDir}/${content?.imageUrl}`}
-				width={500}
-				height={500}
-				alt="firexio"
-				layout="responsive"
-			/>
-			<Image
-				style={styles?.image8}
-				src={`${variables.imageDir}/${content?.imageUrl}`}
-				width={500}
-				height={500}
-				alt="firexio"
-				layout="responsive"
-			/>
+			<Box
+				sx={styles?.imgContainer}
+				id={id}
+			>
+				<Image
+					style={styles?.image}
+					src={`${variables.imageDir}/${content?.image1?.imageUrl}`}
+					width={136}
+					height={164}
+					alt="firexio"
+					// layout="responsive"
+				/>
+				<Image
+					style={styles?.image}
+					src={`${variables.imageDir}/${content?.image2?.imageUrl}`}
+					width={136}
+					height={164}
+					alt="firexio"
+					// layout="responsive"
+				/>
+				<Image
+					style={styles?.image}
+					src={`${variables.imageDir}/${content?.image3?.imageUrl}`}
+					width={136}
+					height={164}
+					alt="firexio"
+					// layout="responsive"
+				/>
+				<Image
+					style={styles?.image}
+					src={`${variables.imageDir}/${content?.image4?.imageUrl}`}
+					width={136}
+					height={164}
+					alt="firexio"
+					// layout="responsive"
+				/>
+				<Image
+					style={styles?.image}
+					src={`${variables.imageDir}/${content?.image5?.imageUrl}`}
+					width={136}
+					height={164}
+					alt="firexio"
+					// layout="responsive"
+				/>
+				<Image
+					style={styles?.image}
+					src={`${variables.imageDir}/${content?.image6?.imageUrl}`}
+					width={136}
+					height={164}
+					alt="firexio"
+					// layout="responsive"
+				/>
+				<Image
+					style={styles?.image}
+					src={`${variables.imageDir}/${content?.image7?.imageUrl}`}
+					width={136}
+					height={164}
+					alt="firexio"
+					// layout="responsive"
+				/>
+				<Image
+					style={styles?.image}
+					src={`${variables.imageDir}/${content?.image8?.imageUrl}`}
+					width={136}
+					height={164}
+					alt="firexio"
+					// layout="responsive"
+				/>
+			</Box>
 		</Box>
 	);
 };

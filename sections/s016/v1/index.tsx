@@ -32,7 +32,7 @@ const Section016: React.FC<Props> = ({
             <Image
                 style={styles?.image}
                 src={`${variables.imageDir}/${content?.imageUrl}`}
-                alt="company logo"
+                alt="Firexio"
                 // width={1305}
                 // height={833}
                 width={1275}
