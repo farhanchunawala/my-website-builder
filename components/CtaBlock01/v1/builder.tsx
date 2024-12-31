@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Box from "@mui/material/Box";
 import TextBlock from "@/components/TextBlock01/v1/builder";
@@ -6,28 +8,42 @@ import Button from "@mui/material/Button";
 // import { Box, styled } from "@mui/system";
 import useEvent from "@/lib/hooks/useEvent";
 import AutosizeInput from "react-input-autosize";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { mapStyles } from "@/lib/helpers/mapStyles";
 
 const CtaBlock: React.FC<Props> = ({
     content,
     config,
     styles,
     styleKit,
+	variables,
+    parentPath,
+    updateData,
     id,
 }) => {
+    const grandChildValuePath = `${parentPath}.buttonText`;
     const [value, setValue] = useState(content?.buttonText);
-    const { hoveredElement, focusedElement, createHandlers } =
-        useEvent();
+    const { createHandlers, getOutline } = useEvent();
+	const device = useSelector(
+        (state: RootState) => state.responsive.device
+    );
+
+    useEffect(() => {
+        if (content?.buttonText !== value) {
+            setValue(content?.buttonText || ""); // Default to an empty string if undefined
+        }
+    }, [content?.buttonText, value]);
 
     return (
         <Box
-            {...createHandlers("13")}
+            className="ctaBlock"
+            {...createHandlers(`${id}.ctaBlock.container`)}
             sx={{
-                ...styles?.container,
-                outline:
-                    hoveredElement === "13" || focusedElement === "13"
-                        ? "1px solid #007BFF"
-                        : "none",
+                ...mapStyles(styles?.container, styleKit, device),
+				...(content.backgroundImage && {
+					backgroundImage: `url(${variables.imageDir}/${content.backgroundImage})`,
+				}),
+                outline: getOutline(`${id}.ctaBlock.container`),
             }}
         >
             <TextBlock
@@ -35,34 +51,44 @@ const CtaBlock: React.FC<Props> = ({
                 config={config?.textBlock}
                 styles={styles?.textBlock}
                 styleKit={styleKit}
+                id={id}
             />
             <Button
                 variant="contained"
-                {...createHandlers("17")}
+                {...createHandlers(`${id}.ctaBlock.button`)}
                 sx={{
-                    ...styles?.button?.container,
-                    outline:
-                        hoveredElement === "17" ||
-                        focusedElement === "17"
-                            ? "1px solid #007BFF"
-                            : "none",
+                    ...mapStyles(
+                        styles?.button?.container,
+                        styleKit,
+                        device
+                    ),
+                    outline: getOutline(`${id}.ctaBlock.button`),
                 }}
                 href={`#${content?.buttonLink}`}
                 size={config?.button?.size}
                 color={config?.button?.color}
+                // onClick={() =>
+                //     updateData(
+                //         grandChildValuePath,
+                //         "Updated from Grandchild"
+                //     )
+                // }
             >
                 <AutosizeInput
                     value={value}
-                    onChange={(e) => setValue(e.target.value)}
+                    // onChange={(e) => setValue(e.target.value)}
+                    onChange={(e) => {
+                        const newValue = e.target.value;
+                        setValue(newValue); // Update local state
+                        updateData(grandChildValuePath, newValue); // Update parent state
+                    }}
                     placeholder=""
                     className="auto-size-input"
-                    {...createHandlers("button-text")}
+                    {...createHandlers(`${id}.ctaBlock.buttonText`)}
                     inputStyle={{
-                        outline:
-                            hoveredElement === "button-text" ||
-                            focusedElement === "button-text"
-                                ? "1px solid #007BFF"
-                                : "none",
+                        outline: getOutline(
+                            `${id}.ctaBlock.buttonText`
+                        ),
                     }}
                 />
             </Button>

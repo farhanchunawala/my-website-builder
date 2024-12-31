@@ -15,38 +15,41 @@ const TextBlock: React.FC<Props> = ({
     config,
     styles,
     styleKit,
+    id,
 }) => {
     const device = useSelector(
         (state: RootState) => state.responsive.device
     );
-    const { hoveredElement, focusedElement, createHandlers } =
-        useEvent();
+    const { createHandlers, getOutline } = useEvent();
 
     return (
         <Stack
             className="textBlock01"
-            {...createHandlers("23")}
-            sx={mapStyles(styles?.container, styleKit, device)}
+            {...createHandlers(`${id}.textBlock.container`)}
+            sx={{
+                ...mapStyles(styles?.container, styleKit, device),
+                outline: getOutline(`${id}.textBlock.container`),
+            }}
         >
             {content.map((item, index) => (
                 <InputBase
                     key={index}
                     defaultValue={item}
                     multiline
-                    {...createHandlers(index)}
+                    {...createHandlers(
+                        `${id}.textBlock.text.${index}`
+                    )}
                     sx={{
                         // ...styles.texts[index],
-						...mapStyles(
-							styles?.texts?.[index],
-							styleKit,
-							device
-						),
+                        ...mapStyles(
+                            styles?.texts?.[index],
+                            styleKit,
+                            device
+                        ),
                         width: "100%",
-                        outline:
-                            hoveredElement === index ||
-                            focusedElement === index
-                                ? "1px solid #007BFF"
-                                : "none",
+                        outline: getOutline(
+                            `${id}.textBlock.text.${index}`
+                        ),
                         "&:hover": {
                             opacity: 1,
                         },

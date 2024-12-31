@@ -1,4 +1,3 @@
-// import "./styles.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
@@ -7,6 +6,8 @@ import Box from "@mui/material/Box";
 // import { Box } from '@mui/system';
 import CtaBlock from "@/components/CtaBlock01/v1/builder";
 import Image from "next/image";
+import useEvent from "@/lib/hooks/useEvent";
+import { mapStyles } from "@/lib/helpers/mapStyles";
 
 const Section014: React.FC<Props> = ({
     styles,
@@ -14,11 +15,16 @@ const Section014: React.FC<Props> = ({
     config,
     variables,
     styleKit,
+    parentPath,
+    updateData,
     id,
 }) => {
-    const { isMobile, isTablet, isDesktop } = useSelector(
-        (state: RootState) => state.responsive
+    const childPath = `${parentPath}.childValue`;
+    const grandChildPath = `${parentPath}.ctaBlock`;
+    const device = useSelector(
+        (state: RootState) => state.responsive.device
     );
+    const { createHandlers, getOutline } = useEvent();
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -32,28 +38,29 @@ const Section014: React.FC<Props> = ({
     return (
         <Box
             component="section"
+            {...createHandlers(`${id}.container`)}
             sx={{
-                padding: styleKit.layout.sectionGap,
-                marginBottom:
-                    styleKit.scale?.[styles?.container?.marginBottom],
-                ...styles.container.css,
+                // padding: styleKit.layout.sectionGap,
+                // // position: "relative",
+                // marginBottom:
+                //     styleKit.scale?.[styles?.container?.marginBottom],
+                // // backgroundImage: `url("${variables.imageDir}/${content?.imageUrl}")`,
+                // // backgroundImage: `${variables.imageDir}/${content?.imageUrl}`,
+                // ...styles.container,
+				...mapStyles(styles?.container, styleKit, device),
+                outline: getOutline(`${id}.container`),
             }}
             id={id}
+            className={id}
         >
-            <Image
-                style={{
-                    ...styles?.image,
-                }}
-                src={`${variables.imageDir}/${content?.imageUrl}`}
-                alt="Hero Banner"
-                width={1200}
-                height={620}
-            />
             <CtaBlock
                 content={content?.ctaBlock}
                 config={config?.ctaBlock}
                 styles={styles?.ctaBlock}
                 styleKit={styleKit}
+                variables={variables}
+                updateData={updateData}
+                parentPath={grandChildPath}
                 id={id}
             />
         </Box>

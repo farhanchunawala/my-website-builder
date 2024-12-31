@@ -1,6 +1,5 @@
 
-
-const UnderConstruction = () => {
+const Home = () => {
     return (
         <div style={styles.container}>
             <h1 style={styles.heading}>
@@ -42,4 +41,4 @@ const styles = {
     },
 };
 
-export default UnderConstruction;
+export default Home;

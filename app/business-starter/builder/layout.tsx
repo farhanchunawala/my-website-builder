@@ -18,6 +18,7 @@ export default function BusinessLayout({
             className={`
 				${montserrat.variable}
 			`}
+			style={{}}
         >
             {children}
         </section>

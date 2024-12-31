@@ -58,11 +58,18 @@ const useEvent = () => {
         [handleEvent]
     );
 
+    const getOutline = useCallback(
+        (id: string | number | null) => {
+            return hoveredElement === id || focusedElement === id
+                ? "1px solid #007BFF"
+                : "none";
+        },
+        [hoveredElement, focusedElement]
+    );
+
     return {
-        hoveredElement,
-        focusedElement,
-        handleEvent,
         createHandlers,
+		getOutline
     };
 };
 

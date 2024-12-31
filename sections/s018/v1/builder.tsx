@@ -4,32 +4,45 @@ import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
 import CtaBlock from "@/components/CtaBlock01/v1/builder";
+import { mapStyles } from "@/lib/helpers/mapStyles";
 
-const Section018: React.FC<Props> = ({ styles, content, config, id }) => {
-	const { isMobile, isTablet, isDesktop } = useSelector(
-		(state: RootState) => state.responsive
-	);
-	const [isMounted, setIsMounted] = useState(false);
+const Section018: React.FC<Props> = ({
+    styles,
+    content,
+    config,
+    styleKit,
+	variables,
+    id,
+}) => {
+    const device = useSelector(
+        (state: RootState) => state.responsive.device
+    );
+    const [isMounted, setIsMounted] = useState(false);
 
-	useEffect(() => {
-		setIsMounted(true);
-	}, []);
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
-	if (!isMounted) return null;
+    if (!isMounted) return null;
 
-	return (
-		<Box
+    return (
+        <Box
             component="section"
-            sx={styles?.container}
+            sx={{
+				...mapStyles(styles?.container, styleKit, device)
+            }}
             id={id}
+            className={id}
         >
-			<CtaBlock
-				content={content?.ctaBlock}
-				config={config?.ctaBlock}
-				styles={styles?.ctaBlock}
-			/>
-		</Box>
-	);
+            <CtaBlock
+                content={content?.ctaBlock}
+                config={config?.ctaBlock}
+                styles={styles?.ctaBlock}
+                styleKit={styleKit}
+				variables={variables}
+            />
+        </Box>
+    );
 };
 
 export default Section018;
