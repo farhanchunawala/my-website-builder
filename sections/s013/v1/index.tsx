@@ -37,7 +37,7 @@ const Section013: React.FC<Props> = ({
             }}
         >
             <Image
-                src={`${variables.imageDir}/${content.imageUrl}`}
+                src={`${variables?.imageDir}/${content.imageUrl}`}
                 alt={""}
                 width={config.image.width}
                 height={config.image.height}
