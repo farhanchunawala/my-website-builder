@@ -1,7 +1,8 @@
 "use client";
-import { RootState } from "@/lib/store";
-import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { RootState } from "@/lib/store";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchData, setData } from "@/lib/features/data/dataSlice";
 import { produce } from "immer";
 import "./page.scss";
 import variables from "../variables";
@@ -36,12 +37,16 @@ export default function Home() {
     const { isMobile, isTablet, isDesktop, device } = useSelector(
         (state: RootState) => state.responsive
     );
+    const dispatch = useDispatch();
+    const { config, content, styles } = useSelector(
+        (state) => state.data.data
+    );
     const { createHandlers, getOutline } = useEvent();
     const [mounted, setMounted] = useState(false);
     // const { styles } = useCustomStyles();
-    const [config, setConfig] = useState(null);
-    const [content, setContent] = useState(null);
-    const [styles, setStyles] = useState(null);
+    // const [config, setConfig] = useState(null);
+    // const [content, setContent] = useState(null);
+    // const [styles, setStyles] = useState(null);
     const [sidePanel, setSidePanel] = useState(false);
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
@@ -78,8 +83,12 @@ export default function Home() {
     };
 
     useEffect(() => {
-        fetchContent();
-    }, []);
+        dispatch(fetchData());
+    }, [dispatch]);
+
+    // useEffect(() => {
+    //     fetchContent();
+    // }, []);
 
     useEffect(() => {
         setMounted(true);
@@ -207,6 +216,7 @@ export default function Home() {
                         styleKit={styleKit}
                         updateData={updateData}
                         parentPath="s014"
+                        path="s014"
                         id="s014"
                     />
                     <Section015

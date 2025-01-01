@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Stack from "@mui/material/Stack";
@@ -9,26 +9,29 @@ import InputBase from "@mui/material/InputBase";
 // import Typography from "@mui/material/Typography";
 import useEvent from "@/lib/hooks/useEvent";
 import { mapStyles } from "@/lib/helpers/mapStyles";
+import { setProperty } from "@/lib/features/data/dataSlice";
 
 const TextBlock: React.FC<Props> = ({
     content,
     config,
     styles,
     styleKit,
+    path,
     id,
 }) => {
+    const dispatch = useDispatch();
+    const { createHandlers, getOutline } = useEvent();
     const device = useSelector(
         (state: RootState) => state.responsive.device
     );
-    const { createHandlers, getOutline } = useEvent();
 
     return (
         <Stack
             className="textBlock01"
-            {...createHandlers(`${id}.textBlock.container`)}
+            {...createHandlers(`${path}.container`)}
             sx={{
                 ...mapStyles(styles?.container, styleKit, device),
-                outline: getOutline(`${id}.textBlock.container`),
+                outline: getOutline(`${path}.container`),
             }}
         >
             {content.map((item, index) => (
@@ -36,20 +39,23 @@ const TextBlock: React.FC<Props> = ({
                     key={index}
                     defaultValue={item}
                     multiline
-                    {...createHandlers(
-                        `${id}.textBlock.text.${index}`
-                    )}
+                    onChange={(event) =>
+                        dispatch(
+                            setProperty({
+                                path: `content.${path}.${index}`,
+                                value: event.target.value,
+                            })
+                        )
+                    }
+                    {...createHandlers(`${path}.text.${index}`)}
                     sx={{
-                        // ...styles.texts[index],
                         ...mapStyles(
                             styles?.texts?.[index],
                             styleKit,
                             device
                         ),
                         width: "100%",
-                        outline: getOutline(
-                            `${id}.textBlock.text.${index}`
-                        ),
+                        outline: getOutline(`${path}.text.${index}`),
                         "&:hover": {
                             opacity: 1,
                         },

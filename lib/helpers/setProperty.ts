@@ -1,12 +1,12 @@
 import { produce } from "immer";
 
-type UpdateData<T> = (
+type SetProperty<T> = (
     path: string,
     newValue: any,
     setContent: React.Dispatch<React.SetStateAction<T>>
 ) => void;
 
-export const updateData: UpdateData<object> = (
+export const setProperty: SetProperty<object> = (
     path,
     newValue,
     setData

@@ -10,22 +10,19 @@ import useEvent from "@/lib/hooks/useEvent";
 import { mapStyles } from "@/lib/helpers/mapStyles";
 
 const Section014: React.FC<Props> = ({
-    styles,
-    content,
-    config,
     variables,
     styleKit,
-    parentPath,
-    updateData,
+    path,
     id,
 }) => {
-    const childPath = `${parentPath}.childValue`;
-    const grandChildPath = `${parentPath}.ctaBlock`;
+    const { config, content, styles } = useSelector(
+        (state) => state.data.data
+    );
+    const [mounted, setMounted] = useState(false);
+    const { createHandlers, getOutline } = useEvent();
     const device = useSelector(
         (state: RootState) => state.responsive.device
     );
-    const { createHandlers, getOutline } = useEvent();
-    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
         setMounted(true);
@@ -38,29 +35,25 @@ const Section014: React.FC<Props> = ({
     return (
         <Box
             component="section"
-            {...createHandlers(`${id}.container`)}
+            {...createHandlers(`${path}.container`)}
             sx={{
-                // padding: styleKit.layout.sectionGap,
-                // // position: "relative",
-                // marginBottom:
-                //     styleKit.scale?.[styles?.container?.marginBottom],
-                // // backgroundImage: `url("${variables.imageDir}/${content?.imageUrl}")`,
-                // // backgroundImage: `${variables.imageDir}/${content?.imageUrl}`,
-                // ...styles.container,
-				...mapStyles(styles?.container, styleKit, device),
-                outline: getOutline(`${id}.container`),
+                ...mapStyles(
+                    styles?.[path]?.container,
+                    styleKit,
+                    device
+                ),
+                outline: getOutline(`${path}.container`),
             }}
             id={id}
             className={id}
         >
             <CtaBlock
-                content={content?.ctaBlock}
-                config={config?.ctaBlock}
-                styles={styles?.ctaBlock}
+                content={content?.[path]?.ctaBlock}
+                config={config?.[path]?.ctaBlock}
+                styles={styles?.[path]?.ctaBlock}
                 styleKit={styleKit}
                 variables={variables}
-                updateData={updateData}
-                parentPath={grandChildPath}
+                path={`${path}.ctaBlock`}
                 id={id}
             />
         </Box>

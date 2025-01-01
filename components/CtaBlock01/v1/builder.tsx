@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Box from "@mui/material/Box";
@@ -8,31 +8,23 @@ import Button from "@mui/material/Button";
 // import { Box, styled } from "@mui/system";
 import useEvent from "@/lib/hooks/useEvent";
 import AutosizeInput from "react-input-autosize";
-import { useEffect, useState } from "react";
 import { mapStyles } from "@/lib/helpers/mapStyles";
+import { setProperty } from "@/lib/features/data/dataSlice";
 
 const CtaBlock: React.FC<Props> = ({
     content,
     config,
     styles,
     styleKit,
-	variables,
-    parentPath,
-    updateData,
+    variables,
+    path,
     id,
 }) => {
-    const grandChildValuePath = `${parentPath}.buttonText`;
-    const [value, setValue] = useState(content?.buttonText);
+    const dispatch = useDispatch();
     const { createHandlers, getOutline } = useEvent();
-	const device = useSelector(
+    const device = useSelector(
         (state: RootState) => state.responsive.device
     );
-
-    useEffect(() => {
-        if (content?.buttonText !== value) {
-            setValue(content?.buttonText || ""); // Default to an empty string if undefined
-        }
-    }, [content?.buttonText, value]);
 
     return (
         <Box
@@ -40,9 +32,9 @@ const CtaBlock: React.FC<Props> = ({
             {...createHandlers(`${id}.ctaBlock.container`)}
             sx={{
                 ...mapStyles(styles?.container, styleKit, device),
-				...(content.backgroundImage && {
-					backgroundImage: `url(${variables.imageDir}/${content.backgroundImage})`,
-				}),
+                ...(content.backgroundImage && {
+                    backgroundImage: `url(${variables.imageDir}/${content.backgroundImage})`,
+                }),
                 outline: getOutline(`${id}.ctaBlock.container`),
             }}
         >
@@ -51,10 +43,14 @@ const CtaBlock: React.FC<Props> = ({
                 config={config?.textBlock}
                 styles={styles?.textBlock}
                 styleKit={styleKit}
+				path={`${path}.textBlock`}
                 id={id}
             />
             <Button
                 variant="contained"
+				size={config?.button?.size}
+				color={config?.button?.color}
+				// href={`#${content?.buttonLink}`}
                 {...createHandlers(`${id}.ctaBlock.button`)}
                 sx={{
                     ...mapStyles(
@@ -64,31 +60,22 @@ const CtaBlock: React.FC<Props> = ({
                     ),
                     outline: getOutline(`${id}.ctaBlock.button`),
                 }}
-                href={`#${content?.buttonLink}`}
-                size={config?.button?.size}
-                color={config?.button?.color}
-                // onClick={() =>
-                //     updateData(
-                //         grandChildValuePath,
-                //         "Updated from Grandchild"
-                //     )
-                // }
             >
                 <AutosizeInput
-                    value={value}
-                    // onChange={(e) => setValue(e.target.value)}
-                    onChange={(e) => {
-                        const newValue = e.target.value;
-                        setValue(newValue); // Update local state
-                        updateData(grandChildValuePath, newValue); // Update parent state
-                    }}
-                    placeholder=""
                     className="auto-size-input"
-                    {...createHandlers(`${id}.ctaBlock.buttonText`)}
+                    value={content?.buttonText}
+                    placeholder=""
+                    onChange={(event) =>
+                        dispatch(
+                            setProperty({
+                                path: `content.${path}.buttonText`,
+                                value: event.target.value,
+                            })
+                        )
+                    }
+                    {...createHandlers(`${path}.buttonText`)}
                     inputStyle={{
-                        outline: getOutline(
-                            `${id}.ctaBlock.buttonText`
-                        ),
+                        outline: getOutline(`${path}.buttonText`),
                     }}
                 />
             </Button>

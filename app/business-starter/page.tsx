@@ -30,14 +30,15 @@ export default function Home() {
     const { isMobile, isTablet, isDesktop, device } = useSelector(
         (state: RootState) => state.responsive
     );
-	const { data, status, error } = useSelector((state) => state.data);
     const dispatch = useDispatch();
+    const { config, content, styles } = useSelector(
+        (state) => state.data.data
+    );
     const [mounted, setMounted] = useState(false);
     // const { styles } = useCustomStyles();
     // const [config, setConfig] = useState(null);
     // const [content, setContent] = useState(null);
     // const [styles, setStyles] = useState(null);
-	const { route, config, content, styles } = data || {};
 
     const pathname = usePathname().slice(1);
 
@@ -54,7 +55,7 @@ export default function Home() {
         }
     };
 
-	useEffect(() => {
+    useEffect(() => {
         dispatch(fetchData());
     }, [dispatch]);
 
@@ -106,7 +107,7 @@ export default function Home() {
                     styles={styles.s016}
                     content={content.s016}
                     config={config.s016}
-					variables={variables}
+                    variables={variables}
                     styleKit={styleKit}
                     id={content.s013.navlinks[0].link}
                 />
@@ -114,7 +115,7 @@ export default function Home() {
                     styles={styles.s016a}
                     content={content.s016a}
                     config={config.s016a}
-					variables={variables}
+                    variables={variables}
                     styleKit={styleKit}
                     id={content.s013.navlinks[1].link}
                 />
