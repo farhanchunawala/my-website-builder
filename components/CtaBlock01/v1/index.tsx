@@ -4,49 +4,36 @@ import type Props from "./types";
 import Box from "@mui/material/Box";
 import TextBlock from "@/components/TextBlock01/v1";
 import Button from "@mui/material/Button";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { get } from "lodash-es";
 
-const CtaBlock: React.FC<Props> = ({
-    content,
-    config,
-    styles,
-    styleKit,
-    variables,
-}) => {
-    const device = useSelector(
-        (state: RootState) => state.responsive.device
+const CtaBlock: React.FC<Props> = ({ path }) => {
+    const { mapStyles } = useMapStyles();
+    const { config, content } = useSelector(
+        (state: RootState) => state.data.data
     );
 
     return (
         <Box
             className="ctaBlock"
             sx={{
-                ...mapStyles(styles?.container, styleKit, device),
-                ...(content.backgroundImage && {
-                    backgroundImage: `url(${variables.imageDir}/${content.backgroundImage})`,
+                ...mapStyles(`${path}.container`),
+                ...(get(content, `${path}.backgroundImage`) && {
+                    backgroundImage: `url(${config.imageDir}/${get(content, `${path}.backgroundImage`)})`,
                 }),
             }}
         >
-            <TextBlock
-                content={content?.textBlock}
-                config={config?.textBlock}
-                styles={styles?.textBlock}
-                styleKit={styleKit}
-            />
+            <TextBlock path={`${path}.textBlock`} />
             <Button
                 variant="contained"
                 sx={{
-                    ...mapStyles(
-                        styles?.button?.container,
-                        styleKit,
-                        device
-                    ),
+                    ...mapStyles(`${path}.button.container`),
                 }}
-                href={`#${content?.buttonLink}`}
-                size={config?.button?.size}
-                color={config?.button?.color}
+                href={`#${get(content, `${path}.buttonLink`)}`}
+                size={get(config, `${path}.button.size`)}
+                color={get(config, `${path}.button.color`)}
             >
-                {content?.buttonText}
+                {get(content, `${path}.buttonText`)}
             </Button>
         </Box>
     );

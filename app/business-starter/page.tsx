@@ -89,11 +89,12 @@ export default function Home() {
                     variables={variables}
                 />
                 <Section014
-                    styles={styles.s014}
-                    content={content.s014}
-                    config={config.s014}
-                    variables={variables}
-                    styleKit={styleKit}
+                    // styles={styles.s014}
+                    // content={content.s014}
+                    // config={config.s014}
+                    // variables={variables}
+                    // styleKit={styleKit}
+                    path="s014"
                     id="s014"
                 />
                 <Section015

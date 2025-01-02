@@ -8,62 +8,44 @@ import Button from "@mui/material/Button";
 // import { Box, styled } from "@mui/system";
 import useEvent from "@/lib/hooks/useEvent";
 import AutosizeInput from "react-input-autosize";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import { setProperty } from "@/lib/features/data/dataSlice";
+import { get } from "lodash-es";
 
-const CtaBlock: React.FC<Props> = ({
-    content,
-    config,
-    styles,
-    styleKit,
-    variables,
-    path,
-    id,
-}) => {
-    const dispatch = useDispatch();
+const CtaBlock: React.FC<Props> = ({ path }) => {
+    const { mapStyles } = useMapStyles();
     const { createHandlers, getOutline } = useEvent();
-    const device = useSelector(
-        (state: RootState) => state.responsive.device
+    const dispatch = useDispatch();
+    const { config, content } = useSelector(
+        (state: RootState) => state.data.data
     );
 
     return (
         <Box
             className="ctaBlock"
-            {...createHandlers(`${id}.ctaBlock.container`)}
+            {...createHandlers(`${path}.container`)}
             sx={{
-                ...mapStyles(styles?.container, styleKit, device),
-                ...(content.backgroundImage && {
-                    backgroundImage: `url(${variables.imageDir}/${content.backgroundImage})`,
+                ...mapStyles(`${path}.container`),
+                ...(get(content, `${path}.backgroundImage`) && {
+                    backgroundImage: `url(${config.imageDir}/${get(content, `${path}.backgroundImage`)})`,
                 }),
-                outline: getOutline(`${id}.ctaBlock.container`),
+                outline: getOutline(`${path}.container`),
             }}
         >
-            <TextBlock
-                content={content?.textBlock}
-                config={config?.textBlock}
-                styles={styles?.textBlock}
-                styleKit={styleKit}
-				path={`${path}.textBlock`}
-                id={id}
-            />
+            <TextBlock path={`${path}.textBlock`} />
             <Button
                 variant="contained"
-				size={config?.button?.size}
-				color={config?.button?.color}
-				// href={`#${content?.buttonLink}`}
-                {...createHandlers(`${id}.ctaBlock.button`)}
+                size={get(config, `${path}.button.size`)}
+                color={get(config, `${path}.button.color`)}
+                {...createHandlers(`${path}.button`)}
                 sx={{
-                    ...mapStyles(
-                        styles?.button?.container,
-                        styleKit,
-                        device
-                    ),
-                    outline: getOutline(`${id}.ctaBlock.button`),
+                    ...mapStyles(`${path}.button.container`),
+                    outline: getOutline(`${path}.button`),
                 }}
             >
                 <AutosizeInput
                     className="auto-size-input"
-                    value={content?.buttonText}
+                    value={get(content, `${path}.buttonText`)}
                     placeholder=""
                     onChange={(event) =>
                         dispatch(

@@ -8,21 +8,16 @@ import InputBase from "@mui/material/InputBase";
 // import { styled } from "@mui/system";
 // import Typography from "@mui/material/Typography";
 import useEvent from "@/lib/hooks/useEvent";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import { setProperty } from "@/lib/features/data/dataSlice";
+import { get } from "lodash-es";
 
-const TextBlock: React.FC<Props> = ({
-    content,
-    config,
-    styles,
-    styleKit,
-    path,
-    id,
-}) => {
+const TextBlock: React.FC<Props> = ({ path }) => {
+    const { mapStyles } = useMapStyles();
+	const { createHandlers, getOutline } = useEvent();
     const dispatch = useDispatch();
-    const { createHandlers, getOutline } = useEvent();
-    const device = useSelector(
-        (state: RootState) => state.responsive.device
+    const { content, styles } = useSelector(
+        (state: RootState) => state.data.data
     );
 
     return (
@@ -30,11 +25,11 @@ const TextBlock: React.FC<Props> = ({
             className="textBlock01"
             {...createHandlers(`${path}.container`)}
             sx={{
-                ...mapStyles(styles?.container, styleKit, device),
+                ...mapStyles(`${path}.container`),
                 outline: getOutline(`${path}.container`),
             }}
         >
-            {content.map((item, index) => (
+            {get(content, path)?.map((item, index) => (
                 <InputBase
                     key={index}
                     defaultValue={item}
@@ -49,11 +44,7 @@ const TextBlock: React.FC<Props> = ({
                     }
                     {...createHandlers(`${path}.text.${index}`)}
                     sx={{
-                        ...mapStyles(
-                            styles?.texts?.[index],
-                            styleKit,
-                            device
-                        ),
+                        ...mapStyles(`${path}.texts.${index}`),
                         width: "100%",
                         outline: getOutline(`${path}.text.${index}`),
                         "&:hover": {
@@ -63,13 +54,22 @@ const TextBlock: React.FC<Props> = ({
                             opacity: 1,
                         },
                         "& .MuiInputBase-input": {
-                            textAlign: styles.texts[index].textAlign,
+                            textAlign: get(
+                                styles,
+                                `${path}.texts.${index}.textAlign`
+                            ),
                         },
                         "&:hover .MuiInputBase-input": {
-                            opacity: styles.texts[index].opacity,
+                            opacity: get(
+                                styles,
+                                `${path}.texts.${index}.opacity`
+                            ),
                         },
                         "&:focus .MuiInputBase-input": {
-                            opacity: styles.texts[index].opacity,
+                            opacity: get(
+                                styles,
+                                `${path}.texts.${index}.opacity`
+                            ),
                         },
                     }}
                 />

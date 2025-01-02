@@ -30,23 +30,17 @@ import Section015 from "@/sections/s015/v1/builder";
 import Section016 from "@/sections/s016/v1/builder";
 import Section017 from "@/sections/s017/v1/builder";
 import Section018 from "@/sections/s018/v1/builder";
-import { log } from "console";
 
 export default function Home() {
-    const styleKit = useTheme();
-    const { isMobile, isTablet, isDesktop, device } = useSelector(
-        (state: RootState) => state.responsive
-    );
     const dispatch = useDispatch();
-    const { config, content, styles } = useSelector(
-        (state) => state.data.data
+    const { config, content, styles, styleKit } = useSelector(
+        (state: RootState) => state.data.data
+    );
+    const { device } = useSelector(
+        (state: RootState) => state.responsive
     );
     const { createHandlers, getOutline } = useEvent();
     const [mounted, setMounted] = useState(false);
-    // const { styles } = useCustomStyles();
-    // const [config, setConfig] = useState(null);
-    // const [content, setContent] = useState(null);
-    // const [styles, setStyles] = useState(null);
     const [sidePanel, setSidePanel] = useState(false);
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
@@ -68,27 +62,9 @@ export default function Home() {
         setSidePanel(!sidePanel);
     };
 
-    const fetchContent = async () => {
-        try {
-            const response = await axios.get(
-                `${baseUrl}/api/contents/${path2}`
-            );
-            setConfig(response.data.config);
-            setContent(response.data.content);
-            setStyles(response.data.styles);
-            // const s013 = evalObject(response.data.content);
-        } catch (err) {
-            console.error(err);
-        }
-    };
-
     useEffect(() => {
         dispatch(fetchData());
     }, [dispatch]);
-
-    // useEffect(() => {
-    //     fetchContent();
-    // }, []);
 
     useEffect(() => {
         setMounted(true);
@@ -110,19 +86,19 @@ export default function Home() {
         }
     };
 
-    const updateData = (path, newValue) => {
-        setContent((currentState) =>
-            produce(currentState, (draft) => {
-                const keys = path.split(".");
-                const lastKey = keys.pop();
-                const target = keys.reduce(
-                    (node, key) => node[key],
-                    draft
-                );
-                target[lastKey] = newValue;
-            })
-        );
-    };
+    // const updateData = (path, newValue) => {
+    //     setContent((currentState) =>
+    //         produce(currentState, (draft) => {
+    //             const keys = path.split(".");
+    //             const lastKey = keys.pop();
+    //             const target = keys.reduce(
+    //                 (node, key) => node[key],
+    //                 draft
+    //             );
+    //             target[lastKey] = newValue;
+    //         })
+    //     );
+    // };
 
     const saveFile = async () => {
         try {
@@ -209,13 +185,6 @@ export default function Home() {
                         variables={variables}
                     />
                     <Section014
-                        styles={styles.s014}
-                        content={content.s014}
-                        config={config.s014}
-                        variables={variables}
-                        styleKit={styleKit}
-                        updateData={updateData}
-                        parentPath="s014"
                         path="s014"
                         id="s014"
                     />

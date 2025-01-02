@@ -45,6 +45,8 @@ const dataSlice = createSlice({
             action: PayloadAction<{ path: string; value: any }>
         ) {
             const { path, value } = action.payload;
+			console.log(path, value);
+			
             const fullPath = `data.${path}`;
             const keys = fullPath.split(".");
             const lastKey = keys.pop();

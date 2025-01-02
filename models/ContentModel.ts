@@ -7,7 +7,8 @@ const ContentSchema = new mongoose.Schema(
 		route: String,
 		config: { type: mongoose.Schema.Types.Mixed, default: {} },
 		content: { type: mongoose.Schema.Types.Mixed, default: {} },
-		styles: { type: mongoose.Schema.Types.Mixed, default: {} }
+		styles: { type: mongoose.Schema.Types.Mixed, default: {} },
+		styleKit: { type: mongoose.Schema.Types.Mixed, default: {} }
 	},
 	{ timestamps: true }
 );
