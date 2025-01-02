@@ -4,17 +4,11 @@ import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
 import CtaBlock from "@/components/CtaBlock01/v1";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
 
-const Section014: React.FC<Props> = ({
-    styles,
-    content,
-    config,
-    variables,
-    styleKit,
-    id,
-}) => {
-	const device = useSelector(
+const Section014: React.FC<Props> = ({ path, id }) => {
+    const { mapStyles } = useMapStyles();
+    const device = useSelector(
         (state: RootState) => state.responsive.device
     );
     const [mounted, setMounted] = useState(false);
@@ -30,19 +24,11 @@ const Section014: React.FC<Props> = ({
     return (
         <Box
             component="section"
-            sx={{
-				...mapStyles(styles?.container, styleKit, device)
-            }}
-			className={id}
+            sx={{ ...mapStyles(`${path}.container`) }}
+            className={id}
             id={id}
         >
-            <CtaBlock
-                content={content?.ctaBlock}
-                config={config?.ctaBlock}
-                styles={styles?.ctaBlock}
-                styleKit={styleKit}
-				variables={variables}
-            />
+            <CtaBlock path={`${path}.ctaBlock`} />
         </Box>
     );
 };

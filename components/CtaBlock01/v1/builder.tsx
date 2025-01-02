@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Box from "@mui/material/Box";
@@ -8,87 +8,56 @@ import Button from "@mui/material/Button";
 // import { Box, styled } from "@mui/system";
 import useEvent from "@/lib/hooks/useEvent";
 import AutosizeInput from "react-input-autosize";
-import { useEffect, useState } from "react";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { setProperty } from "@/lib/features/data/dataSlice";
+import { get } from "lodash-es";
 
-const CtaBlock: React.FC<Props> = ({
-    content,
-    config,
-    styles,
-    styleKit,
-	variables,
-    parentPath,
-    updateData,
-    id,
-}) => {
-    const grandChildValuePath = `${parentPath}.buttonText`;
-    const [value, setValue] = useState(content?.buttonText);
+const CtaBlock: React.FC<Props> = ({ path }) => {
+    const { mapStyles } = useMapStyles();
     const { createHandlers, getOutline } = useEvent();
-	const device = useSelector(
-        (state: RootState) => state.responsive.device
+    const dispatch = useDispatch();
+    const { config, content } = useSelector(
+        (state: RootState) => state.data.data
     );
-
-    useEffect(() => {
-        if (content?.buttonText !== value) {
-            setValue(content?.buttonText || ""); // Default to an empty string if undefined
-        }
-    }, [content?.buttonText, value]);
 
     return (
         <Box
             className="ctaBlock"
-            {...createHandlers(`${id}.ctaBlock.container`)}
+            {...createHandlers(`${path}.container`)}
             sx={{
-                ...mapStyles(styles?.container, styleKit, device),
-				...(content.backgroundImage && {
-					backgroundImage: `url(${variables.imageDir}/${content.backgroundImage})`,
-				}),
-                outline: getOutline(`${id}.ctaBlock.container`),
+                ...mapStyles(`${path}.container`),
+                ...(get(content, `${path}.backgroundImage`) && {
+                    backgroundImage: `url(${config.imageDir}/${get(content, `${path}.backgroundImage`)})`,
+                }),
+                outline: getOutline(`${path}.container`),
             }}
         >
-            <TextBlock
-                content={content?.textBlock}
-                config={config?.textBlock}
-                styles={styles?.textBlock}
-                styleKit={styleKit}
-                id={id}
-            />
+            <TextBlock path={`${path}.textBlock`} />
             <Button
                 variant="contained"
-                {...createHandlers(`${id}.ctaBlock.button`)}
+                size={get(config, `${path}.button.size`)}
+                color={get(config, `${path}.button.color`)}
+                {...createHandlers(`${path}.button`)}
                 sx={{
-                    ...mapStyles(
-                        styles?.button?.container,
-                        styleKit,
-                        device
-                    ),
-                    outline: getOutline(`${id}.ctaBlock.button`),
+                    ...mapStyles(`${path}.button.container`),
+                    outline: getOutline(`${path}.button`),
                 }}
-                href={`#${content?.buttonLink}`}
-                size={config?.button?.size}
-                color={config?.button?.color}
-                // onClick={() =>
-                //     updateData(
-                //         grandChildValuePath,
-                //         "Updated from Grandchild"
-                //     )
-                // }
             >
                 <AutosizeInput
-                    value={value}
-                    // onChange={(e) => setValue(e.target.value)}
-                    onChange={(e) => {
-                        const newValue = e.target.value;
-                        setValue(newValue); // Update local state
-                        updateData(grandChildValuePath, newValue); // Update parent state
-                    }}
-                    placeholder=""
                     className="auto-size-input"
-                    {...createHandlers(`${id}.ctaBlock.buttonText`)}
+                    value={get(content, `${path}.buttonText`)}
+                    placeholder=""
+                    onChange={(event) =>
+                        dispatch(
+                            setProperty({
+                                path: `content.${path}.buttonText`,
+                                value: event.target.value,
+                            })
+                        )
+                    }
+                    {...createHandlers(`${path}.buttonText`)}
                     inputStyle={{
-                        outline: getOutline(
-                            `${id}.ctaBlock.buttonText`
-                        ),
+                        outline: getOutline(`${path}.buttonText`),
                     }}
                 />
             </Button>

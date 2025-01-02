@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Stack from "@mui/material/Stack";
@@ -8,48 +8,45 @@ import InputBase from "@mui/material/InputBase";
 // import { styled } from "@mui/system";
 // import Typography from "@mui/material/Typography";
 import useEvent from "@/lib/hooks/useEvent";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { setProperty } from "@/lib/features/data/dataSlice";
+import { get } from "lodash-es";
 
-const TextBlock: React.FC<Props> = ({
-    content,
-    config,
-    styles,
-    styleKit,
-    id,
-}) => {
-    const device = useSelector(
-        (state: RootState) => state.responsive.device
+const TextBlock: React.FC<Props> = ({ path }) => {
+    const { mapStyles } = useMapStyles();
+	const { createHandlers, getOutline } = useEvent();
+    const dispatch = useDispatch();
+    const { content, styles } = useSelector(
+        (state: RootState) => state.data.data
     );
-    const { createHandlers, getOutline } = useEvent();
 
     return (
         <Stack
             className="textBlock01"
-            {...createHandlers(`${id}.textBlock.container`)}
+            {...createHandlers(`${path}.container`)}
             sx={{
-                ...mapStyles(styles?.container, styleKit, device),
-                outline: getOutline(`${id}.textBlock.container`),
+                ...mapStyles(`${path}.container`),
+                outline: getOutline(`${path}.container`),
             }}
         >
-            {content.map((item, index) => (
+            {get(content, path)?.map((item, index) => (
                 <InputBase
                     key={index}
                     defaultValue={item}
                     multiline
-                    {...createHandlers(
-                        `${id}.textBlock.text.${index}`
-                    )}
+                    onChange={(event) =>
+                        dispatch(
+                            setProperty({
+                                path: `content.${path}.${index}`,
+                                value: event.target.value,
+                            })
+                        )
+                    }
+                    {...createHandlers(`${path}.text.${index}`)}
                     sx={{
-                        // ...styles.texts[index],
-                        ...mapStyles(
-                            styles?.texts?.[index],
-                            styleKit,
-                            device
-                        ),
+                        ...mapStyles(`${path}.texts.${index}`),
                         width: "100%",
-                        outline: getOutline(
-                            `${id}.textBlock.text.${index}`
-                        ),
+                        outline: getOutline(`${path}.text.${index}`),
                         "&:hover": {
                             opacity: 1,
                         },
@@ -57,13 +54,22 @@ const TextBlock: React.FC<Props> = ({
                             opacity: 1,
                         },
                         "& .MuiInputBase-input": {
-                            textAlign: styles.texts[index].textAlign,
+                            textAlign: get(
+                                styles,
+                                `${path}.texts.${index}.textAlign`
+                            ),
                         },
                         "&:hover .MuiInputBase-input": {
-                            opacity: styles.texts[index].opacity,
+                            opacity: get(
+                                styles,
+                                `${path}.texts.${index}.opacity`
+                            ),
                         },
                         "&:focus .MuiInputBase-input": {
-                            opacity: styles.texts[index].opacity,
+                            opacity: get(
+                                styles,
+                                `${path}.texts.${index}.opacity`
+                            ),
                         },
                     }}
                 />
