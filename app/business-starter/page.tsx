@@ -55,11 +55,12 @@ export default function Home() {
                     }}
                 >
                     <Section013
-                        styles={styles.s013}
-                        content={content.s013}
-                        config={config.s013}
-                        styleKit={styleKit}
-                        variables={variables}
+                        // styles={styles.s013}
+                        // content={content.s013}
+                        // config={config.s013}
+                        // styleKit={styleKit}
+                        // variables={variables}
+						path="s013"
                     />
                     <Section014 path="s014" />
                     <Section015

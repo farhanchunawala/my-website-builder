@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Image from "next/image";
@@ -6,16 +6,27 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
 import NavLinks from "@/components/NavLinks01/v1";
 import Button from "@mui/material/Button";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+// import { mapStyles } from "@/lib/helpers/mapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import useDesignFrame from "@/lib/hooks/useDesignFrame";
+import { get } from "lodash-es";
 
 const Section013: React.FC<Props> = ({
-    styles,
-    content,
-    config,
-    styleKit,
-    variables,
+    // styles,
+    // content,
+    // config,
+    // styleKit,
+    // variables,
+    path,
 }) => {
-    const { isMobile, isTablet, isDesktop, device } = useSelector(
+    const dispatch = useDispatch();
+    const { mapStyles } = useMapStyles();
+    const { designFrame } = useDesignFrame();
+    const mode = useSelector((state: RootState) => state.mode);
+    const { config, content } = useSelector(
+        (state: RootState) => state.data.data
+    );
+    const { isDesktop, device } = useSelector(
         (state: RootState) => state.responsive
     );
     const [mounted, setMounted] = useState(false);
@@ -33,14 +44,16 @@ const Section013: React.FC<Props> = ({
         <header
             className="s013"
             style={{
-                ...mapStyles(styles?.container, styleKit, device),
+                ...mapStyles(`${path}.container`),
             }}
         >
             <Image
-                src={`${variables?.imageDir}/${content.imageUrl}`}
+                src={`${config?.imageDir}/${get(content, `${path}.imageUrl`)}`}
                 alt={""}
-                width={config.image.width}
-                height={config.image.height}
+                // width={config.image.width}
+                width={get(config, `${path}.image.width`)}
+                height={get(config, `${path}.image.height`)}
+                // height={config.image.height}
                 style={{
                     height: "80px",
                     width: "230px",
@@ -48,24 +61,27 @@ const Section013: React.FC<Props> = ({
             />
             {showNav && (
                 <NavLinks
-                    content={content.navlinks}
-                    config={config.navlinks}
-                    styles={styles?.navlinks}
-					styleKit={styleKit}
+                    // content={content.navlinks}
+                    // config={config.navlinks}
+                    // styles={styles?.navlinks}
+                    // styleKit={styleKit}
+					path={`${path}.navlinks`}
                 />
             )}
             {isDesktop ? (
                 <Button
                     variant="contained"
                     sx={{
-                        ...mapStyles(
-                            styles?.button?.container,
-                            styleKit,
-                            device
-                        ),
+						...mapStyles(`${path}.button.container`),
+                        // ...mapStyles(
+                        //     styles?.button?.container,
+                        //     styleKit,
+                        //     device
+                        // ),
                     }}
                 >
-                    {content.buttonText}
+                    {/* {content.buttonText} */}
+                    {get(content, `${path}.buttonText`)}
                 </Button>
             ) : (
                 <Bars3Icon
