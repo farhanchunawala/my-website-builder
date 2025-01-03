@@ -45,7 +45,7 @@ export default function Home() {
 							width={256}
 							height={369}
 							alt="firexio"
-							// layout="responsive"
+							layout="responsive"
 						/>
 						<Box sx={styles?.infoContainer}>
 							<Typography component="h2" style={styles?.name}>
@@ -63,7 +63,7 @@ export default function Home() {
 							width={256}
 							height={369}
 							alt="firexio"
-							// layout="responsive"
+							layout="responsive"
 						/>
 						<Box sx={styles?.infoContainer}>
 							<Typography component="h2" style={styles?.name}>
@@ -81,7 +81,7 @@ export default function Home() {
 							width={256}
 							height={369}
 							alt="firexio"
-							// layout="responsive"
+							layout="responsive"
 						/>
 						<Box sx={styles?.infoContainer}>
 							<Typography component="h2" style={styles?.name}>
@@ -99,7 +99,7 @@ export default function Home() {
 							width={256}
 							height={369}
 							alt="firexio"
-							// layout="responsive"
+							layout="responsive"
 						/>
 						<Box sx={styles?.infoContainer}>
 							<Typography component="h2" style={styles?.name}>
@@ -117,7 +117,7 @@ export default function Home() {
 							width={256}
 							height={369}
 							alt="firexio"
-							// layout="responsive"
+							layout="responsive"
 						/>
 						<Box sx={styles?.infoContainer}>
 							<Typography component="h2" style={styles?.name}>
@@ -135,7 +135,7 @@ export default function Home() {
 							width={256}
 							height={369}
 							alt="firexio"
-							// layout="responsive"
+							layout="responsive"
 						/>
 						<Box sx={styles?.infoContainer}>
 							<Typography component="h2" style={styles?.name}>
@@ -153,7 +153,7 @@ export default function Home() {
 							width={256}
 							height={369}
 							alt="firexio"
-							// layout="responsive"
+							layout="responsive"
 						/>
 						<Box sx={styles?.infoContainer}>
 							<Typography component="h2" style={styles?.name}>
@@ -171,7 +171,7 @@ export default function Home() {
 							width={256}
 							height={369}
 							alt="firexio"
-							// layout="responsive"
+							layout="responsive"
 						/>
 						<Box sx={styles?.infoContainer}>
 							<Typography component="h2" style={styles?.name}>
