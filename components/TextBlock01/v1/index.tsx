@@ -1,14 +1,19 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
-import type Props from "./types";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import { get } from "lodash-es";
+import useDesignFrame from "@/lib/hooks/useDesignFrame";
+
+interface Props {
+	path: string
+}
 
 const TextBlock: React.FC<Props> = ({ path }) => {
     const { mapStyles } = useMapStyles();
-    const { config, content, styles } = useSelector(
+    const { designFrame } = useDesignFrame();
+    const { config, content } = useSelector(
         (state: RootState) => state.data.data
     );
 
@@ -18,17 +23,19 @@ const TextBlock: React.FC<Props> = ({ path }) => {
             sx={{
                 ...mapStyles(`${path}.container`),
             }}
+            {...designFrame(`${path}.container`)}
         >
             {get(content, path)?.map((item, index) => (
                 <Typography
                     key={index}
+					component={get(
+						config,
+						`${path}.${index}.element`
+					)}
                     sx={{
                         ...mapStyles(`${path}.texts.${index}`),
                     }}
-                    component={get(
-                        config,
-                        `${path}.${index}.element`
-                    )}
+                    {...designFrame(`${path}.text.${index}`)}
                 >
                     {item}
                 </Typography>

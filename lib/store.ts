@@ -5,6 +5,7 @@ import { quotesApiSlice } from "./features/quotes/quotesApiSlice";
 import responsiveSlice from "./features/responsive/responsiveSlice";
 import { hoverFocusSlice } from "./features/editFrame/editFrameSlice";
 import dataSlice from './features/data/dataSlice';
+import modeSlice from "./features/mode/modeSlice";
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
@@ -14,6 +15,7 @@ const rootReducer = combineSlices(
     responsiveSlice,
 	hoverFocusSlice,
 	dataSlice,
+	modeSlice
 );
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>;

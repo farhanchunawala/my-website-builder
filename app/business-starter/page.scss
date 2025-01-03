@@ -1,0 +1,43 @@
+.page {
+    display: flex;
+    width: 100vw;
+    height: 100%;
+	padding: 16px 0;
+}
+
+.page-content {
+    width: 100%;
+    // padding: 32px 16px;
+}
+
+.side-bar {
+	flex: 0 0 280px;
+	// padding: 16px 0;
+    // flex: 0 0 25%;
+    // height: 100%;
+    // border-left: 1px solid #ddd;
+    // padding: 32px 16px;
+}
+
+.auto-size-input {
+	font: inherit;
+    border: none !important;
+    padding: 0 !important;
+    transition: none !important;
+    background: inherit;
+    input {
+        border: none;
+        // font-family: inherit;
+        // font-size: inherit;
+        // font-weight: inherit;
+		font: inherit;
+        line-height: inherit;
+        color: inherit;
+        opacity: inherit;
+        background: inherit;
+        background-color: inherit;
+        text-transform: inherit;
+        border-radius: 0;
+        padding: 0;
+    }
+}

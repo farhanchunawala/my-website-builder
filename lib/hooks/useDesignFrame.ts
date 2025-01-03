@@ -6,15 +6,11 @@ import {
 } from "@/lib/features/editFrame/editFrameSlice";
 import { RootState } from "@/lib/store";
 
-const useEvent = () => {
+const useDesignFrame = () => {
     const dispatch = useDispatch();
-
-    // Select the current hover/focus state from Redux
-    const hoveredElement = useSelector(
-        (state: RootState) => state.hoverFocus.hoveredElement
-    );
-    const focusedElement = useSelector(
-        (state: RootState) => state.hoverFocus.focusedElement
+    const mode = useSelector((state: RootState) => state.mode);
+    const { hoveredElement, focusedElement } = useSelector(
+        (state: RootState) => state.hoverFocus
     );
 
     // Use callback to handle events and dispatch actions to Redux
@@ -42,7 +38,7 @@ const useEvent = () => {
         [dispatch]
     );
 
-    const createHandlers = useCallback(
+    const frameHandlers = useCallback(
         (id: string | number | null) => ({
             onMouseOver: (
                 event: React.MouseEvent | React.FocusEvent
@@ -58,32 +54,34 @@ const useEvent = () => {
         [handleEvent]
     );
 
-    const getOutline = useCallback(
+    const frameStyles = useCallback(
         (id: string | number | null) => {
             return hoveredElement === id || focusedElement === id
-                ? "1px solid #007BFF"
-                : "none";
+                ? { outline: "1px solid #007BFF" }
+                : {};
         },
         [hoveredElement, focusedElement]
     );
 
-    const outlineFrame = useCallback(
+    const designFrame = useCallback(
         (id: string | number | null) => {
+            if (mode !== "builder") return {};
+
             return {
-                ...createHandlers(id),
+                ...frameHandlers(id),
                 style: {
-                    outline: getOutline(id),
+                    ...frameStyles(id),
                 },
             };
         },
-        [createHandlers, getOutline]
+        [frameHandlers, frameStyles, mode]
     );
 
     return {
-        createHandlers,
-        getOutline,
-        outlineFrame,
+		frameHandlers,
+        frameStyles,
+        designFrame,
     };
 };
 
-export default useEvent;
+export default useDesignFrame;

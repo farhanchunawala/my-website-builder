@@ -21,7 +21,6 @@ const initialState: DataState = {
     error: null,
 };
 
-// Async thunk to fetch data
 export const fetchData = createAsyncThunk(
     "data/fetchData",
     async (): Promise<Record<string, any>> => {
