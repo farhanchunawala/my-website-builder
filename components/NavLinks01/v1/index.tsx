@@ -8,13 +8,7 @@ import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import { get } from "lodash-es";
 
-const NavLinks: React.FC<Props> = ({
-    // content,
-    // config,
-    // styles,
-    // styleKit,
-    path,
-}) => {
+const NavLinks: React.FC<Props> = ({ path }) => {
     const dispatch = useDispatch();
     const { mapStyles } = useMapStyles();
     const { designFrame } = useDesignFrame();
@@ -31,7 +25,6 @@ const NavLinks: React.FC<Props> = ({
             className="navLinks"
             sx={{
                 ...mapStyles(`${path}.container`),
-                // ...mapStyles(styles?.container, styleKit, device),
             }}
         >
             {get(content, path)?.map((item, index) => (
@@ -39,11 +32,9 @@ const NavLinks: React.FC<Props> = ({
                     key={index}
                     sx={{
                         ...mapStyles(`${path}.link`),
-                        // ...mapStyles(styles?.link, styleKit, device),
                     }}
                     underline="none"
-                    href={`#${get(content, `${path}.item.link`)}`}
-                    // href={`#${item.link}`}
+                    href={`#${item.link}`}
                 >
                     {item.text}
                 </Link>

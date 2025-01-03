@@ -99,66 +99,66 @@ export default function Home() {
     //     );
     // };
 
-    const saveFile = async () => {
-        try {
-            const data = {
-                fileName: "content",
-                fileDir: path2,
-                fileContent: `export const content = ${JSON.stringify(content, null, 4)};`,
-            };
+    // const saveFile = async () => {
+    //     try {
+    //         const data = {
+    //             fileName: "content",
+    //             fileDir: path2,
+    //             fileContent: `export const content = ${JSON.stringify(content, null, 4)};`,
+    //         };
 
-            const response = await fetch("/api/saveFile", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
+    //         const response = await fetch("/api/saveFile", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify(data),
+    //         });
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                console.error("Error response:", errorData);
-                return;
-            }
+    //         if (!response.ok) {
+    //             const errorData = await response.json();
+    //             console.error("Error response:", errorData);
+    //             return;
+    //         }
 
-            const result = await response.json();
-            console.log(result.message);
-        } catch (error) {
-            console.error("Error saving file:", error);
-        }
-    };
+    //         const result = await response.json();
+    //         console.log(result.message);
+    //     } catch (error) {
+    //         console.error("Error saving file:", error);
+    //     }
+    // };
 
-    const saveFile2 = async () => {
-        try {
-            const fileContent = `
-				export const myContent = {
-					title: "Dynamic File",
-					description: "This file was created dynamically.",
-				};
-				`;
+    // const saveFile2 = async () => {
+    //     try {
+    //         const fileContent = `
+	// 			export const myContent = {
+	// 				title: "Dynamic File",
+	// 				description: "This file was created dynamically.",
+	// 			};
+	// 			`;
 
-            const response = await fetch("/api/saveFile2", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ fileContent }),
-            });
+    //         const response = await fetch("/api/saveFile2", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify({ fileContent }),
+    //         });
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                console.error("Error response:", errorData);
-                alert(`Error: ${errorData.error}`);
-                return;
-            }
+    //         if (!response.ok) {
+    //             const errorData = await response.json();
+    //             console.error("Error response:", errorData);
+    //             alert(`Error: ${errorData.error}`);
+    //             return;
+    //         }
 
-            const result = await response.json();
-            alert(result.message);
-        } catch (error) {
-            console.error("Error saving file:", error);
-            alert("An unexpected error occurred.");
-        }
-    };
+    //         const result = await response.json();
+    //         alert(result.message);
+    //     } catch (error) {
+    //         console.error("Error saving file:", error);
+    //         alert("An unexpected error occurred.");
+    //     }
+    // };
 
     return (
         <ThemeProvider theme={theme}>
