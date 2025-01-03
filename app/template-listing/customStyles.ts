@@ -29,7 +29,7 @@ const useCustomStyles = () => {
 		imagesContainer: {
 			display: "flex",
 			flexWrap: "wrap",
-			flexDirection: "row",
+			// flexDirection: "column",
 			// justifyContent: "space-between",
 			rowGap: "24px",
 			columnGap: "24px",
