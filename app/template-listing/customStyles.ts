@@ -35,6 +35,10 @@ const useCustomStyles = () => {
 			columnGap: "24px",
 			// paddingBottom: "24px",
 		},
+		imgContainer: {
+			// shadow: "1px black"
+			border: "1px black",
+		},
 		image: {
 			width: "auto",
 			flex: responsive("", "0 0 calc(33.3% - 16px)", "0 0 calc(25% - 18px)"),
