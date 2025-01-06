@@ -33,7 +33,7 @@ const App = () => {
                     onCropComplete={handleCropComplete}
                 />
             )}
-            {croppedImage && <img src={croppedImage} alt="Cropped" />}
+            {/* {croppedImage && <img src={croppedImage} alt="Cropped" />} */}
         </div>
     );
 };
