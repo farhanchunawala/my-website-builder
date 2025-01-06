@@ -20,8 +20,23 @@ import Section015 from "@/sections/s015/v1";
 import Section016 from "@/sections/s016/v1";
 import Section017 from "@/sections/s017/v1";
 import Section018 from "@/sections/s018/v1";
+import { Suspense } from "react";
+
+function ModeInitializer() {
+    useMode();
+    return null;
+}
 
 export default function Home() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <ModeInitializer />
+            <PageContent />
+        </Suspense>
+    );
+}
+
+function PageContent() {
     useMode();
     const dispatch = useDispatch();
     const mode = useSelector((state: RootState) => state.mode);
@@ -49,10 +64,7 @@ export default function Home() {
             <Box className="page">
                 <Box
                     className="page-content"
-                    sx={{
-                        ...mapStyles(`page`),
-                        // ...mapStyles(styles?.page, styleKit, device),
-                    }}
+                    sx={{ ...mapStyles(`page`) }}
                 >
                     <Section013 path="s013" />
                     <Section014 path="s014" />
@@ -69,20 +81,12 @@ export default function Home() {
                         path="s016a"
                     />
                     <Section017
-                        // styles={styles.s017}
-                        // content={content.s017}
-                        // config={config.s017}
-                        // styleKit={styleKit}
                         id={content.s013.navlinks[2].link}
-						path="s017"
+                        path="s017"
                     />
                     <Section018
-                        styles={styles.s018}
-                        content={content.s018}
-                        config={config.s018}
-                        styleKit={styleKit}
                         id={content.s013.navlinks[3].link}
-						path="s018"
+                        path="s018"
                     />
                 </Box>
             </Box>
