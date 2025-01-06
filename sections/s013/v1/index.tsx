@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
-import type Props from "./types";
 import Image from "next/image";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
@@ -11,14 +10,11 @@ import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import { get } from "lodash-es";
 
-const Section013: React.FC<Props> = ({
-    // styles,
-    // content,
-    // config,
-    // styleKit,
-    // variables,
-    path,
-}) => {
+interface Props {
+    path: string;
+}
+
+const Section013: React.FC<Props> = ({ path }) => {
     const dispatch = useDispatch();
     const { mapStyles } = useMapStyles();
     const { designFrame } = useDesignFrame();
@@ -65,14 +61,14 @@ const Section013: React.FC<Props> = ({
                     // config={config.navlinks}
                     // styles={styles?.navlinks}
                     // styleKit={styleKit}
-					path={`${path}.navlinks`}
+                    path={`${path}.navlinks`}
                 />
             )}
             {isDesktop ? (
                 <Button
                     variant="contained"
                     sx={{
-						...mapStyles(`${path}.button.container`),
+                        ...mapStyles(`${path}.button.container`),
                         // ...mapStyles(
                         //     styles?.button?.container,
                         //     styleKit,

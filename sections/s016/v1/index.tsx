@@ -1,24 +1,25 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
-import type Props from "./types";
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import CtaBlock from "@/components/CtaBlock01/v1";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import useDesignFrame from "@/lib/hooks/useDesignFrame";
+import { get } from "lodash-es";
 
-const Section016: React.FC<Props> = ({
-    styles,
-    content,
-    config,
-    variables,
-	styleKit,
-    id,
-}) => {
-    const device = useSelector(
-        (state: RootState) => state.responsive.device
-    );
+interface Props {
+    id: string;
+    path: string;
+}
+
+const Section016: React.FC<Props> = ({ id, path }) => {
+    const { mapStyles } = useMapStyles();
+    const { designFrame } = useDesignFrame();
     const [mounted, setMounted] = useState(false);
+    const { config, content } = useSelector(
+        (state: RootState) => state.data.data
+    );
 
     useEffect(() => {
         setMounted(true);
@@ -31,15 +32,13 @@ const Section016: React.FC<Props> = ({
     return (
         <Box
             component="section"
-            sx={{ ...mapStyles(styles?.container, styleKit, device) }}
-            className={id}
+            className="s016"
             id={id}
+            sx={{ ...mapStyles(`${path}.container`) }}
         >
             <Image
-                style={{
-                    ...mapStyles(styles?.image, styleKit, device),
-                }}
-                src={`${variables.imageDir}/${content?.imageUrl}`}
+                style={{ ...mapStyles(`${path}.image`) }}
+                src={`${config.imageDir}/${get(content, `${path}.imageUrl`)}`}
                 alt="Firexio"
                 // width={1305}
                 // height={833}
@@ -47,13 +46,7 @@ const Section016: React.FC<Props> = ({
                 height={850}
                 layout="responsive"
             />
-            <CtaBlock
-                content={content?.ctaBlock}
-                config={config?.ctaBlock}
-                styles={styles?.ctaBlock}
-				styleKit={styleKit}
-				variables={variables}
-            />
+            <CtaBlock path={`${path}.ctaBlock`} />
         </Box>
     );
 };

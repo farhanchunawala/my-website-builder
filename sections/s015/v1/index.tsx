@@ -1,19 +1,21 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
-import type Props from "./types";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import TextBlock from "@/components/TextBlock01/v1";
 import { mapStyles } from "@/lib/helpers/mapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import useDesignFrame from "@/lib/hooks/useDesignFrame";
 
-const Section015: React.FC<Props> = ({
-    styles,
-    content,
-    config,
-    styleKit,
-    id,
-}) => {
+interface Props {
+    id: string;
+    path: string;
+}
+
+const Section015: React.FC<Props> = ({ id, path }) => {
+    const { mapStyles } = useMapStyles();
+    const { designFrame } = useDesignFrame();
     const device = useSelector(
         (state: RootState) => state.responsive.device
     );
@@ -30,22 +32,25 @@ const Section015: React.FC<Props> = ({
     return (
         <Box
             component="section"
-            sx={{
-                ...mapStyles(styles?.container, styleKit, device)
-            }}
-            className={id}
+            className="s015"
             id={id}
+            sx={{ ...mapStyles(`${path}.container`) }}
+            // sx={{
+            //     // ...mapStyles(styles?.container, styleKit, device)
+            // }}
         >
             <TextBlock
-                content={content?.textBlock}
-                config={config?.textBlock}
-                styles={styles?.textBlock}
-                styleKit={styleKit}
+                // content={content?.textBlock}
+                // config={config?.textBlock}
+                // styles={styles?.textBlock}
+                // styleKit={styleKit}
+                path={`${path}.textBlock`}
             />
             <Divider
-                sx={{
-                    ...mapStyles(styles?.divider, styleKit, device)
-                }}
+                sx={{ ...mapStyles(`${path}.divider`) }}
+                // sx={{
+                //         ...mapStyles(styles?.divider, styleKit, device)
+                //     }}
             />
         </Box>
     );

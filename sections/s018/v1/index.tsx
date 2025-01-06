@@ -1,22 +1,19 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
-import type Props from "./types";
 import Box from "@mui/material/Box";
 import CtaBlock from "@/components/CtaBlock01/v1";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import useDesignFrame from "@/lib/hooks/useDesignFrame";
 
-const Section018: React.FC<Props> = ({
-    styles,
-    content,
-    config,
-    styleKit,
-	variables,
-    id,
-}) => {
-    const device = useSelector(
-        (state: RootState) => state.responsive.device
-    );
+interface Props {
+	id: string
+    path: string
+}
+
+const Section018: React.FC<Props> = ({ id, path }) => {
+	const { mapStyles } = useMapStyles();
+    const { designFrame } = useDesignFrame();
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
@@ -28,19 +25,11 @@ const Section018: React.FC<Props> = ({
     return (
         <Box
             component="section"
-            sx={{
-				...mapStyles(styles?.container, styleKit, device)
-            }}
+            className="s018"
             id={id}
-            className={id}
+            sx={{ ...mapStyles(`${path}.container`) }}
         >
-            <CtaBlock
-                content={content?.ctaBlock}
-                config={config?.ctaBlock}
-                styles={styles?.ctaBlock}
-                styleKit={styleKit}
-				variables={variables}
-            />
+			<CtaBlock path={`${path}.ctaBlock`} />
         </Box>
     );
 };

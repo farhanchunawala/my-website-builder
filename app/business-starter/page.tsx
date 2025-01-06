@@ -54,44 +54,27 @@ export default function Home() {
                         // ...mapStyles(styles?.page, styleKit, device),
                     }}
                 >
-                    <Section013
-                        // styles={styles.s013}
-                        // content={content.s013}
-                        // config={config.s013}
-                        // styleKit={styleKit}
-                        // variables={variables}
-						path="s013"
-                    />
+                    <Section013 path="s013" />
                     <Section014 path="s014" />
                     <Section015
-                        styles={styles.s015}
-                        content={content.s015}
-                        config={config.s015}
-                        styleKit={styleKit}
                         id={content.s014.ctaBlock.buttonLink}
+                        path="s015"
                     />
                     <Section016
-                        styles={styles.s016}
-                        content={content.s016}
-                        config={config.s016}
-                        variables={variables}
-                        styleKit={styleKit}
                         id={content.s013.navlinks[0].link}
+                        path="s016"
                     />
                     <Section016
-                        styles={styles.s016a}
-                        content={content.s016a}
-                        config={config.s016a}
-                        variables={variables}
-                        styleKit={styleKit}
                         id={content.s013.navlinks[1].link}
+                        path="s016a"
                     />
                     <Section017
-                        styles={styles.s017}
-                        content={content.s017}
-                        config={config.s017}
-                        styleKit={styleKit}
+                        // styles={styles.s017}
+                        // content={content.s017}
+                        // config={config.s017}
+                        // styleKit={styleKit}
                         id={content.s013.navlinks[2].link}
+						path="s017"
                     />
                     <Section018
                         styles={styles.s018}
@@ -99,6 +82,7 @@ export default function Home() {
                         config={config.s018}
                         styleKit={styleKit}
                         id={content.s013.navlinks[3].link}
+						path="s018"
                     />
                 </Box>
             </Box>

@@ -1,22 +1,23 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
-import type Props from "./types";
 import Box from "@mui/material/Box";
 import TextBlock from "@/components/TextBlock01/v1";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import useDesignFrame from "@/lib/hooks/useDesignFrame";
 
-const Section017: React.FC<Props> = ({
-    styles,
-    content,
-    config,
-    styleKit,
-    id,
-}) => {
+interface Props {
+	id: string
+    path: string
+}
+
+const Section017: React.FC<Props> = ({ id, path }) => {
+    const { mapStyles } = useMapStyles();
+    const { designFrame } = useDesignFrame();
+    const [mounted, setMounted] = useState(false);
     const device = useSelector(
         (state: RootState) => state.responsive.device
     );
-    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
         setMounted(true);
@@ -29,42 +30,34 @@ const Section017: React.FC<Props> = ({
     return (
         <Box
             component="section"
-            sx={{ ...mapStyles(styles?.container, styleKit, device) }}
-            className={id}
+            className="s017"
             id={id}
+            sx={{ ...mapStyles(`${path}.container`) }}
         >
-            <TextBlock
-                content={content?.textBlock}
-                config={config?.textBlock}
-                styles={styles?.textBlock}
-                styleKit={styleKit}
-            />
+            <TextBlock path={`${path}.textBlock`} />
             <Box
-                sx={{
-                    ...mapStyles(
-                        styles?.columns?.container,
-                        styleKit,
-                        device
-                    ),
-                }}
+                sx={{ ...mapStyles(`${path}.columns?.container`) }}
             >
                 <TextBlock
-                    content={content?.columns[0]}
-                    config={config?.columns[0]}
-                    styles={styles?.columns?.textBlock}
-                    styleKit={styleKit}
+                    // content={content?.columns[0]}
+                    // config={config?.columns[0]}
+                    // styles={styles?.columns?.textBlock}
+                    // styleKit={styleKit}
+                    path={`${path}.columns.0`}
                 />
                 <TextBlock
-                    content={content?.columns[1]}
-                    config={config?.columns[1]}
-                    styles={styles?.columns?.textBlock}
-                    styleKit={styleKit}
+                    // content={content?.columns[1]}
+                    // config={config?.columns[1]}
+                    // styles={styles?.columns?.textBlock}
+                    // styleKit={styleKit}
+                    path={`${path}.columns.1`}
                 />
                 <TextBlock
-                    content={content?.columns[2]}
-                    config={config?.columns[2]}
-                    styles={styles?.columns?.textBlock}
-                    styleKit={styleKit}
+                    // content={content?.columns[2]}
+                    // config={config?.columns[2]}
+                    // styles={styles?.columns?.textBlock}
+                    // styleKit={styleKit}
+                    path={`${path}.columns.2`}
                 />
             </Box>
         </Box>
