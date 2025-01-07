@@ -1,4 +1,4 @@
-import * as TextBlock from "@/components/TextBlock01/v1/types";
+import * as TextBlock from "@/components/TextBlock/v1.1/types";
 
 type Data = {
 	textBlock: TextBlock.Data,

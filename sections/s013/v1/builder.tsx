@@ -4,7 +4,7 @@ import type Props from "./types";
 import Image from "next/image";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
-import NavLinks from "@/components/NavLinks01/v1";
+import NavLinks from "@/components/NavLinks/v1.1";
 import Button from "@mui/material/Button";
 import { mapStyles } from "@/lib/helpers/mapStyles";
 

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
 import Image from "next/image";
-import CtaBlock from "@/components/CtaBlock01/v1/builder";
+import CtaBlock from "@/components/CtaBlock/v1.1/builder";
 import { mapStyles } from "@/lib/helpers/mapStyles";
 
 const Section016: React.FC<Props> = ({

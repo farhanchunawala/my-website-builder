@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
-import CtaBlock from "@/components/CtaBlock01/v1";
+import CtaBlock from "@/components/CtaBlock/v1.1";
 import Image from "next/image";
 
 const Section020: React.FC<Props> = ({ styles, config, content, id }) => {

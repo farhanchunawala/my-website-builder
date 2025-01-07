@@ -3,7 +3,7 @@ import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
-import TextBlock from "@/components/TextBlock01/v1";
+import TextBlock from "@/components/TextBlock/v1.1";
 import { mapStyles } from "@/lib/helpers/mapStyles";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";

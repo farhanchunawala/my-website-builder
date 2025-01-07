@@ -22,21 +22,7 @@ import Section017 from "@/sections/s017/v1";
 import Section018 from "@/sections/s018/v1";
 import { Suspense } from "react";
 
-function ModeInitializer() {
-    useMode();
-    return null;
-}
-
 export default function Home() {
-    return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <ModeInitializer />
-            <PageContent />
-        </Suspense>
-    );
-}
-
-function PageContent() {
     useMode();
     const dispatch = useDispatch();
     const mode = useSelector((state: RootState) => state.mode);
@@ -59,68 +45,76 @@ function PageContent() {
         return null;
     }
 
+	function ModeInitializer() {
+		useMode();
+		return null;
+	}
+	
     return (
-        <ThemeProvider theme={theme}>
-            <Box className="page">
-                <Box
-                    className="page-content"
-                    sx={{ ...mapStyles(`page`) }}
-                >
-                    <Section013 path="s013" />
-                    <Section014 path="s014" />
-                    <Section015
-                        id={content.s014.ctaBlock.buttonLink}
-                        path="s015"
-                    />
-                    <Section016
-                        id={content.s013.navlinks[0].link}
-                        path="s016"
-                    />
-                    <Section016
-                        id={content.s013.navlinks[1].link}
-                        path="s016a"
-                    />
-                    <Section017
-                        id={content.s013.navlinks[2].link}
-                        path="s017"
-                    />
-                    <Section018
-                        id={content.s013.navlinks[3].link}
-                        path="s018"
-                    />
-                </Box>
-            </Box>
-            {mode === "builder" && (
-                <>
-                    {sidePanel && (
-                        <Box className="side-bar">
-                            <TextField
-                                id="outlined-basic"
-                                label="Outlined"
-                                variant="outlined"
-                            />
-                            <button
-                                onClick={toggleSidePanel}
-                                aria-label="Close Side Panel"
-                            >
-                                Close Panel
-                            </button>
-                        </Box>
-                    )}
-                    <Fab
-                        color="primary"
-                        aria-label="Save Data"
-                        sx={{
-                            position: "fixed",
-                            bottom: 32,
-                            right: 32,
-                        }}
-                        // onClick={saveData}
+        <Suspense fallback={<div>Loading...</div>}>
+			<ModeInitializer />
+            <ThemeProvider theme={theme}>
+                <Box className="page">
+                    <Box
+                        className="page-content"
+                        sx={{ ...mapStyles(`page`) }}
                     >
-                        <SaveAltIcon />
-                    </Fab>
-                </>
-            )}
-        </ThemeProvider>
+                        <Section013 path="s013" />
+                        <Section014 path="s014" />
+                        <Section015
+                            id={content.s014.ctaBlock.buttonLink}
+                            path="s015"
+                        />
+                        <Section016
+                            id={content.s013.navlinks[0].link}
+                            path="s016"
+                        />
+                        <Section016
+                            id={content.s013.navlinks[1].link}
+                            path="s016a"
+                        />
+                        <Section017
+                            id={content.s013.navlinks[2].link}
+                            path="s017"
+                        />
+                        <Section018
+                            id={content.s013.navlinks[3].link}
+                            path="s018"
+                        />
+                    </Box>
+                </Box>
+                {mode === "builder" && (
+                    <>
+                        {sidePanel && (
+                            <Box className="side-bar">
+                                <TextField
+                                    id="outlined-basic"
+                                    label="Outlined"
+                                    variant="outlined"
+                                />
+                                <button
+                                    onClick={toggleSidePanel}
+                                    aria-label="Close Side Panel"
+                                >
+                                    Close Panel
+                                </button>
+                            </Box>
+                        )}
+                        <Fab
+                            color="primary"
+                            aria-label="Save Data"
+                            sx={{
+                                position: "fixed",
+                                bottom: 32,
+                                right: 32,
+                            }}
+                            // onClick={saveData}
+                        >
+                            <SaveAltIcon />
+                        </Fab>
+                    </>
+                )}
+            </ThemeProvider>
+        </Suspense>
     );
 }

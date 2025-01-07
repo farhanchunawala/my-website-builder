@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import Box from "@mui/material/Box";
-import TextBlock from "@/components/TextBlock01/v1";
+import TextBlock from "@/components/TextBlock/v1.1";
 import Button from "@mui/material/Button";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";

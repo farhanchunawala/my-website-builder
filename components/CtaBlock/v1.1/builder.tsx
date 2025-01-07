@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Box from "@mui/material/Box";
-import TextBlock from "@/components/TextBlock01/v1/builder";
+import TextBlock from "@/components/TextBlock/v1.1/builder";
 import Button from "@mui/material/Button";
 // import { Button } from "@mui/base/Button";
 // import { Box, styled } from "@mui/system";

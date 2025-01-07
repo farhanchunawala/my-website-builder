@@ -1,4 +1,4 @@
-import * as TextBlock from "../../TextBlock01/v1/types";
+import * as TextBlock from "../../TextBlock/v1.1/types";
 
 type Data = {
 	icon: string;

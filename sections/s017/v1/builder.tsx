@@ -3,7 +3,7 @@ import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
-import TextBlock from "@/components/TextBlock01/v1/builder";
+import TextBlock from "@/components/TextBlock/v1.1/builder";
 import { mapStyles } from "@/lib/helpers/mapStyles";
 
 const Section017: React.FC<Props> = ({

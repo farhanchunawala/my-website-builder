@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
 // import { Box } from '@mui/system';
-import CtaBlock from "@/components/CtaBlock01/v1/builder";
+import CtaBlock from "@/components/CtaBlock/v1.1/builder";
 import useEvent from "@/lib/hooks/useEvent";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 

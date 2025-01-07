@@ -1,4 +1,4 @@
-import * as CtaBlock from "@/components/CtaBlock01/v1/types";
+import * as CtaBlock from "@/components/CtaBlock/v1.1/types";
 
 interface Data {
 	imageUrl: string,

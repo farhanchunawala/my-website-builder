@@ -1,5 +1,5 @@
-import * as NavLinks from "@/components/NavLinks01/v1/types";
-import * as Button from "@/elements/Button01/v1/types";
+import * as NavLinks from "@/components/NavLinks/v1.1/types";
+import * as Button from "@/elements/Button/v1.1/types";
 
 interface Config {
 	image: {

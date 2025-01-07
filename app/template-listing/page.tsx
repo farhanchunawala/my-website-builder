@@ -10,7 +10,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import Box from "@mui/material/Box";
 import Image from "next/image";
-import TextBlock from "@/components/TextBlock01/v1";
+import TextBlock from "@/components/TextBlock/v1.1";
 import { Typography } from "@mui/material";
 
 export default function Home() {

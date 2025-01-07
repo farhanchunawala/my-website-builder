@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
-import CtaBlock from "@/components/CtaBlock01/v1";
+import CtaBlock from "@/components/CtaBlock/v1.1";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 
