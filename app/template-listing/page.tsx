@@ -13,6 +13,7 @@ import Image from "next/image";
 import TextBlock from "@/components/TextBlock01/v1";
 import { Typography } from "@mui/material";
 import templates from "./templates";
+import Link from "@mui/material/Link";
 
 export default function Home() {
 	const { isMobile, isTablet, isDesktop } = useSelector(
@@ -40,7 +41,7 @@ export default function Home() {
 					// id={id}
 				>
 					{templates.map((template, index) => (
-						<Box sx={styles?.imgContainer} key={index}>
+						<Link sx={styles?.imgContainer} key={index} href={`https://firexio.com/templates/${template?.url}/index.html`}>
 							<Image
 								style={styles?.image}
 								src={`/images/templates/listing/${template?.image}`}
@@ -48,6 +49,7 @@ export default function Home() {
 								height={369}
 								alt="firexio"
 								layout="responsive"
+								
 							/>
 							<Box sx={styles?.infoContainer}>
 								<Typography
@@ -63,7 +65,7 @@ export default function Home() {
 									{/* {template?.price} */}
 								</Typography>
 							</Box>
-						</Box>
+						</Link>
 					))}
 					{/* <Box sx={styles?.imgContainer}>
 						<Image
