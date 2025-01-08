@@ -438,10 +438,10 @@ const templates = [
 		url: "smith",
 	},
 	{
-		title: "Starter",
+		title: "Starter Templates",
 		price: "$50",
 		image: "starter.jpeg",
-		url: "starter",
+		url: "starter-templates",
 	},
 	{
 		title: "Space",
