@@ -320,7 +320,7 @@ const templates = [
 	{
 		title: "Florence",
 		price: "$50",
-		image: "florence.png",
+		image: "florance.jpeg",
 		url: "florence",
 	},
 	{
