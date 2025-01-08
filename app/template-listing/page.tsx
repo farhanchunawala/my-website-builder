@@ -60,7 +60,7 @@ export default function Home() {
 									component="h2"
 									style={styles?.rate}
 								>
-									{template?.price}
+									{/* {template?.price} */}
 								</Typography>
 							</Box>
 						</Box>
