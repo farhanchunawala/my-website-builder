@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import TextBlock from "@/components/TextBlock/v1.1";
 import { mapStyles } from "@/lib/helpers/mapStyles";
-import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles2";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 
 interface Props {

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import CtaBlock from "@/components/CtaBlock/v1.1";
-import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles2";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import { get } from "lodash-es";
 

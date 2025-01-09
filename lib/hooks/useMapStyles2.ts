@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
+import { get } from "lodash-es";
 
 type StyleProps = {
     imports?: string[];
@@ -16,12 +17,14 @@ export const useMapStyles = () => {
     const device = useSelector(
         (state: RootState) => state.responsive.device
     );
-    const { styleKit } = useSelector(
+    const { styles, styleKit } = useSelector(
         (state: RootState) => state.data.data
     );
     const mapStyles = useMemo(() => {
-        return (styleProps: StyleProps): Record<string, string | undefined> => {
+        return (path: string): Record<string, string | undefined> => {
             const result: Record<string, string | undefined> = {};
+
+            const styleProps: StyleProps = get(styles, path);
 
             // Helper function: Process Style Entries
             const processStyles = (
@@ -110,7 +113,7 @@ export const useMapStyles = () => {
 
             return result;
         };
-    }, [device, styleKit]);
+    }, [device, styles, styleKit]);
 
     return { mapStyles };
 };

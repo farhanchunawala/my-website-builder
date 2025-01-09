@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 // import { Box, styled } from "@mui/system";
 import useEvent from "@/lib/hooks/useEvent";
 import AutosizeInput from "react-input-autosize";
-import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles2";
 import { setProperty } from "@/lib/features/data/dataSlice";
 import { get } from "lodash-es";
 

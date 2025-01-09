@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import NavLinks from "@/components/NavLinks/v1.1";
 import Button from "@mui/material/Button";
 // import { mapStyles } from "@/lib/helpers/mapStyles";
-import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles2";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import { get } from "lodash-es";
 
