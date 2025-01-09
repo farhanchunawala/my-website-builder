@@ -23,7 +23,7 @@ import Section018 from "@/sections/s018/v1";
 import { Suspense } from "react";
 
 export default function Home() {
-    useMode();
+    // useMode();
     const dispatch = useDispatch();
     const mode = useSelector((state: RootState) => state.mode);
     const { config, content, styles, styleKit } = useSelector(
