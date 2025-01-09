@@ -4,7 +4,7 @@ import type Props from "./types";
 import Stack from "@mui/material/Stack";
 import Link from "@mui/material/Link";
 // import { mapStyles } from "@/lib/helpers/mapStyles";
-import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles2";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import { get } from "lodash-es";
 

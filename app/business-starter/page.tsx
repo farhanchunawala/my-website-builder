@@ -8,7 +8,7 @@ import variables from "./variables";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import Box from "@mui/material/Box";
-import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles2";
 import useMode from "@/lib/hooks/useMode";
 import TextField from "@mui/material/TextField";
 import Fab from "@mui/material/Fab";

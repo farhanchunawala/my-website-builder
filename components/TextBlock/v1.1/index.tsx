@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles2";
 import { get } from "lodash-es";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 

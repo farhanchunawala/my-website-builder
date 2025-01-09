@@ -2,12 +2,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import Box from "@mui/material/Box";
 import TextBlock from "@/components/TextBlock/v1.1";
-import Button from "@mui/material/Button";
-import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles2";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import { get } from "lodash-es";
 import AutosizeInput from "react-input-autosize";
 import { setProperty } from "@/lib/features/data/dataSlice";
+// import Button from "@mui/material/Button";
+// import Button from "@mui/base/Button";
+import Button from "@/elements/Button/v1.1";
 
 interface Props {
     path: string;
@@ -35,13 +37,13 @@ const CtaBlock: React.FC<Props> = ({ path }) => {
             {...designFrame(`${path}.container`)}
         >
             <TextBlock path={`${path}.textBlock`} />
-            <Button
+            {/* <Button
                 variant="contained"
                 size={get(config, `${path}.button.size`)}
                 color={get(config, `${path}.button.color`)}
                 href={
                     mode !== "builder"
-                        ? `#${get(content, `${path}.buttonLink`)}`
+                        ? `#${get(content, `${path}.button.link`)}`
                         : undefined
                 }
                 sx={{
@@ -52,25 +54,26 @@ const CtaBlock: React.FC<Props> = ({ path }) => {
                 {mode === "builder" ? (
                     <AutosizeInput
                         className="auto-size-input"
-                        value={get(content, `${path}.buttonText`)}
+                        value={get(content, `${path}.button.text`)}
                         placeholder=""
                         onChange={(event) =>
                             dispatch(
                                 setProperty({
-                                    path: `content.${path}.buttonText`,
+                                    path: `content.${path}.button.text`,
                                     value: event.target.value,
                                 })
                             )
                         }
-                        {...frameHandlers(`${path}.buttonText`)}
+                        {...frameHandlers(`${path}.button.text`)}
                         inputStyle={{
-                            ...frameStyles(`${path}.buttonText`),
+                            ...frameStyles(`${path}.button.text`),
                         }}
                     />
                 ) : (
-                    get(content, `${path}.buttonText`)
+                    get(content, `${path}.button.text`)
                 )}
-            </Button>
+            </Button> */}
+			<Button path={`${path}.button`}></Button>
         </Box>
     );
 };

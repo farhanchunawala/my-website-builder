@@ -3,7 +3,7 @@ import { RootState } from "@/lib/store";
 import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import CtaBlock from "@/components/CtaBlock/v1.1";
-import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles2";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 
 interface Props {

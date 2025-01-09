@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 // import { Box } from '@mui/system';
 import CtaBlock from "@/components/CtaBlock/v1.1/builder";
 import useEvent from "@/lib/hooks/useEvent";
-import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles2";
 
 const Section014: React.FC<Props> = ({ path, id }) => {
     const { mapStyles } = useMapStyles();
