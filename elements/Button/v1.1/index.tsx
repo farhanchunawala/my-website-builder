@@ -17,8 +17,7 @@ type SizeStyles = Record<string, React.CSSProperties>;
 
 const variantStyles: VariantStyles = {
     contained: {
-        // backgroundColor: "blue",
-        // color: "white",
+		borderRadius: 0,
     },
 };
 
@@ -61,9 +60,11 @@ const Button: React.FC<Props> = ({ path }) => {
 				...variantStyles[config?.variant],
                 ...sizeStyles[config?.size],
                 ...mapStyles(styles?.container),
+				...frameStyles(`${path}.container`),
                 // ...hoverStyles,
             }}
-            {...designFrame(`${path}.container`)}
+			{...frameHandlers(`${path}.container`)}
+            // {...designFrame(`${path}.container`)}
             // onMouseEnter={() => setIsHovered(true)}
             // onMouseLeave={() => setIsHovered(false)}
         >

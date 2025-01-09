@@ -39,28 +39,36 @@ const useDesignFrame = () => {
     );
 
     const frameHandlers = useCallback(
-        (id: string | number | null) => ({
-            onMouseOver: (
-                event: React.MouseEvent | React.FocusEvent
-            ) => handleEvent(event, id),
-            onMouseLeave: (
-                event: React.MouseEvent | React.FocusEvent
-            ) => handleEvent(event, null),
-            onClick: (event: React.MouseEvent | React.FocusEvent) =>
-                handleEvent(event, id),
-            onBlur: (event: React.MouseEvent | React.FocusEvent) =>
-                handleEvent(event, null),
-        }),
-        [handleEvent]
+        (id: string | number | null) => {
+            if (mode !== "builder") return {};
+
+            return {
+                onMouseOver: (
+                    event: React.MouseEvent | React.FocusEvent
+                ) => handleEvent(event, id),
+                onMouseLeave: (
+                    event: React.MouseEvent | React.FocusEvent
+                ) => handleEvent(event, null),
+                onClick: (
+                    event: React.MouseEvent | React.FocusEvent
+                ) => handleEvent(event, id),
+                onBlur: (
+                    event: React.MouseEvent | React.FocusEvent
+                ) => handleEvent(event, null),
+            };
+        },
+        [handleEvent, mode]
     );
 
     const frameStyles = useCallback(
         (id: string | number | null) => {
+            if (mode !== "builder") return {};
+
             return hoveredElement === id || focusedElement === id
                 ? { outline: "1px solid #007BFF" }
                 : {};
         },
-        [hoveredElement, focusedElement]
+        [hoveredElement, focusedElement, mode]
     );
 
     const designFrame = useCallback(
@@ -78,7 +86,7 @@ const useDesignFrame = () => {
     );
 
     return {
-		frameHandlers,
+        frameHandlers,
         frameStyles,
         designFrame,
     };
