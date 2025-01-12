@@ -3,11 +3,9 @@ import {
     createAsyncThunk,
     PayloadAction,
 } from "@reduxjs/toolkit";
-import { usePathname } from "next/navigation";
 import axios from "axios";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-// const pathname = usePathname().slice(1);
 
 interface DataState {
     data: Record<string, any>; // Adjust to match the actual structure of your data
@@ -21,16 +19,34 @@ const initialState: DataState = {
     error: null,
 };
 
-export const fetchData = createAsyncThunk(
-    "data/fetchData",
-    async (): Promise<Record<string, any>> => {
-        const response = await axios.get(
-            // `${baseUrl}/api/contents/${pathname}`
-            `${baseUrl}/api/contents/business-starter`
-        );
-        return response.data;
-    }
-);
+interface RootState {
+    data: DataState;
+}
+
+export const fetchData = createAsyncThunk<
+    Record<string, unknown>, // Return type
+    { pathname: string } // Argument type
+>("data/fetchData", async ({ pathname }) => {
+    const response = await axios.get(
+        `${baseUrl}/api/contents/${pathname}`
+    );
+    return response.data;
+});
+
+export const saveData = createAsyncThunk<
+    Record<string, any>, // Return type
+    { pathname: string }, // Argument type
+    { state: RootState } // ThunkAPI type
+>("data/saveData", async ({ pathname }, { getState }) => {
+    const state = getState();
+    const { config, content, styles } = state.data.data;
+
+    const response = await axios.post(
+        `${baseUrl}/api/contents/upsert/${pathname}`,
+        { route: pathname, config, content, styles }
+    );
+    return response.data;
+});
 
 const dataSlice = createSlice({
     name: "data",
@@ -44,8 +60,7 @@ const dataSlice = createSlice({
             action: PayloadAction<{ path: string; value: any }>
         ) {
             const { path, value } = action.payload;
-			console.log(path, value);
-			
+
             const fullPath = `data.${path}`;
             const keys = fullPath.split(".");
             const lastKey = keys.pop();

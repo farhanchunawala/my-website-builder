@@ -23,16 +23,12 @@ const NavLinks: React.FC<Props> = ({ path }) => {
     return (
         <Stack
             className="navLinks"
-            sx={{
-                ...mapStyles(`${path}.container`),
-            }}
+            sx={{ ...mapStyles(`${path}.container`) }}
         >
             {get(content, path)?.map((item, index) => (
                 <Link
                     key={index}
-                    sx={{
-                        ...mapStyles(`${path}.link`),
-                    }}
+                    sx={{ ...mapStyles(`${path}.link`) }}
                     underline="none"
                     href={`#${item.link}`}
                 >

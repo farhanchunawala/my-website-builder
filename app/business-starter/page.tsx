@@ -1,7 +1,7 @@
 "use client";
-import { RootState } from "@/lib/store";
+import { AppDispatch, RootState } from "@/lib/store";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchData, setData } from "@/lib/features/data/dataSlice";
+import { fetchData, saveData } from "@/lib/features/data/dataSlice";
 import { useEffect, useState } from "react";
 import "./page.scss";
 import variables from "./variables";
@@ -21,10 +21,11 @@ import Section016 from "@/sections/s016/v1";
 import Section017 from "@/sections/s017/v1";
 import Section018 from "@/sections/s018/v1";
 import { Suspense } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Home() {
     // useMode();
-    const dispatch = useDispatch();
+    const dispatch: AppDispatch = useDispatch();
     const mode = useSelector((state: RootState) => state.mode);
     const { config, content, styles, styleKit } = useSelector(
         (state: RootState) => state.data.data
@@ -32,10 +33,11 @@ export default function Home() {
     const [mounted, setMounted] = useState(false);
     const { mapStyles } = useMapStyles();
     const [sidePanel, setSidePanel] = useState(false);
+    const pathname = usePathname().slice(1);
 
     useEffect(() => {
-        dispatch(fetchData());
-    }, [dispatch]);
+        dispatch(fetchData({ pathname }));
+    }, [dispatch, pathname]);
 
     useEffect(() => {
         setMounted(true);
@@ -45,14 +47,18 @@ export default function Home() {
         return null;
     }
 
-	function ModeInitializer() {
-		useMode();
-		return null;
-	}
-	
+	const toggleSidePanel = () => {
+        setSidePanel(!sidePanel);
+    };
+
+    function ModeInitializer() {
+        useMode();
+        return null;
+    }
+
     return (
         <Suspense fallback={<div>Loading...</div>}>
-			<ModeInitializer />
+            <ModeInitializer />
             <ThemeProvider theme={theme}>
                 <Box className="page">
                     <Box
@@ -108,7 +114,9 @@ export default function Home() {
                                 bottom: 32,
                                 right: 32,
                             }}
-                            // onClick={saveData}
+                            onClick={() =>
+                                dispatch(saveData({ pathname }))
+                            }
                         >
                             <SaveAltIcon />
                         </Fab>
