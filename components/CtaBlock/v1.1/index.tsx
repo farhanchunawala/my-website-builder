@@ -16,11 +16,8 @@ interface Props {
 }
 
 const CtaBlock: React.FC<Props> = ({ path }) => {
-    const dispatch = useDispatch();
     const { mapStyles } = useMapStyles();
-    const { frameHandlers, frameStyles, designFrame } =
-        useDesignFrame();
-    const mode = useSelector((state: RootState) => state.mode);
+    const { designFrame } = useDesignFrame();
     const { config, content } = useSelector(
         (state: RootState) => state.data.data
     );
@@ -37,43 +34,7 @@ const CtaBlock: React.FC<Props> = ({ path }) => {
             {...designFrame(`${path}.container`)}
         >
             <TextBlock path={`${path}.textBlock`} />
-            {/* <Button
-                variant="contained"
-                size={get(config, `${path}.button.size`)}
-                color={get(config, `${path}.button.color`)}
-                href={
-                    mode !== "builder"
-                        ? `#${get(content, `${path}.button.link`)}`
-                        : undefined
-                }
-                sx={{
-                    ...mapStyles(`${path}.button.container`),
-                }}
-                {...designFrame(`${path}.button`)}
-            >
-                {mode === "builder" ? (
-                    <AutosizeInput
-                        className="auto-size-input"
-                        value={get(content, `${path}.button.text`)}
-                        placeholder=""
-                        onChange={(event) =>
-                            dispatch(
-                                setProperty({
-                                    path: `content.${path}.button.text`,
-                                    value: event.target.value,
-                                })
-                            )
-                        }
-                        {...frameHandlers(`${path}.button.text`)}
-                        inputStyle={{
-                            ...frameStyles(`${path}.button.text`),
-                        }}
-                    />
-                ) : (
-                    get(content, `${path}.button.text`)
-                )}
-            </Button> */}
-			<Button path={`${path}.button`}></Button>
+            <Button path={`${path}.button`} />
         </Box>
     );
 };

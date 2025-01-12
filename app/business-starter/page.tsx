@@ -1,10 +1,9 @@
 "use client";
 import { AppDispatch, RootState } from "@/lib/store";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchData, saveData } from "@/lib/features/data/dataSlice";
+import { fetchData, saveData } from "@/lib/features/data/dataThunks";
 import { useEffect, useState } from "react";
 import "./page.scss";
-import variables from "./variables";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import Box from "@mui/material/Box";
