@@ -170,6 +170,15 @@ const s016a = {
 	},
 }
 
+const s016b = {
+	container: "",
+	imageUrl: `consulter.jpg`,
+	ctaBlock: {
+		textBlock: [],
+		buttonText: "",
+	},
+}
+
 const content = {
 	s013: s013,
 	s016: s016,
