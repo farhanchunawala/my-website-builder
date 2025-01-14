@@ -3,7 +3,7 @@ import { AppDispatch, RootState } from "@/lib/store";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchData, saveData } from "@/lib/features/data/dataThunks";
 import { useEffect, useState } from "react";
-import "./page.scss";
+// import "./page.scss";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import Box from "@mui/material/Box";
