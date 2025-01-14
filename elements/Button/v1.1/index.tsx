@@ -16,7 +16,7 @@ type SizeStyles = Record<string, React.CSSProperties>;
 
 const variantStyles: VariantStyles = {
     contained: {
-		borderRadius: 0,
+        borderRadius: 0,
     },
 };
 
@@ -48,29 +48,27 @@ const Button: React.FC<Props> = ({ path }) => {
             styles: get(state, `data.data.styles.${path}`),
         })
     );
-    const { frameHandlers, frameStyles, designFrame } =
-        useDesignFrame();
+    const { frameHandlers, frameStyles } = useDesignFrame();
     // const [isHovered, setIsHovered] = useState(false);
     // const hoverStyles = isHovered ? styles.hover : {};
 
     return (
         <button
             style={{
-				...variantStyles[config?.variant],
+                ...variantStyles[config?.variant],
                 ...sizeStyles[config?.size],
                 ...mapStyles(styles?.container),
-				...frameStyles(`${path}.container`),
+                ...frameStyles(`${path}.container`),
                 // ...hoverStyles,
             }}
-			{...frameHandlers(`${path}.container`)}
-            // {...designFrame(`${path}.container`)}
+            {...frameHandlers(`${path}.container`)}
             // onMouseEnter={() => setIsHovered(true)}
             // onMouseLeave={() => setIsHovered(false)}
-			// href={
-			// 	mode !== "builder"
-			// 		? `#${get(content, `${path}.button.link`)}`
-			// 		: undefined
-			// }
+            // href={
+            // 	mode !== "builder"
+            // 		? `#${get(content, `${path}.button.link`)}`
+            // 		: undefined
+            // }
         >
             {mode === "builder" ? (
                 <AutosizeInput

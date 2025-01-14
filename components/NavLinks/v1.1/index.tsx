@@ -1,38 +1,39 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
-import type Props from "./types";
 import Stack from "@mui/material/Stack";
 import Link from "@mui/material/Link";
-// import { mapStyles } from "@/lib/helpers/mapStyles";
-import { useMapStyles } from "@/lib/hooks/useMapStyles2";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import { get } from "lodash-es";
 
+interface Props {
+    path: string;
+}
+
 const NavLinks: React.FC<Props> = ({ path }) => {
-    const dispatch = useDispatch();
     const { mapStyles } = useMapStyles();
     const { designFrame } = useDesignFrame();
     const mode = useSelector((state: RootState) => state.mode);
-    const { config, content } = useSelector(
-        (state: RootState) => state.data.data
-    );
-    const device = useSelector(
-        (state: RootState) => state.responsive.device
-    );
+    const { content, styles } = useSelector((state: RootState) => ({
+        content: get(state, `data.data.content.${path}`),
+        styles: get(state, `data.data.styles.${path}`),
+    }));
 
     return (
         <Stack
             className="navLinks"
-            sx={{ ...mapStyles(`${path}.container`) }}
+            sx={{ ...mapStyles(styles?.container) }}
+            {...designFrame(`${path}.container`)}
         >
-            {get(content, path)?.map((item, index) => (
+            {content?.map((item, index) => (
                 <Link
                     key={index}
-                    sx={{ ...mapStyles(`${path}.link`) }}
                     underline="none"
-                    href={`#${item.link}`}
+                    sx={{ ...mapStyles(styles?.link) }}
+                    {...designFrame(`${path}.link.${index}`)}
+                    href={`#${item?.link}`}
                 >
-                    {item.text}
+                    {item?.text}
                 </Link>
             ))}
         </Stack>

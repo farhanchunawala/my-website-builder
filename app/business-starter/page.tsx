@@ -67,24 +67,24 @@ export default function Home() {
                         <Section013 path="s013" />
                         <Section014 path="s014" />
                         <Section015
-                            id={content.s014.ctaBlock.buttonLink}
                             path="s015"
+                            id={content.s014.ctaBlock.buttonLink}
                         />
                         <Section016
-                            id={content.s013.navlinks[0].link}
                             path="s016"
+                            id={content.s013.navlinks[0].link}
                         />
                         <Section016
-                            id={content.s013.navlinks[1].link}
                             path="s016a"
+                            id={content.s013.navlinks[1].link}
                         />
                         <Section017
-                            id={content.s013.navlinks[2].link}
                             path="s017"
+                            id={content.s013.navlinks[2].link}
                         />
                         <Section018
-                            id={content.s013.navlinks[3].link}
                             path="s018"
+                            id={content.s013.navlinks[3].link}
                         />
                     </Box>
                 </Box>
