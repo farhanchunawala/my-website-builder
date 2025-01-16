@@ -1,6 +1,6 @@
 import Image from "next/image";
 // import "./styles.scss";
-import Card from "../../Card01/v1";
+import Card from "../../Card/v1.1";
 import TextBlock from "@/components/TextBlock/v1.1";
 import type Props from "./types";
 

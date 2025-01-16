@@ -6,11 +6,9 @@ import { useEffect, useState } from "react";
 // import "./page.scss";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
-import Box from "@mui/material/Box";
-import { useMapStyles } from "@/lib/hooks/useMapStyles2";
+import { Box, Fab } from "@mui/material";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useMode from "@/lib/hooks/useMode";
-import TextField from "@mui/material/TextField";
-import Fab from "@mui/material/Fab";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 // import Section011 from "@/sections/s011/v1";
 import Section013 from "@/sections/s013/v1";
@@ -21,18 +19,21 @@ import Section017 from "@/sections/s017/v1";
 import Section018 from "@/sections/s018/v1";
 import { Suspense } from "react";
 import { usePathname } from "next/navigation";
+import useDesignFrame from "@/lib/hooks/useDesignFrame";
+import BuilderPanel from "@/components/BuilderPanel/v1.1";
 
 export default function Home() {
     // useMode();
     const dispatch: AppDispatch = useDispatch();
     const mode = useSelector((state: RootState) => state.mode);
-    const { config, content, styles, styleKit } = useSelector(
+    const { content, styles } = useSelector(
         (state: RootState) => state.data.data
     );
     const [mounted, setMounted] = useState(false);
     const { mapStyles } = useMapStyles();
-    const [sidePanel, setSidePanel] = useState(false);
+    const [builderPanel, setBuilderPanel] = useState(true);
     const pathname = usePathname().slice(1);
+    const { designFrame } = useDesignFrame();
 
     useEffect(() => {
         dispatch(fetchData({ pathname }));
@@ -46,8 +47,8 @@ export default function Home() {
         return null;
     }
 
-	const toggleSidePanel = () => {
-        setSidePanel(!sidePanel);
+    const toggleSidePanel = () => {
+        setBuilderPanel(!builderPanel);
     };
 
     function ModeInitializer() {
@@ -59,10 +60,11 @@ export default function Home() {
         <Suspense fallback={<div>Loading...</div>}>
             <ModeInitializer />
             <ThemeProvider theme={theme}>
-                <Box className="page">
+                <Box className="page-builder">
                     <Box
-                        className="page-content"
-                        sx={{ ...mapStyles(`page`) }}
+                        className="page"
+                        sx={{ ...mapStyles(styles.page) }}
+                        {...designFrame(`page`)}
                     >
                         <Section013 path="s013" />
                         <Section014 path="s014" />
@@ -87,40 +89,26 @@ export default function Home() {
                             id={content.s013.navlinks[3].link}
                         />
                     </Box>
+                    {mode === "builder" && (
+                        <>
+                            {builderPanel && <BuilderPanel />}
+                            <Fab
+                                color="primary"
+                                aria-label="Save Data"
+                                sx={{
+                                    position: "fixed",
+                                    bottom: 32,
+                                    right: 32,
+                                }}
+                                onClick={() =>
+                                    dispatch(saveData({ pathname }))
+                                }
+                            >
+                                <SaveAltIcon />
+                            </Fab>
+                        </>
+                    )}
                 </Box>
-                {mode === "builder" && (
-                    <>
-                        {sidePanel && (
-                            <Box className="side-bar">
-                                <TextField
-                                    id="outlined-basic"
-                                    label="Outlined"
-                                    variant="outlined"
-                                />
-                                <button
-                                    onClick={toggleSidePanel}
-                                    aria-label="Close Side Panel"
-                                >
-                                    Close Panel
-                                </button>
-                            </Box>
-                        )}
-                        <Fab
-                            color="primary"
-                            aria-label="Save Data"
-                            sx={{
-                                position: "fixed",
-                                bottom: 32,
-                                right: 32,
-                            }}
-                            onClick={() =>
-                                dispatch(saveData({ pathname }))
-                            }
-                        >
-                            <SaveAltIcon />
-                        </Fab>
-                    </>
-                )}
             </ThemeProvider>
         </Suspense>
     );
