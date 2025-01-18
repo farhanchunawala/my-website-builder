@@ -7,6 +7,7 @@ import { Styles as S020 } from "@/sections/s020/v1/types";
 import { Styles as S021 } from "@/sections/s021/v1/types";
 import { Styles as S022 } from "@/sections/s022/v1/types";
 import { color, display, fontWeight, height, letterSpacing, lineHeight, maxWidth, padding, textAlign, width } from "@mui/system";
+import { text } from "stream/consumers";
 
 const useCustomStyles = () => {
 	const { tokens, layout, fonts, colors, texts, buttons } = useTheme();
@@ -449,6 +450,19 @@ const useCustomStyles = () => {
         },
     };
 	
+	const s016b: S016b = {
+		container: {
+			backgroundColor: colors.background2,
+			padding: "16px",
+			display: responsive("", "flex", "flex"),
+		},
+		ctaBlock: {
+			container: {},
+			textBlock: {},
+			button: {},
+		},
+	};
+	
 	const styles = {
 		page: pageStyles,
 		s013: s013,
@@ -458,6 +472,7 @@ const useCustomStyles = () => {
 		s021: s021,
 		s022: s022,
 		s016a: s016a,
+		s016b: s016b,
 	}
 
 	return { styles };

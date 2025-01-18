@@ -101,6 +101,26 @@ const s016a = {
 	},
 }
 
+const s016b = {
+	ctaBlock: {
+		textBlock: [
+			{
+				component: "h2",
+			},
+			{
+				component: "h5",
+			},
+			{
+				component: "h3",
+			},
+			{
+				component: "h6",
+			},
+		],
+		button: {},
+	},
+}
+
 const config = {
 	s013: s013,
 	s016: s016,

@@ -174,7 +174,12 @@ const s016b = {
 	container: "",
 	imageUrl: `consulter.jpg`,
 	ctaBlock: {
-		textBlock: [],
+		textBlock: [
+			"Voices of Our Satisfied Clients",
+			"The team at Zeal Consulting offered exceptional guidance for our real estate projects. Their strategic insights and industry knowledge were crucial to our success.",
+			"Ryan Patel",
+			"Managing Director /  Urban Real Estate"
+		],
 		buttonText: "",
 	},
 }
@@ -187,6 +192,7 @@ const content = {
 	s021: s021,
 	s022: s022,
 	s016a: s016a,
+	s016b: s016b,
 }
 
 export default content;
