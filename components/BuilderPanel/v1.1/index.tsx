@@ -42,8 +42,10 @@ const BuilderPanel: React.FC<Props> = () => {
                                 )
                             }
                             sx={{
-                                minWidth: "160px",
-                                margin: "16px 32px",
+                                // minWidth: "160px",
+                                margin: "16px 0",
+								// width: "calc(100% - 32px)",
+								width: "100%",
                             }}
                             slotProps={{
                                 input: {
@@ -71,14 +73,14 @@ const BuilderPanel: React.FC<Props> = () => {
                 )}
             </Box>
 
-            <br />
+            {/* <br />
             <Button
                 variant="outlined"
                 // onClick={toggleSidePanel}
                 aria-label="Close Side Panel"
             >
                 Close Panel
-            </Button>
+            </Button> */}
         </Box>
     );
 };
