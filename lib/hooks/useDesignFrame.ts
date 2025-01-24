@@ -5,6 +5,7 @@ import {
     setFocusedElement,
 } from "@/lib/features/editFrame/editFrameSlice";
 import { RootState } from "@/lib/store";
+import { setPath } from "@/lib/features/builder/builderSlice";
 
 const useDesignFrame = () => {
     const dispatch = useDispatch();
@@ -32,6 +33,7 @@ const useDesignFrame = () => {
             ) {
                 event.stopPropagation();
                 dispatch(setFocusedElement(id));
+                if (event.type === "click") dispatch(setPath(id));
                 // console.log(event.type, id);
             }
         },

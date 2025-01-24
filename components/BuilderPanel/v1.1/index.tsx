@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Box } from "@mui/system";
 import { setProperty } from "@/lib/features/data/dataSlice";
 import * as styleProps from "./styleProps";
+import get from "lodash-es/get";
 import {
     TextField,
     MenuItem,
@@ -14,14 +15,15 @@ interface Props {}
 
 const BuilderPanel: React.FC<Props> = () => {
     const dispatch = useDispatch();
-    const { styles } = useSelector(
-        (state: RootState) => state.data.data
-    );
+    const { path } = useSelector((state: RootState) => state.builder);
+    const { styles } = useSelector((state: RootState) => ({
+        styles: get(state, `data.data.styles.${path}`) || {},
+    }));
 
     return (
         <Box className="side-bar">
             <Box>
-                {Object.entries(styles.s014.ctaBlock.container).map(
+                {Object.entries(styles).map(
                     ([key, value]) => (
                         <TextField
                             key={key}
@@ -34,8 +36,7 @@ const BuilderPanel: React.FC<Props> = () => {
                             onChange={(event) =>
                                 dispatch(
                                     setProperty({
-                                        // path: `styles.${path}`,
-                                        path: `styles.s014.ctaBlock.container.${key}`,
+                                        path: `styles.${path}.${key}`,
                                         value: event.target.value,
                                     })
                                 )
