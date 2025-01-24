@@ -118,9 +118,15 @@ const BuilderPanel: React.FC<Props> = () => {
                             }
                             sx={{
                                 // minWidth: "160px",
+<<<<<<< HEAD
                                 margin: "12px 0",
                                 // width: "calc(100% - 32px)",
                                 width: "100%",
+=======
+                                margin: "16px 0",
+								// width: "calc(100% - 32px)",
+								width: "100%",
+>>>>>>> d729f6c (home zc template)
                             }}
                             slotProps={{
                                 input: {
