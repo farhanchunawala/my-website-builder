@@ -6,7 +6,7 @@ import { Styles as S019 } from "@/sections/s019/v1/types";
 import { Styles as S020 } from "@/sections/s020/v1/types";
 import { Styles as S021 } from "@/sections/s021/v1/types";
 import { Styles as S022 } from "@/sections/s022/v1/types";
-import { color, display, fontWeight, height, letterSpacing, lineHeight, maxWidth, padding, textAlign, width } from "@mui/system";
+import { color, display, fontWeight, height, letterSpacing, lineHeight, margin, maxWidth, padding, textAlign, width } from "@mui/system";
 import { text } from "stream/consumers";
 
 const useCustomStyles = () => {
@@ -142,6 +142,7 @@ const useCustomStyles = () => {
 					backgroundColor: colors.primary,
 					color: colors.foreground,
 					fontWeight: "600",
+
 					// fontSize: "14px",`
 				},
                 hover: {},
@@ -453,13 +454,56 @@ const useCustomStyles = () => {
 	const s016b: S016b = {
 		container: {
 			backgroundColor: colors.background2,
-			padding: "16px",
+			paddingTop: responsive("32px", "80px"),
+			paddingLeft: responsive("32px", "32px"),
+			paddingRight: responsive("32px", "32px"),
+			paddingBottom: responsive("32px", "106px"),
 			display: responsive("", "flex", "flex"),
 		},
+		image: {
+			padding: "22px",
+			// marginRight: responsive(""),\
+			backgroundColor: colors.background,
+		},
 		ctaBlock: {
-			container: {},
-			textBlock: {},
-			button: {},
+			container: {
+				backgroundColor: colors.background,
+				padding: "10px",
+			},
+			textBlock: {
+				contaner: {},
+				texts: [
+					{
+						...texts.heading2,
+						// lineHeight: "2",
+						letterSpacing: "-1px",
+						fontWeight: "600",
+						// rowGap: "10px"
+						paddingBottom: "10px",
+					},
+					{
+						...texts.paragraph3,
+						opacity: "0.6",
+						// fontWeight: "500"
+					},
+					{
+						...texts.paragraph3,
+						marginTop: "48px",
+						paddingBottom: "10px",
+						fontWeight: "600",
+
+					},
+					{
+						...texts.paragraph4,
+						opacity: "0.6",
+						marginBottom: "56px",
+					},
+				],
+			},
+			button: {
+				backgroundColor: "transparent",
+
+			},
 		},
 	};
 	

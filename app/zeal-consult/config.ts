@@ -129,6 +129,7 @@ const config = {
 	s021: s021,
 	s022: s022,
 	s016a: s016a,
+	s016b: s016b,
 }
 
 export default config;

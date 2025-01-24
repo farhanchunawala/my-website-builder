@@ -16,7 +16,7 @@ const s013 = {
 		},
 		{
 			text: "About",
-			link: "about-us"
+			link: "about-us" 
 		},
 		{
 			text: "Blogs",
@@ -177,8 +177,8 @@ const s016b = {
 		textBlock: [
 			"Voices of Our Satisfied Clients",
 			"The team at Zeal Consulting offered exceptional guidance for our real estate projects. Their strategic insights and industry knowledge were crucial to our success.",
-			"Ryan Patel",
-			"Managing Director /  Urban Real Estate"
+			"Furqan Chunawala",
+			"Co-Founder /  Firexio"
 		],
 		buttonText: "",
 	},
