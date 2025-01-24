@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { RootState } from "@/lib/store";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchData, setData } from "@/lib/features/data/dataSlice";
+import { fetchData } from "@/lib/features/data/dataThunks";
 import "./page.scss";
 import variables from "../variables";
 // import { content } from "../content";

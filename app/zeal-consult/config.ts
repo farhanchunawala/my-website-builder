@@ -1,4 +1,4 @@
-import Component from "@/components/_component/v1";
+import Component from "@/components/_component/v1.1";
 
 
 const imageDir = "zeal-consult";

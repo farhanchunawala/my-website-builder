@@ -8,7 +8,7 @@ import InputBase from "@mui/material/InputBase";
 // import { styled } from "@mui/system";
 // import Typography from "@mui/material/Typography";
 import useEvent from "@/lib/hooks/useEvent";
-import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import { useMapStyles } from "@/lib/hooks/useMapStyles2";
 import { setProperty } from "@/lib/features/data/dataSlice";
 import { get } from "lodash-es";
 
