@@ -454,55 +454,77 @@ const useCustomStyles = () => {
 	const s016b: S016b = {
 		container: {
 			backgroundColor: colors.background2,
-			paddingTop: responsive("32px", "80px"),
-			paddingLeft: responsive("32px", "32px"),
-			paddingRight: responsive("32px", "32px"),
-			paddingBottom: responsive("32px", "106px"),
+			paddingTop: responsive("32px", "80px", "76px"),
+			paddingLeft: responsive("32px", "32px", "40px"),
+			paddingRight: responsive("32px", "32px", "40px"),
+			paddingBottom: responsive("32px", "106px", "116px"),
 			display: responsive("", "flex", "flex"),
 		},
 		image: {
-			padding: "22px",
-			// marginRight: responsive(""),\
+			paddingLeft: responsive("10px", "40px", "60px"),
+			paddingTop: responsive("10px", "95px", "60px"),
+			paddingBottom: responsive("10px", "127px", "60px"),
+			paddingRight: responsive("10px", "22px", "60px"),
+			// marginRight: responsive("", "22px", ""),
 			backgroundColor: colors.background,
 		},
 		ctaBlock: {
 			container: {
 				backgroundColor: colors.background,
-				padding: "10px",
+				paddingRight: responsive("10px", "100px", "60px"),
+				paddingLeft: responsive("10px", "10px", ""),
+				paddingTop: responsive("10px", "40px", "120px"),
+				paddingBottom: responsive("10px", "82px", "60px"),
+				// right: responsive("", "0"),
 			},
 			textBlock: {
-				contaner: {},
+				contaner: {
+					// maxWidth: responsive("", "10%"),
+				},
 				texts: [
 					{
-						...texts.heading2,
+						...responsive(
+							texts.heading2,
+							texts.SectionHeading,
+							texts.SectionHeading,
+						),
 						// lineHeight: "2",
+						maxWidth: responsive("", "25%"),
 						letterSpacing: "-1px",
 						fontWeight: "600",
 						// rowGap: "10px"
-						paddingBottom: "10px",
+						paddingBottom: responsive("10px", "", "24px"),
+						// right: responsive("", "0"),
+
 					},
 					{
 						...texts.paragraph3,
 						opacity: "0.6",
 						// fontWeight: "500"
+						maxWidth: responsive("", "50%"),
+						// right: responsive("", "0"),
+
 					},
 					{
 						...texts.paragraph3,
-						marginTop: "48px",
+						marginTop: responsive("48px", "", "24px"),
 						paddingBottom: "10px",
 						fontWeight: "600",
-
+						maxWidth: responsive("", "25%"),
+						// right: responsive("", "0"),
 					},
 					{
 						...texts.paragraph4,
 						opacity: "0.6",
 						marginBottom: "56px",
+						maxWidth: responsive("", "25%"),
+						// right: responsive("", "0"),
 					},
 				],
 			},
 			button: {
 				backgroundColor: "transparent",
-
+				opacity: "0"
 			},
 		},
 	};

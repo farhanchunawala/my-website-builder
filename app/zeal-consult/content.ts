@@ -176,7 +176,7 @@ const s016b = {
 	ctaBlock: {
 		textBlock: [
 			"Voices of Our Satisfied Clients",
-			"The team at Zeal Consulting offered exceptional guidance for our real estate projects. Their strategic insights and industry knowledge were crucial to our success.",
+			"The team at Firexio Consulting offered exceptional guidance for our Digital Marketing projects. Their strategic insights  and industry knowledge were crucial to our success.",
 			"Furqan Chunawala",
 			"Co-Founder /  Firexio"
 		],
