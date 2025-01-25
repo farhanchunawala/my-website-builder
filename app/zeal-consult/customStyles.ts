@@ -489,7 +489,7 @@ const useCustomStyles = () => {
 							texts.SectionHeading,
 						),
 						// lineHeight: "2",
-						maxWidth: responsive("", "25%"),
+						maxWidth: responsive("100%", "25%", ""),
 						letterSpacing: "-1px",
 						fontWeight: "600",
 						// rowGap: "10px"
@@ -501,7 +501,7 @@ const useCustomStyles = () => {
 						...texts.paragraph3,
 						opacity: "0.6",
 						// fontWeight: "500"
-						maxWidth: responsive("", "50%"),
+						maxWidth: responsive("100%", "50%", ""),
 						// right: responsive("", "0"),
 
 					},
@@ -510,14 +510,14 @@ const useCustomStyles = () => {
 						marginTop: responsive("48px", "", "24px"),
 						paddingBottom: "10px",
 						fontWeight: "600",
-						maxWidth: responsive("", "25%"),
+						maxWidth: responsive("100%", "25%", ""),
 						// right: responsive("", "0"),
 					},
 					{
 						...texts.paragraph4,
 						opacity: "0.6",
 						marginBottom: "56px",
-						maxWidth: responsive("", "25%"),
+						maxWidth: responsive("100%", "25%", ""),
 						// right: responsive("", "0"),
 					},
 				],
