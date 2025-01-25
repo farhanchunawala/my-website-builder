@@ -37,6 +37,23 @@ const dataSlice = createSlice({
                 target[lastKey] = value;
             }
         },
+        deleteProperty(
+            state,
+            action: PayloadAction<{ path: string }>
+        ) {
+            const { path } = action.payload;
+
+            const fullPath = `data.${path}`;
+            const keys = fullPath.split(".");
+            const lastKey = keys.pop();
+            const target = keys.reduce(
+                (node, key) => node[key],
+                state as Record<string, any>
+            );
+            if (lastKey) {
+                delete target[lastKey];
+            }
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -66,5 +83,6 @@ const dataSlice = createSlice({
     },
 });
 
-export const { setData, setProperty } = dataSlice.actions;
+export const { setData, setProperty, deleteProperty } =
+    dataSlice.actions;
 export default dataSlice;

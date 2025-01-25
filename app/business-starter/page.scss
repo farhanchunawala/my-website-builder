@@ -23,6 +23,26 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 16px;
 }
 
+.style-props {
+	.row {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+	.delete {
+		// border: 1px solid #bbb;
+		// border-radius: 4px;
+		padding: 0;
+		// height: 37px;
+	}
+}
+
+.add-button {
+	background: #aaa !important;
+	width: 100%;
+	margin-top: 16px !important;
+}
+
 .auto-size-input {
 	font: inherit;
     border: none !important;
