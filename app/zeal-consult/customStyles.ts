@@ -496,6 +496,7 @@ const useCustomStyles = () => {
             display: responsive("", "flex", "flex"),
         },
         image: {
+            aspectRatio: "1 / 1",
             paddingLeft: responsive("10px", "40px", "60px"),
             paddingTop: responsive("10px", "95px", "60px"),
             paddingBottom: responsive("10px", "127px", "60px"),
@@ -511,10 +512,13 @@ const useCustomStyles = () => {
                 paddingTop: responsive("10px", "40px", "120px"),
                 paddingBottom: responsive("10px", "82px", "60px"),
                 // right: responsive("", "0"),
+                maxWidth: responsive("100%", "39%", "100%"),
             },
             textBlock: {
                 contaner: {
                     // maxWidth: responsive("", "10%"),
+                        // maxWidth: responsive("100%", "25%", "100%"),
+
                 },
                 texts: [
                     {
@@ -524,7 +528,7 @@ const useCustomStyles = () => {
                             texts.SectionHeading
                         ),
                         // lineHeight: "2",
-                        maxWidth: responsive("100%", "25%", "100%"),
+                        // maxWidth: responsive("100%", "25%", "100%"),
                         letterSpacing: "-1px",
                         fontWeight: "600",
                         // rowGap: "10px"
@@ -535,7 +539,7 @@ const useCustomStyles = () => {
                         ...texts.paragraph3,
                         opacity: "0.6",
                         // fontWeight: "500"
-                        maxWidth: responsive("100%", "50%", "100%"),
+                        // maxWidth: responsive("100%", "50%", "100%"),
                         // right: responsive("", "0"),
                     },
                     {
@@ -543,14 +547,14 @@ const useCustomStyles = () => {
                         marginTop: responsive("48px", "", "24px"),
                         paddingBottom: "10px",
                         fontWeight: "600",
-                        maxWidth: responsive("100%", "25%", "100%"),
+                        // maxWidth: responsive("100%", "25%", "100%"),
                         // right: responsive("", "0"),
                     },
                     {
                         ...texts.paragraph4,
                         opacity: "0.6",
                         marginBottom: "56px",
-                        maxWidth: responsive("100%", "25%", "100%"),
+                        // maxWidth: responsive("100%", "25%", "100%"),
                         // right: responsive("", "0"),
                     },
                 ],
