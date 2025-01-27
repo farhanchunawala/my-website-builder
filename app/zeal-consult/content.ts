@@ -184,6 +184,12 @@ const s016b = {
 	},
 }
 
+const s023 = {
+	textBlock: [
+		"FIREXIO"
+	],
+}
+
 const content = {
 	s013: s013,
 	s016: s016,
@@ -193,6 +199,7 @@ const content = {
 	s022: s022,
 	s016a: s016a,
 	s016b: s016b,
+	s023: s023,
 }
 
 export default content;
