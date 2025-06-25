@@ -12,6 +12,7 @@ import useMode from "@/lib/hooks/useMode";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 // import Section011 from "@/sections/s011/v1";
 import Section013 from "@/sections/s013/v1";
+// import Section014 from "@/sections/s014/v1";
 import Section014 from "@/sections/s014/v3";
 import Section015 from "@/sections/s015/v1";
 import Section016 from "@/sections/s016/v1";
@@ -66,9 +67,9 @@ export default function Home() {
                         sx={{ ...mapStyles(styles.page) }}
                         {...designFrame(`page`)}
                     >
-                        <Section013 path="s013" />
+                        {/* <Section013 path="s013" /> */}
                         <Section014 path="s014" />
-                        <Section015
+                        {/* <Section015
                             path="s015"
                             id={content.s014.ctaBlock.buttonLink}
                         />
@@ -87,7 +88,7 @@ export default function Home() {
                         <Section018
                             path="s018"
                             id={content.s013.navlinks[3].link}
-                        />
+                        /> */}
                     </Box>
                     {mode === "builder" && (
                         <>

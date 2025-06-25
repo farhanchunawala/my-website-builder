@@ -1,44 +1,66 @@
-import React from "react";
-import { Box } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import { get } from "lodash-es";
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/store";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
+import useDesignFrame from "@/lib/hooks/useDesignFrame";
 
-interface ComponentMap {
-    [key: string]: React.ComponentType<any> | ComponentMap;
-}
-
-const componentMap: ComponentMap = {
-    Box: Box,
-    CtaBlock: {
-		Box: Box  //Nested component mapping
-	},
+const componentMap = {
+    Typography,
+    Button,
+    Box,
 };
 
-export const renderStructure = (obj: any, path: string = "", currentMap = componentMap) => {
-    return Object.entries(obj).map(([key, value]) => {
-		const newPath = path ? `${path}.${key}` : key;
-        const Component = currentMap[key];
-        const children = value;
-		
-		if (!Component) {
-			console.warn(`Component ${key} not found in componentMap`);
-			return null;
-		}
+export const useRenderStructure = (
+    path: string
+): React.ReactNode[] => {
+    const { mapStyles } = useMapStyles();
+    const { designFrame } = useDesignFrame();
+    const { globalConfig, config, content, styles } = useSelector(
+        (state: RootState) => ({
+			globalConfig: state.data.data.config,
+            config: get(state, `data.data.config.${path}`),
+            content: get(state, `data.data.content.${path}`),
+            styles: get(state, `data.data.styles`),
+        })
+    );
 
-		if (typeof Component === "object") {
-			return (
-				<div key={newPath}>
-					hi
-				</div>
-			);
-		} else {
-			return (
-				<Component key={newPath}>
-					{typeof children === "object" && children !== null
-						? renderStructure(children, key, currentMap[key])
-						: null}
-				</Component>
-			);
-		}
+    if (!config?.children) return [];
+
+    return config.children.map((item, index) => {
+        const Component = componentMap[item.component];
+        const currentPath = `${path}.children.${index}`;
+
+        // console.log(get(styles, `children.${index}.styles`));
+        // console.log(styles?.styles);
+        // console.log(get(styles, `${currentPath}.styles`));
+        return (
+            <Component
+                key={index}
+                {...getProps(item)}
+                sx={{
+                    ...mapStyles(
+                        get(styles, `${currentPath}.styles`)
+                    ),
+                    ...(config?.backgroundImage && {
+                        backgroundImage: `url(${globalConfig?.imageDir}/${config.backgroundImage})`,
+                    }),
+                }}
+                // {...designFrame(`${path}.container`)}
+            >
+                {item.children
+                    ? useRenderStructure(currentPath)
+                    : get(content, `children.${index}.text`) || ""}
+                {/* : currentPath} */}
+            </Component>
+        );
     });
 };
 
-// save 1
+// Helper function to extract props (excluding component and children)
+const getProps = (item: ComponentConfig) => {
+    const { component, children, ...props } = item;
+    return props;
+};
+
+// save 2

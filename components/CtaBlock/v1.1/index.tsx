@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import Box from "@mui/material/Box";
-import TextBlock from "@/components/TextBlock/v1.1";
+import TextBlock from "@/components/TextBlock/v3.1";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import { get } from "lodash-es";

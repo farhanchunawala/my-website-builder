@@ -3,9 +3,9 @@ import { RootState } from "@/lib/store";
 import { Box } from "@mui/material";
 import CtaBlock from "@/components/CtaBlock/v1.1";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
-import { useMapStyles } from "@/lib/hooks/useMapStyles2";
+import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import get from "lodash-es/get";
-import { renderStructure } from "@/lib/utils/renderStructure";
+import { useRenderStructure } from "@/lib/utils/renderStructure";
 
 interface Props {
     path: string;
@@ -14,9 +14,8 @@ interface Props {
 const Section014: React.FC<Props> = ({ path }) => {
     const { mapStyles } = useMapStyles();
     const { designFrame } = useDesignFrame();
-    const { structure, styles } = useSelector((state: RootState) => ({
-        structure: get(state, `data.data.structure.${path}`),
-        styles: get(state, `data.data.styles.${path}`),
+    const { styles } = useSelector((state: RootState) => ({
+        styles: get(state, `data.data.styles.${path}.styles`),
     }));
 
     // function traverse(obj, path = "") {
@@ -36,7 +35,20 @@ const Section014: React.FC<Props> = ({ path }) => {
     // }
     // traverse(structure);
 
-    return <>{renderStructure(structure, "")}</>;
+	// console.log(styles);
+	
+    return (
+        <Box
+            component="section"
+            className="s014"
+            id="s014"
+			sx={{ ...mapStyles(styles) }}
+            // {...designFrame(`${path}.container`)}
+        >
+			{/* {JSON.stringify(mapStyles(styles))} */}
+            {useRenderStructure(path)}
+        </Box>
+    );
 };
 
 export default Section014;

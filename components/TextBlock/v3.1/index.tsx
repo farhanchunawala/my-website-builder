@@ -24,13 +24,13 @@ const TextBlock: React.FC<Props> = ({ path }) => {
     return (
         <Stack
             className="textBlock01"
-            sx={{ ...mapStyles(styles?.container) }}
+            sx={{ ...mapStyles(styles?.[0]) }}
             {...designFrame(`${path}.container`)}
         >
-            {content?.texts?.map((item: string, index: number) => (
+            {content?.map((item: string, index: number) => (
                 <Typography
                     key={index}
-                    path={`${path}.texts.${index}`}
+                    path={`${path}.${index}`}
                 />
             ))}
         </Stack>
