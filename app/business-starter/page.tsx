@@ -1,3 +1,4 @@
+// page.tsx
 "use client";
 import { AppDispatch, RootState } from "@/lib/store";
 import { useSelector, useDispatch } from "react-redux";
@@ -22,19 +23,27 @@ import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import BuilderPanel from "@/components/BuilderPanel/v1.1";
+import { useRenderStructure } from "@/lib/utils/renderStructure";
+import { get } from "lodash-es";
 
 export default function Home() {
     // useMode();
     const dispatch: AppDispatch = useDispatch();
     const mode = useSelector((state: RootState) => state.mode);
-    const { content, styles } = useSelector(
-        (state: RootState) => state.data.data
+    const { config, content, styles } = useSelector(
+        (state: RootState) => ({
+            globalConfig: state.data.data.config,
+            config: get(state, `data.data.config`),
+            content: get(state, `data.data.content`),
+            styles: get(state, `data.data.styles`),
+        })
     );
     const [mounted, setMounted] = useState(false);
     const { mapStyles } = useMapStyles();
     const [builderPanel, setBuilderPanel] = useState(true);
     const pathname = usePathname().slice(1);
     const { designFrame } = useDesignFrame();
+	const { renderStructure } = useRenderStructure();
 
     useEffect(() => {
         dispatch(fetchData({ pathname }));
@@ -62,13 +71,18 @@ export default function Home() {
             <ModeInitializer />
             <ThemeProvider theme={theme}>
                 <Box className="page-builder">
-                    <Box
+					{renderStructure("")}
+					{/* {renderStructure(config, content, styles, "", mapStyles, designFrame)} */}
+                    {/* <Box
                         className="page"
-                        sx={{ ...mapStyles(styles.page) }}
+                        sx={{ ...mapStyles(styles.styles) }}
                         {...designFrame(`page`)}
-                    >
+                    > */}
                         {/* <Section013 path="s013" /> */}
-                        <Section014 path="s014" />
+                        {/* <Section014 path="s014" /> */}
+                        {/* {styles.children.map((item, index) => (
+                            
+                        ))} */}
                         {/* <Section015
                             path="s015"
                             id={content.s014.ctaBlock.buttonLink}
@@ -89,7 +103,7 @@ export default function Home() {
                             path="s018"
                             id={content.s013.navlinks[3].link}
                         /> */}
-                    </Box>
+                    {/* </Box> */}
                     {mode === "builder" && (
                         <>
                             {builderPanel && <BuilderPanel />}

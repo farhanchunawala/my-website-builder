@@ -31,6 +31,39 @@ const BuilderPanel: React.FC<Props> = () => {
     const [addProp, setAddProp] = useState(false);
     const [propKey, setPropKey] = useState("");
     const [propValue, setPropValue] = useState("");
+	const [error, setError] = useState("");
+
+    const handleAddProperty = () => {
+		if (addProp) {
+			if (propKey) {
+				// Ensure the styles object exists before adding property
+				if (!styles || Object.keys(styles).length === 0) {
+					// Initialize the styles object first
+					dispatch(
+						setProperty({
+							path: `styles.${path}`,
+							value: {}
+						})
+					);
+				}
+				
+				dispatch(
+					addProperty({
+						path: `styles.${path}`,
+						key: propKey,
+						value: propValue,
+					})
+				);
+			}
+			// Reset form state
+			setAddProp(false);
+			setPropKey("");
+			setPropValue("");
+		} else {
+			// Enable add mode
+			setAddProp(true);
+		}
+	};
 
     return (
         <Box className="side-bar">
@@ -38,7 +71,7 @@ const BuilderPanel: React.FC<Props> = () => {
                 {Object.entries(styles)
                     .filter(
                         ([key]) =>
-							key !== "imports" &&
+                            key !== "imports" &&
                             key !== "tablet" &&
                             key !== "desktop"
                     )
@@ -168,22 +201,7 @@ const BuilderPanel: React.FC<Props> = () => {
                 <Button
                     variant="contained"
                     className="add-button"
-                    onClick={() => {
-                        if (addProp) {
-                            dispatch(
-                                addProperty({
-                                    path: `styles.${path}`,
-                                    key: propKey,
-                                    value: propValue,
-                                })
-                            );
-                            setAddProp(false);
-                            setPropKey("");
-                            setPropValue("");
-                        } else {
-                            setAddProp(true);
-                        }
-                    }}
+                    onClick={handleAddProperty}
                 >
                     {addProp ? (
                         propKey ? (

@@ -14,9 +14,12 @@ interface Props {
 const Section014: React.FC<Props> = ({ path }) => {
     const { mapStyles } = useMapStyles();
     const { designFrame } = useDesignFrame();
-    const { styles } = useSelector((state: RootState) => ({
-        styles: get(state, `data.data.styles.${path}.styles`),
-    }));
+    const { globalConfig, styles } = useSelector(
+        (state: RootState) => ({
+            globalConfig: state.data.data.config,
+            styles: get(state, `data.data.styles.${path}.styles`),
+        })
+    );
 
     // function traverse(obj, path = "") {
     //     for (let key in obj) {
@@ -35,17 +38,22 @@ const Section014: React.FC<Props> = ({ path }) => {
     // }
     // traverse(structure);
 
-	// console.log(styles);
-	
+    // console.log(styles);
+
     return (
         <Box
             component="section"
             className="s014"
             id="s014"
-			sx={{ ...mapStyles(styles) }}
+            sx={{
+                ...mapStyles(styles),
+                // ...(globalConfig?.s014.backgroundImage && {
+                //     backgroundImage: `url(${globalConfig?.imageDir}/${globalConfig.s014.backgroundImage})`,
+                // }),
+            }}
             // {...designFrame(`${path}.container`)}
         >
-			{/* {JSON.stringify(mapStyles(styles))} */}
+            {/* {JSON.stringify(mapStyles(styles))} */}
             {useRenderStructure(path)}
         </Box>
     );
