@@ -5,7 +5,7 @@ import CtaBlock from "@/components/CtaBlock/v1.1";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import get from "lodash-es/get";
-import { useRenderStructure } from "@/lib/utils/renderStructure";
+import { useRenderStructure } from "@/lib/hooks/useRenderStructure";
 
 interface Props {
     path: string;

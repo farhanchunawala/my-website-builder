@@ -23,7 +23,7 @@ import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import BuilderPanel from "@/components/BuilderPanel/v1.1";
-import { useRenderStructure } from "@/lib/utils/renderStructure";
+import { useRenderStructure } from "@/lib/hooks/useRenderStructure";
 import { get } from "lodash-es";
 
 export default function Home() {
@@ -72,7 +72,6 @@ export default function Home() {
             <ThemeProvider theme={theme}>
                 <Box className="page-builder">
 					{renderStructure("")}
-					{/* {renderStructure(config, content, styles, "", mapStyles, designFrame)} */}
                     {/* <Box
                         className="page"
                         sx={{ ...mapStyles(styles.styles) }}
