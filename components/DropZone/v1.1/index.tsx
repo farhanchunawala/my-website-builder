@@ -113,7 +113,8 @@ export const DropZone = React.memo(
 
         const dragStyles = isDraggedOver
             ? {
-                  border: "3px solid #1976d2",
+                  //   border: "3px solid #1976d2",
+                  backgroundColor: "#1976d2",
                   transition: "all 0.2s ease-in-out",
               }
             : {
@@ -121,18 +122,26 @@ export const DropZone = React.memo(
               };
 
         return (
-            <div
-                onDragEnter={handleDragEnter}
-                onDragOver={handleDragOver}
-                onDragLeave={handleDragLeave}
-                onDrop={handleDrop}
-                data-path={dropZonePath}
-                style={{
-                    height: "4px",
-                    border: "2px solid green",
-                    ...dragStyles,
-                }}
-            />
+            <div style={{ position: "relative" }}>
+                <div
+                    onDragEnter={handleDragEnter}
+                    onDragOver={handleDragOver}
+                    onDragLeave={handleDragLeave}
+                    onDrop={handleDrop}
+                    data-path={dropZonePath}
+                    style={{
+                        position: "absolute",
+                        width: "100%",
+                        height: "16px",
+                        top: position === "before" ? "-8px" : "auto",
+                        bottom: position === "after" ? "-8px" : "auto",
+                        zIndex: 20,
+                        // border: "4px solid green",
+                        // backgroundColor: "green",
+                        ...dragStyles,
+                    }}
+                />
+            </div>
         );
     }
 );

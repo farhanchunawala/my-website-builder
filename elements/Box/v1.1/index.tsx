@@ -28,6 +28,7 @@ const Box: React.FC<Props> = ({ path, children }) => {
             // className="s014"
             // id="s014"
             style={{
+				position: "relative",
                 ...mapStyles(styles?.styles),
                 ...frameStyles(`${path}.styles`),
             }}

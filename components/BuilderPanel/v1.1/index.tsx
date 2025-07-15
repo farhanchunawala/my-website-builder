@@ -20,6 +20,7 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
+import { DragItem } from "@/components/DragItem/v1.1";
 // import DraggableInsertDemo from "@/elements/DraggableComponent/v1.1";
 // import {
 //     handleDragStart,
@@ -75,147 +76,54 @@ const BuilderPanel: React.FC<Props> = () => {
         }
     };
 
+    const dragItemsData = [
+        {
+            id: 1,
+            component: "Typography",
+            text: "Hello World",
+            label: "Typography",
+        },
+        {
+            id: 2,
+            component: "Button",
+            text: "Click Me",
+            label: "Button",
+        },
+        {
+            id: 3,
+            component: "Input",
+            text: "Enter text...",
+            label: "Input Field",
+        },
+        {
+            id: 4,
+            component: "Image",
+            text: "image.jpg",
+            label: "Image",
+        },
+        {
+            id: 5,
+            component: "Container",
+            text: "Flex Container",
+            label: "Container",
+        },
+    ];
+
     return (
         <Box className="side-bar">
-            <div
-                draggable
-                // onDragStart={(e) =>
-                //     handleDragStart(e)
-                // }
-                // onDragEnd={handleDragEnd}
-            >
-                Typography
+            <div className="drag-items-container">
+                {dragItemsData.map((item) => (
+                    <DragItem
+                        key={item.id}
+                        dragData={{
+                            component: item.component,
+                            text: item.text,
+                        }}
+                    >
+                        {item.label}
+                    </DragItem>
+                ))}
             </div>
-            {/* <div className="p-8 max-w-4xl mx-auto">
-                <div className="flex gap-8">
-                    <div className="w-64 bg-gray-100 p-4 rounded-lg">
-                        <h3 className="font-semibold mb-4">
-                            Drag to Insert:
-                        </h3>
-                        <div
-                            draggable
-                            onDragStart={(e) =>
-                                onDragStart(e, newComponent, true)
-                            }
-                            onDragEnd={onDragEnd}
-                            className={`${newComponent.color} p-4 rounded-lg cursor-move shadow-lg hover:shadow-xl transition-shadow border-2 border-dashed border-orange-300`}
-                        >
-                            <div className="flex items-center gap-2">
-                                <span className="text-2xl">⊞</span>
-                                <span className="font-medium">
-                                    {newComponent.text}
-                                </span>
-                            </div>
-                            <p className="text-sm text-gray-600 mt-1">
-                                Drag me to insert
-                            </p>
-                        </div>
-
-                        <button
-                            onClick={onResetComponents}
-                            className="mt-4 w-full bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-lg transition-colors"
-                        >
-                            Reset Layout
-                        </button>
-                    </div>
-
-                    <div className="flex-1">
-                        <h3 className="font-semibold mb-4">
-                            Component List:
-                        </h3>
-                        <div className="space-y-2">
-                            {components.map((component, index) => (
-                                <div key={component.id}>
-                                    <div
-                                        onDragOver={(e) =>
-                                            onDragOver(e, index)
-                                        }
-                                        onDragEnter={(e) =>
-                                            onDragEnter(e, index)
-                                        }
-                                        onDragLeave={onDragLeave}
-                                        onDrop={(e) =>
-                                            onDrop(e, index)
-                                        }
-                                        className={`h-2 transition-all duration-200 ${
-                                            dragOverIndex === index &&
-                                            draggingItem
-                                                ? "bg-blue-400 h-8 rounded-lg border-2 border-blue-500 border-dashed"
-                                                : "bg-transparent"
-                                        }`}
-                                    />
-
-                                    <div
-                                        draggable
-                                        onDragStart={(e) =>
-                                            onDragStart(e, component)
-                                        }
-                                        onDragEnd={onDragEnd}
-                                        className={`${
-                                            component.color
-                                        } p-4 rounded-lg cursor-move shadow-md hover:shadow-lg transition-all duration-200 border-2 border-gray-200 hover:border-gray-300 ${
-                                            draggingItem?.id ===
-                                            component.id
-                                                ? "opacity-50 scale-95"
-                                                : ""
-                                        }`}
-                                    >
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-2xl">
-                                                ⋮⋮
-                                            </span>
-                                            <span className="font-medium text-lg">
-                                                {component.text}
-                                            </span>
-                                            <span className="text-sm text-gray-500 ml-auto">
-                                                ID: {component.id}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-
-                            <div
-                                onDragOver={(e) =>
-                                    onDragOver(e, components.length)
-                                }
-                                onDragEnter={(e) =>
-                                    onDragEnter(e, components.length)
-                                }
-                                onDragLeave={onDragLeave}
-                                onDrop={(e) =>
-                                    onDrop(e, components.length)
-                                }
-                                className={`h-2 transition-all duration-200 ${
-                                    dragOverIndex ===
-                                        components.length &&
-                                    draggingItem
-                                        ? "bg-blue-400 h-8 rounded-lg border-2 border-blue-500 border-dashed"
-                                        : "bg-transparent"
-                                }`}
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                {draggingItem && (
-                    <div className="fixed top-4 right-4 bg-blue-100 p-3 rounded-lg shadow-lg">
-                        <p className="text-sm font-medium">
-                            {draggingItem.isNew
-                                ? "Inserting new component..."
-                                : "Reordering components..."}
-                        </p>
-                    </div>
-                )}
-            </div> */}
-            {/* <DraggableComponent
-                className="bg-blue-500 text-white p-4 rounded-lg shadow-lg"
-                style={{ width: "200px", height: "100px" }}
-            >
-                <div className="text-center">
-                    <h3 className="font-semibold">Box Component</h3>
-                </div>
-            </DraggableComponent> */}
 
             {/* Style Props Panel */}
             <Box className="style-props">

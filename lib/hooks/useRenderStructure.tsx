@@ -1,14 +1,13 @@
-// useRenderStructure.tsx
+// lib/hooks/useRenderStructure.tsx
 import { RootState } from "@/lib/store";
-import { useSelector, useDispatch } from "react-redux";
-import { useCallback, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useCallback, useState } from "react";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import Box from "@/elements/Box/v1.1";
 import Typography from "@/elements/Typography/v2.1";
 import Button from "@/elements/Button/v2.1";
 import { get } from "lodash-es";
-import { addProperty } from "@/lib/features/data/dataSlice";
 import React from "react";
 import { useImmer } from "use-immer";
 import { DropZone } from "@/components/DropZone/v1.1";
@@ -31,8 +30,6 @@ export const useRenderStructure = () => {
     const { mapStyles } = useMapStyles();
     const { designFrame } = useDesignFrame();
     const data = useSelector((state: RootState) => state.data.data);
-    const [isDraggedOver, setIsDraggedOver] = useState(false);
-    const dispatch = useDispatch();
 
     const [draggedOverComponents, updateDraggedOverComponents] =
         useImmer<Record<string, boolean>>({});
