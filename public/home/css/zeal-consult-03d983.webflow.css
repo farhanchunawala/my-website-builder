@@ -1451,6 +1451,7 @@ figcaption {
 
 .nav_brand {
   width: 14.3125rem;
+  display: flex;
 }
 
 .nav_brand.w--current {
