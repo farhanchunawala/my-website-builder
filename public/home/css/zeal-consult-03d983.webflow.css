@@ -2658,7 +2658,7 @@ figcaption {
 }
 
 .details_card_wr.is_four_columns {
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .detail_card {
