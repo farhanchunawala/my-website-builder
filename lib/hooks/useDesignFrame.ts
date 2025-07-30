@@ -20,6 +20,7 @@ const useDesignFrame = () => {
             event: React.MouseEvent | React.FocusEvent,
             id: string | number | null
         ) => {
+			// console.log(event.type, id);
             if (
                 event.type === "mouseover" ||
                 event.type === "mouseleave"
@@ -35,6 +36,13 @@ const useDesignFrame = () => {
                 dispatch(setFocusedElement(id));
                 if (event.type === "click") dispatch(setPath(id));
                 // console.log(event.type, id);
+				// console.log("Element Event:", {
+				// 	eventType: event.type,
+				// 	elementId: id,
+				// 	target: event.target,
+				// 	currentTarget: event.currentTarget,
+				// 	timestamp: new Date().toISOString()
+				// });
             }
         },
         [dispatch]
@@ -67,7 +75,7 @@ const useDesignFrame = () => {
             if (mode !== "builder") return {};
 
             return hoveredElement === id || focusedElement === id
-                ? { outline: "1px solid #007BFF" }
+                ? { outline: "1px solid #1976d2" }
                 : {};
         },
         [hoveredElement, focusedElement, mode]
