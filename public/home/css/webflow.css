@@ -1598,6 +1598,17 @@ textarea.w-select {
   text-decoration: none;
   color: #333333;
 }
+.logo-text {
+  color: #fff;
+  margin-bottom: 0;
+  margin-top: 0;
+  letter-spacing: -1;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 3rem;
+  align-self: center;
+  padding-left: 20px;
+}
 .w-nav-link {
   position: relative;
   display: inline-block;
