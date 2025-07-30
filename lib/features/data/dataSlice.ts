@@ -1,16 +1,8 @@
-import {
-    createSlice,
-    createAsyncThunk,
-    PayloadAction,
-} from "@reduxjs/toolkit";
-import { usePathname } from "next/navigation";
-import axios from "axios";
-
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-// const pathname = usePathname().slice(1);
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { fetchData } from "./dataThunks";
 
 interface DataState {
-    data: Record<string, any>; // Adjust to match the actual structure of your data
+    data: Record<string, any>;
     status: "idle" | "loading" | "succeeded" | "failed";
     error: string | null;
 }
@@ -20,17 +12,6 @@ const initialState: DataState = {
     status: "idle",
     error: null,
 };
-
-export const fetchData = createAsyncThunk(
-    "data/fetchData",
-    async (): Promise<Record<string, any>> => {
-        const response = await axios.get(
-            // `${baseUrl}/api/contents/${pathname}`
-            `${baseUrl}/api/contents/business-starter`
-        );
-        return response.data;
-    }
-);
 
 const dataSlice = createSlice({
     name: "data",
@@ -44,8 +25,7 @@ const dataSlice = createSlice({
             action: PayloadAction<{ path: string; value: any }>
         ) {
             const { path, value } = action.payload;
-			console.log(path, value);
-			
+
             const fullPath = `data.${path}`;
             const keys = fullPath.split(".");
             const lastKey = keys.pop();
@@ -55,6 +35,44 @@ const dataSlice = createSlice({
             );
             if (lastKey) {
                 target[lastKey] = value;
+            }
+        },
+        addProperty(
+            state,
+            action: PayloadAction<{
+                path: string;
+                key: string;
+                value: any;
+            }>
+        ) {
+            const { path, key, value } = action.payload;
+
+            const fullPath = `data.${path}`;
+            const keys = fullPath.split(".");
+            const target = keys.reduce(
+                (node, key) => node[key],
+                state as Record<string, any>
+            );
+
+            if (target && key && typeof target === "object") {
+                target[key] = value;
+            }
+        },
+        deleteProperty(
+            state,
+            action: PayloadAction<{ path: string }>
+        ) {
+            const { path } = action.payload;
+
+            const fullPath = `data.${path}`;
+            const keys = fullPath.split(".");
+            const lastKey = keys.pop();
+            const target = keys.reduce(
+                (node, key) => node[key],
+                state as Record<string, any>
+            );
+            if (lastKey) {
+                delete target[lastKey];
             }
         },
     },
@@ -86,5 +104,6 @@ const dataSlice = createSlice({
     },
 });
 
-export const { setData, setProperty } = dataSlice.actions;
+export const { setData, setProperty, addProperty, deleteProperty } =
+    dataSlice.actions;
 export default dataSlice;

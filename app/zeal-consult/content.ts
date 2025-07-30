@@ -16,7 +16,7 @@ const s013 = {
 		},
 		{
 			text: "About",
-			link: "about-us"
+			link: "about-us" 
 		},
 		{
 			text: "Blogs",
@@ -170,6 +170,26 @@ const s016a = {
 	},
 }
 
+const s016b = {
+	container: "",
+	imageUrl: `consulter.jpg`,
+	ctaBlock: {
+		textBlock: [
+			"Voices of Our Satisfied Clients",
+			"The team at Firexio Consulting offered exceptional guidance for our Digital Marketing projects. Their strategic insights  and industry knowledge were crucial to our success.",
+			"Furqan Chunawala",
+			"Co-Founder /  Firexio"
+		],
+		buttonText: "",
+	},
+}
+
+const s023 = {
+	textBlock: [
+		"FIREXIO"
+	],
+}
+
 const content = {
 	s013: s013,
 	s016: s016,
@@ -178,6 +198,8 @@ const content = {
 	s021: s021,
 	s022: s022,
 	s016a: s016a,
+	s016b: s016b,
+	s023: s023,
 }
 
 export default content;

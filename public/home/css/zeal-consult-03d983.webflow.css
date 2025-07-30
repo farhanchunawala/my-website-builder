@@ -1451,14 +1451,17 @@ figcaption {
 
 .nav_brand {
   width: 14.3125rem;
+  display: flex;
 }
 
 .nav_brand.w--current {
   height: 5rem;
+  display: flex;
 }
 
 .nav_logo {
-  width: 14.3125rem;
+  /* width: 14.3125rem; */
+  /* display: flex; */
 }
 
 .nav_menu {
@@ -1669,6 +1672,7 @@ figcaption {
 
 .footer-brand {
   max-width: 14.3125rem;
+  display: flex;
 }
 
 .body_one {
@@ -2173,7 +2177,7 @@ figcaption {
 }
 
 .image_fit {
-  object-fit: cover;
+  /* object-fit: cover; */
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2654,7 +2658,7 @@ figcaption {
 }
 
 .details_card_wr.is_four_columns {
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .detail_card {

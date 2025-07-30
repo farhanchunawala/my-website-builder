@@ -1,11 +1,9 @@
 
 
-type Data = {
-	x: string
-};
+type Data = {};
 
 type Styles = {
-	container: React.CSSProperties;
+	container: React.CSSProperties
 }
 
 type Props = {

@@ -1,0 +1,3 @@
+version for iterating components from db.
+
+created on - 19 June 2025.

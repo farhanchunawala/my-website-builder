@@ -1,5 +1,4 @@
 // import DOMPurify from "dompurify";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { get } from "lodash-es";
@@ -17,8 +16,7 @@ type SizeStyles = Record<string, React.CSSProperties>;
 
 const variantStyles: VariantStyles = {
     contained: {
-        // backgroundColor: "blue",
-        // color: "white",
+        borderRadius: 0,
     },
 };
 
@@ -50,22 +48,27 @@ const Button: React.FC<Props> = ({ path }) => {
             styles: get(state, `data.data.styles.${path}`),
         })
     );
-    const { frameHandlers, frameStyles, designFrame } =
-        useDesignFrame();
+    const { frameHandlers, frameStyles } = useDesignFrame();
     // const [isHovered, setIsHovered] = useState(false);
     // const hoverStyles = isHovered ? styles.hover : {};
 
     return (
         <button
             style={{
-				...variantStyles[config?.variant],
+                ...variantStyles[config?.variant],
                 ...sizeStyles[config?.size],
                 ...mapStyles(styles?.container),
+                ...frameStyles(`${path}.container`),
                 // ...hoverStyles,
             }}
-            {...designFrame(`${path}.container`)}
+            {...frameHandlers(`${path}.container`)}
             // onMouseEnter={() => setIsHovered(true)}
             // onMouseLeave={() => setIsHovered(false)}
+            // href={
+            // 	mode !== "builder"
+            // 		? `#${get(content, `${path}.button.link`)}`
+            // 		: undefined
+            // }
         >
             {mode === "builder" ? (
                 <AutosizeInput

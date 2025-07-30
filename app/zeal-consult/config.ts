@@ -1,4 +1,5 @@
-import Component from "@/components/_component/v1";
+import Component from "@/components/_component/v1.1";
+import TextBlock from "@/components/TextBlock/v1.1";
 
 
 const imageDir = "zeal-consult";
@@ -101,6 +102,34 @@ const s016a = {
 	},
 }
 
+const s016b = {
+	ctaBlock: {
+		textBlock: [
+			{
+				component: "h2",
+			},
+			{
+				component: "h5",
+			},
+			{
+				component: "h3",
+			},
+			{
+				component: "h6",
+			},
+		],
+		button: {},
+	},
+}
+
+const s023 = {
+	TextBlock: [
+		{
+			component: "h2",
+		}
+	]
+}
+
 const config = {
 	s013: s013,
 	s016: s016,
@@ -109,6 +138,8 @@ const config = {
 	s021: s021,
 	s022: s022,
 	s016a: s016a,
+	s016b: s016b,
+	s023: s023,
 }
 
 export default config;

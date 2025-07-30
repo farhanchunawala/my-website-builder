@@ -9,31 +9,32 @@ import { useCustomStyles } from "./customStyles";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import Box from "@mui/material/Box";
-import Section013 from "@/sections/s013/v1";
-import Section016 from "@/sections/s016/v1";
+import Section013 from "@/sections/s013/v2";
+import Section016 from "@/sections/s016/v2";
 import Section019 from "@/sections/s019/v1";
 import Section020 from "@/sections/s020/v1";
 import Section021 from "@/sections/s021/v1";
 import Section022 from "@/sections/s022/v1";
+import Section023 from "@/sections/s023/v1";
 
 export default function Home() {
-    const { isMobile, isTablet, isDesktop } = useSelector(
-        (state: RootState) => state.responsive
-    );
-    const [mounted, setMounted] = useState(false);
-    const { styles } = useCustomStyles();
+	const { isMobile, isTablet, isDesktop } = useSelector(
+		(state: RootState) => state.responsive
+	);
+	const [mounted, setMounted] = useState(false);
+	const { styles } = useCustomStyles();
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+	useEffect(() => {
+		setMounted(true);
+	}, []);
 
-    if (!mounted) {
-        return null;
-    }
+	if (!mounted) {
+		return null;
+	}
 
-    return (
-        <ThemeProvider theme={theme}>
-            <Box className="page" sx={styles.page}>
+	return (
+		<ThemeProvider theme={theme}>
+			<Box className="page" sx={styles.page}>
 				<Section013
                     styles={styles.s013}
                     content={content.s013}
@@ -78,7 +79,20 @@ export default function Home() {
 					variables={variables}
 					id="s016"
 				/>
-            </Box>
-        </ThemeProvider>
-    );
+				<Section016
+					styles={styles.s016b}
+					config={config.s016b}
+					content={content.s016b}
+					variables={variables}
+					id="s016"
+				/>
+                <Section023 
+                    styles={styles.s023}
+                    config={config.s023}
+                    variables={variables}
+                    id="s023"
+                />
+			</Box>
+		</ThemeProvider>
+	);
 }
