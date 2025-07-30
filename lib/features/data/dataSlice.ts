@@ -41,7 +41,7 @@ const dataSlice = createSlice({
             state,
             action: PayloadAction<{
                 path: string;
-                key: string;
+                key: string | number;
                 value: any;
             }>
         ) {
@@ -54,14 +54,28 @@ const dataSlice = createSlice({
                 state as Record<string, any>
             );
 
-            if (target && key && typeof target === "object") {
+            if (!target) return;
+
+			// Handle arrays - insert at specific index
+            if (Array.isArray(target)) {
+                const index =
+                    typeof key === "number"
+                        ? key
+                        : parseInt(key as string, 10);
+						
+						console.log("Adding to array at index:", index, "value:", value);
+						
+
+                if (index >= 0 && index <= target.length) {
+                    target.splice(index, 0, value);
+                }
+            }
+			// Handle objects - set property
+			else if (typeof target === "object") {
                 target[key] = value;
             }
         },
-        deleteProperty(
-            state,
-            action: PayloadAction<{ path: string }>
-        ) {
+        deleteProperty(state, action: PayloadAction<{ path: string }>) {
             const { path } = action.payload;
 
             const fullPath = `data.${path}`;
@@ -83,10 +97,7 @@ const dataSlice = createSlice({
             })
             .addCase(
                 fetchData.fulfilled,
-                (
-                    state,
-                    action: PayloadAction<Record<string, any>>
-                ) => {
+                (state, action: PayloadAction<Record<string, any>>) => {
                     state.status = "succeeded";
                     state.data = action.payload;
                     // const { route, config, content, styles } =

@@ -1,3 +1,4 @@
+// app/components/BuilderPaner/v1.1/index.tsx
 import { useState } from "react";
 import { AppDispatch, RootState } from "@/lib/store";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,6 +20,16 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
+import { DragItem } from "@/components/DragItem/v1.1";
+// import DraggableInsertDemo from "@/elements/DraggableComponent/v1.1";
+// import {
+//     handleDragStart,
+//     handleDragOver,
+//     handleDragEnter,
+//     handleDragLeave,
+//     handleDrop,
+//     handleDragEnd,
+// } from "@/lib/hooks/useDragAndDrop/v3.1";
 
 interface Props {}
 
@@ -26,19 +37,100 @@ const BuilderPanel: React.FC<Props> = () => {
     const dispatch = useDispatch();
     const { path } = useSelector((state: RootState) => state.builder);
     const { styles } = useSelector((state: RootState) => ({
-        styles: get(state, `data.data.styles.${path}`) || {},
+        styles: get(state, `data.data.styles.${path}.styles`) || {},
     }));
     const [addProp, setAddProp] = useState(false);
     const [propKey, setPropKey] = useState("");
     const [propValue, setPropValue] = useState("");
+    const [error, setError] = useState("");
+
+    const handleAddProperty = () => {
+        if (addProp) {
+            if (propKey) {
+                // Ensure the styles object exists before adding property
+                if (!styles || Object.keys(styles).length === 0) {
+                    // Initialize the styles object first
+                    dispatch(
+                        setProperty({
+                            path: `styles.${path}`,
+                            value: {},
+                        })
+                    );
+                }
+
+                dispatch(
+                    addProperty({
+                        path: `styles.${path}`,
+                        key: propKey,
+                        value: propValue,
+                    })
+                );
+            }
+            // Reset form state
+            setAddProp(false);
+            setPropKey("");
+            setPropValue("");
+        } else {
+            // Enable add mode
+            setAddProp(true);
+        }
+    };
+
+    const dragItemsData = [
+        {
+            id: 1,
+            component: "Typography",
+            text: "Hello World",
+            label: "Typography",
+        },
+        {
+            id: 2,
+            component: "Button",
+            text: "Click Me",
+            label: "Button",
+        },
+        {
+            id: 3,
+            component: "Input",
+            text: "Enter text...",
+            label: "Input Field",
+        },
+        {
+            id: 4,
+            component: "Image",
+            text: "image.jpg",
+            label: "Image",
+        },
+        {
+            id: 5,
+            component: "Container",
+            text: "Flex Container",
+            label: "Container",
+        },
+    ];
 
     return (
         <Box className="side-bar">
+            <div className="drag-items-container">
+                {dragItemsData.map((item) => (
+                    <DragItem
+                        key={item.id}
+                        dragData={{
+                            component: item.component,
+                            text: item.text,
+                        }}
+                    >
+                        {item.label}
+                    </DragItem>
+                ))}
+            </div>
+
+            {/* Style Props Panel */}
             <Box className="style-props">
                 {Object.entries(styles)
                     .filter(
                         ([key]) =>
-							key !== "imports" &&
+                            key !== "imports" &&
                             key !== "tablet" &&
                             key !== "desktop"
                     )
@@ -174,32 +266,9 @@ const BuilderPanel: React.FC<Props> = () => {
                 <Button
                     variant="contained"
                     className="add-button"
-                    onClick={() => {
-                        if (addProp) {
-                            dispatch(
-                                addProperty({
-                                    path: `styles.${path}`,
-                                    key: propKey,
-                                    value: propValue,
-                                })
-                            );
-                            setAddProp(false);
-                            setPropKey("");
-                            setPropValue("");
-                        } else {
-                            setAddProp(true);
-                        }
-                    }}
+                    onClick={handleAddProperty}
                 >
-                    {addProp ? (
-                        propKey ? (
-                            "ADD"
-                        ) : (
-                            "CANCEL"
-                        )
-                    ) : (
-                        <AddIcon />
-                    )}
+                    {addProp ? propKey ? "ADD" : "CANCEL" : <AddIcon />}
                 </Button>
             </Box>
 
