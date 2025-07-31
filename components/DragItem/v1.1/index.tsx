@@ -26,16 +26,13 @@ export const DragItem = React.memo(
 
             // Store drag data
             if (dragData) {
-                e.dataTransfer.setData(
-                    "application/json",
-                    JSON.stringify(dragData)
-                );
+                e.dataTransfer.setData("componentType", dragData.componentType);
             }
 
             e.dataTransfer.effectAllowed = "copy";
             onDragStart?.(dragData);
 
-            console.log("Drag started:", dragData);
+            // console.log("Drag started:", dragData);
         };
 
         const handleDragEnd = () => {

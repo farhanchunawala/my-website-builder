@@ -22,8 +22,8 @@ import Section018 from "@/sections/s018/v1";
 import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
-// import BuilderPanel from "@/components/BuilderPanel/v1.1";
-import BuilderPanel from "@/components/BuilderPanel2/v1.1";
+import BuilderPanel from "@/components/BuilderPanel/v1.1";
+// import BuilderPanel from "@/components/BuilderPanel2/v1.1";
 import { useRenderStructure } from "@/lib/hooks/useRenderStructure";
 import { get } from "lodash-es";
 

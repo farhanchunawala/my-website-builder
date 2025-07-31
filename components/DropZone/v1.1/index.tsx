@@ -2,6 +2,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addProperty } from "@/lib/features/data/dataSlice";
+import { getComponentDefaults } from "@/lib/configs/componentDefaults";
 
 interface DropZoneProps {
     currentPath: string;
@@ -57,6 +58,10 @@ export const DropZone = React.memo(
             e.preventDefault();
             setComponentDragState(dropZonePath, false);
 
+            const componentType =
+                e.dataTransfer.getData("componentType");
+            const componentData = getComponentDefaults(componentType);
+
             const pathParts = currentPath.split(".");
             const componentKey = pathParts[pathParts.length - 1];
             const parentPath = pathParts.slice(0, -1).join(".");
@@ -66,49 +71,17 @@ export const DropZone = React.memo(
                     ? parseInt(componentKey as string, 10) + 1
                     : parseInt(componentKey as string, 10);
 
-            dispatch(
-                addProperty({
-                    path: `config.${parentPath}`,
-                    key: insertIndex,
-                    value: {
-                        component: "Typography",
-                        element: "h6",
-                    },
-                })
-            );
-            dispatch(
-                addProperty({
-                    path: `content.${parentPath}`,
-                    key: insertIndex,
-                    value: {
-                        component: "Typography",
-                        text: "hi",
-                    },
-                })
-            );
-            dispatch(
-                addProperty({
-                    path: `styles.${parentPath}`,
-                    key: insertIndex,
-                    value: {
-                        component: "Typography",
-                        styles: {
-                            imports: ["texts.paragraph"],
-                            color: "#aaeedd",
-                            opacity: "tokens.textLight",
-                            textAlign: "center",
-                            tablet: {
-                                imports: ["texts.paragraphBigger"],
-                            },
-                            desktop: {
-                                imports: ["texts.paragraphBigger"],
-                            },
-                        },
-                    },
-                })
-            );
+            ["config", "content", "styles"].forEach((dataType) => {
+                dispatch(
+                    addProperty({
+                        path: `${dataType}.${parentPath}`,
+                        key: insertIndex,
+                        value: componentData[dataType],
+                    })
+                );
+            });
 
-            console.log(`Drop on: ${dropZonePath}`);
+            // console.log(`Drop on: ${dropZonePath}`);
         };
 
         const dragStyles = isDraggedOver

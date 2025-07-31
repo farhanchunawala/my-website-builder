@@ -1,4 +1,5 @@
 // app/components/BuilderPaner/v1.1/index.tsx
+import "./page.scss";
 import { useState } from "react";
 import { AppDispatch, RootState } from "@/lib/store";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,15 +22,7 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import { DragItem } from "@/components/DragItem/v1.1";
-// import DraggableInsertDemo from "@/elements/DraggableComponent/v1.1";
-// import {
-//     handleDragStart,
-//     handleDragOver,
-//     handleDragEnter,
-//     handleDragLeave,
-//     handleDrop,
-//     handleDragEnd,
-// } from "@/lib/hooks/useDragAndDrop/v3.1";
+import { componentDefaults } from "@/lib/configs/componentDefaults";
 
 interface Props {}
 
@@ -76,48 +69,14 @@ const BuilderPanel: React.FC<Props> = () => {
         }
     };
 
-    const dragItemsData = [
-        {
-            id: 1,
-            component: "Typography",
-            text: "Hello World",
-            label: "Typography",
-        },
-        {
-            id: 2,
-            component: "Button",
-            text: "Click Me",
-            label: "Button",
-        },
-        {
-            id: 3,
-            component: "Input",
-            text: "Enter text...",
-            label: "Input Field",
-        },
-        {
-            id: 4,
-            component: "Image",
-            text: "image.jpg",
-            label: "Image",
-        },
-        {
-            id: 5,
-            component: "Container",
-            text: "Flex Container",
-            label: "Container",
-        },
-    ];
-
     return (
         <Box className="side-bar">
             <div className="drag-items-container">
-                {dragItemsData.map((item) => (
+                {componentDefaults.map((item) => (
                     <DragItem
                         key={item.id}
                         dragData={{
-                            component: item.component,
-                            text: item.text,
+                            componentType: item.component,
                         }}
                     >
                         {item.label}
@@ -210,15 +169,9 @@ const BuilderPanel: React.FC<Props> = () => {
                             }
                             sx={{
                                 // minWidth: "160px",
-<<<<<<< HEAD
                                 margin: "12px 0",
                                 // width: "calc(100% - 32px)",
                                 width: "100%",
-=======
-                                margin: "16px 0",
-								// width: "calc(100% - 32px)",
-								width: "100%",
->>>>>>> d729f6c (home zc template)
                             }}
                             slotProps={{
                                 input: {

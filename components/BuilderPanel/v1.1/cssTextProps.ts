@@ -1,0 +1,517 @@
+export const cssTextProperties = {
+    // Font Properties
+    fontFamily: {
+        displayname: "Font Family",
+        values: [
+            "serif",
+            "sans-serif",
+            "monospace",
+            "cursive",
+            "fantasy",
+            "system-ui",
+            "ui-serif",
+            "ui-sans-serif",
+            "ui-monospace",
+            "ui-rounded",
+            "emoji",
+            "math",
+            "fangsong",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "depends on user agent",
+        inherited: true,
+    },
+
+    fontSize: {
+        displayname: "Font Size",
+        values: [
+            "xx-small",
+            "x-small",
+            "small",
+            "medium",
+            "large",
+            "x-large",
+            "xx-large",
+            "xxx-large",
+            "larger",
+            "smaller",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: [
+            "px",
+            "em",
+            "rem",
+            "%",
+            "pt",
+            "pc",
+            "in",
+            "cm",
+            "mm",
+            "ex",
+            "ch",
+            "vw",
+            "vh",
+            "vmin",
+            "vmax",
+        ],
+        defaultValue: "medium",
+        inherited: true,
+    },
+
+    fontWeight: {
+        displayname: "Font Weight",
+        values: [
+            "normal",
+            "bold",
+            "bolder",
+            "lighter",
+            "100",
+            "200",
+            "300",
+            "400",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    fontStyle: {
+        displayname: "Font Style",
+        values: [
+            "normal",
+            "italic",
+            "oblique",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none", "deg"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    fontVariant: {
+        displayname: "Font Variant",
+        values: [
+            "normal",
+            "small-caps",
+            "all-small-caps",
+            "petite-caps",
+            "all-petite-caps",
+            "unicase",
+            "titling-caps",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    fontStretch: {
+        displayname: "Font Stretch",
+        values: [
+            "normal",
+            "ultra-condensed",
+            "extra-condensed",
+            "condensed",
+            "semi-condensed",
+            "semi-expanded",
+            "expanded",
+            "extra-expanded",
+            "ultra-expanded",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["%"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    // Text Layout & Spacing
+    lineHeight: {
+        displayname: "Line Height",
+        values: ["normal", "inherit", "initial", "unset"],
+        units: ["none", "px", "em", "rem", "%"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    letterSpacing: {
+        displayname: "Letter Spacing",
+        values: ["normal", "inherit", "initial", "unset"],
+        units: ["px", "em", "rem", "ch"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    wordSpacing: {
+        displayname: "Word Spacing",
+        values: ["normal", "inherit", "initial", "unset"],
+        units: ["px", "em", "rem", "%"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    textIndent: {
+        displayname: "Text Indent",
+        values: ["inherit", "initial", "unset"],
+        units: ["px", "em", "rem", "%"],
+        defaultValue: "0",
+        inherited: true,
+    },
+
+    // Text Alignment & Direction
+    textAlign: {
+        displayname: "Text Align",
+        values: [
+            "left",
+            "right",
+            "center",
+            "justify",
+            "start",
+            "end",
+            "match-parent",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "start",
+        inherited: true,
+    },
+
+    textAlignLast: {
+        displayname: "Text Align Last",
+        values: [
+            "auto",
+            "left",
+            "right",
+            "center",
+            "justify",
+            "start",
+            "end",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "auto",
+        inherited: true,
+    },
+
+    verticalAlign: {
+        displayname: "Vertical Align",
+        values: [
+            "baseline",
+            "sub",
+            "super",
+            "text-top",
+            "text-bottom",
+            "middle",
+            "top",
+            "bottom",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["px", "em", "rem", "%"],
+        defaultValue: "baseline",
+        inherited: false,
+    },
+
+    direction: {
+        displayname: "Direction",
+        values: ["ltr", "rtl", "inherit", "initial", "unset"],
+        units: ["none"],
+        defaultValue: "ltr",
+        inherited: true,
+    },
+
+    textOrientation: {
+        displayname: "Text Orientation",
+        values: [
+            "mixed",
+            "upright",
+            "sideways",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "mixed",
+        inherited: true,
+    },
+
+    // Text Decoration & Effects
+	textDecoration: {
+        displayname: "Text Decoration",
+        values: [
+            "none",
+            "underline",
+            "overline",
+            "line-through",
+            "blink",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "none",
+        inherited: false,
+    },
+
+    textDecorationColor: {
+        displayname: "Text Decoration Color",
+        values: [
+            "currentColor",
+            "transparent",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "currentColor",
+        inherited: false,
+    },
+
+    textDecorationStyle: {
+        displayname: "Text Decoration Style",
+        values: [
+            "solid",
+            "double",
+            "dotted",
+            "dashed",
+            "wavy",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "solid",
+        inherited: false,
+    },
+
+    textDecorationThickness: {
+        displayname: "Text Decoration Thickness",
+        values: ["auto", "from-font", "inherit", "initial", "unset"],
+        units: ["px", "em", "rem", "%"],
+        defaultValue: "auto",
+        inherited: false,
+    },
+
+    textUnderlineOffset: {
+        displayname: "Text Underline Offset",
+        values: ["auto", "inherit", "initial", "unset"],
+        units: ["px", "em", "rem", "%"],
+        defaultValue: "auto",
+        inherited: false,
+    },
+
+    textShadow: {
+        displayname: "Text Shadow",
+        values: ["none", "inherit", "initial", "unset"],
+        units: ["px", "em", "rem"],
+        defaultValue: "none",
+        inherited: true,
+    },
+
+    textTransform: {
+        displayname: "Text Transform",
+        values: [
+            "none",
+            "capitalize",
+            "uppercase",
+            "lowercase",
+            "full-width",
+            "full-size-kana",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "none",
+        inherited: true,
+    },
+
+    // Color & Visibility
+    color: {
+        displayname: "Color",
+        values: [
+            "currentColor",
+            "transparent",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "depends on user agent",
+        inherited: true,
+    },
+
+    opacity: {
+        displayname: "Opacity",
+        values: ["inherit", "initial", "unset"],
+        units: ["none", "%"],
+        defaultValue: "1",
+        inherited: false,
+    },
+
+    // Text Overflow & Wrapping
+    whiteSpace: {
+        displayname: "White Space",
+        values: [
+            "normal",
+            "nowrap",
+            "pre",
+            "pre-wrap",
+            "pre-line",
+            "break-spaces",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    wordWrap: {
+        displayname: "Word Wrap",
+        values: ["normal", "break-word", "inherit", "initial", "unset"],
+        units: ["none"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    overflowWrap: {
+        displayname: "Overflow Wrap",
+        values: [
+            "normal",
+            "anywhere",
+            "break-word",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    wordBreak: {
+        displayname: "Word Break",
+        values: [
+            "normal",
+            "break-all",
+            "keep-all",
+            "break-word",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    textOverflow: {
+        displayname: "Text Overflow",
+        values: ["clip", "ellipsis", "inherit", "initial", "unset"],
+        units: ["none"],
+        defaultValue: "clip",
+        inherited: false,
+    },
+
+    hyphens: {
+        displayname: "Hyphens",
+        values: [
+            "none",
+            "manual",
+            "auto",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "manual",
+        inherited: true,
+    },
+
+    // Advanced Typography
+    fontFeatureSettings: {
+        displayname: "Font Feature Settings",
+        values: ["normal", "inherit", "initial", "unset"],
+        units: ["none"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    fontVariantCaps: {
+        displayname: "Font Variant Caps",
+        values: [
+            "normal",
+            "small-caps",
+            "all-small-caps",
+            "petite-caps",
+            "all-petite-caps",
+            "unicase",
+            "titling-caps",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+
+    textRendering: {
+        displayname: "Text Rendering",
+        values: [
+            "auto",
+            "optimizeSpeed",
+            "optimizeLegibility",
+            "geometricPrecision",
+            "inherit",
+            "initial",
+            "unset",
+        ],
+        units: ["none"],
+        defaultValue: "auto",
+        inherited: true,
+    },
+
+    fontOpticalSizing: {
+        displayname: "Font Optical Sizing",
+        values: ["auto", "none", "inherit", "initial", "unset"],
+        units: ["none"],
+        defaultValue: "auto",
+        inherited: true,
+    },
+
+    fontVariationSettings: {
+        displayname: "Font Variation Settings",
+        values: ["normal", "inherit", "initial", "unset"],
+        units: ["none"],
+        defaultValue: "normal",
+        inherited: true,
+    },
+};
+
+export default cssTextProperties;
