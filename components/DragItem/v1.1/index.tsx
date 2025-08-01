@@ -1,5 +1,6 @@
 // components/DragItem.tsx
 import React, { useState } from "react";
+import { getComponentDefaults } from "@/lib/configs/componentDefaults";
 
 interface DragItemProps {
     children: React.ReactNode;
@@ -8,6 +9,7 @@ interface DragItemProps {
     style?: React.CSSProperties;
     onDragStart?: (data: any) => void;
     onDragEnd?: () => void;
+	componentType?: string;
 }
 
 export const DragItem = React.memo(
@@ -18,6 +20,7 @@ export const DragItem = React.memo(
         style = {},
         onDragStart,
         onDragEnd,
+		componentType,
     }: DragItemProps) => {
         const [isDragging, setIsDragging] = useState(false);
 
@@ -40,6 +43,9 @@ export const DragItem = React.memo(
             onDragEnd?.();
             console.log("Drag ended");
         };
+		
+		const componentDefaults = componentType ? getComponentDefaults(componentType) : null;
+		const componentStyles = componentDefaults?.dragItemStyles?.styles || {};
 
         const dragStyles: React.CSSProperties = {
             cursor: "grab",
@@ -47,6 +53,7 @@ export const DragItem = React.memo(
             opacity: isDragging ? 0.5 : 1,
             transform: isDragging ? "scale(0.95)" : "scale(1)",
             transition: "all 0.2s ease-in-out",
+			...componentStyles,
             ...style,
         };
 

@@ -75,6 +75,7 @@ const BuilderPanel: React.FC<Props> = () => {
                 {componentDefaults.map((item) => (
                     <DragItem
                         key={item.id}
+						style={item.dropItemStyles.styles}
                         dragData={{
                             componentType: item.component,
                         }}

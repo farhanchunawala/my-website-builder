@@ -10,7 +10,11 @@ export interface ComponentDefault {
         component: string;
         text: string;
     };
-    styles: {
+    dragItemStyles: {
+        component: string;
+        styles: Record<string, any>;
+    };
+    dropItemStyles: {
         component: string;
         styles: Record<string, any>;
     };
@@ -26,7 +30,26 @@ export const componentDefaults: ComponentDefault[] = [
             component: "Typography",
             text: "Sample text",
         },
-        styles: {
+        dragItemStyles: {
+            component: "Typography",
+            styles: {
+                imports: ["texts.paragraph"],
+                color: "#aaeedd",
+                opacity: "tokens.textLight",
+                textAlign: "center",
+                padding: "8px 16px",
+                backgroundColor: "#f8f9fa",
+                borderRadius: "4px",
+                border: "1px solid #dee2e6",
+                tablet: {
+                    imports: ["texts.paragraphBigger"],
+                },
+                desktop: {
+                    imports: ["texts.paragraphBigger"],
+                },
+            },
+        },
+        dropItemStyles: {
             component: "Typography",
             styles: {
                 imports: ["texts.paragraph"],
@@ -48,13 +71,27 @@ export const componentDefaults: ComponentDefault[] = [
         label: "Button",
         config: { component: "Button", element: "button" },
         content: { component: "Button", text: "Click me" },
-        styles: {
+        dragItemStyles: {
             component: "Button",
             styles: {
                 imports: ["buttons.primary"],
                 backgroundColor: "#007bff",
                 padding: "12px 24px",
                 borderRadius: "4px",
+                color: "white",
+                border: "none",
+                cursor: "pointer",
+            },
+        },
+        dropItemStyles: {
+            component: "Button",
+            styles: {
+                imports: ["buttons.primary"],
+                backgroundColor: "#007bff",
+                padding: "12px 24px",
+                borderRadius: "4px",
+                color: "white",
+                border: "none",
             },
         },
     },
@@ -64,13 +101,25 @@ export const componentDefaults: ComponentDefault[] = [
         label: "Input Field",
         config: { component: "Input", element: "input" },
         content: { component: "Input", text: "Enter text..." },
-        styles: {
+        dragItemStyles: {
             component: "Input",
             styles: {
                 border: "1px solid #ccc",
                 padding: "8px 12px",
                 borderRadius: "4px",
                 width: "100%",
+                backgroundColor: "white",
+                fontSize: "14px",
+            },
+        },
+        dropItemStyles: {
+            component: "Input",
+            styles: {
+                border: "1px solid #ccc",
+                padding: "8px 12px",
+                borderRadius: "4px",
+                width: "100%",
+                backgroundColor: "white",
             },
         },
     },
@@ -80,7 +129,18 @@ export const componentDefaults: ComponentDefault[] = [
         label: "Image",
         config: { component: "Image", element: "img" },
         content: { component: "Image", text: "image.jpg" },
-        styles: {
+        dragItemStyles: {
+            component: "Image",
+            styles: {
+                width: "60px",
+                height: "40px",
+                objectFit: "cover",
+                borderRadius: "4px",
+                backgroundColor: "#f0f0f0",
+                border: "1px solid #ddd",
+            },
+        },
+        dropItemStyles: {
             component: "Image",
             styles: {
                 width: "100%",
@@ -96,7 +156,22 @@ export const componentDefaults: ComponentDefault[] = [
         label: "Container",
         config: { component: "Container", element: "div" },
         content: { component: "Container", text: "Flex Container" },
-        styles: {
+        dragItemStyles: {
+            component: "Container",
+            styles: {
+                display: "flex",
+                flexDirection: "column",
+                gap: "8px",
+                padding: "12px",
+                border: "2px dashed #007bff",
+                borderRadius: "4px",
+                backgroundColor: "#f8f9ff",
+                minHeight: "60px",
+                alignItems: "center",
+                justifyContent: "center",
+            },
+        },
+        dropItemStyles: {
             component: "Container",
             styles: {
                 display: "flex",
@@ -104,6 +179,8 @@ export const componentDefaults: ComponentDefault[] = [
                 gap: "16px",
                 padding: "16px",
                 border: "1px dashed #ccc",
+                borderRadius: "4px",
+                minHeight: "100px",
             },
         },
     },
@@ -123,6 +200,7 @@ export const getComponentDefaults = (componentType: string) => {
     return {
         config: defaultComponent.config,
         content: defaultComponent.content,
-        styles: defaultComponent.styles,
+        dragItemStyles: defaultComponent.dragItemStyles,
+        dropItemStyles: defaultComponent.dropItemStyles,
     };
 };
