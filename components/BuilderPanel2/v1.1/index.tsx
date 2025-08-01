@@ -25,14 +25,18 @@ const buttons = [
     },
 ];
 
-const BuilderPanel = () => {
+const BuilderPanel = ({ panel }) => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const toggleDropdown = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
-    return (
+    return panel == "leftPanel" ? (
+        <Box className="side-bar">
+			
+		</Box>
+    ) : (
         <Box className="side-bar">
             {buttons.map((btn, index) => (
                 <Box className="button" key={index}>

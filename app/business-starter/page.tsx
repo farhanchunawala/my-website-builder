@@ -22,8 +22,8 @@ import Section018 from "@/sections/s018/v1";
 import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
-import BuilderPanel from "@/components/BuilderPanel/v1.1";
-// import BuilderPanel from "@/components/BuilderPanel2/v1.1";
+// import BuilderPanel from "@/components/BuilderPanel/v1.1";
+import BuilderPanel from "@/components/BuilderPanel2/v1.1";
 import { useRenderStructure } from "@/lib/hooks/useRenderStructure";
 import { get } from "lodash-es";
 
@@ -44,7 +44,7 @@ export default function Home() {
     const [builderPanel, setBuilderPanel] = useState(true);
     const pathname = usePathname().slice(1);
     const { designFrame } = useDesignFrame();
-	const { renderStructure } = useRenderStructure();
+    const { renderStructure } = useRenderStructure();
 
     useEffect(() => {
         dispatch(fetchData({ pathname }));
@@ -72,18 +72,37 @@ export default function Home() {
             <ModeInitializer />
             <ThemeProvider theme={theme}>
                 <Box className="page-builder">
-					{renderStructure("")}
+					{mode === "builder" && (
+                        <>
+                            {builderPanel && <BuilderPanel panel="leftPanel" />}
+                            <Fab
+                                color="primary"
+                                aria-label="Save Data"
+                                sx={{
+                                    position: "fixed",
+                                    bottom: 32,
+                                    right: 32,
+                                }}
+                                onClick={() =>
+                                    dispatch(saveData({ pathname }))
+                                }
+                            >
+                                <SaveAltIcon />
+                            </Fab>
+                        </>
+                    )}
+                    {renderStructure("")}
                     {/* <Box
                         className="page"
                         sx={{ ...mapStyles(styles.styles) }}
                         {...designFrame(`page`)}
                     > */}
-                        {/* <Section013 path="s013" /> */}
-                        {/* <Section014 path="s014" /> */}
-                        {/* {styles.children.map((item, index) => (
+                    {/* <Section013 path="s013" /> */}
+                    {/* <Section014 path="s014" /> */}
+                    {/* {styles.children.map((item, index) => (
                             
                         ))} */}
-                        {/* <Section015
+                    {/* <Section015
                             path="s015"
                             id={content.s014.ctaBlock.buttonLink}
                         />
@@ -106,7 +125,7 @@ export default function Home() {
                     {/* </Box> */}
                     {mode === "builder" && (
                         <>
-                            {builderPanel && <BuilderPanel />}
+                            {builderPanel && <BuilderPanel panel="rightPanel" />}
                             <Fab
                                 color="primary"
                                 aria-label="Save Data"

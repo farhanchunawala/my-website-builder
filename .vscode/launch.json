@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Home",
+            "type": "pwa-chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
+            "userDataDir": "${workspaceFolder}/.vscode/chrome-debug-profile"
+        },
+        {
+            "name": "Builder",
+            "type": "pwa-chrome",
+            "request": "launch",
+            "url": "http://localhost:3000/business-starter?mode=builder",
+            "webRoot": "${workspaceFolder}",
+            "userDataDir": "${workspaceFolder}/.vscode/chrome-debug-profile"
+        }
+    ]
+}
