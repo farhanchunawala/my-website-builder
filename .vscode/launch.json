@@ -3,18 +3,48 @@
     "configurations": [
         {
             "name": "Home",
-            "type": "pwa-chrome",
+            "type": "chrome",
             "request": "launch",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}",
+            "sourceMaps": true,
+            "skipFiles": [
+                "<node_internals>/**",
+                "node_modules/**",
+                "**/.next/**",
+                "**/next/**",
+                "**/*turbopack*/**",
+                "**/turbopack/**",
+                "**/*hmr-client*",
+                "**/*webpack*",
+                "**/proxy.js",
+                "**/*bundle*",
+                "**/*runtime*",
+                "**/*polyfills*"
+            ],
             "userDataDir": "${workspaceFolder}/.vscode/chrome-debug-profile"
         },
         {
             "name": "Builder",
-            "type": "pwa-chrome",
+            "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:3000/business-starter?mode=builder",
+            "url": "http://localhost:3000/builder?page=business-starter",
             "webRoot": "${workspaceFolder}",
+            "sourceMaps": true,
+            "skipFiles": [
+                "<node_internals>/**",
+                "node_modules/**",
+                "**/.next/**",
+                "**/next/**",
+                "**/*turbopack*/**",
+                "**/turbopack/**",
+                "**/*hmr-client*",
+                "**/*webpack*",
+                "**/proxy.js",
+                "**/*bundle*",
+                "**/*runtime*",
+                "**/*polyfills*"
+            ],
             "userDataDir": "${workspaceFolder}/.vscode/chrome-debug-profile"
         }
     ]

@@ -5,25 +5,25 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const fetchData = createAsyncThunk<
     Record<string, unknown>, // Return type
-    { pathname: string } // Argument type
->("data/fetchData", async ({ pathname }) => {
+    { route: string } // Argument type
+>("data/fetchData", async ({ route }) => {
     const response = await axios.get(
-        `${baseUrl}/api/contents/${pathname}`
+        `${baseUrl}/api/contents/${route}`
     );
     return response.data;
 });
 
 export const saveData = createAsyncThunk<
     Record<string, any>, // Return type
-    { pathname: string }, // Argument type
+    { route: string }, // Argument type
     { state: any } // ThunkAPI type
->("data/saveData", async ({ pathname }, { getState }) => {
+>("data/saveData", async ({ route }, { getState }) => {
     const state = getState();
     const { config, content, styles } = state.data.data;
 
     const response = await axios.post(
-        `${baseUrl}/api/contents/upsert/${pathname}`,
-        { route: pathname, config, content, styles }
+        `${baseUrl}/api/contents/upsert/${route}`,
+        { route: route, config, content, styles }
     );
     return response.data;
 });

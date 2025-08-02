@@ -22,8 +22,8 @@ import Section018 from "@/sections/s018/v1";
 import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
-// import BuilderPanel from "@/components/BuilderPanel/v1.1";
-import BuilderPanel from "@/components/BuilderPanel2/v1.1";
+import BuilderPanel from "@/components/BuilderPanel/v1.1";
+// import BuilderPanel from "@/components/BuilderPanel2/v1.1";
 import { useRenderStructure } from "@/lib/hooks/useRenderStructure";
 import { get } from "lodash-es";
 
@@ -42,13 +42,13 @@ export default function Home() {
     const [mounted, setMounted] = useState(false);
     const { mapStyles } = useMapStyles();
     const [builderPanel, setBuilderPanel] = useState(true);
-    const pathname = usePathname().slice(1);
+    const route = usePathname().slice(1);
     const { designFrame } = useDesignFrame();
     const { renderStructure } = useRenderStructure();
 
     useEffect(() => {
-        dispatch(fetchData({ pathname }));
-    }, [dispatch, pathname]);
+        dispatch(fetchData({ route }));
+    }, [dispatch, route]);
 
     useEffect(() => {
         setMounted(true);
@@ -84,7 +84,7 @@ export default function Home() {
                                     right: 32,
                                 }}
                                 onClick={() =>
-                                    dispatch(saveData({ pathname }))
+                                    dispatch(saveData({ route }))
                                 }
                             >
                                 <SaveAltIcon />
@@ -135,7 +135,7 @@ export default function Home() {
                                     right: 32,
                                 }}
                                 onClick={() =>
-                                    dispatch(saveData({ pathname }))
+                                    dispatch(saveData({ route }))
                                 }
                             >
                                 <SaveAltIcon />
