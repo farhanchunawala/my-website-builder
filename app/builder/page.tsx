@@ -98,26 +98,37 @@ export default function Home() {
                     <Box className="top-bar"></Box>
                     {builderPanel && <BuilderPanel panel="leftPanel" />}
                     <Box
-                        className="page"
-                        sx={{
-                            // width: pageWidth,
-                            width: screenSize,
-                            // zoom: "75%",
-                            // transform: "scale(0.75)",
-                            // transformOrigin: "top left",
-                            // position: "absolute",
-                            marginTop: "60px",
-							// marginLeft: "-260px",
-                            // left: "48px",
-							// right: "260px",
-                            // right: `calc(260px - 48px)`,
-                            // margin: "0 auto",
-                            // overflowY: "auto",
-                            // display: "flex",
-                            // flexGrow: 1,
-                        }}
-                    >
-                        {renderStructure("")}
+					className="page-frame"
+					sx={{
+						// width: "100%",
+						flex: `1 1 auto`,
+						overflowX: "scroll",
+						display: "flex",
+						justifyContent: "center"
+					}}
+					>
+                        <Box
+                            className="page"
+                            sx={{
+                                // width: pageWidth,
+                                // width: screenSize,
+                                flex: `0 0 ${screenSize}`,
+                                // zoom: "75%",
+                                // transform: "scale(0.75)",
+                                // transformOrigin: "top left",
+                                // position: "absolute",
+                                // marginLeft: "-260px",
+                                // left: "48px",
+                                // right: "260px",
+                                // right: `calc(260px - 48px)`,
+                                margin: "60px auto 0",
+                                // overflowX: "scroll",
+                                // display: "flex",
+                                // flexGrow: 1,
+                            }}
+                        >
+                            {renderStructure("")}
+                        </Box>
                     </Box>
                     {builderPanel && (
                         <BuilderPanel panel="rightPanel" />

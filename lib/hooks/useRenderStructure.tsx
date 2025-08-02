@@ -9,7 +9,6 @@ import Typography from "@/elements/Typography/v2.1";
 import Button from "@/elements/Button/v2.1";
 import { get } from "lodash-es";
 import React from "react";
-import { useImmer } from "use-immer";
 import { DropZone } from "@/components/DropZone/v1.1";
 
 interface ComponentConfig {
@@ -30,18 +29,7 @@ export const useRenderStructure = () => {
     const { mapStyles } = useMapStyles();
     const { designFrame } = useDesignFrame();
     const data = useSelector((state: RootState) => state.data.data);
-
-    const [draggedOverComponents, updateDraggedOverComponents] =
-        useImmer<Record<string, boolean>>({});
-
-    const setComponentDragState = useCallback(
-        (path: string, isDragged: boolean) => {
-            updateDraggedOverComponents((draft) => {
-                draft[path] = isDragged;
-            });
-        },
-        [updateDraggedOverComponents]
-    );
+    const mode = useSelector((state: RootState) => state.mode);
 
     const renderStructure = useCallback(
         (path: string): React.ReactNode => {
@@ -74,12 +62,12 @@ export const useRenderStructure = () => {
 
             return (
                 <React.Fragment key={`${currentPath}-${childrenHash}`}>
-                    <DropZone
-                        currentPath={currentPath}
-                        position="before"
-                        draggedOverComponents={draggedOverComponents}
-                        setComponentDragState={setComponentDragState}
-                    />
+                    {mode === "builder" && (
+                        <DropZone
+                            currentPath={currentPath}
+                            position="before"
+                        />
+                    )}
                     <Component
                         path={path}
                         {...getProps(config)}
@@ -91,12 +79,12 @@ export const useRenderStructure = () => {
                             ? children
                             : content?.text || ""}
                     </Component>
-                    <DropZone
-                        currentPath={currentPath}
-                        position="after"
-                        draggedOverComponents={draggedOverComponents}
-                        setComponentDragState={setComponentDragState}
-                    />
+                    {mode === "builder" && (
+                        <DropZone
+                            currentPath={currentPath}
+                            position="after"
+                        />
+                    )}
                 </React.Fragment>
             );
         },
@@ -104,8 +92,7 @@ export const useRenderStructure = () => {
             data.config,
             data.content,
             data.styles,
-            draggedOverComponents,
-            setComponentDragState,
+            mode,
             mapStyles,
         ]
     );

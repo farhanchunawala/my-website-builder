@@ -3,23 +3,30 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { addProperty } from "@/lib/features/data/dataSlice";
 import { getComponentDefaults } from "@/lib/configs/componentDefaults";
+import { useImmer } from "use-immer";
 
 interface DropZoneProps {
     currentPath: string;
     position?: "before" | "after";
-    draggedOverComponents: Record<string, boolean>;
-    setComponentDragState: (path: string, isDragged: boolean) => void;
 }
 
 export const DropZone = React.memo(
     ({
         currentPath,
         position = "before",
-        draggedOverComponents,
-        setComponentDragState,
     }: DropZoneProps) => {
         const dispatch = useDispatch();
         const dropZonePath = `${currentPath}-${position}`;
+		
+		const [draggedOverComponents, updateDraggedOverComponents] =
+            useImmer<Record<string, boolean>>({});
+
+        const setComponentDragState = (path: string, isDragged: boolean) => {
+            updateDraggedOverComponents((draft) => {
+                draft[path] = isDragged;
+            });
+        };
+		
         const isDraggedOver =
             draggedOverComponents[dropZonePath] || false;
 
