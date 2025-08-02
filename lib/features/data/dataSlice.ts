@@ -20,7 +20,7 @@ const dataSlice = createSlice({
         setData(state, action: PayloadAction<Record<string, any>>) {
             state.data = action.payload;
         },
-        setProperty(
+        setNested(
             state,
             action: PayloadAction<{ path: string; value: any }>
         ) {
@@ -37,7 +37,7 @@ const dataSlice = createSlice({
                 target[lastKey] = value;
             }
         },
-        addProperty(
+        insertNested(
             state,
             action: PayloadAction<{
                 path: string;
@@ -75,7 +75,7 @@ const dataSlice = createSlice({
                 target[key] = value;
             }
         },
-        deleteProperty(state, action: PayloadAction<{ path: string }>) {
+        removeNested(state, action: PayloadAction<{ path: string }>) {
             const { path } = action.payload;
 
             const fullPath = `data.${path}`;
@@ -115,6 +115,6 @@ const dataSlice = createSlice({
     },
 });
 
-export const { setData, setProperty, addProperty, deleteProperty } =
+export const { setData, setNested, insertNested, removeNested } =
     dataSlice.actions;
 export default dataSlice;

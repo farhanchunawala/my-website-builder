@@ -9,7 +9,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import { Box, Fab } from "@mui/material";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
-import useMode from "@/lib/hooks/useMode";
+import useMode from "@/z_archive/useMode";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 // import Section011 from "@/sections/s011/v1";
 import Section013 from "@/sections/s013/v1";
@@ -22,15 +22,14 @@ import Section018 from "@/sections/s018/v1";
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
-// import BuilderPanel from "@/components/BuilderPanel/v1.1";
-import BuilderPanel from "@/components/BuilderPanel2/v1.1";
+import BuilderPanel from "@/components/BuilderPanel/v1.1";
+// import BuilderPanel from "@/components/BuilderPanel2/v1.1";
 import { useRenderStructure } from "@/lib/hooks/useRenderStructure";
 import { setMode } from "@/lib/features/mode/modeSlice";
 import { useViewport } from "@/lib/hooks/useViewport";
 import { get } from "lodash-es";
 
 export default function Home() {
-    // useMode();
     const dispatch: AppDispatch = useDispatch();
     // const mode = useSelector((state: RootState) => state.mode);
     const { config, content, styles } = useSelector(
@@ -45,7 +44,6 @@ export default function Home() {
     const { designFrame } = useDesignFrame();
     const { renderStructure } = useRenderStructure();
     const [mounted, setMounted] = useState(false);
-    const [builderPanel, setBuilderPanel] = useState(true);
 
     const viewport = useViewport();
     const screenSize = "1080px";
@@ -76,37 +74,29 @@ export default function Home() {
         setMounted(true);
     }, []);
 
-    if (!mounted || !content) {
-        return null;
-    }
-
-    const toggleSidePanel = () => {
-        setBuilderPanel(!builderPanel);
-    };
-
-    function ModeInitializer() {
-        // useMode();
+    useEffect(() => {
         dispatch(setMode("builder"));
+    }, [dispatch]);
+	
+    if (!mounted || !content) {
         return null;
     }
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <ModeInitializer />
             <ThemeProvider theme={theme}>
                 <Box className="page-builder">
                     <Box className="top-bar"></Box>
-                    {builderPanel && <BuilderPanel panel="leftPanel" />}
+                    <BuilderPanel panel="leftPanel" />
                     <Box
-					className="page-frame"
-					sx={{
-						// width: "100%",
-						flex: `1 1 auto`,
-						overflowX: "scroll",
-						display: "flex",
-						justifyContent: "center"
-					}}
-					>
+                        className="page-frame"
+                        sx={{
+                            // width: "100%",
+                            flex: `1 1 auto`,
+                            overflowX: "scroll",
+                            display: "flex",
+                        }}
+                    >
                         <Box
                             className="page"
                             sx={{
@@ -130,9 +120,7 @@ export default function Home() {
                             {renderStructure("")}
                         </Box>
                     </Box>
-                    {builderPanel && (
-                        <BuilderPanel panel="rightPanel" />
-                    )}
+                    <BuilderPanel panel="rightPanel" />
                     <Fab
                         color="primary"
                         aria-label="Save Data"

@@ -5,9 +5,9 @@ import { AppDispatch, RootState } from "@/lib/store";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, width } from "@mui/system";
 import {
-    setProperty,
-    addProperty,
-    deleteProperty,
+    setNested,
+    insertNested,
+    removeNested,
 } from "@/lib/features/data/dataSlice";
 import * as styleProps from "./styleProps";
 import get from "lodash-es/get";
@@ -44,7 +44,7 @@ const BuilderPanel: React.FC<Props> = () => {
                 if (!styles || Object.keys(styles).length === 0) {
                     // Initialize the styles object first
                     dispatch(
-                        setProperty({
+                        setNested({
                             path: `styles.${path}`,
                             value: {},
                         })
@@ -52,7 +52,7 @@ const BuilderPanel: React.FC<Props> = () => {
                 }
 
                 dispatch(
-                    addProperty({
+                    insertNested({
                         path: `styles.${path}`,
                         key: propKey,
                         value: propValue,
@@ -105,7 +105,7 @@ const BuilderPanel: React.FC<Props> = () => {
                                 // helperText="Please select your currency"
                                 onChange={(event) =>
                                     dispatch(
-                                        setProperty({
+                                        setNested({
                                             path: `styles.${path}.${key}`,
                                             value: event.target.value,
                                         })
@@ -143,7 +143,7 @@ const BuilderPanel: React.FC<Props> = () => {
                                 className="delete"
                                 onClick={() =>
                                     dispatch(
-                                        deleteProperty({
+                                        removeNested({
                                             path: `styles.${path}.${key}`,
                                         })
                                     )

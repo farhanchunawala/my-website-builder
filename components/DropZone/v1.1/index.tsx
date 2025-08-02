@@ -1,7 +1,7 @@
 // components/DropZone.tsx
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addProperty } from "@/lib/features/data/dataSlice";
+import { insertNested } from "@/lib/features/data/dataSlice";
 import { getComponentDefaults } from "@/lib/configs/componentDefaults";
 import { useImmer } from "use-immer";
 
@@ -80,7 +80,7 @@ export const DropZone = React.memo(
 
             ["config", "content", "styles"].forEach((dataType) => {
                 dispatch(
-                    addProperty({
+                    insertNested({
                         path: `${dataType}.${parentPath}`,
                         key: insertIndex,
                         value: componentData[dataType],

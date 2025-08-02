@@ -7,8 +7,8 @@ import { get } from "lodash-es";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import {
-    setProperty,
-    addProperty,
+    setNested,
+    insertNested,
 } from "@/lib/features/data/dataSlice";
 import AutosizeInput from "react-input-autosize";
 import InputBase from "@mui/material/InputBase";
@@ -66,7 +66,7 @@ const Typography: React.FC<Props> = ({ path, children }) => {
         // );
 
         dispatch(
-            addProperty({
+            insertNested({
                 path: `config.${parentPath}`,
                 key: parseInt(componentKey as string, 10) + 1,
                 value: {
@@ -76,7 +76,7 @@ const Typography: React.FC<Props> = ({ path, children }) => {
             })
         );
         dispatch(
-            addProperty({
+            insertNested({
                 path: `content.${parentPath}`,
                 key: parseInt(componentKey as string, 10) + 1,
                 value: {
@@ -86,7 +86,7 @@ const Typography: React.FC<Props> = ({ path, children }) => {
             })
         );
         dispatch(
-            addProperty({
+            insertNested({
                 path: `styles.${parentPath}`,
                 key: parseInt(componentKey as string, 10) + 1,
                 value: {
@@ -127,7 +127,7 @@ const Typography: React.FC<Props> = ({ path, children }) => {
                 //     placeholder=""
                 //     onChange={(event) =>
                 //         dispatch(
-                //             setProperty({
+                //             setNested({
                 //                 path: `content.${path}`,
                 //                 value: event.target.value,
                 //             })
@@ -151,7 +151,7 @@ const Typography: React.FC<Props> = ({ path, children }) => {
                     // onDrop={handleDrop}
                     onChange={(event) =>
                         dispatch(
-                            setProperty({
+                            setNested({
                                 path: `content.${path}.text`,
                                 value: event.target.value,
                             })

@@ -1,12 +1,12 @@
 import { produce } from "immer";
 
-type SetProperty<T> = (
+type SetNested<T> = (
     path: string,
     newValue: any,
     setContent: React.Dispatch<React.SetStateAction<T>>
 ) => void;
 
-export const setProperty: SetProperty<object> = (
+export const setNested: SetNested<object> = (
     path,
     newValue,
     setData

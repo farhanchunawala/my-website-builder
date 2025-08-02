@@ -5,7 +5,7 @@ import { get } from "lodash-es";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import AutosizeInput from "react-input-autosize";
-import { setProperty } from "@/lib/features/data/dataSlice";
+import { setNested } from "@/lib/features/data/dataSlice";
 
 interface Props {
     path: string;
@@ -77,7 +77,7 @@ const Button: React.FC<Props> = ({ path }) => {
                     placeholder=""
                     onChange={(event) =>
                         dispatch(
-                            setProperty({
+                            setNested({
                                 path: `content.${path}.text`,
                                 value: event.target.value,
                             })
