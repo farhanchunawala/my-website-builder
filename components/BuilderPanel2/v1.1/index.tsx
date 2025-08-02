@@ -33,11 +33,9 @@ const BuilderPanel = ({ panel }) => {
     };
 
     return panel == "leftPanel" ? (
-        <Box className="side-bar">
-			
-		</Box>
+        <Box className="side-bar" sx={{ left: 0, width: "48px" }}></Box>
     ) : (
-        <Box className="side-bar">
+        <Box className="side-bar" sx={{ right: 0 }}>
             {buttons.map((btn, index) => (
                 <Box className="button" key={index}>
                     <Box

@@ -8,15 +8,32 @@ h6 {
 }
 
 .page-builder {
+	position: relative;
     display: flex;
+	// flex-direction: "column";
     width: 100vw;
-    // height: 100%;
 	height: 100vh;
+    // height: 100%;
     // padding: 16px 0;
+	background-color: #eeeeee;
 }
 
-.page {
-    width: 100%;
-	overflow-y: auto;
-    // padding: 32px 16px;
+.top-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 200;
+	height: 48px;
+	background-color: #ffffff;
+	border-bottom: #ddd solid 1px;
+	display: flex;
+	align-items: center;
+	padding: 0 16px;
 }
+
+// .page {
+//     width: 100%;
+// 	overflow-y: auto;
+//     // padding: 32px 16px;
+// }
