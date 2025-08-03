@@ -32,16 +32,6 @@ import { get } from "lodash-es";
 export default function Home() {
     const dispatch: AppDispatch = useDispatch();
     // const { mode } = useSelector((state: RootState) => state.builder);
-    const { config, content, styles } = useSelector(
-        (state: RootState) => ({
-            globalConfig: state.data.data.config,
-            config: get(state, `data.data.config`),
-            content: get(state, `data.data.content`),
-            styles: get(state, `data.data.styles`),
-        })
-    );
-    const { mapStyles } = useMapStyles();
-    const { designFrame } = useDesignFrame();
     const { renderStructure } = useRenderStructure();
     const [mounted, setMounted] = useState(false);
 
@@ -78,7 +68,7 @@ export default function Home() {
         dispatch(setMode("builder"));
     }, [dispatch]);
 	
-    if (!mounted || !content) {
+    if (!mounted) {
         return null;
     }
 

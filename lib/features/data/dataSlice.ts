@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchData } from "./dataThunks";
 import { getNestedTarget } from "@/lib/utils/getNestedTarget";
-import { Onest } from "next/font/google";
 
 interface DataState {
     data: Record<string, any>;
@@ -68,6 +67,7 @@ const dataSlice = createSlice({
                 typeof target === "object" &&
                 !Array.isArray(target)
             ) {
+				// target[key] = value;
                 Reflect.set(target, lastKey, value);
             }
         },

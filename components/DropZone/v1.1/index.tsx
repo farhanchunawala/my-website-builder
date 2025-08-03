@@ -78,12 +78,12 @@ export const DropZone = React.memo(
                     ? parseInt(componentKey as string, 10) + 1
                     : parseInt(componentKey as string, 10);
 
-            ["config", "content", "styles"].forEach((dataType) => {
+            ["config", "content", "styling"].forEach((dataType) => {
                 dispatch(
                     insertNested({
                         path: `${dataType}.${parentPath}`,
                         key: insertIndex,
-                        value: componentData[dataType],
+                        value: (componentData as any)[dataType],
                     })
                 );
             });
