@@ -9,7 +9,7 @@ import InputBase from "@mui/material/InputBase";
 // import Typography from "@mui/material/Typography";
 import useEvent from "@/lib/hooks/useEvent";
 import { useMapStyles } from "@/lib/hooks/useMapStyles2";
-import { setNested } from "@/lib/features/data/dataSlice";
+import { updateNested } from "@/lib/features/data/dataSlice";
 import { get } from "lodash-es";
 
 const TextBlock: React.FC<Props> = ({ path }) => {
@@ -36,7 +36,7 @@ const TextBlock: React.FC<Props> = ({ path }) => {
                     multiline
                     onChange={(event) =>
                         dispatch(
-                            setNested({
+                            updateNested({
                                 path: `content.${path}.${index}`,
                                 value: event.target.value,
                             })

@@ -3,7 +3,7 @@ import { RootState } from "@/lib/store";
 import type Props from "./types";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { mapStyles } from "@/lib/utils/mapStyles";
 
 const TextBlock: React.FC<Props> = ({
     content = [],

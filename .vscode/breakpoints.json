@@ -1,0 +1,261 @@
+[
+  {
+    "location": "/components/BuilderPanel/v1.1/index.tsx",
+    "line": [
+      {
+        "line": 30,
+        "character": 0
+      },
+      {
+        "line": 30,
+        "character": 0
+      }
+    ],
+    "enabled": false
+  },
+  {
+    "location": "/components/BuilderPanel/v1.1/index.tsx",
+    "line": [
+      {
+        "line": 32,
+        "character": 0
+      },
+      {
+        "line": 32,
+        "character": 0
+      }
+    ],
+    "enabled": false
+  },
+  {
+    "location": "/components/BuilderPanel/v1.1/index.tsx",
+    "line": [
+      {
+        "line": 33,
+        "character": 0
+      },
+      {
+        "line": 33,
+        "character": 0
+      }
+    ],
+    "enabled": false,
+    "logMessage": "path: {JSON.stringify(path)}"
+  },
+  {
+    "location": "/components/BuilderPanel/v1.1/index.tsx",
+    "line": [
+      {
+        "line": 96,
+        "character": 21
+      },
+      {
+        "line": 96,
+        "character": 21
+      }
+    ],
+    "enabled": false,
+    "logMessage": "path: {path}, styles: {JSON.stringify(styles)}"
+  },
+  {
+    "location": "/elements/Box/v1.1/index.tsx",
+    "line": [
+      {
+        "line": 13,
+        "character": 37
+      },
+      {
+        "line": 13,
+        "character": 37
+      }
+    ],
+    "enabled": false,
+    "logMessage": "path: {path}"
+  },
+  {
+    "location": "/elements/Box/v1.1/index.tsx",
+    "line": [
+      {
+        "line": 33,
+        "character": 19
+      },
+      {
+        "line": 33,
+        "character": 19
+      }
+    ],
+    "enabled": false
+  },
+  {
+    "location": "/elements/Typography/v2.1/index.tsx",
+    "line": [
+      {
+        "line": 21,
+        "character": 21
+      },
+      {
+        "line": 21,
+        "character": 21
+      }
+    ],
+    "enabled": false
+  },
+  {
+    "location": "/elements/Typography/v2.1/index.tsx",
+    "line": [
+      {
+        "line": 70,
+        "character": 27
+      },
+      {
+        "line": 70,
+        "character": 27
+      }
+    ],
+    "enabled": false
+  },
+  {
+    "location": "/elements/Box/v1.1/index.tsx",
+    "line": [
+      {
+        "line": 30,
+        "character": 9
+      },
+      {
+        "line": 30,
+        "character": 9
+      }
+    ],
+    "enabled": false
+  },
+  {
+    "location": "/components/BuilderPanel/v1.1/index.tsx",
+    "line": [
+      {
+        "line": 38,
+        "character": 0
+      },
+      {
+        "line": 38,
+        "character": 0
+      }
+    ],
+    "enabled": false,
+    "logMessage": "path: {path}, styles: {JSON.stringify(styles)}"
+  },
+  {
+    "location": "/lib/hooks/useDesignFrame.ts",
+    "line": [
+      {
+        "line": 36,
+        "character": 26
+      },
+      {
+        "line": 36,
+        "character": 26
+      }
+    ],
+    "enabled": false
+  },
+  {
+    "location": "/lib/hooks/useRenderStructure.tsx",
+    "line": [
+      {
+        "line": 73,
+        "character": 0
+      },
+      {
+        "line": 73,
+        "character": 0
+      }
+    ],
+    "enabled": false
+  },
+  {
+    "location": "/lib/hooks/useRenderStructure.tsx",
+    "line": [
+      {
+        "line": 76,
+        "character": 31
+      },
+      {
+        "line": 76,
+        "character": 31
+      }
+    ],
+    "enabled": false
+  },
+  {
+    "location": "/lib/features/data/dataSlice.ts",
+    "line": [
+      {
+        "line": 54,
+        "character": 26
+      },
+      {
+        "line": 54,
+        "character": 26
+      }
+    ],
+    "enabled": false,
+    "logMessage": "Adding to array at index: {index}, value: {value}"
+  },
+  {
+    "location": "/lib/features/data/dataSlice.ts",
+    "line": [
+      {
+        "line": 47,
+        "character": 12
+      },
+      {
+        "line": 47,
+        "character": 12
+      }
+    ],
+    "enabled": false,
+    "logMessage": "{typeof target}"
+  },
+  {
+    "location": "/lib/features/data/dataSlice.ts",
+    "line": [
+      {
+        "line": 50,
+        "character": 12
+      },
+      {
+        "line": 50,
+        "character": 12
+      }
+    ],
+    "enabled": false
+  },
+  {
+    "location": "/lib/features/data/dataSlice.ts",
+    "line": [
+      {
+        "line": 62,
+        "character": 4
+      },
+      {
+        "line": 62,
+        "character": 4
+      }
+    ],
+    "enabled": false,
+    "logMessage": "target is of type: {typeof target}\nkey value is: {key}\ntarget[key] is: {target[key]}"
+  },
+  {
+    "location": "/lib/features/data/dataSlice.ts",
+    "line": [
+      {
+        "line": 45,
+        "character": 0
+      },
+      {
+        "line": 45,
+        "character": 0
+      }
+    ],
+    "enabled": false
+  }
+]

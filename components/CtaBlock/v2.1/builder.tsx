@@ -9,7 +9,7 @@ import Button from "@mui/material/Button";
 import useEvent from "@/lib/hooks/useEvent";
 import AutosizeInput from "react-input-autosize";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
-import { setNested } from "@/lib/features/data/dataSlice";
+import { updateNested } from "@/lib/features/data/dataSlice";
 import { get } from "lodash-es";
 
 const CtaBlock: React.FC<Props> = ({ path }) => {
@@ -49,7 +49,7 @@ const CtaBlock: React.FC<Props> = ({ path }) => {
                     placeholder=""
                     onChange={(event) =>
                         dispatch(
-                            setNested({
+                            updateNested({
                                 path: `content.${path}.buttonText`,
                                 value: event.target.value,
                             })

@@ -9,12 +9,12 @@ import { setPath } from "@/lib/features/builder/builderSlice";
 
 const useDesignFrame = () => {
     const dispatch = useDispatch();
-    const mode = useSelector((state: RootState) => state.mode);
+    const { mode } = useSelector((state: RootState) => state.builder);
     const { hoveredElement, focusedElement } = useSelector(
         (state: RootState) => state.hoverFocus
     );
 
-    // Use callback to handle events and dispatch actions to Redux
+    // Handles mouse and focus events for elements
     const handleEvent = useCallback(
         (
             event: React.MouseEvent | React.FocusEvent,
@@ -48,6 +48,7 @@ const useDesignFrame = () => {
         [dispatch]
     );
 
+	// Event handlers for frame
     const frameHandlers = useCallback(
         (id: string | number | null) => {
             if (mode !== "builder") return {};
@@ -70,6 +71,7 @@ const useDesignFrame = () => {
         [handleEvent, mode]
     );
 
+	// Styles for frame when hovered or focused
     const frameStyles = useCallback(
         (id: string | number | null) => {
             if (mode !== "builder") return {};
@@ -81,6 +83,7 @@ const useDesignFrame = () => {
         [hoveredElement, focusedElement, mode]
     );
 
+	// Returns combined frameHandlers and frameStyles for an element
     const designFrame = useCallback(
         (id: string | number | null) => {
             if (mode !== "builder") return {};

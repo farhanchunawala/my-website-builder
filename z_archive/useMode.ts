@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "next/navigation";
-import { setMode } from "@/lib/features/mode/modeSlice";
+import { setMode } from "@/z_archive/mode/modeSlice";
 
 const useMode = () => {
     const dispatch = useDispatch();

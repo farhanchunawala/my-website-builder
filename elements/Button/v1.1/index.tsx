@@ -5,7 +5,7 @@ import { get } from "lodash-es";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import AutosizeInput from "react-input-autosize";
-import { setNested } from "@/lib/features/data/dataSlice";
+import { updateNested } from "@/lib/features/data/dataSlice";
 
 interface Props {
     path: string;
@@ -40,7 +40,7 @@ const sizeStyles: SizeStyles = {
 const Button: React.FC<Props> = ({ path }) => {
     const dispatch = useDispatch();
     const { mapStyles } = useMapStyles();
-    const mode = useSelector((state: RootState) => state.mode);
+    const { mode } = useSelector((state: RootState) => state.builder);ilde);
     const { config, content, styles } = useSelector(
         (state: RootState) => ({
             config: get(state, `data.data.config.${path}`),
@@ -77,7 +77,7 @@ const Button: React.FC<Props> = ({ path }) => {
                     placeholder=""
                     onChange={(event) =>
                         dispatch(
-                            setNested({
+                            updateNested({
                                 path: `content.${path}.text`,
                                 value: event.target.value,
                             })

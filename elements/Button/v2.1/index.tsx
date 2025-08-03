@@ -5,7 +5,7 @@ import { get } from "lodash-es";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import AutosizeInput from "react-input-autosize";
-import { setNested } from "@/lib/features/data/dataSlice";
+import { updateNested } from "@/lib/features/data/dataSlice";
 
 interface Props {
     path: string;
@@ -40,12 +40,12 @@ const sizeStyles: SizeStyles = {
 const Button: React.FC<Props> = ({ path }) => {
     const dispatch = useDispatch();
     const { mapStyles } = useMapStyles();
-    const mode = useSelector((state: RootState) => state.mode);
+    const { mode } = useSelector((state: RootState) => state.builder);
     const { config, content, styles } = useSelector(
         (state: RootState) => ({
             config: get(state, `data.data.config.${path}`),
             content: get(state, `data.data.content.${path}`),
-            styles: get(state, `data.data.styles.${path}`),
+            styles: get(state, `data.data.styling.${path}`),
         })
     );
     const { frameHandlers, frameStyles } = useDesignFrame();
@@ -58,10 +58,10 @@ const Button: React.FC<Props> = ({ path }) => {
                 ...variantStyles[config?.variant],
                 ...sizeStyles[config?.size],
                 ...mapStyles(styles?.styles),
-                ...frameStyles(`${path}.styles`),
+                ...frameStyles(`${path}`),
                 // ...hoverStyles,
             }}
-            {...frameHandlers(`${path}.styles`)}
+            {...frameHandlers(`${path}`)}
             // onMouseEnter={() => setIsHovered(true)}
             // onMouseLeave={() => setIsHovered(false)}
             // href={
@@ -77,15 +77,15 @@ const Button: React.FC<Props> = ({ path }) => {
                     placeholder=""
                     onChange={(event) =>
                         dispatch(
-                            setNested({
+                            updateNested({
                                 path: `content.${path}.text`,
                                 value: event.target.value,
                             })
                         )
                     }
-                    {...frameHandlers(`${path}.text`)}
+                    {...frameHandlers(`${path}`)}
                     inputStyle={{
-                        ...frameStyles(`${path}.text`),
+                        ...frameStyles(`${path}`),
                     }}
                 />
             ) : (

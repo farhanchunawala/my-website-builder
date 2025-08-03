@@ -29,7 +29,7 @@ export const useRenderStructure = () => {
     const { mapStyles } = useMapStyles();
     const { designFrame } = useDesignFrame();
     const data = useSelector((state: RootState) => state.data.data);
-    const mode = useSelector((state: RootState) => state.mode);
+    const { mode } = useSelector((state: RootState) => state.builder);
 
     const renderStructure = useCallback(
         (path: string): React.ReactNode => {
@@ -39,8 +39,10 @@ export const useRenderStructure = () => {
                 path === "" ? data.config : get(data.config, path);
             const content =
                 path === "" ? data.content : get(data.content, path);
-            const styles =
-                path === "" ? data.styles : get(data.styles, path);
+            const styling =
+                path === "" ? data.styling : get(data.styling, path);
+
+            const styles = styling?.styles || {};
 
             const Component =
                 componentMap[config?.component as ComponentType];
@@ -72,7 +74,7 @@ export const useRenderStructure = () => {
                         path={path}
                         {...getProps(config)}
                         sx={{
-                            ...mapStyles(styles?.styles),
+                            ...mapStyles(styles),
                         }}
                     >
                         {children && children.length > 0
@@ -88,13 +90,7 @@ export const useRenderStructure = () => {
                 </React.Fragment>
             );
         },
-        [
-            data.config,
-            data.content,
-            data.styles,
-            mode,
-            mapStyles,
-        ]
+        [data.config, data.content, data.styling, mode, mapStyles]
     );
 
     return { renderStructure };

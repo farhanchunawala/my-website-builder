@@ -25,13 +25,13 @@ import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import BuilderPanel from "@/components/BuilderPanel/v1.1";
 // import BuilderPanel from "@/components/BuilderPanel2/v1.1";
 import { useRenderStructure } from "@/lib/hooks/useRenderStructure";
-import { setMode } from "@/lib/features/mode/modeSlice";
+import { setMode } from "@/lib/features/builder/builderSlice";
 import { useViewport } from "@/lib/hooks/useViewport";
 import { get } from "lodash-es";
 
 export default function Home() {
     const dispatch: AppDispatch = useDispatch();
-    // const mode = useSelector((state: RootState) => state.mode);
+    // const { mode } = useSelector((state: RootState) => state.builder);
     const { config, content, styles } = useSelector(
         (state: RootState) => ({
             globalConfig: state.data.data.config,
@@ -64,7 +64,7 @@ export default function Home() {
     })();
 
     const searchParams = useSearchParams();
-    const route = searchParams.get("page");
+    const route = searchParams.get("page") ?? "";
 
     useEffect(() => {
         dispatch(fetchData({ route }));
@@ -129,7 +129,7 @@ export default function Home() {
                             bottom: 32,
                             right: 32,
                         }}
-                        onClick={() => dispatch(saveData({ page }))}
+                        onClick={() => dispatch(saveData({ route }))}
                     >
                         <SaveAltIcon />
                     </Fab>

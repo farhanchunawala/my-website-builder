@@ -12,15 +12,16 @@ interface Props {
 
 const Box: React.FC<Props> = ({ path, children }) => {
     const { mapStyles } = useMapStyles();
-    const mode = useSelector((state: RootState) => state.mode);
-    const { config, content, styles } = useSelector(
+    const { mode } = useSelector((state: RootState) => state.builder);
+    const { config, content, styling } = useSelector(
         (state: RootState) => ({
             config: get(state, `data.data.config.${path}`),
             content: get(state, `data.data.content.${path}`),
-            styles: get(state, `data.data.styles.${path}`),
+            styling: get(state, `data.data.styling.${path}`),
         })
     );
     const { frameHandlers, frameStyles } = useDesignFrame();
+	const styles = styling?.styles || {};
 
     return (
         <div
@@ -29,10 +30,10 @@ const Box: React.FC<Props> = ({ path, children }) => {
             // id="s014"
             style={{
 				position: "relative",
-                ...mapStyles(styles?.styles),
-                ...frameStyles(`${path}.styles`),
+                ...mapStyles(styles),
+                ...frameStyles(`${path}`),
             }}
-            {...frameHandlers(`${path}.styles`)}
+            {...frameHandlers(`${path}`)}
         >
             {children}
         </div>

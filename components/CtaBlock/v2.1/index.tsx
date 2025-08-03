@@ -4,7 +4,7 @@ import type Props from "./types";
 import Box from "@mui/material/Box";
 import TextBlock from "@/components/TextBlock/v2.1";
 import Button from "@mui/material/Button";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { mapStyles } from "@/lib/utils/mapStyles";
 
 const CtaBlock: React.FC<Props> = ({
     content,

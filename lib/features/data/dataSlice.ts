@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchData } from "./dataThunks";
+import { getNestedTarget } from "@/lib/utils/getNestedTarget";
+import { Onest } from "next/font/google";
 
 interface DataState {
     data: Record<string, any>;
@@ -20,18 +22,14 @@ const dataSlice = createSlice({
         setData(state, action: PayloadAction<Record<string, any>>) {
             state.data = action.payload;
         },
-        setNested(
+        updateNested(
             state,
             action: PayloadAction<{ path: string; value: any }>
         ) {
             const { path, value } = action.payload;
-
-            const fullPath = `data.${path}`;
-            const keys = fullPath.split(".");
-            const lastKey = keys.pop();
-            const target = keys.reduce(
-                (node, key) => node[key],
-                state as Record<string, any>
+            const { target, lastKey } = getNestedTarget(
+                state,
+                `data.${path}`
             );
             if (lastKey) {
                 target[lastKey] = value;
@@ -46,44 +44,38 @@ const dataSlice = createSlice({
             }>
         ) {
             const { path, key, value } = action.payload;
-
-            const fullPath = `data.${path}`;
-            const keys = fullPath.split(".");
-            const target = keys.reduce(
-                (node, key) => node[key],
-                state as Record<string, any>
+            const { target, lastKey } = getNestedTarget(
+                state,
+                `data.${path}.${key}`
             );
-
             if (!target) return;
 
-			// Handle arrays - insert at specific index
+            // Handle array insert at specific index
             if (Array.isArray(target)) {
                 const index =
                     typeof key === "number"
                         ? key
                         : parseInt(key as string, 10);
-						
-						console.log("Adding to array at index:", index, "value:", value);
-						
 
                 if (index >= 0 && index <= target.length) {
+                    // Insert value at specified index
                     target.splice(index, 0, value);
                 }
             }
-			// Handle objects - set property
-			else if (typeof target === "object") {
-                target[key] = value;
+            // Handle object insert by key
+            else if (
+                target &&
+                typeof target === "object" &&
+                !Array.isArray(target)
+            ) {
+                Reflect.set(target, lastKey, value);
             }
         },
         removeNested(state, action: PayloadAction<{ path: string }>) {
             const { path } = action.payload;
-
-            const fullPath = `data.${path}`;
-            const keys = fullPath.split(".");
-            const lastKey = keys.pop();
-            const target = keys.reduce(
-                (node, key) => node[key],
-                state as Record<string, any>
+            const { target, lastKey } = getNestedTarget(
+                state,
+                `data.${path}`
             );
             if (lastKey) {
                 delete target[lastKey];
@@ -115,6 +107,6 @@ const dataSlice = createSlice({
     },
 });
 
-export const { setData, setNested, insertNested, removeNested } =
+export const { setData, updateNested, insertNested, removeNested } =
     dataSlice.actions;
 export default dataSlice;

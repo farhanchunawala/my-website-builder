@@ -4,7 +4,7 @@ import dbConnect from "@/lib/mongodb";
 import Content from "@/models/ContentModel";
 
 interface Context {
-    params: undefined;
+    params: { route: string };
 }
 
 export async function POST(request: NextRequest, context: Context) {
@@ -14,8 +14,7 @@ export async function POST(request: NextRequest, context: Context) {
 		// const url = new URL(request.url);
 		// const route = url.searchParams.get('route');
 		
-		const { route } = context.params;
-		
+		const { route } = await context.params;
         const req = await request.json();
 		
 		let content;

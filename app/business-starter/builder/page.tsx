@@ -20,7 +20,7 @@ import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import UploadIcon from "@mui/icons-material/Upload";
 import useEvent from "@/lib/hooks/useEvent";
 import TextField from "@mui/material/TextField";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { mapStyles } from "@/lib/utils/mapStyles";
 // import { updateData } from "@/lib/helpers/updateData";
 // import Section013 from "@/sections/s013/v1/builder";
 import Section013 from "@/sections/s013/v1/builder";

@@ -7,12 +7,11 @@ import { get } from "lodash-es";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import {
-    setNested,
+    updateNested,
     insertNested,
 } from "@/lib/features/data/dataSlice";
 import AutosizeInput from "react-input-autosize";
 import InputBase from "@mui/material/InputBase";
-import { useDragAndDrop } from "@/lib/hooks/useDragAndDrop/v3.1";
 
 interface Props {
     path: string;
@@ -23,112 +22,28 @@ const Typography: React.FC<Props> = ({ path, children }) => {
     const dispatch = useDispatch();
     const { mapStyles } = useMapStyles();
     const { frameHandlers, frameStyles } = useDesignFrame();
-    const mode = useSelector((state: RootState) => state.mode);
-    const { config, content, styles } = useSelector(
+    const { mode } = useSelector((state: RootState) => state.builder);
+    const { config, content, styling } = useSelector(
         (state: RootState) => ({
             config: get(state, `data.data.config.${path}`),
-            content: get(state, `data.data.content.${path}.text`),
-            styles: get(state, `data.data.styles.${path}.styles`),
+            content: get(state, `data.data.content.${path}`),
+            styling: get(state, `data.data.styling.${path}`),
         })
     );
+    const styles = styling?.styles || {};
     const Element = config?.element || "p";
-    // const { handleDragEnter, handleDragLeave, dragStyles } = useDragAndDrop();
-    const [isDraggedOver, setIsDraggedOver] = useState(false);
-
-    const pathArray = path.split(".");
-    const componentKey = pathArray.pop();
-    const parentPath = pathArray.join(".");
-    // console.log(pathArray, componentKey, parentPath);
-
-    const handleDragEnter = (e: React.DragEvent) => {
-        e.preventDefault();
-        setIsDraggedOver(true);
-        // e.dataTransfer.dropEffect = "none";
-    };
-
-    const handleDragOver = (e: React.DragEvent) => {
-        e.preventDefault();
-        setIsDraggedOver(true);
-        // e.dataTransfer.dropEffect = "none";
-    };
-
-    const handleDragLeave = (e: React.DragEvent) => {
-        e.preventDefault();
-        setIsDraggedOver(false);
-    };
-
-    const handleDrop = (e: React.DragEvent) => {
-        e.preventDefault();
-        setIsDraggedOver(false);
-        // console.log(
-        //     "componentKey+1",
-        //     parseInt(componentKey as string, 10) + 1
-        // );
-
-        dispatch(
-            insertNested({
-                path: `config.${parentPath}`,
-                key: parseInt(componentKey as string, 10) + 1,
-                value: {
-                    component: "Typography",
-                    element: "h6",
-                },
-            })
-        );
-        dispatch(
-            insertNested({
-                path: `content.${parentPath}`,
-                key: parseInt(componentKey as string, 10) + 1,
-                value: {
-                    component: "Typography",
-                    text: "hi",
-                },
-            })
-        );
-        dispatch(
-            insertNested({
-                path: `styles.${parentPath}`,
-                key: parseInt(componentKey as string, 10) + 1,
-                value: {
-                    component: "Typography",
-                    styles: {
-                        imports: ["texts.paragraph"],
-                        color: "#aaeedd",
-                        opacity: "tokens.textLight",
-                        textAlign: "center",
-                        tablet: {
-                            imports: ["texts.paragraphBigger"],
-                        },
-                        desktop: {
-                            imports: ["texts.paragraphBigger"],
-                        },
-                    },
-                },
-            })
-        );
-    };
-
-    const dragStyles = isDraggedOver
-        ? {
-              borderBottom: "3px solid #1976d2", // Blue bottom border
-              // backgroundColor: 'rgba(25, 118, 210, 0.05)', // Very subtle background
-              transition: "all 0.2s ease-in-out",
-          }
-        : {
-              transition: "all 0.2s ease-in-out",
-          };
 
     return (
         <>
             {mode === "builder" ? (
                 // <AutosizeInput
                 //     className="auto-size-input"
-                //     value={content}
+                //     value={content.text}
                 //     placeholder=""
                 //     onChange={(event) =>
                 //         dispatch(
-                //             setNested({
-                //                 path: `content.${path}`,
+                //             updateNested({
+                //                 path: `content.text.${path}`,
                 //                 value: event.target.value,
                 //             })
                 //         )
@@ -142,16 +57,10 @@ const Typography: React.FC<Props> = ({ path, children }) => {
 
                 <InputBase
                     multiline
-                    defaultValue={content}
-                    // onDragEnter={handleDragEnter}
-                    // onDragOver={handleDragOver}
-                    // // onDragOver={(e) => handleDragOver(e, index)}
-                    // onDragLeave={handleDragLeave}
-                    // // onDrop={(e) => handleDrop(e, index)}
-                    // onDrop={handleDrop}
+                    defaultValue={content.text}
                     onChange={(event) =>
                         dispatch(
-                            setNested({
+                            updateNested({
                                 path: `content.${path}.text`,
                                 value: event.target.value,
                             })
@@ -160,7 +69,6 @@ const Typography: React.FC<Props> = ({ path, children }) => {
                     sx={{
                         ...mapStyles(styles),
                         ...frameStyles(`${path}`),
-                        ...dragStyles,
                         width: "100%",
                         "&:hover": {
                             opacity: 1,
@@ -188,7 +96,7 @@ const Typography: React.FC<Props> = ({ path, children }) => {
                     }}
                     {...frameHandlers(`${path}`)}
                 >
-                    {content}
+                    {content.text}
                 </Element>
             )}
         </>

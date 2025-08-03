@@ -30,7 +30,7 @@ import { get } from "lodash-es";
 export default function Home() {
     // useMode();
     const dispatch: AppDispatch = useDispatch();
-    const mode = useSelector((state: RootState) => state.mode);
+    const { mode } = useSelector((state: RootState) => state.builder);
     const { config, content, styles } = useSelector(
         (state: RootState) => ({
             globalConfig: state.data.data.config,

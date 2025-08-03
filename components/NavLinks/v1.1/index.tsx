@@ -13,7 +13,7 @@ interface Props {
 const NavLinks: React.FC<Props> = ({ path }) => {
     const { mapStyles } = useMapStyles();
     const { designFrame } = useDesignFrame();
-    const mode = useSelector((state: RootState) => state.mode);
+    const { mode } = useSelector((state: RootState) => state.builder);
     const { content, styles } = useSelector((state: RootState) => ({
         content: get(state, `data.data.content.${path}`),
         styles: get(state, `data.data.styles.${path}`),

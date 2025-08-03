@@ -17,7 +17,7 @@ interface Props {
 const Section013: React.FC<Props> = ({ path }) => {
     const { mapStyles } = useMapStyles();
     const { frameHandlers, frameStyles } = useDesignFrame();
-    const mode = useSelector((state: RootState) => state.mode);
+    const { mode } = useSelector((state: RootState) => state.builder);
     const { globalConfig, config, content, styles } = useSelector(
         (state: RootState) => ({
             globalConfig: state.data.data.config,

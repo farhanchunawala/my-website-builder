@@ -8,7 +8,7 @@ import InputBase from "@mui/material/InputBase";
 // import { styled } from "@mui/system";
 // import Typography from "@mui/material/Typography";
 import useEvent from "@/lib/hooks/useEvent";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { mapStyles } from "@/lib/utils/mapStyles";
 
 const TextBlock: React.FC<Props> = ({
     content,

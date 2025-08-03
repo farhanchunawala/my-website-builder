@@ -4,7 +4,7 @@ import { RootState } from "@/lib/store";
 import { get } from "lodash-es";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
-import { setNested } from "@/lib/features/data/dataSlice";
+import { updateNested } from "@/lib/features/data/dataSlice";
 import AutosizeInput from "react-input-autosize";
 import InputBase from "@mui/material/InputBase";
 
@@ -17,7 +17,7 @@ const Typography: React.FC<Props> = ({ path, children }) => {
     const dispatch = useDispatch();
     const { mapStyles } = useMapStyles();
     const { frameHandlers, frameStyles } = useDesignFrame();
-    const mode = useSelector((state: RootState) => state.mode);
+    const { mode } = useSelector((state: RootState) => state.builder);
     const { config, content, styles } = useSelector(
         (state: RootState) => ({
             config: get(state, `data.data.config.${path}`),
@@ -36,7 +36,7 @@ const Typography: React.FC<Props> = ({ path, children }) => {
                 //     placeholder=""
                 //     onChange={(event) =>
                 //         dispatch(
-                //             setNested({
+                //             updateNested({
                 //                 path: `content.${path}`,
                 //                 value: event.target.value,
                 //             })
@@ -54,7 +54,7 @@ const Typography: React.FC<Props> = ({ path, children }) => {
                     defaultValue={content}
                     onChange={(event) =>
                         dispatch(
-                            setNested({
+                            updateNested({
                                 path: `content.${path}`,
                                 value: event.target.value,
                             })

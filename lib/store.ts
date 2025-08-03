@@ -5,7 +5,7 @@ import { quotesApiSlice } from "./features/quotes/quotesApiSlice";
 import responsiveSlice from "./features/responsive/responsiveSlice";
 import { hoverFocusSlice } from "./features/editFrame/editFrameSlice";
 import dataSlice from './features/data/dataSlice';
-import modeSlice from "./features/mode/modeSlice";
+import modeSlice from "../z_archive/mode/modeSlice";
 import builderSlice from "./features/builder/builderSlice";
 
 // `combineSlices` automatically combines the reducers using

@@ -5,7 +5,7 @@ import { AppDispatch, RootState } from "@/lib/store";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, width } from "@mui/system";
 import {
-    setNested,
+    updateNested,
     insertNested,
     removeNested,
 } from "@/lib/features/data/dataSlice";
@@ -29,13 +29,18 @@ interface Props {}
 const BuilderPanel: React.FC<Props> = () => {
     const dispatch = useDispatch();
     const { path } = useSelector((state: RootState) => state.builder);
-    const { styles } = useSelector((state: RootState) => ({
-        styles: get(state, `data.data.styles.${path}.styles`) || {},
+    const { styling } = useSelector((state: RootState) => ({
+        styling:
+            get(
+                state,
+                path !== "" ? `data.data.styling.${path}` : `data.data`
+            ) || {},
     }));
     const [addProp, setAddProp] = useState(false);
     const [propKey, setPropKey] = useState("");
     const [propValue, setPropValue] = useState("");
     const [error, setError] = useState("");
+    const styles = styling?.styles || {};
 
     const handleAddProperty = () => {
         if (addProp) {
@@ -44,16 +49,15 @@ const BuilderPanel: React.FC<Props> = () => {
                 if (!styles || Object.keys(styles).length === 0) {
                     // Initialize the styles object first
                     dispatch(
-                        setNested({
-                            path: `styles.${path}`,
+                        updateNested({
+                            path: `styling.${path}.styles`,
                             value: {},
                         })
                     );
                 }
-
                 dispatch(
                     insertNested({
-                        path: `styles.${path}`,
+                        path: `styling.${path}.styles`,
                         key: propKey,
                         value: propValue,
                     })
@@ -75,7 +79,7 @@ const BuilderPanel: React.FC<Props> = () => {
                 {componentDefaults.map((item) => (
                     <DragItem
                         key={item.id}
-						style={item.dropItemStyles.styles}
+                        style={item.dropItemStyles.styles}
                         dragData={{
                             componentType: item.component,
                         }}
@@ -103,10 +107,12 @@ const BuilderPanel: React.FC<Props> = () => {
                                 // type="number"
                                 // select
                                 // helperText="Please select your currency"
+
+                                // Use updateNested to update the style property
                                 onChange={(event) =>
                                     dispatch(
-                                        setNested({
-                                            path: `styles.${path}.${key}`,
+                                        updateNested({
+                                            path: `styling.${path}.styles.${key}`,
                                             value: event.target.value,
                                         })
                                     )
@@ -139,12 +145,13 @@ const BuilderPanel: React.FC<Props> = () => {
 									</MenuItem>
 								))} */}
                             </TextField>
+                            {/* Delete Style Button */}
                             <IconButton
                                 className="delete"
                                 onClick={() =>
                                     dispatch(
                                         removeNested({
-                                            path: `styles.${path}.${key}`,
+                                            path: `styling.${path}.styles.${key}`,
                                         })
                                     )
                                 }

@@ -1,11 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface BuilderState {
-    path: object;
+    path: string;
+	mode: "view" | "builder";
 }
 
 const initialState: BuilderState = {
-    path: {},
+    path: "",
+	mode: "view",
 };
 
 const builderSlice = createSlice({
@@ -15,8 +17,11 @@ const builderSlice = createSlice({
         setPath: (state, action: PayloadAction<string>) => {
             state.path = action.payload;
         },
+        setMode: (state, action: PayloadAction<"view" | "builder">) => {
+            state.mode = action.payload;
+        },
     },
 });
 
-export const { setPath } = builderSlice.actions;
+export const { setPath, setMode } = builderSlice.actions;
 export default builderSlice;

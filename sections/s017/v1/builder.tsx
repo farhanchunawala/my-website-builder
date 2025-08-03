@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type Props from "./types";
 import Box from "@mui/material/Box";
 import TextBlock from "@/components/TextBlock/v1.1/builder";
-import { mapStyles } from "@/lib/helpers/mapStyles";
+import { mapStyles } from "@/lib/utils/mapStyles";
 
 const Section017: React.FC<Props> = ({
     styles,

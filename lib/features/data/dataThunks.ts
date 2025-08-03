@@ -19,11 +19,11 @@ export const saveData = createAsyncThunk<
     { state: any } // ThunkAPI type
 >("data/saveData", async ({ route }, { getState }) => {
     const state = getState();
-    const { config, content, styles } = state.data.data;
+    const { config, content, styling } = state.data.data;
 
     const response = await axios.post(
         `${baseUrl}/api/contents/upsert/${route}`,
-        { route: route, config, content, styles }
+        { route: route, config, content, styling }
     );
     return response.data;
 });
