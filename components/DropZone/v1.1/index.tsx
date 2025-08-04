@@ -94,7 +94,8 @@ export const DropZone = React.memo(
         const dragStyles = isDraggedOver
             ? {
                   //   border: "3px solid #1976d2",
-                  backgroundColor: "#1976d2",
+                  backgroundColor: "#0099ff",
+				  opacity: 0.5,
                   transition: "all 0.2s ease-in-out",
               }
             : {

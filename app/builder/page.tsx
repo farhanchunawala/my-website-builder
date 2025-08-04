@@ -22,12 +22,12 @@ import Section018 from "@/sections/s018/v1";
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
-import BuilderPanel from "@/components/BuilderPanel/v1.1";
-// import BuilderPanel from "@/components/BuilderPanel2/v1.1";
+// import BuilderPanel from "@/components/BuilderPanel/v1.1";
+import BuilderPanel from "@/components/BuilderPanel2/v1.1";
 import { useRenderStructure } from "@/lib/hooks/useRenderStructure";
 import { setMode } from "@/lib/features/builder/builderSlice";
 import { useViewport } from "@/lib/hooks/useViewport";
-import { get } from "lodash-es";
+import { get, min } from "lodash-es";
 
 export default function Home() {
     const dispatch: AppDispatch = useDispatch();
@@ -39,9 +39,9 @@ export default function Home() {
     const screenSize = "1080px";
     const zoom = "100%";
     const previewSizes = {
-        mobile: { width: 375, height: 667 },
-        tablet: { width: 768, height: 1024 },
-        desktop: { width: 1280, height: 800 },
+        mobile: { minWidth: 0, maxWidth: 375 },
+        tablet: { minWidth: 768, maxWidth: 1024 },
+        desktop: { minWidth: 1280, maxWidth: '100%' },
     };
 
     const pageWidth = (() => {
