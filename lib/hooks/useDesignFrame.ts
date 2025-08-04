@@ -77,7 +77,7 @@ const useDesignFrame = () => {
             if (mode !== "builder") return {};
 
             return hoveredElement === id || focusedElement === id
-                ? { outline: "1px solid #1976d2" }
+                ? { outline: "1px solid #0099ff" }
                 : {};
         },
         [hoveredElement, focusedElement, mode]

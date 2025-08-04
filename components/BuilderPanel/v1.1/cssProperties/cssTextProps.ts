@@ -1,7 +1,8 @@
 export const cssTextProperties = {
     // Font Properties
     fontFamily: {
-        displayname: "Font Family",
+        displayName: "Font Family",
+        category: "typography",
         values: [
             "serif",
             "sans-serif",
@@ -22,11 +23,14 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "depends on user agent",
-        inherited: true,
+        inputType: "select",
+        section: "Font Family",
+        show: false,
+        active: true,
     },
-
     fontSize: {
-        displayname: "Font Size",
+        displayName: "Font Size",
+        category: "typography",
         values: [
             "xx-small",
             "x-small",
@@ -60,11 +64,14 @@ export const cssTextProperties = {
             "vmax",
         ],
         defaultValue: "medium",
-        inherited: true,
+        inputType: "select",
+        section: "Font Size",
+        show: false,
+        active: true,
     },
-
     fontWeight: {
-        displayname: "Font Weight",
+        displayName: "Font Weight",
+        category: "typography",
         values: [
             "normal",
             "bold",
@@ -85,11 +92,14 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Font Weight",
+        show: false,
+        active: true,
     },
-
-    fontStyle: {
-        displayname: "Font Style",
+	fontStyle: {
+        displayName: "Font Style",
+        category: "typography",
         values: [
             "normal",
             "italic",
@@ -100,11 +110,14 @@ export const cssTextProperties = {
         ],
         units: ["none", "deg"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Font Style",
+        show: false,
+        active: true,
     },
-
     fontVariant: {
-        displayname: "Font Variant",
+        displayName: "Font Variant",
+        category: "typography",
         values: [
             "normal",
             "small-caps",
@@ -119,11 +132,14 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Font Variant",
+        show: false,
+        active: true,
     },
-
     fontStretch: {
-        displayname: "Font Stretch",
+        displayName: "Font Stretch",
+        category: "typography",
         values: [
             "normal",
             "ultra-condensed",
@@ -140,45 +156,62 @@ export const cssTextProperties = {
         ],
         units: ["%"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Font Stretch",
+        show: false,
+        active: true,
     },
 
     // Text Layout & Spacing
     lineHeight: {
-        displayname: "Line Height",
+        displayName: "Line Height",
+        category: "typography",
         values: ["normal", "inherit", "initial", "unset"],
         units: ["none", "px", "em", "rem", "%"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Text Layout & Spacing",
+        show: false,
+        active: true,
     },
-
     letterSpacing: {
-        displayname: "Letter Spacing",
+        displayName: "Letter Spacing",
+        category: "typography",
         values: ["normal", "inherit", "initial", "unset"],
         units: ["px", "em", "rem", "ch"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Text Layout & Spacing",
+        show: false,
+        active: true,
     },
-
     wordSpacing: {
-        displayname: "Word Spacing",
+        displayName: "Word Spacing",
+        category: "typography",
         values: ["normal", "inherit", "initial", "unset"],
         units: ["px", "em", "rem", "%"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Text Layout & Spacing",
+        show: false,
+        active: true,
     },
-
     textIndent: {
-        displayname: "Text Indent",
+        displayName: "Text Indent",
+        category: "typography",
         values: ["inherit", "initial", "unset"],
         units: ["px", "em", "rem", "%"],
         defaultValue: "0",
-        inherited: true,
+        inputType: "select",
+        section: "Text Layout & Spacing",
+        show: false,
+        active: true,
     },
 
     // Text Alignment & Direction
     textAlign: {
-        displayname: "Text Align",
+        displayName: "Text Align",
+        category: "typography",
         values: [
             "left",
             "right",
@@ -193,11 +226,14 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "start",
-        inherited: true,
+        inputType: "select",
+        section: "Text Alignment & Direction",
+        show: false,
+        active: true,
     },
-
     textAlignLast: {
-        displayname: "Text Align Last",
+        displayName: "Text Align Last",
+        category: "typography",
         values: [
             "auto",
             "left",
@@ -212,11 +248,14 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "auto",
-        inherited: true,
+        inputType: "select",
+        section: "Text Alignment & Direction",
+        show: false,
+        active: true,
     },
-
     verticalAlign: {
-        displayname: "Vertical Align",
+        displayName: "Vertical Align",
+        category: "typography",
         values: [
             "baseline",
             "sub",
@@ -232,19 +271,25 @@ export const cssTextProperties = {
         ],
         units: ["px", "em", "rem", "%"],
         defaultValue: "baseline",
-        inherited: false,
+        inputType: "select",
+        section: "Text Alignment & Direction",
+        show: false,
+        active: true,
     },
-
     direction: {
-        displayname: "Direction",
+        displayName: "Direction",
+        category: "typography",
         values: ["ltr", "rtl", "inherit", "initial", "unset"],
         units: ["none"],
         defaultValue: "ltr",
-        inherited: true,
+        inputType: "select",
+        section: "Text Alignment & Direction",
+        show: false,
+        active: true,
     },
-
     textOrientation: {
-        displayname: "Text Orientation",
+        displayName: "Text Orientation",
+        category: "typography",
         values: [
             "mixed",
             "upright",
@@ -255,12 +300,16 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "mixed",
-        inherited: true,
+        inputType: "select",
+        section: "Text Alignment & Direction",
+        show: false,
+        active: true,
     },
 
     // Text Decoration & Effects
 	textDecoration: {
-        displayname: "Text Decoration",
+        displayName: "Text Decoration",
+        category: "typography",
         values: [
             "none",
             "underline",
@@ -273,11 +322,14 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "none",
-        inherited: false,
+        inputType: "select",
+        section: "Text Decoration & Effects",
+        show: false,
+        active: true,
     },
-
     textDecorationColor: {
-        displayname: "Text Decoration Color",
+        displayName: "Text Decoration Color",
+        category: "typography",
         values: [
             "currentColor",
             "transparent",
@@ -287,11 +339,14 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "currentColor",
-        inherited: false,
+        inputType: "select",
+        section: "Text Decoration & Effects",
+        show: false,
+        active: true,
     },
-
     textDecorationStyle: {
-        displayname: "Text Decoration Style",
+        displayName: "Text Decoration Style",
+        category: "typography",
         values: [
             "solid",
             "double",
@@ -304,35 +359,47 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "solid",
-        inherited: false,
+        inputType: "select",
+        section: "Text Decoration & Effects",
+        show: false,
+        active: true,
     },
-
     textDecorationThickness: {
-        displayname: "Text Decoration Thickness",
+        displayName: "Text Decoration Thickness",
+        category: "typography",
         values: ["auto", "from-font", "inherit", "initial", "unset"],
         units: ["px", "em", "rem", "%"],
         defaultValue: "auto",
-        inherited: false,
+        inputType: "select",
+        section: "Text Decoration & Effects",
+        show: false,
+        active: true,
     },
-
     textUnderlineOffset: {
-        displayname: "Text Underline Offset",
+        displayName: "Text Underline Offset",
+        category: "typography",
         values: ["auto", "inherit", "initial", "unset"],
         units: ["px", "em", "rem", "%"],
         defaultValue: "auto",
-        inherited: false,
+        inputType: "select",
+        section: "Text Decoration & Effects",
+        show: false,
+        active: true,
     },
-
     textShadow: {
-        displayname: "Text Shadow",
+        displayName: "Text Shadow",
+        category: "typography",
         values: ["none", "inherit", "initial", "unset"],
         units: ["px", "em", "rem"],
         defaultValue: "none",
-        inherited: true,
+        inputType: "select",
+        section: "Text Decoration & Effects",
+        show: false,
+        active: true,
     },
-
     textTransform: {
-        displayname: "Text Transform",
+        displayName: "Text Transform",
+        category: "typography",
         values: [
             "none",
             "capitalize",
@@ -346,12 +413,16 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "none",
-        inherited: true,
+        inputType: "select",
+        section: "Text Decoration & Effects",
+        show: false,
+        active: true,
     },
 
     // Color & Visibility
     color: {
-        displayname: "Color",
+        displayName: "Color",
+        category: "typography",
         values: [
             "currentColor",
             "transparent",
@@ -361,20 +432,27 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "depends on user agent",
-        inherited: true,
+        inputType: "select",
+        section: "Color & Visibility",
+        show: false,
+        active: true,
     },
-
     opacity: {
-        displayname: "Opacity",
+        displayName: "Opacity",
+        category: "typography",
         values: ["inherit", "initial", "unset"],
         units: ["none", "%"],
         defaultValue: "1",
-        inherited: false,
+        inputType: "select",
+        section: "Color & Visibility",
+        show: false,
+        active: true,
     },
 
     // Text Overflow & Wrapping
     whiteSpace: {
-        displayname: "White Space",
+        displayName: "White Space",
+        category: "typography",
         values: [
             "normal",
             "nowrap",
@@ -388,19 +466,25 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Text Overflow & Wrapping",
+        show: false,
+        active: true,
     },
-
     wordWrap: {
-        displayname: "Word Wrap",
+        displayName: "Word Wrap",
+        category: "typography",
         values: ["normal", "break-word", "inherit", "initial", "unset"],
         units: ["none"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Text Overflow & Wrapping",
+        show: false,
+        active: true,
     },
-
     overflowWrap: {
-        displayname: "Overflow Wrap",
+        displayName: "Overflow Wrap",
+        category: "typography",
         values: [
             "normal",
             "anywhere",
@@ -411,11 +495,14 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Text Overflow & Wrapping",
+        show: false,
+        active: true,
     },
-
     wordBreak: {
-        displayname: "Word Break",
+        displayName: "Word Break",
+        category: "typography",
         values: [
             "normal",
             "break-all",
@@ -427,19 +514,25 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Text Overflow & Wrapping",
+        show: false,
+        active: true,
     },
-
     textOverflow: {
-        displayname: "Text Overflow",
+        displayName: "Text Overflow",
+        category: "typography",
         values: ["clip", "ellipsis", "inherit", "initial", "unset"],
         units: ["none"],
         defaultValue: "clip",
-        inherited: false,
+        inputType: "select",
+        section: "Text Overflow & Wrapping",
+        show: false,
+        active: true,
     },
-
     hyphens: {
-        displayname: "Hyphens",
+        displayName: "Hyphens",
+        category: "typography",
         values: [
             "none",
             "manual",
@@ -450,20 +543,27 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "manual",
-        inherited: true,
+        inputType: "select",
+        section: "Text Overflow & Wrapping",
+        show: false,
+        active: true,
     },
 
     // Advanced Typography
     fontFeatureSettings: {
-        displayname: "Font Feature Settings",
+        displayName: "Font Feature Settings",
+        category: "typography",
         values: ["normal", "inherit", "initial", "unset"],
         units: ["none"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Advanced Typography",
+        show: false,
+        active: true,
     },
-
     fontVariantCaps: {
-        displayname: "Font Variant Caps",
+        displayName: "Font Variant Caps",
+        category: "typography",
         values: [
             "normal",
             "small-caps",
@@ -478,11 +578,14 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Advanced Typography",
+        show: false,
+        active: true,
     },
-
     textRendering: {
-        displayname: "Text Rendering",
+        displayName: "Text Rendering",
+        category: "typography",
         values: [
             "auto",
             "optimizeSpeed",
@@ -494,23 +597,32 @@ export const cssTextProperties = {
         ],
         units: ["none"],
         defaultValue: "auto",
-        inherited: true,
+        inputType: "select",
+        section: "Advanced Typography",
+        show: false,
+        active: true,
     },
-
     fontOpticalSizing: {
-        displayname: "Font Optical Sizing",
+        displayName: "Font Optical Sizing",
+        category: "typography",
         values: ["auto", "none", "inherit", "initial", "unset"],
         units: ["none"],
         defaultValue: "auto",
-        inherited: true,
+        inputType: "select",
+        section: "Advanced Typography",
+        show: false,
+        active: true,
     },
-
     fontVariationSettings: {
-        displayname: "Font Variation Settings",
+        displayName: "Font Variation Settings",
+        category: "typography",
         values: ["normal", "inherit", "initial", "unset"],
         units: ["none"],
         defaultValue: "normal",
-        inherited: true,
+        inputType: "select",
+        section: "Advanced Typography",
+        show: false,
+        active: true,
     },
 };
 

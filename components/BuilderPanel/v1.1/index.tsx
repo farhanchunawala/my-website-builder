@@ -45,16 +45,16 @@ const BuilderPanel: React.FC<Props> = () => {
     const handleAddProperty = () => {
         if (addProp) {
             if (propKey) {
-                // Ensure the styles object exists before adding property
-                if (!styles || Object.keys(styles).length === 0) {
-                    // Initialize the styles object first
-                    dispatch(
-                        updateNested({
-                            path: `styling.${path}.styles`,
-                            value: {},
-                        })
-                    );
-                }
+                // // Ensure the styles object exists before adding property
+                // if (!styles || Object.keys(styles).length === 0) {
+                //     // Initialize the styles object first
+                //     dispatch(
+                //         updateNested({
+                //             path: `styling.${path}.styles`,
+                //             value: {},
+                //         })
+                //     );
+                // }
                 dispatch(
                     insertNested({
                         path: `styling.${path}.styles`,
