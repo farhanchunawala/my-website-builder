@@ -8,8 +8,30 @@
     overflow-y: auto;
     background-color: #ffffff; // or #f9f9f9 if light theme
     border-left: #ddd solid 1px;
-    border-right: #ddd solid 1px;
+    // border-right: #ddd solid 1px;
+    border-right: red solid 1px;
 	z-index: 100;
+
+    .icons-container {
+        padding-top: 20px;
+
+        .icon {
+            color: #999999;
+
+            &:hover {
+                color: black;
+            }
+        }
+    }
+
+    .cards-container {
+        padding: 15px 0;
+
+        .card {
+            width: 110px;
+            height: 110px;
+        }
+    }
 
     .button {
         border-top: 1px solid #ddd;
