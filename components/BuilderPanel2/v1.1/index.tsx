@@ -67,6 +67,7 @@ const BuilderPanel = ({ panel }) => {
     return panel == "leftPanel" ? (
         <>
             <Box
+				width={48}
                 className="side-bar"
                 sx={{
                     left: 0,

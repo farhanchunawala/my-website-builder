@@ -3,13 +3,12 @@ import "./page.scss";
 import { useState } from "react";
 import { AppDispatch, RootState } from "@/lib/store";
 import { useDispatch, useSelector } from "react-redux";
-import { Box, width } from "@mui/system";
+import { Box } from "@mui/system";
 import {
     updateNested,
     insertNested,
     removeNested,
 } from "@/lib/features/data/dataSlice";
-import * as styleProps from "./styleProps";
 import get from "lodash-es/get";
 import {
     TextField,
@@ -24,9 +23,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { DragItem } from "@/components/DragItem/v1.1";
 import { componentDefaults } from "@/lib/configs/componentDefaults";
 
-interface Props {}
-
-const BuilderPanel: React.FC<Props> = () => {
+const BuilderPanel = () => {
     const dispatch = useDispatch();
     const { path } = useSelector((state: RootState) => state.builder);
     const { styling } = useSelector((state: RootState) => ({
