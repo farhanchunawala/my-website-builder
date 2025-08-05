@@ -29,6 +29,7 @@
     "mongoose": "^8.8.4",
     "mongoose-sequence": "^6.0.1",
     "next": "^15.1.0",
+    "radix-ui": "^1.4.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-easy-crop": "^5.2.0",
