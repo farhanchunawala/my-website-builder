@@ -1,17 +1,17 @@
 .side-bar {
-	// position: absolute;
-	// width: 260px;
-	flex: 0 0 260px;
-	height: calc(100vh - 47px);
-	top: 47px;
+    // position: absolute;
+    // width: 260px;
+    flex: 0 0 260px;
+    height: calc(100vh - 47px);
+    top: 47px;
     padding: 0 15px;
     overflow-y: auto;
     background-color: #ffffff; // or #f9f9f9 if light theme
     // border-left: #ddd solid 1px;
     // border-right: #ddd solid 1px;
     // border-right: red solid 1px;
-	z-index: 100;
-	margin-top: 47px;
+    z-index: 100;
+    margin-top: 47px;
 
     .icons-container {
         padding-top: 20px;
@@ -21,6 +21,45 @@
 
             &:hover {
                 color: black;
+            }
+        }
+    }
+    .layers-container {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 8px;
+
+        .layer-container {
+            margin-bottom: 4px;
+
+            .layer {
+                margin: 5px;
+                width: 164px;
+                min-height: 30px;
+                border: none;
+                background-color: #ffffff;
+                transition:
+                    background-color 0.2s ease,
+                    color 0.2s ease;
+
+                // Trigger open state
+                &[data-state="open"] {
+                    background-color: #0099fe; // blue
+                    color: #ffffff;
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                }
+            }
+
+            // Content open state background
+            [data-state="open"] + .layer {
+                background-color: #e6f4ff !important;
+            }
+
+            // Or target Accordion.Content specifically
+            .layer[data-state="open"] + .layer,
+            .layer[data-state="open"] + [data-radix-accordion-content] {
+                background-color: #e6f4ff !important;
             }
         }
     }
@@ -51,7 +90,18 @@
             .button-text {
                 font-weight: 600;
                 font-size: 12px;
-                font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    Oxygen,
+                    Ubuntu,
+                    Cantarell,
+                    "Open Sans",
+                    "Helvetica Neue",
+                    sans-serif;
             }
 
             .toggle-icon {
@@ -72,7 +122,18 @@
             gap: 6px;
 
             p {
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    Oxygen,
+                    Ubuntu,
+                    Cantarell,
+                    "Open Sans",
+                    "Helvetica Neue",
+                    sans-serif;
                 font-size: 12px;
                 font-weight: 500;
                 margin: 0;
