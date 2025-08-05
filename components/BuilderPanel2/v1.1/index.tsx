@@ -81,7 +81,7 @@ const BuilderPanel = ({ panel }) => {
                     </Box>
                 ))}
             </Box>
-            <Box
+            {/* <Box
                 className="side-bar"
                 sx={{
                     left: "47px",
@@ -97,6 +97,13 @@ const BuilderPanel = ({ panel }) => {
                         </Box>
                     ))}
                 </Box>
+            </Box> */}
+            <Box className="side-bar" id="layers">
+                {buttons.map((btn, index) => (
+                <Box className="layer-container" key={index}>
+                    
+                </Box>
+                ))}
             </Box>
         </>
     ) : (
@@ -124,7 +131,6 @@ const BuilderPanel = ({ panel }) => {
                             <path d="M9.99 1.01A1 1 0 0 0 8.283.303L5 3.586 1.717.303A1 1 0 1 0 .303 1.717l3.99 3.98a1 1 0 0 0 1.414 0l3.99-3.98a.997.997 0 0 0 .293-.707Z"></path>
                         </svg>
                     </Box>
-
                     {/* Dropdown */}
                     {openIndex === index && (
                         <Box className="dropdown">
