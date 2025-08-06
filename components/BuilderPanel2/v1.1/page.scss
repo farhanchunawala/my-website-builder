@@ -24,6 +24,7 @@
             }
         }
     }
+
     .layers-container {
         padding-top: 15px;
         padding-bottom: 15px;
@@ -42,7 +43,7 @@
                     background-color 0.2s ease,
                     color 0.2s ease;
 
-                // Trigger open state
+                Trigger open state
                 &[data-state="open"] {
                     background-color: #0099fe; // blue
                     color: #ffffff;
@@ -51,12 +52,12 @@
                 }
             }
 
-            // Content open state background
+            Content open state background
             [data-state="open"] + .layer {
                 background-color: #e6f4ff !important;
             }
 
-            // Or target Accordion.Content specifically
+            Or target Accordion.Content specifically
             .layer[data-state="open"] + .layer,
             .layer[data-state="open"] + [data-radix-accordion-content] {
                 background-color: #e6f4ff !important;
@@ -66,12 +67,42 @@
 
     .cards-container {
         padding: 15px 0;
-
-        .card {
-            width: 110px;
-            height: 110px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    
+        .card-container {
+            flex: 0 0 calc(50% - 10px);
+            // justify-content: center;
+            // align-items: center;
+    
+            .card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                // align-self: center;
+                // justify-self: center;
+                row-gap: 20px;
+                font-family: system-ui, sans-serif;
+                font-weight: 600;
+                font-size: 11px;
+                background-color: #f3f9ff;
+                color: #0099fe;
+                width: 100%;
+                height: 110px;
+                border-radius: 15px;
+                .icon {
+                    width: 33px;
+                    height: 33px;
+                }
+            }
         }
     }
+    
 
     .button {
         border-top: 1px solid #ddd;
