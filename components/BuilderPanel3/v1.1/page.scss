@@ -1,3 +1,119 @@
+/* Reset */
+button {
+	all: unset;
+}
+
+/* === Select Trigger === */
+.SelectTrigger {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	padding: 0 15px;
+	font-size: 13px;
+	line-height: 1;
+	height: 35px;
+	gap: 5px;
+	background-color: #f9f9f9;        /* light gray */
+	color: #004080;                   /* deep blue */
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.SelectTrigger:hover {
+	background-color: #e0e0e0;
+}
+
+.SelectTrigger:focus {
+	box-shadow: 0 0 0 2px #007bff;    /* focus ring */
+}
+
+.SelectTrigger[data-placeholder] {
+	color: #666;
+}
+
+/* === Icon === */
+.SelectIcon {
+	color: #004080;
+}
+
+/* === Content === */
+.SelectContent {
+	overflow: hidden;
+	background-color: #ffffff;
+	border-radius: 6px;
+	box-shadow:
+		0px 10px 38px -10px rgba(0, 0, 0, 0.35),
+		0px 10px 20px -15px rgba(0, 0, 0, 0.2);
+}
+
+/* === Viewport === */
+.SelectViewport {
+	padding: 5px;
+}
+
+/* === Items === */
+.SelectItem {
+	font-size: 13px;
+	line-height: 1;
+	color: #004080;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	height: 25px;
+	padding: 0 35px 0 25px;
+	position: relative;
+	user-select: none;
+}
+
+.SelectItem[data-disabled] {
+	color: #bbb;
+	pointer-events: none;
+}
+
+.SelectItem[data-highlighted] {
+	outline: none;
+	background-color: #007bff;
+	color: #fff;
+}
+
+/* === Label === */
+.SelectLabel {
+	padding: 0 25px;
+	font-size: 12px;
+	line-height: 25px;
+	color: #888;
+}
+
+/* === Separator === */
+.SelectSeparator {
+	height: 1px;
+	background-color: #ccc;
+	margin: 5px;
+}
+
+/* === Item Check Icon === */
+.SelectItemIndicator {
+	position: absolute;
+	left: 0;
+	width: 25px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #007bff;
+}
+
+/* === Scroll Buttons === */
+.SelectScrollButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 25px;
+	background-color: #f5f5f5;
+	color: #004080;
+	cursor: default;
+}
+
+
 .side-bar {
     // position: absolute;
     // width: 260px;
@@ -10,7 +126,7 @@
     // border-left: #ddd solid 1px;
     // border-right: #ddd solid 1px;
     // border-right: red solid 1px;
-    z-index: 100;
+    // z-index: 100;
     margin-top: 47px;
 
     .icons-container {
@@ -111,12 +227,16 @@
                         background: #e2e2e2;
                     }
                 }
-                .select {
+                .Input, .select {
                     height: 30px;
                     border-radius: 8px;
                     background-color: #f3f3f3;
+					padding: 0 7px 1px;
+					border: none;
+					font-size: 12px;
                 }
             }
         }
     }
 }
+

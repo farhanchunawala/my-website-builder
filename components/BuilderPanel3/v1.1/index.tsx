@@ -1,7 +1,13 @@
 import "./page.scss";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Box, FormControl, InputLabel, MenuItem } from "@mui/material";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+// import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { Form, Select } from "radix-ui";
+import ExpandLessRoundedIcon from "@mui/icons-material/ExpandLessRounded";
+import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
+import { ArrowDropDown, Check } from "@mui/icons-material";
+
+const options = ["Apple", "Banana", "Orange"];
 
 const buttons = [
     {
@@ -59,15 +65,10 @@ const cards = [
 ];
 
 const BuilderPanel = ({ panel }) => {
-    const [age, setAge] = useState("");
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const toggleDropdown = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
-    };
-
-    const handleChange = (event: SelectChangeEvent) => {
-        setAge(event.target.value as string);
     };
 
     return panel == "leftPanel" ? (
@@ -134,33 +135,136 @@ const BuilderPanel = ({ panel }) => {
                     {/* Dropdown */}
                     {openIndex === index && (
                         <Box className="dropdown">
-                            {btn.subItems.map((item, i) => (
-                                <FormControl
-                                    key={i}
-                                    className="dropdown-item"
-                                >
-                                    <p>{item}</p>
-                                    <Select
-                                        className="select"
-                                        value={age}
-                                        onChange={handleChange}
-                                        displayEmpty
+                            <Form.Root className="FormRoot">
+                                {btn.subItems.map((item, i) => (
+                                    <Form.Field
+                                        key={i}
+                                        className="dropdown-item"
+                                        name="email"
                                     >
-                                        <MenuItem value="">
-                                            <em>None</em>
-                                        </MenuItem>
-                                        <MenuItem value={10}>
-                                            Ten
-                                        </MenuItem>
-                                        <MenuItem value={20}>
-                                            Twenty
-                                        </MenuItem>
-                                        <MenuItem value={30}>
-                                            Thirty
-                                        </MenuItem>
-                                    </Select>
-                                </FormControl>
-                            ))}
+                                        <div
+                                            style={{
+                                                display: "flex",
+                                                alignItems: "baseline",
+                                                justifyContent:
+                                                    "space-between",
+                                            }}
+                                        >
+                                            <Form.Label className="FormLabel">
+                                                {item}
+                                            </Form.Label>
+                                        </div>
+                                        <Form.Control asChild>
+                                            <input
+                                                className="Input"
+                                                type="text"
+                                                required
+                                            />
+                                        </Form.Control>
+                                    </Form.Field>
+
+                                    // <Select.Root
+                                    //     key={i}
+                                    //     // defaultValue={item}
+                                    // >
+                                    //     <Select.Trigger
+                                    //         style={{
+                                    //             all: "unset",
+                                    //             display: "inline-flex",
+                                    //             alignItems: "center",
+                                    //             justifyContent:
+                                    //                 "space-between",
+                                    //             padding: "8px 12px",
+                                    //             border: "1px solid #ccc",
+                                    //             borderRadius: "4px",
+                                    //             minWidth: "160px",
+                                    //             backgroundColor: "white",
+                                    //             cursor: "pointer",
+                                    //         }}
+                                    //     >
+                                    //         <Select.Value placeholder="Select a fruit" />
+                                    //         <Select.Icon>
+                                    //             <ArrowDropDown />
+                                    //         </Select.Icon>
+                                    //     </Select.Trigger>
+
+                                    //     <Select.Portal>
+                                    //         <Select.Content
+                                    //             style={{
+                                    //                 backgroundColor:
+                                    //                     "white",
+                                    //                 border: "1px solid #ccc",
+                                    //                 borderRadius: "4px",
+                                    //                 marginTop: "4px",
+                                    //                 boxShadow:
+                                    //                     "0px 2px 8px rgba(0,0,0,0.1)",
+                                    //             }}
+                                    //         >
+                                    //             <Select.Viewport
+                                    //                 style={{
+                                    //                     padding: "4px 0",
+                                    //                 }}
+                                    //             >
+                                    //                 {options.map(
+                                    //                     (option) => (
+                                    //                         <Select.Item
+                                    //                             key={option}
+                                    //                             value={
+                                    //                                 option
+                                    //                             }
+                                    //                             style={{
+                                    //                                 padding:
+                                    //                                     "8px 12px",
+                                    //                                 display:
+                                    //                                     "flex",
+                                    //                                 alignItems:
+                                    //                                     "center",
+                                    //                                 justifyContent:
+                                    //                                     "space-between",
+                                    //                                 cursor: "pointer",
+                                    //                             }}
+                                    //                         >
+                                    //                             <Select.ItemText>
+                                    //                                 {option}
+                                    //                             </Select.ItemText>
+                                    //                             <Select.ItemIndicator>
+                                    //                                 <Check fontSize="small" />
+                                    //                             </Select.ItemIndicator>
+                                    //                         </Select.Item>
+                                    //                     )
+                                    //                 )}
+                                    //             </Select.Viewport>
+                                    //         </Select.Content>
+                                    //     </Select.Portal>
+                                    // </Select.Root>
+
+                                    // <FormControl
+                                    //     key={i}
+                                    //     className="dropdown-item"
+                                    // >
+                                    //     <p>{item}</p>
+                                    //     <Select
+                                    //         className="select"
+                                    //         value={age}
+                                    //         onChange={handleChange}
+                                    //         displayEmpty
+                                    //     >
+                                    //         <MenuItem value="">
+                                    //             <em>None</em>
+                                    //         </MenuItem>
+                                    //         <MenuItem value={10}>
+                                    //             Ten
+                                    //         </MenuItem>
+                                    //         <MenuItem value={20}>
+                                    //             Twenty
+                                    //         </MenuItem>
+                                    //         <MenuItem value={30}>
+                                    //             Thirty
+                                    //         </MenuItem>
+                                    //     </Select>
+                                    // </FormControl>
+                                ))}
+                            </Form.Root>
                         </Box>
                     )}
                 </Box>
