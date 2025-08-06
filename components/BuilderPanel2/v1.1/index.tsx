@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, } from "react";
 import "./page.scss";
 import { Accordion } from "radix-ui";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 
 const buttons = [
     {
@@ -132,10 +132,12 @@ const BuilderPanel = ({ panel }) => {
                     <Box className="card-container" key={index}>
                         <Box className="card">
                             {" "}
-                            <Box className="icon">
-                                {crd.icon}
+                            <Box className="icon-wrapper">
+                                <Box className="icon">
+                                    {crd.icon}
+                                </Box>
                             </Box>
-                            <Box className="text">
+                            <Box className="card-text">
                                 {crd.text}
                             </Box>
                         </Box>
