@@ -1,4 +1,4 @@
-import { useState, } from "react";
+import { useState } from "react";
 import "./page.scss";
 import { Accordion } from "radix-ui";
 import { Box, Button } from "@mui/material";
@@ -40,7 +40,7 @@ const icons = [
 ];
 
 const cards = [
-    {   
+    {
         icon: (
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
                 <path
@@ -129,19 +129,15 @@ const BuilderPanel = ({ panel }) => {
             >
                 <Box className="cards-container">
                     {cards.map((crd, index) => (
-                    <Box className="card-container" key={index}>
-                        <Box className="card">
-                            {" "}
-                            <Box className="icon-wrapper">
-                                <Box className="icon">
-                                    {crd.icon}
+                        <Box className="card-container" key={index}>
+                            <Box className="card">
+                                {" "}
+                                <Box className="icon-wrapper">
+                                    <Box className="icon">{crd.icon}</Box>
                                 </Box>
-                            </Box>
-                            <Box className="card-text">
-                                {crd.text}
+                                <Box className="card-text">{crd.text}</Box>
                             </Box>
                         </Box>
-                    </Box>
                     ))}
                 </Box>
             </Box>
@@ -171,17 +167,23 @@ const BuilderPanel = ({ panel }) => {
             </Accordion.Root> */}
         </>
     ) : (
-        <Box
+        <Accordion.Root
+            type="single"
+            collapsible
             className="side-bar"
-            sx={{
+            style={{
                 right: 0,
                 flex: "0 0 260px",
-                borderLeft: "#ddd solid 1px",
+                borderLeft: "1px solid #ddd",
             }}
         >
             {buttons.map((btn, index) => (
-                <Box className="button" key={index}>
-                    <Box
+                <Accordion.Item
+                    value={index}
+                    className="button"
+                    key={index}
+                >
+                    <Accordion.Trigger
                         className="text-container"
                         onClick={() => toggleDropdown(index)}
                     >
@@ -192,20 +194,14 @@ const BuilderPanel = ({ panel }) => {
                             width="12"
                             height="12"
                         >
-                            <path d="M9.99 1.01A1 1 0 0 0 8.283.303L5 3.586 1.717.303A1 1 0 1 0 .303 1.717l3.99 3.98a1 1 0 0 0 1.414 0l3.99-3.98a.997.997 0 0 0 .293-.707Z"></path>
+                            <path d="M9.99 1.01A1 1 0 0 0 8.283.303L5 3.586 1.717.303A1 1 0 1 0 .303 1.717l3.99 3.98a1 1 0 0 0 1.414 0l3.99-3.98a.997.997 0 0 0 .293-.707Z" />
                         </svg>
-                    </Box>
-                    {/* Dropdown */}
-                    {openIndex === index && (
-                        <Box className="dropdown">
-                            {btn.subItems.map((item, i) => (
-                                <p key={i}>{item}</p>
-                            ))}
-                        </Box>
-                    )}
-                </Box>
+                    </Accordion.Trigger>
+
+                    <Accordion.Content>{btn.subItems}</Accordion.Content>
+                </Accordion.Item>
             ))}
-        </Box>
+        </Accordion.Root>
     );
 };
 

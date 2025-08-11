@@ -117,6 +117,8 @@
         transition: all 0.3s ease;
 
         .text-container {
+            background-color: #fff;
+            border: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -130,14 +132,6 @@
                 font-family:
                     system-ui,
                     -apple-system,
-                    BlinkMacSystemFont,
-                    "Segoe UI",
-                    Roboto,
-                    Oxygen,
-                    Ubuntu,
-                    Cantarell,
-                    "Open Sans",
-                    "Helvetica Neue",
                     sans-serif;
             }
 
@@ -150,40 +144,40 @@
             }
         }
 
-        .dropdown {
-            display: flex;
-            flex-direction: column;
-            padding: 10px 12px;
-            // background: #f1f1f1;
-            transition: all 0.3s ease;
-            gap: 6px;
+        // .dropdown {
+        //     display: flex;
+        //     flex-direction: column;
+        //     padding: 10px 12px;
+        //     // background: #f1f1f1;
+        //     transition: all 0.3s ease;
+        //     gap: 6px;
 
-            p {
-                font-family:
-                    system-ui,
-                    -apple-system,
-                    BlinkMacSystemFont,
-                    "Segoe UI",
-                    Roboto,
-                    Oxygen,
-                    Ubuntu,
-                    Cantarell,
-                    "Open Sans",
-                    "Helvetica Neue",
-                    sans-serif;
-                font-size: 12px;
-                font-weight: 500;
-                margin: 0;
-                color: #666666;
-                padding: 4px 8px;
-                border-radius: 4px;
-                cursor: pointer;
-                transition: background 0.2s ease;
+        //     p {
+        //         font-family:
+        //             system-ui,
+        //             -apple-system,
+        //             BlinkMacSystemFont,
+        //             "Segoe UI",
+        //             Roboto,
+        //             Oxygen,
+        //             Ubuntu,
+        //             Cantarell,
+        //             "Open Sans",
+        //             "Helvetica Neue",
+        //             sans-serif;
+        //         font-size: 12px;
+        //         font-weight: 500;
+        //         margin: 0;
+        //         color: #666666;
+        //         padding: 4px 8px;
+        //         border-radius: 4px;
+        //         cursor: pointer;
+        //         transition: background 0.2s ease;
 
-                &:hover {
-                    background: #e2e2e2;
-                }
-            }
-        }
+        //         &:hover {
+        //             background: #e2e2e2;
+        //         }
+        //     }
+        // }
     }
 }
