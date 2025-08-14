@@ -1,13 +1,11 @@
 import "./page.scss";
+import { RootState } from "@/lib/store";
+import { useSelector } from "react-redux";
 import React, { useState } from "react";
 import { Box, FormControl, InputLabel, MenuItem } from "@mui/material";
 // import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { Form, Select } from "radix-ui";
-import ExpandLessRoundedIcon from "@mui/icons-material/ExpandLessRounded";
-import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
-import { ArrowDropDown, Check } from "@mui/icons-material";
-
-const options = ["Apple", "Banana", "Orange"];
+import { LayersPanel } from "@/components/LayersPanel/v1.1";
 
 const buttons = [
     {
@@ -49,22 +47,31 @@ const icons = [
     },
 ];
 
-const cards = [
+const accordionData = [
     {
-        text: "Add",
+        value: "desktop",
+        title: "Desktop",
+        content: ["Hero", "Testimonials", "Pricing", "Footer"],
     },
     {
-        text: "Add",
+        value: "tablet",
+        title: "Tablet",
+        content: ["Hero", "Testimonials", "Pricing", "Footer"],
     },
     {
-        text: "Add",
-    },
-    {
-        text: "Add",
+        value: "mobile",
+        title: "Mobile",
+        content: ["Hero", "Testimonials", "Pricing", "Footer"],
     },
 ];
 
 const BuilderPanel = ({ panel }) => {
+    const data = useSelector((state: RootState) => state.data.data);
+    const config = data.config;
+    // const content = data.content;
+    // const styling = data.styling;
+    // const styles = styling?.styles || {};
+
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const toggleDropdown = (index: number) => {
@@ -96,14 +103,8 @@ const BuilderPanel = ({ panel }) => {
                     borderRight: "#ddd solid 1px",
                 }}
             >
-                <Box className="cards-container">
-                    {cards.map((crd, index) => (
-                        <Box className="card" key={index}>
-                            {" "}
-                            {crd.text}
-                        </Box>
-                    ))}
-                </Box>
+                {/* {JSON.stringify(config?.children)} */}
+                <LayersPanel data={config?.children} />
             </Box>
         </>
     ) : (
