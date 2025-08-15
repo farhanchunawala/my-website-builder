@@ -35,7 +35,7 @@ function LayerItem({ item }: { item: LayerData }) {
                     value={item.component}
                 >
                     <Accordion.Header className="accordion-header">
-                        <Accordion.Trigger className="accordion-trigger">
+                        <Accordion.Trigger className="layer-item">
                             <ChevronIcon />
                             {item.component}
                         </Accordion.Trigger>
@@ -51,7 +51,7 @@ function LayerItem({ item }: { item: LayerData }) {
 
     // Fallback for non-Box items
     return (
-        <div className="accordion-content-text">{item.component}</div>
+        <div className="layer-item">{item.component}</div>
     );
 }
 
