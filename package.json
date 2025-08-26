@@ -2,11 +2,15 @@
   "name": "my-website-builder",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "main": "app/server.js",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "server": "node app/server.js",
+    "email-server": "node app/server.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -22,13 +26,18 @@
     "@mui/x-tree-view": "^7.29.1",
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.7.7",
+    "body-parser": "^1.20.3",
     "classnames": "^2.5.1",
+    "cors": "^2.8.5",
     "dayjs": "^1.11.13",
     "dompurify": "^3.1.7",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
     "lodash-es": "^4.17.21",
     "mongoose": "^8.8.4",
     "mongoose-sequence": "^6.0.1",
     "next": "^15.1.0",
+    "nodemailer": "^7.0.5",
     "radix-ui": "^1.4.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
@@ -57,5 +66,21 @@
   "overrides": {
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farhanchunawala/my-website-builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farhanchunawala/my-website-builder/issues"
+  },
+  "homepage": "https://github.com/farhanchunawala/my-website-builder#readme"
 }
