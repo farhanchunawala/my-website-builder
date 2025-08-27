@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Subscribe Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .form-block { padding: 2rem; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+      .form_group { display: grid; grid-auto-flow: column; gap: 0.5rem; align-items: center; max-width: 520px; }
+      .form_input { padding: 0.6rem 0.8rem; border: 1px solid #ccc; border-radius: 8px; width: 100%; }
+      .button { padding: 0.6rem 0.8rem; border: 0; border-radius: 8px; cursor: pointer; }
+      .w-form-done { color: #1a7f37; margin-top: 0.5rem; }
+      .w-form-fail { color: #b42318; margin-top: 0.5rem; }
+    </style>
+  </head>
+  <body>
+    <div class="form-block w-form">
+      <form id="subscribe-form">
+        <div class="form_group is-subscribe">
+          <input
+            class="form_input is-subscribe w-input"
+            maxlength="256"
+            name="email"
+            placeholder="Your email"
+            type="email"
+            id="Subscribe-Email"
+            required
+          />
+          <input
+            type="submit"
+            class="button is-subscribe w-button"
+            value="Subscribe"
+          />
+        </div>
+      </form>
+
+      <div id="form-success" class="thankyou-state w-form-done" style="display: none">
+        ✅ Thank you! Your submission has been received!
+      </div>
+      <div id="form-error" class="w-form-fail" style="display: none">
+        ❌ Oops! Something went wrong while submitting the form.
+      </div>
+    </div>
+
+    <script src="/home/mail-script.js"></script>
+  </body>
+</html>

@@ -11,10 +11,7 @@ export function LayersPanel({ data }: { data: LayerData[] }) {
     return (
         <>
             {data.map((item, index) => (
-                <LayerItem
-                    key={`${item.component}-${index}`}
-                    item={item}
-                />
+                <LayerItem key={`${item.component}-${index}`} item={item} />
             ))}
         </>
     );
@@ -37,6 +34,19 @@ function LayerItem({ item }: { item: LayerData }) {
                     <Accordion.Header className="accordion-header">
                         <Accordion.Trigger className="layer-item">
                             <ChevronIcon />
+                            <svg
+                                className="layer-icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                role="presentation"
+                                width="12"
+                                height="12"
+                            >
+                                <path
+                                    d="M 1 3 C 1 1.895 1.895 1 3 1 L 9 1 C 10.105 1 11 1.895 11 3 L 11 5 C 11 5.276 10.776 5.5 10.5 5.5 L 1.5 5.5 C 1.224 5.5 1 5.276 1 5 Z M 1 7 C 1 6.724 1.224 6.5 1.5 6.5 L 10.5 6.5 C 10.776 6.5 11 6.724 11 7 L 11 9 C 11 10.105 10.105 11 9 11 L 3 11 C 1.895 11 1 10.105 1 9 Z"
+                                    fill="#0099fe"
+                                    // fill="currentColor"
+                                ></path>
+                            </svg>
                             {item.component}
                         </Accordion.Trigger>
                     </Accordion.Header>
@@ -50,9 +60,7 @@ function LayerItem({ item }: { item: LayerData }) {
     }
 
     // Fallback for non-Box items
-    return (
-        <div className="layer-item">{item.component}</div>
-    );
+    return <div className="layer-item">{item.component}</div>;
 }
 
 function ChevronIcon() {
@@ -64,7 +72,8 @@ function ChevronIcon() {
             height="7"
         >
             <path
-                fill="currentColor"
+                fill="#999999"
+                // fill="currentColor"
                 d="M4.59 1.992a.3.3 0 0 0-.231-.492H.641a.3.3 0 0 0-.231.492l1.86 2.231a.299.299 0 0 0 .46 0Z"
             />
         </svg>
