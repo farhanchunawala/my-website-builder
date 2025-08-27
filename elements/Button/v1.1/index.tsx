@@ -40,7 +40,7 @@ const sizeStyles: SizeStyles = {
 const Button: React.FC<Props> = ({ path }) => {
     const dispatch = useDispatch();
     const { mapStyles } = useMapStyles();
-    const { mode } = useSelector((state: RootState) => state.builder);ilde);
+    const { mode } = useSelector((state: RootState) => state.builder);
     const { config, content, styles } = useSelector(
         (state: RootState) => ({
             config: get(state, `data.data.config.${path}`),
