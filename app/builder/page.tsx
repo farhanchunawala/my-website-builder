@@ -1,4 +1,3 @@
-// page.tsx
 "use client";
 import { AppDispatch, RootState } from "@/lib/store";
 import { useSelector, useDispatch } from "react-redux";
@@ -20,7 +19,7 @@ import Section016 from "@/sections/s016/v1";
 import Section017 from "@/sections/s017/v1";
 import Section018 from "@/sections/s018/v1";
 import { Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 import useDesignFrame from "@/lib/hooks/useDesignFrame";
 // import BuilderPanel from "@/components/BuilderPanel/v1.1";
 import BuilderPanel from "@/components/BuilderPanel2/v1.1";
@@ -34,6 +33,7 @@ export default function Home() {
     // const { mode } = useSelector((state: RootState) => state.builder);
     const { renderStructure } = useRenderStructure();
     const [mounted, setMounted] = useState(false);
+	const [route, setRoute] = useState("");
 
     const viewport = useViewport();
     const screenSize = "1080px";
@@ -41,7 +41,7 @@ export default function Home() {
     const previewSizes = {
         mobile: { minWidth: 0, maxWidth: 375 },
         tablet: { minWidth: 768, maxWidth: 1024 },
-        desktop: { minWidth: 1280, maxWidth: '100%' },
+        desktop: { minWidth: 1280, maxWidth: "100%" },
     };
 
     const pageWidth = (() => {
@@ -53,8 +53,13 @@ export default function Home() {
         // return "100%";
     })();
 
-    const searchParams = useSearchParams();
-    const route = searchParams.get("page") ?? "";
+    // const searchParams = useSearchParams();
+    // const route = searchParams.get("page") ?? "";
+
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        setRoute(params.get("page") ?? "");
+    }, []);
 
     useEffect(() => {
         dispatch(fetchData({ route }));
@@ -67,7 +72,7 @@ export default function Home() {
     useEffect(() => {
         dispatch(setMode("builder"));
     }, [dispatch]);
-	
+
     if (!mounted) {
         return null;
     }
