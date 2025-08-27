@@ -3775,7 +3775,7 @@ figcaption {
 
   .card-inner {
     grid-column-gap: 1.25rem;
-    grid-row-gap: 1.25rem;
+    /* grid-row-gap: 1.25rem; */
   }
 
   .text-lighter.max-width-custom300 {
