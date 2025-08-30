@@ -1,33 +1,31 @@
 import { NextResponse } from "next/server";
-import { sendMail } from "@/lib/mailer"; // we’ll make this next
+import { sendMail } from "@/lib/mailer";
 
 export async function POST(req) {
     try {
-        const body = await req.json();
-        const { email } = body;
+        const { email } = await req.json();
 
         if (!email || !email.includes("@")) {
             return NextResponse.json(
-                { error: "Invalid email" },
+                { error: "Invalid email address" },
                 { status: 400 }
             );
         }
 
-        // Call mailer function
-        await sendMail({
-            to: process.env.MAIL_USER, // send to yourself for now
-            subject: "New Newsletter Subscription",
-            text: `New subscriber: ${email}`,
-        });
+        // Send mail
+        await sendMail(
+            "New Subscription",
+            `Someone subscribed with the email: ${email}`
+        );
 
         return NextResponse.json(
-            { success: true, message: "Email sent" },
+            { message: "Subscribed successfully" },
             { status: 200 }
         );
-    } catch (err) {
-        console.error("Error in subscribe API:", err);
+    } catch (error) {
+        console.error("❌ Subscription error:", error);
         return NextResponse.json(
-            { error: "Failed to send email" },
+            { error: "Internal server error" },
             { status: 500 }
         );
     }
