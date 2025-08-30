@@ -320,12 +320,12 @@ button,
   text-align: center;
   background-color: #dddddd;
 }
-.w-form-fail {
+/* .w-form-fail {
   display: none;
   margin-top: 10px;
   padding: 10px;
   background-color: #ffdede;
-}
+} */
 label {
   display: block;
   margin-bottom: 5px;
@@ -1599,6 +1599,7 @@ textarea.w-select {
   color: #333333;
 }
 .logo-text {
+  font-family: system-ui;
   color: #fff;
   margin-bottom: 0;
   margin-top: 0;

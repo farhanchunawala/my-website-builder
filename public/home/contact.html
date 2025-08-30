@@ -272,7 +272,7 @@ a,
                                 <div data-w-id="073196b8-4277-5ed2-d9d5-bfe792a79562" class="detail_card is-small">
                                     <img src="images/Email.svg" loading="lazy" alt="" class="icon_24" />
                                     <h4>Email</h4>
-                                    <a href="mailto:bits11@gmail.com?subject=Query" class="quick-text-link underline">bits11@gmail.com</a>
+                                    <a href="mailto:bits11.solutions@gmail.com?subject=Query" class="quick-text-link underline">bits11.solutions@gmail.com</a>
                                 </div>
                                 <div data-w-id="073196b8-4277-5ed2-d9d5-bfe792a79568" class="detail_card is-small">
                                     <img src="images/Calling.svg" loading="lazy" alt="Calling" class="icon_24" />
@@ -315,31 +315,104 @@ a,
                                     <h2>Get in touch</h2>
                                     <div class="padding-bottom padding-custom1"></div>
                                     <div class="form_wr padding-bottom w-form">
-                                        <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form_inner-container" data-wf-page-id="672522a4f63ee6471880a3b8" data-wf-element-id="47aaa17b-ddf2-75bd-9047-f3545340338d">
+                                        <style>
+                                            /* Always hide success and error by default */
+                                            .form_message-success,
+                                            .w-form-fail {
+                                                display: none;
+                                            }
+                                        </style>
+
+                                        <form id="email-form" name="email-form" class="form_inner-container">
                                             <div class="form-row">
-                                                <div class="form-group"><label for="First-Name" class="form-label">First name</label><input class="form-field w-input" maxlength="256" name="First-Name" data-name="First Name" placeholder="First name" type="text" id="First-Name" /></div>
-                                                <div class="form-group"><label for="Last-Name" class="form-label">Last name</label><input class="form-field w-input" maxlength="256" name="Last-Name" data-name="Last Name" placeholder="Last name" type="text" id="Last-Name" /></div>
+                                                <div class="form-group">
+                                                    <label for="First-Name" class="form-label">First name</label>
+                                                    <input class="form-field w-input" name="First-Name" type="text" id="First-Name" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="Last-Name" class="form-label">Last name</label>
+                                                    <input class="form-field w-input" name="Last-Name" type="text" id="Last-Name" required />
+                                                </div>
                                             </div>
+
                                             <div class="form-row">
-                                                <div class="form-group"><label for="Your-phone" class="form-label">Your phone</label><input class="form-field w-input" maxlength="256" name="Your-phone" data-name="Your phone" placeholder="Your phone" type="tel" id="Your-phone" required="" /></div>
-                                                <div class="form-group"><label for="Email" class="form-label">Your email</label><input class="form-field w-input" maxlength="256" name="Email" data-name="Email" placeholder="Your email" type="email" id="Email" required="" /></div>
+                                                <div class="form-group">
+                                                    <label for="Your-phone" class="form-label">Your phone</label>
+                                                    <input class="form-field w-input" name="Your-phone" type="tel" id="Your-phone" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="Email" class="form-label">Your email</label>
+                                                    <input class="form-field w-input" name="Email" type="email" id="Email" required />
+                                                </div>
                                             </div>
-                                            <div id="w-node-_381a9c4d-0ce2-a7fb-05eb-e575440d6464-1880a3b8" class="form-group">
-                                                <label for="Subject" class="form-label">Subject</label><input class="form-field w-input" maxlength="256" name="Subject" data-name="Subject" placeholder="Example Text" type="text" id="Subject" required="" />
+
+                                            <div class="form-group">
+                                                <label for="Subject" class="form-label">Subject</label>
+                                                <input class="form-field w-input" name="Subject" type="text" id="Subject" required />
                                             </div>
-                                            <div id="w-node-_5463de65-4fa9-ab3f-e6f6-546f5994edb6-1880a3b8" class="form-group">
-                                                <label for="Message" class="form-label">Your message</label><textarea placeholder="Your Message" maxlength="5000" id="Message" name="Message" data-name="Message" class="form-field is-text-area w-input"></textarea>
+
+                                            <div class="form-group">
+                                                <label for="Message" class="form-label">Your message</label>
+                                                <textarea id="Message" name="Message" class="form-field is-text-area w-input"></textarea>
                                             </div>
+
                                             <div class="w-layout-vflex form_submit_wr">
-                                                <input type="submit" data-wait="Please wait..." class="button is-submit w-button" value="Send message" />
+                                                <input type="submit" class="button is-submit w-button" value="Send message" />
                                             </div>
                                         </form>
-                                        <div class="form_message-success w-form-done">
+
+                                        <!-- Messages -->
+                                        <!-- <div class="form_message-success w-form-done">
                                             <div>Thank you! Your submission has been received!</div>
                                         </div>
                                         <div class="w-form-fail">
                                             <div>Oops! Something went wrong while submitting the form.</div>
-                                        </div>
+                                        </div> -->
+
+                                        <div id="success-message" style="display: none; background-color: #e7f0fe; padding: 10px; margin-top: 10px">Thank you! Your submission has been received!</div>
+                                        <div id="error-message" style="display: none; background-color: #e7f0fe; padding: 10px; margin-top: 10px">Oops! Something went wrong while submitting the form.</div>
+
+                                        <script>
+                                            document.getElementById("email-form").addEventListener("submit", async (e) => {
+                                                e.preventDefault();
+
+                                                const form = e.target;
+                                                const successDiv = document.getElementById("success-message");
+                                                const errorDiv = document.getElementById("error-message");
+
+                                                // Always hide both first
+                                                successDiv.style.display = "none";
+                                                errorDiv.style.display = "none";
+
+                                                try {
+                                                    const res = await fetch("/api/contact", {
+                                                        method: "POST",
+                                                        headers: { "Content-Type": "application/json" },
+                                                        body: JSON.stringify({
+                                                            firstName: document.getElementById("First-Name").value,
+                                                            lastName: document.getElementById("Last-Name").value,
+                                                            phone: document.getElementById("Your-phone").value,
+                                                            email: document.getElementById("Email").value,
+                                                            subject: document.getElementById("Subject").value,
+                                                            message: document.getElementById("Message").value,
+                                                        }),
+                                                    });
+
+                                                    if (res.ok) {
+                                                        successDiv.style.display = "block"; // ✅ show success
+                                                        errorDiv.style.display = "none"; // ❌ ensure error stays hidden
+                                                        form.reset();
+                                                    } else {
+                                                        errorDiv.style.display = "block"; // ❌ show error
+                                                        successDiv.style.display = "none"; // ✅ ensure success stays hidden
+                                                    }
+                                                } catch (err) {
+                                                    errorDiv.style.display = "block"; // ❌ show error on exception
+                                                    successDiv.style.display = "none";
+                                                    console.error("Form submit error:", err);
+                                                }
+                                            });
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -502,7 +575,7 @@ a,
                                             <div class="qc_link_wr">
                                                 <h5 class="text-color-alternate">Email</h5>
                                                 <div class="padding-top padding-xxsmall"></div>
-                                                <a href="mailto:bits11@gmail.com" class="link-light-grey">bits11@gmail.com</a>
+                                                <a href="mailto:bits11.solutions@gmail.com" class="link-light-grey">bits11.solutions@gmail.com</a>
                                             </div>
                                             <div class="qc_link_wr">
                                                 <h5 class="text-color-alternate">Phone</h5>
