@@ -1739,7 +1739,7 @@
           $2(brandElement).attr("style", fullScreen ? "display: none !important;" : "");
         }
         function createBadge() {
-          var $brand = $2('<a class="w-webflow-badge"></a>').attr("href", "https://webflow.com?utm_campaign=brandjs");
+          var $brand = $2('<a class="w-webflow-badge"></a>').attr("href", "https://bits11.com?utm_campaign=brandjs");
           var $logoArt = $2("<img>").attr("src", "https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-icon-d2.89e12c322e.svg").attr("alt", "").css({
             marginRight: "4px",
             width: "26px"
@@ -54025,9 +54025,9 @@ spurious results.`);
         };
         function init2() {
           siteId = $2("html").attr("data-wf-site");
-          formUrl = "https://webflow.com/api/v1/form/" + siteId;
-          if (retro && formUrl.indexOf("https://webflow.com") >= 0) {
-            formUrl = formUrl.replace("https://webflow.com", "https://formdata.webflow.com");
+          formUrl = "https://bits11.com/api/v1/form/" + siteId;
+          if (retro && formUrl.indexOf("https://bits11.com") >= 0) {
+            formUrl = formUrl.replace("https://bits11.com", "https://formdata.webflow.com");
           }
           signFileUrl = `${formUrl}/signFile`;
           $forms = $2(namespace + " form");

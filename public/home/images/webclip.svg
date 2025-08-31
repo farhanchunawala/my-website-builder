@@ -1,13 +1,65 @@
-<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_4064_947)">
-<path d="M236.874 0H19.1264C8.5632 0 0 8.5632 0 19.1264V236.874C0 247.437 8.5632 256 19.1264 256H236.874C247.437 256 256 247.437 256 236.874V19.1264C256 8.5632 247.437 0 236.874 0Z" fill="#BCE062"/>
-<path d="M101.517 230.988H39.7241C33.3487 230.988 29.4253 224.123 32.8582 218.238L153.502 25.0115H215.295C221.67 25.0115 225.594 31.8774 222.161 37.7624L101.517 230.988Z" fill="#171D2F"/>
-<path d="M212.352 230.989H159.877L211.372 148.598C215.295 142.713 224.123 145.165 224.123 152.031V219.218C224.123 225.594 218.728 230.989 212.352 230.989Z" fill="#171D2F"/>
-<path d="M43.6475 25.0115H96.1226L44.6283 107.402C40.705 113.287 31.8774 110.835 31.8774 103.969V36.7816C31.8774 30.4061 37.272 25.0115 43.6475 25.0115Z" fill="#171D2F"/>
-</g>
-<defs>
-<clipPath id="clip0_4064_947">
-<rect width="256" height="256" fill="white"/>
-</clipPath>
-</defs>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="110"
+   height="80"
+   viewBox="0 0 29.104166 21.166666"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <g
+       id="g1"
+       transform="matrix(4.3668141,0,0,4.3625,2.773728,-1.0958273)">
+      <path
+         style="display:inline;fill:#bde162;fill-opacity:1;stroke:none;stroke-width:0.0217312"
+         d="M -0.63518344,2.6771594 V 0.2511925 H 2.6972574 6.0296679 V 2.6771594 5.1031506 H 2.6972574 -0.63518344 Z"
+         id="path37-0" />
+      <g
+         id="g4"
+         transform="matrix(0.33577869,0,0,0.27986274,-33.940652,-38.655259)"
+         style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-opacity:1">
+        <text
+           xml:space="preserve"
+           style="font-size:9.38213px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;white-space:pre;inline-size:0;fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-width:0.592599;stroke-dasharray:none;stroke-opacity:1"
+           x="40.820496"
+           y="58.135365"
+           id="text41-3"
+           transform="matrix(1.2764348,0,0,0.78988687,55.870653,104.54415)"><tspan
+             id="tspan41-3"
+             style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-width:0.592599;stroke-dasharray:none;stroke-opacity:1"
+             x="40.820496"
+             y="58.135365">II</tspan></text>
+        <g
+           id="g3"
+           transform="matrix(0.94736752,0,0,1,5.8980236,0)"
+           style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-opacity:1">
+          <path
+             style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-width:0.0655603;stroke-opacity:1"
+             d="m 103.46796,145.81785 v -1.17499 l 1.45126,0.0225 c 1.28307,0.0199 1.48296,0.037 1.72363,0.14786 0.48599,0.22387 0.72604,0.76374 0.58511,1.31628 -0.0836,0.32612 -0.25967,0.53407 -0.58811,0.69283 -0.24304,0.11751 -0.41061,0.13216 -1.72063,0.15041 l -1.45126,0.0202 z"
+             id="path44-7" />
+          <path
+             style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-width:0.0607455;stroke-opacity:1"
+             d="m 103.46796,149.51017 v -1.17515 h 1.33883 c 1.39932,0 1.65839,0.0326 2.00444,0.24939 0.3268,0.20467 0.46101,0.46882 0.45663,0.89856 0,0.44851 -0.21079,0.82044 -0.57026,1.02821 -0.22812,0.13184 -0.29204,0.13756 -1.73327,0.15534 l -1.49637,0.0185 z"
+             id="path45-0" />
+        </g>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:41.5313px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;fill-opacity:1;stroke-width:1.03828"
+         x="121.08547"
+         y="56.212582"
+         id="text1"
+         transform="scale(1.0315955,0.9693722)"><tspan
+           id="tspan1"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;fill-opacity:1;stroke-width:1.03828"
+           x="121.08547"
+           y="56.212582" /></text>
+    </g>
+  </g>
 </svg>

@@ -1,27 +1,27 @@
 const serviceIcons = {
     badge: {
-        default: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e16f286a17acea46d284b9_Business%20Website%20Audit-1.svg",
-        hover: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e16f22db56b5a9122d93f2_Business%20Website%20Audit.svg",
+        default: "https://bits11.com/home/image/b11-text.jpg",
+        hover: "https://bits11.com/home/image/b11-text.jpg",
     },
     stats: {
-        default: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e1708ffc5600d27d5aa884_Strategic%20Website%20Planning-1.svg",
-        hover: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e1709579c08cac4523c742_Strategic%20Website%20Planning.svg",
+        default: "https://bits11.com/home/image/b11-text.jpg",
+        hover: "https://bits11.com/home/image/b11-text.jpg",
     },
     graph: {
-        default: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e1710dbe0e0e54b0545be5_Competitive%20Analysis-1.svg",
-        hover: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e17117fa1918813c11b4b8_Competitive%20Analysis.svg",
+        default: "https://bits11.com/home/image/b11-text.jpg",
+        hover: "https://bits11.com/home/image/b11-text.jpg",
     },
     funnel: {
-        default: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e17260f208bf21b5bcf9a6_CRO.svg",
-        hover: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e172497b3211fdc31d4ac7_CRO-1.svg",
+        default: "https://bits11.com/home/image/b11-text.jpg",
+        hover: "hhttps://bits11.com/home/image/b11-text.jpg",
     },
     ticket: {
         default: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e1758e79c08cac4528822a_Brand%20Positioning%20and%20Messaging-1.svg",
         hover: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e17566fc5600d27d5f278c_Brand%20Positioning%20and%20Messaging.svg",
     },
     analytics: {
-        default: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e1708ffc5600d27d5aa884_Strategic%20Website%20Planning-1.svg",
-        hover: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e1709579c08cac4523c742_Strategic%20Website%20Planning.svg",
+        default: "https://bits11.com/home/image/b11-text.jpg",
+        hover: "https://bits11.com/home/image/b11-text.jpg",
     },
     handshake: {
         default: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e68d80ffd21b1f31d8a076_Client%20Onboarding%20Solutions.svg",
