@@ -2,6 +2,7 @@
 <html data-wf-page="672522a4f63ee6471880a349" data-wf-site="672522a4f63ee6471880a244">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Bits11</title>
         <!-- <meta content="Elevate your business with expert website audits, strategic planning, and digital marketing solutions designed to drive growth and success." name="description" /> -->
         <meta property="og:title" content="Bits11" />
@@ -924,12 +925,21 @@
 
                                                         if (res.ok) {
                                                             messageEl.textContent = "Subscribed successfully!";
-                                                            messageEl.style.color = "black";
-                                                            messageEl.style.backgroundColor = "#E7F0FE";
+                                                            // messageEl.style.color = "black";
+                                                            messageEl.style.backgroundColor = "var(--zc-base-color-brand--zc-citrus-green)";
+                                                            messageEl.style.color = "var(--zc-base-color-brand--zc-yankees-blue)";
+                                                            messageEl.style.fontWeight = "600";
+                                                            messageEl.style.marginTop = "10px";
+                                                            messageEl.style.padding = "10px";
+                                                            // messageEl.style.backgroundColor = "#E7F0FE";
                                                             e.target.reset();
                                                         } else {
                                                             messageEl.textContent = "❌ Failed: " + (data.error || "Unknown error");
                                                             messageEl.style.color = "red";
+                                                            // messageEl.style.display = none;
+                                                            messageEl.style.marginTop = "10px";
+                                                            messageEl.style.padding = "10px";
+                                                            messageEl.style.backgroundColor = "#ffdede";
                                                         }
                                                     } catch (err) {
                                                         // messageEl.textContent = "⚠️ Error: " + err.message;
@@ -939,7 +949,7 @@
                                             </script>
 
                                             <div class="thankyou-state w-form-done">
-                                                <div>Thank you! Your submission has been received!</div>
+                                                <!-- <div>Thank you! Your submission has been received!</div> -->
                                             </div>
                                             <div class="w-form-fail">
                                                 <!-- <div>Oops! Something went wrong while submitting the form.</div> -->
