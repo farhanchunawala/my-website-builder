@@ -369,9 +369,8 @@ a,
                                             <div>Oops! Something went wrong while submitting the form.</div>
                                         </div> -->
 
-                                        <div id="success-message" style="display: none; background-color: #e7f0fe; padding: 10px; margin-top: 10px">Thank you! Your submission has been received!</div>
-                                        <div id="error-message" style="display: none; background-color: #e7f0fe; padding: 10px; margin-top: 10px">Oops! Something went wrong while submitting the form.</div>
-
+                                        <div id="success-message" style="display: none; color: #171d2f; background-color: #bde162; font-weight: 600; padding: 10px; margin-top: 10px">Thank you! Your submission has been received!</div>
+                                        <div id="error-message" style="display: none; color: #171d2f; background-color: lightcoral; font-weight: 600; padding: 10px; margin-top: 10px">Oops! Something went wrong while submitting the form.</div>
                                         <script>
                                             document.getElementById("email-form").addEventListener("submit", async (e) => {
                                                 e.preventDefault();
@@ -580,8 +579,13 @@ a,
 
                                                         if (res.ok) {
                                                             messageEl.textContent = "Subscribed successfully!";
-                                                            messageEl.style.color = "black";
-                                                            messageEl.style.backgroundColor = "#E7F0FE";
+                                                            // messageEl.style.color = "black";
+                                                            // messageEl.style.backgroundColor = "#E7F0FE";
+                                                            messageEl.style.backgroundColor = "var(--zc-base-color-brand--zc-citrus-green)";
+                                                            messageEl.style.color = "var(--zc-base-color-brand--zc-yankees-blue)";
+                                                            messageEl.style.fontWeight = "600";
+                                                            messageEl.style.marginTop = "10px";
+                                                            messageEl.style.padding = "10px";
                                                             e.target.reset();
                                                         } else {
                                                             messageEl.textContent = "❌ Failed: " + (data.error || "Unknown error");
