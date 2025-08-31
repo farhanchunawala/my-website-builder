@@ -58,53 +58,59 @@
        style="fill:#1c2842;fill-opacity:1;stroke:none;stroke-width:1.04656"
        d="M 0,105.83333 V 0 H 211.66668 423.33334 V 105.83333 211.66666 H 211.66668 0 Z"
        id="path19" />
+    <path
+       style="display:inline;fill:#bde162;fill-opacity:1;stroke:none;stroke-width:0.249516"
+       d="M 85.725,105.8332 V 78.05208 h 38.36476 38.36441 v 27.78112 27.78138 H 124.08976 85.725 Z"
+       id="path37-0" />
     <g
-       id="g19"
-       transform="translate(0,-239.50946)">
-      <path
-         style="display:inline;fill:#bde162;fill-opacity:1;stroke:none;stroke-width:0.249516"
-         d="m 85.725,345.34266 v -27.78112 h 38.36476 38.36441 v 27.78112 27.78138 H 124.08976 85.725 Z"
-         id="path37-0" />
-      <g
-         id="g4"
-         transform="matrix(3.8656551,0,0,3.2048667,-297.70448,-127.97824)"
-         style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-opacity:1">
-        <text
-           xml:space="preserve"
-           style="font-size:9.38213px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;white-space:pre;inline-size:0;fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-width:0.592599;stroke-dasharray:none;stroke-opacity:1"
-           x="40.820496"
-           y="58.135365"
-           id="text41-3"
-           transform="matrix(1.2764348,0,0,0.78988687,55.870653,104.54415)"><tspan
-             id="tspan41-3"
-             style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-width:0.592599;stroke-dasharray:none;stroke-opacity:1"
-             x="40.820496"
-             y="58.135365">II</tspan></text>
-        <g
-           id="g3"
-           transform="matrix(0.94736752,0,0,1,5.8980236,0)"
-           style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-opacity:1">
-          <path
-             style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-width:0.0655603;stroke-opacity:1"
-             d="m 103.46796,145.81785 v -1.17499 l 1.45126,0.0225 c 1.28307,0.0199 1.48296,0.037 1.72363,0.14786 0.48599,0.22387 0.72604,0.76374 0.58511,1.31628 -0.0836,0.32612 -0.25967,0.53407 -0.58811,0.69283 -0.24304,0.11751 -0.41061,0.13216 -1.72063,0.15041 l -1.45126,0.0202 z"
-             id="path44-7" />
-          <path
-             style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-width:0.0607455;stroke-opacity:1"
-             d="m 103.46796,149.51017 v -1.17515 h 1.33883 c 1.39932,0 1.65839,0.0326 2.00444,0.24939 0.3268,0.20467 0.46101,0.46882 0.45663,0.89856 0,0.44851 -0.21079,0.82044 -0.57026,1.02821 -0.22812,0.13184 -0.29204,0.13756 -1.73327,0.15534 l -1.49637,0.0185 z"
-             id="path45-0" />
-        </g>
-      </g>
+       id="g4"
+       transform="matrix(3.8656551,0,0,3.2048667,-297.70448,-367.4877)"
+       style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-opacity:1">
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:57.1473px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;fill:#ffffff;stroke-width:0.297642"
-         x="158.7753"
-         y="411.02466"
-         id="text6"
-         transform="scale(1.1249463,0.88893131)"><tspan
-           id="tspan6"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Futura;-inkscape-font-specification:Futura;fill:#ffffff;stroke-width:0.297642"
-           x="158.7753"
-           y="411.02466">BITS11</tspan></text>
+         style="font-size:9.38213px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;white-space:pre;inline-size:0;fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-width:0.592599;stroke-dasharray:none;stroke-opacity:1"
+         x="40.820496"
+         y="58.135365"
+         id="text41-3"
+         transform="matrix(1.2764348,0,0,0.78988687,55.870653,104.54415)"><tspan
+           id="tspan41-3"
+           style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-width:0.592599;stroke-dasharray:none;stroke-opacity:1"
+           x="40.820496"
+           y="58.135365">II</tspan></text>
+      <g
+         id="g3"
+         transform="matrix(0.94736752,0,0,1,5.8980236,0)"
+         style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-opacity:1">
+        <path
+           style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-width:0.0655603;stroke-opacity:1"
+           d="m 103.46796,145.81785 v -1.17499 l 1.45126,0.0225 c 1.28307,0.0199 1.48296,0.037 1.72363,0.14786 0.48599,0.22387 0.72604,0.76374 0.58511,1.31628 -0.0836,0.32612 -0.25967,0.53407 -0.58811,0.69283 -0.24304,0.11751 -0.41061,0.13216 -1.72063,0.15041 l -1.45126,0.0202 z"
+           id="path44-7" />
+        <path
+           style="fill:#171d2f;fill-opacity:1;stroke:#171d2f;stroke-width:0.0607455;stroke-opacity:1"
+           d="m 103.46796,149.51017 v -1.17515 h 1.33883 c 1.39932,0 1.65839,0.0326 2.00444,0.24939 0.3268,0.20467 0.46101,0.46882 0.45663,0.89856 0,0.44851 -0.21079,0.82044 -0.57026,1.02821 -0.22812,0.13184 -0.29204,0.13756 -1.73327,0.15534 l -1.49637,0.0185 z"
+           id="path45-0" />
+      </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.3333px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;fill:#ffffff;stroke-width:0.270696"
+       x="175.1255"
+       y="123.29336"
+       id="text6"
+       transform="scale(1.0231011,0.97742051)"><tspan
+         id="tspan6"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.3333px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:'Helvetica Bold';fill:#ffffff;stroke-width:0.270696"
+         x="175.1255"
+         y="123.29336">BITS </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:42.3333px;line-height:1.25;font-family:'PT Sans';-inkscape-font-specification:'PT Sans';fill:#ffffff;stroke-width:0.264583"
+       x="286.92471"
+       y="120.79608"
+       id="text20"><tspan
+         id="tspan20"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.3333px;font-family:Helvetica;-inkscape-font-specification:'Helvetica Bold';fill:#ffffff;stroke-width:0.264583"
+         x="286.92471"
+         y="120.79608">II</tspan></text>
   </g>
 </svg>
