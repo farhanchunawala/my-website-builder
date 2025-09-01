@@ -1,18 +1,18 @@
 const serviceIcons = {
     badge: {
-        default: "https://bits11.com/home/image/b11-text.jpg",
-        hover: "https://bits11.com/home/image/b11-text.jpg",
+        default: "https://bits11.com/home/images/b11-text.jpg",
+        hover: "https://bits11.com/home/images/b11-text.jpg",
     },
     stats: {
-        default: "https://bits11.com/home/image/b11-text.jpg",
-        hover: "https://bits11.com/home/image/b11-text.jpg",
+        default: "https://bits11.com/home/images/b11-text.jpg",
+        hover: "https://bits11.com/home/images/b11-text.jpg",
     },
     graph: {
-        default: "https://bits11.com/home/image/b11-text.jpg",
-        hover: "https://bits11.com/home/image/b11-text.jpg",
+        default: "https://bits11.com/home/images/b11-text.jpg",
+        hover: "https://bits11.com/home/images/b11-text.jpg",
     },
     funnel: {
-        default: "https://bits11.com/home/image/b11-text.jpg",
+        default: "https://bits11.com/home/images/b11-text.jpg",
         hover: "hhttps://bits11.com/home/image/b11-text.jpg",
     },
     ticket: {
@@ -20,8 +20,8 @@ const serviceIcons = {
         hover: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e17566fc5600d27d5f278c_Brand%20Positioning%20and%20Messaging.svg",
     },
     analytics: {
-        default: "https://bits11.com/home/image/b11-text.jpg",
-        hover: "https://bits11.com/home/image/b11-text.jpg",
+        default: "https://bits11.com/home/images/b11-text.jpg",
+        hover: "https://bits11.com/home/images/b11-text.jpg",
     },
     handshake: {
         default: "https://cdn.prod.website-files.com/66e11e76591bba0feb6049e0/66e68d80ffd21b1f31d8a076_Client%20Onboarding%20Solutions.svg",

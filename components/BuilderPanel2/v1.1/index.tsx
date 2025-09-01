@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./page.scss";
 import { Accordion } from "radix-ui";
 import { Box, Button } from "@mui/material";
+import LayersRoundedIcon from '@mui/icons-material/LayersRounded';
 
 const buttons = [
     {
@@ -37,6 +38,12 @@ const icons = [
             </svg>
         ),
     },
+    {
+        svg: (
+            <LayersRoundedIcon sx={{justifySelf: "center", display: "flex"}}/>
+        )
+    },
+
 ];
 
 const cards = [
@@ -155,6 +162,9 @@ const BuilderPanel = ({ panel }) => {
                 width={48}
                 className="side-bar"
                 sx={{
+                    // display: "flex",
+                    // justifyContent: "center",
+                    // alignItems: "center",
                     left: 0,
                     flex: "0 0 48px",
                     borderRight: "#ddd solid 1px",
