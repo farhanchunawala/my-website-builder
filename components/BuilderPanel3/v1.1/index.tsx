@@ -6,29 +6,31 @@ import { Box, FormControl, InputLabel, MenuItem } from "@mui/material";
 // import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { Form, Select } from "radix-ui";
 import { LayersPanel } from "@/components/LayersPanel/v1.1";
+// import { StylingPanel } from "@/components/StylingPanel/v1.1";
+import StylingPanel from "@/components/StylingPanel/v1.1";
 
-const buttons = [
-    {
-        label: "styles",
-        subItems: ["Color", "Image", "Background"],
-    },
-    {
-        label: "components",
-        subItems: ["H1", "H2", "Paragraph"],
-    },
-    {
-        label: "typography",
-        subItems: ["Font", "Weight", "Line Height"],
-    },
-    {
-        label: "layout",
-        subItems: ["Grid", "Flex", "Spacing"],
-    },
-    {
-        label: "interactions",
-        subItems: ["Hover", "Focus", "Click"],
-    },
-];
+// const buttons = [
+//     {
+//         label: "styles",
+//         subItems: ["Color", "Image", "Background"],
+//     },
+//     {
+//         label: "components",
+//         subItems: ["H1", "H2", "Paragraph"],
+//     },
+//     {
+//         label: "typography",
+//         subItems: ["Font", "Weight", "Line Height"],
+//     },
+//     {
+//         label: "layout",
+//         subItems: ["Grid", "Flex", "Spacing"],
+//     },
+//     {
+//         label: "interactions",
+//         subItems: ["Hover", "Focus", "Click"],
+//     },
+// ];
 
 const icons = [
     {
@@ -82,7 +84,7 @@ const BuilderPanel = ({ panel }) => {
         <>
             <Box
                 width={48}
-                className="side-bar"
+                className="panel-container"
                 sx={{
                     left: 0,
                     flex: "0 0 48px",
@@ -96,7 +98,7 @@ const BuilderPanel = ({ panel }) => {
                 ))}
             </Box>
             <Box
-                className="side-bar"
+                className="panel-container"
                 sx={{
                     left: "47px",
                     width: "260px",
@@ -109,167 +111,14 @@ const BuilderPanel = ({ panel }) => {
         </>
     ) : (
         <Box
-            className="side-bar"
+            className="side-bar0"
             sx={{
                 right: 0,
                 flex: "0 0 260px",
                 borderLeft: "#ddd solid 1px",
             }}
         >
-            {buttons.map((btn, index) => (
-                <Box className="button" key={index}>
-                    <Box
-                        className="text-container"
-                        onClick={() => toggleDropdown(index)}
-                    >
-                        <p className="button-text">{btn.label}</p>
-                        <svg
-                            className={`toggle-icon ${openIndex === index ? "open" : ""}`}
-                            viewBox="-2 -1 12 12"
-                            width="12"
-                            height="12"
-                        >
-                            <path d="M9.99 1.01A1 1 0 0 0 8.283.303L5 3.586 1.717.303A1 1 0 1 0 .303 1.717l3.99 3.98a1 1 0 0 0 1.414 0l3.99-3.98a.997.997 0 0 0 .293-.707Z"></path>
-                        </svg>
-                    </Box>
-
-                    {/* Dropdown */}
-                    {openIndex === index && (
-                        <Box className="dropdown">
-                            <Form.Root className="FormRoot">
-                                {btn.subItems.map((item, i) => (
-                                    <Form.Field
-                                        key={i}
-                                        className="dropdown-item"
-                                        name="email"
-                                    >
-                                        <div
-                                            style={{
-                                                display: "flex",
-                                                alignItems: "baseline",
-                                                justifyContent:
-                                                    "space-between",
-                                            }}
-                                        >
-                                            <Form.Label className="FormLabel">
-                                                {item}
-                                            </Form.Label>
-                                        </div>
-                                        <Form.Control asChild>
-                                            <input
-                                                className="Input"
-                                                type="text"
-                                                required
-                                            />
-                                        </Form.Control>
-                                    </Form.Field>
-
-                                    // <Select.Root
-                                    //     key={i}
-                                    //     // defaultValue={item}
-                                    // >
-                                    //     <Select.Trigger
-                                    //         style={{
-                                    //             all: "unset",
-                                    //             display: "inline-flex",
-                                    //             alignItems: "center",
-                                    //             justifyContent:
-                                    //                 "space-between",
-                                    //             padding: "8px 12px",
-                                    //             border: "1px solid #ccc",
-                                    //             borderRadius: "4px",
-                                    //             minWidth: "160px",
-                                    //             backgroundColor: "white",
-                                    //             cursor: "pointer",
-                                    //         }}
-                                    //     >
-                                    //         <Select.Value placeholder="Select a fruit" />
-                                    //         <Select.Icon>
-                                    //             <ArrowDropDown />
-                                    //         </Select.Icon>
-                                    //     </Select.Trigger>
-
-                                    //     <Select.Portal>
-                                    //         <Select.Content
-                                    //             style={{
-                                    //                 backgroundColor:
-                                    //                     "white",
-                                    //                 border: "1px solid #ccc",
-                                    //                 borderRadius: "4px",
-                                    //                 marginTop: "4px",
-                                    //                 boxShadow:
-                                    //                     "0px 2px 8px rgba(0,0,0,0.1)",
-                                    //             }}
-                                    //         >
-                                    //             <Select.Viewport
-                                    //                 style={{
-                                    //                     padding: "4px 0",
-                                    //                 }}
-                                    //             >
-                                    //                 {options.map(
-                                    //                     (option) => (
-                                    //                         <Select.Item
-                                    //                             key={option}
-                                    //                             value={
-                                    //                                 option
-                                    //                             }
-                                    //                             style={{
-                                    //                                 padding:
-                                    //                                     "8px 12px",
-                                    //                                 display:
-                                    //                                     "flex",
-                                    //                                 alignItems:
-                                    //                                     "center",
-                                    //                                 justifyContent:
-                                    //                                     "space-between",
-                                    //                                 cursor: "pointer",
-                                    //                             }}
-                                    //                         >
-                                    //                             <Select.ItemText>
-                                    //                                 {option}
-                                    //                             </Select.ItemText>
-                                    //                             <Select.ItemIndicator>
-                                    //                                 <Check fontSize="small" />
-                                    //                             </Select.ItemIndicator>
-                                    //                         </Select.Item>
-                                    //                     )
-                                    //                 )}
-                                    //             </Select.Viewport>
-                                    //         </Select.Content>
-                                    //     </Select.Portal>
-                                    // </Select.Root>
-
-                                    // <FormControl
-                                    //     key={i}
-                                    //     className="dropdown-item"
-                                    // >
-                                    //     <p>{item}</p>
-                                    //     <Select
-                                    //         className="select"
-                                    //         value={age}
-                                    //         onChange={handleChange}
-                                    //         displayEmpty
-                                    //     >
-                                    //         <MenuItem value="">
-                                    //             <em>None</em>
-                                    //         </MenuItem>
-                                    //         <MenuItem value={10}>
-                                    //             Ten
-                                    //         </MenuItem>
-                                    //         <MenuItem value={20}>
-                                    //             Twenty
-                                    //         </MenuItem>
-                                    //         <MenuItem value={30}>
-                                    //             Thirty
-                                    //         </MenuItem>
-                                    //     </Select>
-                                    // </FormControl>
-                                ))}
-                            </Form.Root>
-                        </Box>
-                    )}
-                </Box>
-            ))}
+            <StylingPanel panel="stylingPanel" />
         </Box>
     );
 };

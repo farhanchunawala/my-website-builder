@@ -1,0 +1,27 @@
+.panel-container {
+    // position: absolute;
+    // width: 260px;
+    flex: 0 0 260px;
+    height: calc(100vh - 47px);
+    top: 47px;
+    padding: 0 15px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    // border-left: #ddd solid 1px;
+    // border-right: #ddd solid 1px;
+    // border-right: red solid 1px;
+    z-index: 100;
+    margin-top: 47px;
+
+    .icons-container {
+        padding-top: 20px;
+
+        .icon {
+            color: #999999;
+
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}

@@ -226,7 +226,7 @@ export default function Home() {
                     />
                 </Box>
                 {sidePanel && (
-                    <Box className="side-bar">
+                    <Box className="panel-container">
                         <TextField
                             id="outlined-basic"
                             label="Outlined"

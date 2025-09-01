@@ -71,7 +71,7 @@ const BuilderPanel = () => {
     };
 
     return (
-        <Box className="side-bar">
+        <Box className="panel-container">
             <div className="drag-items-container">
                 {componentDefaults.map((item) => (
                     <DragItem

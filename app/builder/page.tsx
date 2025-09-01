@@ -10,6 +10,10 @@ import { Box, Fab } from "@mui/material";
 import { useMapStyles } from "@/lib/hooks/useMapStyles";
 import useMode from "@/z_archive/useMode";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
+import DesktopMacIcon from '@mui/icons-material/DesktopMac';
+import ComputerIcon from '@mui/icons-material/Computer';
+import TabletMacIcon from '@mui/icons-material/TabletMac';
+import SmartphoneIcon from '@mui/icons-material/Smartphone';
 // import Section011 from "@/sections/s011/v1";
 import Section013 from "@/sections/s013/v1";
 // import Section014 from "@/sections/s014/v1";
@@ -53,6 +57,29 @@ export default function Home() {
         // return "100%";
     })();
 
+    const screens = [
+        {
+            svg: (
+                <DesktopMacIcon/>
+            )
+        },
+        {
+            svg: (
+                <ComputerIcon/>
+            )
+        },
+        {
+            svg: (
+                <TabletMacIcon/>
+            )
+        },
+        {
+            svg: (
+                <SmartphoneIcon/>
+            )
+        },
+    ]
+
     // const searchParams = useSearchParams();
     // const route = searchParams.get("page") ?? "";
 
@@ -81,7 +108,13 @@ export default function Home() {
         <Suspense fallback={<div>Loading...</div>}>
             <ThemeProvider theme={theme}>
                 <Box className="page-builder">
-                    <Box className="top-bar"></Box>
+                    <Box className="top-bar">
+                        {screens.map((scrn, index) => (
+                            <Box className="screens-container" key={index}>
+                                <Box className="screen-sizes">{scrn.svg}</Box>
+                            </Box>
+                        ))}
+                    </Box>
                     <BuilderPanel panel="leftPanel" />
                     <Box
                         className="page-frame"
