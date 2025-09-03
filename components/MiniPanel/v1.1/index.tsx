@@ -1,5 +1,6 @@
 import LayersRoundedIcon from "@mui/icons-material/LayersRounded";
 import { Box } from "@mui/material";
+import "./styles.scss";
 
 const icons = [
     {
@@ -25,7 +26,7 @@ const MiniPanel = ({ type }: { type: string }) => {
     return (
         <Box
             width={48}
-            className="panel-container"
+            className="panel-container icons-panel"
             sx={{
                 left: 0,
                 flex: "0 0 48px",

@@ -1,66 +1,69 @@
-.accordion-root {
-    background-color: #eaf4ff;
-    // background-color: #0099ff;
-    border-radius: 8px;
-    // border-top-left-radius: 8px;
-    // border-top-right-radius: 8px;
-    .accordion-item {
-        // border-radius: 8px;
-        .accordion-header {
+.layers-panel {
+    top: 147px;
+    // margin-top: 47px;
+    // background-color: red;
+    // position: absolute;
+    // width: 260px;
+    flex: 0 0 260px;
+    // height: calc(100vh - 47px);
+    // top: 47px;
+    // padding: 0 15px;
+    overflow-y: auto;
+    // background-color: #ffffff; // or #f9f9f9 if light theme
+    // border-left: #ddd solid 1px;
+    // border-right: #ddd solid 1px;
+    // border-right: red solid 1px;
+    // z-index: 100;
+    // margin-top: 47px;
+    .accordion-root {
+        background-color: #eaf4ff;
+        // background-color: #0099ff;
+        border-radius: 8px;
+        // border-top-left-radius: 8px;
+        // border-top-right-radius: 8px;
+        .accordion-item {
             // border-radius: 8px;
-            // border-top-left-radius: 8px;
-            // border-top-right-radius: 8px;
-        }
-        .accordion-content {
-            // background-color: rgba(0, 153, 255, 0.1);
-        }
-        .layer-item {
-            font-weight: 550;
-            color: #666666;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-            font-family:
-                system-ui,
-                -apple-system;
-            // background-color: red;
-            font-size: 12px;
-            width: calc(100% - 15px);
-            // max-width: 300px;
-            // width: 100%;
-            height: 30px;
-            // margin-left: 10px;
-            padding: 0 10px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 10px;
-            .accordion-chevron {
-                transition: transform 0.1s ease;
-                transform: rotate(-90deg);
+            padding: 0;
+            margin: 0;
+            .accordion-header {
+                padding: 0;
+            margin: 0;
+                // border-radius: 8px;
+                // border-top-left-radius: 8px;
+                // border-top-right-radius: 8px;
             }
-            &[data-state="open"] .accordion-chevron {
-                transform: rotate(0deg);
+            .accordion-content {
+                padding: 0;
+            margin: 0;
+                // background-color: rgba(0, 153, 255, 0.1);
             }
-
-            // // level 2
-            // .accordion-item .layer-item {
-            //     padding-left: 25px;
-            // }
-
-            // // level 3
-            // .accordion-item .accordion-item .layer-item {
-            //     padding-left: 40px;
-            // }
-
-            // // level 4
-            // .accordion-item
-            //     .accordion-item
-            //     .accordion-item
-            //     .layer-item {
-            //     padding-left: 55px;
-            // }
-        }
-        .layer-icon {
+            .layer-item {
+                font-weight: 550;
+                color: #666666;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                font-family: system-ui;              // background-color: red;
+                font-size: 12px;
+                // width: calc(100% - 15px);
+                // max-width: 300px;
+                // width: 100%;
+                height: 30px;
+                // margin-left: 10px;
+                padding: 0 10px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 10px;
+                .accordion-chevron {
+                    transition: transform 0.1s ease;
+                    transform: rotate(-90deg);
+                }
+                &[data-state="open"] .accordion-chevron {
+                    transform: rotate(0deg);
+                }
+            }
+            .layer-icon {
+            }
         }
     }
 }

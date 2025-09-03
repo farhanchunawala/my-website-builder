@@ -161,27 +161,7 @@ const BuilderPanel = ({ panel }) => {
 
     return panel == "leftPanel" ? (
         <>
-
             <MiniPanel type="panel"/>
-            {/* <Box
-                width={48}
-                className="panel-container"
-                sx={{
-                    // display: "flex",
-                    // justifyContent: "center",
-                    // alignItems: "center",
-                    left: 0,
-                    flex: "0 0 48px",
-                    borderRight: "#ddd solid 1px",
-                }}
-            >
-                {icons.map((icn, index) => (
-                    <Box className="icons-container" key={index}>
-                        <Box className="icon">{icn.svg}</Box>
-                    </Box>
-                ))}
-            </Box> */}
-
             <Box
                 className="panel-container"
                 sx={{
@@ -190,45 +170,8 @@ const BuilderPanel = ({ panel }) => {
                     borderRight: "#ddd solid 1px",
                 }}
             >
-                {/* <Box className="cards-container">
-                    {cards.map((crd, index) => (
-                        <Box className="card-container" key={index}>
-                            <Box className="card">
-                                {" "}
-                                <Box className="icon-wrapper">
-                                    <Box className="icon">{crd.icon}</Box>
-                                </Box>
-                                <Box className="card-text">{crd.text}</Box>
-                            </Box>
-                        </Box>
-                    ))}
-                </Box> */}
                 <ElementsPanel type="panel" />
             </Box>
-
-            {/* <Accordion.Root
-                collapsible
-                className="panel-container"
-                id="layers"
-                type="multiple"
-            >
-                <Box className="layers-container">
-                    <Accordion.Item
-                        className="layer-container"
-                        value="1"
-                        id="lc-1"
-                    >
-                        <Accordion.Trigger className="layer">
-                            Layer 1
-                        </Accordion.Trigger>
-                        <Accordion.Content className="layer">
-                            
-                        </Accordion.Content>
-                    </Accordion.Item>
-
-                    
-                </Box>
-            </Accordion.Root> */}
         </>
     ) : (
         <Accordion.Root
