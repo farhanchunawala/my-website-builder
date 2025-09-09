@@ -181,3 +181,14 @@
         // }
     }
 }
+
+.css-panel {
+	padding-top: 15px;
+    .textarea {
+		resize: none;
+        width: 100%;
+        border-color: #eee;
+        // border: none;
+		padding: 8px;
+    }
+}
