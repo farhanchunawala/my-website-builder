@@ -22,7 +22,15 @@ const icons = [
     },
 ];
 
-const MiniPanel = ({ type }: { type: string }) => {
+const MiniPanel = ({
+    type,
+    openIndex,
+    toggleDropdown,
+}: {
+    type: string;
+    openIndex: number | null;
+    toggleDropdown: (index: number) => void;
+}) => {
     return (
         <Box
             width={48}
@@ -34,7 +42,14 @@ const MiniPanel = ({ type }: { type: string }) => {
             }}
         >
             {icons.map((icn, index) => (
-                <Box className="icons-container" key={index}>
+                <Box
+                    className={`icons-container ${
+                        openIndex === index ? "active" : ""
+                    }`}
+                    key={index}
+                    onClick={() => toggleDropdown(index)}
+                    sx={{ cursor: "pointer" }}
+                >
                     <Box className="icon">{icn.svg}</Box>
                 </Box>
             ))}

@@ -201,12 +201,19 @@ export default function Home() {
                             </Box>
                         ))}
                     </Box> */}
-                    <TopPanel type="panel"/>
                     {/* <MiniPanel type="panel" /> */}
                     {/* <ElementsPanel type="panel"/> */}
                     {/* {JSON.stringify(config?.children)} */}
-                    <LayersPanel data={config?.children} />
+                    {/* <LayersPanel data={config?.children} /> */}
                     {/* <BuilderPanel panel="leftPanel" /> */}
+                    <TopPanel type="panel" />
+                    <MiniPanel
+                        type="panel"
+                        openIndex={openIndex}
+                        toggleDropdown={toggleDropdown}
+                    />
+                    {openIndex === 0 && <ElementsPanel type="panel" />}
+                    {openIndex === 1 && <LayersPanel data={config?.children} />}
                     <Box
                         className="page-frame"
                         sx={{
