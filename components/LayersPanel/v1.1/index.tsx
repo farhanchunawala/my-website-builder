@@ -1,5 +1,6 @@
 import * as Accordion from "@radix-ui/react-accordion";
 import "./styles.scss";
+import { Box, FormControl, InputLabel, MenuItem } from "@mui/material";
 
 type LayerData = {
     component: string;
@@ -9,11 +10,19 @@ type LayerData = {
 export function LayersPanel({ data }: { data: LayerData[] }) {
     if (!data?.length) return null;
     return (
-        <>
+        <Box
+            className="panel-container layers-panel"
+            sx={{
+                left: "47px",
+                marginTop: "47px",
+                width: "260px",
+                borderRight: "#ddd solid 1px",
+            }}
+        >
             {data.map((item, index) => (
                 <LayerItem key={`${item.component}-${index}`} item={item} />
             ))}
-        </>
+        </Box>
     );
 }
 
@@ -23,6 +32,9 @@ function LayerItem({ item }: { item: LayerData }) {
     if (item.component === "Box" && hasChildren) {
         return (
             <Accordion.Root
+            sx={{
+                marginTop: "47px",
+            }}
                 className="accordion-root"
                 type="multiple"
                 defaultValue={[]}

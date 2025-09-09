@@ -27,7 +27,7 @@ const StylingPanel: React.FC<StylingPanelProps> = ({ panel }) => {
 
     return (
         <Box
-            className="panel-container"
+            className="panel-container styling-panel"
             sx={{
                 right: 0,
                 flex: "0 0 260px",

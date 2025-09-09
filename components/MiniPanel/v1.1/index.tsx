@@ -1,5 +1,6 @@
 import LayersRoundedIcon from "@mui/icons-material/LayersRounded";
 import { Box } from "@mui/material";
+import "./styles.scss";
 
 const icons = [
     {
@@ -21,11 +22,19 @@ const icons = [
     },
 ];
 
-const MiniPanel = ({ type }: { type: string }) => {
+const MiniPanel = ({
+    type,
+    openIndex,
+    toggleDropdown,
+}: {
+    type: string;
+    openIndex: number | null;
+    toggleDropdown: (index: number) => void;
+}) => {
     return (
         <Box
             width={48}
-            className="panel-container"
+            className="panel-container icons-panel"
             sx={{
                 left: 0,
                 flex: "0 0 48px",
@@ -33,7 +42,14 @@ const MiniPanel = ({ type }: { type: string }) => {
             }}
         >
             {icons.map((icn, index) => (
-                <Box className="icons-container" key={index}>
+                <Box
+                    className={`icons-container ${
+                        openIndex === index ? "active" : ""
+                    }`}
+                    key={index}
+                    onClick={() => toggleDropdown(index)}
+                    sx={{ cursor: "pointer" }}
+                >
                     <Box className="icon">{icn.svg}</Box>
                 </Box>
             ))}

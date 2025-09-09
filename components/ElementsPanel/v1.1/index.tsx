@@ -100,8 +100,16 @@ const cards = [
 
 const ElementsPanel = ({ type }: { type: string }) => {
     if (type !== "panel") return null;
-    
+
     return (
+        <Box
+            className="panel-container elements-panel"
+            sx={{
+                left: "47px",
+                width: "260px",
+                borderRight: "#ddd solid 1px",
+            }}
+        >
             <Box className="cards-container">
                 {cards.map((crd, index) => (
                     <Box className="card-container" key={index}>
@@ -114,13 +122,11 @@ const ElementsPanel = ({ type }: { type: string }) => {
                     </Box>
                 ))}
             </Box>
+        </Box>
     );
 };
 
 export default ElementsPanel;
-
-
-
 
 // type LayerData = {
 //     component: string;

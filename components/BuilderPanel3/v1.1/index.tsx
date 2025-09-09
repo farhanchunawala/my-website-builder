@@ -70,56 +70,41 @@ const accordionData = [
 const BuilderPanel = ({ panel }) => {
     const data = useSelector((state: RootState) => state.data.data);
     const config = data.config;
+    const [openIndex, setOpenIndex] = useState<number | null>(null); 
+    const toggleDropdown = (index: number) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
     // const content = data.content;
     // const styling = data.styling;
     // const styles = styling?.styles || {};
 
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-    const toggleDropdown = (index: number) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
-
     return panel == "leftPanel" ? (
         <>
-            <Box
-                width={48}
-                className="panel-container"
-                sx={{
-                    left: 0,
-                    flex: "0 0 48px",
-                    borderRight: "#ddd solid 1px",
-                }}
-            >
-                {icons.map((icn, index) => (
-                    <Box className="icons-container" key={index}>
-                        <Box className="icon">{icn.svg}</Box>
-                    </Box>
-                ))}
-            </Box>
-            <Box
+            {/* <Box
                 className="panel-container"
                 sx={{
                     left: "47px",
                     width: "260px",
                     borderRight: "#ddd solid 1px",
                 }}
-            >
+            > */}
                 {/* {JSON.stringify(config?.children)} */}
                 <LayersPanel data={config?.children} />
-            </Box>
+            {/* </Box> */}
         </>
-    ) : (
-        <Box
-            className="side-bar0"
-            sx={{
-                right: 0,
-                flex: "0 0 260px",
-                borderLeft: "#ddd solid 1px",
-            }}
-        >
-            <StylingPanel panel="stylingPanel" />
-        </Box>
+    ) 
+    : (
+        <></>
+        // <Box
+        //     className="side-bar0"
+        //     sx={{
+        //         right: 0,
+        //         flex: "0 0 260px",
+        //         borderLeft: "#ddd solid 1px",
+        //     }}
+        // >
+        //     <StylingPanel panel="stylingPanel" />
+        // </Box>
     );
 };
 
