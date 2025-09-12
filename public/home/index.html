@@ -26,7 +26,7 @@
             !(function (o, c) {
                 var n = c.documentElement,
                     t = " w-mod-";
-                (n.className += t + "js"), ("ontouchstart" in o || (o.DocumentTouch && c instanceof DocumentTouch)) && (n.className += t + "touch");
+                ((n.className += t + "js"), ("ontouchstart" in o || (o.DocumentTouch && c instanceof DocumentTouch)) && (n.className += t + "touch"));
             })(window, document);
         </script>
         <link href="images/zc-b11-logo1.svg" rel="shortcut icon" type="image/x-icon" />
@@ -479,7 +479,7 @@
                             <div data-w-id="1990ef58-c564-f5e2-0e73-30a5f4b5fa4c" style="opacity: 0" class="custom-list-item">
                                 <img src="images/arrow_icon.svg" loading="lazy" alt="arrow right" class="icon_28" />
                                 <div class="custom-list-item-content">
-									<!-- <p class="custom-list-paragraph-imp">Custom strategies designed to align with your unique business goals.</p> -->
+                                    <!-- <p class="custom-list-paragraph-imp">Custom strategies designed to align with your unique business goals.</p> -->
                                     <!-- <h3 class="text-color-white" style="padding-bottom: 20px">Cutting-Edge Digital Tools</h3> -->
                                     <!-- <h3 class="text-color-white" style="padding-bottom: 20px">Customized Software Solutions</h3> -->
                                     <!-- <p class="custom-list-paragraph-imp">Cutting Edge software solutions to meet your specific business needs.</p> -->
@@ -1044,25 +1044,30 @@
             const servicesData = [
                 {
                     id: "digitalConsulting",
-                    title: "Digital Consulting",
+                    // title: "Digital Consulting",
+                    title: "Digital Consulting & Strategy",
                     description: `
 						✓ Strategy & Planning<br/>
 						✓ Digital Roadmap<br/>
+						✓ Market Analysis<br/>
 						✓ Business Audit<br/>
-						✓ Process Optimization<br/>
-						✓ Tech Advisory
+						✓ Process Optimization
 					`,
                     href: "#",
                     iconKey: "handshake",
                 },
                 {
                     id: "webDevelopment",
-                    title: "Web Development",
+                    title: "Web & Mobile Development",
+					// title: "Web, Mobile &<br/> E-commerce Development",
+					// title: "Web, Mobile & Software Development",
+					// title: "Web & E-commerce Development",
                     description: `
-						✓ Custom Website Design<br/>
-						✓ UX & UI Design<br/>
-						✓ Website Audit<br/>
-						✓ Fast & SEO Ready<br/>
+						✓ Custom Software Design<br/>
+						✓ E-Commerce Development<br/>
+						✓ Mobile App Development<br/>
+						✓ UX/UI and Product Design<br/>
+						✓ Website Audit & SEO<br/>
 						✓ Ongoing Maintenance
 					`,
                     href: "#",
@@ -1070,35 +1075,39 @@
                 },
                 {
                     id: "digitalMarketing",
-                    title: "Digital Marketing",
+                    title: "Digital Marketing & Branding",
                     description: `
+						✓ Brand Positioning<br/>
 						✓ SEO Optimization<br/>
 						✓ Paid Ads & Campaigns<br/>
+						✓ Social Media Management<br/>
 						✓ Content Marketing<br/>
 						✓ Email & Automation<br/>
-						✓ Branding & PR
 					`,
                     href: "#",
                     iconKey: "speaker",
                 },
                 {
                     id: "dataAnalytics",
-                    title: "Data Analytics",
+                    title: "Data Analytics & Business Intelligence",
+					// title: "AI & Data Analytics",
                     description: `
 						✓ Data Collection<br/>
 						✓ Data Visualization<br/>
 						✓ Dashboards & Reports<br/>
 						✓ Real-Time Analytics<br/>
 						✓ Decision Insights
-						`,
-						// ✓ Trend Forecasting<br/>
-						// ✓ Performance Metrics<br/>
+						
+					`,
+					// ✓ Data Visualization & BI<br/>
+					// ✓ Trend Forecasting<br/>
+					// ✓ Performance Metrics<br/>
                     href: "#",
                     iconKey: "graph",
                 },
-                {
+				{
                     id: "aiSolutions",
-                    title: "AI Solutions",
+                    title: "AI Solutions & Automation",
                     description: `
 						✓ AI-Powered Automation<br/>
 						✓ AI Tools Integration<br/>
@@ -1108,18 +1117,110 @@
                     href: "#",
                     iconKey: "stats",
                 },
+				// {
+				// 	id: "enterpriseSoftware",
+				// 	// title: "Custom & Enterprise Software",
+				// 	title: "E-commerce & Enterprise Solutions",
+				// 	description: `
+				// 		✓ Enterprise App Development<br/>
+				// 		✓ Custom Web & Mobile Apps<br/>
+				// 		✓ System Integration<br/>
+				// 		✓ Security & Compliance
+				// 	`,
+				// 	href: "#",
+				// 	iconKey: "ticket",
+				// },
                 {
                     id: "cloudServices",
-                    title: "Cloud Services",
+                    // title: "Cloud & Enterprise Solutions",
+                    // title: "Cloud & IT Solutions",
+                    title: "Cloud & Hosting",
                     description: `
 						✓ Cloud Setup & Migration<br/>
-						✓ Scalable Cloud Hosting<br/>
+						✓ Scalable Hosting<br/>
 						✓ Security & Compliance<br/>
 						✓ Multi-Cloud Setup
 					`,
                     href: "#",
                     iconKey: "badge",
                 },
+				// {
+                //     id: "ecommerceSolutions",
+                //     title: "E-commerce Solutions",
+                //     description: `
+				// 		✓ Online Store Setup<br/>
+				// 		✓ Product Management<br/>
+				// 		✓ Order Processing<br/>
+				// 		✓ Payment Gateway Integration<br/>
+				// 		✓ Customer Support
+				// 	`,
+                //     href: "#",
+                //     iconKey: "ticket",
+                // },
+				// {
+				// 	id: "enterpriseSolutions",
+				// 	title: "Enterprise Solutions",
+				// 	description: `
+				// 		✓ Enterprise App Development<br/>
+				// 		✓ System Integration<br/>
+				// 		✓ IT Infrastructure<br/>
+				// 		✓ Security Solutions<br/>
+				// 		✓ Compliance & Governance
+				// 	`,
+				// 	href: "#",
+				// 	iconKey: "badge",
+				// },
+				// {
+				// 	id: "crmErpSolutions",
+				// 	title: "CRM & ERP Solutions",
+				// 	description: `
+				// 		✓ CRM Implementation<br/>
+				// 		✓ ERP Integration<br/>
+				// 		✓ Workflow Automation<br/>
+				// 		✓ Customer Data Management<br/>
+				// 		✓ Sales & Marketing Tools
+				// 	`,
+				// 	href: "#",
+				// 	iconKey: "badge",
+				// },
+				// {
+				// 	id: "customSoftwareDevelopment",
+				// 	title: "Custom Software Development",
+				// 	description: `
+				// 		✓ Custom Software Development<br/>
+				// 		✓ Custom App Development<br/>
+				// 		✓ Custom Web App Development<br/>
+				// 		✓ Custom Desktop App Development<br/>
+				// 		✓ Custom Mobile App Development<br/>
+				// 	`,
+				// 	href: "#",
+				// 	iconKey: "badge",
+				// },
+                // {
+                //     id: "branding",
+                //     title: "Branding",
+                //     description: `
+				// 		✓ Brand Identity<br/>
+				// 		✓ Brand Guidelines<br/>
+				// 		✓ UI/UX Design<br/>
+				// 		✓ Pitch Decks
+				// 	`,
+                //     href: "#",
+                //     iconKey: "badge",
+                // },
+                // {
+                //     id: "mobileAppDevelopment",
+                //     title: "Mobile App Development",
+                //     description: `
+				// 		✓ Cross-Platform Apps<br/>
+				// 		✓ iOS & Android Development<br/>
+				// 		✓ App UI/UX Design<br/>
+				// 		✓ API Integration<br/>
+				// 		✓ App Maintenance & Updates
+				// 	`,
+                //     href: "#",
+                //     iconKey: "ticket",
+                // },
             ];
 
             // Function to render services grid
