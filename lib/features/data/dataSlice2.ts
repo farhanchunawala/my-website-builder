@@ -25,13 +25,11 @@ const dataSlice = createSlice({
             state,
             action: PayloadAction<{ path: string; value: any }>
         ) {
-			const { path, value } = action.payload;
+            const { path, value } = action.payload;
             const { target, lastKey } = getNestedTarget(
                 state,
                 `data.${path}`
             );
-			// console.log("updateNested", { path, value, target, lastKey });
-			
             if (lastKey) {
                 target[lastKey] = value;
             }
@@ -43,8 +41,46 @@ const dataSlice = createSlice({
                 key: string | number;
                 value: any;
             }>
-        ) {},
-        removeNested(state, action: PayloadAction<{ path: string }>) {},
+        ) {
+            const { path, key, value } = action.payload;
+            const { target, lastKey } = getNestedTarget(
+                state,
+                `data.${path}.${key}`
+            );
+            if (!target) return;
+
+            // Handle array insert at specific index
+            if (Array.isArray(target)) {
+                const index =
+                    typeof key === "number"
+                        ? key
+                        : parseInt(key as string, 10);
+
+                if (index >= 0 && index <= target.length) {
+                    // Insert value at specified index
+                    target.splice(index, 0, value);
+                }
+            }
+            // Handle object insert by key
+            else if (
+                target &&
+                typeof target === "object" &&
+                !Array.isArray(target)
+            ) {
+				// target[key] = value;
+                Reflect.set(target, lastKey, value);
+            }
+        },
+        removeNested(state, action: PayloadAction<{ path: string }>) {
+            const { path } = action.payload;
+            const { target, lastKey } = getNestedTarget(
+                state,
+                `data.${path}`
+            );
+            if (lastKey) {
+                delete target[lastKey];
+            }
+        },
     },
     extraReducers: (builder) => {
         builder
